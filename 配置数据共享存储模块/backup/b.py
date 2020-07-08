@@ -7,6 +7,7 @@ Created on Wed Jul  8 02:11:29 2020
 
 import socket
 import os
+os.fork()
  
 p = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 p.connect(('127.0.0.1',8383))
