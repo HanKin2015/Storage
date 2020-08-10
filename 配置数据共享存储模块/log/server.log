@@ -19,3 +19,9 @@ Wed, 08 Jul 2020 19:41:01 server.py[line:53] INFO 服务器收到消息11: szc
 Wed, 08 Jul 2020 19:41:05 server.py[line:53] INFO 服务器收到消息12: notify
 Wed, 08 Jul 2020 19:41:19 server.py[line:51] INFO 断开连接
 Wed, 08 Jul 2020 19:41:19 server.py[line:66] INFO 服务端关闭成功
+Thu, 09 Jul 2020 12:42:36 server.py[line:57] INFO 服务器收到消息1: 312
+Thu, 09 Jul 2020 12:42:46 server.py[line:57] INFO 服务器收到消息2: 3213
+Thu, 09 Jul 2020 12:42:48 server.py[line:57] INFO 服务器收到消息3: 31231
+Thu, 09 Jul 2020 12:43:06 server.py[line:57] INFO 服务器收到消息4: 2323213
+Thu, 09 Jul 2020 12:43:15 server.py[line:55] INFO 断开连接
+Thu, 09 Jul 2020 12:43:15 server.py[line:70] INFO 服务端关闭成功
