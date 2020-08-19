@@ -1,0 +1,13 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+import seaborn as sns
+import scipy
+from collections import Counter
+三、数据探索
+首先，利用Pandas对数据进行读取。
+df_train = pd.read_csv(train_path, sep='\t')
+df_test = pd.read_csv(test_path, sep='\t')
+3.1 简单查看数据
+df_train.head(), len(df_train)
