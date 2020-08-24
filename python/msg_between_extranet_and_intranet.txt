@@ -1,13 +1,1 @@
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
-import seaborn as sns
-import scipy
-from collections import Counter
-Èı¡¢Êı¾İÌ½Ë÷
-Ê×ÏÈ£¬ÀûÓÃPandas¶ÔÊı¾İ½øĞĞ¶ÁÈ¡¡£
-df_train = pd.read_csv(train_path, sep='\t')
-df_test = pd.read_csv(test_path, sep='\t')
-3.1 ¼òµ¥²é¿´Êı¾İ
-df_train.head(), len(df_train)
+ã€TDã€‘å›½ç½‘æ‰¬å·ä¾›ç”µ--å† è‰ºæœ¯æ— çº¿æŠ•å±æµ‹è¯•--TD202008100333
