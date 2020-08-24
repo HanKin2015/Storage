@@ -18,7 +18,7 @@ def ftpconnect(host, username, password):
     ftp.login(username, password)
     return ftp
 
-#从ftp下载文件
+# 从ftp下载文件
 def downloadfile(ftp, remotepath, localpath):
     bufsize = 1024
     fp = open(localpath, 'wb')
@@ -26,7 +26,7 @@ def downloadfile(ftp, remotepath, localpath):
     ftp.set_debuglevel(0)
     fp.close()
 
-#从本地上传文件到ftp
+# 从本地上传文件到ftp
 def uploadfile(ftp, remotepath, localpath):
     bufsize = 1024
     fp = open(localpath, 'rb')
@@ -37,7 +37,7 @@ def uploadfile(ftp, remotepath, localpath):
 if __name__ == "__main__":
     ftp = ftpconnect("199.200.5.88", "test", "test")
     uploadfile(ftp, "VDI/hj/msg_between_extranet_and_intranet.txt", "D:/Github/Storage/python/msg_between_extranet_and_intranet.txt")
-    ##提醒OK消息框
+    # 提醒OK消息框
     win32api.MessageBox(0, "上传成功", "提醒", win32con.MB_OK)
     ftp.quit()
 
