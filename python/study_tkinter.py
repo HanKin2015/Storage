@@ -110,16 +110,36 @@ def set_win_center(root, cur_width='', cur_height=''):
     size_xy = '%dx%d+%d+%d' % (cur_width, cur_height, cen_x, cen_y)
     root.geometry(size_xy)
 
+def handle_menu_action(self, action_type):
+	if action_type == "撤销":
+		self.content_text.event_generate("<<Undo>>")
+	elif action_type == "恢复":
+		self.content_text.event_generate("<<Redo>>")
+	elif action_type == "剪切":
+		self.content_text.event_generate("<<Cut>>")
+	elif action_type == "复制":
+		self.content_text.event_generate("<<Copy>>")
+	elif action_type == "粘贴":
+		self.content_text.event_generate("<<Paste>>")
+	elif action_type == "全选":
+		self.content_text.event_generate("<<SelectAll>>")
+
 def upload_btn_cliecked():
     # 提醒OK消息框
     win32api.MessageBox(0, "上传成功", "提醒", win32con.MB_OK)
 
 def download_btn_cliecked(display_content):
     display_content.SelectAll()
+    
+    
 def copy_btn_cliecked(display_content):
+    # 打印显示内容
     content = display_content.get('0.0', 'end').strip()
     print(content)
-    pass
+    
+    # 将内容弄到剪切板
+    display_content.event_generate("<<SelectAll>>")
+    display_content.event_generate("<<Copy>>")
 
 def send_recv_msg():
     '''
@@ -131,9 +151,10 @@ def send_recv_msg():
     root.update()
     set_win_center(root, 600, 600)
     
-    #设置字体slant=tf.ITALIC,underline=1,overstrike=1
+    # 设置字体slant=tf.ITALIC,underline=1,overstrike=1
     ft = tf.Font(family='consolas', weight=tf.BOLD, size=12)  
     
+    # 上面部分
     fm_up = tk.Frame()
     input_content = tk.Entry(fm_up, width=30, font=ft)
     input_content.pack(side=tk.LEFT, expand=True, fill=tk.X, padx=5, pady=5)
@@ -146,6 +167,7 @@ def send_recv_msg():
     
     fm_up.pack(fill=tk.X)
     
+    # 下面部分：显示内容和拷贝按钮
     fm_down = tk.Frame()
     display_content = tk.Text(fm_down, font=ft)
     display_content.pack(side=tk.TOP, fill=tk.Y, expand=True, padx=5)

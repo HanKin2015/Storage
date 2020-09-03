@@ -82,6 +82,7 @@ def upload_file(ftp, remotepath, localpath):
 
 if __name__ == "__main__":
     ftp = ftp_connect("199.200.5.88", "test", "test")
+    
     download_file(ftp, "VDI/hj/1280x720_30fps_10s.mp4", "C:/Users/Administrator/Desktop/test.mp4")
     #调用本地播放器播放下载的视频
     os.system('start "C:\Program Files\Windows Media Player\wmplayer.exe" "C:/Users/Administrator/Desktop/test.mp4"')
