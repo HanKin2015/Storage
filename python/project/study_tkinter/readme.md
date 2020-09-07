@@ -15,3 +15,19 @@ https://blog.csdn.net/lys_828/article/details/105345014
 ttk 美化了Tkinter，但是也省略了一些属性。
 比如不识别bg bd等属性。
 _tkinter.TclError: unknown option "-bg"
+
+## 4、AttributeError: module 'PIL' has no attribute 'ImageTk'
+时而报错时而正常。保险的方法就是添加from PIL import ImageTk
+
+
+
+
+
+
+
+
+
+
+
+
+
