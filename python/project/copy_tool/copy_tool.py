@@ -134,7 +134,13 @@ class CopyTool(tkinter.Tk):
 		menu_bar = tkinter.Menu(self)	#继承原来Tk的Menu的对象
 		
 		file_menu = tkinter.Menu(menu_bar, tearoff = 0)
+		file_menu.add_command(label='新建',accelerator = 'Ctrl+N', command=self.new_file)
 		file_menu.add_command(label='打开',accelerator = 'Ctrl+O', command=self.open_file)
+		file_menu.add_command(label='保存',accelerator = 'Ctrl+S', command=self.save)
+		file_menu.add_command(label='另存为',accelerator = 'Ctrl+Shift+S', command=self.save_as)
+		file_menu.add_separator()  #设置分割线
+		file_menu.add_command(label='上传',accelerator = 'Ctrl+U', command=self.upload_file)
+		file_menu.add_command(label='下载',accelerator = 'Ctrl+D', command=self.down_file)
 		file_menu.add_separator()  #设置分割线
 		file_menu.add_command(label='退出',accelerator = 'Alt+F4', command=self.exit_copy_tool)
 		menu_bar.add_cascade(label='文件',menu = file_menu) 	#创建文件的菜单栏
@@ -180,16 +186,6 @@ class CopyTool(tkinter.Tk):
 		
 		self['menu'] = menu_bar				
 	
-	def open_file(self,event=None):
-		input_file = filedialog.askopenfilename(filetypes=[('所有文件','*.*'),('文本文档','*.txt')])  #弹出文件对话框，设置选择文件的类型
-	
-		if input_file:   			#如果用户选择了文本，则进行打开
-			#print(input_file)   	#这里可以调试，看一下选中文本的路径的形式（绝对路径）
-			self.title('{} - EditorPlus'.format(os.path.basename(input_file))) #以文件的名称进行窗口标题的命名
-			self.file_name = input_file 	   #将这个打开的文件对象命名为其原来文件的名称
-			self.content_text.delete(1.0, tkinter.END)  #删除当前文本内容中的数据
-			with open(input_file, 'r') as _file:
-				self.content_text.insert(1.0,_file.read())  #将要打开文件中的数据写入到文本内容中
 	def show_messagebox(self, type):
 		if type == "帮助":
 			messagebox.showinfo("帮助", "这是帮助文档！", icon='question')
@@ -236,8 +232,8 @@ class CopyTool(tkinter.Tk):
 	    #上面部分
 		fm_up = tkinter.Frame()
 		#fm_up.propagate(0)
-		input_content = tkinter.Entry(fm_up, width=30, font=ft)
-		input_content.pack(side=tkinter.LEFT, expand=True, fill=tkinter.X, padx=5, pady=5)
+		self.input_content = tkinter.Entry(fm_up, width=30, font=ft)
+		self.input_content.pack(side=tkinter.LEFT, expand=True, fill=tkinter.X, padx=5, pady=5)
 		upload_btn = tkinter.Button(fm_up,text='send', width=10, height=1,\
                            command=lambda:self.upload_btn_cliecked(self.content_text), font=ft, compound='center') 
 		upload_btn.pack(side=tkinter.LEFT, pady=5)     
@@ -341,6 +337,58 @@ class CopyTool(tkinter.Tk):
 			self.destroy() 									 #满足条件的话主窗口退出
 			self.my_ftp.ftp_quit()
 	
+	def new_file(self,event=None):
+		self.title('New - CopyTool')
+		self.content_text.delete(1.0, tkinter.END)
+		self.file_name = None
+	
+	def open_file(self,event=None):
+		input_file = filedialog.askopenfilename(filetypes=[('所有文件','*.*'),('文本文档','*.txt')])  #弹出文件对话框，设置选择文件的类型
+	
+		if input_file:   			#如果用户选择了文本，则进行打开
+			#print(input_file)   	#这里可以调试，看一下选中文本的路径的形式（绝对路径）
+			self.title('{} - CopyTool'.format(os.path.basename(input_file))) #以文件的名称进行窗口标题的命名
+			self.file_name = input_file 	   #将这个打开的文件对象命名为其原来文件的名称
+			self.content_text.delete(1.0, tkinter.END)  #删除当前文本内容中的数据
+			with open(input_file, 'r', encoding='utf-8') as _file:
+				self.content_text.insert(1.0,_file.read())  #将要打开文件中的数据写入到文本内容中
+			self._update_line_num()
+	
+	def save(self, event=None):
+		if not self.file_name:  #这里就体现出来之前设置的self.file_name全局变量的作用了
+			self.save_as()      #没有有文件名称的另保存
+		else:
+			self._write_to_file(self.file_name)  #有文件名称的直接写入文件（保存本地）
+
+	def save_as(self,event=None):
+		input_file = filedialog.asksaveasfilename(        #注意这里弹出的是文件保存对话框
+			filetypes = [('所有文件','*.*'),('文本文档','*.txt')]
+			)
+		if input_file:   						#还是要对用户操作进行判定
+			self.file_name = input_file     	#设置文件名称
+			self._write_to_file(self.file_name) #写入本地
+
+	def upload_file(self):
+		input_file = filedialog.askopenfilename(        #注意这里弹出的是文件保存对话框
+			filetypes = [('所有文件','*.*'),('文本文档','*.txt')]
+			)
+		if input_file:
+			self.input_content.insert(0, input_file)
+		pass
+
+	def down_file(self):
+		remote_path = self.input_content.get()
+		print(remote_path)
+		pass
+
+	def _write_to_file(self, file_name):
+		try:
+			content = self.content_text.get(1.0, 'end')  #先获取文本框中的所有数据
+			with open(file_name, 'w') as the_file:
+				the_file.write(content)					 #将数据写入到本地的文件中
+			self.title("%s - EditorPlus" % os.path.basename(file_name)) #这一步就是显示当前窗口的标题不变，可以尝试注释一下这行代码
+		except IOError:    
+			messagebox.showwarning("保存", "保存失败！")   #如果保存失败的话，会弹出消息对话框
 	def upload_btn_cliecked(self, display_content):
 	    '''
 	    发送按钮点击事件
