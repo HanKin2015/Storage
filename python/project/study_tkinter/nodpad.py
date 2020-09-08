@@ -295,6 +295,7 @@ class EditorPlus(tkinter.Tk):
 			self.content_text.delete(1.0, tkinter.END)  #删除当前文本内容中的数据
 			with open(input_file, 'r') as _file:
 				self.content_text.insert(1.0,_file.read())  #将要打开文件中的数据写入到文本内容中
+			self._update_line_num()
 
 	def save(self, event=None):
 		if not self.file_name:  #这里就体现出来之前设置的self.file_name全局变量的作用了
