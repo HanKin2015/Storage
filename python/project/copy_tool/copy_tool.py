@@ -20,8 +20,12 @@ class MyFTP():
 	host_ip = "199.200.5.88"
 	user_name = "test"
 	password = "test"
+	#云端临时文件路径
 	remote_file_path = "VDI/hj/msg_between_extranet_and_intranet.txt"
+	#本地临时文件路径
 	local_file_path = "D:/msg_between_extranet_and_intranet.txt"
+	#云端指定中转站文件夹
+	remote_dir_path = "VDI/hj/temp/"
 	
 	def __init__(self):     
 		self._ftp_connect_()
@@ -369,6 +373,10 @@ class CopyTool(tkinter.Tk):
 			self._write_to_file(self.file_name) #写入本地
 
 	def upload_file(self):
+		'''选择文件，并将文件上传到指定的文件夹中
+		PS:首先要对文件夹进行清理
+		'''
+		
 		input_file = filedialog.askopenfilename(        #注意这里弹出的是文件保存对话框
 			filetypes = [('所有文件','*.*'),('文本文档','*.txt')]
 			)
@@ -377,8 +385,11 @@ class CopyTool(tkinter.Tk):
 		pass
 
 	def down_file(self):
-		remote_path = self.input_content.get()
-		print(remote_path)
+		'''下载指定文件夹中的所有文件
+		'''
+		
+		remote_dir_path = self.input_content.get()
+		print(remote_dir_path)
 		pass
 
 	def _write_to_file(self, file_name):
