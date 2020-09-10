@@ -7,7 +7,6 @@ Created on Tue Sep  1 19:36:49 2020
     copy tool for ftp
 """
 import win32api,win32con
-from ftplib import FTP
 from tkinter import filedialog, messagebox #这两个需要单独导入
 from tkinter.ttk import Scrollbar, Checkbutton, Label, Button #导入ttk模块中的指定几个组件
 import tkinter
@@ -15,94 +14,99 @@ import PIL
 from editor_style import theme_color, ICONS #这里就是从之前命名的文件中导入两个参数
 from PIL import ImageTk
 import tkinter.font
+import os
+
+import ftplib
+import os
+
+#中转文件名称
+temp_file_name = "msg_between_extranet_and_intranet.txt"
+#云端指定中转站文件夹路径
+remote_dir_path = "VDI/hj/temp/"
+#本地临时文件夹路径
+local_dir_path = "D:/Downloads/"
+
+if not os.path.exists(local_dir_path):
+	   os.makedirs(local_dir_path)
 
 class MyFTP():
 	host_ip = "199.200.5.88"
 	user_name = "test"
 	password = "test"
-	#云端临时文件路径
-	remote_file_path = "VDI/hj/msg_between_extranet_and_intranet.txt"
-	#本地临时文件路径
-	local_file_path = "D:/msg_between_extranet_and_intranet.txt"
-	#云端指定中转站文件夹
-	remote_dir_path = "VDI/hj/temp/"
 	
 	def __init__(self):     
 		self._ftp_connect_()
-		pass
-		
+		self._create_empty_dir_(remote_dir_path)
+	
+	def _create_empty_dir_(self, dir_path):
+		try:
+			self.ftp.rmd(remote_dir_path)
+		except ftplib.error_perm as err:
+			print(err)
+		try:
+			self.ftp.mkd(remote_dir_path)
+		except ftplib.error_perm as err:
+			print(err)
+			self.ftp.cwd(remote_dir_path)
+			files = self.ftp.nlst()
+			for file in files:
+				self.ftp.delete(file)
+	
 	def _ftp_connect_(self):
 	    """建立ftp连接
-	
-		Parameters
-	    ----------
-	    ftp : str
-	        ip地址
-	    username : str
-	        合法的sql语句
-	    password : 
-	
-	    Returns
-	    -------
-	    bool
-	        成功返回True,失败False
-	
 		"""
-	    self.ftp = FTP()
-	    # ftp.set_debuglevel(2)
+		
+	    self.ftp = ftplib.FTP()
+	    #ftp.set_debuglevel(2)
 	    self.ftp.connect(self.host_ip, 21)
 	    self.ftp.login(self.user_name, self.password)
+	    self.ftp.encoding = 'gbk'
 	    	
-	def download_file(self):
+	def download_file(self, local_file_path, remote_file_path):
 	    """从ftp下载文件
-	
 		Parameters
 	    ----------
-	    ftp : str
-	        创建的表的名称
-	    remotepath : str
-	        合法的sql语句
-	    localpath : 
-	
+	    local_path : str
+	        本地文件路径
+	    remote_path : str
+	        云端文件路径
+
 	    Returns
 	    -------
 	    bool
 	        成功返回True,失败False
-	
 		"""
 	    
 	    bufsize = 1024
-	    fp = open(self.local_file_path, 'wb')
-	    self.ftp.retrbinary('RETR ' + self.remote_file_path, fp.write, bufsize)
+	    fp = open(local_file_path, 'wb')
+	    self.ftp.retrbinary('RETR ' + remote_file_path, fp.write, bufsize)
 	    self.ftp.set_debuglevel(0)
 	    fp.close()
 	
-	def upload_file(self):
+	def upload_file(self, local_file_path, remote_file_path):
 	    """从本地上传文件到ftp
-	
 		Parameters
 	    ----------
-	    ftp : str
-	        创建的表的名称
-	    remotepath : str
-	        合法的sql语句
-	    localpath : 
+	    local_path : str
+	        本地文件路径
+	    remote_path : str
+	        云端文件路径
 	
 	    Returns
 	    -------
 	    bool
 	        成功返回True,失败False
-	
 		"""
+
 	    bufsize = 1024
-	    fp = open(self.local_file_path, 'rb')
-	    self.ftp.storbinary('STOR ' + self.remote_file_path, fp, bufsize)
+	    fp = open(local_file_path, 'rb')
+	    self.ftp.storbinary('STOR ' + remote_file_path, fp, bufsize)
 	    self.ftp.set_debuglevel(0)
 	    fp.close()
 	
 	def ftp_quit(self):
 		self.ftp.quit()
-
+		
 class CopyTool(tkinter.Tk):
 	'''主窗口ui类
 	'''
@@ -166,7 +170,7 @@ class CopyTool(tkinter.Tk):
 		self.is_show_line_num = tkinter.IntVar() 		#为了方便定义的这个变量在类中其他的函数中使用，这里将变量变成类中的实例属性
 		self.is_show_line_num.set(1)
 		view_menu.add_checkbutton(label='显示行号', variable=self.is_show_line_num,
-								  command=self._update_line_num)
+								  command=self._update_line_num_)
 		self.is_highlight_line = tkinter.IntVar()		#这里也是和上面一样，因为后面要用到这个变量
 		view_menu.add_checkbutton(label='高亮当前行', onvalue=1, offvalue=0,
 									  variable=self.is_highlight_line, command=self._toggle_highlight)  #通过checkbutton来实现功能
@@ -213,7 +217,7 @@ class CopyTool(tkinter.Tk):
 		fg_color, bg_color = fg_bg.split('.')     #提取颜色
 		self.content_text.config(bg=bg_color, fg=fg_color)  #颜色设定
 
-	def _update_line_num(self):
+	def _update_line_num_(self):
 		if self.is_show_line_num.get():  #如果是选择了显示行号，进行下面的内容
 			row, col = self.content_text.index("end").split('.')  #主要是获取行数
 			line_num_content = "\n".join([str(i) for i in range(1, int(row))]) #获取文本行数据
@@ -225,6 +229,18 @@ class CopyTool(tkinter.Tk):
 			self.line_number_bar.config(state='normal')  #将文本栏状态激活
 			self.line_number_bar.delete('1.0', 'end')  #删除原有的行号数据，这样就没有行号数据了
 			self.line_number_bar.config(state='disabled') #再次封印行号栏
+		
+	def mourse_double_clicked(self, event):
+		'''选择文件，并将文件上传到指定的文件夹中
+		PS:首先要对文件夹进行清理
+		'''
+		
+		input_file = filedialog.askopenfilename(        #注意这里弹出的是文件保存对话框
+			filetypes = [('所有文件','*.*'),('文本文档','*.txt')]
+			)
+		if input_file:
+			self.input_content.insert(0, input_file)
+		pass		
 		
 	def _create_body_(self):
 		'''主体部分
@@ -238,6 +254,10 @@ class CopyTool(tkinter.Tk):
 		#fm_up.propagate(0)
 		self.input_content = tkinter.Entry(fm_up, width=30, font=ft)
 		self.input_content.pack(side=tkinter.LEFT, expand=True, fill=tkinter.X, padx=5, pady=5)
+		
+		#self.input_content.bind(sequence="<Button-1><ButtonRelease-1>", func=printentry)  #单击鼠标左键
+		self.input_content.bind(sequence="<Double-Button-1><ButtonRelease-1>", func=self.mourse_double_clicked)  #双击鼠标左键
+		
 		upload_btn = tkinter.Button(fm_up,text='send', width=10, height=1,\
                            command=lambda:self.upload_btn_cliecked(self.content_text), font=ft, compound='center') 
 		upload_btn.pack(side=tkinter.LEFT, pady=5)     
@@ -261,7 +281,7 @@ class CopyTool(tkinter.Tk):
 		self.content_text.bind('<Control-O>', self.open_file)
 		self.content_text.bind('<Control-o>', self.open_file)
 		self.content_text.bind('<Alt-F4>', self.exit_copy_tool)
-		self.content_text.bind('<Any-KeyPress>', lambda e: self._update_line_num())
+		self.content_text.bind('<Any-KeyPress>', lambda e: self._update_line_num_())
 		self.content_text.tag_configure('active_line', background='#EEEEE0')
 		self.bind_all('<KeyPress-F1>', lambda e: self.show_messagebox("帮助"))
 	
@@ -312,7 +332,7 @@ class CopyTool(tkinter.Tk):
 			elif type == "find_text":
 				self.find_text()
 			if type != "copy" and type != "save":
-				self._update_line_num()
+				self._update_line_num_()
 		return handle #最后返回的是就是handle对象
 
 	def handle_menu_action(self, action_type):
@@ -329,7 +349,7 @@ class CopyTool(tkinter.Tk):
 		elif action_type == "全选":
 			self.content_text.event_generate("<<SelectAll>>")
 		if action_type != "复制":
-			self._update_line_num()
+			self._update_line_num_()
 
 		return 'break'
 	
@@ -356,7 +376,7 @@ class CopyTool(tkinter.Tk):
 			self.content_text.delete(1.0, tkinter.END)  #删除当前文本内容中的数据
 			with open(input_file, 'r', encoding='utf-8') as _file:
 				self.content_text.insert(1.0,_file.read())  #将要打开文件中的数据写入到文本内容中
-			self._update_line_num()
+			self._update_line_num_()
 	
 	def save(self, event=None):
 		if not self.file_name:  #这里就体现出来之前设置的self.file_name全局变量的作用了
@@ -405,14 +425,15 @@ class CopyTool(tkinter.Tk):
 	    发送按钮点击事件
 	    '''
 	    content = display_content.get('0.0', 'end').strip()
-	    print('正在写入', self.my_ftp.local_file_path)
+	    file_path = local_dir_path + temp_file_name
+	    print('正在写入', file_path)
 	    try:
-	        with open(self.my_ftp.local_file_path, 'w', encoding='utf-8') as f:
+	        with open(file_path, 'w', encoding='utf-8') as f:
 	            f.write(content)
 	    except Exception as ex:
 	        print('打开文件失败, error=', ex)
 	        
-	    self.my_ftp.upload_file()
+	    self.my_ftp.upload_file(file_path, remote_dir_path+temp_file_name)
 	    # 提醒OK消息框
 	    win32api.MessageBox(0, "上传成功", "提醒", win32con.MB_OK)
 	    
@@ -422,13 +443,15 @@ class CopyTool(tkinter.Tk):
 	    
 	    :param display_content:Text组件
 	    '''
-	    self.my_ftp.download_file()
-	    
-	    print('正在读取', self.my_ftp.local_file_path)
+		
+	    file_path = local_dir_path + temp_file_name
+	    self.my_ftp.download_file(file_path, remote_dir_path+temp_file_name)
+	    file_path = local_dir_path + temp_file_name
+	    print('正在读取', file_path)
 	    content_list = []
 	    
 	    try:
-	        with open(self.my_ftp.local_file_path, 'r', encoding='utf-8') as f:
+	        with open(file_path, 'r', encoding='utf-8') as f:
 	            content_list = f.readlines() 
 	    except Exception as ex:
 	        print('打开文件失败, error=', ex)

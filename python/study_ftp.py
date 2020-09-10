@@ -7,88 +7,109 @@ Created on Tue Aug 11 13:32:40 2020
 https://www.cnblogs.com/z3286586/p/11014468.html
 """
 
-from ftplib import FTP
+import ftplib
 import os
 
-def ftp_connect(host, username, password):
-    """建立ftp连接
+#中转文件名称
+temp_file_name = "msg_between_extranet_and_intranet.txt"
+#云端指定中转站文件夹路径
+remote_dir_path = "VDI/hj/temp/"
+#本地临时文件夹路径
+local_dir_path = "D:/Downloads/"
 
-	Parameters
-    ----------
-    ftp : str
-        ip地址
-    username : str
-        合法的sql语句
-    password : 
+if not os.path.exists(local_dir_path):
+	   os.makedirs(local_dir_path)
 
-    Returns
-    -------
-    bool
-        成功返回True,失败False
+class MyFTP():
+	host_ip = "199.200.5.88"
+	user_name = "test"
+	password = "test"
+	
+	def __init__(self):     
+		self._ftp_connect_()
+		self._create_empty_dir_(remote_dir_path)
+	
+	def _create_empty_dir_(self, dir_path):
+		try:
+			self.ftp.rmd(remote_dir_path)
+		except ftplib.error_perm as err:
+			print(err)
+		try:
+			self.ftp.mkd(remote_dir_path)
+		except ftplib.error_perm as err:
+			print(err)
+			self.ftp.cwd(remote_dir_path)
+			files = self.ftp.nlst()
+			for file in files:
+				self.ftp.delete(file)
+	
+	def _ftp_connect_(self):
+	    """建立ftp连接
+		"""
+		
+	    self.ftp = ftplib.FTP()
+	    #ftp.set_debuglevel(2)
+	    self.ftp.connect(self.host_ip, 21)
+	    self.ftp.login(self.user_name, self.password)
+	    self.ftp.encoding = 'gbk'
+	    	
+	def download_file(self, local_file_path, remote_file_path):
+	    """从ftp下载文件
+		Parameters
+	    ----------
+	    local_path : str
+	        本地文件路径
+	    remote_path : str
+	        云端文件路径
 
-	"""
-    ftp = FTP()
-    # ftp.set_debuglevel(2)
-    ftp.connect(host, 21)
-    ftp.login(username, password)
-    return ftp
+	    Returns
+	    -------
+	    bool
+	        成功返回True,失败False
+		"""
+	    
+	    bufsize = 1024
+	    fp = open(local_file_path, 'wb')
+	    self.ftp.retrbinary('RETR ' + remote_file_path, fp.write, bufsize)
+	    self.ftp.set_debuglevel(0)
+	    fp.close()
+	
+	def upload_file(self, local_file_path, remote_file_path):
+	    """从本地上传文件到ftp
+		Parameters
+	    ----------
+	    local_path : str
+	        本地文件路径
+	    remote_path : str
+	        云端文件路径
+	
+	    Returns
+	    -------
+	    bool
+	        成功返回True,失败False
+		"""
 
-def download_file(ftp, remotepath, localpath):
-    """从ftp下载文件
-
-	Parameters
-    ----------
-    ftp : str
-        创建的表的名称
-    remotepath : str
-        合法的sql语句
-    localpath : 
-
-    Returns
-    -------
-    bool
-        成功返回True,失败False
-
-	"""
-    
-    bufsize = 1024
-    fp = open(localpath, 'wb')
-    ftp.retrbinary('RETR ' + remotepath, fp.write, bufsize)
-    ftp.set_debuglevel(0)
-    fp.close()
-
-def upload_file(ftp, remotepath, localpath):
-    """从本地上传文件到ftp
-
-	Parameters
-    ----------
-    ftp : str
-        创建的表的名称
-    remotepath : str
-        合法的sql语句
-    localpath : 
-
-    Returns
-    -------
-    bool
-        成功返回True,失败False
-
-	"""
-    bufsize = 1024
-    fp = open(localpath, 'rb')
-    ftp.storbinary('STOR ' + remotepath, fp, bufsize)
-    ftp.set_debuglevel(0)
-    fp.close()
-
+	    bufsize = 1024
+	    fp = open(local_file_path, 'rb')
+	    print(11111)
+	    self.ftp.storbinary('STOR ' + remote_file_path, fp, bufsize)
+	    print(2222)
+	    self.ftp.set_debuglevel(0)
+	    fp.close()
+	
+	def ftp_quit(self):
+		self.ftp.quit()
+		
 if __name__ == "__main__":
-    ftp = ftp_connect("199.200.5.88", "test", "test")
-    
-    download_file(ftp, "VDI/hj/1280x720_30fps_10s.mp4", "C:/Users/Administrator/Desktop/test.mp4")
-    #调用本地播放器播放下载的视频
-    os.system('start "C:\Program Files\Windows Media Player\wmplayer.exe" "C:/Users/Administrator/Desktop/test.mp4"')
-    upload_file(ftp, "C:/Users/Administrator/Desktop/test.mp4", "test.mp4")
+	ftp = MyFTP()
+	
+	remote_file_path = remote_dir_path + '山东大学.zip'
+	path = "D:/Users/Administrator/Desktop/山东大学.zip"
+	#path = path.encode("utf-8", 'ignore').decode("latin1")
+	#remote_file_path = remote_file_path.encode("utf-8", 'ignore').decode("latin1")
+	#ftp.upload_file(path, remote_file_path)
+	#ftp.download_file(local_dir_path, remote_dir_path)
 
-    ftp.quit()
 
-    print("这是一个弹出提示框")
-    #tkinter.messagebox.showinfo("提示","我是一个提示框")
+
+	ftp.ftp_quit()
