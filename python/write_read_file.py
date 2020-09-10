@@ -5,7 +5,7 @@ Created on Tue Sep  1 20:33:14 2020
 @author: Administrator
 """
 
-file_path = "./msg_between_extranet_and_intranet.txt"
+file_path = "D:/Github/Storage/python/神奇.txt"
 
 def read_file():
     print('正在读取', file_path)
