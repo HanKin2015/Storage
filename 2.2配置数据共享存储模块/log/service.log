@@ -1,0 +1,1680 @@
+Thu, 09 Jul 2020 00:13:29 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息1: 
+Thu, 09 Jul 2020 00:13:31 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息2: 
+Thu, 09 Jul 2020 00:13:33 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息3: 
+Thu, 09 Jul 2020 00:13:35 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息4: 
+Thu, 09 Jul 2020 00:13:37 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息5: 
+Thu, 09 Jul 2020 00:13:39 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息6: 
+Thu, 09 Jul 2020 00:13:41 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息7: 
+Thu, 09 Jul 2020 00:13:43 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息8: 
+Thu, 09 Jul 2020 00:13:45 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息9: 
+Thu, 09 Jul 2020 00:13:47 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息10: 
+Thu, 09 Jul 2020 00:13:49 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息11: 
+Thu, 09 Jul 2020 00:13:51 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息12: 
+Thu, 09 Jul 2020 00:13:53 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息13: 
+Thu, 09 Jul 2020 00:13:55 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息14: 
+Thu, 09 Jul 2020 00:13:57 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息15: 
+Thu, 09 Jul 2020 00:13:59 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息16: 
+Thu, 09 Jul 2020 00:14:01 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息17: 
+Thu, 09 Jul 2020 00:14:03 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息18: 
+Thu, 09 Jul 2020 00:14:05 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息19: 
+Thu, 09 Jul 2020 00:14:07 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息20: 
+Thu, 09 Jul 2020 00:14:09 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息21: 
+Thu, 09 Jul 2020 00:14:11 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息22: 
+Thu, 09 Jul 2020 00:14:13 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息23: 
+Thu, 09 Jul 2020 00:14:15 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息24: 
+Thu, 09 Jul 2020 00:14:17 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息25: 
+Thu, 09 Jul 2020 00:14:19 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息26: 
+Thu, 09 Jul 2020 00:14:21 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息27: 
+Thu, 09 Jul 2020 00:14:23 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息28: 
+Thu, 09 Jul 2020 00:14:25 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息29: 
+Thu, 09 Jul 2020 00:14:27 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息30: 
+Thu, 09 Jul 2020 00:14:29 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息31: 
+Thu, 09 Jul 2020 00:14:32 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息32: 
+Thu, 09 Jul 2020 00:14:34 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息33: 
+Thu, 09 Jul 2020 00:14:36 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息34: 
+Thu, 09 Jul 2020 00:14:38 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息35: 
+Thu, 09 Jul 2020 00:14:40 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息36: 
+Thu, 09 Jul 2020 00:14:42 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息37: 
+Thu, 09 Jul 2020 00:14:44 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息38: 
+Thu, 09 Jul 2020 00:14:46 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息39: 
+Thu, 09 Jul 2020 00:14:48 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息40: 
+Thu, 09 Jul 2020 00:14:50 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息41: 
+Thu, 09 Jul 2020 00:14:52 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息42: 
+Thu, 09 Jul 2020 00:14:54 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息43: 
+Thu, 09 Jul 2020 00:14:56 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息44: 
+Thu, 09 Jul 2020 00:14:58 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息45: 
+Thu, 09 Jul 2020 00:15:00 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息46: 
+Thu, 09 Jul 2020 00:15:02 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息47: 
+Thu, 09 Jul 2020 00:15:04 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息48: 
+Thu, 09 Jul 2020 00:15:06 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息49: 
+Thu, 09 Jul 2020 00:15:08 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息50: 
+Thu, 09 Jul 2020 00:15:10 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息51: 
+Thu, 09 Jul 2020 00:15:12 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息52: 
+Thu, 09 Jul 2020 00:15:14 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息53: 
+Thu, 09 Jul 2020 00:15:16 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息54: 
+Thu, 09 Jul 2020 00:15:18 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息55: 
+Thu, 09 Jul 2020 00:15:20 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息56: 
+Thu, 09 Jul 2020 00:15:22 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息57: 
+Thu, 09 Jul 2020 00:15:24 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息58: 
+Thu, 09 Jul 2020 00:15:26 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息59: 
+Thu, 09 Jul 2020 00:15:28 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息60: 
+Thu, 09 Jul 2020 00:15:30 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息61: 
+Thu, 09 Jul 2020 00:15:32 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息62: 
+Thu, 09 Jul 2020 00:15:34 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息63: 
+Thu, 09 Jul 2020 00:15:36 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息64: 
+Thu, 09 Jul 2020 00:15:38 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息65: 
+Thu, 09 Jul 2020 00:15:40 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息66: 
+Thu, 09 Jul 2020 00:15:42 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息67: 
+Thu, 09 Jul 2020 00:15:44 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息68: 
+Thu, 09 Jul 2020 00:15:46 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息69: 
+Thu, 09 Jul 2020 00:15:48 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息70: 
+Thu, 09 Jul 2020 00:15:50 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息71: 
+Thu, 09 Jul 2020 00:15:52 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息72: 
+Thu, 09 Jul 2020 00:15:54 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息73: 
+Thu, 09 Jul 2020 00:15:56 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息74: 
+Thu, 09 Jul 2020 00:15:58 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息75: 
+Thu, 09 Jul 2020 00:16:00 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息76: 
+Thu, 09 Jul 2020 00:16:02 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息77: 
+Thu, 09 Jul 2020 00:16:04 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息78: 
+Thu, 09 Jul 2020 00:16:06 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息79: 
+Thu, 09 Jul 2020 00:16:08 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息80: 
+Thu, 09 Jul 2020 00:16:10 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息81: 
+Thu, 09 Jul 2020 00:16:12 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息82: 
+Thu, 09 Jul 2020 00:16:14 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息83: 
+Thu, 09 Jul 2020 00:16:16 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息84: 
+Thu, 09 Jul 2020 00:16:18 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息85: 
+Thu, 09 Jul 2020 00:16:20 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息86: 
+Thu, 09 Jul 2020 00:16:22 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息87: 
+Thu, 09 Jul 2020 00:16:24 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息88: 
+Thu, 09 Jul 2020 00:16:26 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息89: 
+Thu, 09 Jul 2020 00:16:28 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息90: 
+Thu, 09 Jul 2020 00:16:30 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息91: 
+Thu, 09 Jul 2020 00:16:32 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息92: 
+Thu, 09 Jul 2020 00:16:34 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息93: 
+Thu, 09 Jul 2020 00:16:36 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息94: 
+Thu, 09 Jul 2020 00:16:38 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息95: 
+Thu, 09 Jul 2020 00:16:40 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息96: 
+Thu, 09 Jul 2020 00:16:42 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息97: 
+Thu, 09 Jul 2020 00:16:44 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息98: 
+Thu, 09 Jul 2020 00:16:46 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息99: 
+Thu, 09 Jul 2020 00:16:48 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息100: 
+Thu, 09 Jul 2020 00:16:50 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息101: 
+Thu, 09 Jul 2020 00:16:52 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息102: 
+Thu, 09 Jul 2020 00:16:54 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息103: 
+Thu, 09 Jul 2020 00:16:56 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息104: 
+Thu, 09 Jul 2020 00:16:58 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息105: 
+Thu, 09 Jul 2020 00:17:00 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息106: 
+Thu, 09 Jul 2020 00:17:02 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息107: 
+Thu, 09 Jul 2020 00:17:04 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息108: 
+Thu, 09 Jul 2020 00:17:06 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息109: 
+Thu, 09 Jul 2020 00:17:08 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息110: 
+Thu, 09 Jul 2020 00:17:10 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息111: 
+Thu, 09 Jul 2020 00:17:12 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息112: 
+Thu, 09 Jul 2020 00:17:14 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息113: 
+Thu, 09 Jul 2020 00:17:16 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息114: 
+Thu, 09 Jul 2020 00:17:18 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息115: 
+Thu, 09 Jul 2020 00:17:20 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息116: 
+Thu, 09 Jul 2020 00:17:22 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息117: 
+Thu, 09 Jul 2020 00:17:24 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息118: 
+Thu, 09 Jul 2020 00:17:26 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息119: 
+Thu, 09 Jul 2020 00:17:28 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息120: 
+Thu, 09 Jul 2020 00:17:30 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息121: 
+Thu, 09 Jul 2020 00:17:32 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息122: 
+Thu, 09 Jul 2020 00:17:34 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息123: 
+Thu, 09 Jul 2020 00:17:36 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息124: 
+Thu, 09 Jul 2020 00:17:38 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息125: 
+Thu, 09 Jul 2020 00:17:40 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息126: 
+Thu, 09 Jul 2020 00:17:42 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息127: 
+Thu, 09 Jul 2020 00:17:44 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息128: 
+Thu, 09 Jul 2020 00:17:46 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息129: 
+Thu, 09 Jul 2020 00:17:48 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息130: 
+Thu, 09 Jul 2020 00:17:50 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息131: 
+Thu, 09 Jul 2020 00:17:52 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息132: 
+Thu, 09 Jul 2020 00:17:54 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息133: 
+Thu, 09 Jul 2020 00:17:56 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息134: 
+Thu, 09 Jul 2020 00:17:58 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息135: 
+Thu, 09 Jul 2020 00:18:00 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息136: 
+Thu, 09 Jul 2020 00:18:02 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息137: 
+Thu, 09 Jul 2020 00:18:04 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息138: 
+Thu, 09 Jul 2020 00:18:06 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息139: 
+Thu, 09 Jul 2020 00:18:08 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息140: 
+Thu, 09 Jul 2020 00:18:10 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息141: 
+Thu, 09 Jul 2020 00:18:12 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息142: 
+Thu, 09 Jul 2020 00:18:14 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息143: 
+Thu, 09 Jul 2020 00:18:16 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息144: 
+Thu, 09 Jul 2020 00:18:18 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息145: 
+Thu, 09 Jul 2020 00:18:20 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息146: 
+Thu, 09 Jul 2020 00:18:22 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息147: 
+Thu, 09 Jul 2020 00:18:24 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息148: 
+Thu, 09 Jul 2020 00:18:26 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息149: 
+Thu, 09 Jul 2020 00:18:28 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息150: 
+Thu, 09 Jul 2020 00:18:30 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息151: 
+Thu, 09 Jul 2020 00:18:32 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息152: 
+Thu, 09 Jul 2020 00:18:34 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息153: 
+Thu, 09 Jul 2020 00:18:36 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息154: 
+Thu, 09 Jul 2020 00:18:38 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息155: 
+Thu, 09 Jul 2020 00:18:40 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息156: 
+Thu, 09 Jul 2020 00:18:42 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息157: 
+Thu, 09 Jul 2020 00:18:44 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息158: 
+Thu, 09 Jul 2020 00:18:46 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息159: 
+Thu, 09 Jul 2020 00:18:48 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息160: 
+Thu, 09 Jul 2020 00:18:50 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息161: 
+Thu, 09 Jul 2020 00:18:52 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息162: 
+Thu, 09 Jul 2020 00:18:54 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息163: 
+Thu, 09 Jul 2020 00:18:56 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息164: 
+Thu, 09 Jul 2020 00:18:58 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息165: 
+Thu, 09 Jul 2020 00:19:00 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息166: 
+Thu, 09 Jul 2020 00:19:02 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息167: 
+Thu, 09 Jul 2020 00:19:04 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息168: 
+Thu, 09 Jul 2020 00:19:06 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息169: 
+Thu, 09 Jul 2020 00:19:08 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息170: 
+Thu, 09 Jul 2020 00:19:10 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息171: 
+Thu, 09 Jul 2020 00:19:12 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息172: 
+Thu, 09 Jul 2020 00:19:14 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息173: 
+Thu, 09 Jul 2020 00:19:16 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息174: 
+Thu, 09 Jul 2020 00:19:18 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息175: 
+Thu, 09 Jul 2020 00:19:20 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息176: 
+Thu, 09 Jul 2020 00:19:22 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息177: 
+Thu, 09 Jul 2020 00:19:24 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息178: 
+Thu, 09 Jul 2020 00:19:26 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息179: 
+Thu, 09 Jul 2020 00:19:28 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息180: 
+Thu, 09 Jul 2020 00:19:30 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息181: 
+Thu, 09 Jul 2020 00:19:32 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息182: 
+Thu, 09 Jul 2020 00:19:34 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息183: 
+Thu, 09 Jul 2020 00:19:36 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息184: 
+Thu, 09 Jul 2020 00:19:38 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息185: 
+Thu, 09 Jul 2020 00:19:40 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息186: 
+Thu, 09 Jul 2020 00:19:42 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息187: 
+Thu, 09 Jul 2020 00:19:44 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息188: 
+Thu, 09 Jul 2020 00:19:46 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息189: 
+Thu, 09 Jul 2020 00:19:48 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息190: 
+Thu, 09 Jul 2020 00:19:50 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息191: 
+Thu, 09 Jul 2020 00:19:52 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息192: 
+Thu, 09 Jul 2020 00:19:54 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息193: 
+Thu, 09 Jul 2020 00:19:56 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息194: 
+Thu, 09 Jul 2020 00:19:58 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息195: 
+Thu, 09 Jul 2020 00:20:00 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息196: 
+Thu, 09 Jul 2020 00:20:02 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息197: 
+Thu, 09 Jul 2020 00:20:04 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息198: 
+Thu, 09 Jul 2020 00:20:06 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息199: 
+Thu, 09 Jul 2020 00:20:08 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息200: 
+Thu, 09 Jul 2020 00:20:10 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息201: 
+Thu, 09 Jul 2020 00:20:12 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息202: 
+Thu, 09 Jul 2020 00:20:14 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息203: 
+Thu, 09 Jul 2020 00:20:16 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息204: 
+Thu, 09 Jul 2020 00:20:18 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息205: 
+Thu, 09 Jul 2020 00:20:20 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息206: 
+Thu, 09 Jul 2020 00:20:22 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息207: 
+Thu, 09 Jul 2020 00:20:24 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息208: 
+Thu, 09 Jul 2020 00:20:26 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息209: 
+Thu, 09 Jul 2020 00:20:28 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息210: 
+Thu, 09 Jul 2020 00:20:30 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息211: 
+Thu, 09 Jul 2020 00:20:32 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息212: 
+Thu, 09 Jul 2020 00:20:34 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息213: 
+Thu, 09 Jul 2020 00:20:36 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息214: 
+Thu, 09 Jul 2020 00:20:38 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息215: 
+Thu, 09 Jul 2020 00:20:40 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息216: 
+Thu, 09 Jul 2020 00:20:42 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息217: 
+Thu, 09 Jul 2020 00:20:44 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息218: 
+Thu, 09 Jul 2020 00:20:46 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息219: 
+Thu, 09 Jul 2020 00:20:48 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息220: 
+Thu, 09 Jul 2020 00:20:50 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息221: 
+Thu, 09 Jul 2020 00:20:52 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息222: 
+Thu, 09 Jul 2020 00:20:54 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息223: 
+Thu, 09 Jul 2020 00:20:56 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息224: 
+Thu, 09 Jul 2020 00:20:58 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息225: 
+Thu, 09 Jul 2020 00:21:00 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息226: 
+Thu, 09 Jul 2020 00:21:02 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息227: 
+Thu, 09 Jul 2020 00:21:04 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息228: 
+Thu, 09 Jul 2020 00:21:06 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息229: 
+Thu, 09 Jul 2020 00:21:08 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息230: 
+Thu, 09 Jul 2020 00:21:10 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息231: 
+Thu, 09 Jul 2020 00:21:12 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息232: 
+Thu, 09 Jul 2020 00:21:14 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息233: 
+Thu, 09 Jul 2020 00:21:16 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息234: 
+Thu, 09 Jul 2020 00:21:18 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息235: 
+Thu, 09 Jul 2020 00:21:20 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息236: 
+Thu, 09 Jul 2020 00:21:22 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息237: 
+Thu, 09 Jul 2020 00:21:24 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息238: 
+Thu, 09 Jul 2020 00:21:26 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息239: 
+Thu, 09 Jul 2020 00:21:28 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息240: 
+Thu, 09 Jul 2020 00:21:30 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息241: 
+Thu, 09 Jul 2020 00:21:32 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息242: 
+Thu, 09 Jul 2020 00:21:34 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息243: 
+Thu, 09 Jul 2020 00:21:36 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息244: 
+Thu, 09 Jul 2020 00:21:38 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息245: 
+Thu, 09 Jul 2020 00:21:40 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息246: 
+Thu, 09 Jul 2020 00:21:42 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息247: 
+Thu, 09 Jul 2020 00:21:44 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息248: 
+Thu, 09 Jul 2020 00:21:46 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息249: 
+Thu, 09 Jul 2020 00:21:48 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息250: 
+Thu, 09 Jul 2020 00:21:50 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息251: 
+Thu, 09 Jul 2020 00:21:52 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息252: 
+Thu, 09 Jul 2020 00:21:54 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息253: 
+Thu, 09 Jul 2020 00:21:56 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息254: 
+Thu, 09 Jul 2020 00:21:58 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息255: 
+Thu, 09 Jul 2020 00:22:00 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息256: 
+Thu, 09 Jul 2020 00:22:02 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息257: 
+Thu, 09 Jul 2020 00:22:04 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息258: 
+Thu, 09 Jul 2020 00:22:06 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息259: 
+Thu, 09 Jul 2020 00:22:08 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息260: 
+Thu, 09 Jul 2020 00:22:10 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息261: 
+Thu, 09 Jul 2020 00:22:12 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息262: 
+Thu, 09 Jul 2020 00:22:14 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息263: 
+Thu, 09 Jul 2020 00:22:16 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息264: 
+Thu, 09 Jul 2020 00:22:18 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息265: 
+Thu, 09 Jul 2020 00:22:20 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息266: 
+Thu, 09 Jul 2020 00:22:22 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息267: 
+Thu, 09 Jul 2020 00:22:24 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息268: 
+Thu, 09 Jul 2020 00:22:26 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息269: 
+Thu, 09 Jul 2020 00:22:28 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息270: 
+Thu, 09 Jul 2020 00:22:30 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息271: 
+Thu, 09 Jul 2020 00:22:32 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息272: 
+Thu, 09 Jul 2020 00:22:34 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息273: 
+Thu, 09 Jul 2020 00:23:50 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息1: 12992,er
+Thu, 09 Jul 2020 00:23:53 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息2: 12992,dasda
+Thu, 09 Jul 2020 00:23:56 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息3: 12992,vbcvbgr
+Thu, 09 Jul 2020 00:23:58 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息4: 12992,asdasd
+Thu, 09 Jul 2020 00:24:01 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息5: 12992,close
+Thu, 09 Jul 2020 00:24:03 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息6: 
+Thu, 09 Jul 2020 00:24:05 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息7: 
+Thu, 09 Jul 2020 00:24:07 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息8: 
+Thu, 09 Jul 2020 00:24:09 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息9: 
+Thu, 09 Jul 2020 00:24:11 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息10: 
+Thu, 09 Jul 2020 00:24:13 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息11: 
+Thu, 09 Jul 2020 00:24:15 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息12: 
+Thu, 09 Jul 2020 00:24:17 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息13: 
+Thu, 09 Jul 2020 00:24:19 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息14: 
+Thu, 09 Jul 2020 00:24:21 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息15: 
+Thu, 09 Jul 2020 00:24:23 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息16: 
+Thu, 09 Jul 2020 00:24:25 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息17: 
+Thu, 09 Jul 2020 00:24:27 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息18: 
+Thu, 09 Jul 2020 00:24:29 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息19: 
+Thu, 09 Jul 2020 00:24:31 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息20: 
+Thu, 09 Jul 2020 00:24:33 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息21: 
+Thu, 09 Jul 2020 00:24:35 configure_data_share_storage_service.py[line:58] INFO 服务器收到消息22: 
+Thu, 09 Jul 2020 00:27:49 configure_data_share_storage_service.py[line:68] INFO 服务器收到消息1: fsdf
+Thu, 09 Jul 2020 00:27:51 configure_data_share_storage_service.py[line:68] INFO 服务器收到消息2: dsa
+Thu, 09 Jul 2020 00:27:53 configure_data_share_storage_service.py[line:68] INFO 服务器收到消息3: eqw
+Thu, 09 Jul 2020 00:27:55 configure_data_share_storage_service.py[line:68] INFO 服务器收到消息4: notify
+Thu, 09 Jul 2020 00:28:03 configure_data_share_storage_service.py[line:65] INFO 断开连接
+Thu, 09 Jul 2020 00:28:03 configure_data_share_storage_service.py[line:82] INFO 服务端关闭成功
+Thu, 09 Jul 2020 00:55:25 configure_data_share_storage_service.py[line:93] INFO 服务器收到消息1: dsad
+Thu, 09 Jul 2020 00:55:27 configure_data_share_storage_service.py[line:93] INFO 服务器收到消息2: jk
+Thu, 09 Jul 2020 00:55:37 configure_data_share_storage_service.py[line:100] ERROR 出现异常断开连接
+Thu, 09 Jul 2020 00:55:37 configure_data_share_storage_service.py[line:68] INFO 断开连接
+Thu, 09 Jul 2020 00:55:37 configure_data_share_storage_service.py[line:72] INFO 服务端关闭成功
+Thu, 09 Jul 2020 01:03:52 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程5708的消息: ds
+Thu, 09 Jul 2020 01:03:56 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程5708的消息: ggv
+Thu, 09 Jul 2020 01:04:00 configure_data_share_storage_service.py[line:101] ERROR 出现异常断开连接
+Thu, 09 Jul 2020 01:04:00 configure_data_share_storage_service.py[line:68] INFO 断开连接
+Thu, 09 Jul 2020 01:04:00 configure_data_share_storage_service.py[line:72] INFO 服务端关闭成功
+Thu, 09 Jul 2020 01:05:36 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程12152的消息: dsad
+Thu, 09 Jul 2020 01:05:46 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程12152的消息: jk
+Thu, 09 Jul 2020 01:05:49 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程12152的消息: oj
+Thu, 09 Jul 2020 01:06:50 configure_data_share_storage_service.py[line:69] INFO 断开连接
+Thu, 09 Jul 2020 01:06:50 configure_data_share_storage_service.py[line:73] INFO 服务端关闭成功
+Thu, 09 Jul 2020 01:07:01 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程5956的消息: dsa
+Thu, 09 Jul 2020 01:07:03 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程5956的消息: dsa
+Thu, 09 Jul 2020 01:09:40 configure_data_share_storage_service.py[line:69] INFO 断开连接
+Thu, 09 Jul 2020 01:09:40 configure_data_share_storage_service.py[line:73] INFO 服务端关闭成功
+Thu, 09 Jul 2020 01:10:16 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程17928的消息: vfgdg
+Thu, 09 Jul 2020 01:10:18 configure_data_share_storage_service.py[line:68] INFO 断开连接
+Thu, 09 Jul 2020 01:10:18 configure_data_share_storage_service.py[line:72] INFO 服务端关闭成功
+Thu, 09 Jul 2020 01:10:45 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程18844的消息: dsa
+Thu, 09 Jul 2020 01:10:47 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程18844的消息: qe
+Thu, 09 Jul 2020 01:10:49 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程18844的消息: das
+Thu, 09 Jul 2020 01:11:21 configure_data_share_storage_service.py[line:68] INFO 断开连接
+Thu, 09 Jul 2020 01:11:21 configure_data_share_storage_service.py[line:72] INFO 服务端关闭成功
+Thu, 09 Jul 2020 01:13:58 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程12536的消息: ds
+Thu, 09 Jul 2020 01:14:01 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程12536的消息: idoweqw
+Thu, 09 Jul 2020 01:14:04 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程12536的消息: sdasdjl
+Thu, 09 Jul 2020 01:15:01 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程12536的消息: dsd
+Thu, 09 Jul 2020 01:15:05 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程12536的消息: dsad
+Thu, 09 Jul 2020 01:15:07 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程12536的消息: xc
+Thu, 09 Jul 2020 01:15:47 configure_data_share_storage_service.py[line:68] INFO 断开连接
+Thu, 09 Jul 2020 01:15:47 configure_data_share_storage_service.py[line:72] INFO 服务端关闭成功
+Thu, 09 Jul 2020 01:15:58 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程5992的消息: ds
+Thu, 09 Jul 2020 01:16:00 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程5992的消息: asd
+Thu, 09 Jul 2020 01:26:09 configure_data_share_storage_service.py[line:68] INFO 断开连接
+Thu, 09 Jul 2020 01:26:09 configure_data_share_storage_service.py[line:72] INFO 服务端关闭成功
+Thu, 09 Jul 2020 01:26:24 configure_data_share_storage_service.py[line:92] INFO 服务器收到进程7464的消息: das
+Thu, 09 Jul 2020 01:26:26 configure_data_share_storage_service.py[line:92] INFO 服务器收到进程7464的消息: aw
+Thu, 09 Jul 2020 01:26:40 configure_data_share_storage_service.py[line:92] INFO 服务器收到进程7464的消息: olk
+Thu, 09 Jul 2020 01:26:42 configure_data_share_storage_service.py[line:92] INFO 服务器收到进程7464的消息: dsad
+Thu, 09 Jul 2020 01:26:58 configure_data_share_storage_service.py[line:84] INFO 断开连接
+Thu, 09 Jul 2020 01:27:00 configure_data_share_storage_service.py[line:76] INFO 断开连接
+Thu, 09 Jul 2020 01:27:10 configure_data_share_storage_service.py[line:92] INFO 服务器收到进程14580的消息: da
+Thu, 09 Jul 2020 01:27:12 configure_data_share_storage_service.py[line:92] INFO 服务器收到进程14580的消息: we
+Thu, 09 Jul 2020 01:27:27 configure_data_share_storage_service.py[line:84] INFO 断开连接
+Thu, 09 Jul 2020 01:27:29 configure_data_share_storage_service.py[line:76] INFO 断开连接
+Thu, 09 Jul 2020 01:32:49 configure_data_share_storage_service.py[line:92] INFO 服务器收到进程18636的消息: notify
+Thu, 09 Jul 2020 01:32:49 configure_data_share_storage_service.py[line:112] INFO 服务端关闭成功
+Thu, 09 Jul 2020 01:33:00 configure_data_share_storage_service.py[line:82] INFO 服务器收到进程8012的消息: dsadasd
+Thu, 09 Jul 2020 01:34:06 configure_data_share_storage_service.py[line:82] INFO 服务器收到进程17696的消息: dsa
+Thu, 09 Jul 2020 01:34:22 configure_data_share_storage_service.py[line:82] INFO 服务器收到进程14892的消息: notify
+Thu, 09 Jul 2020 01:34:22 configure_data_share_storage_service.py[line:98] INFO 服务端关闭成功
+Thu, 09 Jul 2020 01:34:31 configure_data_share_storage_service.py[line:82] INFO 服务器收到进程15912的消息: dsa
+Thu, 09 Jul 2020 01:34:46 configure_data_share_storage_service.py[line:82] INFO 服务器收到进程9148的消息: notify
+Thu, 09 Jul 2020 01:34:46 configure_data_share_storage_service.py[line:98] INFO 服务端关闭成功
+Thu, 09 Jul 2020 01:40:16 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程6528的消息: ds
+Thu, 09 Jul 2020 01:40:27 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程9976的消息: casd
+Thu, 09 Jul 2020 01:43:20 configure_data_share_storage_service.py[line:94] INFO 服务器收到进程13420的消息: notify
+Thu, 09 Jul 2020 01:43:20 configure_data_share_storage_service.py[line:110] INFO 服务端关闭成功
+Thu, 09 Jul 2020 01:43:34 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程18336的消息: dsad
+Thu, 09 Jul 2020 01:43:38 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程18336的消息: eqwe
+Thu, 09 Jul 2020 01:43:45 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程18336的消息: dksad
+Thu, 09 Jul 2020 01:43:47 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程18336的消息: erwer
+Thu, 09 Jul 2020 01:43:52 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程18336的消息: asdas
+Thu, 09 Jul 2020 01:44:01 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程992的消息: das
+Thu, 09 Jul 2020 01:44:03 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程992的消息: ewqe
+Thu, 09 Jul 2020 01:44:05 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程992的消息: sfsd
+Thu, 09 Jul 2020 01:44:07 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程992的消息: httyrt
+Thu, 09 Jul 2020 01:44:14 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程18336的消息: fdf
+Thu, 09 Jul 2020 01:44:16 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程18336的消息: sad
+Thu, 09 Jul 2020 01:44:18 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程18336的消息: da
+Thu, 09 Jul 2020 01:44:20 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程992的消息: dsa
+Thu, 09 Jul 2020 01:45:12 configure_data_share_storage_service.py[line:73] INFO 断开连接
+Thu, 09 Jul 2020 01:45:23 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程2896的消息: ds
+Thu, 09 Jul 2020 01:45:25 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程2896的消息: ad
+Thu, 09 Jul 2020 01:45:27 configure_data_share_storage_service.py[line:73] INFO 断开连接
+Thu, 09 Jul 2020 01:45:40 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程18336的消息: notify
+Thu, 09 Jul 2020 01:45:40 configure_data_share_storage_service.py[line:97] INFO 服务端关闭成功
+Thu, 09 Jul 2020 01:45:46 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程18336的消息: notify
+Thu, 09 Jul 2020 01:45:46 configure_data_share_storage_service.py[line:97] INFO 服务端关闭成功
+Thu, 09 Jul 2020 01:45:56 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程12904的消息: dsa
+Thu, 09 Jul 2020 01:46:01 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程12904的消息: czx
+Thu, 09 Jul 2020 01:53:18 configure_data_share_storage_service.py[line:73] INFO 断开连接
+Thu, 09 Jul 2020 01:59:28 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程14592的消息: xaasd
+Thu, 09 Jul 2020 01:59:29 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程14592的消息: das
+Thu, 09 Jul 2020 01:59:34 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程14592的消息: d
+Thu, 09 Jul 2020 01:59:35 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程14592的消息: ewq
+Thu, 09 Jul 2020 01:59:38 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程14592的消息: notify
+Thu, 09 Jul 2020 01:59:38 configure_data_share_storage_service.py[line:97] INFO 服务端关闭成功
+Thu, 09 Jul 2020 13:32:15 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程7900的消息: query
+Thu, 09 Jul 2020 13:32:23 configure_data_share_storage_service.py[line:73] INFO 断开连接
+Thu, 09 Jul 2020 13:32:36 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程10744的消息: query
+Thu, 09 Jul 2020 13:32:42 configure_data_share_storage_service.py[line:73] INFO 断开连接
+Thu, 09 Jul 2020 13:35:44 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程6780的消息: query
+Thu, 09 Jul 2020 13:35:47 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程6780的消息: query
+Thu, 09 Jul 2020 13:35:52 configure_data_share_storage_service.py[line:81] INFO 服务器收到进程6780的消息: closeserver
+Thu, 09 Jul 2020 13:35:52 configure_data_share_storage_service.py[line:97] INFO 服务端关闭成功
+Thu, 09 Jul 2020 13:37:34 configure_data_share_storage_service.py[line:77] INFO 服务器收到进程5092的消息: closeserver
+Thu, 09 Jul 2020 13:37:34 configure_data_share_storage_service.py[line:81] INFO 关闭后台服务消息
+Thu, 09 Jul 2020 13:37:34 configure_data_share_storage_service.py[line:94] INFO 服务端关闭成功
+Thu, 09 Jul 2020 13:38:05 configure_data_share_storage_service.py[line:77] INFO 服务器收到进程8892的消息: closeserver
+Thu, 09 Jul 2020 13:38:05 configure_data_share_storage_service.py[line:81] INFO 关闭后台服务消息
+Thu, 09 Jul 2020 13:38:05 configure_data_share_storage_service.py[line:94] INFO 服务端关闭成功
+Thu, 09 Jul 2020 13:38:20 configure_data_share_storage_service.py[line:77] INFO 服务器收到进程6780的消息: query
+Thu, 09 Jul 2020 13:38:21 configure_data_share_storage_service.py[line:77] INFO 服务器收到进程6780的消息: query
+Thu, 09 Jul 2020 13:39:30 configure_data_share_storage_service.py[line:77] INFO 服务器收到进程4880的消息: query
+Thu, 09 Jul 2020 13:39:35 configure_data_share_storage_service.py[line:77] INFO 服务器收到进程4880的消息: query
+Thu, 09 Jul 2020 13:39:40 configure_data_share_storage_service.py[line:77] INFO 服务器收到进程6780的消息: query
+Thu, 09 Jul 2020 13:39:44 configure_data_share_storage_service.py[line:77] INFO 服务器收到进程6780的消息: closeserver
+Thu, 09 Jul 2020 13:39:44 configure_data_share_storage_service.py[line:81] INFO 关闭后台服务消息
+Thu, 09 Jul 2020 13:39:44 configure_data_share_storage_service.py[line:94] INFO 服务端关闭成功
+Thu, 09 Jul 2020 13:51:30 configure_data_share_storage_service.py[line:77] INFO 服务器收到进程9308的消息: query
+Thu, 09 Jul 2020 13:53:26 configure_data_share_storage_service.py[line:77] INFO 服务器收到进程9308的消息: query
+Thu, 09 Jul 2020 13:53:34 configure_data_share_storage_service.py[line:77] INFO 服务器收到进程9308的消息: query
+Thu, 09 Jul 2020 13:53:45 configure_data_share_storage_service.py[line:77] INFO 服务器收到进程9308的消息: closeserver
+Thu, 09 Jul 2020 13:53:45 configure_data_share_storage_service.py[line:81] INFO 关闭后台服务消息
+Thu, 09 Jul 2020 13:53:45 configure_data_share_storage_service.py[line:94] INFO 服务端关闭成功
+Thu, 09 Jul 2020 13:53:55 configure_data_share_storage_service.py[line:77] INFO 服务器收到进程10560的消息: query
+Thu, 09 Jul 2020 14:09:46 configure_data_share_storage_service.py[line:77] INFO 服务器收到进程10560的消息: closeserver
+Thu, 09 Jul 2020 14:09:46 configure_data_share_storage_service.py[line:81] INFO 关闭后台服务消息
+Thu, 09 Jul 2020 14:09:46 configure_data_share_storage_service.py[line:94] INFO 服务端关闭成功
+Thu, 09 Jul 2020 21:53:01 configure_data_share_storage_service.py[line:83] INFO 服务器收到进程10744的消息: query
+Thu, 09 Jul 2020 21:53:02 configure_data_share_storage_service.py[line:83] INFO 服务器收到进程10744的消息: query
+Thu, 09 Jul 2020 21:53:03 configure_data_share_storage_service.py[line:83] INFO 服务器收到进程10744的消息: query
+Thu, 09 Jul 2020 21:53:08 configure_data_share_storage_service.py[line:83] INFO 服务器收到进程11284的消息: query
+Thu, 09 Jul 2020 21:53:09 configure_data_share_storage_service.py[line:83] INFO 服务器收到进程11284的消息: query
+Thu, 09 Jul 2020 21:53:15 configure_data_share_storage_service.py[line:83] INFO 服务器收到进程10744的消息: query
+Thu, 09 Jul 2020 21:53:16 configure_data_share_storage_service.py[line:83] INFO 服务器收到进程10744的消息: query
+Thu, 09 Jul 2020 21:53:18 configure_data_share_storage_service.py[line:83] INFO 服务器收到进程10744的消息: closeserver
+Thu, 09 Jul 2020 21:53:18 configure_data_share_storage_service.py[line:87] INFO 关闭后台服务消息
+Thu, 09 Jul 2020 21:53:18 configure_data_share_storage_service.py[line:100] INFO 服务端关闭成功
+Thu, 09 Jul 2020 23:31:54 configure_data_share_storage_service.py[line:83] INFO 服务器收到进程13484的消息: query
+Thu, 09 Jul 2020 23:33:08 configure_data_share_storage_service.py[line:83] INFO 服务器收到进程13484的消息: closeserver
+Thu, 09 Jul 2020 23:33:08 configure_data_share_storage_service.py[line:87] INFO 关闭后台服务消息
+Thu, 09 Jul 2020 23:33:08 configure_data_share_storage_service.py[line:100] INFO 服务端关闭成功
+Fri, 10 Jul 2020 01:27:33 configure_data_share_storage_service.py[line:88] INFO 服务器收到进程8780的消息: notify
+Fri, 10 Jul 2020 01:29:30 configure_data_share_storage_service.py[line:88] INFO 服务器收到进程8780的消息: closeserver
+Fri, 10 Jul 2020 01:29:30 configure_data_share_storage_service.py[line:92] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 01:29:30 configure_data_share_storage_service.py[line:107] INFO 服务端关闭成功
+Fri, 10 Jul 2020 01:29:38 configure_data_share_storage_service.py[line:89] INFO 服务器收到进程12856的消息: notify
+Fri, 10 Jul 2020 01:30:28 configure_data_share_storage_service.py[line:89] INFO 服务器收到进程8932的消息: closeserver
+Fri, 10 Jul 2020 01:30:35 configure_data_share_storage_service.py[line:93] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 01:30:35 configure_data_share_storage_service.py[line:108] INFO 服务端关闭成功
+Fri, 10 Jul 2020 01:30:43 configure_data_share_storage_service.py[line:89] INFO 服务器收到进程17700的消息: closeserver
+Fri, 10 Jul 2020 01:30:43 configure_data_share_storage_service.py[line:93] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 01:30:43 configure_data_share_storage_service.py[line:108] INFO 服务端关闭成功
+Fri, 10 Jul 2020 01:31:27 configure_data_share_storage_service.py[line:89] INFO 服务器收到进程224的消息: notify
+Fri, 10 Jul 2020 01:32:35 configure_data_share_storage_service.py[line:89] INFO 服务器收到进程224的消息: closeserver
+Fri, 10 Jul 2020 01:32:35 configure_data_share_storage_service.py[line:93] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 01:32:35 configure_data_share_storage_service.py[line:108] INFO 服务端关闭成功
+Fri, 10 Jul 2020 01:33:08 configure_data_share_storage_service.py[line:90] INFO 服务器收到进程6292的消息: notify
+Fri, 10 Jul 2020 01:37:22 configure_data_share_storage_service.py[line:90] INFO 服务器收到进程6292的消息: closeserver
+Fri, 10 Jul 2020 01:37:22 configure_data_share_storage_service.py[line:94] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 01:37:22 configure_data_share_storage_service.py[line:109] INFO 服务端关闭成功
+Fri, 10 Jul 2020 01:37:39 configure_data_share_storage_service.py[line:90] INFO 服务器收到进程16660的消息: notify
+Fri, 10 Jul 2020 01:37:39 configure_data_share_storage_service.py[line:51] ERROR 空的消息或者无端口
+Fri, 10 Jul 2020 01:37:48 configure_data_share_storage_service.py[line:90] INFO 服务器收到进程16660的消息: closeserver
+Fri, 10 Jul 2020 01:37:48 configure_data_share_storage_service.py[line:94] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 01:37:48 configure_data_share_storage_service.py[line:109] INFO 服务端关闭成功
+Fri, 10 Jul 2020 01:48:52 configure_data_share_storage_service.py[line:90] INFO 服务器收到进程12944的消息: notify
+Fri, 10 Jul 2020 01:48:52 configure_data_share_storage_service.py[line:100] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 01:48:52 configure_data_share_storage_service.py[line:101] INFO 断开连接
+Fri, 10 Jul 2020 01:48:52 configure_data_share_storage_service.py[line:109] INFO 服务端关闭成功
+Fri, 10 Jul 2020 01:49:29 configure_data_share_storage_service.py[line:90] INFO 服务器收到进程17656的消息: notify
+Fri, 10 Jul 2020 01:49:29 configure_data_share_storage_service.py[line:100] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 01:49:29 configure_data_share_storage_service.py[line:101] INFO 断开连接
+Fri, 10 Jul 2020 01:49:29 configure_data_share_storage_service.py[line:109] INFO 服务端关闭成功
+Fri, 10 Jul 2020 01:50:33 configure_data_share_storage_service.py[line:91] INFO 服务器收到进程17656的消息: notify
+Fri, 10 Jul 2020 01:50:33 configure_data_share_storage_service.py[line:51] ERROR 空的消息或者无端口
+Fri, 10 Jul 2020 01:50:41 configure_data_share_storage_service.py[line:91] INFO 服务器收到进程17656的消息: closeserver
+Fri, 10 Jul 2020 01:50:41 configure_data_share_storage_service.py[line:95] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 01:50:41 configure_data_share_storage_service.py[line:110] INFO 服务端关闭成功
+Fri, 10 Jul 2020 01:50:50 configure_data_share_storage_service.py[line:91] INFO 服务器收到进程16640的消息: notify
+Fri, 10 Jul 2020 01:50:50 configure_data_share_storage_service.py[line:65] INFO 发送消息 16640,notify 成功
+Fri, 10 Jul 2020 01:52:38 configure_data_share_storage_service.py[line:91] INFO 服务器收到进程16640的消息: closeserver
+Fri, 10 Jul 2020 01:52:38 configure_data_share_storage_service.py[line:95] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 01:52:38 configure_data_share_storage_service.py[line:110] INFO 服务端关闭成功
+Fri, 10 Jul 2020 01:52:49 configure_data_share_storage_service.py[line:91] INFO 服务器收到进程12972的消息: notify
+Fri, 10 Jul 2020 01:52:49 configure_data_share_storage_service.py[line:65] INFO 发送消息 12972,notify 成功
+Fri, 10 Jul 2020 01:52:58 configure_data_share_storage_service.py[line:91] INFO 服务器收到进程12972的消息: closeserver
+Fri, 10 Jul 2020 01:52:58 configure_data_share_storage_service.py[line:95] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 01:52:58 configure_data_share_storage_service.py[line:110] INFO 服务端关闭成功
+Fri, 10 Jul 2020 01:56:47 configure_data_share_storage_service.py[line:91] INFO 服务器收到进程2276的消息: notify
+Fri, 10 Jul 2020 01:56:47 configure_data_share_storage_service.py[line:65] INFO 发送消息 2276,notify 成功
+Fri, 10 Jul 2020 01:56:55 configure_data_share_storage_service.py[line:91] INFO 服务器收到进程12716的消息: notify
+Fri, 10 Jul 2020 01:56:55 configure_data_share_storage_service.py[line:65] INFO 发送消息 12716,notify 成功
+Fri, 10 Jul 2020 01:59:22 configure_data_share_storage_service.py[line:91] INFO 服务器收到进程2276的消息: closeserver
+Fri, 10 Jul 2020 01:59:22 configure_data_share_storage_service.py[line:95] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 01:59:22 configure_data_share_storage_service.py[line:110] INFO 服务端关闭成功
+Fri, 10 Jul 2020 01:59:46 configure_data_share_storage_service.py[line:93] INFO 服务器收到进程10812的消息: notify
+Fri, 10 Jul 2020 01:59:46 configure_data_share_storage_service.py[line:67] INFO 发送消息 10812,notify 成功
+Fri, 10 Jul 2020 02:00:51 configure_data_share_storage_service.py[line:93] INFO 服务器收到进程10812的消息: closeserver
+Fri, 10 Jul 2020 02:00:51 configure_data_share_storage_service.py[line:97] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 02:00:51 configure_data_share_storage_service.py[line:112] INFO 服务端关闭成功
+Fri, 10 Jul 2020 02:01:09 configure_data_share_storage_service.py[line:93] INFO 服务器收到进程8332的消息: notify
+Fri, 10 Jul 2020 02:01:09 configure_data_share_storage_service.py[line:67] INFO 发送消息 8332,notify 成功
+Fri, 10 Jul 2020 02:01:37 configure_data_share_storage_service.py[line:93] INFO 服务器收到进程5104的消息: notify
+Fri, 10 Jul 2020 02:01:37 configure_data_share_storage_service.py[line:67] INFO 发送消息 5104,notify 成功
+Fri, 10 Jul 2020 13:33:28 configure_data_share_storage_service.py[line:141] INFO 服务器收到进程12972的消息: closeserver
+Fri, 10 Jul 2020 13:33:28 configure_data_share_storage_service.py[line:145] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 13:33:28 configure_data_share_storage_service.py[line:160] INFO 服务端关闭成功
+Fri, 10 Jul 2020 13:34:06 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 13:34:06 sqlite3_operation_library.py[line:185] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 13:34:06 sqlite3_operation_library.py[line:158] INFO if not exists create table - employees
+Fri, 10 Jul 2020 13:34:06 sqlite3_operation_library.py[line:169] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 13:34:06 sqlite3_operation_library.py[line:178] INFO create all tables sucess.
+Fri, 10 Jul 2020 13:34:33 configure_data_share_storage_service.py[line:152] INFO 服务器收到进程13356的消息: PAxE5LNNcXFotqSkX7JiKjDEYBQdKg97dFA788g7VMRrnQ1/4b7hyK1gzWt7F7Gx1c2H36re3nhGlNzqDVzEomDIs504NsPTJlcwhG7LUXMl4nJKlhHsDRGADMpP0xg8IpdFRri/v8XlPS5mUAkww2zr2Ch7Z+mx86++h92I+HI=
+Fri, 10 Jul 2020 13:37:50 configure_data_share_storage_service.py[line:152] INFO 服务器收到进程13356的消息: closeserver
+Fri, 10 Jul 2020 13:37:50 configure_data_share_storage_service.py[line:156] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 13:37:50 sqlite3_operation_library.py[line:197] INFO close databases sucess.
+Fri, 10 Jul 2020 13:37:50 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 13:37:50 configure_data_share_storage_service.py[line:176] INFO 服务端关闭成功
+Fri, 10 Jul 2020 13:37:58 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 13:37:58 sqlite3_operation_library.py[line:185] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 13:37:58 sqlite3_operation_library.py[line:158] INFO if not exists create table - employees
+Fri, 10 Jul 2020 13:37:58 sqlite3_operation_library.py[line:169] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 13:37:58 sqlite3_operation_library.py[line:178] INFO create all tables sucess.
+Fri, 10 Jul 2020 13:38:18 configure_data_share_storage_service.py[line:152] INFO 服务器收到进程8396的消息: fd45GvhMAgxPWarWVSLxLKBBvkk1nCqApZtUgy6dEqkSNIMgHZk33nQOrdNtwowcqXYSEEbaV4+xKybfMdX98VWN9nFD5zrXpN278psvMJOrOoIAt8BD/rTUoDQjkTQBfmePRVl/XyBQMzRiD3123XDYwY9ON7L0OvV9bDl4i0o=
+Fri, 10 Jul 2020 13:38:18 configure_data_share_storage_service.py[line:163] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 13:38:18 configure_data_share_storage_service.py[line:164] INFO 断开连接
+Fri, 10 Jul 2020 13:38:18 sqlite3_operation_library.py[line:197] INFO close databases sucess.
+Fri, 10 Jul 2020 13:38:18 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 13:38:18 configure_data_share_storage_service.py[line:177] INFO 服务端关闭成功
+Fri, 10 Jul 2020 14:08:43 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 14:08:43 sqlite3_operation_library.py[line:185] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 14:08:43 sqlite3_operation_library.py[line:158] INFO if not exists create table - employees
+Fri, 10 Jul 2020 14:08:43 sqlite3_operation_library.py[line:169] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 14:08:43 sqlite3_operation_library.py[line:178] INFO create all tables sucess.
+Fri, 10 Jul 2020 14:08:46 configure_data_share_storage_service.py[line:152] INFO 服务器收到进程8396的消息: jwnuLCUGsZqd0v6rxaAdI2l9WMRiBFDjp6PY/CgiNihM0zlLqP0s0IE4KsTcw5EWyCal2GCOEeWguYKSRAvwiQDDPyrx8ogJgAp+UxFLC6HswbILk3APiZX3kFJ49TqLkmFSRXkXilW6oCtK/iv5l6M/5Oc45+wwqYad+pYxtvU=
+Fri, 10 Jul 2020 14:08:46 configure_data_share_storage_service.py[line:163] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 14:08:46 configure_data_share_storage_service.py[line:164] INFO 断开连接
+Fri, 10 Jul 2020 14:08:46 sqlite3_operation_library.py[line:197] INFO close databases sucess.
+Fri, 10 Jul 2020 14:08:46 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 14:08:46 configure_data_share_storage_service.py[line:177] INFO 服务端关闭成功
+Fri, 10 Jul 2020 14:09:40 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 14:09:40 sqlite3_operation_library.py[line:185] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 14:09:40 sqlite3_operation_library.py[line:158] INFO if not exists create table - employees
+Fri, 10 Jul 2020 14:09:40 sqlite3_operation_library.py[line:169] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 14:09:40 sqlite3_operation_library.py[line:178] INFO create all tables sucess.
+Fri, 10 Jul 2020 14:11:13 configure_data_share_storage_service.py[line:152] INFO 服务器收到进程9648的消息: fsANGIUg1yFcy9SPYZRDKb4Zw2WQAevbyslh9+WNumBFotP8Ubt01n0GWIId5qXz6TIcqkBBVRYZ
+KuvtazvawRBXDKw6To0WlT+zyjuBS8jo+bcxqVGCdE6zUH9NOygwm0D4LZWaNeQHLkyK4+TUABQv
+ypzJYb7KbvyuuWhWLXc=
+
+Fri, 10 Jul 2020 14:11:14 configure_data_share_storage_service.py[line:163] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 14:11:14 configure_data_share_storage_service.py[line:164] INFO 断开连接
+Fri, 10 Jul 2020 14:11:14 sqlite3_operation_library.py[line:197] INFO close databases sucess.
+Fri, 10 Jul 2020 14:11:14 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 14:11:14 configure_data_share_storage_service.py[line:177] INFO 服务端关闭成功
+Fri, 10 Jul 2020 14:14:28 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 14:14:28 sqlite3_operation_library.py[line:185] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 14:14:28 sqlite3_operation_library.py[line:158] INFO if not exists create table - employees
+Fri, 10 Jul 2020 14:14:28 sqlite3_operation_library.py[line:169] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 14:14:28 sqlite3_operation_library.py[line:178] INFO create all tables sucess.
+Fri, 10 Jul 2020 14:14:45 configure_data_share_storage_service.py[line:151] INFO 服务器收到进程14220的消息: t3KTkyodVrlLxBjw4mlU/noU+Bxu0j5nQyFuXF9g8zomoUx4bGd/9XduHj1odSzBeJcf2OjpZBQV
++IGhqJ5KgxfPqJCuFmWAud8vkDeO2jT6T4KJIdfOQ1lBohHswUiYXUgn3azXRKR8powcw/45V7ru
+OTxkLXaNWcm2OuavS6A=
+
+Fri, 10 Jul 2020 14:14:52 configure_data_share_storage_service.py[line:151] INFO 服务器收到进程14220的消息: notify
+Fri, 10 Jul 2020 14:14:52 configure_data_share_storage_service.py[line:162] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 14:14:52 configure_data_share_storage_service.py[line:163] INFO 断开连接
+Fri, 10 Jul 2020 14:14:52 sqlite3_operation_library.py[line:197] INFO close databases sucess.
+Fri, 10 Jul 2020 14:14:52 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 14:14:52 configure_data_share_storage_service.py[line:176] INFO 服务端关闭成功
+Fri, 10 Jul 2020 14:59:57 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 14:59:57 sqlite3_operation_library.py[line:185] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 14:59:57 sqlite3_operation_library.py[line:158] INFO if not exists create table - employees
+Fri, 10 Jul 2020 14:59:57 sqlite3_operation_library.py[line:169] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 14:59:57 sqlite3_operation_library.py[line:178] INFO create all tables sucess.
+Fri, 10 Jul 2020 15:00:25 configure_data_share_storage_service.py[line:152] INFO 服务器收到进程11828的消息: Xuo3Dgeh4zSyQfb0o3F4nB5IW9ape9r/+UV3jVbvoIVSHeA8UX33k+oDVowIHxltjzFnyKhUm7/t
+pG4GLXQESd78DhZOtzdfZE2+ffV4Gm6PW7k3hJ8J/9lWjmMTQQJZtSh/CaNyqoEqI4E7HGHvPtXP
+/OP1yO3QeMO9nR35kfs=
+
+Fri, 10 Jul 2020 15:00:25 sqlite3_operation_library.py[line:148] INFO query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\'hj\'", "salary": 4321}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+Fri, 10 Jul 2020 15:00:35 configure_data_share_storage_service.py[line:152] INFO 服务器收到进程11828的消息: notify
+Fri, 10 Jul 2020 15:00:35 configure_data_share_storage_service.py[line:98] INFO 发送消息 11828,notify 成功
+Fri, 10 Jul 2020 15:00:42 configure_data_share_storage_service.py[line:152] INFO 服务器收到进程11828的消息: closeserver
+Fri, 10 Jul 2020 15:00:42 configure_data_share_storage_service.py[line:156] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 15:00:42 sqlite3_operation_library.py[line:197] INFO close databases sucess.
+Fri, 10 Jul 2020 15:00:42 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 15:00:42 configure_data_share_storage_service.py[line:178] INFO 服务端关闭成功
+Fri, 10 Jul 2020 15:03:20 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 15:03:20 sqlite3_operation_library.py[line:185] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 15:03:20 sqlite3_operation_library.py[line:158] INFO if not exists create table - employees
+Fri, 10 Jul 2020 15:03:20 sqlite3_operation_library.py[line:169] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 15:03:20 sqlite3_operation_library.py[line:178] INFO create all tables sucess.
+Fri, 10 Jul 2020 15:16:08 configure_data_share_storage_service.py[line:152] INFO 服务器收到进程12932的消息: notify
+Fri, 10 Jul 2020 15:16:22 configure_data_share_storage_service.py[line:152] INFO 服务器收到进程12932的消息: notify
+Fri, 10 Jul 2020 15:16:24 configure_data_share_storage_service.py[line:152] INFO 服务器收到进程12932的消息: notify
+Fri, 10 Jul 2020 15:17:01 configure_data_share_storage_service.py[line:152] INFO 服务器收到进程13968的消息: closeserver
+Fri, 10 Jul 2020 15:17:01 configure_data_share_storage_service.py[line:156] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 15:17:01 sqlite3_operation_library.py[line:197] INFO close databases sucess.
+Fri, 10 Jul 2020 15:17:01 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 15:17:01 configure_data_share_storage_service.py[line:178] INFO 服务端关闭成功
+Fri, 10 Jul 2020 17:27:52 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 17:27:52 sqlite3_operation_library.py[line:185] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 17:27:52 sqlite3_operation_library.py[line:158] INFO if not exists create table - employees
+Fri, 10 Jul 2020 17:27:52 sqlite3_operation_library.py[line:169] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 17:27:52 sqlite3_operation_library.py[line:178] INFO create all tables sucess.
+Fri, 10 Jul 2020 17:29:58 configure_data_share_storage_service.py[line:152] INFO 服务器收到进程12496的消息: notify
+Fri, 10 Jul 2020 17:29:58 configure_data_share_storage_service.py[line:98] INFO 发送消息 12496,notify 成功
+Fri, 10 Jul 2020 18:04:04 configure_data_share_storage_service.py[line:152] INFO 服务器收到进程12496的消息: notify
+Fri, 10 Jul 2020 18:04:04 configure_data_share_storage_service.py[line:98] INFO 发送消息 12496,notify 成功
+Fri, 10 Jul 2020 18:32:09 configure_data_share_storage_service.py[line:152] INFO 服务器收到进程12496的消息: closeserver
+Fri, 10 Jul 2020 18:32:09 configure_data_share_storage_service.py[line:156] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 18:32:09 sqlite3_operation_library.py[line:197] INFO close databases sucess.
+Fri, 10 Jul 2020 18:32:09 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 18:32:09 configure_data_share_storage_service.py[line:178] INFO 服务端关闭成功
+Fri, 10 Jul 2020 18:32:22 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 18:32:22 sqlite3_operation_library.py[line:185] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 18:32:22 sqlite3_operation_library.py[line:158] INFO if not exists create table - employees
+Fri, 10 Jul 2020 18:32:22 sqlite3_operation_library.py[line:169] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 18:32:22 sqlite3_operation_library.py[line:178] INFO create all tables sucess.
+Fri, 10 Jul 2020 18:33:05 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程9400的消息: closeserver
+Fri, 10 Jul 2020 18:33:05 configure_data_share_storage_service.py[line:157] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 18:33:05 sqlite3_operation_library.py[line:197] INFO close databases sucess.
+Fri, 10 Jul 2020 18:33:05 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 18:33:05 configure_data_share_storage_service.py[line:179] INFO 服务端关闭成功
+Fri, 10 Jul 2020 18:34:04 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 18:34:04 sqlite3_operation_library.py[line:185] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 18:34:04 sqlite3_operation_library.py[line:158] INFO if not exists create table - employees
+Fri, 10 Jul 2020 18:34:04 sqlite3_operation_library.py[line:169] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 18:34:04 sqlite3_operation_library.py[line:178] INFO create all tables sucess.
+Fri, 10 Jul 2020 18:34:16 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程11148的消息: closeserver
+Fri, 10 Jul 2020 18:34:16 configure_data_share_storage_service.py[line:157] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 18:34:16 sqlite3_operation_library.py[line:197] INFO close databases sucess.
+Fri, 10 Jul 2020 18:34:16 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 18:34:31 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 18:34:31 sqlite3_operation_library.py[line:185] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 18:34:31 sqlite3_operation_library.py[line:158] INFO if not exists create table - employees
+Fri, 10 Jul 2020 18:34:31 sqlite3_operation_library.py[line:169] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 18:34:31 sqlite3_operation_library.py[line:178] INFO create all tables sucess.
+Fri, 10 Jul 2020 18:34:34 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程11148的消息: closeserver
+Fri, 10 Jul 2020 18:34:34 configure_data_share_storage_service.py[line:157] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 18:34:34 sqlite3_operation_library.py[line:197] INFO close databases sucess.
+Fri, 10 Jul 2020 18:34:34 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 18:34:35 configure_data_share_storage_service.py[line:180] INFO 服务端关闭成功
+Fri, 10 Jul 2020 18:34:40 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 18:34:40 sqlite3_operation_library.py[line:185] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 18:34:40 sqlite3_operation_library.py[line:158] INFO if not exists create table - employees
+Fri, 10 Jul 2020 18:34:40 sqlite3_operation_library.py[line:169] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 18:34:40 sqlite3_operation_library.py[line:178] INFO create all tables sucess.
+Fri, 10 Jul 2020 18:34:54 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程8892的消息: notify
+Fri, 10 Jul 2020 18:34:54 configure_data_share_storage_service.py[line:99] INFO 发送消息 8892,notify 成功
+Fri, 10 Jul 2020 18:34:54 configure_data_share_storage_service.py[line:99] INFO 发送消息 8892,8892,notify 成功
+Fri, 10 Jul 2020 18:36:23 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程12804的消息: closeserver
+Fri, 10 Jul 2020 18:36:23 configure_data_share_storage_service.py[line:157] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 18:36:23 sqlite3_operation_library.py[line:197] INFO close databases sucess.
+Fri, 10 Jul 2020 18:36:23 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 18:36:24 configure_data_share_storage_service.py[line:180] INFO 服务端关闭成功
+Fri, 10 Jul 2020 18:36:55 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 18:36:55 sqlite3_operation_library.py[line:185] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 18:36:55 sqlite3_operation_library.py[line:158] INFO if not exists create table - employees
+Fri, 10 Jul 2020 18:36:55 sqlite3_operation_library.py[line:169] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 18:36:55 sqlite3_operation_library.py[line:178] INFO create all tables sucess.
+Fri, 10 Jul 2020 18:37:12 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程13492的消息: notify
+Fri, 10 Jul 2020 18:37:12 configure_data_share_storage_service.py[line:99] INFO 发送消息 13492,notify 成功
+Fri, 10 Jul 2020 18:37:12 configure_data_share_storage_service.py[line:99] INFO 发送消息 13492,notify 成功
+Fri, 10 Jul 2020 18:41:19 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程14304的消息: closeserver
+Fri, 10 Jul 2020 18:41:19 configure_data_share_storage_service.py[line:157] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 18:41:19 sqlite3_operation_library.py[line:197] INFO close databases sucess.
+Fri, 10 Jul 2020 18:41:19 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 18:41:19 configure_data_share_storage_service.py[line:180] INFO 服务端关闭成功
+Fri, 10 Jul 2020 18:44:36 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 18:44:36 sqlite3_operation_library.py[line:185] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 18:44:36 sqlite3_operation_library.py[line:158] INFO if not exists create table - employees
+Fri, 10 Jul 2020 18:44:36 sqlite3_operation_library.py[line:169] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 18:44:36 sqlite3_operation_library.py[line:178] INFO create all tables sucess.
+Fri, 10 Jul 2020 18:44:53 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程7272的消息: notify
+Fri, 10 Jul 2020 18:44:54 configure_data_share_storage_service.py[line:99] INFO 发送消息 7272,notify 成功
+Fri, 10 Jul 2020 18:45:10 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程13916的消息: notify
+Fri, 10 Jul 2020 18:45:11 configure_data_share_storage_service.py[line:99] INFO 发送消息 13916,notify 成功
+Fri, 10 Jul 2020 18:45:27 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程11044的消息: notify
+Fri, 10 Jul 2020 18:45:27 configure_data_share_storage_service.py[line:99] INFO 发送消息 11044,notify 成功
+Fri, 10 Jul 2020 18:45:28 configure_data_share_storage_service.py[line:99] INFO 发送消息 11044,notify 成功
+Fri, 10 Jul 2020 18:45:42 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程7272的消息: notify
+Fri, 10 Jul 2020 18:45:42 configure_data_share_storage_service.py[line:99] INFO 发送消息 7272,notify 成功
+Fri, 10 Jul 2020 18:45:43 configure_data_share_storage_service.py[line:99] INFO 发送消息 7272,notify 成功
+Fri, 10 Jul 2020 18:45:54 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程12480的消息: notify
+Fri, 10 Jul 2020 18:45:54 configure_data_share_storage_service.py[line:99] INFO 发送消息 12480,notify 成功
+Fri, 10 Jul 2020 18:45:54 configure_data_share_storage_service.py[line:99] INFO 发送消息 12480,notify 成功
+Fri, 10 Jul 2020 18:46:12 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程12480的消息: notify
+Fri, 10 Jul 2020 18:46:12 configure_data_share_storage_service.py[line:99] INFO 发送消息 12480,notify 成功
+Fri, 10 Jul 2020 18:46:17 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程12480的消息: closeserver
+Fri, 10 Jul 2020 18:46:17 configure_data_share_storage_service.py[line:157] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 18:46:17 sqlite3_operation_library.py[line:197] INFO close databases sucess.
+Fri, 10 Jul 2020 18:46:17 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 18:46:18 configure_data_share_storage_service.py[line:180] INFO 服务端关闭成功
+Fri, 10 Jul 2020 18:47:27 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 18:47:27 sqlite3_operation_library.py[line:185] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 18:47:27 sqlite3_operation_library.py[line:158] INFO if not exists create table - employees
+Fri, 10 Jul 2020 18:47:27 sqlite3_operation_library.py[line:169] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 18:47:27 sqlite3_operation_library.py[line:178] INFO create all tables sucess.
+Fri, 10 Jul 2020 18:48:29 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程13844的消息: zDmYRr4vpVPYkvtf/LYM8DYeCkxRS0zzCrBBoMlyCLo0SpGze++kwQij/Q9abSpz7rPasjTfWM1K
+QqQNNdL083LtnwlwLV9flrjc6lrR59du2h1ECHmqSGPiGkbUzwrVdIZkln5O8AhmLeqMqI/TnlI9
+8CXRqYVMvWiVpVWvg1A=
+
+Fri, 10 Jul 2020 18:48:29 sqlite3_operation_library.py[line:148] INFO query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\'hj\'", "salary": 4321}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+Fri, 10 Jul 2020 18:49:09 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程13844的消息: yrW1bFI791uM9JVor13E0Im81yWJhSSgUzOj3NUCGV/bzhz5oP7OjQwkodfIKCEvwfCmOu12xG0Q
+I1ZXSXjTWphB7PnPNIv0bxCrlU3qhvtqnyXnJPvAp5mCOHEdMDekPJHQo2ny07PmVMx+nDiJlAAa
+l5I9YxP8dOOqqjqXLn0=
+
+Fri, 10 Jul 2020 18:49:09 sqlite3_operation_library.py[line:104] INFO insert configure data into 'employees' success.
+Fri, 10 Jul 2020 18:49:30 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程13484的消息: K4WdhFXi+/O5XLZ/rOveoAOG81SqVSS5v8HbBcPVdHD7ScgvIr//4r4c8DAuhj0EkHjnyyhZTWic
+JWEjA453PPzTqydLgL/BcISqVOGbLeuapGLcwBAianPPZmbOMNVMMVNG9cD4SK3Z8UB9f12COjBt
+qTvNImmrUoB0GBwD0DA=
+
+Fri, 10 Jul 2020 18:49:30 sqlite3_operation_library.py[line:148] INFO query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\'hj\'", "salary": 4321}', '{"jobNumber": 25200, "firstName": "\'hejian\'", "salary": 20000}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+Fri, 10 Jul 2020 18:50:52 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程13844的消息: VG9NhYA/cRbSs+pL+jfB8Ee+9VGx89+1L/rqp9PiIj/HiYiuJMREoX6HmwEhW1PZAS11CdZfhioy
+EnhzjQpjwmxoYcWLvFncnRLcSqjiwkwupnWjdolJfOupdO3y/7hDsphI1ccxmoupJsaDATyHnapl
+VPJDV2rAtPP5wEDXyO4=
+
+Fri, 10 Jul 2020 18:50:52 sqlite3_operation_library.py[line:117] INFO detele jobNumber(25200) from 'employees' table success
+Fri, 10 Jul 2020 18:50:57 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程13484的消息: ihn9eA2+Kz5dk3bn4ON61gB/UnTSoTBNv3vHlaCaaDFRbh+ySFZFrSXUp9GJXF3pfMEbA2QAjWOT
+PloFNbVmjs/6ANymBSKjGUslOc3hdYw3tVuTBAYLPxRnH1ty/eanAt9uLcNndF4Hqnk1EsELqW2t
+9Fn9vW01pZOB9yR3cyA=
+
+Fri, 10 Jul 2020 18:50:57 sqlite3_operation_library.py[line:148] INFO query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\'hj\'", "salary": 4321}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+Fri, 10 Jul 2020 18:51:29 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程13844的消息: URvpkYpc2jW20oFeXkLROHWw/A8ZA5pu07JTuagnvVpiqQ7tBCaU1HEuhT5YQXR5nAoQG5RBiX3N
+834L7hMt0rhF6Z+jIYLvxwbHF578jb3lxSMKBQdF4ZTmOaJp5svYjnHYxECMJPXV0OQ7Dd9tSa5s
+xjQi2BNr9v9iKES0OPo=
+
+Fri, 10 Jul 2020 18:51:29 configure_data_share_storage_service.py[line:165] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 18:51:29 configure_data_share_storage_service.py[line:166] INFO 断开连接
+Fri, 10 Jul 2020 18:51:29 sqlite3_operation_library.py[line:197] INFO close databases sucess.
+Fri, 10 Jul 2020 18:51:29 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 18:51:30 configure_data_share_storage_service.py[line:180] INFO 服务端关闭成功
+Fri, 10 Jul 2020 18:53:20 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 18:53:20 sqlite3_operation_library.py[line:185] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 18:53:20 sqlite3_operation_library.py[line:158] INFO if not exists create table - employees
+Fri, 10 Jul 2020 18:53:20 sqlite3_operation_library.py[line:169] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 18:53:20 sqlite3_operation_library.py[line:178] INFO create all tables sucess.
+Fri, 10 Jul 2020 18:53:43 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程13844的消息: uWIkzY3pVXcqec89W/hxRSBjGAD/lQ0HqyKL0+UcpzNPKxXs/3y786HKZ836g+QLCvvwYe6IaFzq
+KJJ8Afj/g41GUCZ5A/wm0KmyU1VtflAr/iyqt8Yc7u7xeSeY2ksVIZ96k9Z+ijH169yP7Nm3kUul
+RCFVSvD7fyyIHYxz0IY=
+
+Fri, 10 Jul 2020 18:53:43 sqlite3_operation_library.py[line:104] INFO insert configure data into 'employees' success.
+Fri, 10 Jul 2020 18:53:49 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程13484的消息: Yth0ht//BRtDM4titvlSf4Ed7l9wvin8y51u5lWvQTHREoe1UVVkVS2wgKe0juPR4tUGgTZdp1NU
+856AkH7o7ZdcdAHh8Bx+d0s0NdjWA4oc75U2OrBoV6jQblyN7lkwx8DjoMhIFC6DcCtDwNEIols3
+XN0XJPSk8FAcmotrIUA=
+
+Fri, 10 Jul 2020 18:53:49 sqlite3_operation_library.py[line:148] INFO query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\\"hejian\\"", "salary": 20000}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+Fri, 10 Jul 2020 18:55:12 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程13844的消息: jmxJJjd0SV9tVgdTdJIbWDveeWzvL7L97KzDCLs/yFD8lndJS8R2Sc0+l0sWgUFWZo1eea90Uc5m
+4rMWd3hxhZQkn4xM3ADBMz1S8eFJkTkViqcBBq8R2gMPUQfbQOtuL+HXolJ2imP1ipkEkQVKoqxa
+sZzdB0Zn3ZABrxovrF0=
+
+Fri, 10 Jul 2020 18:55:12 configure_data_share_storage_service.py[line:165] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 18:55:12 configure_data_share_storage_service.py[line:166] INFO 断开连接
+Fri, 10 Jul 2020 18:55:12 sqlite3_operation_library.py[line:197] INFO close databases sucess.
+Fri, 10 Jul 2020 18:55:12 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 18:55:13 configure_data_share_storage_service.py[line:180] INFO 服务端关闭成功
+Fri, 10 Jul 2020 18:55:15 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 18:55:15 sqlite3_operation_library.py[line:185] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 18:55:15 sqlite3_operation_library.py[line:158] INFO if not exists create table - employees
+Fri, 10 Jul 2020 18:55:15 sqlite3_operation_library.py[line:169] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 18:55:15 sqlite3_operation_library.py[line:178] INFO create all tables sucess.
+Fri, 10 Jul 2020 18:55:23 configure_data_share_storage_service.py[line:154] INFO 服务器收到进程13844的消息: GlB7X3iNsnk8kYVYVYANyoCafpRZqzVfTyLU2nJtEgEg1dGquTCQ0SNzYg1grRnfAkw6fGK7iR0k
+XWG9tRBtlrkIBy2Ga+Z5hfLnNzikcGyEZk2Zoy6CRHxuQnZQoHeb/i3g1wAAifsH44Pb/yTxFYA4
+uBLQH+MQdkoNT5JvNgc=
+
+Fri, 10 Jul 2020 18:55:23 sqlite3_operation_library.py[line:104] INFO insert configure data into 'employees' success.
+Fri, 10 Jul 2020 18:59:02 configure_data_share_storage_service.py[line:154] INFO 服务器收到进程13844的消息: UjIIfA5JnqRjTBvo5LO4P0dCi+6JNz+E9YVjgXiGDhSAfdsIQcLlaB8nXYt+NgcIIx92DWo+jnjc
+7wykki4h7othz4sZUtpOo55/xhywwBeiXjzsLT1ngYbFMPgYNTobvQAsu3O7bL12n7WqYZzNUVUC
+YwiZXLy//yTSA8ddvsQ=
+
+Fri, 10 Jul 2020 18:59:02 configure_data_share_storage_service.py[line:166] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 18:59:02 configure_data_share_storage_service.py[line:167] INFO 断开连接
+Fri, 10 Jul 2020 18:59:02 sqlite3_operation_library.py[line:197] INFO close databases sucess.
+Fri, 10 Jul 2020 18:59:02 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 18:59:04 configure_data_share_storage_service.py[line:181] INFO 服务端关闭成功
+Fri, 10 Jul 2020 18:59:06 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 18:59:06 sqlite3_operation_library.py[line:185] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 18:59:06 sqlite3_operation_library.py[line:158] INFO if not exists create table - employees
+Fri, 10 Jul 2020 18:59:06 sqlite3_operation_library.py[line:169] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 18:59:06 sqlite3_operation_library.py[line:178] INFO create all tables sucess.
+Fri, 10 Jul 2020 18:59:12 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13844的消息: Uh5ST4x/Qme9/3NCHukV8YMMgTeSThbYw5v1pyCx6fYNpOltlbSv4yn99Bi5mJoxuanKBeVnp9Y2
+1B4jhLJ0tpnKSZ3iHmRz0Q+O7jgzyIaeuH25p8rsl4wzExbvgmNV0leqsR9Cr3nLG8jCFlThYyw4
+t6AtAV3pNgZQ9L1rGaA=
+
+Fri, 10 Jul 2020 18:59:12 sqlite3_operation_library.py[line:104] INFO insert configure data into 'employees' success.
+Fri, 10 Jul 2020 19:04:10 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13844的消息: nAMSj7RCq0MRIbVQxUv+eCJCZ0J3dblgKdjdkDnRbM7PR+krnjQuc82atlCtg7Vks3vubK8/IEUK
+N/2Z5A7O1TJQnYaGsDLry4anpkWsh4Y/1B2tXsBuvWocIbtcO14iidCVs58H/r9JsUbUGfajW2qK
+OmZdBOxc2FVG2asern4=
+
+Fri, 10 Jul 2020 19:04:10 configure_data_share_storage_service.py[line:169] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 19:04:10 configure_data_share_storage_service.py[line:170] INFO 断开连接
+Fri, 10 Jul 2020 19:04:10 sqlite3_operation_library.py[line:197] INFO close databases sucess.
+Fri, 10 Jul 2020 19:04:10 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 19:04:11 configure_data_share_storage_service.py[line:184] INFO 服务端关闭成功
+Fri, 10 Jul 2020 19:04:14 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 19:04:14 sqlite3_operation_library.py[line:185] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 19:04:14 sqlite3_operation_library.py[line:158] INFO if not exists create table - employees
+Fri, 10 Jul 2020 19:04:14 sqlite3_operation_library.py[line:169] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 19:04:14 sqlite3_operation_library.py[line:178] INFO create all tables sucess.
+Fri, 10 Jul 2020 19:04:24 configure_data_share_storage_service.py[line:153] INFO 服务器收到进程13844的消息: o1sRsN4XWgyZws0RWMGdlpimwmGDEqWKkb9hAQsRGGNCcCwq+185I6Wbj8PH2eQ3tvPuqIB7S7TI
+q+YoXNUlclbP0KzLJughryHotODn7NB5FsgrBMHZb5fJNEjg5rU7LXubvR1/b26mB9ViiZTX/20A
+26X5DEk72C0xTf3EHHo=
+
+Fri, 10 Jul 2020 19:04:24 configure_data_share_storage_service.py[line:165] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 19:04:24 configure_data_share_storage_service.py[line:166] INFO 断开连接
+Fri, 10 Jul 2020 19:04:24 sqlite3_operation_library.py[line:197] INFO close databases sucess.
+Fri, 10 Jul 2020 19:04:24 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 19:04:25 configure_data_share_storage_service.py[line:180] INFO 服务端关闭成功
+Fri, 10 Jul 2020 19:11:31 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 19:11:31 sqlite3_operation_library.py[line:185] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 19:11:31 sqlite3_operation_library.py[line:158] INFO if not exists create table - employees
+Fri, 10 Jul 2020 19:11:31 sqlite3_operation_library.py[line:169] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 19:11:31 sqlite3_operation_library.py[line:178] INFO create all tables sucess.
+Fri, 10 Jul 2020 19:11:36 configure_data_share_storage_service.py[line:155] INFO 服务器收到进程13844的消息: xjh0vFLHVDDIKjJ/aCwrjDb5nmO8LN0Tb2H0amb2faRBO6sl9YWwqyflBAPOGf0FR9DxWsSkLbp+
+mRlnw8M1/TZ6VIgK3cRkurXQexmz20ivicqkDtzSpYFonnWysSzUMhKwRZA+dNh1CJLyN7AJiwWJ
+z4CyU78vC+qk5tngq+o=
+
+Fri, 10 Jul 2020 19:11:36 sqlite3_operation_library.py[line:104] INFO insert configure data into employees success.
+Fri, 10 Jul 2020 19:11:43 configure_data_share_storage_service.py[line:155] INFO 服务器收到进程13484的消息: D3Xv7W7vTj/EUs5WyXOpEqRhVumHudkOBmdkMGN/SWuRgtpIsVhaC0TV69a1kCoiunyhrm2Zfw0h
+QFUvPwn5azbgdPBW0ekmrtQ4Kvdq1SAPrzgiOzGmWyfqyOWFPepZ9+D1cwMEFu2/NkziSr8Ia4zl
+218ulE3VXGadVMJSgKI=
+
+Fri, 10 Jul 2020 19:11:43 sqlite3_operation_library.py[line:148] INFO query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\\"hejian\\"", "salary": 20000}', '{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+Fri, 10 Jul 2020 19:12:49 configure_data_share_storage_service.py[line:155] INFO 服务器收到进程13844的消息: WCDAWEY3BiLtLXsltlKk3/38GQUZ06QOdeokVm8DvLjcHbi5yyCcqY7QkYXOokmlg1SbO08Bz2U8
+xIJyDMQQi7jK/0ncvxesNuMXjVv+9lO1joVN5GtUKJQ9ws3cKUm2WuQbXNl+gDv9jn1ASkbB7U06
+ZejdbaLbGBO6RL1YegI=
+
+Fri, 10 Jul 2020 19:12:49 configure_data_share_storage_service.py[line:167] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 19:12:49 configure_data_share_storage_service.py[line:168] INFO 断开连接
+Fri, 10 Jul 2020 19:12:49 sqlite3_operation_library.py[line:197] INFO close databases sucess.
+Fri, 10 Jul 2020 19:12:49 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 19:12:50 configure_data_share_storage_service.py[line:182] INFO 服务端关闭成功
+Fri, 10 Jul 2020 19:15:02 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 19:15:02 sqlite3_operation_library.py[line:187] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 19:15:02 sqlite3_operation_library.py[line:160] INFO if not exists create table - employees
+Fri, 10 Jul 2020 19:15:02 sqlite3_operation_library.py[line:171] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 19:15:02 sqlite3_operation_library.py[line:180] INFO create all tables sucess.
+Fri, 10 Jul 2020 19:15:15 configure_data_share_storage_service.py[line:156] INFO 服务器收到进程13484的消息: g5H+Tmuy2YKOd+pXm76yB3RKz0Pi+J7xtv0whBWys0DZC+pDbBnztsHcDtRcGDA4Zmj06uafm1fg
+gmpyW3jJI44n4xzL3cD7BjF3Vg6puCsyTt0z0uhH7FmjDxeXdzr2wMCfVRSBfyF2XKqWk7vmBmBf
+MQ/GALMVoqq8EvDhPAg=
+
+Fri, 10 Jul 2020 19:15:15 sqlite3_operation_library.py[line:150] INFO query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\\"hejian\\"", "salary": 20000}', '{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+Fri, 10 Jul 2020 19:15:25 configure_data_share_storage_service.py[line:156] INFO 服务器收到进程13844的消息: OtClkgME6SwzLwrTd1cXctXU7+eWg8mX1yLLXjk7s5Fo2z6n6cxlfRpmjgSSATb7ME4sNca+Qe9d
+cq271A3l9TH9UZm+qTDTMzPEYS/yuq/fosa8nKr8vo1shYw38n0WEi9VA4f9LeAnwCz9L3mKGxc9
+GgXloTn55IwpbYAdhPs=
+
+Fri, 10 Jul 2020 19:15:25 configure_data_share_storage_service.py[line:168] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 19:15:25 configure_data_share_storage_service.py[line:169] INFO 断开连接
+Fri, 10 Jul 2020 19:15:25 sqlite3_operation_library.py[line:199] INFO close databases sucess.
+Fri, 10 Jul 2020 19:15:25 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 19:15:26 configure_data_share_storage_service.py[line:183] INFO 服务端关闭成功
+Fri, 10 Jul 2020 19:15:58 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 19:15:58 sqlite3_operation_library.py[line:188] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 19:15:58 sqlite3_operation_library.py[line:161] INFO if not exists create table - employees
+Fri, 10 Jul 2020 19:15:58 sqlite3_operation_library.py[line:172] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 19:15:58 sqlite3_operation_library.py[line:181] INFO create all tables sucess.
+Fri, 10 Jul 2020 19:16:03 configure_data_share_storage_service.py[line:156] INFO 服务器收到进程13844的消息: kTI74Wa1a52pE1CRIblcxXmGJXtyXuxUn6+GOr4inJeV3fz2X2BADeNHfyNkIVsGrcpe2ILL53M/
+DWKHbJmEnVDYoy+5Z5UltSguJF5RobY0EISqiRyYwDMGnxGGLEQaFbMTTyarC9WpIbMbThI2irSn
+92Y3V3sUordkw7GFh1g=
+
+Fri, 10 Jul 2020 19:16:04 configure_data_share_storage_service.py[line:168] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 19:16:04 configure_data_share_storage_service.py[line:169] INFO 断开连接
+Fri, 10 Jul 2020 19:16:04 sqlite3_operation_library.py[line:200] INFO close databases sucess.
+Fri, 10 Jul 2020 19:16:04 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 19:16:04 configure_data_share_storage_service.py[line:183] INFO 服务端关闭成功
+Fri, 10 Jul 2020 19:19:30 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 19:19:30 sqlite3_operation_library.py[line:188] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 19:19:30 sqlite3_operation_library.py[line:161] INFO if not exists create table - employees
+Fri, 10 Jul 2020 19:19:30 sqlite3_operation_library.py[line:172] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 19:19:30 sqlite3_operation_library.py[line:181] INFO create all tables sucess.
+Fri, 10 Jul 2020 19:19:35 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13844的消息: v4gLzW0YNhvLgQhkvAYXn+lxRH1erAqX24rIv2uHK4UEgEGl33zjSIrJtiSUyVX95YDRYLBfNXVN
+RlhbSA87l2SxAbiwXg826lhMpzUhsvdcLBOlOwc/vyLj+Lwb4MSC26qn64TY43A7pFf7j4m6+CxC
++VqQFTpNmOXLKGbCmUU=
+
+Fri, 10 Jul 2020 19:19:35 configure_data_share_storage_service.py[line:170] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 19:19:35 configure_data_share_storage_service.py[line:171] INFO 断开连接
+Fri, 10 Jul 2020 19:19:35 sqlite3_operation_library.py[line:200] INFO close databases sucess.
+Fri, 10 Jul 2020 19:19:36 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 19:19:36 configure_data_share_storage_service.py[line:185] INFO 服务端关闭成功
+Fri, 10 Jul 2020 19:20:38 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 19:20:38 sqlite3_operation_library.py[line:188] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 19:20:38 sqlite3_operation_library.py[line:161] INFO if not exists create table - employees
+Fri, 10 Jul 2020 19:20:38 sqlite3_operation_library.py[line:172] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 19:20:38 sqlite3_operation_library.py[line:181] INFO create all tables sucess.
+Fri, 10 Jul 2020 19:20:45 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13844的消息: IEzBwbyyQe7Amg4WAXgiwtSWL9DvkUNctlXulzrkTeRvr94hegRdkT/ZKttx5jjkrgn2Y0lhnpmb
+gGnUg4Eqi9Fz3zGitA76VIwbXOpIX2ty8jGOLJF9rJcX6Dvg3pTKIRaLI5EU5HGliFqQqOcuNtc2
+6Hmfc6Mf9SfeWXXNkWM=
+
+Fri, 10 Jul 2020 19:20:45 configure_data_share_storage_service.py[line:170] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 19:20:45 configure_data_share_storage_service.py[line:171] INFO 断开连接
+Fri, 10 Jul 2020 19:20:45 sqlite3_operation_library.py[line:200] INFO close databases sucess.
+Fri, 10 Jul 2020 19:20:45 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 19:20:45 configure_data_share_storage_service.py[line:185] INFO 服务端关闭成功
+Fri, 10 Jul 2020 19:22:54 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 19:22:54 sqlite3_operation_library.py[line:188] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 19:22:54 sqlite3_operation_library.py[line:161] INFO if not exists create table - employees
+Fri, 10 Jul 2020 19:22:54 sqlite3_operation_library.py[line:172] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 19:22:54 sqlite3_operation_library.py[line:181] INFO create all tables sucess.
+Fri, 10 Jul 2020 19:22:55 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13844的消息: Sa3UmNCBRF5c3Ky/pFFL+KCqS3o+4/GNqj9FIVPIpysDOw9u5XxoZU8Qy9wtlgI/XQfb4oXTbIBz
+Hhji6IrcE8dlezTQnBNLLIlom1fWRY4Qe+Lx1QVyTXRJSnf5g48LW9tlMthfjv3T7zBeXBABb8s3
+3fLb1/KGyT5++maMZcA=
+
+Fri, 10 Jul 2020 19:22:56 sqlite3_operation_library.py[line:123] INFO change data
+Fri, 10 Jul 2020 19:22:56 sqlite3_operation_library.py[line:133] INFO update employees table success.
+Fri, 10 Jul 2020 19:23:04 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: nh/75mvbneLtyrufPlglZILw7Vuk0ojiChbDZ2q1QZJlM7YiKQbgNbWvrrwNDKpSzxIJQPGV4PF4
+q3G5SuHD3I2BvQhssLFJaoO/ysvo2YY3F4xCIHm4hzpcUhLhEu65yABqr73hF/w8w8CarhZbp1s3
+y3zfCRAcfTR0jXlIo5g=
+
+Fri, 10 Jul 2020 19:23:04 sqlite3_operation_library.py[line:151] INFO query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\\"hejian\\"", "salary": 20000}', '{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+Fri, 10 Jul 2020 19:24:01 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13844的消息: u6UHox5dotscWaORTZ7JqUpSbqCjnrOHCgkIY4NrDvILbGMxe8591/hq6GRmqRuQcoS2hQg/cdqp
+oZnD2feL57IQAz1GfCCQCnTNwzBmp5V6shZ70PcKyMVrZgaJt7uYKunokdhyMNPimtlJR43BnsgN
+vvjgX6qV/sCtN6C8S4I=
+
+Fri, 10 Jul 2020 19:24:01 sqlite3_operation_library.py[line:123] INFO change data
+Fri, 10 Jul 2020 19:24:01 sqlite3_operation_library.py[line:133] INFO update employees table success.
+Fri, 10 Jul 2020 19:24:05 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: basTzgDAgdgFGG76CxQYQKGvWQ+HbFQDQ8hYm21y14aitnGwjYldm2qnaMK5gXCkyhywVlG8g5UL
+KvFn4qMRadrn06ykRRS0/mzXPHMmo/DrY01vok0qdza3ko9AXiSnuRJvBWTbP0P8b9iPW6xNi58+
+KVn/3GbyKGCtDYtKUjQ=
+
+Fri, 10 Jul 2020 19:24:05 sqlite3_operation_library.py[line:143] ERROR query  table failed.
+Fri, 10 Jul 2020 19:24:09 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: YF6v+7aqlpNDce5NH+yvaaD3dGXr5n3VMMFV30Zx4kzvgiUPTQ8KvcLLUYeoMCreB9aD88b2UEwZ
+zkXTQVAoga7RJwrEbf+H2U3QwGixAhrYA6QPWyMUzWcByYznm8mYHTTRUl75UDaNfch4ocRc3/Es
+0V1RspxoF+pk6J0B9jQ=
+
+Fri, 10 Jul 2020 19:24:09 sqlite3_operation_library.py[line:151] INFO query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\\"hejian\\"", "salary": 123456}', '{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+Fri, 10 Jul 2020 19:27:50 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: p9YuE3g0fqzO14LgX5CMtwiBwl3DbN9AL7lKakfLTBvZD+EUSTQ1rdba2LhWDmI9AQJc55ENFyEg
+N82vRzW3IfSQQiYqBvSHKjM4mBqnfScgQQG/YJgRULPryqIgCN2LgUlnNiq78mrFV1O7/6XGhk98
+nI+/YFCHLpz3ekK1Qws=
+
+Fri, 10 Jul 2020 19:27:50 sqlite3_operation_library.py[line:151] INFO query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\\"hejian\\"", "salary": 123456}', '{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+Fri, 10 Jul 2020 19:28:09 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: closeserver
+Fri, 10 Jul 2020 19:28:09 configure_data_share_storage_service.py[line:161] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 19:28:09 sqlite3_operation_library.py[line:200] INFO close databases sucess.
+Fri, 10 Jul 2020 19:28:09 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 19:28:10 configure_data_share_storage_service.py[line:185] INFO 服务端关闭成功
+Fri, 10 Jul 2020 19:28:13 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 19:28:13 sqlite3_operation_library.py[line:188] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 19:28:13 sqlite3_operation_library.py[line:161] INFO if not exists create table - employees
+Fri, 10 Jul 2020 19:28:13 sqlite3_operation_library.py[line:172] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 19:28:13 sqlite3_operation_library.py[line:181] INFO create all tables sucess.
+Fri, 10 Jul 2020 19:28:18 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: S1SXIp2UZZR+p6P8ZjHNJDedAE+QBGkLt4P4W1CEw1X5g7tohiWRKsWQTaxb6zaLFpHQPBmnWgoU
+GMM5VuOU3U1IC/Th4fetQzpX2GJljbyhr97XcJYtFngPjK+ffbif6abhR4NNx1Jd5qCgjj3sDqYu
+12f5qmo9vWo+nhfL9oI=
+
+Fri, 10 Jul 2020 19:28:18 sqlite3_operation_library.py[line:151] INFO query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\\"hejian\\"", "salary": 123456}\n', '{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}\n', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}\n', '{"jobNumber": 100001, "firstName": "George", "salary": 250}\n', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}\n', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}\n']
+Fri, 10 Jul 2020 19:29:15 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: X4FzhNymfB+OGw5nqvSixJkB5pzFthZ4mvJMysRu0T6Ei9iI9C3tALOze0xxx/MOyn7eFY3TVXYx
+AxXuavo+dNyR2enssE6t/y15LjO305ILHbv6k412x5n2FTKJ3LBJ8rayqIL2jbX+fWztfgE0MhEI
+HhkS1BKvsTl4M5hFQX8=
+
+Fri, 10 Jul 2020 19:29:15 sqlite3_operation_library.py[line:151] INFO query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\\"hejian\\"", "salary": 123456}\n', '{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}\n', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}\n', '{"jobNumber": 100001, "firstName": "George", "salary": 250}\n', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}\n', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}\n']
+Fri, 10 Jul 2020 19:29:18 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: closeserver
+Fri, 10 Jul 2020 19:29:18 configure_data_share_storage_service.py[line:161] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 19:29:18 sqlite3_operation_library.py[line:200] INFO close databases sucess.
+Fri, 10 Jul 2020 19:29:18 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 19:29:19 configure_data_share_storage_service.py[line:185] INFO 服务端关闭成功
+Fri, 10 Jul 2020 19:29:21 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 19:29:21 sqlite3_operation_library.py[line:189] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 19:29:21 sqlite3_operation_library.py[line:162] INFO if not exists create table - employees
+Fri, 10 Jul 2020 19:29:21 sqlite3_operation_library.py[line:173] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 19:29:21 sqlite3_operation_library.py[line:182] INFO create all tables sucess.
+Fri, 10 Jul 2020 19:29:23 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: closeserver
+Fri, 10 Jul 2020 19:29:23 configure_data_share_storage_service.py[line:161] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 19:29:23 sqlite3_operation_library.py[line:201] INFO close databases sucess.
+Fri, 10 Jul 2020 19:29:23 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 19:29:24 configure_data_share_storage_service.py[line:185] INFO 服务端关闭成功
+Fri, 10 Jul 2020 19:29:26 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 19:29:26 sqlite3_operation_library.py[line:189] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 19:29:26 sqlite3_operation_library.py[line:162] INFO if not exists create table - employees
+Fri, 10 Jul 2020 19:29:26 sqlite3_operation_library.py[line:173] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 19:29:26 sqlite3_operation_library.py[line:182] INFO create all tables sucess.
+Fri, 10 Jul 2020 19:29:28 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: RWMqDxDjDOaOHOYIW3c0Vkhzl9wk1POEgaU+qFHUy3JQX+pTPqS7bKc4b2Ti1yqKoZBRkhIVk+45
+ZWayunvLRgFVpJ9Fpmuwid5fflZYg5sWLm7hIO4D6m/s2HE3mGBisRVNKWNb8mR+F+vWT5yce+qS
++qfJQGIAsMZ5h92LOG8=
+
+Fri, 10 Jul 2020 19:29:28 sqlite3_operation_library.py[line:152] INFO query configure data result: 
+ {"jobNumber": 22200, "firstName": "\"hejian\"", "salary": 123456}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+Fri, 10 Jul 2020 19:31:46 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: closeserver
+Fri, 10 Jul 2020 19:31:46 configure_data_share_storage_service.py[line:161] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 19:31:46 sqlite3_operation_library.py[line:201] INFO close databases sucess.
+Fri, 10 Jul 2020 19:31:46 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 19:31:46 configure_data_share_storage_service.py[line:185] INFO 服务端关闭成功
+Fri, 10 Jul 2020 19:31:50 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 19:31:50 sqlite3_operation_library.py[line:189] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 19:31:50 sqlite3_operation_library.py[line:162] INFO if not exists create table - employees
+Fri, 10 Jul 2020 19:31:50 sqlite3_operation_library.py[line:173] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 19:31:50 sqlite3_operation_library.py[line:182] INFO create all tables sucess.
+Fri, 10 Jul 2020 19:31:52 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: h552bu83U4h0vMSIPaOh3R01yiPx/jLOykuSVi0fpys87kdJ2PBpsawakuC/TKmctc1bSVT46RBR
+QrHDYRM05ZEKhrJzBUtNiYZY0T3g1OUwyVuoCggByZZuJeAM8hizS0upmu1wH+zpkFjBE5JVn0TK
+Fs6AA1exkBJl5P3nF7g=
+
+Fri, 10 Jul 2020 19:31:52 configure_data_share_storage_service.py[line:170] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 19:31:52 configure_data_share_storage_service.py[line:171] INFO 断开连接
+Fri, 10 Jul 2020 19:31:52 sqlite3_operation_library.py[line:201] INFO close databases sucess.
+Fri, 10 Jul 2020 19:31:52 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 19:31:53 configure_data_share_storage_service.py[line:185] INFO 服务端关闭成功
+Fri, 10 Jul 2020 19:32:42 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 19:32:42 sqlite3_operation_library.py[line:189] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 19:32:42 sqlite3_operation_library.py[line:162] INFO if not exists create table - employees
+Fri, 10 Jul 2020 19:32:42 sqlite3_operation_library.py[line:173] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 19:32:42 sqlite3_operation_library.py[line:182] INFO create all tables sucess.
+Fri, 10 Jul 2020 19:32:45 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: pJsLXsfGBDMdK2wqLKML32T1ygWxUOGTsqgtpoCOmRg7ChfNtzSE7VkNdoR5c7mtOe+zFaM9cCwU
+DoEZ8YEnU3ktKHTSebdSmOUujfJ2i2hMvCzyCZeyy8x8Wd/r/AsnY1oTWD7TCu1flqJoV0ylNl8L
+LQfXUdFmtXxkZANBcmQ=
+
+Fri, 10 Jul 2020 19:32:45 configure_data_share_storage_service.py[line:170] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 19:32:45 configure_data_share_storage_service.py[line:171] INFO 断开连接
+Fri, 10 Jul 2020 19:32:45 sqlite3_operation_library.py[line:201] INFO close databases sucess.
+Fri, 10 Jul 2020 19:32:45 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 19:32:45 configure_data_share_storage_service.py[line:185] INFO 服务端关闭成功
+Fri, 10 Jul 2020 19:32:58 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 19:32:58 sqlite3_operation_library.py[line:189] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 19:32:58 sqlite3_operation_library.py[line:162] INFO if not exists create table - employees
+Fri, 10 Jul 2020 19:32:58 sqlite3_operation_library.py[line:173] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 19:32:58 sqlite3_operation_library.py[line:182] INFO create all tables sucess.
+Fri, 10 Jul 2020 19:33:01 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: dO+IjVGERuBBb3GEbzY8YIgxDVfMyyx9US7jcMxOWLHrGMcbG9l7DZqc2v/RNKzxFjgZZKj0nWuQ
+jSJoGV7x8yGE22I9MzNj79kUBorBkdfqRy1Ah+YIBXpw7g7vPGSeU/JPsqccYfEhcsoqIonHmFBf
+RZN0aVB9OPK64hL/roM=
+
+Fri, 10 Jul 2020 19:33:01 configure_data_share_storage_service.py[line:170] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 19:33:01 configure_data_share_storage_service.py[line:171] INFO 断开连接
+Fri, 10 Jul 2020 19:33:01 sqlite3_operation_library.py[line:201] INFO close databases sucess.
+Fri, 10 Jul 2020 19:33:01 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 19:33:02 configure_data_share_storage_service.py[line:185] INFO 服务端关闭成功
+Fri, 10 Jul 2020 19:33:35 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 19:33:35 sqlite3_operation_library.py[line:189] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 19:33:35 sqlite3_operation_library.py[line:162] INFO if not exists create table - employees
+Fri, 10 Jul 2020 19:33:35 sqlite3_operation_library.py[line:173] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 19:33:35 sqlite3_operation_library.py[line:182] INFO create all tables sucess.
+Fri, 10 Jul 2020 19:33:40 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: UmJiGft89z9Ks/nD+uTDAbuwIx41A50lu0OOA/mQ113WBy2Zgi0J5a9CTSVP8PA/3QR+gsMM83x+
+chZXQxvrkXNpuDxCRWz1dj9AfTR0GvzzyMpeDnOl5G9t37+zJ3/s48WiecJvWzv/OTP/Fe/6Z5At
+cN9NKMy7JRkxVBeqkiw=
+
+Fri, 10 Jul 2020 19:33:40 sqlite3_operation_library.py[line:152] INFO query configure data result: 
+employees:[ 
+{"jobNumber": 22200, "firstName": "\"hejian\"", "salary": 123456}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}]
+Fri, 10 Jul 2020 19:34:08 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: closeserver
+Fri, 10 Jul 2020 19:34:08 configure_data_share_storage_service.py[line:161] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 19:34:08 sqlite3_operation_library.py[line:201] INFO close databases sucess.
+Fri, 10 Jul 2020 19:34:08 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 19:34:08 configure_data_share_storage_service.py[line:185] INFO 服务端关闭成功
+Fri, 10 Jul 2020 19:34:11 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 19:34:11 sqlite3_operation_library.py[line:189] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 19:34:11 sqlite3_operation_library.py[line:162] INFO if not exists create table - employees
+Fri, 10 Jul 2020 19:34:11 sqlite3_operation_library.py[line:173] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 19:34:11 sqlite3_operation_library.py[line:182] INFO create all tables sucess.
+Fri, 10 Jul 2020 19:34:13 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: NdnpeEDJp+zl0fhEmvbts7NFmVK1OACivhrjS2snuGSdR6wyCElB3Wpf/AY3Bhzd2AuSaEdPyhZV
+LOBSd1nucpjENJ7dYhk4FSgTOlVXV2AHN/Hu6j4Rde9fQWAQJNMjb4WTchzQnZOqhwmzrd4jjPmC
+bkCp04aQvrlu9yNmmBU=
+
+Fri, 10 Jul 2020 19:34:13 configure_data_share_storage_service.py[line:170] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 19:34:13 configure_data_share_storage_service.py[line:171] INFO 断开连接
+Fri, 10 Jul 2020 19:34:13 sqlite3_operation_library.py[line:201] INFO close databases sucess.
+Fri, 10 Jul 2020 19:34:13 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 19:34:14 configure_data_share_storage_service.py[line:185] INFO 服务端关闭成功
+Fri, 10 Jul 2020 19:34:29 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 19:34:29 sqlite3_operation_library.py[line:189] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 19:34:29 sqlite3_operation_library.py[line:162] INFO if not exists create table - employees
+Fri, 10 Jul 2020 19:34:29 sqlite3_operation_library.py[line:173] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 19:34:29 sqlite3_operation_library.py[line:182] INFO create all tables sucess.
+Fri, 10 Jul 2020 19:34:33 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: QgXqImIQaLyjTmmQR8bF0Ywp6dtd3Ynmu5WJJhml6HjIUME7JnVKKliHP32Gjn6Rs0AmIJMcdMkE
+RMCK1Vuu7nPfyvlhM5owsS5rB9lcIrMuRF7FLI/Kg1iajk0w/sFZcGJjdv6BOYnx/jTuK/wY0pLk
+297BH3ls8K0i6tSjMJM=
+
+Fri, 10 Jul 2020 19:34:33 configure_data_share_storage_service.py[line:170] ERROR 出现异常断开连接
+Fri, 10 Jul 2020 19:34:33 configure_data_share_storage_service.py[line:171] INFO 断开连接
+Fri, 10 Jul 2020 19:34:33 sqlite3_operation_library.py[line:201] INFO close databases sucess.
+Fri, 10 Jul 2020 19:34:33 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 19:34:34 configure_data_share_storage_service.py[line:185] INFO 服务端关闭成功
+Fri, 10 Jul 2020 19:35:28 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 19:35:28 sqlite3_operation_library.py[line:189] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 19:35:28 sqlite3_operation_library.py[line:162] INFO if not exists create table - employees
+Fri, 10 Jul 2020 19:35:28 sqlite3_operation_library.py[line:173] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 19:35:28 sqlite3_operation_library.py[line:182] INFO create all tables sucess.
+Fri, 10 Jul 2020 19:35:29 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: oGiwEUcpTS13Jb2bnzZ9txtPrmTPHigA4Inz7vKMt76Ufp5zvcXYIvBG+bBWrhSjipZeOr716trU
+V5159gMjonkld8tgm9bySpQcObLWF0CTGuHvj8ZoBEEtPWU4cJdt0+AgFWDv1clqDnjNQcBXw6uI
+iJfaYUBLjY+rPiyKGiE=
+
+Fri, 10 Jul 2020 19:35:29 sqlite3_operation_library.py[line:152] INFO query configure data result: 
+[
+employees:[ 
+{"jobNumber": 22200, "firstName": "\"hejian\"", "salary": 123456}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Fri, 10 Jul 2020 19:35:50 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: zVcii6sOQEn752HFIfbS38JRhdP82oHGzQO0OMBBWe3YB8Ce+QrP7L5Xj66NHs/2F+YgJ91iIcxj
+PNHestIg6o/APW5d20mqSiq7I3/Y/oBsGFoPKJ7OzAX16LzJxojWapC2IktW9fT05ZFDMbnYOls3
+qWj20E0gub5jXHcgygc=
+
+Fri, 10 Jul 2020 19:35:50 sqlite3_operation_library.py[line:152] INFO query configure data result: 
+[
+employees:[ 
+{"jobNumber": 22200, "firstName": "\"hejian\"", "salary": 123456}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Fri, 10 Jul 2020 19:35:53 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: closeserver
+Fri, 10 Jul 2020 19:35:53 configure_data_share_storage_service.py[line:161] INFO 关闭后台服务消息
+Fri, 10 Jul 2020 19:35:53 sqlite3_operation_library.py[line:201] INFO close databases sucess.
+Fri, 10 Jul 2020 19:35:53 sqlite3_operation_library.py[line:82] INFO close log.
+Fri, 10 Jul 2020 19:35:54 configure_data_share_storage_service.py[line:185] INFO 服务端关闭成功
+Fri, 10 Jul 2020 19:35:56 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Fri, 10 Jul 2020 19:35:56 sqlite3_operation_library.py[line:189] INFO connect databases - confdatashare.db.
+Fri, 10 Jul 2020 19:35:56 sqlite3_operation_library.py[line:162] INFO if not exists create table - employees
+Fri, 10 Jul 2020 19:35:56 sqlite3_operation_library.py[line:173] INFO if not exists create table - svnAccounts
+Fri, 10 Jul 2020 19:35:56 sqlite3_operation_library.py[line:182] INFO create all tables sucess.
+Fri, 10 Jul 2020 19:35:57 configure_data_share_storage_service.py[line:157] INFO 服务器收到进程13484的消息: vrEvQ06fEwJlcWt9OQrRkW2g0VJ1SDvjvYkWFVMwMN9Cpd7kjhci76xBQvjQM6p2TttUymWnJVNE
+ybATTh/N2h7jaV9Y0s6dDwp1Ud+s5X1Lgi7Wv5wlyUSlS0FEmrqXGk17ydgl+Fo5HnLfr7VDWuxZ
+2Q8BNXSNEdrI1NY+qlk=
+
+Fri, 10 Jul 2020 19:35:57 sqlite3_operation_library.py[line:152] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "\"hejian\"", "salary": 123456}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 09:28:16 sqlite3_operation_library.py[line:73] INFO open log sucess.
+Sat, 11 Jul 2020 09:28:16 sqlite3_operation_library.py[line:189] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 09:28:16 sqlite3_operation_library.py[line:162] INFO if not exists create table - employees
+Sat, 11 Jul 2020 09:28:16 sqlite3_operation_library.py[line:173] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 09:28:16 sqlite3_operation_library.py[line:182] INFO create all tables sucess.
+Sat, 11 Jul 2020 09:28:28 configure_data_share_storage_service.py[line:162] INFO 服务器收到进程19016的消息: gVF2SZRNXe0cd/YadJhhnuBobGvHraeoWFRtN8u/s6a+RujNDAn/pD2PIHktyz+Eu+sgh2vd7uYj
+3gxqWiIj9Og3YOPzJoZLIRPFNaFe+WmK30/MBNJfuIUWeOH3VuuMMkWzdFecCu7/rsdAlCsxHWSH
+X4pAYLua+86sE19Rw2w=
+
+Sat, 11 Jul 2020 09:28:28 sqlite3_operation_library.py[line:152] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "\"hejian\"", "salary": 123456}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 09:32:28 configure_data_share_storage_service.py[line:162] INFO 服务器收到进程10968的消息: Ded6qAyfsqb9PB4oYZBkK5oLQP3pON7QMjcQj8crtnZpg/yVpiWpCe7rq6wvaVnB1+DUnAy2twZM
+c504pA1XDfL9PWPsQECBTEyGfLQTxntqqdTSIoLQkaKj4RJhC89jxTuQwCtT4KMVBOzQtbO0jmon
+vlp4Zt7BNNpJ9zqsStw=
+
+Sat, 11 Jul 2020 09:32:28 sqlite3_operation_library.py[line:152] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "\"hejian\"", "salary": 123456}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 09:32:41 configure_data_share_storage_service.py[line:162] INFO 服务器收到进程19016的消息: notify
+Sat, 11 Jul 2020 09:32:43 configure_data_share_storage_service.py[line:107] INFO 发送消息 19016,notify 成功
+Sat, 11 Jul 2020 09:33:07 configure_data_share_storage_service.py[line:162] INFO 服务器收到进程5592的消息: notify
+Sat, 11 Jul 2020 09:33:09 configure_data_share_storage_service.py[line:107] INFO 发送消息 5592,notify 成功
+Sat, 11 Jul 2020 09:33:09 configure_data_share_storage_service.py[line:107] INFO 发送消息 5592,notify 成功
+Sat, 11 Jul 2020 09:33:46 configure_data_share_storage_service.py[line:162] INFO 服务器收到进程10968的消息: XuhG1Xb1hV9jLDXn2Q8keiN3fb24+BSWAz1MsC43B3JS76YyJ9xYx1FCCzUNt7cpWIUh6GIQDcsR
+zBjH2/3cI4gUIWj5rGzG3TstHFwdUtel2o28LTYRkw+ruAOq5tXzYDopOo7B+Q8A/yzJ99ymLm44
+LtYMAmYXQX2WhNrAUEg=
+
+Sat, 11 Jul 2020 09:33:46 sqlite3_operation_library.py[line:152] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "\"hejian\"", "salary": 123456}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 09:40:34 configure_data_share_storage_service.py[line:162] INFO 服务器收到进程10968的消息: X561nqfUt7D98kS7xCZiEoc+svP6fN8ktKua2E/x3KNtctrkrXof0d2Gl2lB+wVFob2Apwu87aPy
+DIz0PEduvK36Swz3IrSmS/AeQ3V+5M9FmMjpcD1VnABiyH6zvSGblUT1BxpA7evc576VoOiHXjgk
+akMR8mYO6zWhZmJ1pIQ=
+
+Sat, 11 Jul 2020 09:40:34 sqlite3_operation_library.py[line:152] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "\"hejian\"", "salary": 123456}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 09:40:39 configure_data_share_storage_service.py[line:162] INFO 服务器收到进程5592的消息: notify
+Sat, 11 Jul 2020 09:40:41 configure_data_share_storage_service.py[line:107] INFO 发送消息 5592,notify 成功
+Sat, 11 Jul 2020 09:40:41 configure_data_share_storage_service.py[line:107] INFO 发送消息 5592,notify 成功
+Sat, 11 Jul 2020 11:20:54 configure_data_share_storage_service.py[line:162] INFO 服务器收到进程10968的消息: fArNk+JeLvYjhocuI9C71vAKNaUeQIT1Sjqfv81N8omaWb2Mmc7QSr2c2hk47AB9iEIOIO9YSneH
+ErBnqXkKB4CLahllZS0Vhfb4gS24tbOdEV6AxCohZ/xjL8GSDgLKudhxaF+J02u+w8NLecE/Pami
+XhvXjpcfyz9MTcaxD+8=
+
+Sat, 11 Jul 2020 11:20:54 sqlite3_operation_library.py[line:152] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "\"hejian\"", "salary": 123456}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 11:21:18 configure_data_share_storage_service.py[line:162] INFO 服务器收到进程5592的消息: NIYIiV/N/RavMaS8vpXlJPZNfq6vKSO/MRsIWQZWW1ZRO08+8GkDTiVk7Qvxir1ZOlliuL56VJ1j
+kenNElggFs9t+34MFShJdr4NLlajvtN9U8yfWeeOKXiRkhVPhKty+9YRVv+9C9Nt6CZefdVwZ9/X
+e12McQ+ek8GH+/XgK4o=
+
+Sat, 11 Jul 2020 11:21:18 sqlite3_operation_library.py[line:104] INFO insert configure data into employees success.
+Sat, 11 Jul 2020 11:21:24 configure_data_share_storage_service.py[line:162] INFO 服务器收到进程10968的消息: xnpAuzYVQhIjVE6zEMoPJkE/FWTVf5CCr59owYnJKpq9vjqp3VGfJGzfzdGfICrOZIrIEvbH+dr9
+9ESdwx60fKYkjkn5NfjRDIZzvwOtNHOsnpLwZFR4bLzAmcPalP/lBk08oLGk3++GfVVSw18SylYQ
+GEuDzpQqpKQ0TkG7oOE=
+
+Sat, 11 Jul 2020 11:21:24 sqlite3_operation_library.py[line:152] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 11:21:35 configure_data_share_storage_service.py[line:162] INFO 服务器收到进程5592的消息: notify
+Sat, 11 Jul 2020 11:21:37 configure_data_share_storage_service.py[line:107] INFO 发送消息 5592,notify 成功
+Sat, 11 Jul 2020 11:21:37 configure_data_share_storage_service.py[line:107] INFO 发送消息 5592,notify 成功
+Sat, 11 Jul 2020 11:21:55 configure_data_share_storage_service.py[line:162] INFO 服务器收到进程10968的消息: notify
+Sat, 11 Jul 2020 11:21:57 configure_data_share_storage_service.py[line:107] INFO 发送消息 10968,notify 成功
+Sat, 11 Jul 2020 11:21:57 configure_data_share_storage_service.py[line:107] INFO 发送消息 10968,notify 成功
+Sat, 11 Jul 2020 11:23:33 configure_data_share_storage_service.py[line:162] INFO 服务器收到进程5592的消息: LRVkA6+C7+vV5UcLoNnA2mUjiRSdF/U9cQNH06nPn/1ok7jPk1ASqso7leFvc5p2sUrUQSYlJMYZ
+gl2AU8Ja/dzG7ykM+T6CH4Zabl3+qoFHUukWvcfaj3Y613JL97yY5g+KwbSCWW12d/ur4E3ZrmI8
+6aBwNkV54DzIZOjiW5w=
+
+Sat, 11 Jul 2020 11:23:34 configure_data_share_storage_service.py[line:162] INFO 服务器收到进程5592的消息: e8g8pzNjUNSDKxnOEnB8xSO+tKllEBhDrlQRGJaiQ97bJZqOolJent++l8uO8yZTQz6d+JFJdPsH
+StQcGnRE6GMT7AC5p79deidjHXoG0XfT3AJmAZR00RmMupUoKTigIpJoxN4il+9qiGaEjA1/GfdN
+dYSpgD66/Gj+vN/Ppr0=
+
+Sat, 11 Jul 2020 11:23:45 configure_data_share_storage_service.py[line:162] INFO 服务器收到进程10968的消息: knpiRdIMxBxYZ7kxc3hFe+w3/LFbgqxyXlygV80cr6uyQW5adp0FRgKuXH73x4C07z0IQna+Lo5O
+fKpnQj+34/ehI+rwulIYpDppDE9eN7CuvK8y2gPYkgLuosaIuJEUklxG+AaySnaobo7YSRTM9IOX
+zk9sbqMyZmmOnLETVvI=
+
+Sat, 11 Jul 2020 11:23:48 configure_data_share_storage_service.py[line:162] INFO 服务器收到进程10968的消息: i26OXtTx/mUaQ5cd9wOT2wH8tA2c3gn0NpACs0whE9g1QU1C/rzZL34nmrLKH3W2jI9/AWBA2XTT
+H2mo+p5UtUrsMwHy10O5lJyVt4nRDw8gP8GZZ+oXAQFj3KMt9CQq2bU89LvTcPo8CrVYfBRBTB+B
+6xEYf5R6o9tkvLz5h7A=
+
+Sat, 11 Jul 2020 15:44:56 configure_data_share_storage_service.py[line:162] INFO 服务器收到进程15144的消息: z
+Sat, 11 Jul 2020 15:44:56 configure_data_share_storage_service.py[line:174] ERROR 出现异常断开连接
+Sat, 11 Jul 2020 15:44:56 configure_data_share_storage_service.py[line:175] INFO 断开连接
+Sat, 11 Jul 2020 15:44:56 sqlite3_operation_library.py[line:201] INFO close databases sucess.
+Sat, 11 Jul 2020 15:44:56 sqlite3_operation_library.py[line:82] INFO close log.
+Sat, 11 Jul 2020 15:44:57 configure_data_share_storage_service.py[line:189] INFO 服务端关闭成功
+Sat, 11 Jul 2020 15:47:27 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 15:47:27 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 15:47:27 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 15:47:27 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 15:47:27 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 15:47:51 configure_data_share_storage_service.py[line:190] INFO 服务器收到进程3152的消息: notify
+Sat, 11 Jul 2020 15:47:51 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 15:48:09 configure_data_share_storage_service.py[line:190] INFO 服务器收到进程3152的消息: closeserver
+Sat, 11 Jul 2020 15:48:09 configure_data_share_storage_service.py[line:194] INFO 关闭后台服务消息
+Sat, 11 Jul 2020 15:48:09 sqlite3_operation_library.py[line:214] INFO close databases sucess.
+Sat, 11 Jul 2020 15:48:09 sqlite3_operation_library.py[line:95] INFO close log.
+Sat, 11 Jul 2020 15:48:09 configure_data_share_storage_service.py[line:217] INFO 服务端关闭成功
+Sat, 11 Jul 2020 15:51:26 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 15:51:26 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 15:51:26 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 15:51:26 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 15:51:26 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 15:51:37 configure_data_share_storage_service.py[line:190] INFO 服务器收到进程14920的消息: notify
+Sat, 11 Jul 2020 15:51:37 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 15:52:46 configure_data_share_storage_service.py[line:190] INFO 服务器收到进程14920的消息: closeserver
+Sat, 11 Jul 2020 15:52:46 configure_data_share_storage_service.py[line:194] INFO 关闭后台服务消息
+Sat, 11 Jul 2020 15:52:46 sqlite3_operation_library.py[line:214] INFO close databases sucess.
+Sat, 11 Jul 2020 15:52:46 sqlite3_operation_library.py[line:95] INFO close log.
+Sat, 11 Jul 2020 15:52:47 configure_data_share_storage_service.py[line:218] INFO 服务端关闭成功
+Sat, 11 Jul 2020 15:52:50 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 15:52:50 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 15:52:50 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 15:52:50 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 15:52:50 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 15:52:54 configure_data_share_storage_service.py[line:190] INFO 服务器收到进程14920的消息: notify
+Sat, 11 Jul 2020 15:52:54 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 15:58:50 configure_data_share_storage_service.py[line:190] INFO 服务器收到进程6740的消息: notify
+Sat, 11 Jul 2020 15:58:50 configure_data_share_storage_service.py[line:121] INFO 发送消息 6740,notify 成功
+Sat, 11 Jul 2020 15:59:04 configure_data_share_storage_service.py[line:190] INFO 服务器收到进程6740的消息: closeserver
+Sat, 11 Jul 2020 15:59:04 configure_data_share_storage_service.py[line:194] INFO 关闭后台服务消息
+Sat, 11 Jul 2020 15:59:04 sqlite3_operation_library.py[line:214] INFO close databases sucess.
+Sat, 11 Jul 2020 15:59:04 sqlite3_operation_library.py[line:95] INFO close log.
+Sat, 11 Jul 2020 15:59:04 configure_data_share_storage_service.py[line:219] INFO 服务端关闭成功
+Sat, 11 Jul 2020 16:20:15 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 16:20:15 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 16:20:15 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 16:20:15 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 16:20:15 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 16:26:42 configure_data_share_storage_service.py[line:190] INFO 服务器收到进程17944的消息: notify
+Sat, 11 Jul 2020 16:26:44 configure_data_share_storage_service.py[line:121] INFO 发送消息 17944,notify 成功
+Sat, 11 Jul 2020 16:26:44 configure_data_share_storage_service.py[line:121] INFO 发送消息 17944,notify 成功
+Sat, 11 Jul 2020 16:26:44 configure_data_share_storage_service.py[line:121] INFO 发送消息 17944,notify 成功
+Sat, 11 Jul 2020 16:28:08 configure_data_share_storage_service.py[line:190] INFO 服务器收到进程15012的消息: notify
+Sat, 11 Jul 2020 16:28:10 configure_data_share_storage_service.py[line:121] INFO 发送消息 15012,notify 成功
+Sat, 11 Jul 2020 16:28:10 configure_data_share_storage_service.py[line:121] INFO 发送消息 15012,notify 成功
+Sat, 11 Jul 2020 16:29:18 configure_data_share_storage_service.py[line:204] ERROR 出现异常断开连接
+Sat, 11 Jul 2020 16:29:18 configure_data_share_storage_service.py[line:205] INFO 断开连接
+Sat, 11 Jul 2020 16:29:18 sqlite3_operation_library.py[line:214] INFO close databases sucess.
+Sat, 11 Jul 2020 16:29:18 sqlite3_operation_library.py[line:95] INFO close log.
+Sat, 11 Jul 2020 16:29:18 configure_data_share_storage_service.py[line:219] INFO 服务端关闭成功
+Sat, 11 Jul 2020 16:31:30 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 16:31:30 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 16:31:30 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 16:31:30 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 16:31:30 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 16:54:38 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 16:54:38 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 16:54:38 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 16:54:38 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 16:54:38 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 16:57:00 configure_data_share_storage_service.py[line:190] INFO 服务器收到进程1716的消息: qry ('employees')
+Sat, 11 Jul 2020 16:57:00 configure_data_share_storage_service.py[line:204] ERROR 出现异常断开连接
+Sat, 11 Jul 2020 16:57:00 configure_data_share_storage_service.py[line:205] INFO 断开连接
+Sat, 11 Jul 2020 16:57:00 sqlite3_operation_library.py[line:214] INFO close databases sucess.
+Sat, 11 Jul 2020 16:57:00 sqlite3_operation_library.py[line:95] INFO close log.
+Sat, 11 Jul 2020 16:57:01 configure_data_share_storage_service.py[line:219] INFO 服务端关闭成功
+Sat, 11 Jul 2020 16:58:42 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 16:58:42 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 16:58:42 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 16:58:42 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 16:58:42 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 16:58:46 configure_data_share_storage_service.py[line:190] INFO 服务器收到进程1716的消息: qry ('employees')
+Sat, 11 Jul 2020 16:58:46 configure_data_share_storage_service.py[line:204] ERROR 出现异常断开连接
+Sat, 11 Jul 2020 16:58:46 configure_data_share_storage_service.py[line:205] INFO 断开连接
+Sat, 11 Jul 2020 16:58:46 sqlite3_operation_library.py[line:214] INFO close databases sucess.
+Sat, 11 Jul 2020 16:58:46 sqlite3_operation_library.py[line:95] INFO close log.
+Sat, 11 Jul 2020 16:58:47 configure_data_share_storage_service.py[line:219] INFO 服务端关闭成功
+Sat, 11 Jul 2020 16:59:36 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 16:59:36 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 16:59:36 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 16:59:36 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 16:59:36 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 17:00:41 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 17:00:41 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 17:00:41 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 17:00:41 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 17:00:41 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 17:05:54 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 17:05:54 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 17:05:54 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 17:05:54 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 17:05:54 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 17:12:24 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 17:12:24 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 17:12:24 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 17:12:24 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 17:12:24 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 17:12:33 configure_data_share_storage_service.py[line:193] INFO 服务器收到进程15324的消息: ,connect
+Sat, 11 Jul 2020 17:13:39 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 17:13:39 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 17:13:39 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 17:13:39 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 17:13:39 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 17:13:49 sqlite3_operation_library.py[line:165] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 17:13:49 configure_data_share_storage_service.py[line:193] INFO 服务器收到进程17804的消息: qry
+Sat, 11 Jul 2020 17:14:43 configure_data_share_storage_service.py[line:193] INFO 服务器收到进程17804的消息: notify
+Sat, 11 Jul 2020 17:14:43 configure_data_share_storage_service.py[line:121] INFO 发送消息 17804,notify 成功
+Sat, 11 Jul 2020 17:15:00 configure_data_share_storage_service.py[line:193] INFO 服务器收到进程17804的消息: notify
+Sat, 11 Jul 2020 17:15:00 configure_data_share_storage_service.py[line:121] INFO 发送消息 17804,notify 成功
+Sat, 11 Jul 2020 17:16:15 configure_data_share_storage_service.py[line:193] INFO 服务器收到进程10236的消息: closeserver
+Sat, 11 Jul 2020 17:16:15 configure_data_share_storage_service.py[line:197] INFO 关闭后台服务消息
+Sat, 11 Jul 2020 17:16:15 sqlite3_operation_library.py[line:214] INFO close databases sucess.
+Sat, 11 Jul 2020 17:16:15 sqlite3_operation_library.py[line:95] INFO close log.
+Sat, 11 Jul 2020 17:16:15 configure_data_share_storage_service.py[line:220] INFO 服务端关闭成功
+Sat, 11 Jul 2020 17:16:27 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 17:16:27 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 17:16:27 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 17:16:27 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 17:16:27 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 17:16:32 sqlite3_operation_library.py[line:165] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 17:16:32 configure_data_share_storage_service.py[line:193] INFO 服务器收到进程1716的消息: qry
+Sat, 11 Jul 2020 17:19:33 sqlite3_operation_library.py[line:165] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 17:19:33 configure_data_share_storage_service.py[line:193] INFO 服务器收到进程1716的消息: qry
+Sat, 11 Jul 2020 17:19:49 sqlite3_operation_library.py[line:165] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 17:19:49 configure_data_share_storage_service.py[line:193] INFO 服务器收到进程1716的消息: qry
+Sat, 11 Jul 2020 17:37:02 configure_data_share_storage_service.py[line:193] INFO 服务器收到进程10236的消息: closeserver
+Sat, 11 Jul 2020 17:37:02 configure_data_share_storage_service.py[line:197] INFO 关闭后台服务消息
+Sat, 11 Jul 2020 17:37:02 sqlite3_operation_library.py[line:214] INFO close databases sucess.
+Sat, 11 Jul 2020 17:37:02 sqlite3_operation_library.py[line:95] INFO close log.
+Sat, 11 Jul 2020 17:37:02 configure_data_share_storage_service.py[line:220] INFO 服务端关闭成功
+Sat, 11 Jul 2020 17:37:05 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 17:37:05 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 17:37:05 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 17:37:05 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 17:37:05 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 17:37:28 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:37:59 sqlite3_operation_library.py[line:165] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 17:37:59 configure_data_share_storage_service.py[line:200] INFO 服务器收到进程6644的消息: qry
+Sat, 11 Jul 2020 17:38:32 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:39:12 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:39:22 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:39:33 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:40:19 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 17:40:19 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 17:40:19 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 17:40:19 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 17:40:19 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 17:40:23 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:40:23 sqlite3_operation_library.py[line:165] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 17:40:23 configure_data_share_storage_service.py[line:201] INFO 服务器收到进程1716的消息: qry
+Sat, 11 Jul 2020 17:42:02 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:42:02 sqlite3_operation_library.py[line:165] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 17:42:02 configure_data_share_storage_service.py[line:201] INFO 服务器收到进程1716的消息: qry
+Sat, 11 Jul 2020 17:42:28 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:42:28 sqlite3_operation_library.py[line:165] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 17:42:28 configure_data_share_storage_service.py[line:201] INFO 服务器收到进程1716的消息: qry
+Sat, 11 Jul 2020 17:42:37 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:42:37 sqlite3_operation_library.py[line:165] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 17:42:37 configure_data_share_storage_service.py[line:201] INFO 服务器收到进程1716的消息: qry
+Sat, 11 Jul 2020 17:42:37 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:42:37 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:45:35 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 17:45:35 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 17:45:35 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 17:45:35 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 17:45:35 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 17:45:47 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:45:47 sqlite3_operation_library.py[line:165] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 17:45:47 configure_data_share_storage_service.py[line:201] INFO 服务器收到进程1716的消息: qry
+Sat, 11 Jul 2020 17:45:47 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:45:47 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:49:53 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 17:49:53 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 17:49:53 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 17:49:53 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 17:49:53 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 17:49:58 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:49:58 sqlite3_operation_library.py[line:165] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 17:49:58 configure_data_share_storage_service.py[line:202] INFO 服务器收到进程1716的消息: qry
+Sat, 11 Jul 2020 17:49:59 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:49:59 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:52:36 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 17:52:36 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 17:52:36 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 17:52:36 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 17:52:36 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 17:52:41 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:52:41 sqlite3_operation_library.py[line:165] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 17:52:41 configure_data_share_storage_service.py[line:200] INFO 服务器收到进程1716的消息: qry
+Sat, 11 Jul 2020 17:52:41 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:52:41 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:54:41 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 17:54:41 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 17:54:41 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 17:54:41 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 17:54:41 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 17:54:47 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:54:47 sqlite3_operation_library.py[line:165] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 17:54:47 configure_data_share_storage_service.py[line:201] INFO 服务器收到进程1716的消息: qry
+Sat, 11 Jul 2020 17:54:48 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:54:48 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:55:39 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:56:56 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 17:56:56 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 17:56:56 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 17:56:56 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 17:56:57 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 17:57:27 configure_data_share_storage_service.py[line:201] INFO 服务器收到进程5704的消息: closeserver
+Sat, 11 Jul 2020 17:57:27 configure_data_share_storage_service.py[line:205] INFO 关闭后台服务消息
+Sat, 11 Jul 2020 17:57:27 sqlite3_operation_library.py[line:214] INFO close databases sucess.
+Sat, 11 Jul 2020 17:57:28 sqlite3_operation_library.py[line:95] INFO close log.
+Sat, 11 Jul 2020 17:57:28 configure_data_share_storage_service.py[line:228] INFO 服务端关闭成功
+Sat, 11 Jul 2020 17:57:33 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 17:57:33 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 17:57:33 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 17:57:33 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 17:57:33 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 17:57:37 configure_data_share_storage_service.py[line:201] INFO 服务器收到进程5704的消息: notify
+Sat, 11 Jul 2020 17:57:37 configure_data_share_storage_service.py[line:213] ERROR 出现异常断开连接
+Sat, 11 Jul 2020 17:57:37 configure_data_share_storage_service.py[line:214] INFO 断开连接
+Sat, 11 Jul 2020 17:57:37 sqlite3_operation_library.py[line:214] INFO close databases sucess.
+Sat, 11 Jul 2020 17:57:37 sqlite3_operation_library.py[line:95] INFO close log.
+Sat, 11 Jul 2020 17:57:38 configure_data_share_storage_service.py[line:228] INFO 服务端关闭成功
+Sat, 11 Jul 2020 17:57:45 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 17:57:45 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 17:57:45 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 17:57:45 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 17:57:45 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 17:57:53 sqlite3_operation_library.py[line:165] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Sat, 11 Jul 2020 17:57:53 configure_data_share_storage_service.py[line:104] ERROR 空的消息或者无端口
+Sat, 11 Jul 2020 17:59:39 configure_data_share_storage_service.py[line:201] INFO 服务器收到进程5704的消息: closeserver
+Sat, 11 Jul 2020 17:59:39 configure_data_share_storage_service.py[line:205] INFO 关闭后台服务消息
+Sat, 11 Jul 2020 17:59:39 sqlite3_operation_library.py[line:214] INFO close databases sucess.
+Sat, 11 Jul 2020 17:59:39 sqlite3_operation_library.py[line:95] INFO close log.
+Sat, 11 Jul 2020 17:59:39 configure_data_share_storage_service.py[line:228] INFO 服务端关闭成功
+Sat, 11 Jul 2020 17:59:43 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 17:59:43 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 17:59:43 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 17:59:43 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 17:59:43 sqlite3_operation_library.py[line:195] INFO create all tables sucess.
+Sat, 11 Jul 2020 18:00:02 configure_data_share_storage_service.py[line:204] INFO 服务器收到进程7980的消息: notify
+Sat, 11 Jul 2020 18:00:02 configure_data_share_storage_service.py[line:216] ERROR 出现异常断开连接
+Sat, 11 Jul 2020 18:00:02 configure_data_share_storage_service.py[line:217] INFO 断开连接
+Sat, 11 Jul 2020 18:00:02 sqlite3_operation_library.py[line:214] INFO close databases sucess.
+Sat, 11 Jul 2020 18:00:02 sqlite3_operation_library.py[line:95] INFO close log.
+Sat, 11 Jul 2020 18:00:02 configure_data_share_storage_service.py[line:231] INFO 服务端关闭成功
+Sat, 11 Jul 2020 18:00:13 sqlite3_operation_library.py[line:72] INFO open log sucess.
+Sat, 11 Jul 2020 18:00:13 sqlite3_operation_library.py[line:202] INFO connect databases - confdatashare.db.
+Sat, 11 Jul 2020 18:00:13 sqlite3_operation_library.py[line:175] INFO if not exists create table - employees
+Sat, 11 Jul 2020 18:00:13 sqlite3_operation_library.py[line:186] INFO if not exists create table - svnAccounts
+Sat, 11 Jul 2020 18:00:13 sqlite3_operation_library.py[line:195] INFO create all tables sucess.

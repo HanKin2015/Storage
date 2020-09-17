@@ -1,0 +1,1635 @@
+2020-07-05 23:24:27,517 - __main__ - INFO - open log sucess.
+2020-07-05 23:24:27,517 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-05 23:24:27,533 - __main__ - INFO - if not exists create table - employees
+2020-07-05 23:24:27,553 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-05 23:24:27,572 - __main__ - INFO - create all tables sucess.
+2020-07-05 23:24:27,579 - __main__ - INFO - close databases sucess.
+2020-07-05 23:24:27,588 - __main__ - INFO - close log.
+2020-07-05 23:26:15,965 - __main__ - INFO - open log sucess.
+2020-07-05 23:26:15,970 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-05 23:26:15,982 - __main__ - INFO - if not exists create table - employees
+2020-07-05 23:26:15,992 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-05 23:26:15,999 - __main__ - INFO - create all tables sucess.
+2020-07-05 23:26:16,009 - __main__ - ERROR - configure data is not list type
+2020-07-05 23:26:16,016 - __main__ - INFO - close databases sucess.
+2020-07-05 23:26:16,023 - __main__ - INFO - close log.
+2020-07-05 23:27:40,694 - __main__ - INFO - open log sucess.
+2020-07-05 23:27:40,709 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-05 23:27:40,709 - __main__ - INFO - if not exists create table - employees
+2020-07-05 23:27:40,725 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-05 23:27:40,725 - __main__ - INFO - create all tables sucess.
+2020-07-05 23:27:40,741 - __main__ - ERROR - configure data is not list type, it's <class 'tuple'> type
+2020-07-05 23:27:40,741 - __main__ - INFO - close databases sucess.
+2020-07-05 23:27:40,762 - __main__ - INFO - close log.
+2020-07-05 23:28:14,516 - __main__ - INFO - open log sucess.
+2020-07-05 23:28:14,532 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-05 23:28:14,532 - __main__ - INFO - if not exists create table - employees
+2020-07-05 23:28:14,548 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-05 23:28:14,548 - __main__ - INFO - create all tables sucess.
+2020-07-05 23:28:14,570 - __main__ - ERROR - configure data size don't eqaul 4
+2020-07-05 23:28:14,576 - __main__ - INFO - close databases sucess.
+2020-07-05 23:28:14,585 - __main__ - INFO - close log.
+2020-07-05 23:31:31,578 - __main__ - INFO - open log sucess.
+2020-07-05 23:31:31,594 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-05 23:31:31,594 - __main__ - INFO - if not exists create table - employees
+2020-07-05 23:31:31,613 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-05 23:31:31,622 - __main__ - INFO - create all tables sucess.
+2020-07-05 23:31:31,628 - __main__ - ERROR - insert configure data failed.
+2020-07-05 23:31:31,638 - __main__ - INFO - close databases sucess.
+2020-07-05 23:31:31,643 - __main__ - INFO - close log.
+2020-07-05 23:32:28,549 - __main__ - INFO - open log sucess.
+2020-07-05 23:32:28,565 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-05 23:32:28,565 - __main__ - INFO - if not exists create table - employees
+2020-07-05 23:32:28,580 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-05 23:32:28,580 - __main__ - INFO - create all tables sucess.
+2020-07-05 23:32:28,596 - __main__ - ERROR - insert configure data failed.
+2020-07-05 23:32:28,596 - __main__ - INFO - close databases sucess.
+2020-07-05 23:32:28,611 - __main__ - INFO - close log.
+2020-07-05 23:34:00,264 - __main__ - INFO - open log sucess.
+2020-07-05 23:34:00,264 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-05 23:34:00,279 - __main__ - INFO - if not exists create table - employees
+2020-07-05 23:34:00,295 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-05 23:34:00,295 - __main__ - INFO - create all tables sucess.
+2020-07-05 23:34:00,311 - __main__ - ERROR - insert configure data failed.
+2020-07-05 23:34:00,311 - __main__ - INFO - close databases sucess.
+2020-07-05 23:34:00,326 - __main__ - INFO - close log.
+2020-07-05 23:37:12,067 - __main__ - INFO - open log sucess.
+2020-07-05 23:37:12,067 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-05 23:37:12,083 - __main__ - INFO - if not exists create table - employees
+2020-07-05 23:37:12,098 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-05 23:37:12,114 - __main__ - INFO - create all tables sucess.
+2020-07-05 23:37:12,130 - __main__ - ERROR - insert configure data failed.
+2020-07-05 23:37:12,145 - __main__ - INFO - close databases sucess.
+2020-07-05 23:37:12,145 - __main__ - INFO - close log.
+2020-07-05 23:40:52,804 - __main__ - INFO - open log sucess.
+2020-07-05 23:40:52,819 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-05 23:40:52,819 - __main__ - INFO - if not exists create table - employees
+2020-07-05 23:40:52,835 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-05 23:40:52,835 - __main__ - INFO - create all tables sucess.
+2020-07-05 23:40:52,850 - __main__ - ERROR - insert configure data failed.
+2020-07-05 23:40:52,850 - __main__ - INFO - close databases sucess.
+2020-07-05 23:40:52,866 - __main__ - INFO - close log.
+2020-07-05 23:42:04,964 - __main__ - INFO - open log sucess.
+2020-07-05 23:42:04,980 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-05 23:42:04,996 - __main__ - INFO - if not exists create table - employees
+2020-07-05 23:42:04,996 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-05 23:42:05,011 - __main__ - INFO - create all tables sucess.
+2020-07-05 23:42:05,011 - __main__ - ERROR - insert configure data failed.
+2020-07-05 23:42:05,027 - __main__ - INFO - close databases sucess.
+2020-07-05 23:42:05,027 - __main__ - INFO - close log.
+2020-07-05 23:42:44,227 - __main__ - INFO - open log sucess.
+2020-07-05 23:42:44,242 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-05 23:42:44,242 - __main__ - INFO - if not exists create table - employees
+2020-07-05 23:42:44,258 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-05 23:42:44,258 - __main__ - INFO - create all tables sucess.
+2020-07-05 23:42:44,274 - __main__ - INFO - close databases sucess.
+2020-07-05 23:42:44,289 - __main__ - INFO - close log.
+2020-07-05 23:44:34,438 - __main__ - INFO - open log sucess.
+2020-07-05 23:44:34,444 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-05 23:44:34,455 - __main__ - INFO - if not exists create table - employees
+2020-07-05 23:44:34,462 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-05 23:44:34,471 - __main__ - INFO - create all tables sucess.
+2020-07-05 23:44:34,477 - __main__ - ERROR - insert configure data failed.
+2020-07-05 23:44:34,486 - __main__ - INFO - close databases sucess.
+2020-07-05 23:44:34,493 - __main__ - INFO - close log.
+2020-07-05 23:44:46,488 - __main__ - INFO - open log sucess.
+2020-07-05 23:44:46,504 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-05 23:44:46,520 - __main__ - INFO - if not exists create table - employees
+2020-07-05 23:44:46,520 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-05 23:44:46,520 - __main__ - INFO - create all tables sucess.
+2020-07-05 23:44:46,551 - __main__ - INFO - insert configure data success.
+2020-07-05 23:44:46,551 - __main__ - INFO - close databases sucess.
+2020-07-05 23:44:46,567 - __main__ - INFO - close log.
+2020-07-05 23:45:10,299 - __main__ - INFO - open log sucess.
+2020-07-05 23:45:10,306 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-05 23:45:10,316 - __main__ - INFO - if not exists create table - employees
+2020-07-05 23:45:10,326 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-05 23:45:10,335 - __main__ - INFO - create all tables sucess.
+2020-07-05 23:45:10,355 - __main__ - INFO - insert configure data success.
+2020-07-05 23:45:10,363 - __main__ - INFO - close databases sucess.
+2020-07-05 23:45:10,370 - __main__ - INFO - close log.
+2020-07-06 00:02:40,806 - __main__ - INFO - open log sucess.
+2020-07-06 00:02:40,822 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-06 00:02:40,838 - __main__ - INFO - if not exists create table - employees
+2020-07-06 00:02:40,838 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-06 00:02:40,838 - __main__ - INFO - create all tables sucess.
+2020-07-06 00:02:40,873 - __main__ - INFO - insert configure data success.
+2020-07-06 00:02:40,879 - __main__ - INFO - insert configure data success.
+2020-07-06 00:02:40,895 - __main__ - INFO - insert configure data success.
+2020-07-06 00:02:40,926 - __main__ - INFO - insert configure data success.
+2020-07-06 00:02:40,942 - __main__ - INFO - insert configure data success.
+2020-07-06 00:02:40,957 - __main__ - INFO - insert configure data success.
+2020-07-06 00:02:40,957 - __main__ - INFO - close databases sucess.
+2020-07-06 00:02:40,973 - __main__ - INFO - close log.
+2020-07-06 00:31:56,867 - __main__ - INFO - open log sucess.
+2020-07-06 00:31:56,883 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-06 00:31:56,883 - __main__ - INFO - if not exists create table - employees
+2020-07-06 00:31:56,898 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-06 00:31:56,898 - __main__ - INFO - create all tables sucess.
+2020-07-06 00:31:57,261 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:31:57,292 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:31:57,323 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:31:57,339 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:31:57,354 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:31:57,370 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:31:57,386 - __main__ - INFO - detele jobNumber(1) from employees table success
+2020-07-06 00:32:21,709 - __main__ - INFO - open log sucess.
+2020-07-06 00:32:21,709 - __main__ - INFO - open log sucess.
+2020-07-06 00:32:21,723 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-06 00:32:21,723 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-06 00:32:21,738 - __main__ - INFO - if not exists create table - employees
+2020-07-06 00:32:21,738 - __main__ - INFO - if not exists create table - employees
+2020-07-06 00:32:21,756 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-06 00:32:21,756 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-06 00:32:21,771 - __main__ - INFO - create all tables sucess.
+2020-07-06 00:32:21,771 - __main__ - INFO - create all tables sucess.
+2020-07-06 00:32:21,797 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:32:21,797 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:32:21,824 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:32:21,824 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:32:21,847 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:32:21,847 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:32:21,873 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:32:21,873 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:32:21,899 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:32:21,899 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:32:21,924 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:32:21,924 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:32:21,940 - __main__ - INFO - detele jobNumber(1) from employees table success
+2020-07-06 00:32:21,940 - __main__ - INFO - detele jobNumber(1) from employees table success
+2020-07-06 00:32:21,953 - __main__ - ERROR - update employees table failed.
+2020-07-06 00:32:21,953 - __main__ - ERROR - update employees table failed.
+2020-07-06 00:32:21,967 - __main__ - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 25000), (100002, 'Thomas', 30000)]
+2020-07-06 00:32:21,967 - __main__ - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 25000), (100002, 'Thomas', 30000)]
+2020-07-06 00:32:21,979 - __main__ - INFO - close databases sucess.
+2020-07-06 00:32:21,979 - __main__ - INFO - close databases sucess.
+2020-07-06 00:32:21,993 - __main__ - INFO - close log.
+2020-07-06 00:32:21,993 - __main__ - INFO - close log.
+2020-07-06 00:33:53,619 - __main__ - INFO - open log sucess.
+2020-07-06 00:33:53,619 - __main__ - INFO - open log sucess.
+2020-07-06 00:33:53,634 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-06 00:33:53,634 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-06 00:33:53,651 - __main__ - INFO - if not exists create table - employees
+2020-07-06 00:33:53,651 - __main__ - INFO - if not exists create table - employees
+2020-07-06 00:33:53,668 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-06 00:33:53,668 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-06 00:33:53,684 - __main__ - INFO - create all tables sucess.
+2020-07-06 00:33:53,684 - __main__ - INFO - create all tables sucess.
+2020-07-06 00:33:53,712 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:33:53,712 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:33:53,739 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:33:53,739 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:33:53,764 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:33:53,764 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:33:53,789 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:33:53,789 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:33:53,816 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:33:53,816 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:33:53,840 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:33:53,840 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:33:53,854 - __main__ - INFO - detele jobNumber(1) from employees table success
+2020-07-06 00:33:53,854 - __main__ - INFO - detele jobNumber(1) from employees table success
+2020-07-06 00:33:53,868 - __main__ - ERROR - update employees table failed.
+2020-07-06 00:33:53,868 - __main__ - ERROR - update employees table failed.
+2020-07-06 00:33:53,882 - __main__ - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 25000), (100002, 'Thomas', 30000)]
+2020-07-06 00:33:53,882 - __main__ - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 25000), (100002, 'Thomas', 30000)]
+2020-07-06 00:33:53,896 - __main__ - INFO - close databases sucess.
+2020-07-06 00:33:53,896 - __main__ - INFO - close databases sucess.
+2020-07-06 00:33:53,910 - __main__ - INFO - close log.
+2020-07-06 00:33:53,910 - __main__ - INFO - close log.
+2020-07-06 00:35:13,816 - __main__ - INFO - open log sucess.
+2020-07-06 00:35:13,816 - __main__ - INFO - open log sucess.
+2020-07-06 00:35:13,832 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-06 00:35:13,832 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-06 00:35:13,847 - __main__ - INFO - if not exists create table - employees
+2020-07-06 00:35:13,847 - __main__ - INFO - if not exists create table - employees
+2020-07-06 00:35:13,863 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-06 00:35:13,863 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-06 00:35:13,879 - __main__ - INFO - create all tables sucess.
+2020-07-06 00:35:13,879 - __main__ - INFO - create all tables sucess.
+2020-07-06 00:35:13,910 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:35:13,910 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:35:13,925 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:35:13,925 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:35:13,957 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:35:13,957 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 00:35:13,988 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:35:13,988 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:35:14,004 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:35:14,004 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:35:14,035 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:35:14,035 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 00:35:14,050 - __main__ - INFO - detele jobNumber(1) from employees table success
+2020-07-06 00:35:14,050 - __main__ - INFO - detele jobNumber(1) from employees table success
+2020-07-06 00:35:14,066 - __main__ - INFO - update employees table success.
+2020-07-06 00:35:14,066 - __main__ - INFO - update employees table success.
+2020-07-06 00:35:14,082 - __main__ - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-06 00:35:14,082 - __main__ - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-06 00:35:14,097 - __main__ - INFO - close databases sucess.
+2020-07-06 00:35:14,097 - __main__ - INFO - close databases sucess.
+2020-07-06 00:35:14,113 - __main__ - INFO - close log.
+2020-07-06 00:35:14,113 - __main__ - INFO - close log.
+2020-07-06 12:53:57,405 - __main__ - INFO - open log sucess.
+2020-07-06 12:53:57,415 - __main__ - INFO - connect databases - confdatashare.db.
+2020-07-06 12:53:57,430 - __main__ - INFO - if not exists create table - employees
+2020-07-06 12:53:57,450 - __main__ - INFO - if not exists create table - svnAccounts
+2020-07-06 12:53:57,464 - __main__ - INFO - create all tables sucess.
+2020-07-06 12:53:57,495 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 12:53:57,547 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 12:53:57,614 - __main__ - INFO - insert configure data into employees success.
+2020-07-06 12:53:57,685 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 12:53:57,778 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 12:53:57,806 - __main__ - INFO - insert configure data into svnAccounts success.
+2020-07-06 12:53:57,821 - __main__ - INFO - detele jobNumber(1) from employees table success
+2020-07-06 12:53:57,868 - __main__ - INFO - update employees table success.
+2020-07-06 12:53:57,881 - __main__ - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-06 12:53:57,894 - __main__ - INFO - close databases sucess.
+2020-07-06 12:53:57,900 - __main__ - INFO - close log.
+2020-07-06 13:36:46,025 - configure_data_share_storage - INFO - open log sucess.
+2020-07-06 13:36:46,032 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-06 13:36:46,057 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-06 13:36:46,070 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-06 13:36:46,089 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-06 13:36:46,134 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 13:36:46,209 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 13:36:46,246 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 13:36:46,326 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 13:36:46,385 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 13:36:46,419 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 13:36:46,432 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-06 13:36:46,496 - configure_data_share_storage - INFO - update employees table success.
+2020-07-06 13:36:46,515 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-06 13:36:46,530 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-06 13:36:46,542 - configure_data_share_storage - INFO - close log.
+2020-07-06 19:11:43,666 - configure_data_share_storage - INFO - open log sucess.
+2020-07-06 19:11:43,676 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-06 19:11:43,685 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-06 19:11:43,695 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-06 19:11:43,701 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-06 19:11:43,764 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:11:43,810 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:11:43,856 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:11:43,886 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:11:43,938 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:11:43,961 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:11:43,967 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-06 19:11:44,016 - configure_data_share_storage - INFO - update employees table success.
+2020-07-06 19:11:44,024 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-06 19:11:44,030 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-06 19:11:44,043 - configure_data_share_storage - INFO - close log.
+2020-07-06 19:12:13,010 - configure_data_share_storage - INFO - open log sucess.
+2020-07-06 19:12:13,016 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-06 19:12:13,022 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-06 19:12:13,035 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-06 19:12:13,039 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-06 19:12:13,072 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:12:13,092 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:12:13,114 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:12:13,172 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:12:13,201 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:12:13,258 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:12:13,264 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-06 19:12:13,299 - configure_data_share_storage - INFO - update employees table success.
+2020-07-06 19:12:13,314 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-06 19:12:13,319 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-06 19:12:13,320 - configure_data_share_storage - INFO - close log.
+2020-07-06 19:12:53,446 - configure_data_share_storage - INFO - open log sucess.
+2020-07-06 19:12:53,450 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-06 19:12:53,468 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-06 19:12:53,476 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-06 19:12:53,486 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-06 19:12:53,520 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:12:53,540 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:12:53,568 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:12:53,597 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:12:53,632 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:12:53,691 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:12:53,697 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-06 19:12:53,810 - configure_data_share_storage - INFO - update employees table success.
+2020-07-06 19:12:53,829 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-06 19:12:53,840 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-06 19:12:53,849 - configure_data_share_storage - INFO - close log.
+2020-07-06 19:16:46,668 - configure_data_share_storage - INFO - open log sucess.
+2020-07-06 19:16:46,694 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-06 19:16:46,703 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-06 19:16:46,710 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-06 19:16:46,722 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-06 19:16:46,778 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:16:46,820 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:16:46,856 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:16:46,914 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:16:46,966 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:16:47,018 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:16:47,031 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-06 19:16:47,056 - configure_data_share_storage - INFO - update employees table success.
+2020-07-06 19:16:47,063 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-06 19:16:47,072 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-06 19:16:47,074 - configure_data_share_storage - INFO - close log.
+2020-07-06 19:16:52,564 - configure_data_share_storage - INFO - open log sucess.
+2020-07-06 19:16:52,580 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-06 19:16:52,588 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-06 19:16:52,595 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-06 19:16:52,601 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-06 19:16:52,617 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:16:52,635 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:16:52,652 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:16:52,672 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:16:52,691 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:16:52,708 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:16:52,712 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-06 19:16:52,731 - configure_data_share_storage - INFO - update employees table success.
+2020-07-06 19:16:52,736 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-06 19:16:52,741 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-06 19:16:52,747 - configure_data_share_storage - INFO - close log.
+2020-07-06 19:17:02,503 - configure_data_share_storage - INFO - open log sucess.
+2020-07-06 19:17:02,523 - configure_data_share_storage - INFO - open log sucess.
+2020-07-06 19:17:02,503 - configure_data_share_storage - INFO - open log sucess.
+2020-07-06 19:17:02,523 - configure_data_share_storage - INFO - open log sucess.
+2020-07-06 19:17:03,531 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-06 19:17:03,535 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-06 19:17:03,531 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-06 19:17:03,535 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-06 19:17:05,543 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-06 19:17:05,548 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-06 19:17:05,543 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-06 19:17:05,548 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-06 19:17:06,563 - configure_data_share_storage - ERROR - create employees table failed.
+2020-07-06 19:17:06,570 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-06 19:17:06,563 - configure_data_share_storage - ERROR - create employees table failed.
+2020-07-06 19:17:06,570 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-06 19:17:08,572 - configure_data_share_storage - ERROR - insert configure data into employees failed.
+2020-07-06 19:17:08,576 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-06 19:17:08,572 - configure_data_share_storage - ERROR - insert configure data into employees failed.
+2020-07-06 19:17:08,576 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-06 19:17:10,589 - configure_data_share_storage - ERROR - insert configure data into employees failed.
+2020-07-06 19:17:10,606 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:17:10,589 - configure_data_share_storage - ERROR - insert configure data into employees failed.
+2020-07-06 19:17:10,606 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:17:12,616 - configure_data_share_storage - ERROR - insert configure data into employees failed.
+2020-07-06 19:17:12,639 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:17:12,616 - configure_data_share_storage - ERROR - insert configure data into employees failed.
+2020-07-06 19:17:12,639 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:17:13,633 - configure_data_share_storage - ERROR - insert configure data into svnAccounts failed.
+2020-07-06 19:17:13,668 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:17:13,633 - configure_data_share_storage - ERROR - insert configure data into svnAccounts failed.
+2020-07-06 19:17:13,668 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 19:17:15,650 - configure_data_share_storage - ERROR - insert configure data into svnAccounts failed.
+2020-07-06 19:17:15,650 - configure_data_share_storage - ERROR - insert configure data into svnAccounts failed.
+2020-07-06 19:17:15,673 - configure_data_share_storage - ERROR - insert configure data into svnAccounts failed.
+2020-07-06 19:17:15,673 - configure_data_share_storage - ERROR - insert configure data into svnAccounts failed.
+2020-07-06 19:17:15,694 - configure_data_share_storage - ERROR - detele jobNumber(1) from employees table failed
+2020-07-06 19:17:15,694 - configure_data_share_storage - ERROR - detele jobNumber(1) from employees table failed
+2020-07-06 19:17:15,706 - configure_data_share_storage - ERROR - update employees table failed.
+2020-07-06 19:17:15,706 - configure_data_share_storage - ERROR - update employees table failed.
+2020-07-06 19:17:15,720 - configure_data_share_storage - ERROR - query employees table failed.
+2020-07-06 19:17:15,720 - configure_data_share_storage - ERROR - query employees table failed.
+2020-07-06 19:17:15,729 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:17:15,729 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:17:16,760 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:17:16,760 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:17:16,807 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:17:16,807 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 19:17:16,838 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-06 19:17:16,838 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-06 19:17:16,861 - configure_data_share_storage - INFO - update employees table success.
+2020-07-06 19:17:16,861 - configure_data_share_storage - INFO - update employees table success.
+2020-07-06 19:17:16,873 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-06 19:17:16,873 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-06 19:17:16,885 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-06 19:17:16,885 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-06 19:17:16,897 - configure_data_share_storage - INFO - close log.
+2020-07-06 19:17:16,897 - configure_data_share_storage - INFO - close log.
+2020-07-06 22:38:57,764 - configure_data_share_storage - INFO - open log sucess.
+2020-07-06 22:38:57,766 - configure_data_share_storage - INFO - open log sucess.
+2020-07-06 22:38:57,764 - configure_data_share_storage - INFO - open log sucess.
+2020-07-06 22:38:57,766 - configure_data_share_storage - INFO - open log sucess.
+2020-07-06 22:38:57,764 - configure_data_share_storage - INFO - open log sucess.
+2020-07-06 22:38:57,766 - configure_data_share_storage - INFO - open log sucess.
+2020-07-06 22:38:59,792 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-06 22:38:59,797 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-06 22:38:59,792 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-06 22:38:59,797 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-06 22:38:59,792 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-06 22:38:59,797 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-06 22:39:01,811 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-06 22:39:01,815 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-06 22:39:01,811 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-06 22:39:01,815 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-06 22:39:01,811 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-06 22:39:01,815 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-06 22:39:02,825 - configure_data_share_storage - ERROR - create employees table failed.
+2020-07-06 22:39:02,830 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-06 22:39:02,825 - configure_data_share_storage - ERROR - create employees table failed.
+2020-07-06 22:39:02,830 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-06 22:39:02,825 - configure_data_share_storage - ERROR - create employees table failed.
+2020-07-06 22:39:02,830 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-06 22:39:04,850 - configure_data_share_storage - ERROR - insert configure data into employees failed.
+2020-07-06 22:39:04,853 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-06 22:39:04,850 - configure_data_share_storage - ERROR - insert configure data into employees failed.
+2020-07-06 22:39:04,853 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-06 22:39:04,850 - configure_data_share_storage - ERROR - insert configure data into employees failed.
+2020-07-06 22:39:04,853 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-06 22:39:05,868 - configure_data_share_storage - ERROR - insert configure data into employees failed.
+2020-07-06 22:39:05,868 - configure_data_share_storage - ERROR - insert configure data into employees failed.
+2020-07-06 22:39:05,868 - configure_data_share_storage - ERROR - insert configure data into employees failed.
+2020-07-06 22:39:05,889 - configure_data_share_storage - ERROR - insert configure data into employees failed.
+2020-07-06 22:39:05,889 - configure_data_share_storage - ERROR - insert configure data into employees failed.
+2020-07-06 22:39:05,889 - configure_data_share_storage - ERROR - insert configure data into employees failed.
+2020-07-06 22:39:05,905 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 22:39:05,908 - configure_data_share_storage - ERROR - insert configure data into svnAccounts failed.
+2020-07-06 22:39:05,905 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 22:39:05,908 - configure_data_share_storage - ERROR - insert configure data into svnAccounts failed.
+2020-07-06 22:39:05,905 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 22:39:05,908 - configure_data_share_storage - ERROR - insert configure data into svnAccounts failed.
+2020-07-06 22:39:07,928 - configure_data_share_storage - ERROR - insert configure data into svnAccounts failed.
+2020-07-06 22:39:07,928 - configure_data_share_storage - ERROR - insert configure data into svnAccounts failed.
+2020-07-06 22:39:07,928 - configure_data_share_storage - ERROR - insert configure data into svnAccounts failed.
+2020-07-06 22:39:07,946 - configure_data_share_storage - ERROR - insert configure data into svnAccounts failed.
+2020-07-06 22:39:07,946 - configure_data_share_storage - ERROR - insert configure data into svnAccounts failed.
+2020-07-06 22:39:07,946 - configure_data_share_storage - ERROR - insert configure data into svnAccounts failed.
+2020-07-06 22:39:07,953 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 22:39:07,962 - configure_data_share_storage - ERROR - detele jobNumber(1) from employees table failed
+2020-07-06 22:39:07,953 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 22:39:07,962 - configure_data_share_storage - ERROR - detele jobNumber(1) from employees table failed
+2020-07-06 22:39:07,953 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 22:39:07,962 - configure_data_share_storage - ERROR - detele jobNumber(1) from employees table failed
+2020-07-06 22:39:10,984 - configure_data_share_storage - ERROR - update employees table failed.
+2020-07-06 22:39:10,984 - configure_data_share_storage - ERROR - update employees table failed.
+2020-07-06 22:39:10,984 - configure_data_share_storage - ERROR - update employees table failed.
+2020-07-06 22:39:11,006 - configure_data_share_storage - ERROR - query employees table failed.
+2020-07-06 22:39:11,006 - configure_data_share_storage - ERROR - query employees table failed.
+2020-07-06 22:39:11,006 - configure_data_share_storage - ERROR - query employees table failed.
+2020-07-06 22:39:11,018 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 22:39:11,018 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 22:39:11,018 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-06 22:39:12,050 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 22:39:12,050 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 22:39:12,050 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 22:39:12,081 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 22:39:12,081 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 22:39:12,081 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 22:39:12,115 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 22:39:12,115 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 22:39:12,115 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-06 22:39:12,133 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-06 22:39:12,133 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-06 22:39:12,133 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-06 22:39:12,171 - configure_data_share_storage - INFO - update employees table success.
+2020-07-06 22:39:12,171 - configure_data_share_storage - INFO - update employees table success.
+2020-07-06 22:39:12,171 - configure_data_share_storage - INFO - update employees table success.
+2020-07-06 22:39:12,188 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-06 22:39:12,188 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-06 22:39:12,188 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-06 22:39:12,203 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-06 22:39:12,203 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-06 22:39:12,203 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-06 22:39:12,214 - configure_data_share_storage - INFO - close log.
+2020-07-06 22:39:12,214 - configure_data_share_storage - INFO - close log.
+2020-07-06 22:39:12,214 - configure_data_share_storage - INFO - close log.
+2020-07-07 13:29:02,959 - configure_data_share_storage - INFO - open log sucess.
+2020-07-07 13:29:02,959 - configure_data_share_storage - INFO - open log sucess.
+2020-07-07 13:29:02,959 - configure_data_share_storage - INFO - open log sucess.
+2020-07-07 13:29:02,995 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-07 13:29:02,995 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-07 13:29:02,995 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-07 13:29:03,016 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-07 13:29:03,016 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-07 13:29:03,016 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-07 13:29:03,031 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-07 13:29:03,031 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-07 13:29:03,031 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-07 13:29:03,044 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-07 13:29:03,044 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-07 13:29:03,044 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-07 13:29:03,079 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:03,079 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:03,079 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:03,114 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:03,114 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:03,114 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:03,159 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:03,159 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:03,159 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:03,207 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:03,207 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:03,207 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:03,237 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:03,237 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:03,237 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:03,271 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:03,271 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:03,271 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:03,286 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-07 13:29:03,286 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-07 13:29:03,286 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-07 13:29:03,324 - configure_data_share_storage - INFO - update employees table success.
+2020-07-07 13:29:03,324 - configure_data_share_storage - INFO - update employees table success.
+2020-07-07 13:29:03,324 - configure_data_share_storage - INFO - update employees table success.
+2020-07-07 13:29:03,346 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-07 13:29:03,346 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-07 13:29:03,346 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-07 13:29:03,362 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-07 13:29:03,362 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-07 13:29:03,362 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-07 13:29:03,375 - configure_data_share_storage - INFO - close log.
+2020-07-07 13:29:03,375 - configure_data_share_storage - INFO - close log.
+2020-07-07 13:29:03,375 - configure_data_share_storage - INFO - close log.
+2020-07-07 13:29:27,375 - configure_data_share_storage - INFO - open log sucess.
+2020-07-07 13:29:27,375 - configure_data_share_storage - INFO - open log sucess.
+2020-07-07 13:29:27,375 - configure_data_share_storage - INFO - open log sucess.
+2020-07-07 13:29:27,409 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-07 13:29:27,409 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-07 13:29:27,409 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-07 13:29:27,432 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-07 13:29:27,432 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-07 13:29:27,432 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-07 13:29:27,448 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-07 13:29:27,448 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-07 13:29:27,448 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-07 13:29:27,461 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-07 13:29:27,461 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-07 13:29:27,461 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-07 13:29:27,490 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:27,490 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:27,490 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:27,515 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:27,515 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:27,515 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:27,553 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:27,553 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:27,553 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:27,582 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:27,582 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:27,582 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:27,619 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:27,619 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:27,619 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:27,661 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:27,661 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:27,661 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:27,682 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-07 13:29:27,682 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-07 13:29:27,682 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-07 13:29:27,709 - configure_data_share_storage - INFO - update employees table success.
+2020-07-07 13:29:27,709 - configure_data_share_storage - INFO - update employees table success.
+2020-07-07 13:29:27,709 - configure_data_share_storage - INFO - update employees table success.
+2020-07-07 13:29:27,729 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-07 13:29:27,729 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-07 13:29:27,729 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-07 13:29:27,748 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-07 13:29:27,748 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-07 13:29:27,748 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-07 13:29:27,772 - configure_data_share_storage - INFO - close log.
+2020-07-07 13:29:27,772 - configure_data_share_storage - INFO - close log.
+2020-07-07 13:29:27,772 - configure_data_share_storage - INFO - close log.
+2020-07-07 13:29:41,725 - configure_data_share_storage - INFO - open log sucess.
+2020-07-07 13:29:41,725 - configure_data_share_storage - INFO - open log sucess.
+2020-07-07 13:29:41,725 - configure_data_share_storage - INFO - open log sucess.
+2020-07-07 13:29:41,751 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-07 13:29:41,751 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-07 13:29:41,751 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-07 13:29:41,769 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-07 13:29:41,769 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-07 13:29:41,769 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-07 13:29:41,779 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-07 13:29:41,779 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-07 13:29:41,779 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-07 13:29:41,797 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-07 13:29:41,797 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-07 13:29:41,797 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-07 13:29:41,821 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:41,821 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:41,821 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:41,845 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:41,845 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:41,845 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:41,874 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:41,874 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:41,874 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:41,907 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:41,907 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:41,907 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:41,946 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:41,946 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:41,946 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:41,992 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:41,992 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:41,992 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:42,008 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-07 13:29:42,008 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-07 13:29:42,008 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-07 13:29:42,063 - configure_data_share_storage - INFO - update employees table success.
+2020-07-07 13:29:42,063 - configure_data_share_storage - INFO - update employees table success.
+2020-07-07 13:29:42,063 - configure_data_share_storage - INFO - update employees table success.
+2020-07-07 13:29:42,082 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-07 13:29:42,082 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-07 13:29:42,082 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-07 13:29:42,095 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-07 13:29:42,095 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-07 13:29:42,095 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-07 13:29:42,106 - configure_data_share_storage - INFO - close log.
+2020-07-07 13:29:42,106 - configure_data_share_storage - INFO - close log.
+2020-07-07 13:29:42,106 - configure_data_share_storage - INFO - close log.
+2020-07-07 13:29:42,125 - configure_data_share_storage - INFO - open log sucess.
+2020-07-07 13:29:42,125 - configure_data_share_storage - INFO - open log sucess.
+2020-07-07 13:29:42,125 - configure_data_share_storage - INFO - open log sucess.
+2020-07-07 13:29:42,152 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-07 13:29:42,152 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-07 13:29:42,152 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-07 13:29:42,175 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-07 13:29:42,175 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-07 13:29:42,175 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-07 13:29:42,197 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-07 13:29:42,197 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-07 13:29:42,197 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-07 13:29:42,207 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-07 13:29:42,207 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-07 13:29:42,207 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-07 13:29:42,240 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:42,240 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:42,240 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:42,280 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:42,280 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:42,280 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:42,305 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:42,305 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:42,305 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:29:42,333 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:42,333 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:42,333 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:42,369 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:42,369 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:42,369 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:42,400 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:42,400 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:42,400 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:29:42,421 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-07 13:29:42,421 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-07 13:29:42,421 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-07 13:29:42,453 - configure_data_share_storage - INFO - update employees table success.
+2020-07-07 13:29:42,453 - configure_data_share_storage - INFO - update employees table success.
+2020-07-07 13:29:42,453 - configure_data_share_storage - INFO - update employees table success.
+2020-07-07 13:29:42,470 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-07 13:29:42,470 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-07 13:29:42,470 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-07 13:29:42,484 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-07 13:29:42,484 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-07 13:29:42,484 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-07 13:29:42,500 - configure_data_share_storage - INFO - close log.
+2020-07-07 13:29:42,500 - configure_data_share_storage - INFO - close log.
+2020-07-07 13:29:42,500 - configure_data_share_storage - INFO - close log.
+2020-07-07 13:30:21,255 - configure_data_share_storage - INFO - open log sucess.
+2020-07-07 13:30:21,291 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-07 13:30:21,299 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-07 13:30:21,304 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-07 13:30:21,310 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-07 13:30:21,333 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:30:21,354 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:30:21,376 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:30:21,411 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:30:21,442 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:30:21,468 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:30:21,476 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-07 13:30:21,494 - configure_data_share_storage - INFO - update employees table success.
+2020-07-07 13:30:21,502 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-07 13:30:21,507 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-07 13:30:21,510 - configure_data_share_storage - INFO - close log.
+2020-07-07 13:30:21,515 - configure_data_share_storage - INFO - open log sucess.
+2020-07-07 13:30:21,517 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-07 13:30:21,525 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-07 13:30:21,530 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-07 13:30:21,533 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-07 13:30:21,558 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:30:21,597 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:30:21,622 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-07 13:30:21,660 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:30:21,680 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:30:21,704 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-07 13:30:21,709 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-07 13:30:21,730 - configure_data_share_storage - INFO - update employees table success.
+2020-07-07 13:30:21,735 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-07 13:30:21,742 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-07 13:30:21,749 - configure_data_share_storage - INFO - close log.
+2020-07-08 00:54:39,757 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 00:54:52,033 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 00:54:52,033 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 00:54:52,079 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 00:54:52,079 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 00:54:52,111 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 00:54:52,111 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 00:54:52,142 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 00:54:52,142 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 00:54:52,173 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 00:54:52,173 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 00:54:52,204 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-08 00:54:52,204 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-08 00:54:52,236 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-08 00:54:52,236 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-08 00:54:52,267 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-08 00:54:52,267 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-08 00:54:52,283 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-08 00:54:52,283 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-08 00:54:52,314 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-08 00:54:52,314 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-08 00:54:52,345 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-08 00:54:52,345 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-08 00:54:52,361 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-08 00:54:52,361 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-08 00:54:52,376 - configure_data_share_storage - INFO - update employees table success.
+2020-07-08 00:54:52,376 - configure_data_share_storage - INFO - update employees table success.
+2020-07-08 00:54:52,392 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-08 00:54:52,392 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-08 00:54:52,408 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 00:54:52,408 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 00:54:52,423 - configure_data_share_storage - INFO - close log.
+2020-07-08 00:54:52,423 - configure_data_share_storage - INFO - close log.
+2020-07-08 00:55:19,804 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 00:55:19,804 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 00:55:19,870 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 00:55:19,870 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 00:55:19,888 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 00:55:19,888 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 00:55:19,904 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 00:55:19,904 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 00:55:19,920 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 00:55:19,920 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 00:55:19,951 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-08 00:55:19,951 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-08 00:55:19,982 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-08 00:55:19,982 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-08 00:55:20,013 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-08 00:55:20,013 - configure_data_share_storage - INFO - insert configure data into employees success.
+2020-07-08 00:55:20,029 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-08 00:55:20,029 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-08 00:55:20,060 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-08 00:55:20,060 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-08 00:55:20,092 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-08 00:55:20,092 - configure_data_share_storage - INFO - insert configure data into svnAccounts success.
+2020-07-08 00:55:20,107 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-08 00:55:20,107 - configure_data_share_storage - INFO - detele jobNumber(1) from employees table success
+2020-07-08 00:55:20,123 - configure_data_share_storage - INFO - update employees table success.
+2020-07-08 00:55:20,123 - configure_data_share_storage - INFO - update employees table success.
+2020-07-08 00:55:20,138 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-08 00:55:20,138 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-08 00:55:20,154 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 00:55:20,154 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 00:55:20,170 - configure_data_share_storage - INFO - close log.
+2020-07-08 00:55:20,170 - configure_data_share_storage - INFO - close log.
+2020-07-08 01:09:06,788 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:09:06,800 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:09:06,810 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:09:06,819 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:09:06,825 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:09:23,951 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:09:23,956 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:09:23,964 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:09:23,972 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:09:23,980 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:09:45,224 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 01:09:45,233 - configure_data_share_storage - INFO - close log.
+2020-07-08 01:11:42,830 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 01:11:42,830 - configure_data_share_storage - INFO - close log.
+2020-07-08 01:12:35,278 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:12:35,293 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:12:35,309 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:12:35,309 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:12:35,325 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:16:30,187 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:16:30,192 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:16:30,202 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:16:30,209 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:16:30,216 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:17:16,529 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:17:16,529 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:17:16,544 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:17:16,544 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:17:16,560 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:18:52,971 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 01:18:52,981 - configure_data_share_storage - INFO - close log.
+2020-07-08 01:18:59,723 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 01:18:59,738 - configure_data_share_storage - INFO - close log.
+2020-07-08 01:19:01,136 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:19:01,136 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:19:01,151 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:19:01,151 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:19:01,167 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:19:58,754 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 01:19:58,770 - configure_data_share_storage - INFO - close log.
+2020-07-08 01:20:00,188 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:20:00,194 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:20:00,204 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:20:00,215 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:20:00,225 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:21:40,027 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 01:21:40,027 - configure_data_share_storage - INFO - close log.
+2020-07-08 01:21:41,521 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:21:41,526 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:21:41,535 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:21:41,542 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:21:41,549 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:22:36,598 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 01:22:36,606 - configure_data_share_storage - INFO - close log.
+2020-07-08 01:22:37,731 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:22:37,731 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:22:37,747 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:22:37,747 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:22:37,763 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:30:53,776 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:30:53,776 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:30:53,792 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:30:53,792 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:30:53,808 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:31:14,385 - configure_data_share_storage - INFO - query configure data result: [(100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-08 01:32:12,178 - configure_data_share_storage - INFO - insert configure data into 'employees' success.
+2020-07-08 01:32:20,838 - configure_data_share_storage - INFO - query configure data result: [(22200, "'hj'", 4321), (100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-08 01:33:01,404 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 01:33:01,420 - configure_data_share_storage - INFO - close log.
+2020-07-08 01:35:00,709 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:35:00,714 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:35:00,722 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:35:00,731 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:35:00,736 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:35:07,939 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 01:35:07,961 - configure_data_share_storage - INFO - close log.
+2020-07-08 01:35:25,571 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:35:25,587 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:35:25,587 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:35:25,602 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:35:25,609 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:36:07,602 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:36:07,602 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:36:07,602 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:36:07,618 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:36:07,618 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:36:19,182 - configure_data_share_storage - INFO - insert configure data into 'employees' success.
+2020-07-08 01:36:25,197 - configure_data_share_storage - INFO - query configure data result: [(22200, "'hj'", 4321), (100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000)]
+2020-07-08 01:36:47,748 - configure_data_share_storage - INFO - insert configure data into 'employees' success.
+2020-07-08 01:37:02,809 - configure_data_share_storage - ERROR - query  table failed.
+2020-07-08 01:37:15,084 - configure_data_share_storage - INFO - query configure data result: [(22200, "'hj'", 4321), (100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000), (222002, "'1hj'", 4321)]
+2020-07-08 01:39:06,888 - configure_data_share_storage - ERROR - query  table failed.
+2020-07-08 01:39:09,004 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 01:39:09,013 - configure_data_share_storage - INFO - close log.
+2020-07-08 01:39:10,601 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:39:10,601 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:39:10,616 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:39:10,632 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:39:10,632 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:39:48,280 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 01:39:48,288 - configure_data_share_storage - INFO - close log.
+2020-07-08 01:39:49,744 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:39:49,759 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:39:49,766 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:39:49,766 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:39:49,781 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:52:59,472 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 01:52:59,480 - configure_data_share_storage - INFO - close log.
+2020-07-08 01:53:01,051 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:53:01,056 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:53:01,065 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:53:01,073 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:53:01,079 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:53:22,553 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:53:22,553 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:53:22,569 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:53:22,569 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:53:22,584 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:53:37,333 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 01:53:37,349 - configure_data_share_storage - INFO - close log.
+2020-07-08 01:53:38,707 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:53:38,712 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:53:38,721 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:53:38,732 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:53:38,738 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:54:41,812 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 01:54:41,822 - configure_data_share_storage - INFO - close log.
+2020-07-08 01:54:43,319 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:54:43,319 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:54:43,334 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:54:43,334 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:54:43,350 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:55:21,858 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 01:55:21,867 - configure_data_share_storage - INFO - close log.
+2020-07-08 01:55:23,116 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:55:23,122 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:55:23,132 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:55:23,141 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:55:23,147 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:55:49,604 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:55:49,609 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:55:49,619 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:55:49,628 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:55:49,633 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:56:00,526 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:56:00,526 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:56:00,541 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:56:00,541 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:56:00,557 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:56:21,825 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 01:56:21,835 - configure_data_share_storage - INFO - close log.
+2020-07-08 01:56:22,835 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:56:22,843 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:56:22,852 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:56:22,863 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:56:22,870 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:57:01,711 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 01:57:01,719 - configure_data_share_storage - INFO - close log.
+2020-07-08 01:57:02,817 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:57:02,824 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:57:02,835 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:57:02,850 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:57:02,861 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:57:03,803 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 01:57:03,811 - configure_data_share_storage - INFO - close log.
+2020-07-08 01:57:04,937 - configure_data_share_storage - INFO - open log sucess.
+2020-07-08 01:57:04,942 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-08 01:57:04,950 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-08 01:57:04,959 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-08 01:57:04,965 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-08 01:57:21,412 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 01:57:21,421 - configure_data_share_storage - INFO - close log.
+2020-07-08 02:12:53,538 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-08 02:12:53,546 - configure_data_share_storage - INFO - close log.
+2020-07-09 13:30:50,579 - configure_data_share_storage - INFO - open log sucess.
+2020-07-09 13:30:50,583 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-09 13:30:50,586 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-09 13:30:50,590 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-09 13:30:50,592 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-09 13:31:22,405 - configure_data_share_storage - INFO - query configure data result: [(22200, "'hj'", 4321), (100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000), (222002, "'1hj'", 4321)]
+2020-07-09 13:31:40,452 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-09 13:31:40,462 - configure_data_share_storage - INFO - close log.
+2020-07-09 13:32:08,864 - configure_data_share_storage - INFO - open log sucess.
+2020-07-09 13:32:08,868 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-09 13:32:08,873 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-09 13:32:08,876 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-09 13:32:08,877 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-09 13:32:15,344 - configure_data_share_storage - INFO - query configure data result: [(22200, "'hj'", 4321), (100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000), (222002, "'1hj'", 4321)]
+2020-07-09 13:32:23,252 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-09 13:32:23,255 - configure_data_share_storage - INFO - close log.
+2020-07-09 13:32:33,966 - configure_data_share_storage - INFO - open log sucess.
+2020-07-09 13:32:33,968 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-09 13:32:33,975 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-09 13:32:33,978 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-09 13:32:33,982 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-09 13:32:36,225 - configure_data_share_storage - INFO - query configure data result: [(22200, "'hj'", 4321), (100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000), (222002, "'1hj'", 4321)]
+2020-07-09 13:32:42,059 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-09 13:32:42,063 - configure_data_share_storage - INFO - close log.
+2020-07-09 13:35:19,937 - configure_data_share_storage - INFO - open log sucess.
+2020-07-09 13:35:19,944 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-09 13:35:19,958 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-09 13:35:19,962 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-09 13:35:19,967 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-09 13:35:22,675 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-09 13:35:22,681 - configure_data_share_storage - INFO - close log.
+2020-07-09 13:35:42,584 - configure_data_share_storage - INFO - open log sucess.
+2020-07-09 13:35:42,587 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-09 13:35:42,592 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-09 13:35:42,596 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-09 13:35:42,600 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-09 13:35:44,792 - configure_data_share_storage - INFO - query configure data result: [(22200, "'hj'", 4321), (100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000), (222002, "'1hj'", 4321)]
+2020-07-09 13:35:47,802 - configure_data_share_storage - INFO - query configure data result: [(22200, "'hj'", 4321), (100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000), (222002, "'1hj'", 4321)]
+2020-07-09 13:37:32,369 - configure_data_share_storage - INFO - open log sucess.
+2020-07-09 13:37:32,375 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-09 13:37:32,378 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-09 13:37:32,382 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-09 13:37:32,397 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-09 13:38:04,111 - configure_data_share_storage - INFO - open log sucess.
+2020-07-09 13:38:04,116 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-09 13:38:04,125 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-09 13:38:04,131 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-09 13:38:04,134 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-09 13:38:09,423 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-09 13:38:09,427 - configure_data_share_storage - INFO - close log.
+2020-07-09 13:38:17,898 - configure_data_share_storage - INFO - open log sucess.
+2020-07-09 13:38:17,905 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-09 13:38:17,910 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-09 13:38:17,914 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-09 13:38:17,920 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-09 13:38:20,164 - configure_data_share_storage - INFO - query configure data result: [(22200, "'hj'", 4321), (100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000), (222002, "'1hj'", 4321)]
+2020-07-09 13:38:21,104 - configure_data_share_storage - INFO - query configure data result: [(22200, "'hj'", 4321), (100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000), (222002, "'1hj'", 4321)]
+2020-07-09 13:39:14,204 - configure_data_share_storage - INFO - open log sucess.
+2020-07-09 13:39:14,208 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-09 13:39:14,211 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-09 13:39:14,215 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-09 13:39:14,218 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-09 13:39:30,930 - configure_data_share_storage - INFO - query configure data result: [(22200, "'hj'", 4321), (100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000), (222002, "'1hj'", 4321)]
+2020-07-09 13:39:35,850 - configure_data_share_storage - INFO - query configure data result: [(22200, "'hj'", 4321), (100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000), (222002, "'1hj'", 4321)]
+2020-07-09 13:39:40,255 - configure_data_share_storage - INFO - query configure data result: [(22200, "'hj'", 4321), (100000, 'Bill', 20000), (100001, 'George', 250), (100002, 'Thomas', 30000), (222002, "'1hj'", 4321)]
+2020-07-09 13:39:46,692 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-09 13:39:46,695 - configure_data_share_storage - INFO - close log.
+2020-07-09 13:39:48,230 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-09 13:39:48,235 - configure_data_share_storage - INFO - close log.
+2020-07-09 13:51:15,451 - configure_data_share_storage - INFO - open log sucess.
+2020-07-09 13:51:15,458 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-09 13:51:15,459 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-09 13:51:15,460 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-09 13:51:15,474 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-09 13:51:30,943 - configure_data_share_storage - INFO - query configure data result: {"jobNumber": [22200, "'hj'", 4321], "firstName": [100000, "Bill", 20000], "salary": [100001, "George", 250]}
+2020-07-09 13:53:26,121 - configure_data_share_storage - INFO - query configure data result: {"jobNumber": [22200, "'hj'", 4321], "firstName": [100000, "Bill", 20000], "salary": [100001, "George", 250]}
+2020-07-09 13:53:34,512 - configure_data_share_storage - INFO - query configure data result: {"jobNumber": [22200, "'hj'", 4321], "firstName": [100000, "Bill", 20000], "salary": [100001, "George", 250]}
+2020-07-09 13:53:46,330 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-09 13:53:46,334 - configure_data_share_storage - INFO - close log.
+2020-07-09 13:53:52,891 - configure_data_share_storage - INFO - open log sucess.
+2020-07-09 13:53:52,895 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-09 13:53:52,898 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-09 13:53:52,900 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-09 13:53:52,900 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-09 13:53:55,374 - configure_data_share_storage - INFO - query configure data result: ['{"jobNumber": 22200, "firstName": "\'hj\'", "salary": 4321}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+2020-07-09 14:09:48,760 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-09 14:09:48,765 - configure_data_share_storage - INFO - close log.
+2020-07-09 21:52:24,507 - configure_data_share_storage - INFO - open log sucess.
+2020-07-09 21:52:24,528 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-09 21:52:24,611 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-09 21:52:24,680 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-09 21:52:24,689 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-09 21:52:35,687 - configure_data_share_storage - INFO - open log sucess.
+2020-07-09 21:52:35,695 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-09 21:52:35,700 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-09 21:52:35,700 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-09 21:52:35,710 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-09 21:53:01,477 - configure_data_share_storage - INFO - query configure data result: ['{"jobNumber": 22200, "firstName": "\'hj\'", "salary": 4321}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+2020-07-09 21:53:02,871 - configure_data_share_storage - INFO - query configure data result: ['{"jobNumber": 22200, "firstName": "\'hj\'", "salary": 4321}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+2020-07-09 21:53:03,791 - configure_data_share_storage - INFO - query configure data result: ['{"jobNumber": 22200, "firstName": "\'hj\'", "salary": 4321}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+2020-07-09 21:53:08,782 - configure_data_share_storage - INFO - query configure data result: ['{"jobNumber": 22200, "firstName": "\'hj\'", "salary": 4321}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+2020-07-09 21:53:09,907 - configure_data_share_storage - INFO - query configure data result: ['{"jobNumber": 22200, "firstName": "\'hj\'", "salary": 4321}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+2020-07-09 21:53:13,396 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-09 21:53:13,399 - configure_data_share_storage - INFO - close log.
+2020-07-09 21:53:15,969 - configure_data_share_storage - INFO - query configure data result: ['{"jobNumber": 22200, "firstName": "\'hj\'", "salary": 4321}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+2020-07-09 21:53:16,925 - configure_data_share_storage - INFO - query configure data result: ['{"jobNumber": 22200, "firstName": "\'hj\'", "salary": 4321}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+2020-07-09 21:53:19,995 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-09 21:53:20,004 - configure_data_share_storage - INFO - close log.
+2020-07-09 23:31:33,047 - configure_data_share_storage - INFO - open log sucess.
+2020-07-09 23:31:33,062 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-09 23:31:33,078 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-09 23:31:33,078 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-09 23:31:33,094 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-09 23:31:54,437 - configure_data_share_storage - INFO - query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\'hj\'", "salary": 4321}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+2020-07-09 23:33:10,606 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-09 23:33:10,606 - configure_data_share_storage - INFO - close log.
+2020-07-10 01:13:57,745 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:13:57,761 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:13:57,761 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:13:57,761 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:13:57,761 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 01:14:16,567 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:14:16,582 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:14:16,582 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:14:16,582 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:14:16,582 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 01:14:42,440 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-10 01:14:42,440 - configure_data_share_storage - INFO - close log.
+2020-07-10 01:26:47,725 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:26:47,725 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:26:47,725 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:26:47,725 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:26:47,725 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 01:27:31,161 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:27:31,161 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:27:31,177 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:27:31,177 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:27:31,177 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 01:29:31,116 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-10 01:29:31,116 - configure_data_share_storage - INFO - close log.
+2020-07-10 01:29:36,881 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:29:36,881 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:29:36,881 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:29:36,897 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:29:36,897 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 01:30:23,302 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-10 01:30:23,302 - configure_data_share_storage - INFO - close log.
+2020-07-10 01:30:25,864 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:30:25,880 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:30:25,880 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:30:25,880 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:30:25,880 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 01:30:29,555 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-10 01:30:29,558 - configure_data_share_storage - INFO - close log.
+2020-07-10 01:30:41,993 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:30:41,993 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:30:41,993 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:30:42,008 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:30:42,008 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 01:30:44,446 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-10 01:30:44,446 - configure_data_share_storage - INFO - close log.
+2020-07-10 01:31:24,007 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:31:24,023 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:31:24,023 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:31:24,023 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:31:24,023 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 01:32:36,975 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-10 01:32:36,975 - configure_data_share_storage - INFO - close log.
+2020-07-10 01:33:06,958 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:33:06,958 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:33:06,958 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:33:06,958 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:33:06,958 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 01:37:22,911 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-10 01:37:22,911 - configure_data_share_storage - INFO - close log.
+2020-07-10 01:37:28,130 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:37:28,130 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:37:28,145 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:37:28,145 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:37:28,145 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 01:37:49,289 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-10 01:37:49,289 - configure_data_share_storage - INFO - close log.
+2020-07-10 01:40:39,790 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:40:39,790 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:40:39,805 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:40:39,805 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:40:39,805 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 01:41:12,476 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-10 01:41:12,476 - configure_data_share_storage - INFO - close log.
+2020-07-10 01:43:47,085 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:43:47,085 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:43:47,085 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:43:47,085 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:43:47,085 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 01:45:02,382 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-10 01:45:02,382 - configure_data_share_storage - INFO - close log.
+2020-07-10 01:45:03,851 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:45:03,851 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:45:03,866 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:45:03,866 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:45:03,866 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 01:46:17,712 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-10 01:46:17,712 - configure_data_share_storage - INFO - close log.
+2020-07-10 01:48:48,117 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:48:48,117 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:48:48,117 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:48:48,117 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:48:48,117 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 01:49:15,327 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-10 01:49:15,327 - configure_data_share_storage - INFO - close log.
+2020-07-10 01:49:26,404 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:49:26,404 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:49:26,404 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:49:26,404 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:49:26,404 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 01:50:42,898 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-10 01:50:42,913 - configure_data_share_storage - INFO - close log.
+2020-07-10 01:50:48,351 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:50:48,366 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:50:48,366 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:50:48,366 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:50:48,366 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 01:52:40,562 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-10 01:52:40,562 - configure_data_share_storage - INFO - close log.
+2020-07-10 01:52:46,937 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:52:46,937 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:52:46,937 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:52:46,937 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:52:46,937 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 01:52:59,514 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-10 01:52:59,530 - configure_data_share_storage - INFO - close log.
+2020-07-10 01:55:23,320 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:55:23,320 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:55:23,336 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:55:23,336 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:55:23,336 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 01:55:54,225 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:55:54,225 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:55:54,225 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:55:54,225 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:55:54,225 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 01:59:26,165 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-10 01:59:26,165 - configure_data_share_storage - INFO - close log.
+2020-07-10 01:59:31,087 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:59:31,087 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:59:31,087 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:59:31,087 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:59:31,087 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 01:59:41,899 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-10 01:59:41,899 - configure_data_share_storage - INFO - close log.
+2020-07-10 01:59:43,274 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 01:59:43,290 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 01:59:43,290 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 01:59:43,290 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 01:59:43,290 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 02:00:52,369 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-10 02:00:52,369 - configure_data_share_storage - INFO - close log.
+2020-07-10 02:00:58,902 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 02:00:58,902 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 02:00:58,917 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 02:00:58,917 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 02:00:58,917 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 02:01:03,589 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-10 02:01:03,589 - configure_data_share_storage - INFO - close log.
+2020-07-10 02:01:05,386 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 02:01:05,402 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 02:01:05,402 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 02:01:05,402 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 02:01:05,402 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 02:01:31,354 - configure_data_share_storage - INFO - close databases sucess.
+2020-07-10 02:01:31,354 - configure_data_share_storage - INFO - close log.
+2020-07-10 02:01:32,651 - configure_data_share_storage - INFO - open log sucess.
+2020-07-10 02:01:32,666 - configure_data_share_storage - INFO - connect databases - confdatashare.db.
+2020-07-10 02:01:32,666 - configure_data_share_storage - INFO - if not exists create table - employees
+2020-07-10 02:01:32,666 - configure_data_share_storage - INFO - if not exists create table - svnAccounts
+2020-07-10 02:01:32,666 - configure_data_share_storage - INFO - create all tables sucess.
+2020-07-10 13:34:06,230 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 13:34:06,238 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 13:34:06,265 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 13:34:06,299 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 13:34:06,303 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 13:37:50,104 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 13:37:50,109 - sqlite3_operation_library - INFO - close log.
+2020-07-10 13:37:58,175 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 13:37:58,178 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 13:37:58,182 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 13:37:58,185 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 13:37:58,194 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 13:38:18,293 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 13:38:18,298 - sqlite3_operation_library - INFO - close log.
+2020-07-10 14:08:43,789 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 14:08:43,791 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 14:08:43,794 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 14:08:43,798 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 14:08:43,802 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 14:08:46,341 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 14:08:46,346 - sqlite3_operation_library - INFO - close log.
+2020-07-10 14:09:40,228 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 14:09:40,232 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 14:09:40,237 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 14:09:40,242 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 14:09:40,245 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 14:11:14,014 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 14:11:14,022 - sqlite3_operation_library - INFO - close log.
+2020-07-10 14:14:28,952 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 14:14:28,956 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 14:14:28,961 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 14:14:28,964 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 14:14:28,967 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 14:14:52,343 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 14:14:52,351 - sqlite3_operation_library - INFO - close log.
+2020-07-10 14:59:57,945 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 14:59:57,949 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 14:59:57,954 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 14:59:57,957 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 14:59:57,963 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 15:00:25,291 - sqlite3_operation_library - INFO - query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\'hj\'", "salary": 4321}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+2020-07-10 15:00:42,553 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 15:00:42,559 - sqlite3_operation_library - INFO - close log.
+2020-07-10 15:03:20,418 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 15:03:20,423 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 15:03:20,429 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 15:03:20,433 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 15:03:20,438 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 15:17:01,433 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 15:17:01,437 - sqlite3_operation_library - INFO - close log.
+2020-07-10 17:27:52,379 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 17:27:52,389 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 17:27:52,394 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 17:27:52,401 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 17:27:52,410 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 18:32:09,458 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 18:32:09,494 - sqlite3_operation_library - INFO - close log.
+2020-07-10 18:32:22,555 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 18:32:22,589 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 18:32:22,674 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 18:32:22,722 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 18:32:22,760 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 18:33:05,110 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 18:33:05,151 - sqlite3_operation_library - INFO - close log.
+2020-07-10 18:34:04,016 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 18:34:04,020 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 18:34:04,023 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 18:34:04,026 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 18:34:04,029 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 18:34:16,231 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 18:34:16,234 - sqlite3_operation_library - INFO - close log.
+2020-07-10 18:34:31,049 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 18:34:31,053 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 18:34:31,056 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 18:34:31,065 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 18:34:31,069 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 18:34:34,599 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 18:34:34,604 - sqlite3_operation_library - INFO - close log.
+2020-07-10 18:34:40,056 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 18:34:40,061 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 18:34:40,064 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 18:34:40,072 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 18:34:40,074 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 18:36:23,684 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 18:36:23,688 - sqlite3_operation_library - INFO - close log.
+2020-07-10 18:36:55,880 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 18:36:55,884 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 18:36:55,887 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 18:36:55,890 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 18:36:55,894 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 18:41:19,400 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 18:41:19,404 - sqlite3_operation_library - INFO - close log.
+2020-07-10 18:44:36,811 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 18:44:36,814 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 18:44:36,819 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 18:44:36,823 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 18:44:36,825 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 18:46:17,851 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 18:46:17,856 - sqlite3_operation_library - INFO - close log.
+2020-07-10 18:47:27,565 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 18:47:27,570 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 18:47:27,573 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 18:47:27,576 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 18:47:27,579 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 18:48:29,122 - sqlite3_operation_library - INFO - query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\'hj\'", "salary": 4321}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+2020-07-10 18:49:09,332 - sqlite3_operation_library - INFO - insert configure data into 'employees' success.
+2020-07-10 18:49:30,125 - sqlite3_operation_library - INFO - query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\'hj\'", "salary": 4321}', '{"jobNumber": 25200, "firstName": "\'hejian\'", "salary": 20000}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+2020-07-10 18:50:52,242 - sqlite3_operation_library - INFO - detele jobNumber(25200) from 'employees' table success
+2020-07-10 18:50:57,104 - sqlite3_operation_library - INFO - query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\'hj\'", "salary": 4321}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+2020-07-10 18:51:29,939 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 18:51:29,946 - sqlite3_operation_library - INFO - close log.
+2020-07-10 18:53:20,628 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 18:53:20,632 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 18:53:20,636 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 18:53:20,639 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 18:53:20,644 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 18:53:43,780 - sqlite3_operation_library - INFO - insert configure data into 'employees' success.
+2020-07-10 18:53:49,403 - sqlite3_operation_library - INFO - query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\\"hejian\\"", "salary": 20000}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+2020-07-10 18:55:12,798 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 18:55:12,800 - sqlite3_operation_library - INFO - close log.
+2020-07-10 18:55:15,915 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 18:55:15,918 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 18:55:15,923 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 18:55:15,927 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 18:55:15,929 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 18:55:23,886 - sqlite3_operation_library - INFO - insert configure data into 'employees' success.
+2020-07-10 18:59:02,913 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 18:59:02,916 - sqlite3_operation_library - INFO - close log.
+2020-07-10 18:59:06,906 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 18:59:06,910 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 18:59:06,913 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 18:59:06,916 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 18:59:06,917 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 18:59:12,372 - sqlite3_operation_library - INFO - insert configure data into 'employees' success.
+2020-07-10 19:04:10,855 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 19:04:10,861 - sqlite3_operation_library - INFO - close log.
+2020-07-10 19:04:14,214 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 19:04:14,218 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 19:04:14,225 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 19:04:14,229 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 19:04:14,233 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 19:04:24,626 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 19:04:24,632 - sqlite3_operation_library - INFO - close log.
+2020-07-10 19:11:31,708 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 19:11:31,713 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 19:11:31,716 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 19:11:31,719 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 19:11:31,725 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 19:11:36,754 - sqlite3_operation_library - INFO - insert configure data into employees success.
+2020-07-10 19:11:43,578 - sqlite3_operation_library - INFO - query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\\"hejian\\"", "salary": 20000}', '{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+2020-07-10 19:12:49,840 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 19:12:49,844 - sqlite3_operation_library - INFO - close log.
+2020-07-10 19:15:02,686 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 19:15:02,689 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 19:15:02,694 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 19:15:02,697 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 19:15:02,701 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 19:15:15,934 - sqlite3_operation_library - INFO - query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\\"hejian\\"", "salary": 20000}', '{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+2020-07-10 19:15:25,558 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 19:15:25,566 - sqlite3_operation_library - INFO - close log.
+2020-07-10 19:15:58,179 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 19:15:58,183 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 19:15:58,188 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 19:15:58,191 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 19:15:58,196 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 19:16:04,018 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 19:16:04,025 - sqlite3_operation_library - INFO - close log.
+2020-07-10 19:19:30,114 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 19:19:30,117 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 19:19:30,119 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 19:19:30,125 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 19:19:30,127 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 19:19:35,990 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 19:19:36,000 - sqlite3_operation_library - INFO - close log.
+2020-07-10 19:20:38,610 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 19:20:38,615 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 19:20:38,620 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 19:20:38,625 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 19:20:38,627 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 19:20:45,196 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 19:20:45,203 - sqlite3_operation_library - INFO - close log.
+2020-07-10 19:22:54,096 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 19:22:54,099 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 19:22:54,103 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 19:22:54,107 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 19:22:54,110 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 19:22:56,003 - sqlite3_operation_library - INFO - change data
+2020-07-10 19:22:56,016 - sqlite3_operation_library - INFO - update employees table success.
+2020-07-10 19:23:04,966 - sqlite3_operation_library - INFO - query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\\"hejian\\"", "salary": 20000}', '{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+2020-07-10 19:24:01,063 - sqlite3_operation_library - INFO - change data
+2020-07-10 19:24:01,078 - sqlite3_operation_library - INFO - update employees table success.
+2020-07-10 19:24:05,702 - sqlite3_operation_library - ERROR - query  table failed.
+2020-07-10 19:24:09,776 - sqlite3_operation_library - INFO - query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\\"hejian\\"", "salary": 123456}', '{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+2020-07-10 19:27:50,178 - sqlite3_operation_library - INFO - query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\\"hejian\\"", "salary": 123456}', '{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}', '{"jobNumber": 100001, "firstName": "George", "salary": 250}', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}']
+2020-07-10 19:28:09,617 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 19:28:09,620 - sqlite3_operation_library - INFO - close log.
+2020-07-10 19:28:13,050 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 19:28:13,053 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 19:28:13,056 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 19:28:13,060 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 19:28:13,063 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 19:28:18,610 - sqlite3_operation_library - INFO - query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\\"hejian\\"", "salary": 123456}\n', '{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}\n', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}\n', '{"jobNumber": 100001, "firstName": "George", "salary": 250}\n', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}\n', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}\n']
+2020-07-10 19:29:15,022 - sqlite3_operation_library - INFO - query configure data result: 
+ ['{"jobNumber": 22200, "firstName": "\\"hejian\\"", "salary": 123456}\n', '{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}\n', '{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}\n', '{"jobNumber": 100001, "firstName": "George", "salary": 250}\n', '{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}\n', '{"jobNumber": 222002, "firstName": "\'1hj\'", "salary": 4321}\n']
+2020-07-10 19:29:18,594 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 19:29:18,597 - sqlite3_operation_library - INFO - close log.
+2020-07-10 19:29:21,514 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 19:29:21,518 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 19:29:21,521 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 19:29:21,526 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 19:29:21,528 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 19:29:23,617 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 19:29:23,622 - sqlite3_operation_library - INFO - close log.
+2020-07-10 19:29:26,495 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 19:29:26,499 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 19:29:26,501 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 19:29:26,504 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 19:29:26,507 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 19:29:28,507 - sqlite3_operation_library - INFO - query configure data result: 
+ {"jobNumber": 22200, "firstName": "\"hejian\"", "salary": 123456}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+2020-07-10 19:31:46,124 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 19:31:46,128 - sqlite3_operation_library - INFO - close log.
+2020-07-10 19:31:50,595 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 19:31:50,598 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 19:31:50,601 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 19:31:50,604 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 19:31:50,606 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 19:31:52,695 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 19:31:52,698 - sqlite3_operation_library - INFO - close log.
+2020-07-10 19:32:42,201 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 19:32:42,204 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 19:32:42,207 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 19:32:42,210 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 19:32:42,212 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 19:32:45,207 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 19:32:45,209 - sqlite3_operation_library - INFO - close log.
+2020-07-10 19:32:58,456 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 19:32:58,458 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 19:32:58,461 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 19:32:58,464 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 19:32:58,466 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 19:33:01,631 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 19:33:01,634 - sqlite3_operation_library - INFO - close log.
+2020-07-10 19:33:35,567 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 19:33:35,570 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 19:33:35,573 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 19:33:35,577 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 19:33:35,579 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 19:33:40,592 - sqlite3_operation_library - INFO - query configure data result: 
+employees:[ 
+{"jobNumber": 22200, "firstName": "\"hejian\"", "salary": 123456}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}]
+2020-07-10 19:34:08,260 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 19:34:08,264 - sqlite3_operation_library - INFO - close log.
+2020-07-10 19:34:11,477 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 19:34:11,481 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 19:34:11,484 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 19:34:11,490 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 19:34:11,493 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 19:34:13,609 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 19:34:13,614 - sqlite3_operation_library - INFO - close log.
+2020-07-10 19:34:29,652 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 19:34:29,656 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 19:34:29,659 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 19:34:29,663 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 19:34:29,665 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 19:34:33,931 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 19:34:33,934 - sqlite3_operation_library - INFO - close log.
+2020-07-10 19:35:28,276 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 19:35:28,280 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 19:35:28,284 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 19:35:28,288 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 19:35:28,291 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 19:35:29,635 - sqlite3_operation_library - INFO - query configure data result: 
+[
+employees:[ 
+{"jobNumber": 22200, "firstName": "\"hejian\"", "salary": 123456}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-10 19:35:50,596 - sqlite3_operation_library - INFO - query configure data result: 
+[
+employees:[ 
+{"jobNumber": 22200, "firstName": "\"hejian\"", "salary": 123456}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-10 19:35:53,358 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-10 19:35:53,363 - sqlite3_operation_library - INFO - close log.
+2020-07-10 19:35:56,117 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-10 19:35:56,124 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-10 19:35:56,126 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-10 19:35:56,130 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-10 19:35:56,133 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-10 19:35:57,932 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "\"hejian\"", "salary": 123456}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 09:28:16,705 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 09:28:16,705 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 09:28:16,720 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 09:28:16,720 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 09:28:16,720 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 09:28:28,780 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "\"hejian\"", "salary": 123456}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 09:32:28,423 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "\"hejian\"", "salary": 123456}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 09:33:46,813 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "\"hejian\"", "salary": 123456}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 09:40:34,126 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "\"hejian\"", "salary": 123456}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 11:20:54,390 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "\"hejian\"", "salary": 123456}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 11:21:18,676 - sqlite3_operation_library - INFO - insert configure data into employees success.
+2020-07-11 11:21:24,468 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 15:44:56,637 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-11 15:44:56,682 - sqlite3_operation_library - INFO - close log.

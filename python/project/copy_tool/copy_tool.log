@@ -1,0 +1,126 @@
+Mon, 14 Sep 2020 20:10:36 copy_tool.py[line:98] ERROR [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Mon, 14 Sep 2020 21:07:49 copy_tool.py[line:45] INFO ---ftp init---
+Mon, 14 Sep 2020 21:07:49 copy_tool.py[line:76] INFO start ftp connect
+Mon, 14 Sep 2020 21:08:30 copy_tool.py[line:45] INFO ---ftp init---
+Mon, 14 Sep 2020 21:08:30 copy_tool.py[line:76] INFO start ftp connect
+Mon, 14 Sep 2020 21:10:12 copy_tool.py[line:45] INFO ---ftp init---
+Mon, 14 Sep 2020 21:10:12 copy_tool.py[line:76] INFO start ftp connect
+Mon, 14 Sep 2020 21:10:15 copy_tool.py[line:98] INFO 正在下载文件VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 14 Sep 2020 21:10:53 copy_tool.py[line:98] INFO 正在下载文件VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 14 Sep 2020 21:13:56 copy_tool.py[line:45] INFO ---ftp init---
+Mon, 14 Sep 2020 21:13:56 copy_tool.py[line:76] INFO start ftp connect
+Mon, 14 Sep 2020 21:13:58 copy_tool.py[line:98] INFO 正在下载文件VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 14 Sep 2020 21:13:58 copy_tool.py[line:582] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 14 Sep 2020 21:14:03 copy_tool.py[line:98] INFO 正在下载文件VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 14 Sep 2020 21:14:13 copy_tool.py[line:104] ERROR [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Mon, 14 Sep 2020 21:14:13 copy_tool.py[line:76] INFO start ftp connect
+Mon, 14 Sep 2020 21:14:13 copy_tool.py[line:582] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 16 Sep 2020 19:13:56 copy_tool.py[line:45] INFO ---ftp init---
+Wed, 16 Sep 2020 19:13:56 copy_tool.py[line:102] INFO start ftp connect
+Wed, 16 Sep 2020 19:18:39 copy_tool.py[line:45] INFO ---ftp init---
+Wed, 16 Sep 2020 19:18:39 copy_tool.py[line:102] INFO start ftp connect
+Wed, 16 Sep 2020 19:21:12 copy_tool.py[line:45] INFO ---ftp init---
+Wed, 16 Sep 2020 19:21:12 copy_tool.py[line:102] INFO start ftp connect
+Wed, 16 Sep 2020 19:21:28 copy_tool.py[line:187] INFO ---ftp quit---
+Wed, 16 Sep 2020 19:25:12 copy_tool.py[line:45] INFO ---ftp init---
+Wed, 16 Sep 2020 19:25:12 copy_tool.py[line:102] INFO start ftp connect
+Wed, 16 Sep 2020 19:25:40 copy_tool.py[line:187] INFO ---ftp quit---
+Wed, 16 Sep 2020 19:25:44 copy_tool.py[line:45] INFO ---ftp init---
+Wed, 16 Sep 2020 19:25:44 copy_tool.py[line:102] INFO start ftp connect
+Wed, 16 Sep 2020 19:28:54 copy_tool.py[line:45] INFO ---ftp init---
+Wed, 16 Sep 2020 19:28:54 copy_tool.py[line:103] INFO start ftp connect
+Wed, 16 Sep 2020 19:36:34 copy_tool.py[line:45] INFO ---ftp init---
+Wed, 16 Sep 2020 19:36:34 copy_tool.py[line:103] INFO start ftp connect
+Wed, 16 Sep 2020 19:36:47 copy_tool.py[line:188] INFO ---ftp quit---
+Wed, 16 Sep 2020 19:36:52 copy_tool.py[line:45] INFO ---ftp init---
+Wed, 16 Sep 2020 19:36:52 copy_tool.py[line:103] INFO start ftp connect
+Wed, 16 Sep 2020 19:37:28 copy_tool.py[line:188] INFO ---ftp quit---
+Wed, 16 Sep 2020 19:37:29 copy_tool.py[line:45] INFO ---ftp init---
+Wed, 16 Sep 2020 19:37:29 copy_tool.py[line:103] INFO start ftp connect
+Wed, 16 Sep 2020 19:40:20 copy_tool.py[line:45] INFO ---ftp init---
+Wed, 16 Sep 2020 19:40:20 copy_tool.py[line:103] INFO start ftp connect
+Wed, 16 Sep 2020 19:40:32 copy_tool.py[line:188] INFO ---ftp quit---
+Wed, 16 Sep 2020 19:43:14 copy_tool.py[line:45] INFO ---ftp init---
+Wed, 16 Sep 2020 19:43:14 copy_tool.py[line:103] INFO start ftp connect
+Thu, 17 Sep 2020 09:18:20 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 17 Sep 2020 09:18:20 copy_tool.py[line:103] INFO start ftp connect
+Thu, 17 Sep 2020 09:20:06 copy_tool.py[line:188] INFO ---ftp quit---
+Thu, 17 Sep 2020 09:21:22 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 17 Sep 2020 09:21:22 copy_tool.py[line:103] INFO start ftp connect
+Thu, 17 Sep 2020 09:25:12 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 17 Sep 2020 09:25:12 copy_tool.py[line:103] INFO start ftp connect
+Thu, 17 Sep 2020 09:26:04 copy_tool.py[line:188] INFO ---ftp quit---
+Thu, 17 Sep 2020 09:26:06 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 17 Sep 2020 09:26:06 copy_tool.py[line:103] INFO start ftp connect
+Thu, 17 Sep 2020 09:28:07 copy_tool.py[line:188] INFO ---ftp quit---
+Thu, 17 Sep 2020 09:28:08 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 17 Sep 2020 09:28:08 copy_tool.py[line:104] INFO start ftp connect
+Thu, 17 Sep 2020 09:30:52 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 17 Sep 2020 09:30:52 copy_tool.py[line:106] INFO start ftp connect
+Thu, 17 Sep 2020 09:32:16 copy_tool.py[line:191] INFO ---ftp quit---
+Thu, 17 Sep 2020 09:32:17 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 17 Sep 2020 09:32:17 copy_tool.py[line:106] INFO start ftp connect
+Thu, 17 Sep 2020 09:33:19 copy_tool.py[line:191] INFO ---ftp quit---
+Thu, 17 Sep 2020 09:33:40 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 17 Sep 2020 09:33:40 copy_tool.py[line:110] INFO start ftp connect
+Thu, 17 Sep 2020 09:33:43 copy_tool.py[line:73] ERROR 550 The system cannot find the path specified. 
+Thu, 17 Sep 2020 13:33:42 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 17 Sep 2020 13:33:42 copy_tool.py[line:110] INFO start ftp connect
+Thu, 17 Sep 2020 13:34:23 copy_tool.py[line:73] ERROR 550 The system cannot find the path specified. 
+Thu, 17 Sep 2020 13:37:45 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 17 Sep 2020 13:37:45 copy_tool.py[line:111] INFO start ftp connect
+Thu, 17 Sep 2020 13:38:10 copy_tool.py[line:73] ERROR 550 The system cannot find the path specified. 
+Thu, 17 Sep 2020 13:39:38 copy_tool.py[line:196] INFO ---ftp quit---
+Thu, 17 Sep 2020 13:39:41 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 17 Sep 2020 13:39:41 copy_tool.py[line:111] INFO start ftp connect
+Thu, 17 Sep 2020 13:40:13 copy_tool.py[line:196] INFO ---ftp quit---
+Thu, 17 Sep 2020 13:40:49 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 17 Sep 2020 13:40:49 copy_tool.py[line:111] INFO start ftp connect
+Thu, 17 Sep 2020 13:51:03 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 17 Sep 2020 13:51:03 copy_tool.py[line:80] INFO start ftp connect
+Thu, 17 Sep 2020 13:51:29 copy_tool.py[line:73] INFO 删除FTP目录/VDI/hj/temp/下存在的文件:202005210535-外设信息收集表.docx
+Thu, 17 Sep 2020 13:51:29 copy_tool.py[line:73] INFO 删除FTP目录/VDI/hj/temp/下存在的文件:PCHunter_free
+Thu, 17 Sep 2020 13:53:27 copy_tool.py[line:165] INFO ---ftp quit---
+Thu, 17 Sep 2020 13:53:30 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 17 Sep 2020 13:53:30 copy_tool.py[line:80] INFO start ftp connect
+Thu, 17 Sep 2020 13:53:34 copy_tool.py[line:59] INFO 开始删除PCHunter_free文件夹
+Thu, 17 Sep 2020 13:53:34 copy_tool.py[line:59] INFO 开始删除PCHunter_free文件夹
+Thu, 17 Sep 2020 13:53:34 copy_tool.py[line:73] INFO 删除FTP目录/VDI/hj/temp/PCHunter_free/PCHunter_free下存在的文件:PCHunter32.exe
+Thu, 17 Sep 2020 13:53:34 copy_tool.py[line:73] INFO 删除FTP目录/VDI/hj/temp/PCHunter_free/PCHunter_free下存在的文件:PCHunter64.exe
+Thu, 17 Sep 2020 13:53:34 copy_tool.py[line:73] INFO 删除FTP目录/VDI/hj/temp/PCHunter_free/PCHunter_free下存在的文件:readme.txt
+Thu, 17 Sep 2020 13:53:34 copy_tool.py[line:73] INFO 删除FTP目录/VDI/hj/temp/PCHunter_free/PCHunter_free下存在的文件:说明.txt
+Thu, 17 Sep 2020 13:53:34 copy_tool.py[line:65] INFO 删除空文件夹/VDI/hj/temp/PCHunter_free/PCHunter_free
+Thu, 17 Sep 2020 13:53:34 copy_tool.py[line:65] INFO 删除空文件夹/VDI/hj/temp/PCHunter_free
+Thu, 17 Sep 2020 13:54:52 copy_tool.py[line:73] INFO 删除FTP目录/VDI/hj/temp/下存在的文件:202005210535-外设信息收集表.docx
+Thu, 17 Sep 2020 13:54:52 copy_tool.py[line:73] INFO 删除FTP目录/VDI/hj/temp/下存在的文件:PCHunter_free
+Thu, 17 Sep 2020 13:55:26 copy_tool.py[line:165] INFO ---ftp quit---
+Thu, 17 Sep 2020 13:55:50 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 17 Sep 2020 13:55:50 copy_tool.py[line:80] INFO start ftp connect
+Thu, 17 Sep 2020 13:56:05 copy_tool.py[line:73] INFO 删除FTP目录/VDI/hj/temp/下存在的文件:202005210535-外设信息收集表.docx
+Thu, 17 Sep 2020 13:56:05 copy_tool.py[line:73] INFO 删除FTP目录/VDI/hj/temp/下存在的文件:PCHunter_free
+Thu, 17 Sep 2020 13:58:22 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 17 Sep 2020 13:58:22 copy_tool.py[line:81] INFO start ftp connect
+Thu, 17 Sep 2020 13:58:24 copy_tool.py[line:59] INFO 开始删除PCHunter_free文件夹
+Thu, 17 Sep 2020 13:58:24 copy_tool.py[line:59] INFO 开始删除PCHunter_free文件夹
+Thu, 17 Sep 2020 13:58:24 copy_tool.py[line:74] INFO 删除FTP目录/VDI/hj/temp/PCHunter_free/PCHunter_free下存在的文件:PCHunter32.exe
+Thu, 17 Sep 2020 13:58:24 copy_tool.py[line:74] INFO 删除FTP目录/VDI/hj/temp/PCHunter_free/PCHunter_free下存在的文件:PCHunter64.exe
+Thu, 17 Sep 2020 13:58:24 copy_tool.py[line:74] INFO 删除FTP目录/VDI/hj/temp/PCHunter_free/PCHunter_free下存在的文件:readme.txt
+Thu, 17 Sep 2020 13:58:24 copy_tool.py[line:74] INFO 删除FTP目录/VDI/hj/temp/PCHunter_free/PCHunter_free下存在的文件:说明.txt
+Thu, 17 Sep 2020 13:58:24 copy_tool.py[line:65] INFO 删除空文件夹/VDI/hj/temp/PCHunter_free/PCHunter_free
+Thu, 17 Sep 2020 13:58:24 copy_tool.py[line:65] INFO 删除空文件夹/VDI/hj/temp/PCHunter_free
+Thu, 17 Sep 2020 13:58:42 copy_tool.py[line:74] INFO 删除FTP目录/VDI/hj/temp/下存在的文件:202005210535-外设信息收集表.docx
+Thu, 17 Sep 2020 13:58:42 copy_tool.py[line:74] INFO 删除FTP目录/VDI/hj/temp/下存在的文件:PCHunter_free
+Thu, 17 Sep 2020 14:04:03 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 17 Sep 2020 14:04:03 copy_tool.py[line:79] INFO start ftp connect
+Thu, 17 Sep 2020 14:04:18 copy_tool.py[line:72] INFO 删除FTP目录/VDI/hj/temp/下存在的文件:202005210535-外设信息收集表.docx
+Thu, 17 Sep 2020 14:04:18 copy_tool.py[line:59] INFO 开始删除PCHunter_free文件夹
+Thu, 17 Sep 2020 14:04:18 copy_tool.py[line:59] INFO 开始删除PCHunter_free文件夹
+Thu, 17 Sep 2020 14:04:18 copy_tool.py[line:72] INFO 删除FTP目录/VDI/hj/temp/PCHunter_free/PCHunter_free下存在的文件:PCHunter32.exe
+Thu, 17 Sep 2020 14:04:18 copy_tool.py[line:72] INFO 删除FTP目录/VDI/hj/temp/PCHunter_free/PCHunter_free下存在的文件:PCHunter64.exe
+Thu, 17 Sep 2020 14:04:18 copy_tool.py[line:72] INFO 删除FTP目录/VDI/hj/temp/PCHunter_free/PCHunter_free下存在的文件:readme.txt
+Thu, 17 Sep 2020 14:04:18 copy_tool.py[line:72] INFO 删除FTP目录/VDI/hj/temp/PCHunter_free/PCHunter_free下存在的文件:说明.txt
+Thu, 17 Sep 2020 14:04:18 copy_tool.py[line:65] INFO 删除空文件夹/VDI/hj/temp/PCHunter_free/PCHunter_free
+Thu, 17 Sep 2020 14:04:18 copy_tool.py[line:65] INFO 删除空文件夹/VDI/hj/temp/PCHunter_free
+Thu, 17 Sep 2020 14:09:22 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 17 Sep 2020 14:09:22 copy_tool.py[line:79] INFO start ftp connect
+Thu, 17 Sep 2020 14:09:29 copy_tool.py[line:163] INFO ---ftp quit---

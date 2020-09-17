@@ -1,0 +1,150 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>encryption_algorithm_library module &#8212; configure_data_share_storage_service 1.0 文档</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-encryption_algorithm_library">
+<span id="encryption-algorithm-library-module"></span><h1>encryption_algorithm_library module<a class="headerlink" href="#module-encryption_algorithm_library" title="永久链接至标题">¶</a></h1>
+<p>Created on Mon Jul  6 00:52:45 2020</p>
+<p>&#64;author: hj159</p>
+<p>对称加密:指数据加密和解密使用相同的密钥[数据的机密性] – DES, AES
+非对称加密   也叫公钥加密:指数据加密和解密使用不同的密钥,即密钥对儿[身份验证] –   DSA，RSA
+单向加密:指只能加密数据,而不能解密数据[数据的完整性] – MD5，SHA系列算法</p>
+<dl class="function">
+<dt id="encryption_algorithm_library.base64_decode">
+<code class="descclassname">encryption_algorithm_library.</code><code class="descname">base64_decode</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_algorithm_library.base64_decode" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="encryption_algorithm_library.base64_encode">
+<code class="descclassname">encryption_algorithm_library.</code><code class="descname">base64_encode</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_algorithm_library.base64_encode" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="encryption_algorithm_library.hash_encode">
+<code class="descclassname">encryption_algorithm_library.</code><code class="descname">hash_encode</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_algorithm_library.hash_encode" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="encryption_algorithm_library.hmac_encode">
+<code class="descclassname">encryption_algorithm_library.</code><code class="descname">hmac_encode</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_algorithm_library.hmac_encode" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="encryption_algorithm_library.rsa_decode">
+<code class="descclassname">encryption_algorithm_library.</code><code class="descname">rsa_decode</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_algorithm_library.rsa_decode" title="永久链接至目标">¶</a></dt>
+<dd><p>私钥解密
+:return:</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="encryption_algorithm_library.rsa_encode">
+<code class="descclassname">encryption_algorithm_library.</code><code class="descname">rsa_encode</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_algorithm_library.rsa_encode" title="永久链接至目标">¶</a></dt>
+<dd><p>用公钥加密
+:return:</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="encryption_algorithm_library.save_key">
+<code class="descclassname">encryption_algorithm_library.</code><code class="descname">save_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#encryption_algorithm_library.save_key" title="永久链接至目标">¶</a></dt>
+<dd><p>新建公钥和私钥并保存到本地
+:return:</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="encryption_algorithm_library.test_enc_alg_lib">
+<code class="descclassname">encryption_algorithm_library.</code><code class="descname">test_enc_alg_lib</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#encryption_algorithm_library.test_enc_alg_lib" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="encryption_algorithm_library.url_decode">
+<code class="descclassname">encryption_algorithm_library.</code><code class="descname">url_decode</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_algorithm_library.url_decode" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="encryption_algorithm_library.url_encode">
+<code class="descclassname">encryption_algorithm_library.</code><code class="descname">url_encode</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_algorithm_library.url_encode" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/encryption_algorithm_library.rst.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, hejian29996.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/encryption_algorithm_library.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

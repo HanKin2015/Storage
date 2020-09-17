@@ -1,0 +1,156 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>socket_library module &#8212; configure_data_share_storage_service 1.0 文档</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-socket_library">
+<span id="socket-library-module"></span><h1>socket_library module<a class="headerlink" href="#module-socket_library" title="永久链接至标题">¶</a></h1>
+<p>Created on Mon Jul  6 13:35:12 2020</p>
+<p>&#64;author: hejian29996
+&#64;description:</p>
+<blockquote>
+<div>客户端使用的socket通信模块，负责收发消息</div></blockquote>
+<dl class="class">
+<dt id="socket_library.socket_library">
+<em class="property">class </em><code class="descclassname">socket_library.</code><code class="descname">socket_library</code><a class="headerlink" href="#socket_library.socket_library" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(在 Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="socket_library.socket_library.parse_data">
+<code class="descname">parse_data</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#socket_library.socket_library.parse_data" title="永久链接至目标">¶</a></dt>
+<dd><p>解析数据.</p>
+<p>主要对接收的消息解析，消息结构为pid,content.</p>
+<dl class="docutils">
+<dt>data <span class="classifier-delimiter">:</span> <span class="classifier">data</span></dt>
+<dd>解析的数据</dd>
+</dl>
+<dl class="docutils">
+<dt>pid <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>数据来源的进程id</dd>
+<dt>content <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>消息内容</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="socket_library.socket_library.parse_msg">
+<code class="descname">parse_msg</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="headerlink" href="#socket_library.socket_library.parse_msg" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="socket_library.socket_library.recv_message">
+<code class="descname">recv_message</code><span class="sig-paren">(</span><em>ip</em>, <em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#socket_library.socket_library.recv_message" title="永久链接至目标">¶</a></dt>
+<dd><p>接收消息.</p>
+<p>主要负责接收客户端建立连接消息.</p>
+<dl class="docutils">
+<dt>ip <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>向哪个地址发送消息</dd>
+<dt>port <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>向哪个端口发送消息</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="socket_library.socket_library.send_message">
+<code class="descname">send_message</code><span class="sig-paren">(</span><em>ip</em>, <em>port</em>, <em>msg</em>, <em>pid=2020</em><span class="sig-paren">)</span><a class="headerlink" href="#socket_library.socket_library.send_message" title="永久链接至目标">¶</a></dt>
+<dd><p>发送消息.</p>
+<p>主要负责数据库更改通知，向客户端发送更改通知消息</p>
+<dl class="docutils">
+<dt>ip <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>向哪个地址发送消息</dd>
+<dt>port <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>向哪个端口发送消息</dd>
+<dt>msg <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>消息内容</dd>
+<dt>pid <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>那个进程对数据库进行了更改</dd>
+</dl>
+<dl class="docutils">
+<dt>bool</dt>
+<dd>发送成功返回True，失败False</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/socket_library.rst.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, hejian29996.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/socket_library.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
