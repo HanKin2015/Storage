@@ -27,9 +27,10 @@ class MyFTP():
 	
 	def __init__(self):     
 		self._ftp_connect_()
-		self._create_empty_dir_(remote_dir_path)
 	
-	def _create_empty_dir_(self, dir_path):
+	def clear_dir(self, dir_path, special_file=None):
+		'''清理文件夹，删除special_file以外的文件
+		'''
 		try:
 			self.ftp.rmd(remote_dir_path)
 		except ftplib.error_perm as err:
@@ -38,11 +39,15 @@ class MyFTP():
 			self.ftp.mkd(remote_dir_path)
 		except ftplib.error_perm as err:
 			print(err)
+			#print(self.ftp.pwd())
 			self.ftp.cwd(remote_dir_path)
 			files = self.ftp.nlst()
 			for file in files:
-				self.ftp.delete(file)
-	
+				if file is not special_file:
+					self.ftp.delete(file)
+			#print(self.ftp.pwd())
+			self.ftp.cwd('/')
+			
 	def _ftp_connect_(self):
 	    """建立ftp连接
 		"""
@@ -68,11 +73,29 @@ class MyFTP():
 	        成功返回True,失败False
 		"""
 	    
+	    print('正在下载文件{}到{}'.format(remote_file_path, local_file_path))
 	    bufsize = 1024
 	    fp = open(local_file_path, 'wb')
 	    self.ftp.retrbinary('RETR ' + remote_file_path, fp.write, bufsize)
 	    self.ftp.set_debuglevel(0)
 	    fp.close()
+		
+	def download_dir(self, local_dir_path, remote_dir_path):
+		self.ftp.cwd(remote_dir_path)
+		files = self.ftp.nlst()
+		#一定要记得回到根目录，或者后面就不要添加绝对地址，最好回来，防止后面使用
+		self.ftp.cwd('/')
+		for file in files:
+			local_file_path = local_dir_path + file
+			remote_file_path = remote_dir_path + file
+			self.download_file(local_file_path, remote_file_path)
+			
+	def upload_dir(self, local_dir_path, remote_dir_path):
+		for root,dirs,files in os.walk(local_dir_path):
+			for file in files:
+				local_file_path = os.path.join(root, file)
+				remote_file_path = os.path.join(remote_dir_path, file)
+				self.ftp.upload_file(local_file_path, remote_file_path)
 	
 	def upload_file(self, local_file_path, remote_file_path):
 	    """从本地上传文件到ftp
@@ -88,12 +111,11 @@ class MyFTP():
 	    bool
 	        成功返回True,失败False
 		"""
-
+		
+	    print(local_file_path, remote_file_path)
 	    bufsize = 1024
 	    fp = open(local_file_path, 'rb')
-	    print(11111)
 	    self.ftp.storbinary('STOR ' + remote_file_path, fp, bufsize)
-	    print(2222)
 	    self.ftp.set_debuglevel(0)
 	    fp.close()
 	

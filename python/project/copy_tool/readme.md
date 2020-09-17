@@ -10,10 +10,22 @@ beta版本发布
 - ftp类
 - ui类
 
+## 20200911
+v3.0完成，基本功能已经实现
+
+初步打包出来是200M左右，很纳闷，仔细看打包过程发现下载了许多未知的库。
+主要是PIL库，因此删除未使用的库是有必要的，以及导入库时最好是指定到详细的库函数。
+
+打包命令：pyinstaller -F -w -i D:/Github/Storage/python/project/copy_tool/icon/copy_tool.ico copy_tool.py
+
+## pyinstaller不能将图片打包到exe文件中
 
 
-
-
+- 短时间掉线问题
+- 日志文件
+- 更新日志
+- 适配所有环境，比如某个虚拟机
+- 有机会写个圈小猫游戏
 
 
 

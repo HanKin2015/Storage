@@ -1,0 +1,193 @@
+2020-07-14 07:41:29,014 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 07:41:44,168 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 18132)......
+2020-07-14 07:41:44,168 socket_library.py[line:62] INFO 连接端口8384成功
+2020-07-14 07:41:44,169 socket_library.py[line:69] INFO 进程13132向8384端口发送消息:13132,connect
+2020-07-14 07:41:44,169 socket_library.py[line:133] INFO 收到消息:13132,connect
+2020-07-14 07:41:44,169 socket_library.py[line:98] INFO 解析完成后:pid = [13132], msg = [connect]
+2020-07-14 07:41:44,170 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 07:41:44,184 socket_library.py[line:62] INFO 连接端口18132成功
+2020-07-14 07:41:44,185 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+2020-07-14 07:41:44,185 socket_library.py[line:69] INFO 进程2020向18132端口发送消息:2020,change,employees
+2020-07-14 07:41:44,186 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+2020-07-14 07:41:44,199 socket_library.py[line:62] INFO 连接端口18132成功
+2020-07-14 07:41:44,200 socket_library.py[line:69] INFO 进程2020向18132端口发送消息:2020,change,employees
+2020-07-14 07:41:44,213 socket_library.py[line:62] INFO 连接端口18132成功
+2020-07-14 07:41:44,213 socket_library.py[line:69] INFO 进程2020向18132端口发送消息:2020,change,employees
+2020-07-14 07:45:37,991 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 07:45:52,455 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 07:45:55,692 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 5368)......
+2020-07-14 07:45:55,692 socket_library.py[line:62] INFO 连接端口8384成功
+2020-07-14 07:45:55,693 socket_library.py[line:69] INFO 进程368向8384端口发送消息:368,connect
+2020-07-14 07:45:55,693 socket_library.py[line:133] INFO 收到消息:368,connect
+2020-07-14 07:45:55,693 socket_library.py[line:98] INFO 解析完成后:pid = [368], msg = [connect]
+2020-07-14 07:45:55,693 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 07:45:55,706 socket_library.py[line:62] INFO 连接端口5368成功
+2020-07-14 07:45:55,706 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+2020-07-14 07:45:55,706 socket_library.py[line:69] INFO 进程2020向5368端口发送消息:2020,change,employees
+2020-07-14 07:45:55,707 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+2020-07-14 07:45:55,718 socket_library.py[line:62] INFO 连接端口5368成功
+2020-07-14 07:45:55,718 socket_library.py[line:69] INFO 进程2020向5368端口发送消息:2020,change,employees
+2020-07-14 07:45:55,731 socket_library.py[line:62] INFO 连接端口5368成功
+2020-07-14 07:45:55,732 socket_library.py[line:69] INFO 进程2020向5368端口发送消息:2020,change,employees
+2020-07-14 07:45:55,738 socket_library.py[line:62] INFO 连接端口8384成功
+2020-07-14 07:45:55,739 socket_library.py[line:69] INFO 进程368向8384端口发送消息:368,close
+2020-07-14 07:45:55,739 socket_library.py[line:133] INFO 收到消息:368,close
+2020-07-14 07:45:55,740 socket_library.py[line:98] INFO 解析完成后:pid = [368], msg = [close]
+2020-07-14 07:45:55,740 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 07:46:21,872 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 07:46:27,059 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 21676)......
+2020-07-14 07:46:27,059 socket_library.py[line:62] INFO 连接端口8384成功
+2020-07-14 07:46:27,060 socket_library.py[line:69] INFO 进程16676向8384端口发送消息:16676,connect
+2020-07-14 07:46:27,060 socket_library.py[line:133] INFO 收到消息:16676,connect
+2020-07-14 07:46:27,060 socket_library.py[line:98] INFO 解析完成后:pid = [16676], msg = [connect]
+2020-07-14 07:46:27,061 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 07:46:27,075 socket_library.py[line:62] INFO 连接端口21676成功
+2020-07-14 07:46:27,075 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+2020-07-14 07:46:27,075 socket_library.py[line:69] INFO 进程2020向21676端口发送消息:2020,change,employees
+2020-07-14 07:46:27,076 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+2020-07-14 07:46:27,086 socket_library.py[line:62] INFO 连接端口21676成功
+2020-07-14 07:46:27,086 socket_library.py[line:69] INFO 进程2020向21676端口发送消息:2020,change,employees
+2020-07-14 07:46:27,099 socket_library.py[line:62] INFO 连接端口21676成功
+2020-07-14 07:46:27,100 socket_library.py[line:69] INFO 进程2020向21676端口发送消息:2020,change,employees
+2020-07-14 07:46:27,104 socket_library.py[line:62] INFO 连接端口8384成功
+2020-07-14 07:46:27,105 socket_library.py[line:69] INFO 进程16676向8384端口发送消息:16676,close
+2020-07-14 07:46:27,105 socket_library.py[line:133] INFO 收到消息:16676,close
+2020-07-14 07:46:27,106 socket_library.py[line:98] INFO 解析完成后:pid = [16676], msg = [close]
+2020-07-14 07:46:27,106 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 10:35:41,551 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 10:35:42,047 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 23632)......
+2020-07-14 10:35:42,048 socket_library.py[line:62] INFO 连接端口8384成功
+2020-07-14 10:35:42,051 socket_library.py[line:69] INFO 进程18632向8384端口发送消息:18632,connect
+2020-07-14 10:35:42,051 socket_library.py[line:133] INFO 收到消息:18632,connect
+2020-07-14 10:35:42,052 socket_library.py[line:98] INFO 解析完成后:pid = [18632], msg = [connect]
+2020-07-14 10:35:42,052 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 10:35:42,123 socket_library.py[line:62] INFO 连接端口23632成功
+2020-07-14 10:35:42,123 socket_library.py[line:69] INFO 进程2020向23632端口发送消息:2020,change,employees
+2020-07-14 10:35:42,124 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+2020-07-14 10:35:42,124 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+2020-07-14 10:35:42,148 socket_library.py[line:62] INFO 连接端口23632成功
+2020-07-14 10:35:42,148 socket_library.py[line:69] INFO 进程2020向23632端口发送消息:2020,change,employees
+2020-07-14 10:35:42,179 socket_library.py[line:62] INFO 连接端口23632成功
+2020-07-14 10:35:42,179 socket_library.py[line:69] INFO 进程2020向23632端口发送消息:2020,change,employees
+2020-07-14 10:35:42,199 socket_library.py[line:62] INFO 连接端口8384成功
+2020-07-14 10:35:42,200 socket_library.py[line:69] INFO 进程18632向8384端口发送消息:18632,close
+2020-07-14 10:35:42,200 socket_library.py[line:133] INFO 收到消息:18632,close
+2020-07-14 10:35:42,201 socket_library.py[line:98] INFO 解析完成后:pid = [18632], msg = [close]
+2020-07-14 10:35:42,201 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 10:36:42,351 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 10:36:45,550 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 24516)......
+2020-07-14 10:36:45,551 socket_library.py[line:62] INFO 连接端口8384成功
+2020-07-14 10:36:45,551 socket_library.py[line:69] INFO 进程19516向8384端口发送消息:19516,connect
+2020-07-14 10:36:45,551 socket_library.py[line:133] INFO 收到消息:19516,connect
+2020-07-14 10:36:45,552 socket_library.py[line:98] INFO 解析完成后:pid = [19516], msg = [connect]
+2020-07-14 10:36:45,553 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 10:36:45,582 socket_library.py[line:62] INFO 连接端口24516成功
+2020-07-14 10:36:45,582 socket_library.py[line:69] INFO 进程2020向24516端口发送消息:2020,change,employees
+2020-07-14 10:36:45,583 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+2020-07-14 10:36:45,584 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+2020-07-14 10:36:45,603 socket_library.py[line:62] INFO 连接端口24516成功
+2020-07-14 10:36:45,603 socket_library.py[line:69] INFO 进程2020向24516端口发送消息:2020,change,employees
+2020-07-14 10:36:45,627 socket_library.py[line:62] INFO 连接端口24516成功
+2020-07-14 10:36:45,628 socket_library.py[line:69] INFO 进程2020向24516端口发送消息:2020,change,employees
+2020-07-14 10:36:45,632 socket_library.py[line:62] INFO 连接端口8384成功
+2020-07-14 10:36:45,632 socket_library.py[line:69] INFO 进程19516向8384端口发送消息:19516,close
+2020-07-14 10:36:45,632 socket_library.py[line:133] INFO 收到消息:19516,close
+2020-07-14 10:36:45,633 socket_library.py[line:98] INFO 解析完成后:pid = [19516], msg = [close]
+2020-07-14 10:36:45,633 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 12:58:15,271 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 12:59:08,541 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 12:59:44,046 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 13:01:38,652 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 13:02:09,945 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 26292)......
+2020-07-14 13:02:39,273 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 13:02:42,500 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 14952)......
+2020-07-14 13:02:42,501 socket_library.py[line:62] INFO 连接端口8384成功
+2020-07-14 13:02:42,504 socket_library.py[line:69] INFO 进程9952向8384端口发送消息:9952,connect
+2020-07-14 13:02:42,504 socket_library.py[line:133] INFO 收到消息:9952,connect
+2020-07-14 13:02:42,505 socket_library.py[line:98] INFO 解析完成后:pid = [9952], msg = [connect]
+2020-07-14 13:02:42,506 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 13:02:42,587 socket_library.py[line:62] INFO 连接端口14952成功
+2020-07-14 13:02:42,587 socket_library.py[line:69] INFO 进程2020向14952端口发送消息:2020,change,employees
+2020-07-14 13:02:42,588 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+2020-07-14 13:02:42,589 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+2020-07-14 13:02:42,616 socket_library.py[line:62] INFO 连接端口14952成功
+2020-07-14 13:02:42,617 socket_library.py[line:69] INFO 进程2020向14952端口发送消息:2020,change,employees
+2020-07-14 13:02:42,671 socket_library.py[line:62] INFO 连接端口14952成功
+2020-07-14 13:02:42,672 socket_library.py[line:69] INFO 进程2020向14952端口发送消息:2020,change,employees
+2020-07-14 13:02:42,690 socket_library.py[line:62] INFO 连接端口8384成功
+2020-07-14 13:02:42,690 socket_library.py[line:69] INFO 进程9952向8384端口发送消息:9952,connect
+2020-07-14 13:02:42,691 socket_library.py[line:133] INFO 收到消息:9952,connect
+2020-07-14 13:02:42,692 socket_library.py[line:98] INFO 解析完成后:pid = [9952], msg = [connect]
+2020-07-14 13:02:42,692 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 13:02:45,685 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 14952)......
+2020-07-14 13:02:45,687 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+2020-07-14 13:02:45,688 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+2020-07-14 13:02:48,009 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 14952)......
+2020-07-14 13:02:48,009 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+2020-07-14 13:02:48,010 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+2020-07-14 13:02:48,990 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 14952)......
+2020-07-14 13:20:16,418 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 13:20:21,179 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 25660)......
+2020-07-14 13:20:21,179 socket_library.py[line:62] INFO 连接端口8384成功
+2020-07-14 13:20:21,180 socket_library.py[line:69] INFO 进程20660向8384端口发送消息:20660,connect
+2020-07-14 13:20:21,181 socket_library.py[line:133] INFO 收到消息:20660,connect
+2020-07-14 13:20:21,181 socket_library.py[line:98] INFO 解析完成后:pid = [20660], msg = [connect]
+2020-07-14 13:20:21,182 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 13:20:21,203 socket_library.py[line:62] INFO 连接端口25660成功
+2020-07-14 13:20:21,204 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+2020-07-14 13:20:21,205 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+2020-07-14 13:20:21,205 socket_library.py[line:69] INFO 进程2020向25660端口发送消息:2020,change,employees
+2020-07-14 13:20:21,260 socket_library.py[line:62] INFO 连接端口25660成功
+2020-07-14 13:20:21,260 socket_library.py[line:69] INFO 进程2020向25660端口发送消息:2020,change,employees
+2020-07-14 13:20:21,297 socket_library.py[line:62] INFO 连接端口25660成功
+2020-07-14 13:20:21,297 socket_library.py[line:69] INFO 进程2020向25660端口发送消息:2020,change,employees
+2020-07-14 13:20:21,310 socket_library.py[line:62] INFO 连接端口8384成功
+2020-07-14 13:20:21,310 socket_library.py[line:69] INFO 进程20660向8384端口发送消息:20660,connect
+2020-07-14 13:20:21,310 socket_library.py[line:133] INFO 收到消息:20660,connect
+2020-07-14 13:20:21,310 socket_library.py[line:98] INFO 解析完成后:pid = [20660], msg = [connect]
+2020-07-14 13:20:21,310 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 13:20:45,018 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 23484)......
+2020-07-14 13:20:45,018 socket_library.py[line:62] INFO 连接端口8384成功
+2020-07-14 13:20:45,018 socket_library.py[line:69] INFO 进程18484向8384端口发送消息:18484,connect
+2020-07-14 13:20:45,018 socket_library.py[line:133] INFO 收到消息:18484,connect
+2020-07-14 13:20:45,019 socket_library.py[line:98] INFO 解析完成后:pid = [18484], msg = [connect]
+2020-07-14 13:20:45,019 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 13:20:45,045 socket_library.py[line:62] INFO 连接端口23484成功
+2020-07-14 13:20:45,046 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+2020-07-14 13:20:45,046 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+2020-07-14 13:20:45,047 socket_library.py[line:69] INFO 进程2020向23484端口发送消息:2020,change,employees
+2020-07-14 13:20:45,096 socket_library.py[line:62] INFO 连接端口23484成功
+2020-07-14 13:20:45,096 socket_library.py[line:69] INFO 进程2020向23484端口发送消息:2020,change,employees
+2020-07-14 13:20:45,163 socket_library.py[line:62] INFO 连接端口23484成功
+2020-07-14 13:20:45,163 socket_library.py[line:69] INFO 进程2020向23484端口发送消息:2020,change,employees
+2020-07-14 13:20:45,200 socket_library.py[line:62] INFO 连接端口8384成功
+2020-07-14 13:20:45,201 socket_library.py[line:133] INFO 收到消息:18484,connect
+2020-07-14 13:20:45,201 socket_library.py[line:98] INFO 解析完成后:pid = [18484], msg = [connect]
+2020-07-14 13:20:45,201 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 13:20:45,202 socket_library.py[line:69] INFO 进程18484向8384端口发送消息:18484,connect
+2020-07-14 13:20:47,239 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 7628)......
+2020-07-14 13:20:47,239 socket_library.py[line:62] INFO 连接端口8384成功
+2020-07-14 13:20:47,240 socket_library.py[line:69] INFO 进程2628向8384端口发送消息:2628,connect
+2020-07-14 13:20:47,240 socket_library.py[line:133] INFO 收到消息:2628,connect
+2020-07-14 13:20:47,240 socket_library.py[line:98] INFO 解析完成后:pid = [2628], msg = [connect]
+2020-07-14 13:20:47,241 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 13:20:47,268 socket_library.py[line:62] INFO 连接端口7628成功
+2020-07-14 13:20:47,268 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+2020-07-14 13:20:47,268 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+2020-07-14 13:20:47,269 socket_library.py[line:69] INFO 进程2020向7628端口发送消息:2020,change,employees
+2020-07-14 13:20:47,331 socket_library.py[line:62] INFO 连接端口7628成功
+2020-07-14 13:20:47,332 socket_library.py[line:69] INFO 进程2020向7628端口发送消息:2020,change,employees
+2020-07-14 13:20:47,382 socket_library.py[line:62] INFO 连接端口7628成功
+2020-07-14 13:20:47,382 socket_library.py[line:69] INFO 进程2020向7628端口发送消息:2020,change,employees
+2020-07-14 13:20:47,424 socket_library.py[line:62] INFO 连接端口8384成功
+2020-07-14 13:20:47,426 socket_library.py[line:133] INFO 收到消息:2628,connect
+2020-07-14 13:20:47,426 socket_library.py[line:69] INFO 进程2628向8384端口发送消息:2628,connect
+2020-07-14 13:20:47,426 socket_library.py[line:98] INFO 解析完成后:pid = [2628], msg = [connect]
+2020-07-14 13:20:47,426 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+2020-07-14 13:20:49,428 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 7628)......
+2020-07-14 13:20:49,429 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+2020-07-14 13:20:49,429 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+2020-07-14 13:20:50,029 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 7628)......
+2020-07-14 13:20:50,030 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+2020-07-14 13:20:50,031 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+2020-07-14 13:20:50,534 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 7628)......

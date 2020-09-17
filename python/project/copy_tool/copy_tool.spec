@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['copy_tool.py'],
-             pathex=['D:\\Github\\Storage\\python'],
+             pathex=['D:\\Github\\Storage\\python\\project\\copy_tool'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -30,4 +30,4 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=False , icon='icon\\pen.ico')
+          console=False , icon='D:\\Github\\Storage\\python\\project\\copy_tool\\icon\\copy_tool.ico')

@@ -1,0 +1,20 @@
+Mon, 13 Jul 2020 03:20:35 main.py[line:77] INFO connect databases - confdatashare.db.
+Mon, 13 Jul 2020 03:21:22 main.py[line:77] INFO connect databases - confdatashare.db.
+Mon, 13 Jul 2020 03:21:22 main.py[line:148] INFO insert configure data into employees success.
+Mon, 13 Jul 2020 03:21:22 main.py[line:148] INFO insert configure data into employees success.
+Mon, 13 Jul 2020 03:21:22 main.py[line:148] INFO insert configure data into employees success.
+Mon, 13 Jul 2020 03:21:22 main.py[line:173] INFO detele jobNumber(1) from employees table success
+Mon, 13 Jul 2020 03:21:22 main.py[line:195] INFO change data
+Mon, 13 Jul 2020 03:21:22 main.py[line:204] INFO update employees table success.
+Mon, 13 Jul 2020 03:21:22 main.py[line:233] INFO query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+Mon, 13 Jul 2020 03:21:22 main.py[line:91] INFO close databases sucess.

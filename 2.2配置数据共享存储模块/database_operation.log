@@ -1,0 +1,298 @@
+2020-07-11 15:47:27,261 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 15:47:27,265 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 15:47:27,270 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 15:47:27,276 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 15:47:27,280 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 15:48:09,547 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-11 15:48:09,554 - sqlite3_operation_library - INFO - close log.
+2020-07-11 15:51:26,837 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 15:51:26,840 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 15:51:26,845 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 15:51:26,849 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 15:51:26,853 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 15:52:46,723 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-11 15:52:46,730 - sqlite3_operation_library - INFO - close log.
+2020-07-11 15:52:50,131 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 15:52:50,135 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 15:52:50,139 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 15:52:50,143 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 15:52:50,148 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 15:59:04,579 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-11 15:59:04,586 - sqlite3_operation_library - INFO - close log.
+2020-07-11 16:20:15,715 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 16:20:15,719 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 16:20:15,724 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 16:20:15,729 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 16:20:15,734 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 16:29:18,139 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-11 16:29:18,145 - sqlite3_operation_library - INFO - close log.
+2020-07-11 16:31:30,623 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 16:31:30,626 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 16:31:30,631 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 16:31:30,636 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 16:31:30,640 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 16:54:38,226 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 16:54:38,231 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 16:54:38,235 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 16:54:38,239 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 16:54:38,243 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 16:57:00,985 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-11 16:57:00,988 - sqlite3_operation_library - INFO - close log.
+2020-07-11 16:58:42,721 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 16:58:42,725 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 16:58:42,732 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 16:58:42,737 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 16:58:42,742 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 16:58:46,886 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-11 16:58:46,893 - sqlite3_operation_library - INFO - close log.
+2020-07-11 16:59:36,736 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 16:59:36,752 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 16:59:36,752 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 16:59:36,752 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 16:59:36,767 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 17:00:41,525 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 17:00:41,528 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 17:00:41,534 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 17:00:41,539 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 17:00:41,545 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 17:05:54,829 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 17:05:54,833 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 17:05:54,837 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 17:05:54,841 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 17:05:54,845 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 17:12:24,164 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 17:12:24,168 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 17:12:24,172 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 17:12:24,176 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 17:12:24,179 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 17:13:39,584 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 17:13:39,588 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 17:13:39,592 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 17:13:39,596 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 17:13:39,599 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 17:13:49,726 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 17:16:15,507 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-11 17:16:15,514 - sqlite3_operation_library - INFO - close log.
+2020-07-11 17:16:27,753 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 17:16:27,757 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 17:16:27,762 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 17:16:27,766 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 17:16:27,770 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 17:16:32,033 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 17:19:33,485 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 17:19:49,089 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 17:37:02,388 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-11 17:37:02,395 - sqlite3_operation_library - INFO - close log.
+2020-07-11 17:37:05,131 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 17:37:05,134 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 17:37:05,139 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 17:37:05,144 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 17:37:05,148 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 17:37:59,889 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 17:40:19,433 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 17:40:19,437 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 17:40:19,441 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 17:40:19,444 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 17:40:19,448 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 17:40:23,920 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 17:42:02,193 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 17:42:28,891 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 17:42:37,408 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 17:45:35,121 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 17:45:35,125 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 17:45:35,131 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 17:45:35,136 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 17:45:35,141 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 17:45:47,482 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 17:49:53,784 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 17:49:53,787 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 17:49:53,791 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 17:49:53,795 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 17:49:53,799 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 17:49:58,644 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 17:52:36,853 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 17:52:36,856 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 17:52:36,861 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 17:52:36,865 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 17:52:36,868 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 17:52:41,408 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 17:54:41,025 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 17:54:41,028 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 17:54:41,032 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 17:54:41,036 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 17:54:41,039 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 17:54:47,645 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 17:56:56,986 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 17:56:56,989 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 17:56:56,993 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 17:56:56,997 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 17:56:57,000 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 17:57:27,994 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-11 17:57:28,000 - sqlite3_operation_library - INFO - close log.
+2020-07-11 17:57:33,619 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 17:57:33,622 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 17:57:33,628 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 17:57:33,633 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 17:57:33,638 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 17:57:37,884 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-11 17:57:37,889 - sqlite3_operation_library - INFO - close log.
+2020-07-11 17:57:45,216 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 17:57:45,223 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 17:57:45,231 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 17:57:45,239 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 17:57:45,246 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 17:57:53,604 - sqlite3_operation_library - INFO - query configure data result: 
+[
+"employees":[ 
+{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+{"jobNumber": 100000, "firstName": "Bill", "salary": 20000}
+{"jobNumber": 100001, "firstName": "George", "salary": 250}
+{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+]
+]
+2020-07-11 17:59:39,631 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-11 17:59:39,637 - sqlite3_operation_library - INFO - close log.
+2020-07-11 17:59:43,246 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 17:59:43,250 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 17:59:43,256 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 17:59:43,263 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 17:59:43,268 - sqlite3_operation_library - INFO - create all tables sucess.
+2020-07-11 18:00:02,484 - sqlite3_operation_library - INFO - close databases sucess.
+2020-07-11 18:00:02,490 - sqlite3_operation_library - INFO - close log.
+2020-07-11 18:00:13,884 - sqlite3_operation_library - INFO - open log sucess.
+2020-07-11 18:00:13,888 - sqlite3_operation_library - INFO - connect databases - confdatashare.db.
+2020-07-11 18:00:13,894 - sqlite3_operation_library - INFO - if not exists create table - employees
+2020-07-11 18:00:13,903 - sqlite3_operation_library - INFO - if not exists create table - svnAccounts
+2020-07-11 18:00:13,908 - sqlite3_operation_library - INFO - create all tables sucess.
