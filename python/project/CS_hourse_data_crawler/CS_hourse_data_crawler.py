@@ -26,6 +26,7 @@ estate_ids = [202004160830, 202005070287, 202006230442]
 
 #链接正则
 url_regex = [
+        ["http://www.cszjxx.net/floorinfo/{}","div.hs_xqxx > table > tbody > tr > td", 3],
         ["http://www.cszjxx.net/floorinfo/{}","table.table > tbody > tr > td", 3]
         ]
 
@@ -109,11 +110,54 @@ def crawler_by_proxy(target_url):
             return html
     return None
 
+def get_estate_info():
+    '''获取楼盘信息
+    '''
+    params = {"show_ram":1}
+    url = 'http://www.cszjxx.net/floorinfo/202004160830'
+    response = requests.get(url,params=params, headers=headers)#访问url
+    listData=[]#定义数组
+    soup =bs4.BeautifulSoup(response.text, 'lxml')#获取网页源代码
+    print('soup=', len(soup))
+    
+    t = soup.select('.hs_table2')[0]
+    print(len(t))
+    #tr = soup.find_all('table')
+    #print(len(tr))
+    #id='hs_table2_KF2006110301'
+    #tables = soup.find_all('div', attrs={'class':'hs_table2'})
+    #print(len(tables))
+    #print(tables)
+    return 1
+    tr = soup.find('table').find_all('tr')#.find定位到所需数据位置  .find_all查找所有的tr（表格）
+    print('hahhah')
+    # 去除标签栏
+    for j in tr[1:]:        #tr2[1:]遍历第1列到最后一列，表头为第0列
+        td = j.find_all('td')#td表格
+        #print(type(td))
+        td_cnt = len(td)
+        if td_cnt < 4:
+            continue
+        Date = td[0].get_text().strip()           #遍历排名
+        Quality_grade = td[1].get_text().strip()  #遍历城市
+        AQI = td[2].get_text().strip()            #遍历空气质量指数AQI
+        AQI_rank = td[3].get_text().strip()       #遍历PM2.5浓度
+        listData.append([Date,Quality_grade,AQI,AQI_rank])
+    
+    pd.DataFrame(listData).to_csv('./hj.csv', index=False)
+
+def get_html_table_data():
+    data = pd.read_html('http://www.cszjxx.net/floorinfo/202004160830')[2]
+    #data.to_csv('./result.csv', index=False)
+    print(data)
+
 def crawler():
     for url, regex, index in url_regex:
         print(url)
     get_proxy_ip()
 
 if __name__ == '__main__':
-    crawler()
+    #crawler()
+    get_estate_info()
+    #get_html_table_data()
 
