@@ -118,9 +118,54 @@ def get_estate_info():
     url = 'http://www.cszjxx.net/floorinfo/202004160830'
     chromedriver_path = r"C:/Program Files (x86)/Google/Chrome/Application/chromedriver.exe"
     driver = webdriver.Chrome(chromedriver_path)    #打开浏览器
+    driver.maximize_window() #最大化窗口
+    
     driver.get(url) #打开网页
     time.sleep(2)   #时刻需要睡眠等待一下
-    driver.close()  #关闭浏览器
+    
+    div_elements = driver.find_elements_by_class_name('hs_zk')
+    print(type(div_elements))
+    print('div elements cnt = {}'.format(len(div_elements)))
+    
+    
+    #print(driver.find_element_by_partial_link_text('点击加载更多'))
+    #print(driver.find_element_by_link_text('点击加载更多'))
+    #print(driver.find_element_by_name('点击加载更多'))
+    #elements = driver.find_elements_by_xpath(".//*[@class='hs_table2']")
+    #print(len(elements))
+    #for div_idx in range(1, len(elements)+1, 1):
+    
+    div_ids = []
+    for element in driver.find_elements_by_xpath(".//*[@class='hs_table2']"):
+        #print(element.get_attribute('id'))
+        div_ids.append(element.get_attribute('id'))
+    
+    #for div_idx, div_element in enumerate(div_elements, start=1):
+    for div_element, div_id in zip(div_elements, div_ids):
+        print('open div(id = {}) 展开户室列表'.format(div_id))
+        time.sleep(2)
+        driver.execute_script('arguments[0].click();', div_element)
+        tbody_idx = 1
+        
+        while True:
+            time.sleep(4)
+            tr_element = driver.find_elements_by_xpath(".//*[@id='{}']/table/tbody[{}]/tr".format(div_id, tbody_idx))
+            #print(len(tr_element))
+            tr_idx = len(tr_element)
+            if tr_idx == 0:
+                break
+            try:
+                td_element = driver.find_element_by_xpath(".//*[@id='{}']/table/tbody[{}]/tr[{}]/td[1]".format(div_id, tbody_idx, tr_idx))
+                print('open tr(index = {}) 点击加载更多'.format(tr_idx))
+                driver.execute_script('arguments[0].click();', td_element)
+                tbody_idx = tbody_idx + 1
+            except Exception as ex:
+                print(ex)
+                break
+            
+    time.sleep(2)
+    print('open all done')
+    #driver.quit()  #关闭浏览器
     
     
     #pd.DataFrame(listData).to_csv('./hj.csv', index=False)
