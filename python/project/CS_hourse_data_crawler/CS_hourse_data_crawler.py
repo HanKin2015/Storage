@@ -127,7 +127,6 @@ def get_estate_info():
     print(type(div_elements))
     print('div elements cnt = {}'.format(len(div_elements)))
     
-    
     #print(driver.find_element_by_partial_link_text('点击加载更多'))
     #print(driver.find_element_by_link_text('点击加载更多'))
     #print(driver.find_element_by_name('点击加载更多'))
@@ -143,16 +142,17 @@ def get_estate_info():
     #for div_idx, div_element in enumerate(div_elements, start=1):
     for div_element, div_id in zip(div_elements, div_ids):
         print('open div(id = {}) 展开户室列表'.format(div_id))
-        time.sleep(2)
+        time.sleep(5)
         driver.execute_script('arguments[0].click();', div_element)
         tbody_idx = 1
         
         while True:
-            time.sleep(4)
+            time.sleep(5)
             tr_element = driver.find_elements_by_xpath(".//*[@id='{}']/table/tbody[{}]/tr".format(div_id, tbody_idx))
             #print(len(tr_element))
             tr_idx = len(tr_element)
             if tr_idx == 0:
+                print('已经到底了')
                 break
             try:
                 td_element = driver.find_element_by_xpath(".//*[@id='{}']/table/tbody[{}]/tr[{}]/td[1]".format(div_id, tbody_idx, tr_idx))
@@ -165,10 +165,19 @@ def get_estate_info():
             
     time.sleep(2)
     print('open all done')
-    #driver.quit()  #关闭浏览器
     
     
-    #pd.DataFrame(listData).to_csv('./hj.csv', index=False)
+    sheet_names = ['项目简介', '楼栋信息', '2栋销售', '1栋销售', '7栋销售', '9栋销售']
+    html = driver.page_source
+    tables = pd.read_html(html) #返回一个List,里面封装的是Dataframe
+    print('table count = {}'.fotmat(len(tables)))
+    writer = pd.ExcelWriter('./梅溪湖依云曦城楼盘.xlsx')
+    for sheet_name, table in zip(sheet_names, tables):
+        pd.DataFrame(table).to_excel(writer, index=False, sheet_name=sheet_name)
+    writer.save()
+    writer.close()
+    time.sleep(2)
+    driver.quit()  #关闭浏览器
 
 def get_html_table_data():
     data = pd.read_html('http://www.cszjxx.net/floorinfo/202004160830')[2]
