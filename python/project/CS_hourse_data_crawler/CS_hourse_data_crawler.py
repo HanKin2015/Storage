@@ -5,8 +5,8 @@ Created on Fri Sep 18 13:38:46 2020
 @author: hankin
 @desc:
     爬取长沙房地产开发商房屋销售情况
-    网站：http://www.cszjxx.net/floorinfo/202004160830
-    先以越秀亲爱里为例
+    网站：http://www.cszjxx.net/floorinfo/202006230442
+    先以梅溪湖依云曦城楼盘为例
 """
 
 import pandas as pd
@@ -112,10 +112,9 @@ def crawler_by_proxy(target_url):
             return html
     return None
 
-def get_estate_info():
+def get_estate_info(url, save_file_path):
     '''获取楼盘信息
     '''
-    url = 'http://www.cszjxx.net/floorinfo/202004160830'
     chromedriver_path = r"C:/Program Files (x86)/Google/Chrome/Application/chromedriver.exe"
     driver = webdriver.Chrome(chromedriver_path)    #打开浏览器
     driver.maximize_window() #最大化窗口
@@ -126,6 +125,15 @@ def get_estate_info():
     div_elements = driver.find_elements_by_class_name('hs_zk')
     print(type(div_elements))
     print('div elements cnt = {}'.format(len(div_elements)))
+    
+    sheet_names = ['项目简介', '楼栋信息']
+    #建立sheet_names
+    table = pd.read_html(driver.page_source)[1]
+    hourse_info = pd.DataFrame(table)
+    hourse_numbers = hourse_info['对应栋号'].values
+    print(hourse_numbers)
+    sheet_names.extend(hourse_numbers.tolist())
+    print(sheet_names)
     
     #print(driver.find_element_by_partial_link_text('点击加载更多'))
     #print(driver.find_element_by_link_text('点击加载更多'))
@@ -142,7 +150,7 @@ def get_estate_info():
     #for div_idx, div_element in enumerate(div_elements, start=1):
     for div_element, div_id in zip(div_elements, div_ids):
         print('open div(id = {}) 展开户室列表'.format(div_id))
-        time.sleep(5)
+        time.sleep(3)
         driver.execute_script('arguments[0].click();', div_element)
         tbody_idx = 1
         
@@ -166,12 +174,11 @@ def get_estate_info():
     time.sleep(2)
     print('open all done')
     
-    
-    sheet_names = ['项目简介', '楼栋信息', '2栋销售', '1栋销售', '7栋销售', '9栋销售']
     html = driver.page_source
     tables = pd.read_html(html) #返回一个List,里面封装的是Dataframe
-    print('table count = {}'.fotmat(len(tables)))
-    writer = pd.ExcelWriter('./梅溪湖依云曦城楼盘.xlsx')
+    time.sleep(2)
+    print('table count = {}'.format(len(tables)))
+    writer = pd.ExcelWriter(save_file_path)
     for sheet_name, table in zip(sheet_names, tables):
         pd.DataFrame(table).to_excel(writer, index=False, sheet_name=sheet_name)
     writer.save()
@@ -191,6 +198,11 @@ def crawler():
 
 if __name__ == '__main__':
     #crawler()
-    get_estate_info()
+    begin_time = time.time()
+    url = 'http://www.cszjxx.net/floorinfo/202006230442'
+    save_file_path = './梅溪湖依云曦城楼盘.xlsx'
+    get_estate_info(url, save_file_path)
+    end_time = time.time()
+    print('共花费 {} s时间'.format(round(end_time - begin_time, 2)))
     #get_html_table_data()
 
