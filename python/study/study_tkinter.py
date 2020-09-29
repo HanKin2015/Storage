@@ -60,7 +60,7 @@ def tkinter_exam2():
     button1.pack(side=tk.LEFT)        
     button2=tk.Button(root,text='Button2', command=button2_cliecked)
     button2.pack(side=tk.RIGHT)
-    bm = tk.PhotoImage(file='./image/pen.png')
+    bm = tk.PhotoImage(file='../image/pen.png')
     img = tk.Label(root, image = bm)
     img.pack(side=tk.BOTTOM)
     root.mainloop()            
