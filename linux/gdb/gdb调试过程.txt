@@ -1,0 +1,43 @@
+
+# gdb调试带有参数的程序
+gdb --args ./a.out 4
+完全可以在运行的时候：r 4
+
+编译过程中需要添加-g选项，这样才会有符号表。
+
+root@debian-sangfor:~/hejian/lock# gdb ./a.out
+GNU gdb (Debian 7.7.1+dfsg-5) 7.7.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./a.out...done.
+(gdb) r 3
+Starting program: /home/vdi/hejian/lock/a.out 3
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[New Thread 0x7ffff6ff3700 (LWP 13754)]
+I'm 1th thread, Thread_ID = 140737337308928
+[New Thread 0x7ffff67f2700 (LWP 13755)]
+[New Thread 0x7ffff5ff1700 (LWP 13756)]
+[Thread 0x7ffff6ff3700 (LWP 13754) exited]
+
+Program received signal SIGSEGV, Segmentation fault.
+[Switching to Thread 0x7ffff67f2700 (LWP 13755)]
+0x0000000000400784 in tfn (arg=0x1) at thread.cpp:12
+12              i = *((int *)arg);
+(gdb) bt
+#0  0x0000000000400784 in tfn (arg=0x1) at thread.cpp:12
+#1  0x00007ffff7bc70a4 in start_thread (arg=0x7ffff67f2700) at pthread_create.c:309
+#2  0x00007ffff70da04d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+(gdb) quit
+
