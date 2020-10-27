@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1603798076 source:d:\github\storage\linux\library\unit_test.cpp
+	"common.h"
+
+1603802304 d:\github\storage\linux\library\common.h
+	<vector>
+	<string>
+	<fstream>
+	<iostream>
+	<cstdio>
+	<cstdlib>
+
+1603785730 source:d:\github\storage\linux\library\common.cpp
+	"common.h"
+
