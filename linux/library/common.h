@@ -7,6 +7,7 @@
 #include <iostream>
 #include <cstdio>
 #include <cstdlib>
+#include <string.h>
 using namespace std;
 
 int ReadFile(const char* file_path, vector<char*> &data);

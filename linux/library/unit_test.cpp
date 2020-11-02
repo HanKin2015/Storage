@@ -6,10 +6,10 @@ void test_file_opt()
     const char* out_file_path = "./out.txt";
     vector<char*> data;
     ReadFile(in_file_path, data);
-    cout << data.size() << endl;
     for (vector<char*>::iterator it = data.begin(); it != data.end(); it++) {
         cout << (*it) << endl;
     }
+    WriteFile(out_file_path, data);
     return;
 }
 
