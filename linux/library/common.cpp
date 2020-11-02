@@ -11,10 +11,11 @@ int ReadFile(const char* file_path, vector<char*> &data)
 
     string line;
     while (getline(in_file, line)) {
-        cout << line << endl;
-        char* temp =  const_cast<char *>(line.c_str());
+        size_t len = line.size();
+        char* temp = new char[len + 1];
+        //temp = const_cast<char *>(line.c_str());
+        strncpy(temp, line.c_str(), len + 1);
         data.push_back(temp);
-        cout << temp << endl;
     }
 
     in_file.close();

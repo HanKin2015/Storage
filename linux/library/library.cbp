@@ -31,8 +31,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="../common.cpp" />
-		<Unit filename="../common.h" />
+		<Unit filename="common.cpp" />
+		<Unit filename="common.h" />
 		<Unit filename="unit_test.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
