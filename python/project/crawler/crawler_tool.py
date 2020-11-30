@@ -73,6 +73,7 @@ class CrawlerTool(VisualizedWindow):
         self.default_url = tkinter.ttk.Combobox(fm_up, textvariable=tkinter.StringVar(), font=ft)
         self.default_url['values'] = ('招商', '越秀', '中海')
         #self.default_url.current(0)
+        self.default_url.bind('<<ComboboxSelected>>', self.default_url_combox_cliecked)
         self.default_url.grid(row=0, column=0)
         
         self.crawling_url = EntryWithPlaceholder(fm_up, '请输入爬取网址', font=ft)
@@ -95,20 +96,21 @@ class CrawlerTool(VisualizedWindow):
         fm_mid = tkinter.Frame()
         fm_mid.propagate(0)
 
-        # 创建文本输入框
-        self.content_text = tkinter.Text(
-            fm_mid, wrap='word', undo=True, font=ft)
-        self.content_text.pack(expand='yes', fill='both')
-        self.content_text.bind('<Control-O>', self.open_file)
-        self.content_text.bind('<Control-o>', self.open_file)
-        self.content_text.bind('<Alt-F4>', self.exit_window)
-        self.content_text.tag_configure('active_line', background='#EEEEE0')
-        self.bind_all('<KeyPress-F1>', lambda e: self.show_messagebox("帮助"))
-
+        # 创建表格
+        columns = ('户室号', '楼层', '房屋用途', '房屋类型', '装修状态', '建筑面积', '套内面积', '分摊面积', '销售状态')
+        self.hourse_table = tkinter.ttk.Treeview(fm_mid, show = "headings", columns = columns, selectmode = tkinter.BROWSE)
+        
+        for column in columns:
+            print(column)
+            self.hourse_table.column(column, width = 50, anchor = 'center')
+            self.hourse_table.heading(column, text = column)
+        self.hourse_table.insert('', 0, text='1', values=('201', '2', '住宅', '普通商品房', '全装修', '149.24', '116.85', '32.39', '可售'))
+        self.hourse_table.pack(expand='yes', fill='both')
+        
         # 创建滚动条
-        scroll_bar = Scrollbar(self.content_text)
-        scroll_bar['command'] = self.content_text.yview
-        self.content_text['yscrollcommand'] = scroll_bar.set
+        scroll_bar = Scrollbar(self.hourse_table)
+        scroll_bar['command'] = self.hourse_table.yview
+        self.hourse_table['yscrollcommand'] = scroll_bar.set
         scroll_bar.pack(side='right', fill='y')
 
         fm_mid.pack(fill=tkinter.BOTH, expand='yes')
@@ -119,7 +121,11 @@ class CrawlerTool(VisualizedWindow):
         copy_btn = tkinter.Button(fm_down, text='青春的羽翼,划破伤痛的记忆', font=ft, compound='center')
         copy_btn.pack(fill='both')
         fm_down.pack(fill='x')
-        
+      
+    def default_url_combox_cliecked(self, event):
+        print(type(event))
+        print(self.default_url.current())
+      
     def crawling_btn_cliecked(self):
         print(self.crawling_url.get())
         print(self.crawling_regex.get())
