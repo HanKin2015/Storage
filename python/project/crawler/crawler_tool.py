@@ -17,6 +17,8 @@ import os, sys
 import base64
 import logging
 import pandas as pd
+import numpy as np
+from PIL import ImageTk, Image
 
 # 增加libary库的搜索路径
 sys.path.append('../../libary/')
@@ -91,7 +93,7 @@ class CrawlerTool(VisualizedWindow):
                                     command=lambda: self.crawling_btn_clicked(), compound='center')
         crawling_btn.grid(row=0, column=3)
         analysis_btn = tkinter.Button(fm_up, text='分析', width=10, height=1,
-                                      command=lambda: self.analysis_btn_clicked(self.content_text),compound='center')
+                                      command=lambda: self.analysis_btn_clicked(),compound='center')
         analysis_btn.grid(row=1, column=3)
         show_btn = tkinter.Button(fm_up, text='显示', width=10, height=1,
                                     command=lambda: self.show_btn_clicked(), compound='center')
@@ -171,7 +173,50 @@ class CrawlerTool(VisualizedWindow):
         estate = self.default_url.get()
         building = self.default_building.get()
         self.show_building_information(estate, building)  
+    
+    def analysis_btn_clicked(self):
+        top = tkinter.Toplevel()
+        top.title('分析结果')
+        scn_width, scn_height = self.maxsize()  # 获得程序运行机器的分辨率（屏幕的长和宽）
+        print(scn_width, scn_height)
+        window_width = 800
+        window_hight = 600
+        wm_val = '{}x{}+{}+{}'.format(window_width, window_hight, (scn_width - window_width) //
+                                        4, (scn_height - window_hight) // 2)
+        top.geometry(wm_val)       # 将窗口设置在屏幕的中间
         
+        # 创建表格
+        columns = ('对应栋号', '出售状态', '总共数量', '100平方', '124平方', '142平方')
+        hourse_table = tkinter.ttk.Treeview(top, show = "headings", columns = columns, selectmode = tkinter.BROWSE)
+        
+        for column in columns:
+            print(column)
+            hourse_table.column(column, width = 50, anchor = 'center')
+            hourse_table.heading(column, text = column)
+            
+        hourse_table.pack(expand='yes', fill='both')
+        
+        # 创建滚动条
+        scroll_bar = Scrollbar(hourse_table)
+        scroll_bar['command'] = hourse_table.yview
+        hourse_table['yscrollcommand'] = scroll_bar.set
+        scroll_bar.pack(side='right', fill='y')
+        
+        data = pd.read_excel('./data/sale_result.xlsx', index=False)
+        print('data size = ', data.shape)
+        values = data.values
+        #print(values)
+        for value in values:
+            print(type(value[0]))
+            # np.NaN是float浮点数，无法比较相等
+            if type(value[0]) == float:
+                print('This is null.')
+                hourse_table.insert('', 'end', values=('','','','','',''))
+            else:
+                hourse_table.insert('', 'end', values=value.tolist())
+            
+        top.mainloop()
+    
 if __name__ == "__main__":
     app = CrawlerTool()
     app.mainloop()              # 程序运行
