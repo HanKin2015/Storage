@@ -21,6 +21,8 @@ import numpy as np
 from PIL import ImageTk, Image
 import time
 import threading
+from picture_browser import picture_browser
+from tkinter import ttk
 
 # 增加libary库的搜索路径
 sys.path.append('../../libary/')
@@ -44,7 +46,43 @@ logging.basicConfig(level=logging.INFO,
                     filename=log_file_path,
                     filemode='a')
 
+#SET CUSTOM APPLICATION COLORS
+bglight = '#7d8ea3'
+bgmid = '#5a6b7e'
+bgdark = '#3d4855'
+cwhite = 'yellow'
+cgrey = 'red'
 
+#SET STYLING FOR MENU
+style = ttk.Style()
+style.theme_create( "fclassic", parent="alt", settings={
+            "TNotebook": {
+                "configure": {
+                   "tabmargins": [2, 5, 2, 0],
+                   "background": bgdark,
+                   "foreground": cwhite}},
+                        'Treeview': {
+                            'map': {
+                                'background': [('selected', 'DarkGreen')],
+                                'foreground': [('selected', 'black')],
+                                'font': [('selected', ("Century Gothic", 10, 'bold'))],
+                            }  # end 'map'
+                        },  # end 'Treeview'
+        "TNotebook.Tab": {
+                "configure": {"padding": [5, 1], 
+                   "background": bglight,
+                   "foreground": cwhite,
+                         "font": ("Century Gothic", '14', 'italic')},
+
+                  "map": 
+              {"background": [("selected", bgmid)],
+                       "expand": [("selected", [1, 1, 1, 0])]}}})
+style.theme_use("fclassic")
+
+#SET STYLING FOR TABLES
+tvstyle = ttk.Style()
+tvstyle.configure("mystyle.Treeview", highlightthickness=1, bd=0, background=cwhite, font=("Century Gothic", 10))
+tvstyle.configure("mystyle.Treeview.Heading", background=bglight, foreground=cwhite, font=("Century Gothic", 10, 'bold'))
 
 class CrawlerTool(VisualizedWindow):
     '''继承可视化窗口
@@ -55,7 +93,8 @@ class CrawlerTool(VisualizedWindow):
         '''
         super().__init__()      # 在继承Tk这个类的基础上在自己的类中添加内容
         self.title("爬虫工具箱")
-        self.screen_width, self.screen_height = self.maxsize()  # 获得程序运行机器的分辨率（屏幕的长和宽）
+        self.screen_width, self.screen_height = super().maxsize()  # 获得程序运行机器的分辨率（屏幕的长和宽）
+        print(self.screen_width, self.screen_height)
     
     def _create_body_(self):
         '''重写主体布局
@@ -73,7 +112,7 @@ class CrawlerTool(VisualizedWindow):
         ft = tkinter.font.Font(family=r'微软雅黑', weight=tkinter.font.NORMAL, size=12)
 
         # 上面部分
-        fm_up = tkinter.Frame()
+        fm_up = tkinter.Frame(self)
         #self.input_content = tkinter.Entry(fm_up, width=30, font=ft)
         
         self.default_url = tkinter.ttk.Combobox(fm_up, textvariable=tkinter.StringVar(), font=ft)
@@ -93,24 +132,26 @@ class CrawlerTool(VisualizedWindow):
         self.crawling_index.grid(row=1, column=2)
 
         crawling_btn = tkinter.Button(fm_up, text='爬取', width=10, height=1,
-                                    command=lambda: self.progressbar_window(), compound='center')
+                                    command=lambda: self.crawling_btn_clicked(), compound='center')
         crawling_btn.grid(row=0, column=3)
         analysis_btn = tkinter.Button(fm_up, text='分析', width=10, height=1,
                                       command=lambda: self.analysis_btn_clicked(),compound='center')
         analysis_btn.grid(row=1, column=3)
-        show_btn = tkinter.Button(fm_up, text='显示', width=10, height=1,
+        show_btn = tkinter.Button(fm_up, text='显示表格', width=10, height=1,bg='blue', fg='white',
                                     command=lambda: self.show_btn_clicked(), compound='center')
+        show_btn.grid(row=0, column=4)
+        show_btn = tkinter.Button(fm_up, text='浏览图片', width=10, height=1, fg='red',
+                                    command=lambda: picture_browser(self), compound='center')
         show_btn.grid(row=1, column=4)
-
         fm_up.pack(fill=tkinter.X)
 
         # 中间部分
-        fm_mid = tkinter.Frame()
+        fm_mid = tkinter.Frame(self)
         fm_mid.propagate(0)
 
         # 创建表格
         columns = ('户室号', '楼层', '房屋用途', '房屋类型', '装修状态', '建筑面积', '套内面积', '分摊面积', '销售状态')
-        self.hourse_table = tkinter.ttk.Treeview(fm_mid, show = "headings", columns = columns, selectmode = tkinter.BROWSE)
+        self.hourse_table = tkinter.ttk.Treeview(fm_mid, show = "headings", columns = columns, selectmode = tkinter.BROWSE, style="mystyle.Treeview")
         
         for column in columns:
             print(column)
@@ -132,7 +173,7 @@ class CrawlerTool(VisualizedWindow):
         fm_mid.pack(fill=tkinter.BOTH, expand='yes')
 
         # 下面部分：预留部分
-        fm_down = tkinter.Frame()
+        fm_down = tkinter.Frame(self)
         # fm_down.propagate(0)
         copy_btn = tkinter.Button(fm_down, text='青春的羽翼,划破伤痛的记忆', font=ft, compound='center')
         copy_btn.pack(fill='both')
@@ -142,6 +183,7 @@ class CrawlerTool(VisualizedWindow):
     def treeview_selected_row(self, event):  # 单击
         for item in self.hourse_table.selection():
             item_text = self.hourse_table.item(item, "values")
+            
             print(item_text)
  
     def treeview_sort_column(self, table, column, reverse):#Treeview、列名、排列方式
@@ -176,12 +218,17 @@ class CrawlerTool(VisualizedWindow):
         print(self.crawling_url.get())
         print(self.crawling_regex.get())
         print(self.crawling_index.get())
+        item = self.hourse_table.focus()
+        print(self.hourse_table.item(item))
     
     def show_building_information(self, estate, building):
+    
         data = pd.read_excel('./data/data.xlsx', index=False, sheet_name=None)
         sheet_names = list(data.keys()) 
         print(sheet_names)
         for sheet_name in sheet_names:
+            self.hourse_table.tag_configure('evenrow', background=cgrey)
+            self.hourse_table.tag_configure('oddrow', background=cwhite)  
             # 清空表格数据
             items = self.hourse_table.get_children()
             [self.hourse_table.delete(item) for item in items]
@@ -191,8 +238,13 @@ class CrawlerTool(VisualizedWindow):
                 #print(data.values)
                 values = data.values
                 
+                cnt = 0
                 for value in values:
-                    self.hourse_table.insert('', 'end', values=value.tolist())
+                    if cnt % 2 == 0:
+                        self.hourse_table.insert('', 'end', values=value.tolist(), tags = ('evenrow'))
+                    else:
+                        self.hourse_table.insert('', 'end', values=value.tolist(), tags = ('oddrow'))
+                    cnt += 1
                 break
                 
     def show_btn_clicked(self):
@@ -201,7 +253,8 @@ class CrawlerTool(VisualizedWindow):
         self.show_building_information(estate, building)  
     
     def analysis_btn_clicked(self):
-        top = tkinter.Toplevel()
+    
+        top = tkinter.Toplevel(self)
         top.title('分析结果')
         print(self.screen_width, self.screen_height)
         window_width = 800
@@ -212,105 +265,45 @@ class CrawlerTool(VisualizedWindow):
         
         # 创建表格
         columns = ('对应栋号', '出售状态', '总共数量', '100平方', '124平方', '142平方')
-        hourse_table = tkinter.ttk.Treeview(top, show = "headings", columns = columns, selectmode = tkinter.BROWSE)
+        self.analysis_table = tkinter.ttk.Treeview(top, show = "headings", columns = columns, selectmode = tkinter.BROWSE, style='mystyle.Treeview')
+        ft = tkinter.font.Font(family=r'微软雅黑', weight=tkinter.font.NORMAL, size=12)
+
         
+
         for column in columns:
-            print(column)
-            hourse_table.column(column, width = 50, anchor = 'center')
-            hourse_table.heading(column, text = column)
+            #print(column)
+            self.analysis_table.column(column, width = 50, anchor = 'center')
+            self.analysis_table.heading(column, text = column)
             
-        hourse_table.pack(expand='yes', fill='both')
+        self.analysis_table.pack(expand='yes', fill='both')
+        
         
         # 创建滚动条
-        scroll_bar = Scrollbar(hourse_table)
-        scroll_bar['command'] = hourse_table.yview
-        hourse_table['yscrollcommand'] = scroll_bar.set
+        scroll_bar = Scrollbar(self.analysis_table)
+        scroll_bar['command'] = self.analysis_table.yview
+        self.analysis_table['yscrollcommand'] = scroll_bar.set
         scroll_bar.pack(side='right', fill='y')
         
+        runq_b1 = tkinter.Button(top, text="Press To Test", command=self.searchconfig, font=("Century Gothic", 14), bg = bglight, fg = cwhite)
+        runq_b1.pack()
+        
+
+        top.mainloop()
+    
+    def searchconfig(self):
         data = pd.read_excel('./data/sale_result.xlsx', index=False)
         print('data size = ', data.shape)
         values = data.values
         #print(values)
+        self.analysis_table.tag_configure('rrr', background='red')
         for value in values:
-            print(type(value[0]))
+            #print(type(value[0]))
             # np.NaN是float浮点数，无法比较相等
             if type(value[0]) == float:
-                print('This is null.')
-                hourse_table.insert('', 'end', values=('','','','','',''))
+                #print('This is null.')
+                self.analysis_table.insert('', 'end', values=['1','4','234','1','1',''], tags=('rrr'))
             else:
-                hourse_table.insert('', 'end', values=value.tolist())
-            
-        top.mainloop()
-        
-    def start(self):
-        def real_traitement():
-            self.pb.step(amount=5.0)
-            self.pb.start(interval=500)
-            while True:
-                val = self.val.get()
-                self.progress_value.set('{}%'.format(val))
-                if val >= 50:
-                    break
-                time.sleep(1)
-                
-            self.pb.stop()
-            self.pb.grid_forget()
-            self.start_btn['state']='normal'
-            
-        self.start_btn['state']='disabled'
-        threading.Thread(target=real_traitement).start()
-
-    def progressbar_window(self):
-        top = tkinter.Toplevel()
-        top.title('进度条')
-        window_width = 600
-        window_hight = 150
-        wm_val = '{}x{}+{}+{}'.format(window_width, window_hight, (self.screen_width - window_width) //
-                                        4, (self.screen_height - window_hight) // 2)
-        top.geometry(wm_val)       # 将窗口设置在屏幕的中间
-        
-        
-        tkinter.Label(top, text='下载进度:', ).place(x=50, y=60)
-        # 定义变量,必须是使用的是tk里的这个变量
-        self.progress_value = tkinter.StringVar()
-        self.progress_value.set('0%')
-        tkinter.Label(top, textvariable=self.progress_value).place(x=50, y=90)
-        
-        # 设置窗口图标
-        #top.iconbitmap("./image/icon.ico")
-        # 设置窗口宽高固定
-        top.resizable(0, 0)
-        
-        '''
-        进度条学习：
-        mode: determinate/indeterminate
-        orient(进度条的方向): HORIZONTAL/VERTICAL
-        cursor: 鼠标位于进度条内时的形状
-        length: 进度条长度
-        maximum: 进度条最大刻度值
-        style: 定义进度条的外观
-        takefocus: 是否可以通过Tab获得输入焦点
-        variable: 与进度条关联的变量。可以设置或获得进度条的当前值
-        value: 设置或者获取进度条的当前值
-        start(interval=None): 默认间隔是50毫秒。
-        step(amount=None): 默认是1.0
-        stop()
-        '''
-        
-        # 进度条样式
-        style = tkinter.ttk.Style()
-        style.theme_use('alt')
-        style.configure('blue.Horizontal.TProgressbar',
-                        troughcolor  = '#4d4d4d',
-                        troughrelief = 'flat',
-                        background   = '#2f92ff')
-        self.val = tkinter.IntVar() # 这个能解决进度条停止后变为0的问题
-        self.pb = tkinter.ttk.Progressbar(top, length=400, style='blue.Horizontal.TProgressbar', orient='horizontal',maximum=100, value=0, mode="determinate", variable=self.val)
-        self.pb.pack(pady = 10)
-        self.start_btn = tkinter.Button(top, text="开始", command=self.start)
-        self.start_btn.pack()
-        
-        top.mainloop()
+                self.analysis_table.insert('', 'end', values=value.tolist(), tags=('rrr'))    
     
 if __name__ == "__main__":
     app = CrawlerTool()
