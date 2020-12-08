@@ -22,6 +22,7 @@ from PIL import ImageTk, Image
 import time
 import threading
 from picture_browser import picture_browser
+from tkinter import ttk
 
 # 增加libary库的搜索路径
 sys.path.append('../../libary/')
@@ -45,6 +46,8 @@ logging.basicConfig(level=logging.INFO,
                     filename=log_file_path,
                     filemode='a')
 
+
+
 class CrawlerTool(VisualizedWindow):
     '''继承可视化窗口
     '''
@@ -56,36 +59,6 @@ class CrawlerTool(VisualizedWindow):
         self.title("爬虫工具箱")
         self.screen_width, self.screen_height = super().maxsize()  # 获得程序运行机器的分辨率（屏幕的长和宽）
         print(self.screen_width, self.screen_height)
-        self._init_style_()
-    
-    def _init_style_(self):
-        # 设置表格显示样式风格
-        self.menu_style = tkinter.ttk.Style()
-        self.menu_style.theme_create("fclassic", parent="alt", settings={
-                    "TNotebook": {
-                        "configure": {
-                           "tabmargins": [2, 5, 2, 0],
-                           "background": 'red',
-                           "foreground": 'yellow'}},
-                    'Treeview': {
-                        'map': {
-                            'background': [('selected', 'DarkGreen')],
-                            'foreground': [('selected', 'black')],
-                            'font': [('selected', ("Century Gothic", 10, 'bold'))],}},
-                    "TNotebook.Tab": {
-                        "configure": {
-                            "padding": [5, 1], 
-                            "background": 'red',
-                            "foreground": 'yellow',
-                            "font": ("Century Gothic", '14', 'italic')},
-                        "map":{
-                            "background": [("selected", 'red')],
-                            "expand": [("selected", [1, 1, 1, 0])]}}})
-        self.menu_style.theme_use("fclassic")
-
-        self.treeview_style = tkinter.ttk.Style()
-        self.treeview_style.configure("mystyle.Treeview", highlightthickness=1, bd=0, background='blue', font=("Century Gothic", 10))
-        self.treeview_style.configure("mystyle.Treeview.Heading", background='yellow', foreground='red', font=("Century Gothic", 10, 'bold'))
     
     def _create_body_(self):
         '''重写主体布局
@@ -99,6 +72,44 @@ class CrawlerTool(VisualizedWindow):
         
         entry无placeholder
         '''
+        
+        #SET CUSTOM APPLICATION COLORS
+        bglight = '#7d8ea3'
+        bgmid = '#5a6b7e'
+        bgdark = '#3d4855'
+        cwhite = 'yellow'
+        cgrey = 'red'
+
+        #SET STYLING FOR MENU
+        style = ttk.Style()
+        style.theme_create( "fclassic", parent="alt", settings={
+                    "TNotebook": {
+                        "configure": {
+                           "tabmargins": [2, 5, 2, 0],
+                           "background": bgdark,
+                           "foreground": cwhite}},
+                                'Treeview': {
+                                    'map': {
+                                        'background': [('selected', 'DarkGreen')],
+                                        'foreground': [('selected', 'black')],
+                                        'font': [('selected', ("Century Gothic", 10, 'bold'))],
+                                    }  # end 'map'
+                                },  # end 'Treeview'
+                "TNotebook.Tab": {
+                        "configure": {"padding": [5, 1], 
+                           "background": bglight,
+                           "foreground": cwhite,
+                                 "font": ("Century Gothic", '14', 'italic')},
+
+                          "map": 
+                      {"background": [("selected", bgmid)],
+                               "expand": [("selected", [1, 1, 1, 0])]}}})
+        style.theme_use("fclassic")
+
+        #SET STYLING FOR TABLES
+        tvstyle = ttk.Style()
+        tvstyle.configure("mystyle.Treeview", highlightthickness=1, bd=0, background=cwhite, font=("Century Gothic", 10))
+        tvstyle.configure("mystyle.Treeview.Heading", background=bglight, foreground=cwhite, font=("Century Gothic", 10, 'bold'))
         
         # 设置字体slant=tf.ITALIC,underline=1,overstrike=1,consolas
         ft = tkinter.font.Font(family=r'微软雅黑', weight=tkinter.font.NORMAL, size=12)
@@ -219,8 +230,8 @@ class CrawlerTool(VisualizedWindow):
         sheet_names = list(data.keys()) 
         print(sheet_names)
         for sheet_name in sheet_names:
-            self.hourse_table.tag_configure('evenrow', background='red')
-            self.hourse_table.tag_configure('oddrow', background='yellow')  
+            self.hourse_table.tag_configure('evenrow', background=cgrey)
+            self.hourse_table.tag_configure('oddrow', background=cwhite)  
             # 清空表格数据
             items = self.hourse_table.get_children()
             [self.hourse_table.delete(item) for item in items]
@@ -260,6 +271,8 @@ class CrawlerTool(VisualizedWindow):
         self.analysis_table = tkinter.ttk.Treeview(top, show = "headings", columns = columns, selectmode = tkinter.BROWSE, style='mystyle.Treeview')
         ft = tkinter.font.Font(family=r'微软雅黑', weight=tkinter.font.NORMAL, size=12)
 
+        
+
         for column in columns:
             #print(column)
             self.analysis_table.column(column, width = 50, anchor = 'center')
@@ -267,13 +280,20 @@ class CrawlerTool(VisualizedWindow):
             
         self.analysis_table.pack(expand='yes', fill='both')
         
+        
         # 创建滚动条
         scroll_bar = Scrollbar(self.analysis_table)
         scroll_bar['command'] = self.analysis_table.yview
         self.analysis_table['yscrollcommand'] = scroll_bar.set
         scroll_bar.pack(side='right', fill='y')
         
+        runq_b1 = tkinter.Button(top, text="Press To Test", command=self.searchconfig, font=("Century Gothic", 14), bg = bglight, fg = cwhite)
+        runq_b1.pack()
         
+
+        top.mainloop()
+    
+    def searchconfig(self):
         data = pd.read_excel('./data/sale_result.xlsx', index=False)
         print('data size = ', data.shape)
         values = data.values
@@ -284,14 +304,10 @@ class CrawlerTool(VisualizedWindow):
             # np.NaN是float浮点数，无法比较相等
             if type(value[0]) == float:
                 #print('This is null.')
-                self.analysis_table.insert('', 'end', values=['','','','','',''], tags=('rrr'))
+                self.analysis_table.insert('', 'end', values=['1','4','234','1','1',''], tags=('rrr'))
             else:
-                self.analysis_table.insert('', 'end', values=value.tolist())    
-        
-
-        top.mainloop()
+                self.analysis_table.insert('', 'end', values=value.tolist(), tags=('rrr'))    
     
-
 if __name__ == "__main__":
     app = CrawlerTool()
     app.mainloop()              # 程序运行
