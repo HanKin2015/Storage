@@ -22,6 +22,7 @@ from PIL import ImageTk, Image
 import time
 import threading
 from picture_browser import picture_browser
+from download_progress import download_progress
 
 # 增加libary库的搜索路径
 sys.path.append('../../libary/')
@@ -84,7 +85,7 @@ class CrawlerTool(VisualizedWindow):
         self.menu_style.theme_use("fclassic")
 
         self.treeview_style = tkinter.ttk.Style()
-        self.treeview_style.configure("mystyle.Treeview", highlightthickness=1, bd=0, background='blue', font=("Century Gothic", 10))
+        self.treeview_style.configure("mystyle.Treeview", highlightthickness=1, bd=0, background='slategray', foreground='white', font=("Century Gothic", 10))
         self.treeview_style.configure("mystyle.Treeview.Heading", background='yellow', foreground='red', font=("Century Gothic", 10, 'bold'))
     
     def _create_body_(self):
@@ -219,8 +220,8 @@ class CrawlerTool(VisualizedWindow):
         sheet_names = list(data.keys()) 
         print(sheet_names)
         for sheet_name in sheet_names:
-            self.hourse_table.tag_configure('evenrow', background='red')
-            self.hourse_table.tag_configure('oddrow', background='yellow')  
+            self.hourse_table.tag_configure('gray_row', background='LightSlateGray')
+            self.hourse_table.tag_configure('white_row', background='SlateGray')  
             # 清空表格数据
             items = self.hourse_table.get_children()
             [self.hourse_table.delete(item) for item in items]
@@ -233,9 +234,9 @@ class CrawlerTool(VisualizedWindow):
                 cnt = 0
                 for value in values:
                     if cnt % 2 == 0:
-                        self.hourse_table.insert('', 'end', values=value.tolist(), tags = ('evenrow'))
+                        self.hourse_table.insert('', 'end', values=value.tolist(), tags = ('gray_row'))
                     else:
-                        self.hourse_table.insert('', 'end', values=value.tolist(), tags = ('oddrow'))
+                        self.hourse_table.insert('', 'end', values=value.tolist(), tags = ('white_row'))
                     cnt += 1
                 break
                 
@@ -278,16 +279,21 @@ class CrawlerTool(VisualizedWindow):
         print('data size = ', data.shape)
         values = data.values
         #print(values)
-        self.analysis_table.tag_configure('rrr', background='red')
-        for value in values:
+        self.analysis_table.tag_configure('blue_row', background='blue')
+        
+        for index, value in enumerate(values):
+            #print(index)
             #print(type(value[0]))
             # np.NaN是float浮点数，无法比较相等
             if type(value[0]) == float:
                 #print('This is null.')
-                self.analysis_table.insert('', 'end', values=['','','','','',''], tags=('rrr'))
+                self.analysis_table.insert('', 'end', values=['','','','','',''])
             else:
-                self.analysis_table.insert('', 'end', values=value.tolist())    
-        
+                #print('index = {}, index % 4 = {}'.format(index, index % 4))
+                if (index % 4) == 2:
+                    self.analysis_table.insert('', 'end', values=value.tolist(), tags=('blue_row'))
+                else:
+                    self.analysis_table.insert('', 'end', values=value.tolist())
 
         top.mainloop()
     
