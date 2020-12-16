@@ -134,7 +134,7 @@ class CrawlerTool(VisualizedWindow):
                                     command=lambda: self.show_btn_clicked(), compound='center')
         show_btn.grid(row=0, column=4)
         show_btn = tkinter.Button(fm_up, text='浏览图片', width=10, height=1, fg='red',
-                                    command=lambda: picture_browser(self), compound='center')
+                                    command=lambda: picture_browser(master=self), compound='center')
         show_btn.grid(row=1, column=4)
         fm_up.pack(fill=tkinter.X)
 
@@ -213,6 +213,7 @@ class CrawlerTool(VisualizedWindow):
         print(self.crawling_index.get())
         item = self.hourse_table.focus()
         print(self.hourse_table.item(item))
+        download_progress(master=self)
     
     def show_building_information(self, estate, building):
     
