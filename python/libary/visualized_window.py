@@ -23,7 +23,7 @@ log_file_path = '{}/system.log'.format(working_dir_path)
 logo_file_path = '{}/logo.ico'.format(working_dir_path)
 
 window_title = 'Visualized Window'
-window_width = 900
+window_width = 980
 window_hight = 600
 
 ####### 全局变量 #######
@@ -126,7 +126,7 @@ class VisualizedWindow(tkinter.Tk):
             family=r'微软雅黑', weight=tkinter.font.NORMAL, size=12)
 
         # 上面部分
-        fm_up = tkinter.Frame()
+        fm_up = tkinter.Frame(self)
         # fm_up.propagate(0)
         self.input_content = tkinter.Entry(fm_up, width=30, font=ft)
         self.input_content.pack(
@@ -146,7 +146,7 @@ class VisualizedWindow(tkinter.Tk):
         fm_up.pack(fill=tkinter.X)
 
         # 中间部分
-        fm_mid = tkinter.Frame()
+        fm_mid = tkinter.Frame(self)
         fm_mid.propagate(0)
 
         # 创建文本输入框
@@ -168,7 +168,7 @@ class VisualizedWindow(tkinter.Tk):
         fm_mid.pack(fill=tkinter.BOTH, expand='yes')
 
         # 下面部分：拷贝按钮
-        fm_down = tkinter.Frame()
+        fm_down = tkinter.Frame(self)
         # fm_down.propagate(0)
         copy_btn = tkinter.Button(fm_down, text='copy', command=lambda: self.copy_btn_cliecked(
             self.content_text), font=ft, compound='center')
@@ -223,7 +223,9 @@ class VisualizedWindow(tkinter.Tk):
         except IOError:
             messagebox.showwarning("保存", "保存失败！")  # 如果保存失败的话，会弹出消息对话框
 
-
+if __name__ == "__main__":
+    app = VisualizedWindow()
+    app.mainloop()              # 程序运行
 
 
 
