@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript调试</title>
+<script type="text/javascript" src="require.js"></script>
+<script type="text/javascript" src="linehandler_test1.js"></script>
+</head>
+<body>
+
+<h1>JavaScript调试 程序</h1>
+
+<p>请输入中心管理地址。</p>
+<input id="input_text" type="text">
+<button type="button" onclick="handle(get_value_by_id('input_text'))">测试连接</button>
+
+<script type="text/javascript">
+function get_value_by_id(id) {
+    //return document.getElementById(id).value;
+    return '10.70.253.163/webagent/normal1.php';
+}
+</script>
+</body>
+</html>

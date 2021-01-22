@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<script>
+document.write("<h1>JavaScript 直接写入 HTML 输出流中：</h1>");
+document.write("<p>这是一个段落。</p>");
+
+function displayDate(){
+	document.getElementById("demo").innerHTML=Date();
+}
+
+function changeContent()
+{
+	x=document.getElementById("demo");  // 找到元素
+	x.innerHTML="Hello JavaScript!";    // 改变内容
+}
+
+function changeImage()
+{
+    element=document.getElementById('myimage')
+    if (element.src.match("bulbon"))
+    {
+        element.src="./images/pic_bulboff.gif";
+    }
+    else
+    {
+        element.src="./images/pic_bulbon.gif";
+    }
+}
+
+function changeStyle()
+{
+	x=document.getElementById("demo") // 找到元素
+	x.style.color="#ff0000";          // 改变样式
+}
+	
+function verifyNumber()
+{
+	var x=document.getElementById("input_text").value;
+	if(isNaN(x)||x.replace(/(^\s*)|(\s*$)/g,"")=="") {
+		alert("不是数字");
+	} else {
+		alert("是数字");
+	}
+}
+	
+</script>
+</head>
+<body>
+
+<h1>我的第一个 JavaScript 程序</h1>
+<p id="demo">这是一个段落</p>
+
+<button type="button" onclick="displayDate()">显示日期</button>
+<button type="button" onclick="alert('欢迎!')">点我欢迎调试</button>
+<button type="button" onclick="changeStyle()">改变样式</button>
+<button type="button" onclick="changeContent()">改变显示内容</button></br>
+	
+<img loading="lazy" id="myimage" onclick="changeImage()" src="./images/pic_bulboff.gif" width="100" height="180">
+<p>点击灯泡就可以打开或关闭这盏灯</p></br>
+
+<p>请输入数字。如果输入值不是数字，浏览器会弹出提示框。</p>
+<input id="input_text" type="text">
+<button type="button" onclick="verifyNumber()">验证输入</button>
+</body>
+</html>
+
+
+
+关于上面切换图片的例子，用三目运算比较简洁。
+function changeImage(){
+    var s = document.getElementById('myimage');
+    s.src = s.src.match('bulboff')?"/images/pic_bulbon.gif":"/images/pic_bulboff.gif";
+}
+
+我让楼上的更简洁：
+<script>
+function changeImage(s){
+    s.src = s.src.match('bulboff')?"/images/pic_bulbon.gif":"/images/pic_bulboff.gif";
+}
+</script>
+<img id="myimage" onclick="changeImage(this)" src="/images/pic_bulboff.gif" width="100" height="180">
+<p>点击灯泡就可以打开或关闭这盏灯</p>
+
+
+还有比我更简洁的吗:
+<img id="myimage" onclick="~function(e){e.src=e.src.match('bulboff')?'/images/pic_bulbon.gif':'/images/pic_bulboff.gif'}(this)" src="/images/pic_bulboff.gif" width="100" height="180">
+<p>点击灯泡就可以打开或关闭这盏灯</p>
+
