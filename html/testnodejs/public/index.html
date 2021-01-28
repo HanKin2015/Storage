@@ -1,7 +1,8 @@
-var express = require("express");
-var app = express();
-app.use(express.static("public")).listen(8080);
-
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
 const http = require("http");
 const https = require("https");
 const url = require("url");
@@ -18,3 +19,9 @@ var options =
 https.request(options, function(res) {
 	console.log("success.");
 }).end();
+</script>
+</head>
+<body>
+<h1>Hello Nodejs</h1>
+</body>
+</html>
