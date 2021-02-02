@@ -36,39 +36,87 @@ def lottery_number_handler(lottery_number):
     
     @desc  将字符串类型的彩票数字转换为数字列表
     @param lottery_number: 字符串类型的彩票数字
-    @return lottery_number: 彩票数字列表
+    @return red_ball: 彩票数字红球列表
+    @return blue_ball: 彩票数字蓝球列表
     '''
     
-    print(lottery_number)
+    #print(lottery_number)
     lottery_number = lottery_number.split(' ')
-    print(lottery_number)
+    #print(lottery_number)
     try:
-        lottery_number.remove(' ')
+        lottery_number.remove('')
     except:
+        print('there are not space.')
         pass
+    lottery_number = [lottery_number[i] for i in range(0,len(lottery_number)) if lottery_number[i] != '']
+    #print(lottery_number)    
     lottery_number = [int(number) for number in lottery_number]
-    return lottery_number
+    
+    # 红蓝球分离
+    red_ball = lottery_number[:-1]
+    blue_ball = lottery_number[-1:]
+    return red_ball, blue_ball
+
+def count_same_in_two_list(list1, list2):
+    '''两个列表中相同元素个数
+    
+    @desc  两个列表中相同元素个数
+    @param list1: 列表1
+    @param list2: 列表2
+    @return 相同元素个数
+    '''
+
+    same_list = [elem for elem in list1 if elem in list2]
+    return len(same_list)
 
 def is_win_a_prize_in_a_lottery(history_data, lottery_number):
     '''是否中奖
     
-    @desc  是否在历史长河中中过奖
+    @desc  是否在历史长河中中过哪些奖
     @param lottery_numbers: 7个数字的彩票号码
     @param history_data: 历史中奖数据
-    @return 是否中奖,中几等奖
+    @return prize_list: 中奖列表
     '''
     
     # 判断
     
+    # 彩票号码处理
+    red_ball, blue_ball = lottery_number_handler(lottery_number)
+    
+    prize_list = []
+    
     prize_numbers = history_data['中奖号码'].values
-    print('prize_numbers len: {}.'.format(len(prize_numbers)))
+    #print('prize_numbers len: {}.'.format(len(prize_numbers)))
     for prize_number in prize_numbers:
-        print('prize_numbers: {}.'.format(prize_number))
-        prize_number_list = lottery_number_handler(prize_number)
-        red_ball = prize_number_list[:-1]
-        blue_ball = prize_number_list[-1:-1]
-        print('red_ball: {}, blue_ball: {}.'.format(red_ball, blue_ball))
-        break
+        #print('prize_numbers: {}.'.format(prize_number))
+        red_prize_number, blue_prize_number = lottery_number_handler(prize_number)
+
+        #print('red_prize_number: {}, blue_prize_number: {}.'.format(red_prize_number, blue_prize_number))
+        
+        count_same_red_ball = count_same_in_two_list(red_ball, red_prize_number)
+        count_same_blue_ball = count_same_in_two_list(blue_ball, blue_prize_number)
+        
+        if count_same_blue_ball == 1:
+            if count_same_red_ball <= 2:
+                prize_list.append(6)
+            elif count_same_red_ball == 3:
+                prize_list.append(5)
+            elif count_same_red_ball == 4:
+                prize_list.append(4)
+            elif count_same_red_ball == 5:
+                prize_list.append(3)
+            elif count_same_red_ball == 6:
+                prize_list.append(1)
+        else:
+            if count_same_red_ball == 4:
+                prize_list.append(5)
+            elif count_same_red_ball == 5:
+                prize_list.append(4)
+            elif count_same_red_ball == 6:
+                prize_list.append(2)
+    
+    print('prize_list: {}.'.format(prize_list))
+        
 
 def get_history_data(is_online=True):
     '''获取历史中奖数据
@@ -129,9 +177,8 @@ if __name__ == '__main__':
     history_data = get_history_data(False)
     print('history_data.shape: {}.'.format(history_data.shape))
     
-    # 处理彩票数字
-    lottery_number = '01 09 23 24 27 29 06'
-    lottery_number = lottery_number_handler(lottery_number)
+    # 彩票号码
+    lottery_number = '03 05 13 14 27 31 16'
     
     # 查询是否中奖
     is_win_a_prize_in_a_lottery(history_data, lottery_number)
