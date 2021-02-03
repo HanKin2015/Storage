@@ -25,11 +25,12 @@ Created on 2021.01.30
 
 import pandas as pd
 import numpy as np
-import  requests
-import  bs4
+import requests
+import bs4
 import logging
 from selenium import webdriver
 import time
+import datetime
 
 def lottery_number_handler(lottery_number):
     '''彩票数字处理器
@@ -115,8 +116,7 @@ def is_win_a_prize_in_a_lottery(history_data, lottery_number):
             elif count_same_red_ball == 6:
                 prize_list.append(2)
     
-    print('prize_list: {}.'.format(prize_list))
-        
+    print('sum: {}, prize_list: {}.'.format(len(prize_list), prize_list))
 
 def get_history_data(is_online=True):
     '''获取历史中奖数据
@@ -125,6 +125,7 @@ def get_history_data(is_online=True):
     @param is_online: 是否离线获取,分为网上在线爬取或者本地文件读取
     @return history_data: 返回历史中奖数据
     '''
+    
     # 历史中奖数据文件保存
     save_data_file_path = './历史中奖数据.xlsx'
     # 历史中奖数据dataframe结构体
@@ -134,8 +135,8 @@ def get_history_data(is_online=True):
         # 历史中奖数据列名
         columns = []
         
-        # 页面从1开始,但不包括50
-        for page_index in range(1, 4):
+        # 页面从1开始,但不包括50,20210203目前133页
+        for page_index in range(1, 50):
             # 爬取的网页地址
             url = 'http://kaijiang.zhcw.com/zhcw/html/ssq/list_{}.html'.format(page_index)
             
@@ -169,6 +170,72 @@ def get_history_data(is_online=True):
         history_data = pd.read_excel(save_data_file_path)
         
     return history_data
+
+def get_weekday(date):
+    '''统计分析历史中奖数据
+    
+    @desc  网站: http://kaijiang.zhcw.com/zhcw/html/ssq/list_1.html
+    @param is_online: 是否离线获取,分为网上在线爬取或者本地文件读取
+    @return history_data: 返回历史中奖数据
+    '''
+    
+    date = date.split('-')
+    date = [int(elem) for elem in date]
+    #date = np.array(date)
+    #print(type(date), len(date), date)
+    date = datetime.datetime.date(datetime.datetime(year=date[0], month=date[1], day=date[2]))
+    #print(date.isoweekday())
+    return date.isoweekday()
+    
+def statistics_analyse(history_data):
+    '''统计分析历史中奖数据
+    
+    @desc  网站: http://kaijiang.zhcw.com/zhcw/html/ssq/list_1.html
+    @param is_online: 是否离线获取,分为网上在线爬取或者本地文件读取
+    @return history_data: 返回历史中奖数据
+    '''
+
+    save_data_file_path = './统计分析历史中奖数据.xlsx'
+
+    # 构造列名
+    red_ball_number = list(range(1, 34))
+    blue_ball_number = list(range(1, 17))
+    columns = red_ball_number + blue_ball_number
+    #print(columns)
+
+    # 初始化值为0
+    tuesday = np.zeros((49,), dtype=int, order='C')
+    thursday = np.zeros((49,), dtype=int, order='C')
+    sunday = np.zeros((49,), dtype=int, order='C')
+    statistics = np.zeros((49,), dtype=int, order='C')
+    statistics_dataframe = pd.DataFrame([tuesday, thursday, sunday, statistics], columns=columns)
+
+    # 重命名索引值
+    statistics_dataframe.index = ['tuesday', 'thursday', 'sunday', 'statistics']
+
+    # 下标均以0开始,不包含列名和行名
+    #statistics_dataframe.iloc[2, 0] = 123
+    #statistics_dataframe.iloc[2, 33+15] = 123
+    
+    weekday_dict = {'2': 0, '4': 1, '7': 2}
+    
+    prize_numbers = history_data['中奖号码'].values
+    for index, prize_number in enumerate(prize_numbers):
+        #print(history_data['开奖日期'].loc[index])
+        date = history_data['开奖日期'].loc[index]
+        weekday = get_weekday(date)
+        
+        red_prize_number, blue_prize_number = lottery_number_handler(prize_number)
+        for number in red_prize_number:
+            statistics_dataframe.iloc[weekday_dict[str(weekday)], number-1] += 1
+            statistics_dataframe.iloc[3, number-1] += 1
+        for number in blue_prize_number:
+            #print(number)
+            statistics_dataframe.iloc[weekday_dict[str(weekday)], number+32] += 1
+            statistics_dataframe.iloc[3, number+32] += 1
+    
+    # 保存结果到本地
+    statistics_dataframe.to_excel(save_data_file_path, index=True, header=True)
     
 if __name__ == '__main__':
     begin_time = time.time()
@@ -178,10 +245,13 @@ if __name__ == '__main__':
     print('history_data.shape: {}.'.format(history_data.shape))
     
     # 彩票号码
-    lottery_number = '03 05 13 14 27 31 16'
+    lottery_number = '01 06 14 32 22 26 07'
     
     # 查询是否中奖
     is_win_a_prize_in_a_lottery(history_data, lottery_number)
+    
+    # 统计分析历史中奖数据
+    #statistics_analyse(history_data)
     
     end_time = time.time()
     print('共花费 {} s时间'.format(round(end_time - begin_time, 2)))
