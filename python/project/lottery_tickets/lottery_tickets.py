@@ -80,6 +80,7 @@ def is_win_a_prize_in_a_lottery(history_data, lottery_number):
     '''
     
     # 判断
+    print('lottery_number: {}.'.format(lottery_number))
     
     # 彩票号码处理
     red_ball, blue_ball = lottery_number_handler(lottery_number)
@@ -116,7 +117,7 @@ def is_win_a_prize_in_a_lottery(history_data, lottery_number):
             elif count_same_red_ball == 6:
                 prize_list.append(2)
     
-    print('sum: {}, prize_list: {}.'.format(len(prize_list), prize_list))
+    print('sum: {}, prize_list: {}.'.format(len(prize_list), sorted(prize_list)))
 
 def get_history_data(is_online=True):
     '''获取历史中奖数据
@@ -236,7 +237,27 @@ def statistics_analyse(history_data):
     
     # 保存结果到本地
     statistics_dataframe.to_excel(save_data_file_path, index=True, header=True)
+    return statistics_dataframe
+
+def generate_lottery_number(statistics_data=None):
+    save_data_file_path = './统计分析历史中奖数据.xlsx'
+    statistics_data = pd.read_excel(save_data_file_path, index=False)
+    print(statistics_data.shape)
+    #print(statistics_data)
     
+    red_ball_number = list(range(1, 34))
+    blue_ball_number = list(range(1, 17))
+    red_ball_count =  statistics_data.iloc[2].values[1:34]
+    blue_ball_count  = statistics_data.iloc[2].values[34:50]
+    
+    red_ball_count, red_ball_number = zip(*sorted(zip(red_ball_count, red_ball_number), reverse=True))
+    print(red_ball_number)
+    print(red_ball_count)
+    
+    blue_ball_count, blue_ball_number = zip(*sorted(zip(blue_ball_count, blue_ball_number), reverse=True))
+    print(blue_ball_number)
+    print(blue_ball_count)
+
 if __name__ == '__main__':
     begin_time = time.time()
     
@@ -245,13 +266,17 @@ if __name__ == '__main__':
     print('history_data.shape: {}.'.format(history_data.shape))
     
     # 彩票号码
-    lottery_number = '01 06 14 32 22 26 07'
+    lottery_numbers = ['32 11 15 12 31 29 07', '2 1 6 14 9 27 09', '22 14 6 27 20 18 12', '01 06 14 20 22 26 07']
     
     # 查询是否中奖
-    is_win_a_prize_in_a_lottery(history_data, lottery_number)
+    for lottery_number in lottery_numbers:
+        is_win_a_prize_in_a_lottery(history_data, lottery_number)
     
     # 统计分析历史中奖数据
     #statistics_analyse(history_data)
+    
+    # 生成一个彩票号码
+    #generate_lottery_number()
     
     end_time = time.time()
     print('共花费 {} s时间'.format(round(end_time - begin_time, 2)))
