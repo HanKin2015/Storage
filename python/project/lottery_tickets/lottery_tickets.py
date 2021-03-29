@@ -222,6 +222,12 @@ def statistics_analyse(history_data):
     
     prize_numbers = history_data['中奖号码'].values
     for index, prize_number in enumerate(prize_numbers):
+        #通过期号来控制数据范围采集
+        date_number = history_data['期号'].loc[index]
+        #选择2020年至今[2020001,]
+        if int(date_number) < 2020001:
+            continue
+        
         #print(history_data['开奖日期'].loc[index])
         date = history_data['开奖日期'].loc[index]
         weekday = get_weekday(date)
@@ -257,6 +263,11 @@ def generate_lottery_number(statistics_data=None):
     blue_ball_count, blue_ball_number = zip(*sorted(zip(blue_ball_count, blue_ball_number), reverse=True))
     print(blue_ball_number)
     print(blue_ball_count)
+    
+    lottery_number1 = [sorted(red_ball_number[0:6]), blue_ball_number[0:1]]
+    lottery_number2 = [sorted(red_ball_number[33-6:]), blue_ball_number[-1:]]
+    print('频繁率高推荐彩票号码:', lottery_number1)
+    print('频繁率低推荐彩票号码:', lottery_number2)
 
 if __name__ == '__main__':
     begin_time = time.time()
@@ -276,7 +287,7 @@ if __name__ == '__main__':
     #statistics_analyse(history_data)
     
     # 生成一个彩票号码
-    #generate_lottery_number()
+    generate_lottery_number()
     
     end_time = time.time()
     print('共花费 {} s时间'.format(round(end_time - begin_time, 2)))
