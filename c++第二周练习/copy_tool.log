@@ -1,0 +1,1395 @@
+Tue, 22 Sep 2020 10:08:03 copy_tool.py[line:45] INFO ---ftp init---
+Tue, 22 Sep 2020 10:08:03 copy_tool.py[line:79] INFO start ftp connect
+Tue, 22 Sep 2020 10:08:12 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 22 Sep 2020 10:08:12 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 22 Sep 2020 10:08:15 copy_tool.py[line:616] INFO 非buffer stream安卓盒子调试命令：
+
+（1）setprop persist.usb.tmpintvid 2362 （2）setprop persist.usb.tmpintpid 9488 注：需要将16进制转换成 10进制进行设置(2362是十进制的vid，9488是十进制的pid)；
+
+升级到5.4.0R1才能支持。
+
+setprop persist.usb.disintnor 1 ，即可关闭 中断非缓存模式
+
+202006110390   centos7.6无法识别U盘，windows可以正常识别
+
+
+
+
+
+
+
+
+以定制单为准，工作量开发+测试大概在4人天 5K/人天 目前还未排期。
+Tue, 22 Sep 2020 10:09:47 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 22 Sep 2020 10:09:47 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 22 Sep 2020 10:09:48 copy_tool.py[line:616] INFO 问题原因：538和538SP1版本的时候盒子只支持15个USB通道，到了540R2版本的时候扩展了USB通道数量到30个。因此修改了USB通道的编号顺序，这时候这款得实打印机相当于换了一个USB口。由于这款打印机的特殊性，换USB口插入的话，就会生成新的实例ID，这时候打印机就会异常，需要切换到对应的端口才能正常运行。重新装驱动会自动分配端口所以正常。所以出现了部分打印机是正常的现象，正常的打印机不会由于usb口重新生成新的实例ID，这点可以通过Windows注册表看到实例ID的变化。因此，对于这种特殊的打印机，不要随意变更usb口。对于升级引起这种usb口的变更是无法避免解决的，只能通过重装驱动或者切换到新的端口才能正常运行。
+
+
+
+
+
+文件审计功能目前不支持Linux虚拟机，因此在开启这个功能的时候会影响到u盘的映射。开启这个功能时，服务端需要检测客户端是否正常（即是否支持文件审计功能），由于Linux虚拟机不支持，服务端检测到客户端异常即不支持，从而导致u盘映射失败。Windows虚拟机不会影响u盘的映射，开启文件导出审计后，u盘能正常读取，但是不能直接写入，需要使用写入工具。
+Tue, 22 Sep 2020 17:37:24 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 22 Sep 2020 17:37:24 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 22 Sep 2020 17:37:24 copy_tool.py[line:79] INFO start ftp connect
+Tue, 22 Sep 2020 17:37:24 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 22 Sep 2020 17:37:26 copy_tool.py[line:616] INFO @李健麒  @唐柳  @何健 客户这边542版本，神思读卡器0400：c35a配天创指纹仪7899:0530，神思读卡器正常，指纹仪在x86盒子上刚开始插上能够正常使用，，虚拟机的设备管理器也能看到，但是过10~30s就会发现在导航条都看不到外设了，虚拟机设备管理器也没有这个外设，PC客户端接入测试，7899:0530一直是管理员禁用的状态，配置了白名单、usbban，也还是这样，删除%appdata%\SangforUsb\目录下的xml文件再拔插也不行，需要研发确认下是外设不支持还是怎么
+
+南京市公安局-7899:0530指纹仪无法在x86盒子以及PC客户端正常使用
+Tue, 22 Sep 2020 17:38:09 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 22 Sep 2020 17:38:09 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 22 Sep 2020 17:43:50 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 22 Sep 2020 17:43:50 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 22 Sep 2020 17:43:50 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 22 Sep 2020 17:43:50 copy_tool.py[line:79] INFO start ftp connect
+Tue, 22 Sep 2020 17:59:19 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 22 Sep 2020 17:59:19 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 22 Sep 2020 17:59:19 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 22 Sep 2020 17:59:19 copy_tool.py[line:79] INFO start ftp connect
+Wed, 23 Sep 2020 11:38:53 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 23 Sep 2020 11:38:53 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Wed, 23 Sep 2020 11:38:53 copy_tool.py[line:79] INFO start ftp connect
+Wed, 23 Sep 2020 11:38:53 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 24 Sep 2020 10:44:06 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 24 Sep 2020 10:44:06 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 24 Sep 2020 10:44:06 copy_tool.py[line:79] INFO start ftp connect
+Thu, 24 Sep 2020 10:44:06 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 24 Sep 2020 10:44:08 copy_tool.py[line:616] INFO #include<stdio.h> 
+#include<stdlib.h> 
+#include<string.h> 
+#include<errno.h> 
+#include<sys/types.h> 
+#include<sys/socket.h> 
+#include<netinet/in.h> 
+#define MAXLINE 4096 
+int main(int argc, char** argv) 
+{ 
+    int listenfd, connfd; 
+    struct sockaddr_in servaddr; 
+    char buff[4096]; int n; 
+    if( (listenfd = socket(AF_INET, SOCK_STREAM, 0)) == -1 )
+    { 
+        printf("create socket error: %s(errno: %d)\n",strerror(errno),errno);
+        exit(0); 
+    } 
+    memset(&servaddr, 0, sizeof(servaddr)); 
+    servaddr.sin_family = AF_INET; 
+    servaddr.sin_addr.s_addr = htonl(INADDR_ANY);             
+    servaddr.sin_port = htons(6666); 
+    if( bind(listenfd, (struct sockaddr*)&servaddr, sizeof(servaddr)) == -1)
+    { 
+        printf("bind socket error: %s(errno: %d)\n",strerror(errno),errno);
+        exit(0); 
+    } 
+    if( listen(listenfd, 10) == -1)
+    { 
+        printf("listen socket error: %s(errno: %d)\n",strerror(errno),errno);
+        exit(0); 
+    } 
+    printf("======waiting for client's request======\n"); 
+    while(1)
+    { 
+        if( (connfd = accept(listenfd, (struct sockaddr*)NULL, NULL)) == -1)
+        { 
+            printf("accept socket error: %s(errno: %d)",strerror(errno),errno); 
+            continue; 
+        } 
+        n= recv(connfd, buff, MAXLINE, 0); 
+        buff[n] = '\0'; 
+        printf("recv msg from client: %s\n", buff); 
+        close(connfd); 
+    } 
+    close(listenfd);
+Thu, 24 Sep 2020 11:07:52 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 24 Sep 2020 11:07:52 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 24 Sep 2020 11:07:52 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 24 Sep 2020 11:07:52 copy_tool.py[line:79] INFO start ftp connect
+Thu, 24 Sep 2020 14:33:15 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 24 Sep 2020 14:33:15 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 24 Sep 2020 14:33:15 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 24 Sep 2020 14:33:15 copy_tool.py[line:79] INFO start ftp connect
+Thu, 24 Sep 2020 15:38:18 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 24 Sep 2020 15:38:18 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 24 Sep 2020 15:38:18 copy_tool.py[line:79] INFO start ftp connect
+Thu, 24 Sep 2020 15:38:18 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 24 Sep 2020 15:38:20 copy_tool.py[line:616] INFO The technical support period of the Hex-Rays decompiler
+has expired. You have 3 month grace period to update your license.
+The grace period is counted from the expiration date.
+For more information please visit https://www.hex-rays.com
+
+#include<stdio.h> 
+#include<stdlib.h> 
+#include<string.h> 
+#include<errno.h> 
+#include<sys/types.h> 
+#include<sys/socket.h> 
+#include<netinet/in.h> 
+#define MAXLINE 4096 
+int main(int argc, char** argv) 
+{ 
+    int sockfd, n; 
+    char recvline[4096], sendline[4096]; 
+    struct sockaddr_in servaddr; 
+    if( argc != 2)
+    { 
+        printf("usage: ./client <ipaddress>\n"); 
+        exit(0); 
+    } 
+    if( (sockfd = socket(AF_INET, SOCK_STREAM, 0)) < 0)
+    { 
+        printf("create socket error: %s(errno: %d)\n", strerror(errno),errno);
+        exit(0); 
+    }
+    memset(&servaddr, 0, sizeof(servaddr)); 
+    servaddr.sin_family = AF_INET; 
+    servaddr.sin_port =htons(6666); 
+    if( inet_pton(AF_INET, argv[1], &servaddr.sin_addr) <= 0)
+    { 
+        printf("inet_pton error for %s\n",argv[1]); 
+        exit(0); 
+    } 
+    if( connect(sockfd, (struct sockaddr*)&servaddr, sizeof(servaddr)) < 0)
+    { 
+        printf("connect error: %s(errno: %d)\n",strerror(errno),errno); 
+        exit(0); 
+    } 
+    printf("send msg to server: \n"); fgets(sendline, 4096, stdin); 
+    if( send(sockfd, sendline, strlen(sendline), 0) < 0) 
+    { 
+        printf("send msg error: %s(errno: %d)\n", strerror(errno), errno);
+     exit(0); 
+    } 
+    close(sockfd); 
+    exit(0); 
+}
+Thu, 24 Sep 2020 16:11:25 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 24 Sep 2020 16:11:25 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 24 Sep 2020 16:11:25 copy_tool.py[line:79] INFO start ftp connect
+Thu, 24 Sep 2020 16:11:25 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 24 Sep 2020 19:35:31 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 24 Sep 2020 19:35:31 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 24 Sep 2020 19:35:31 copy_tool.py[line:79] INFO start ftp connect
+Thu, 24 Sep 2020 19:35:31 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 24 Sep 2020 20:38:01 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 24 Sep 2020 20:38:01 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 24 Sep 2020 20:38:01 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 24 Sep 2020 20:38:01 copy_tool.py[line:79] INFO start ftp connect
+Sun, 27 Sep 2020 14:38:03 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Sun, 27 Sep 2020 14:38:03 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Sun, 27 Sep 2020 14:38:03 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Sun, 27 Sep 2020 14:38:03 copy_tool.py[line:79] INFO start ftp connect
+Sun, 27 Sep 2020 15:49:13 copy_tool.py[line:616] INFO all: server
+
+server: client server.cpp
+        g++ server.cpp -o server
+
+client: client.cpp
+        g++ client.cpp -o client
+
+https://uupdump.ml/?lang=zh-cn
+`0` 代表所有的USB总线，`1，2` 代表不同USB总线，`t` 代表 `text api`，`u`代表 `binary api`。如果不需要完整的数据，可以通过cat这些文件获得；
+Sun, 27 Sep 2020 15:49:15 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Sun, 27 Sep 2020 15:49:15 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Sun, 27 Sep 2020 15:49:15 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Sun, 27 Sep 2020 15:49:15 copy_tool.py[line:79] INFO start ftp connect
+Sun, 27 Sep 2020 19:40:39 copy_tool.py[line:45] INFO ---ftp init---
+Sun, 27 Sep 2020 19:40:39 copy_tool.py[line:79] INFO start ftp connect
+Sun, 27 Sep 2020 19:40:46 copy_tool.py[line:45] INFO ---ftp init---
+Sun, 27 Sep 2020 19:40:46 copy_tool.py[line:79] INFO start ftp connect
+Sun, 27 Sep 2020 19:40:46 copy_tool.py[line:45] INFO ---ftp init---
+Sun, 27 Sep 2020 19:40:46 copy_tool.py[line:79] INFO start ftp connect
+Sun, 27 Sep 2020 19:40:47 copy_tool.py[line:45] INFO ---ftp init---
+Sun, 27 Sep 2020 19:40:47 copy_tool.py[line:79] INFO start ftp connect
+Sun, 27 Sep 2020 19:40:47 copy_tool.py[line:45] INFO ---ftp init---
+Sun, 27 Sep 2020 19:40:47 copy_tool.py[line:79] INFO start ftp connect
+Sun, 27 Sep 2020 19:40:54 copy_tool.py[line:163] INFO ---ftp quit---
+Sun, 27 Sep 2020 19:41:07 copy_tool.py[line:163] INFO ---ftp quit---
+Sun, 27 Sep 2020 19:41:14 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Sun, 27 Sep 2020 19:41:14 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Sun, 27 Sep 2020 19:41:31 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Sun, 27 Sep 2020 19:41:31 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Sun, 27 Sep 2020 21:24:15 copy_tool.py[line:163] INFO ---ftp quit---
+Sun, 27 Sep 2020 21:24:15 copy_tool.py[line:167] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Sun, 27 Sep 2020 21:24:20 copy_tool.py[line:163] INFO ---ftp quit---
+Sun, 27 Sep 2020 21:24:20 copy_tool.py[line:167] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Sun, 27 Sep 2020 21:24:25 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Sun, 27 Sep 2020 21:24:25 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Sun, 27 Sep 2020 21:24:25 copy_tool.py[line:79] INFO start ftp connect
+Sun, 27 Sep 2020 21:24:25 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 28 Sep 2020 14:27:38 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 28 Sep 2020 14:27:39 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Mon, 28 Sep 2020 14:27:39 copy_tool.py[line:79] INFO start ftp connect
+Mon, 28 Sep 2020 14:27:40 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 28 Sep 2020 14:27:42 copy_tool.py[line:616] INFO #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <errno.h>
+#include <sys/poll.h>
+#include <signal.h>
+#include <time.h>
+#include <pthread.h>
+#include <sys/un.h>
+
+#define STREAM_SERVER_MSG_FILE "/tmp/local_server"
+
+int main(int argc, char *argv[])
+{
+	int msg_fd = 0;
+	struct sockaddr_un serv;
+	struct sockaddr_in client_addr;
+	socklen_t client_length = sizeof(client_addr);
+	int clientfd = 0;
+	int ret = 0;
+
+	msg_fd = socket(AF_UNIX, SOCK_STREAM, 0);
+	if(msg_fd < 0)
+	{
+		perror("socket error");
+		return 0;
+	}
+
+	unlink(STREAM_SERVER_MSG_FILE);
+	bzero(&serv, sizeof(serv));
+	serv.sun_family = AF_LOCAL;
+	strcpy(serv.sun_path, STREAM_SERVER_MSG_FILE);
+
+	ret = bind(msg_fd, (struct sockaddr *)&serv, sizeof(serv));
+	if(ret < 0)
+	{
+		close(msg_fd);
+		perror("bind error");
+		return 0;
+	}
+
+	ret = listen(msg_fd, 1);
+	if(ret < 0)
+	{
+		close(msg_fd);
+		perror("listen error");
+		return 0;
+	}
+
+	while(1)
+	{
+		clientfd = accept(msg_fd, (struct sockaddr*)&client_addr, &client_length);
+		if (clientfd > 0)
+		{
+			char buf[256];
+			memset(&buf, 0, sizeof(buf));
+			ret = recv(clientfd, &buf, sizeof(buf), 0);
+			if(ret != sizeof(buf))
+			{
+				printf("\033[32m[%s:%d]\033[36m ret = %d\033[0m\n", __FUNCTION__, __LINE__, ret);
+			}
+			printf("\033[32m[%s:%d]\033[36m buf = [%s]\033[0m\n", __FUNCTION__, __LINE__, buf);
+
+			close(clientfd);
+		}
+	}
+
+	close(msg_fd);
+
+	return 0;
+}
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <errno.h>
+#include <sys/poll.h>
+#include <signal.h>
+#include <time.h>
+#include <pthread.h>
+#include <sys/un.h>
+
+#define STREAM_SERVER_MSG_FILE "/tmp/local_server"
+
+int main(int argc, char *argv[])
+{
+	int ret;
+	int sockfd;
+	struct sockaddr_un serv;
+
+	sockfd = socket(AF_UNIX, SOCK_STREAM, 0);
+	if(sockfd < 0)
+	{
+		perror("socket error");
+		return -1;
+	}
+
+	bzero(&serv, sizeof(serv));
+	serv.sun_family = AF_UNIX;
+	strcpy(serv.sun_path, STREAM_SERVER_MSG_FILE);
+
+	ret = connect(sockfd, (struct sockaddr *)&serv, sizeof(serv));
+	if(ret < 0)
+	{
+		close(sockfd);
+		perror("connect error");
+		return -3;
+	}
+
+	ret = send(sockfd, "test", 4, 0);
+	if(ret != 4)
+	{
+		printf("\033[32m[%s:%d]\033[36m ret=%d\033[0m\n", __FUNCTION__, __LINE__, ret);
+	}
+
+	close(sockfd);
+
+	return 0;
+}
+Mon, 28 Sep 2020 15:59:49 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 28 Sep 2020 15:59:49 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Mon, 28 Sep 2020 15:59:49 copy_tool.py[line:79] INFO start ftp connect
+Mon, 28 Sep 2020 15:59:49 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 28 Sep 2020 15:59:51 copy_tool.py[line:616] INFO #include <unistd.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <assert.h>
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+
+/**
+ *  返回一片共享内存标识符，用于后续获取该共享内存，以及销毁该共享内存
+ *  INDEX_OF_KEY —— 自定义的该共享内存序号
+ *  LENGTH —— 共享内存大小
+ */
+const int create_flag(const int INDEX_OF_KEY, const unsigned int LENGTH) {
+    // 生成key
+    const char* FILE_PATH = "./";
+    key_t key = ftok(FILE_PATH, INDEX_OF_KEY);
+
+    // 创建共享内存空间
+    const int FLAG = shmget(key, LENGTH, IPC_CREAT | 0666);
+
+    return FLAG;
+}
+
+
+// 定义进程锁结构体
+typedef struct MUTEX_PACKAGE {
+    // 锁以及状态
+    pthread_mutex_t lock;
+    pthread_mutexattr_t lock_attr;
+    // 在共享内存中的标识符
+    int FLAG;
+} mutex_package_t;
+
+
+// 初始化进程锁结构体
+const int init(void* pthis) {
+    mutex_package_t* mp = (mutex_package_t*)pthis;
+    // 初始化锁状态，设置状态状态为——进程共享
+    pthread_mutexattr_init(&(mp->lock_attr));
+    pthread_mutexattr_setpshared(&(mp->lock_attr), PTHREAD_PROCESS_SHARED);
+    // 用锁状态来初始化锁
+    pthread_mutex_init(&(mp->lock), &(mp->lock_attr));
+
+    return 0;
+}
+
+
+// 在共享内存上定义进程锁结构体并且返回其位置
+mutex_package_t* create_mutex_package(const int INDEX) {
+    const int FLAG = create_flag(INDEX, sizeof(mutex_package_t));
+    mutex_package_t* mp = (mutex_package_t*)shmat(FLAG, NULL, SHM_R | SHM_W);
+    mp->FLAG = FLAG;
+
+    assert(init(mp) == 0);
+
+    return mp;
+}
+
+
+// 销毁进程锁结构体，利用其FLAG变量索引到其占用的共享内存并销毁
+const int destory_mutex_package(mutex_package_t* mp) {
+    // 销毁锁和锁状态
+    pthread_mutex_destroy(&(mp->lock));
+    pthread_mutexattr_destroy(&(mp->lock_attr));
+
+    // 释放共享内存
+    assert(shmctl(mp->FLAG, IPC_RMID, NULL) == 0);
+
+    return 0;
+}
+
+
+int main() {
+    // 创建自定义进程锁
+    mutex_package_t* mp = create_mutex_package(111);
+
+    // 获取一片共享内存空间
+    const int FLAG = create_flag(222, sizeof(int));
+    volatile int* x = (int*)shmat(FLAG, NULL, 0);
+
+    // 创建新进程
+    int id = fork();
+    assert(id >= 0);
+
+    // 设置循环次数
+    const int N = 1000000;
+
+    // 父进程每次加1，子进程每次加2
+    int i;
+    for (i = 0; i < N; ++i) {
+
+        if (id > 0) {  // 父进程
+            // 加锁
+            pthread_mutex_lock(&(mp->lock));
+            int temp = *x;
+            *x = temp+1;
+            // 解锁
+            pthread_mutex_unlock(&(mp->lock));
+
+        } else {  // 子进程
+            // 加锁
+            pthread_mutex_lock(&(mp->lock));
+            int temp = *x;
+            *x = temp+2;
+            // 解锁
+            pthread_mutex_unlock(&(mp->lock));
+        }
+
+    }
+
+    // 等待循环完毕
+    sleep(1);
+
+    // 打印
+    printf("pid= %d, x_address= %x, x= %d\n", getpid(), x, *x);
+
+    // 等待打印完毕
+    sleep(1);
+
+    // 销毁进程锁,释放申请的共享内存
+    if (id > 0) {  // 父进程
+        destory_mutex_package(mp);
+        mp = NULL;
+        shmctl(FLAG, IPC_RMID, NULL);
+        x = NULL;
+        printf("父进程释放资源完毕\n");
+    }
+
+    return 0;
+}
+Mon, 28 Sep 2020 16:13:21 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 28 Sep 2020 16:13:21 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Mon, 28 Sep 2020 16:13:21 copy_tool.py[line:79] INFO start ftp connect
+Mon, 28 Sep 2020 16:13:21 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 28 Sep 2020 16:13:23 copy_tool.py[line:616] INFO /*
+    互斥量 实现 多进程 之间的同步 
+*/
+ 
+#include<unistd.h>
+#include<sys/mman.h>
+#include<pthread.h>
+#include<sys/types.h>
+#include<sys/wait.h>
+#include<fcntl.h>
+#include<string.h>
+#include<stdlib.h>
+#include<stdio.h>
+ 
+struct mt
+{
+    int num;
+    pthread_mutex_t mutex;
+    pthread_mutexattr_t mutexattr;
+};
+ 
+ 
+int main(void)
+{
+    
+    int i;
+    struct mt* mm;
+ 
+    pid_t pid;
+ 
+    /*
+    // 创建映射区文件
+    int fd = open("mt_test",O_CREAT|O_RDWR,0777);
+    if( fd == -1 ) 
+    {
+        perror("open file:"); 
+        exit(1); 
+    }
+    ftruncate(fd,sizeof(*mm));
+    mm = mmap(NULL,sizeof(*mm),PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);
+    close(fd);
+    unlink("mt_test");
+  */
+ 
+    // 建立映射区
+    mm = mmap(NULL,sizeof(*mm),PROT_READ|PROT_WRITE,MAP_SHARED|MAP_ANON,-1,0);
+ 
+//    printf("-------before memset------\n");
+    memset(mm,0x00,sizeof(*mm));
+//   printf("-------after memset------\n");
+ 
+    pthread_mutexattr_init(&mm->mutexattr);         // 初始化 mutex 属性
+    pthread_mutexattr_setpshared(&mm->mutexattr, PTHREAD_PROCESS_SHARED);               // 修改属性为进程间共享
+ 
+    pthread_mutex_init(&mm->mutex,&mm->mutexattr);      // 初始化一把 mutex 锁
+    
+    pid = fork();
+    if( pid == 0 )          // 子进程
+    {
+        for( i=0; i<10;i++ )
+        {
+            pthread_mutex_lock(&mm->mutex);
+            (mm->num)++;
+            printf("-child--------------num++    %d\n",mm->num);
+            pthread_mutex_unlock(&mm->mutex);
+            sleep(1);
+        }
+    
+    }
+    else 
+    {
+        for( i=0;i<10;i++)
+        {
+            sleep(1); 
+            pthread_mutex_lock(&mm->mutex);
+            mm->num += 2;
+            printf("--------parent------num+=2   %d\n",mm->num);
+            pthread_mutex_unlock(&mm->mutex);
+        
+        }
+        wait(NULL);
+ 
+    }
+    pthread_mutexattr_destroy(&mm->mutexattr);  // 销毁 mutex 属性对象
+    pthread_mutex_destroy(&mm->mutex);          // 销毁 mutex 锁
+ 
+    return 0;
+}
+Mon, 28 Sep 2020 16:55:58 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 28 Sep 2020 16:55:58 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Mon, 28 Sep 2020 16:55:58 copy_tool.py[line:79] INFO start ftp connect
+Mon, 28 Sep 2020 16:55:58 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 28 Sep 2020 19:56:22 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 28 Sep 2020 19:56:22 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 28 Sep 2020 19:56:22 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Mon, 28 Sep 2020 19:56:22 copy_tool.py[line:79] INFO start ftp connect
+Mon, 28 Sep 2020 19:56:26 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 28 Sep 2020 19:56:26 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 28 Sep 2020 20:11:05 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 28 Sep 2020 20:11:05 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Mon, 28 Sep 2020 20:11:05 copy_tool.py[line:79] INFO start ftp connect
+Mon, 28 Sep 2020 20:11:05 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 28 Sep 2020 20:31:50 copy_tool.py[line:616] INFO #include <stdio.h>
+#include <fcntl.h>
+ 
+int main(int argc, char* argv[]){
+    if(2!=argc){
+        printf("usage:%s <pathname>\n",argv[0]);
+        return 1;
+    }
+    int fd = open(argv[1],O_RDONLY);
+    if(-1 == fd){
+        perror("open error");
+        return 1;
+    }
+    struct flock lock;
+    lock.l_type = F_RDLCK;
+    lock.l_whence = SEEK_SET;
+    lock.l_start = 0;
+    lock.l_len = 0; 
+    if(-1 == fcntl(fd,F_SETLK,&lock)){
+        perror("fcntl error");
+        return 1;
+    }
+    pause();
+    close(fd);
+}
+
+#include <stdio.h>
+#include <fcntl.h>
+#include <string.h>
+ 
+int main(int argc, char* argv[]){
+    if(2!=argc){
+        printf("usage:%s <pathname>\n",argv[0]);
+        return 1;
+    }
+    int fd = open(argv[1],O_RDWR);
+    if(-1 == fd){
+        perror("open error");
+        return 1;
+    }
+    struct flock lock;
+    bzero(&lock,sizeof(lock));
+    if(-1 == fcntl(fd,F_GETLK,&lock)){
+        perror("fcntl error");
+        return 1;
+    }
+    printf("file:%s,lock type:%d,start:%d,len:%d,by %d\n",argv[1],lock.l_type,lock.l_start,lock.l_len,lock.l_pid);
+ 
+}
+
+
+#include <stdio.h>
+#include <fcntl.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <unistd.h>
+int fd;
+ 
+void handler(int sig){
+    struct flock lock;
+    lock.l_type = F_UNLCK;
+    lock.l_whence = SEEK_SET;
+    lock.l_start = 0;
+    lock.l_len = 0; 
+    if(-1 == fcntl(fd,F_SETLKW,&lock)){
+        perror("fcntl error");
+        exit(1);
+    }
+}
+ 
+int main(int argc, char* argv[]){
+    signal(SIGUSR1,handler);
+    int c,start = 0,len = 0;
+    while((c = getopt(argc,argv,"s:l:"))!=-1){
+        switch(c){
+        case 's':
+            start = atoi(optarg);
+            break;
+        case 'l':
+            len = atoi(optarg);
+            break;
+        }
+    }
+ 
+    if(optind != argc -1){
+        printf("usage:%s [-s <start>] [-l <len>] <pathname>\n",argv[0]);
+        return 1;
+    }
+    fd = open(argv[optind],O_WRONLY);
+    if(-1 == fd){
+        perror("open error");
+        return 1;
+    }
+    struct flock lock;
+    lock.l_type = F_WRLCK;
+    lock.l_whence = SEEK_SET;
+    lock.l_start = start;
+    lock.l_len = len; 
+    if(-1 == fcntl(fd,F_SETLKW,&lock)){
+        perror("fcntl error");
+        return 1;
+    }
+    pause();
+    for(;;);
+    close(fd);
+}
+Tue, 29 Sep 2020 10:47:54 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 29 Sep 2020 10:47:54 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 29 Sep 2020 10:47:54 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 29 Sep 2020 10:47:54 copy_tool.py[line:79] INFO start ftp connect
+Tue, 29 Sep 2020 10:51:01 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 29 Sep 2020 10:51:01 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 29 Sep 2020 10:51:01 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 29 Sep 2020 10:51:01 copy_tool.py[line:79] INFO start ftp connect
+Tue, 29 Sep 2020 13:05:42 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 29 Sep 2020 13:05:42 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 29 Sep 2020 13:05:42 copy_tool.py[line:79] INFO start ftp connect
+Tue, 29 Sep 2020 13:05:42 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 29 Sep 2020 13:12:44 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 29 Sep 2020 13:12:44 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 29 Sep 2020 13:12:44 copy_tool.py[line:79] INFO start ftp connect
+Tue, 29 Sep 2020 13:12:44 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 29 Sep 2020 13:12:46 copy_tool.py[line:616] INFO #include <stdio.h>
+#include <pthread.h>
+#include <unistd.h>
+ 
+void *fun(void *arg)
+{
+	printf("I'm thread, Thread ID = %lu\n", pthread_self());
+	return NULL;
+}
+ 
+int main(void)
+{
+	pthread_t tid;
+ 
+	pthread_create(&tid, NULL, fun, NULL);
+	sleep(1);      // 在多线程环境中，父线程终止，全部子线程被迫终止
+	printf("I am main, my pid = %d\n", getpid());
+ 
+	return 0;
+}
+Tue, 29 Sep 2020 17:51:20 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 29 Sep 2020 17:51:20 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 29 Sep 2020 17:51:20 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 29 Sep 2020 17:51:20 copy_tool.py[line:79] INFO start ftp connect
+Tue, 29 Sep 2020 20:13:13 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 29 Sep 2020 20:13:13 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 29 Sep 2020 20:13:13 copy_tool.py[line:79] INFO start ftp connect
+Tue, 29 Sep 2020 20:13:13 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 29 Sep 2020 20:13:14 copy_tool.py[line:616] INFO #include <iostream>
+#include <string>
+#include <memory>
+using namespace std;
+
+int main() {
+	auto_ptr<string> films[5] ={
+	auto_ptr<string> (new string("Fowl Balls")),
+	auto_ptr<string> (new string("Duck Walks")),
+	auto_ptr<string> (new string("Chicken Runs")),
+	auto_ptr<string> (new string("Turkey Errors")),
+	auto_ptr<string> (new string("Goose Eggs"))
+	};
+    auto_ptr<string> pwin;
+    pwin = films[2]; // films[2] loses ownership. 将所有权从films[2]转让给pwin，此时films[2]不再引用该字符串从而变成空指针
+
+	cout << "The nominees for best avian baseballl film are\n";
+	for(int i = 0; i < 5; ++i)
+	{
+		cout << *films[i] << endl;
+	}
+ 	cout << "The winner is " << *pwin << endl;
+	return 0;
+}
+Wed, 30 Sep 2020 11:46:28 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 30 Sep 2020 11:46:28 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Wed, 30 Sep 2020 11:46:28 copy_tool.py[line:79] INFO start ftp connect
+Wed, 30 Sep 2020 11:46:29 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 30 Sep 2020 11:46:31 copy_tool.py[line:616] INFO #include < assert.h>
+
+#include <iostream>
+#include <memory>
+#include <string>
+using namespace std;
+
+int main()
+{
+	shared_ptr<int> sp(new int(10));
+	assert(sp.use_count() == 1);
+	weak_ptr<int> wp(sp); 	//从 shared_ptr 创建 weak_ptr
+	assert(wp.use_count() == 1);
+	if (!wp.expired())		//判断 weak_ptr 观察的对象是否失效
+	{
+		shared_ptr<int> sp2 = wp.lock();//获得一个shared_ptr
+		*sp2 = 100;
+		assert(wp.use_count() == 2);
+	}
+	assert(wp.use_count() == 1);
+	cout << "int:" << *sp << endl;
+    return 0;
+}
+Fri, 09 Oct 2020 09:48:35 copy_tool.py[line:45] INFO ---ftp init---
+Fri, 09 Oct 2020 09:48:35 copy_tool.py[line:79] INFO start ftp connect
+Fri, 09 Oct 2020 09:48:54 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 09 Oct 2020 09:48:54 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 09 Oct 2020 16:27:49 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 09 Oct 2020 16:27:49 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Fri, 09 Oct 2020 16:27:49 copy_tool.py[line:79] INFO start ftp connect
+Fri, 09 Oct 2020 16:27:49 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 09 Oct 2020 16:27:50 copy_tool.py[line:616] INFO Domain name resolution function to deal with missing test of official version
+Fri, 09 Oct 2020 16:30:07 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 09 Oct 2020 16:30:07 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Fri, 09 Oct 2020 16:30:07 copy_tool.py[line:79] INFO start ftp connect
+Fri, 09 Oct 2020 16:30:07 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 09 Oct 2020 16:30:08 copy_tool.py[line:616] INFO 31f319ff2b34a99e35b985ac33758a6baee82a86e0092a642
+Sat, 10 Oct 2020 09:26:28 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Sat, 10 Oct 2020 09:26:28 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Sat, 10 Oct 2020 09:26:28 copy_tool.py[line:79] INFO start ftp connect
+Sat, 10 Oct 2020 09:26:28 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Sat, 10 Oct 2020 09:26:29 copy_tool.py[line:616] INFO ae771ea05d4d2ec4c895b124c5b9a796f74006ec321780803
+Sat, 10 Oct 2020 12:02:21 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Sat, 10 Oct 2020 12:02:21 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Sat, 10 Oct 2020 12:02:21 copy_tool.py[line:79] INFO start ftp connect
+Sat, 10 Oct 2020 12:02:21 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Sat, 10 Oct 2020 12:02:22 copy_tool.py[line:616] INFO http://199.200.0.11/tice_app/tice_info/detail/?tice_info_id=453
+Mon, 12 Oct 2020 09:39:54 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 12 Oct 2020 09:39:54 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Mon, 12 Oct 2020 09:39:54 copy_tool.py[line:79] INFO start ftp connect
+Mon, 12 Oct 2020 09:39:54 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 12 Oct 2020 09:39:55 copy_tool.py[line:616] INFO LOCKFILE="/home/xxq/lock_update_check_commit_sh.tmp"
+
+exec 200>$LOCKFILE
+flock -n 200 || {
+    echo "Another user is doing the same thing，please wait.."
+    flock 200 
+}
+Mon, 12 Oct 2020 11:09:59 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 12 Oct 2020 11:09:59 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 12 Oct 2020 11:09:59 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Mon, 12 Oct 2020 11:09:59 copy_tool.py[line:79] INFO start ftp connect
+Wed, 14 Oct 2020 15:32:16 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 14 Oct 2020 15:32:16 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Wed, 14 Oct 2020 15:32:16 copy_tool.py[line:79] INFO start ftp connect
+Wed, 14 Oct 2020 15:32:17 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 15 Oct 2020 09:56:18 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 15 Oct 2020 09:56:18 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 15 Oct 2020 09:56:18 copy_tool.py[line:79] INFO start ftp connect
+Thu, 15 Oct 2020 09:56:18 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 15 Oct 2020 09:56:21 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 15 Oct 2020 09:56:21 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 15 Oct 2020 10:28:18 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 15 Oct 2020 10:28:18 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 15 Oct 2020 10:28:18 copy_tool.py[line:79] INFO start ftp connect
+Thu, 15 Oct 2020 10:28:18 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 15 Oct 2020 10:28:20 copy_tool.py[line:616] INFO 【TD】苏州优力克流体控制公司-银行的网址界面无法输入-202010060066
+Thu, 15 Oct 2020 10:29:09 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 15 Oct 2020 10:29:09 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 15 Oct 2020 10:29:11 copy_tool.py[line:616] INFO https://pbank.szrcb.com/eweb/prelogin.do?LoginType=Q&BankId=9999&locale=zh_CN
+Thu, 15 Oct 2020 14:02:17 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 15 Oct 2020 14:02:17 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 15 Oct 2020 14:02:17 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 15 Oct 2020 14:02:17 copy_tool.py[line:79] INFO start ftp connect
+Thu, 15 Oct 2020 16:07:22 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 15 Oct 2020 16:07:22 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 15 Oct 2020 16:07:22 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 15 Oct 2020 16:07:22 copy_tool.py[line:79] INFO start ftp connect
+Thu, 15 Oct 2020 17:53:27 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 15 Oct 2020 17:53:27 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 15 Oct 2020 17:53:27 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 15 Oct 2020 17:53:27 copy_tool.py[line:79] INFO start ftp connect
+Fri, 16 Oct 2020 16:16:12 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 16 Oct 2020 16:16:12 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Fri, 16 Oct 2020 16:16:12 copy_tool.py[line:79] INFO start ftp connect
+Fri, 16 Oct 2020 16:16:12 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 16 Oct 2020 16:16:13 copy_tool.py[line:616] INFO #include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+ 
+int g_tickets = 100;
+pthread_mutex_t g_mutex = PTHREAD_MUTEX_INITIALIZER;
+ 
+void* thread_proc1(void* arg)
+{
+        while (1)
+        {
+                pthread_mutex_lock(&g_mutex);
+                if (g_tickets > 0)
+                        printf("thread 1 sell tickets:%d\n", g_tickets--);
+                else
+                {
+                        //pthread_mutex_unlock(&g_mutex);
+                        pthread_mutex_lock(&g_mutex);
+                        break;
+                }
+                //pthread_mutex_unlock(&g_mutex);
+                pthread_mutex_lock(&g_mutex);
+        }
+ 
+        return (void*)1;
+}
+ 
+void* thread_proc2(void* arg)
+{
+        while (1)
+        {
+                pthread_mutex_lock(&g_mutex);
+                if (g_tickets > 0)
+                        printf("thread 2 sell tickets:%d\n", g_tickets--);
+                else
+                {
+                        pthread_mutex_unlock(&g_mutex);
+                        break;
+                }
+                pthread_mutex_unlock(&g_mutex);
+        }
+ 
+        pthread_exit((void*)2);
+}
+ 
+int main(int argc, char*argv[])
+{
+        pthread_t tid1, tid2;
+        void *ret1, *ret2;
+ 
+        pthread_create(&tid1, NULL, thread_proc1, NULL);
+        pthread_create(&tid2, NULL, thread_proc2, NULL);
+ 
+        pthread_join(tid1, &ret1);
+        pthread_join(tid2, &ret2);
+ 
+        printf("ret1:%d\n",(int)ret1);
+        printf("ret2:%d\n",(int)ret2);
+ 
+        return 0;
+}
+Sat, 17 Oct 2020 09:54:16 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Sat, 17 Oct 2020 09:54:16 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Sat, 17 Oct 2020 09:54:16 copy_tool.py[line:79] INFO start ftp connect
+Sat, 17 Oct 2020 09:54:16 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Sat, 17 Oct 2020 09:54:17 copy_tool.py[line:616] INFO 客户新购买的显示器带有摄像头，使用腾讯视频会议会出现花屏现象。客户还邀请了华为厂商的桌面云产品做了对比，特此派遣我去现场进行技术支持pk。
+当前进展：
+1.带过来的三个摄像头在200盒子上面使用正常。
+2.使用500盒子+电脑一体机摄像头，配置camera名单，使用正常，和物理机几乎无差别，画面稍微亮一些，客户接受这差异。
+3.200盒子需要配置高拍仪名单指定分辨率低于800x600，mjpg格式。物理机上腾讯会议默认使用yuy2格式，640x480分辨率。高拍仪名单指定mjpg格式分辨率640x480后，使用正常，不过画质确实差了一些，画面更加红润一些，模糊一些。指定高分辨率后升级到dwc2驱动后，高分辨率边缘地方有花屏现象，体验不好。
+4.对比了一下华为，华为画质较好些，接近物理机，不过延迟大，一开始有1秒左右的延迟，长时间使用后延迟有所增大。我们桌面云延迟几乎没有。
+5.测试了一下声音，声音使用正常。
+经过一天的调试后，客户对结果表示满意，第二天就离开了现场返回长沙。
+Sat, 17 Oct 2020 11:05:58 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Sat, 17 Oct 2020 11:05:58 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Sat, 17 Oct 2020 11:05:58 copy_tool.py[line:79] INFO start ftp connect
+Sat, 17 Oct 2020 11:05:58 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Sat, 17 Oct 2020 11:05:59 copy_tool.py[line:616] INFO 客户原始问题：笔记本公网连接虚拟机，虚拟机使用内置摄像头（分辨率640x480）会有卡顿的情况。
+
+目前进展：昨天晚上我这边根据研发指导建议，通过调整帧率和清晰度，在VDC平台上将画面传输的格式指定为YUY2
+后，测试效果一切正常。（目前测试效果可以接受）
+
+问题原因：
+1.MJPG格式高分辨摄像头，画面传输时会产生8Mb流量，所以会卡顿。 我们VDC平台对YUY2格式画面传输有流量优化。
+
+下一步计划：10月19日北京时间晚上8：00（意大利时间2:00PM）我这边会继续配合一起在客户环境进行测试
+Sat, 17 Oct 2020 11:55:31 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Sat, 17 Oct 2020 11:55:31 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Sat, 17 Oct 2020 11:55:31 copy_tool.py[line:79] INFO start ftp connect
+Sat, 17 Oct 2020 11:55:31 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Sun, 18 Oct 2020 15:04:23 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Sun, 18 Oct 2020 15:04:23 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Sun, 18 Oct 2020 15:04:23 copy_tool.py[line:79] INFO start ftp connect
+Sun, 18 Oct 2020 15:04:23 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Sun, 18 Oct 2020 15:04:24 copy_tool.py[line:616] INFO import os
+import subprocess
+
+subprocess.run("ping 127.0.0.1", shell=True)
+
+
+
+for i in range(90, 100):
+    ip = "172.22.192.{}".format(i)
+    ret = os.system('ping -n 1 -w 1 %s'%ip) #每个ip ping 2次，等待时间为1s
+    #cmd = "ping -n 1 -w 1 {}".format(ip)
+    #ret = subprocess.run(cmd, shell=True)
+    #print(subprocess.run("tree", shell=True).stdout)
+    #ret = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
+    print(ret.returncode)
+    if ret:
+        print('ping %s is fail'%ip)
+    else:
+        print('ping %s is ok'%ip)
+Sun, 18 Oct 2020 16:54:24 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Sun, 18 Oct 2020 16:54:24 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Sun, 18 Oct 2020 16:54:24 copy_tool.py[line:79] INFO start ftp connect
+Sun, 18 Oct 2020 16:54:24 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Sun, 18 Oct 2020 16:54:26 copy_tool.py[line:616] INFO #!/bin/bash
+
+# 变量定义
+path=`pwd`
+echo $path
+
+# 用法说明
+usage()
+{
+	cat << EOT
+		Usage: $0 [options] [directroy]
+		Options:
+			-i	install
+			-u	update
+			-h	help(usage) and exit
+		Examples:
+			$0 -i dir
+	EOT
+}
+Sun, 18 Oct 2020 16:54:27 copy_tool.py[line:616] INFO #!/bin/bash
+
+# 变量定义
+path=`pwd`
+echo $path
+
+# 用法说明
+usage()
+{
+	cat << EOT
+		Usage: $0 [options] [directroy]
+		Options:
+			-i	install
+			-u	update
+			-h	help(usage) and exit
+		Examples:
+			$0 -i dir
+	EOT
+}
+Sun, 18 Oct 2020 17:52:41 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Sun, 18 Oct 2020 17:52:41 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Sun, 18 Oct 2020 17:52:41 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Sun, 18 Oct 2020 17:52:41 copy_tool.py[line:79] INFO start ftp connect
+Mon, 19 Oct 2020 11:18:53 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 19 Oct 2020 11:18:53 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Mon, 19 Oct 2020 11:18:53 copy_tool.py[line:79] INFO start ftp connect
+Mon, 19 Oct 2020 11:18:53 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 19 Oct 2020 11:18:54 copy_tool.py[line:616] INFO http://cs.devops.sangfor.org/VDI/VDIServerPack/OfflineUpdate/tree/vmp-only_safe_package/vmp
+Mon, 19 Oct 2020 16:28:11 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 19 Oct 2020 16:28:11 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Mon, 19 Oct 2020 16:28:11 copy_tool.py[line:79] INFO start ftp connect
+Mon, 19 Oct 2020 16:28:11 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 19 Oct 2020 16:28:12 copy_tool.py[line:616] INFO #!/bin/bash
+
+# 变量定义
+path=`pwd`
+echo "path=${path}"
+
+# 版本信息
+version()
+{
+	echo "version: 1.0"
+}
+
+# 用法说明
+usage()
+{
+	cat << EOF
+Usage: $0 [options] [directroy]
+Options:
+	-h, 	显示帮助信息
+	-V,	显示当前脚本版本信息
+	-f file,	从文件读取ip地址
+Examples:
+	$0 -f ip_addr.txt
+EOF
+}
+
+cat ip_addr.txt | while read ip_addr
+do
+    echo $ip_addr
+	loss_packets=`ping -c 1 $ip_addr | grep '0 received' | wc -l`
+	echo $loss_packets
+	if loss_packets == 0;then
+		echo "ping $ip_addr is fail" >> result.txt
+	else
+		echo "ping $ip_addr is success" >> result.txt
+	fi
+done
+Mon, 19 Oct 2020 17:59:37 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 19 Oct 2020 17:59:37 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 19 Oct 2020 17:59:37 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Mon, 19 Oct 2020 17:59:37 copy_tool.py[line:79] INFO start ftp connect
+Tue, 20 Oct 2020 09:29:46 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 20 Oct 2020 09:29:46 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 20 Oct 2020 09:29:46 copy_tool.py[line:79] INFO start ftp connect
+Tue, 20 Oct 2020 09:29:46 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 20 Oct 2020 10:57:14 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 20 Oct 2020 10:57:14 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 20 Oct 2020 10:57:14 copy_tool.py[line:79] INFO start ftp connect
+Tue, 20 Oct 2020 10:57:15 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 20 Oct 2020 10:57:16 copy_tool.py[line:616] INFO http://10.70.48.32/t/topic/5609
+Tue, 20 Oct 2020 10:57:16 copy_tool.py[line:616] INFO http://10.70.48.32/t/topic/5609
+Tue, 20 Oct 2020 10:57:17 copy_tool.py[line:616] INFO http://10.70.48.32/t/topic/5609
+Wed, 21 Oct 2020 16:03:55 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 21 Oct 2020 16:03:56 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Wed, 21 Oct 2020 16:03:56 copy_tool.py[line:79] INFO start ftp connect
+Wed, 21 Oct 2020 16:03:56 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 21 Oct 2020 16:03:57 copy_tool.py[line:616] INFO http://cs.devops.sangfor.org/VDI/PR/hardware-lab/issues/37
+Fri, 23 Oct 2020 12:07:53 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 23 Oct 2020 12:07:53 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Fri, 23 Oct 2020 12:07:53 copy_tool.py[line:79] INFO start ftp connect
+Fri, 23 Oct 2020 12:07:53 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 23 Oct 2020 12:07:55 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 23 Oct 2020 12:07:55 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 23 Oct 2020 12:08:08 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 23 Oct 2020 12:08:08 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 27 Oct 2020 14:43:46 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 27 Oct 2020 14:43:46 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 27 Oct 2020 14:43:46 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 27 Oct 2020 14:43:46 copy_tool.py[line:79] INFO start ftp connect
+Tue, 27 Oct 2020 14:58:35 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 27 Oct 2020 14:58:36 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 27 Oct 2020 14:58:36 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 27 Oct 2020 14:58:36 copy_tool.py[line:79] INFO start ftp connect
+Wed, 28 Oct 2020 13:34:17 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 28 Oct 2020 13:34:17 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 28 Oct 2020 13:34:17 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Wed, 28 Oct 2020 13:34:17 copy_tool.py[line:79] INFO start ftp connect
+Thu, 29 Oct 2020 12:04:41 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 29 Oct 2020 12:04:41 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 29 Oct 2020 12:04:41 copy_tool.py[line:79] INFO start ftp connect
+Thu, 29 Oct 2020 12:04:41 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 29 Oct 2020 12:04:43 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 29 Oct 2020 12:04:43 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 29 Oct 2020 19:20:27 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 29 Oct 2020 19:20:27 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 29 Oct 2020 19:20:27 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 29 Oct 2020 19:20:27 copy_tool.py[line:79] INFO start ftp connect
+Thu, 29 Oct 2020 19:21:15 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 29 Oct 2020 19:21:15 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 03 Nov 2020 11:46:13 copy_tool.py[line:45] INFO ---ftp init---
+Tue, 03 Nov 2020 11:46:13 copy_tool.py[line:79] INFO start ftp connect
+Tue, 03 Nov 2020 11:46:20 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 03 Nov 2020 11:46:20 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 04 Nov 2020 10:51:10 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 04 Nov 2020 10:51:10 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Wed, 04 Nov 2020 10:51:10 copy_tool.py[line:79] INFO start ftp connect
+Wed, 04 Nov 2020 10:51:11 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 04 Nov 2020 14:40:03 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 04 Nov 2020 14:40:03 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Wed, 04 Nov 2020 14:40:03 copy_tool.py[line:79] INFO start ftp connect
+Wed, 04 Nov 2020 14:40:03 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 04 Nov 2020 14:40:04 copy_tool.py[line:616] INFO 24c9837efbe04f4bc7f2a1d2c4327dfd7ad49e2ccb455ae02
+Thu, 05 Nov 2020 09:23:18 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 05 Nov 2020 09:23:18 copy_tool.py[line:79] INFO start ftp connect
+Fri, 06 Nov 2020 10:09:14 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 06 Nov 2020 10:09:14 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Fri, 06 Nov 2020 10:09:14 copy_tool.py[line:79] INFO start ftp connect
+Fri, 06 Nov 2020 10:09:14 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 06 Nov 2020 10:09:16 copy_tool.py[line:616] INFO b564a84bf6e99b888d7a0f278bff17159d5e58a5bc04c1722
+Tue, 10 Nov 2020 09:17:45 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 10 Nov 2020 09:17:46 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 10 Nov 2020 09:17:46 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 10 Nov 2020 09:17:46 copy_tool.py[line:79] INFO start ftp connect
+Tue, 10 Nov 2020 19:55:07 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 10 Nov 2020 19:55:07 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 10 Nov 2020 19:55:07 copy_tool.py[line:79] INFO start ftp connect
+Tue, 10 Nov 2020 19:55:07 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 12 Nov 2020 14:47:30 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 12 Nov 2020 14:47:30 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 12 Nov 2020 14:47:30 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 12 Nov 2020 14:47:30 copy_tool.py[line:79] INFO start ftp connect
+Thu, 12 Nov 2020 19:13:25 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 12 Nov 2020 19:13:25 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 12 Nov 2020 19:13:25 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 12 Nov 2020 19:13:25 copy_tool.py[line:79] INFO start ftp connect
+Thu, 12 Nov 2020 21:37:41 copy_tool.py[line:163] INFO ---ftp quit---
+Thu, 12 Nov 2020 21:37:41 copy_tool.py[line:167] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 19 Nov 2020 15:23:48 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 19 Nov 2020 15:23:48 copy_tool.py[line:79] INFO start ftp connect
+Thu, 19 Nov 2020 15:23:53 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 19 Nov 2020 15:23:53 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 19 Nov 2020 16:41:40 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 19 Nov 2020 16:41:40 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 19 Nov 2020 16:41:40 copy_tool.py[line:79] INFO start ftp connect
+Thu, 19 Nov 2020 16:41:40 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 19 Nov 2020 17:44:40 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 19 Nov 2020 17:44:40 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 19 Nov 2020 17:44:40 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 19 Nov 2020 17:44:40 copy_tool.py[line:79] INFO start ftp connect
+Fri, 20 Nov 2020 11:32:54 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 20 Nov 2020 11:32:54 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 20 Nov 2020 11:32:54 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Fri, 20 Nov 2020 11:32:54 copy_tool.py[line:79] INFO start ftp connect
+Fri, 20 Nov 2020 11:33:01 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 20 Nov 2020 11:33:01 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 20 Nov 2020 11:41:41 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 20 Nov 2020 11:41:41 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 20 Nov 2020 11:41:41 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Fri, 20 Nov 2020 11:41:41 copy_tool.py[line:79] INFO start ftp connect
+Fri, 20 Nov 2020 15:31:44 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 20 Nov 2020 15:31:44 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Fri, 20 Nov 2020 15:31:44 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Fri, 20 Nov 2020 15:31:44 copy_tool.py[line:79] INFO start ftp connect
+Mon, 23 Nov 2020 11:32:49 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 23 Nov 2020 11:32:49 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Mon, 23 Nov 2020 11:32:49 copy_tool.py[line:79] INFO start ftp connect
+Mon, 23 Nov 2020 11:32:50 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 23 Nov 2020 11:32:51 copy_tool.py[line:616] INFO 1、进入vdc后台，将两个文件拷贝到vdc后台里面
+2、使用myadb.sh进入盒子后台
+3、然后执行exit命令退出盒子后台
+4、将两个文件拷贝到盒子后台中,如/sdcard/目录下
+adb push boot-withoutkernel.img /sdcard/
+adb push kernel.img /sdcard/
+
+5、然后再进入盒子后台执行下面两个命令：
+flash_image boot /sdcard/boot-withoutkernel.img
+flash_image kernel /sdcard/kernel.img
+
+6、重启盒子生效。
+
+7、查看是否升级驱动成功：
+可以在后台执行cat /proc/version
+或者在盒子设置界面，点击关于瘦客户机，可以看见内核版本信息
+
+显示结果为Thu Nov 12 14:00:20 UTC 2020
+Tue, 24 Nov 2020 21:31:16 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 24 Nov 2020 21:31:16 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 24 Nov 2020 21:31:16 copy_tool.py[line:79] INFO start ftp connect
+Tue, 24 Nov 2020 21:31:16 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 24 Nov 2020 21:31:17 copy_tool.py[line:616] INFO 1、带个600盒子或者其他500盒子去现场
+2、多带几根HDMI的线
+3、现场观察屏幕成像是不是真的有不清晰，拍一下照片
+4、确认一下显示的字体大小是否一样
+5、显示模式是所有的画面都有区别还是某些应用的有区别
+Tue, 24 Nov 2020 21:38:31 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 24 Nov 2020 21:38:31 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 24 Nov 2020 21:38:31 copy_tool.py[line:79] INFO start ftp connect
+Tue, 24 Nov 2020 21:38:31 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 24 Nov 2020 21:38:33 copy_tool.py[line:616] INFO 当前进展：
+通过抓取数据包发现，打印机在拔掉后重新插入后映射过程中有个数据包请求没有回应，正常映射是有数据包返回的，这个数据包包含了打印机的一些配置信息。目前尝试通过修改盒子代码模拟数据包发送，当前模拟还没有调试通。
+
+下一步计划：
+约远程替换文件继续调试。
+Tue, 24 Nov 2020 21:39:32 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 24 Nov 2020 21:39:32 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 24 Nov 2020 21:39:34 copy_tool.py[line:616] INFO 当前进展：
+设备非displaylink屏，usb设备。映射存在数据包异常，设备在设备管理器中会出现感叹号异常。该设备有两个pvid，(222a:0001)是一个hid设备，其中有三个，两个hid复合设备和一个hid鼠标，该设备有时候会映射正常，有时候会映射异常感叹号显示。(1d5c:7102)是一个未知设备，感叹号一直存在。后来发现远程环境是双屏显示，一个VGA和HDMI，客户反映如果是复制屏状态的话，触控板使用没有问题。但是软件使用需要扩展屏，因此怀疑可能是双屏影响使用。
+
+下一步计划：
+1、拍照获取一下触控屏样子，确认一下是不是类似手写板
+2、测试使用接单屏显示器使用是否正常
+3、需要对比一下该设备在物理机里的映射情况
+Mon, 07 Dec 2020 16:10:33 copy_tool.py[line:45] INFO ---ftp init---
+Mon, 07 Dec 2020 16:10:33 copy_tool.py[line:79] INFO start ftp connect
+Mon, 07 Dec 2020 16:10:41 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 07 Dec 2020 16:10:41 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 07 Dec 2020 16:46:54 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 07 Dec 2020 16:46:54 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Mon, 07 Dec 2020 16:46:54 copy_tool.py[line:79] INFO start ftp connect
+Mon, 07 Dec 2020 16:46:54 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 07 Dec 2020 16:46:55 copy_tool.py[line:616] INFO 【TD】深圳市孙逸仙心血管医院-USB打印机使用异常--202011200033-
+联系了，目前可以使用了。目前在545环境里面测试，未复现客户环境的问题
+下一步准备在530SP1环境试试能不能复现问题
+Tue, 08 Dec 2020 20:49:51 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 08 Dec 2020 20:49:51 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 08 Dec 2020 20:49:51 copy_tool.py[line:79] INFO start ftp connect
+Tue, 08 Dec 2020 20:49:51 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 08 Dec 2020 20:49:52 copy_tool.py[line:616] INFO 当前进展：
+内部修改代码后测试使用正常，200盒子使用1920x1080分辨率偶尔会有闪屏问题，500盒子使用正常。200盒子使用1920x1080分辨率，mjpg格式时达到了8.3MB流量，yuy2由于帧率低使用起来延迟大。
+下一步计划：
+在客户环境替换文件测试。
+Thu, 10 Dec 2020 16:49:13 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 10 Dec 2020 16:49:13 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 10 Dec 2020 16:49:13 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 10 Dec 2020 16:49:13 copy_tool.py[line:79] INFO start ftp connect
+Thu, 10 Dec 2020 16:57:32 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 10 Dec 2020 16:57:32 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 10 Dec 2020 16:57:32 copy_tool.py[line:79] INFO start ftp connect
+Thu, 10 Dec 2020 16:57:32 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 15 Dec 2020 16:47:43 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 15 Dec 2020 16:47:44 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 15 Dec 2020 16:47:44 copy_tool.py[line:79] INFO start ftp connect
+Tue, 15 Dec 2020 16:47:44 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 15 Dec 2020 16:47:45 copy_tool.py[line:616] INFO 当前进展：
+1、对比虚拟机和物理机加载的驱动无差别，物理机仅多加载了火绒软件驱动。
+2、配置一个reset 1名单测试无效果
+3、使用pc客户端登录后，使用扫描软件扫描基本上扫描不出纸张，偶尔会扫描出一张或者两张。软件直接报错。
+4、使用usbtrace软件抓取数据包报SCANNER_CANCELED错误，软件也提示TWCC_ERATIONERROR错误。并没有看出具体出错在哪里。
+5、扫描的数据挺大的，查看笔记本网络是千兆网，跟网络关系不大
+6、查看扫描仪驱动版本，网上百度了一下版本是4.09的，客户环境是4.9的，版本还是比较新的，未找到官方驱动
+
+下一步计划：
+1、需要进一步分析出错地方，建议协调扫描仪寄回来方便调试排查。
+2、确认一下不使用扫描软件扫描，而是直接在设备和打印机中扫描是否正常
+3、笔记本不安装驱动测试是否正常
+4、更换虚拟机模板测试
+Tue, 15 Dec 2020 17:54:33 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 15 Dec 2020 17:54:33 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 15 Dec 2020 17:54:33 copy_tool.py[line:79] INFO start ftp connect
+Tue, 15 Dec 2020 17:54:33 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 16 Dec 2020 16:43:55 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 16 Dec 2020 16:43:55 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 16 Dec 2020 16:43:55 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Wed, 16 Dec 2020 16:43:55 copy_tool.py[line:79] INFO start ftp connect
+Wed, 16 Dec 2020 17:59:40 copy_tool.py[line:163] INFO ---ftp quit---
+Wed, 16 Dec 2020 17:59:40 copy_tool.py[line:167] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 29 Dec 2020 16:58:51 copy_tool.py[line:45] INFO ---ftp init---
+Tue, 29 Dec 2020 16:58:51 copy_tool.py[line:79] INFO start ftp connect
+Mon, 04 Jan 2021 10:20:36 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 04 Jan 2021 10:20:36 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Mon, 04 Jan 2021 10:20:36 copy_tool.py[line:79] INFO start ftp connect
+Mon, 04 Jan 2021 10:20:37 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 05 Jan 2021 10:52:21 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 05 Jan 2021 10:52:23 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 05 Jan 2021 10:52:23 copy_tool.py[line:79] INFO start ftp connect
+Tue, 05 Jan 2021 10:52:24 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 05 Jan 2021 10:52:24 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 05 Jan 2021 10:52:24 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 05 Jan 2021 10:52:26 copy_tool.py[line:616] INFO 512f66d55e6f9d56b433d2cd0191e66fbda0856ed30764473
+Tue, 05 Jan 2021 22:22:49 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 05 Jan 2021 22:22:50 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 05 Jan 2021 22:22:50 copy_tool.py[line:79] INFO start ftp connect
+Tue, 05 Jan 2021 22:22:50 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Tue, 05 Jan 2021 22:22:51 copy_tool.py[line:616] INFO 当前进展：
+1、内部测试正常，分别在545和540R2环境测试，使用wps最新版，分别建立7次打印任务，每次打印2-3张。测试中间无停止，打印正常。
+2、测试发现打印机如果遇到打印条中间没有白色纸条会停下来报缺纸错误，物理机也有相同现象。
+3、跟客户那边工程师沟通怀疑是环境问题，明天寄回打印机在客户环境排查。
+下一步计划：
+寄回打印机，再在客户环境测试看看。
+Wed, 06 Jan 2021 20:58:50 copy_tool.py[line:163] INFO ---ftp quit---
+Wed, 06 Jan 2021 20:58:50 copy_tool.py[line:167] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 07 Jan 2021 16:48:12 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 07 Jan 2021 16:48:12 copy_tool.py[line:79] INFO start ftp connect
+Thu, 07 Jan 2021 16:48:31 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 07 Jan 2021 16:48:31 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 07 Jan 2021 16:48:32 copy_tool.py[line:616] INFO http://docs.sangfor.org/pages/viewpage.action?pageId=33854274
+Thu, 07 Jan 2021 16:49:43 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 07 Jan 2021 16:49:43 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Thu, 07 Jan 2021 16:49:44 copy_tool.py[line:616] INFO 目前看视频还有几个点要麻烦确认的：
+1、资源被拉起的时候，从vmp后台去查看虚拟机登录的过程到底是什么样的？这边不排除一种可能是单点登录成功后联软导致锁屏所以又跳到了锁屏界面，可以从vmp后台看下是不是显示已经登录进去了然后又被锁屏了。
+2、怀疑是联软的原因，这个很好确定，找个必现的环境卸载掉联软看下（这个跟客户沟通不是为了推责任到联软，是排除下，卸载之前给客户打个快照）
+目前来看我们的逻辑没有登录后又锁屏的这种操作。
+Mon, 11 Jan 2021 10:17:50 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 11 Jan 2021 10:17:50 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 11 Jan 2021 10:17:50 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Mon, 11 Jan 2021 10:17:50 copy_tool.py[line:79] INFO start ftp connect
+Mon, 11 Jan 2021 10:25:31 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 11 Jan 2021 10:25:31 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 11 Jan 2021 10:25:31 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Mon, 11 Jan 2021 10:25:31 copy_tool.py[line:79] INFO start ftp connect
+Mon, 11 Jan 2021 10:38:17 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 11 Jan 2021 10:38:17 copy_tool.py[line:107] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Mon, 11 Jan 2021 10:38:17 copy_tool.py[line:79] INFO start ftp connect
+Mon, 11 Jan 2021 10:38:17 copy_tool.py[line:594] INFO 正在读取D:/Downloads/msg_between_extranet_and_intranet.txt
+Mon, 11 Jan 2021 10:38:18 copy_tool.py[line:616] INFO echo open ip >>ftp.txt
+echo 用户名 >>ftp.txt
+echo 密码 >>ftp.txt
+echo cd /backupdir >>ftp.txt
+echo prompt >>ftp.txt
+echo mput C:\sql_data_back\*.bak >>ftp.txt
+echo bye >>ftp.txt
+ftp -s:ftp.txt
+Wed, 13 Jan 2021 13:13:28 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 13 Jan 2021 13:13:28 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 13 Jan 2021 13:13:28 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Wed, 13 Jan 2021 13:13:28 copy_tool.py[line:79] INFO start ftp connect
+Wed, 13 Jan 2021 14:15:10 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 13 Jan 2021 14:15:10 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 13 Jan 2021 14:15:10 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Wed, 13 Jan 2021 14:15:10 copy_tool.py[line:79] INFO start ftp connect
+Wed, 13 Jan 2021 14:53:18 copy_tool.py[line:572] INFO 正在写入D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 13 Jan 2021 14:53:18 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/msg_between_extranet_and_intranet.txt到D:/Downloads/msg_between_extranet_and_intranet.txt
+Wed, 13 Jan 2021 14:53:18 copy_tool.py[line:156] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Wed, 13 Jan 2021 14:53:18 copy_tool.py[line:79] INFO start ftp connect
+Thu, 14 Jan 2021 20:30:27 copy_tool.py[line:163] INFO ---ftp quit---
+Thu, 14 Jan 2021 20:30:27 copy_tool.py[line:167] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 19 Jan 2021 19:25:45 copy_tool.py[line:45] INFO ---ftp init---
+Tue, 19 Jan 2021 19:25:45 copy_tool.py[line:79] INFO start ftp connect
+Fri, 29 Jan 2021 11:17:19 copy_tool.py[line:163] INFO ---ftp quit---
+Fri, 29 Jan 2021 11:17:19 copy_tool.py[line:167] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Tue, 02 Feb 2021 20:44:12 copy_tool.py[line:45] INFO ---ftp init---
+Tue, 02 Feb 2021 20:44:12 copy_tool.py[line:79] INFO start ftp connect
+Tue, 02 Feb 2021 20:44:18 copy_tool.py[line:163] INFO ---ftp quit---
+Fri, 05 Feb 2021 11:37:29 copy_tool.py[line:45] INFO ---ftp init---
+Fri, 05 Feb 2021 11:37:29 copy_tool.py[line:79] INFO start ftp connect
+Fri, 05 Feb 2021 11:38:23 copy_tool.py[line:163] INFO ---ftp quit---
+Fri, 05 Feb 2021 16:09:42 copy_tool.py[line:45] INFO ---ftp init---
+Fri, 05 Feb 2021 16:09:42 copy_tool.py[line:79] INFO start ftp connect
+Fri, 05 Feb 2021 16:13:52 copy_tool.py[line:163] INFO ---ftp quit---
+Fri, 05 Feb 2021 16:13:52 copy_tool.py[line:167] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Fri, 05 Feb 2021 17:49:25 copy_tool.py[line:45] INFO ---ftp init---
+Fri, 05 Feb 2021 17:49:25 copy_tool.py[line:79] INFO start ftp connect
+Fri, 05 Feb 2021 17:49:31 copy_tool.py[line:163] INFO ---ftp quit---
+Sat, 06 Feb 2021 11:27:57 copy_tool.py[line:45] INFO ---ftp init---
+Sat, 06 Feb 2021 11:27:57 copy_tool.py[line:79] INFO start ftp connect
+Sat, 06 Feb 2021 11:28:02 copy_tool.py[line:163] INFO ---ftp quit---
+Wed, 24 Feb 2021 15:38:42 copy_tool.py[line:45] INFO ---ftp init---
+Wed, 24 Feb 2021 15:38:42 copy_tool.py[line:79] INFO start ftp connect
+Wed, 24 Feb 2021 15:38:45 copy_tool.py[line:163] INFO ---ftp quit---
+Tue, 02 Mar 2021 21:09:48 copy_tool.py[line:45] INFO ---ftp init---
+Tue, 02 Mar 2021 21:09:48 copy_tool.py[line:79] INFO start ftp connect
+Mon, 15 Mar 2021 21:51:18 copy_tool.py[line:45] INFO ---ftp init---
+Mon, 15 Mar 2021 21:51:18 copy_tool.py[line:79] INFO start ftp connect
+Wed, 17 Mar 2021 09:15:01 copy_tool.py[line:163] INFO ---ftp quit---
+Wed, 17 Mar 2021 09:15:02 copy_tool.py[line:167] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
