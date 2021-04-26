@@ -88,6 +88,22 @@ class CrawlerTool(VisualizedWindow):
         self.treeview_style.configure("mystyle.Treeview", highlightthickness=1, bd=0, background='slategray', foreground='white', font=("Century Gothic", 10))
         self.treeview_style.configure("mystyle.Treeview.Heading", background='yellow', foreground='red', font=("Century Gothic", 10, 'bold'))
     
+    def updatelog_window(self):
+        slave = tkinter.Toplevel()
+        slave.title("更新日志")
+        slave.mainloop()  
+
+    def show_messagebox(self, type):
+        '''重写 关于菜单选项
+        '''
+        if type == '帮助':
+            messagebox.showinfo("帮助", "这是帮助文档！\nby hankin", icon='question')
+        elif type == '更新日志':
+            #messagebox.showinfo("更新日志", "2020年11月26日\n2020年11月27日\n", icon='question')
+            self.updatelog_window()
+        elif type == '关于':
+            messagebox.showinfo("关于", "CrawlerTool_V1.0.0.1")
+
     def _create_body_(self):
         '''重写主体布局
         绝对布局：label.place(x=10, y=10)
@@ -116,26 +132,25 @@ class CrawlerTool(VisualizedWindow):
         self.default_building = tkinter.ttk.Combobox(fm_up, textvariable=tkinter.StringVar(), font=ft)       
         #self.default_building.bind('<<ComboboxSelected>>', self.default_url_combox_cliecked)
         self.default_building.grid(row=1, column=0)
-        
-        self.crawling_url = EntryWithPlaceholder(fm_up, '请输入爬取网址', font=ft)
-        self.crawling_url.grid(row=0, column=1)
-        self.crawling_regex = EntryWithPlaceholder(fm_up, '请输入爬取规则', font=ft)
-        self.crawling_regex.grid(row=1, column=1, sticky=tkinter.E+tkinter.W)
-        self.crawling_index = EntryWithPlaceholder(fm_up, '请输入爬取索引', font=ft)
-        self.crawling_index.grid(row=1, column=2)
-
-        crawling_btn = tkinter.Button(fm_up, text='爬取', width=10, height=1,
-                                    command=lambda: self.crawling_btn_clicked(), compound='center')
-        crawling_btn.grid(row=0, column=3)
-        analysis_btn = tkinter.Button(fm_up, text='分析', width=10, height=1,
-                                      command=lambda: self.analysis_btn_clicked(),compound='center')
-        analysis_btn.grid(row=1, column=3)
         show_btn = tkinter.Button(fm_up, text='显示表格', width=10, height=1,bg='blue', fg='white',
                                     command=lambda: self.show_btn_clicked(), compound='center')
-        show_btn.grid(row=0, column=4)
+        show_btn.grid(row=0, column=1)
+        analysis_btn = tkinter.Button(fm_up, text='分析', width=10, height=1,
+                                      command=lambda: self.analysis_btn_clicked(),compound='center')
+        analysis_btn.grid(row=1, column=1)
+
+        self.crawling_url = EntryWithPlaceholder(fm_up, '请输入爬取网址', font=ft)
+        self.crawling_url.grid(row=0, column=2)
+        self.crawling_regex = EntryWithPlaceholder(fm_up, '请输入爬取规则', font=ft)
+        self.crawling_regex.grid(row=1, column=2, sticky=tkinter.E+tkinter.W)
+        self.crawling_index = EntryWithPlaceholder(fm_up, '请输入爬取索引', font=ft)
+        self.crawling_index.grid(row=1, column=3)
+        crawling_btn = tkinter.Button(fm_up, text='爬取', width=10, height=1,
+                                    command=lambda: self.crawling_btn_clicked(), compound='center')
+        crawling_btn.grid(row=0, column=5)
         show_btn = tkinter.Button(fm_up, text='浏览图片', width=10, height=1, fg='red',
                                     command=lambda: picture_browser(master=self), compound='center')
-        show_btn.grid(row=1, column=4)
+        show_btn.grid(row=1, column=5)
         fm_up.pack(fill=tkinter.X)
 
         # 中间部分

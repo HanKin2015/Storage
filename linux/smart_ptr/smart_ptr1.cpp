@@ -12,13 +12,14 @@
 #define SMARTPTR shared_ptr
 using namespace std;
 
-int main() {
-	SMARTPTR<string> films[5] ={
-	SMARTPTR<string> (new string("Fowl Balls")),
-	SMARTPTR<string> (new string("Duck Walks")),
-	SMARTPTR<string> (new string("Chicken Runs")),
-	SMARTPTR<string> (new string("Turkey Errors")),
-	SMARTPTR<string> (new string("Goose Eggs"))
+int main() 
+{
+	SMARTPTR<string> films[5] = {
+		SMARTPTR<string> (new string("Fowl Balls")),
+		SMARTPTR<string> (new string("Duck Walks")),
+		SMARTPTR<string> (new string("Chicken Runs")),
+		SMARTPTR<string> (new string("Turkey Errors")),
+		SMARTPTR<string> (new string("Goose Eggs"))
 	};
 
     SMARTPTR<string> pwin;     

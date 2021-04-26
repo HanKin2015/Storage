@@ -115,7 +115,7 @@ class VisualizedWindow(tkinter.Tk):
             messagebox.showinfo("帮助", "这是帮助文档！\nby hankin", icon='question')
         elif type == '更新日志':
             messagebox.showinfo("更新日志", "2020年11月26日\n2020年11月27日\n", icon='question')
-        else:
+        elif type == '关于':
             messagebox.showinfo("关于", "CopyTool_V4.2")
 
     def _create_body_(self):
