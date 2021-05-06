@@ -124,3 +124,31 @@ Thu, 17 Sep 2020 14:04:18 copy_tool.py[line:65] INFO 删除空文件夹/VDI/hj/temp/PC
 Thu, 17 Sep 2020 14:09:22 copy_tool.py[line:45] INFO ---ftp init---
 Thu, 17 Sep 2020 14:09:22 copy_tool.py[line:79] INFO start ftp connect
 Thu, 17 Sep 2020 14:09:29 copy_tool.py[line:163] INFO ---ftp quit---
+Thu, 06 May 2021 18:57:13 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 06 May 2021 18:57:13 copy_tool.py[line:79] INFO start ftp connect
+Thu, 06 May 2021 19:20:59 copy_tool.py[line:163] INFO ---ftp quit---
+Thu, 06 May 2021 19:20:59 copy_tool.py[line:167] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 06 May 2021 21:17:07 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 06 May 2021 21:17:07 copy_tool.py[line:79] INFO start ftp connect
+Thu, 06 May 2021 21:17:59 copy_tool.py[line:163] INFO ---ftp quit---
+Thu, 06 May 2021 21:18:46 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 06 May 2021 21:18:46 copy_tool.py[line:79] INFO start ftp connect
+Thu, 06 May 2021 21:22:32 copy_tool.py[line:163] INFO ---ftp quit---
+Thu, 06 May 2021 21:22:32 copy_tool.py[line:167] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Thu, 06 May 2021 21:22:35 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 06 May 2021 21:22:35 copy_tool.py[line:79] INFO start ftp connect
+Thu, 06 May 2021 21:23:26 copy_tool.py[line:163] INFO ---ftp quit---
+Thu, 06 May 2021 21:24:11 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 06 May 2021 21:24:11 copy_tool.py[line:79] INFO start ftp connect
+Thu, 06 May 2021 21:25:05 copy_tool.py[line:547] INFO mouse position is x=373, y=15
+Thu, 06 May 2021 21:25:18 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/1709到D:/Downloads/1709
+Thu, 06 May 2021 21:25:18 copy_tool.py[line:107] WARNING 550 Access is denied. 
+Thu, 06 May 2021 21:25:18 copy_tool.py[line:79] INFO start ftp connect
+Thu, 06 May 2021 21:26:43 copy_tool.py[line:539] INFO download_ftp.py
+Thu, 06 May 2021 21:26:43 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/download_ftp.py到D:/Github/Storage/python/libary/download_ftp.py
+Thu, 06 May 2021 21:27:08 copy_tool.py[line:150] INFO 正在上传文件/VDI/hj/temp/download_ftp.py到D:/Github/Storage/python/libary/download_ftp.py
+Thu, 06 May 2021 21:27:11 copy_tool.py[line:101] INFO 正在下载文件/VDI/hj/temp/download_ftp.py到D:/Github/Storage/python/libary/download_ftp.py
+Thu, 06 May 2021 21:29:13 copy_tool.py[line:163] INFO ---ftp quit---
+Thu, 06 May 2021 21:29:16 copy_tool.py[line:45] INFO ---ftp init---
+Thu, 06 May 2021 21:29:16 copy_tool.py[line:79] INFO start ftp connect
+Thu, 06 May 2021 21:29:24 copy_tool.py[line:163] INFO ---ftp quit---

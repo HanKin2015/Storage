@@ -114,9 +114,14 @@ class VisualizedWindow(tkinter.Tk):
         if type == '帮助':
             messagebox.showinfo("帮助", "这是帮助文档！\nby hankin", icon='question')
         elif type == '更新日志':
-            messagebox.showinfo("更新日志", "2020年11月26日\n2020年11月27日\n", icon='question')
+            self.update_log_path = './update_log.log'
+            try:
+                update_log = open(self.update_log_path, 'r', encoding='utf-8').read()
+            except Exception as ex:
+                print('读取更新日志文件失败, error=', ex)
+            messagebox.showinfo("更新日志", update_log, icon='question')
         elif type == '关于':
-            messagebox.showinfo("关于", "CopyTool_V4.2")
+            messagebox.showinfo("关于", "CopyTool_V1.0.1.0")
 
     def _create_body_(self):
         '''主体部分

@@ -224,11 +224,13 @@ class CopyTool(tkinter.Tk):
 
         # FTP菜单
         ftp_menu = tkinter.Menu(menu_bar, tearoff=0)
+        ftp_menu.add_command(
+            label='登录FTP服务器', accelerator='Ctrl+U', command=self.upload_file)
         ftp_menu.add_separator()  # 设置分割线
         ftp_menu.add_command(
-            label='上传', accelerator='Ctrl+U', command=self.upload_file)
+            label='从本地上传', accelerator='Ctrl+U', command=self.upload_file)
         ftp_menu.add_command(
-            label='下载', accelerator='Ctrl+D', command=self.down_file)
+            label='从服务器下载', accelerator='Ctrl+D', command=self.down_file)
         ftp_menu.add_separator()  # 设置分割线
         ftp_menu.add_command(label='清理', accelerator='Ctrl+L',
                              command=self.clear_remote_dir)
@@ -286,6 +288,7 @@ class CopyTool(tkinter.Tk):
         # 一般是全局的快捷键，比如帮助的快捷键一般是F1
         about_menu.add_command(
             label='帮助', command=lambda: self.show_messagebox('帮助'))
+        about_menu.add_command(label='更新日志', command=lambda: self.show_messagebox('更新日志'))  # 这里暂时未设置快捷键
         menu_bar.add_cascade(label='关于', menu=about_menu)
         # 注意需要把帮助文档绑定为全局事件
         self.bind_all('<KeyPress-F1>', lambda e: self.show_messagebox("帮助"))
@@ -293,10 +296,17 @@ class CopyTool(tkinter.Tk):
         self['menu'] = menu_bar
 
     def show_messagebox(self, type):
-        if type == "帮助":
+        if type == '帮助':
             messagebox.showinfo("帮助", "这是帮助文档！\nby hankin", icon='question')
-        else:
-            messagebox.showinfo("关于", "CopyTool_V4.2")
+        elif type == '更新日志':
+            self.update_log_path = './update_log.log'
+            try:
+                update_log = open(self.update_log_path, 'r', encoding='utf-8').read()
+            except Exception as ex:
+                print('读取更新日志文件失败, error=', ex)
+            messagebox.showinfo("更新日志", update_log, icon='question')
+        elif type == '关于':
+            messagebox.showinfo("关于", "CopyTool_V1.0.1.0")
 
     # 通过设置_update_line_num函数来实现主要的功能
     def _toggle_highlight(self):  # 高亮函数
