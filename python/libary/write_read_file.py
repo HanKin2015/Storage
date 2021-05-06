@@ -5,7 +5,7 @@ Created on Tue Sep  1 20:33:14 2020
 @author: Administrator
 """
 
-file_path = "D:/Github/Storage/python/神奇.txt"
+file_path = "D:/Github/Storage/python/libary/读写文件.txt"
 
 def read_file():
     print('正在读取', file_path)

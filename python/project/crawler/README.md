@@ -28,6 +28,8 @@ Revision ：名称、主版本号和次版本号都相同但修订号不同的�
 - 更新关于选项-更新日志
 - 更新关于选项-关于
 
+### 2021.05.06(1.0.0.2)
+- 实现图片下载爬虫(https://www.runoob.com/w3cnote/17-wallpaper-for-programmer.html)
 
 
 
