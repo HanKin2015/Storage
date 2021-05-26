@@ -29,7 +29,6 @@ Return
 
 
 GuiClose:
-
 Button退出:
 ExitApp
 
