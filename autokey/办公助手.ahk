@@ -34,28 +34,29 @@ Gui, Add, Text, x32 y39 w230 h20 , 点击续命按钮试试？
 Gui, Add, Text, x32 y59 w230 h20 , 续命一次，长时间可用！
 Gui, Add, Text, x32 y79 w230 h20 , 失效后，打开此程序，再次续命即可。
 Gui, Add, Button, x22 y109 w100 h40 , 天若OCR
-Gui, Add, Button, x152 y109 w100 h40 , 还原
+Gui, Add, Button, x152 y109 w100 h40 , 一键打开文件夹
 Gui, Add, Button, x22 y169 w100 h40 , 关于
 Gui, Add, Button, x152 y169 w100 h40 , 退出
 
 ; Generated using SmartGUI Creator 4.0
 Menu, tray, NoStandard
 Menu, tray, add, 天若OCR, Button天若OCR
-Menu, tray, add, 还原, Button还原
+Menu, tray, add, 一键打开文件夹, Button一键打开文件夹
 Menu, tray, add, 关于, Button关于
 Menu, tray, add, 退出, Button退出
 Gui, Show, x535 y235 h222 w276, 续命工具
 Return
 }
 
-; Gui关闭和点击退出按钮都会完全退出程序ExitApp，否则就会留下托盘
+; Gui关闭和点击退出按钮都会完全退出程序ExitApp, 否则就会留下托盘
+
 GuiClose:
 Button退出:
 ExitApp
 
 
 
-Button续命:
+Button天若OCR:
 Gui +OwnDialogs
 FileCopy, %A_WinDir%\System32\drivers\etc\hosts, %A_WinDir%\System32\drivers\etc\hosts.bak
 UrlDownloadToFile, https://raw.githubusercontent.com/racaljk/hosts/master/hosts, %A_WinDir%\System32\drivers\etc\hosts
