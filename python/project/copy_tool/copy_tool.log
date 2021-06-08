@@ -156,3 +156,6 @@ Fri, 07 May 2021 08:58:41 copy_tool.py[line:45] INFO ---ftp init---
 Fri, 07 May 2021 08:58:41 copy_tool.py[line:79] INFO start ftp connect
 Fri, 07 May 2021 09:10:55 copy_tool.py[line:163] INFO ---ftp quit---
 Fri, 07 May 2021 09:10:55 copy_tool.py[line:167] WARNING [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Fri, 04 Jun 2021 13:59:46 copy_tool.py[line:45] INFO ---ftp init---
+Fri, 04 Jun 2021 13:59:46 copy_tool.py[line:79] INFO start ftp connect
+Fri, 04 Jun 2021 14:00:06 copy_tool.py[line:163] INFO ---ftp quit---
