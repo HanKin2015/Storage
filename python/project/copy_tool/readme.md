@@ -21,8 +21,6 @@ v3.0完成，基本功能已经实现
 打包命令：pyinstaller -F -w -i D:/Github/Storage/python/project/copy_tool/icon/copy_tool.ico copy_tool.py
 
 ## pyinstaller不能将图片打包到exe文件中
-
-
 - 短时间掉线问题
 - 日志文件
 - 更新日志
@@ -38,7 +36,9 @@ v3.0完成，基本功能已经实现
 优化为登录指定ftp服务器，即增加用户名和密码的动态
 
 ## 20210506
-主版本号 . 子版本号 [. 修正版本号 [. 编译版本号 ]]
+> 主版本号 . 子版本号 [. 修正版本号 [. 编译版本号 ]]
+
+---
 
 - 制定规范的版本号信息
 
