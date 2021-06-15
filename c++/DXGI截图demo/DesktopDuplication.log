@@ -1,0 +1,28 @@
+﻿生成启动时间为 2021/4/2 17:37:04。
+     1>项目“D:\Users\User\Desktop\DXGI desktop duplication sample\C++\DesktopDuplication.vcxproj”在节点 2 上(Build 个目标)。
+     1>FxCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\fxc.exe /nologo /E"PS" /T ps_4_0_level_9_1 /Fh "D:\Users\User\Desktop\DXGI desktop duplication sample\C++\Release\PixelShader.h" PixelShader.hlsl 
+         compilation header save succeeded; see D:\Users\User\Desktop\DXGI desktop duplication sample\C++\Release\PixelShader.h
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\fxc.exe /nologo /E"VS" /T vs_4_0_level_9_1 /Fh "D:\Users\User\Desktop\DXGI desktop duplication sample\C++\Release\VertexShader.h" VertexShader.hlsl 
+         compilation header save succeeded; see D:\Users\User\Desktop\DXGI desktop duplication sample\C++\Release\VertexShader.h
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"D:\Users\User\Desktop\DXGI desktop duplication sample\C++\Release\\" /I"D:\Users\User\Desktop\DXGI desktop duplication sample\C++\Release\\" /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt DesktopDuplication.cpp
+         DesktopDuplication.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"D:\Users\User\Desktop\DXGI desktop duplication sample\C++\Release\\" /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt DisplayManager.cpp DuplicationManager.cpp OutputManager.cpp ThreadManager.cpp
+         DisplayManager.cpp
+         DuplicationManager.cpp
+         OutputManager.cpp
+         ThreadManager.cpp
+         正在生成代码...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\User\Desktop\DXGI desktop duplication sample\C++\Release\DesktopDuplication.exe" /INCREMENTAL:NO /NOLOGO dxgi.lib d3d11.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Include\Manifest\dpiaware.manifest" /Debug /PDB:"D:\Users\User\Desktop\DXGI desktop duplication sample\C++\Release\DesktopDuplication.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\User\Desktop\DXGI desktop duplication sample\C++\Release\DesktopDuplication.lib" /MACHINE:X86 /SAFESEH Release\DesktopDuplication.obj
+         Release\DisplayManager.obj
+         Release\DuplicationManager.obj
+         Release\OutputManager.obj
+         Release\ThreadManager.obj
+         DesktopDuplication.vcxproj -> D:\Users\User\Desktop\DXGI desktop duplication sample\C++\Release\DesktopDuplication.exe
+     1>已完成生成项目“D:\Users\User\Desktop\DXGI desktop duplication sample\C++\DesktopDuplication.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:10.24
