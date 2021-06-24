@@ -1,0 +1,13 @@
+/var/log/*.json {
+    missingok
+    rotate 1
+    compress
+    delaycompress
+    notifempty
+    noolddir
+    copytruncate
+    nomail
+    dateext
+    dateformat -%Y-%m-%d-%s
+    size 1M   
+}
