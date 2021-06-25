@@ -73,19 +73,21 @@ int main(int argc, char *argv[])
 {
     // 1.利用7z程序解压缩文件到temp文件夹
     string cmd = ".\\tools\\7zx64.exe x -y " + DATA_FILE_PATH + " -o" + TEMP_DIR;
-    system(cmd.c_str());
+    //system(cmd.c_str());
 	
     // 2.获取json文件并拷贝到data文件夹中
     clock_t start = clock(); 
-    GetJsonToData(TEMP_DIR.c_str());
+    //GetJsonToData(TEMP_DIR.c_str());
     printf("[GetJsonToData Function] exec time is %lf s.\n", (double)(clock() - start) / CLOCKS_PER_SEC);
-
-    // 3.处理json文件
-
-
-    // 删除中间创建的文件和文件夹
+    
+    // 3.删除中间创建的文件和文件夹
     cmd = "rd /s /q " + TEMP_DIR;
-    system(cmd.c_str());
+    //system(cmd.c_str());
+
+    // 4.处理json文件
+    GetJsonObject("./11.22.33.44-2021.03.11.15.01.41.json");
+
+
     return 0;
 }
 
