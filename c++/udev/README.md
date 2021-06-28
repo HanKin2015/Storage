@@ -24,3 +24,15 @@ map<string, struct>
 ## 需要多线程进行解压缩
 
 # 去除7z程序解压
+
+# 4、计划
+1. 增加日志模块
+2. 增加Makefile文件或者增加cmake编译文件
+
+gcc安装包：https://ftp.gnu.org/gnu/gcc/
+g++安装包：https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/
+
+# 5、部分问题及解决
+## error: template with C linkage
+不要在extern "C"的中引用C++ STL库的头文件，如<map>, <vector>等具有template的头文件。
+需要检查extern "C"后面为函数；extern "C" { }的定义是否完整。
