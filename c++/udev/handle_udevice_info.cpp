@@ -63,12 +63,8 @@ bool IsExist(string file_path)
 }
 
 /*
- * @brief 获取json文件并拷贝到data文件夹中
- * @note 
- * @param path [in] 数据文件夹路径
- * @return 文件存在返回true，反之false
+ * cd "d:\Github\Storage\c++\udev\" && g++ handle_udevice_info.cpp json_interface.cpp cJSON.c -o handle_udevice_info && "d:\Github\Storage\c++\udev\"handle_udevice_info
  */
-
 int main(int argc, char *argv[])
 {
     // 1.利用7z程序解压缩文件到temp文件夹
@@ -78,15 +74,15 @@ int main(int argc, char *argv[])
     // 2.获取json文件并拷贝到data文件夹中
     clock_t start = clock(); 
     //GetJsonToData(TEMP_DIR.c_str());
-    printf("[GetJsonToData Function] exec time is %lf s.\n", (double)(clock() - start) / CLOCKS_PER_SEC);
+    printf("[GetJsonToData Function] exec time is %lf s.\n\n", (double)(clock() - start) / CLOCKS_PER_SEC);
     
     // 3.删除中间创建的文件和文件夹
     cmd = "rd /s /q " + TEMP_DIR;
     //system(cmd.c_str());
 
     // 4.处理json文件
-    GetJsonObject("./11.22.33.44-2021.03.11.15.01.41.json");
-
+    cJSON* json_obj = GetJsonObject(".\\data\\json\\11.22.33.44-2021.03.11.15.01.41.json");
+    PrintJsonValue(json_obj);
 
     return 0;
 }

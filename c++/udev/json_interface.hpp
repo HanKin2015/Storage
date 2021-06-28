@@ -23,7 +23,7 @@ extern "C" {
 // 将json文件内容解析成cjson对象
 cJSON* GetJsonObject(const char* json_file_path);
 //
-
+void PrintJsonValue(cJSON* json_obj);
 
 #ifdef __cplusplus
 }
