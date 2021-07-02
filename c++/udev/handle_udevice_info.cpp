@@ -82,8 +82,11 @@ int main(int argc, char *argv[])
 
     // 4.处理json文件
     cJSON* json_obj = GetJsonObject(".\\data\\json\\11.22.33.44-2021.03.11.15.01.41.json");
-    PrintJsonValue(json_obj);
+    vector<JSON_DATA_STRUCT> json_data;
+    GetJsonData(json_obj, json_data);
+    printf("json data size = %lu\n", json_data.size());
 
+    LOG_ERROR("hello world!");
     return 0;
 }
 

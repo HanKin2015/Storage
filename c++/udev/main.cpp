@@ -134,24 +134,37 @@ void PrintJsonValue(cJSON* json_obj)
     cJSON* iter1 = nullptr;  // 迭代器
     cJSON_ArrayForEach(iter1, json_obj) {
         if (iter1->type == cJSON_Array) {
+            // 输出json对象的键值
+            printf("%s has %d child.\n", iter1->string, cJSON_GetArraySize(iter1));
             PrintJsonValue(iter1);
+            if (cJSON_GetArraySize(iter1) > 0) {
+                cJSON* tmp_obj = cJSON_GetArrayItem(iter1, 1);
+                printf("%s\n", cJSON_Print(tmp_obj));
+            }
+            int ret = cJSON_HasObjectItem(iter1, "Rev");
+            printf("ret = %d\n", ret);  // 这里根本无法获取,一直是0
         } else if (iter1->type == cJSON_Object) {
             cJSON* iter2 = nullptr;
+            cJSON* tmp_obj =  cJSON_GetObjectItem(iter1, "Rev");
+            int ret = cJSON_HasObjectItem(iter1, "Rev");
+            printf("%s, type = %s.\n", cJSON_Print(tmp_obj), PrintCjsonObjectType(tmp_obj).c_str());
+            printf("%s, ret = %d\n\n", cJSON_GetObjectItem(iter1, "Rev")->valuestring, ret);
+            
+            // 遍历输出json数据键值
             cJSON_ArrayForEach(iter2, iter1) {
                 char *key = nullptr, *value = nullptr;
                 
                 key = iter2->string;
-                if (iter2->type == cJSON_Number) {  // 坑点,int和double如何去区分
+                if (iter2->type == cJSON_Number) {  // 坑点,int和double如何去区分,可能需要预先知道,否则就默认指定一个
                     printf("valueint: %d, valuedouble: %lf\n", iter2->valueint, iter2->valuedouble);
                     itoa(iter2->valueint, value, 16);
                 } else if (iter2->type == cJSON_String || iter2->type == cJSON_Raw) {
                     value = iter2->valuestring;
                 }
-
-                printf("key: %s, value: %s\n", key, value);
+                //printf("key: %s, value: %s, string: %s\n", key, value, iter2->string);
             }
         } else {
-            printf("type: %s\n", PrintCjsonType(iter1));
+            printf("type: %s\n", PrintCjsonObjectType(iter1).c_str());
         }
     }
 }
