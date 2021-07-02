@@ -1,7 +1,7 @@
 
 /*
  * common.hpp
- * 公共头文件库
+ * 公共头文件库,目的是给其他头文件提供STL标准库
  *  
  * date  : 2021.06.25
  * author: hankin
@@ -26,10 +26,13 @@
 #include <set>
 #include <cmath>
 #include <algorithm>
+#include <windows.h>
+#include <stdint.h>
 
 using namespace std;
 
-// 不要在extern "C"的中引用C++ STL库的头文件，如<map>, <vector>等具有template的头文件
+// 不要在extern "C"的中引用C++ STL库的头文件,如<map>,<vector>等具有template的头文件
+// error: template with C linkage template<typename _Alloc>
 #ifdef __cplusplus
 extern "C" {
 #endif
