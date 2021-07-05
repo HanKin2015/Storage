@@ -34,6 +34,33 @@ gcc安装包：https://ftp.gnu.org/gnu/gcc/
 g++安装包：https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/
 
 # 5、部分问题及解决
+
 ## error: template with C linkage
 不要在extern "C"的中引用C++ STL库的头文件，如<map>, <vector>等具有template的头文件。
 需要检查extern "C"后面为函数；extern "C" { }的定义是否完整。
+
+## 错误	C7555 使用指定的初始值设定项至少需要“/std:c++latest”
+属性-》C/C++-》命令行增加/std:c++latest即可。
+
+编码问题增加：-utf-8。
+
+## 错误	C4996	'_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+
+
+## warning C4828 文件包含在偏移 0x13 处开始的字符,该字符在当前源字符集中无效(代码页 65001)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

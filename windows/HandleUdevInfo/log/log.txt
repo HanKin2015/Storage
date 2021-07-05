@@ -7,3 +7,6 @@
 2021-07-01 18:07:17 [20728/11392] [ERROR] [main] hello world!
 2021-07-01 18:07:17 [20728/11392] [INFO] [main] hello world!
 2021-07-01 18:07:17 [20728/11392] [WARN] [main] hello world!
+2021-07-02 14:22:25 [22416/8508] [ERROR] [main] hello world!
+2021-07-02 14:22:25 [22416/8508] [INFO] [main] hello world!
+2021-07-02 14:22:25 [22416/8508] [WARN] [main] hello world!
