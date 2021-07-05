@@ -1,6 +1,6 @@
-/*
+ï»¿/*
  * log.hpp
- * ÈÕÖ¾½Ó¿Ú
+ * æ—¥å¿—æŽ¥å£
  *
  * date  : 2021.07.01
  * author: hankin
@@ -16,11 +16,11 @@
 const char *LOG_FILE_PATH = ".\\log\\log.txt";
 
 enum {
-	LOG_DEBUG = 0,	// µ÷ÊÔ
-	LOG_INFO,		// ÌáÊ¾
-	LOG_WARN,		// ¾¯¸æ
-	LOG_ERROR,		// ´íÎó
-	LOG_FATAL		// ÖÂÃü
+	LOG_DEBUG = 0,	// è°ƒè¯•
+	LOG_INFO,		// æç¤º
+	LOG_WARN,		// è­¦å‘Š
+	LOG_ERROR,		// é”™è¯¯
+	LOG_FATAL		// è‡´å‘½
 };
 
 #define MAX_BUF_LEN 4096

@@ -62,9 +62,44 @@ bool IsExist(string file_path)
     return (_access(file_path.c_str(), F_OK) != -1);
 }
 
+#include <thread>
+std::thread::id main_thread_id = std::this_thread::get_id();
+void hello()
+{
+    std::cout << "Hello Concurrent World\n";
+    if (main_thread_id == std::this_thread::get_id())
+        std::cout << "This is the main thread.\n";
+    else
+        std::cout << "This is not the main thread.\n";
+}
+
+void pause_thread(int n) {
+    std::this_thread::sleep_for(std::chrono::seconds(n));
+    std::cout << "pause of " << n << " seconds ended\n";
+}
+
 /*
  * cd "d:\Github\Storage\c++\udev\" && g++ handle_udevice_info.cpp json_interface.cpp cJSON.c -o handle_udevice_info && "d:\Github\Storage\c++\udev\"handle_udevice_info
  */
+void study_thread()
+{
+    std::thread t(hello);
+    std::cout << t.hardware_concurrency() << std::endl;//可以并发执行多少个(不准确)
+    std::cout << "native_handle " << t.native_handle() << std::endl;//可以并发执行多少个(不准确)
+    t.join();
+    std::thread a(hello);
+    a.detach();
+    std::thread threads[5];                         // 默认构造线程
+
+    std::cout << "Spawning 5 threads...\n";
+    for (int i = 0; i < 5; ++i)
+        threads[i] = std::thread(pause_thread, i + 1);   // move-assign threads
+    std::cout << "Done spawning threads. Now waiting for them to join:\n";
+    for (auto& thread : threads)
+        thread.join();
+    std::cout << "All threads joined!\n";
+}
+
 int main(int argc, char *argv[])
 {
     // 1.利用7z程序解压缩文件到temp文件夹
@@ -86,9 +121,11 @@ int main(int argc, char *argv[])
     GetJsonData(json_obj, json_data);
     printf("json data size = %lu\n", json_data.size());
 
-    LOG_ERROR("hello world!");
-    LOG_INFO("hello world!");
-    LOG_WARN("hello world!");
+    LOGE("hello world!");
+    LOGI("hello world!");
+    LOGW("hello world!");
+
+    study_thread();
     return 0;
 }
 
