@@ -10,3 +10,11 @@
 2021-07-02 14:22:25 [22416/8508] [ERROR] [main] hello world!
 2021-07-02 14:22:25 [22416/8508] [INFO] [main] hello world!
 2021-07-02 14:22:25 [22416/8508] [WARN] [main] hello world!
+2021-07-06 13:35:39 [23372/14752] [ERROR] [main] hello world!
+2021-07-06 13:35:39 [23372/14752] [INFO] [main] hello world!
+2021-07-06 13:35:39 [23372/14752] [WARN] [main] hello world!
+2021-07-06 13:46:54 [16212/8028] [ERROR] [ForeachJson] .\data\json\*\. is dir instead of file.
+2021-07-06 13:46:54 [16212/8028] [ERROR] [ForeachJson] .\data\json\*\.\.. is dir instead of file.
+2021-07-06 13:46:54 [16212/8028] [ERROR] [main] hello world!
+2021-07-06 13:46:54 [16212/8028] [INFO] [main] hello world!
+2021-07-06 13:46:54 [16212/8028] [WARN] [main] hello world!
