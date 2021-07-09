@@ -4,9 +4,9 @@
  * 公共头文件库,目的是给其他头文件提供STL标准库
  *  
  * date  : 2021.06.25
- * author: hankin
+ * author: hejian
  * 
- * Copyright (c) 2021 hankin. All rights reserved.
+ * Copyright (c) 2021 hejian. All rights reserved.
  *
  */
 
@@ -25,6 +25,7 @@
 #include <cstdlib>
 #include <set>
 #include <cmath>
+#include <map>
 #include <algorithm>
 #include <windows.h>
 #include <stdint.h>

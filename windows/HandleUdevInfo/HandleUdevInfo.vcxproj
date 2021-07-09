@@ -146,6 +146,7 @@
     <ClInclude Include="src\handle_udevice_info.hpp" />
     <ClInclude Include="src\json_interface.hpp" />
     <ClInclude Include="src\log.hpp" />
+    <ClInclude Include="src\trie.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cJSON.c" />
