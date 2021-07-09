@@ -18,3 +18,40 @@
 2021-07-06 13:46:54 [16212/8028] [ERROR] [main] hello world!
 2021-07-06 13:46:54 [16212/8028] [INFO] [main] hello world!
 2021-07-06 13:46:54 [16212/8028] [WARN] [main] hello world!
+2021-07-08 13:37:59 [8104/26600] [ERROR] [ForeachJson] .\data\json\*\. is dir instead of file.
+2021-07-08 13:37:59 [8104/26600] [ERROR] [ForeachJson] .\data\json\*\.\.. is dir instead of file.
+2021-07-08 13:37:59 [8104/26600] [ERROR] [main] hello world!
+2021-07-08 13:37:59 [8104/26600] [INFO] [main] hello world!
+2021-07-08 13:37:59 [8104/26600] [WARN] [main] hello world!
+2021-07-08 13:38:42 [26504/25572] [ERROR] [ForeachJson] .\data\json\*\. is dir instead of file.
+2021-07-08 13:38:42 [26504/25572] [ERROR] [ForeachJson] .\data\json\*\.\.. is dir instead of file.
+2021-07-08 13:38:42 [26504/25572] [ERROR] [main] hello world!
+2021-07-08 13:38:42 [26504/25572] [INFO] [main] hello world!
+2021-07-08 13:38:42 [26504/25572] [WARN] [main] hello world!
+2021-07-08 14:07:07 [27816/27820] [ERROR] [ForeachJson] .\data\json\*\. is dir instead of file.
+2021-07-08 14:07:07 [27816/27820] [ERROR] [ForeachJson] .\data\json\*\.\.. is dir instead of file.
+2021-07-08 14:07:07 [27816/27820] [ERROR] [main] hello world!
+2021-07-08 14:07:07 [27816/27820] [INFO] [main] hello world!
+2021-07-08 14:07:07 [27816/27820] [WARN] [main] hello world!
+2021-07-08 14:10:58 [15516/28632] [ERROR] [ForeachJson] .\data\json\*\. is dir instead of file.
+2021-07-08 14:10:58 [15516/28632] [ERROR] [ForeachJson] .\data\json\*\.\.. is dir instead of file.
+2021-07-08 14:10:58 [15516/28632] [ERROR] [main] hello world!
+2021-07-08 14:10:58 [15516/28632] [INFO] [main] hello world!
+2021-07-08 14:10:58 [15516/28632] [WARN] [main] hello world!
+2021-07-08 14:14:34 [15056/27400] [ERROR] [ForeachJson] .\data\json\*\. is dir instead of file.
+2021-07-08 14:14:34 [15056/27400] [ERROR] [ForeachJson] .\data\json\*\.\.. is dir instead of file.
+2021-07-08 14:14:34 [15056/27400] [ERROR] [main] hello world!
+2021-07-08 14:14:34 [15056/27400] [INFO] [main] hello world!
+2021-07-08 14:14:34 [15056/27400] [WARN] [main] hello world!
+2021-07-08 14:19:02 [24608/28548] [ERROR] [ForeachJson] .\data\json\. is dir instead of file.
+2021-07-08 14:19:02 [24608/28548] [ERROR] [ForeachJson] .\data\json\.. is dir instead of file.
+2021-07-08 14:19:02 [24608/28548] [ERROR] [main] hello world!
+2021-07-08 14:19:02 [24608/28548] [INFO] [main] hello world!
+2021-07-08 14:19:02 [24608/28548] [WARN] [main] hello world!
+2021-07-08 18:06:02 [22664/16052] [ERROR] [main] hello world!, 1234
+2021-07-08 18:06:02 [22664/16052] [INFO] [main] hello world!
+2021-07-08 18:06:02 [22664/16052] [WARN] [main] hello world!
+2021-07-08 18:08:10 [19712/26456] [INFO] [main] TEMP_DIR has files_path size = 11
+2021-07-08 18:08:17 [19712/26456] [ERROR] [main] hello world!, 1234
+2021-07-08 18:08:17 [19712/26456] [INFO] [main] hello world!
+2021-07-08 18:08:17 [19712/26456] [WARN] [main] hello world!

@@ -30,6 +30,9 @@
     <ClInclude Include="src\log.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\trie.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cJSON.c">

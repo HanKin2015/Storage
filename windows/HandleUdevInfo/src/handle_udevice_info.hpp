@@ -6,9 +6,9 @@
  * 1.解压缩获取到每个json文件
  * 
  * date  : 2021.05.25
- * author: hankin
+ * author: hejian
  * 
- * Copyright (c) 2021 hankin. All rights reserved.
+ * Copyright (c) 2021 hejian. All rights reserved.
  *
  */
 
