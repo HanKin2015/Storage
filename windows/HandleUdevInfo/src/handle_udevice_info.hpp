@@ -25,9 +25,7 @@ extern "C" {
 const string DATA_FILE_PATH = ".\\data\\test.zip";  // 数据压缩包
 const string TEMP_DIR = ".\\data\\temp";            // 临时解压缩文件夹
 const string JSON_DATA_DIR = ".\\data\\json";       // 全部json文件数据
-
-// 获取json文件并拷贝到data/json文件夹中
-void GetJsonToData(string path);
+const string CSV_FILE_PATH = ".\\data\\result.csv";	// 保存最终数据到本地csv文件中
 
 #ifdef __cplusplus
 }

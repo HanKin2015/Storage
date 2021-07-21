@@ -78,6 +78,21 @@ void GetFileRelaPath(string dir_path, vector<string> &files_path)
     return;
 }
 
+void SaveData2Csv(vector<udev_info> udev_data)
+{
+    FILE* fp = fopen(CSV_FILE_PATH.c_str(), "w");
+    if (!fp) {
+        //LOGE("open CSV_FILE_PATH failed! strerror", stderr(enon));
+        return;
+    }
+    for (udev_info& it : udev_data) {
+        fprintf(fp, "%s,%s,%s,%s,%s\n", it.vid.c_str(), it.pid.c_str(), \
+            it.rev.c_str(), it.man_str.c_str(), it.pro_str.c_str());
+    }
+    fclose(fp);
+    return;
+}
+
 int main(int argc, char *argv[])
 {
     // 1.利用7z程序解压缩文件到temp文件夹
@@ -108,7 +123,7 @@ int main(int argc, char *argv[])
     }
     printf("json data size = %I64d\n", json_data.size());
 
-    // 字典树存储
+    // 5、字典树存储
     Trie* udev_tree = new Trie();
     for (JSON_DATA_STRUCT udev_data : json_data) {
         string pvid = udev_data.vid + udev_data.pid;
@@ -116,8 +131,11 @@ int main(int argc, char *argv[])
         transform(pvid.begin(), pvid.end(), pvid.begin(), ::tolower);
         udev_tree->Insert(pvid, udev_data);
     }
-    
-    udev_tree->SortOutput(udev_tree->root);
+    json_data.clear();
+    udev_tree->SortOutput(udev_tree->root, json_data);
+
+    // 6、保存数据到本地csv表格文件中
+    SaveData2Csv(json_data);
     return 0;
 }
 

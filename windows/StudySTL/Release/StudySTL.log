@@ -1,0 +1,4 @@
+﻿  StudySTL.cpp
+StudySTL.obj : error LNK2001: 无法解析的外部符号 _uncompress
+StudySTL.obj : error LNK2001: 无法解析的外部符号 _compress
+D:\Github\Storage\windows\StudySTL\Release\StudySTL.exe : fatal error LNK1120: 2 个无法解析的外部命令

@@ -5,7 +5,8 @@
 #include <thread>
 #include <ctime>
 #include <cstdio>
-#include<windows.h>
+#include <windows.h>
+#include "study_lock.h"
 
 using namespace std;
 
@@ -22,14 +23,14 @@ void hello()
     else {
         cout << "This is not the main thread.\n";
     }
-    return ;
+    return;
 }
 
 // 暂停线程n秒
 void pause_thread(int idx, int n) {
     this_thread::sleep_for(chrono::seconds(n));
     cout << "thread id<" << idx << "> pause of " << n << " seconds ended\n";
-    return ;
+    return;
 }
 
 // 简单示例
@@ -55,7 +56,7 @@ void demo()
         thread.join();
     }
     cout << "All threads joined!\n";
-    return ;
+    return;
 }
 
 void func(int idx)
@@ -63,10 +64,10 @@ void func(int idx)
     int n = 2000;
     Sleep(n);
     printf("idx<%d> sleep %d seconds done.\n", idx, n / 1000);
-    return ;
+    return;
 }
 
-int main()
+void hello_thread()
 {
     // 1、普通使用方式
     clock_t start_time = clock();
@@ -74,8 +75,8 @@ int main()
         func(i + 1);
     }
     clock_t spent_time = clock() - start_time;
-    printf("exec time is %lf s.\n", (double) spent_time / CLOCKS_PER_SEC);
-    
+    printf("exec time is %lf s.\n", (double)spent_time / CLOCKS_PER_SEC);
+
     // 2、多线程节省时间
     start_time = clock();
     thread threads[2];
@@ -98,16 +99,23 @@ int main()
     for (int i = 0; i < THREAD_NUM; i++) {
         tds[i] = thread(func, i + 1);
     }
-    
+
     // 很奇怪,166个线程也是同时完成,难道没有限制?可能是操作太简单.
     cout << tds[0].hardware_concurrency() << endl;              // 4
     cout << "native_handle: " << tds[0].native_handle() << endl;// 166
-    
+
     for (auto& thread : tds) {
         thread.join();
     }
     spent_time = clock() - start_time;
     printf("exec time is %lf s.\n", (double)spent_time / CLOCKS_PER_SEC);
+    return;
+}
+
+int main()
+{
+    //hello_thread();
+    test_study_lock();
     return 0;
 }
 
