@@ -1,0 +1,21 @@
+{
+  "name": "apidoc-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Eve",
+  "license": "MIT",
+  "apidoc": {
+    "name": "apidoc-demo",
+    "description": "You write something here to describe your project",
+    "title": "The title of this doc",
+    "header": {
+      "title": "文档说明111",
+      "filename": "header.md"
+    },
+    "footer": {
+      "title": "文档结尾222",
+      "filename": "footer.md"
+    }
+  }
+}

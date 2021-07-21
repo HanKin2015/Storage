@@ -141,6 +141,9 @@
   <ItemGroup>
     <ClCompile Include="StudyThread.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="study_lock.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -76,17 +76,19 @@ public:
 	}
 
 	// 输出所有树枝，即pvid
-	void SortOutput(TrieNode r)
+	void SortOutput(TrieNode r, vector<JSON_DATA_STRUCT> &json_data)
 	{
 		if (!r.next.empty()) {
 			if (r.is_end) {
 				printf("pvid = %s:%s\n", r.data.vid.c_str(), r.data.pid.c_str());
+				json_data.push_back(r.data);
 			}
 			for (auto& it : r.next) {
-				SortOutput(it.second);
+				SortOutput(it.second, json_data);
 			}
 		} else {
 			printf("pvid = %s:%s\n", r.data.vid.c_str(), r.data.pid.c_str());
+			json_data.push_back(r.data);
 		}
 		return;
 	}
