@@ -23,5 +23,8 @@
     <ClInclude Include="study_lock.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="study_async_thread.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
