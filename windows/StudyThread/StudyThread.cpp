@@ -7,6 +7,7 @@
 #include <cstdio>
 #include <windows.h>
 #include "study_lock.h"
+#include "study_async_thread.h"
 
 using namespace std;
 
@@ -115,7 +116,8 @@ void hello_thread()
 int main()
 {
     //hello_thread();
-    test_study_lock();
+    //test_study_lock();
+    study_async_thread();
     return 0;
 }
 
