@@ -5,11 +5,17 @@
 #include "study_string.h"
 #include "safe_function.h"
 #include "study_zlib.h"
+#include "study_xxxx_cast.h"
+#include "study_program_pack.h"
+#include "study_zip.h"
 
 int main()
 {
     //test_study_string();
     //test_safe_function();
-    test_study_zlib();
+    //test_study_zlib();
+    //test_study_xxxx_cast();
+    //test_study_program_pack();
+    test_study_zip();
     return 0;
 }

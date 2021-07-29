@@ -140,14 +140,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="library\unzip.cpp" />
+    <ClCompile Include="library\zip.cpp" />
     <ClCompile Include="StudySTL.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="common.h" />
     <ClInclude Include="safe_function.h" />
+    <ClInclude Include="study_gtest.h" />
+    <ClInclude Include="study_program_pack.h" />
+    <ClInclude Include="study_strcut.h" />
     <ClInclude Include="study_string.h" />
+    <ClInclude Include="study_xxxx_cast.h" />
+    <ClInclude Include="study_zip.h" />
     <ClInclude Include="study_zlib.h" />
-    <ClInclude Include="zconf.h" />
-    <ClInclude Include="zlib.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
