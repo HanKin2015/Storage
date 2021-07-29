@@ -117,7 +117,7 @@ int main()
 {
     //hello_thread();
     //test_study_lock();
-    study_async_thread();
+    test_study_async_thread();
     return 0;
 }
 

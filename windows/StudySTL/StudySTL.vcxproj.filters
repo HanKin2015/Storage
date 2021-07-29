@@ -18,6 +18,12 @@
     <ClCompile Include="StudySTL.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="library\unzip.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="library\zip.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="study_string.h">
@@ -29,10 +35,22 @@
     <ClInclude Include="study_zlib.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="zconf.h">
+    <ClInclude Include="study_gtest.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="zlib.h">
+    <ClInclude Include="study_strcut.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="study_xxxx_cast.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="study_program_pack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="study_zip.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

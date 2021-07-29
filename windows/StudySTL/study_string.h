@@ -62,6 +62,21 @@ static void study_assign()
     return;
 }
 
+/*
+* CÓïÑÔ°æsplitº¯Êı
+*/
+static void study_strtok()
+{
+    char sentence[] = "This is a sentence with 7 tokens";
+    cout << "The string to be tokenized is:\n" << sentence << "\n\nThe tokens are:\n\n";
+    char *tokenPtr = strtok(sentence, " ");
+    while (tokenPtr != NULL) {
+        cout << tokenPtr << endl;
+        tokenPtr = strtok(NULL, " ");
+    }
+    return;
+}
+
 static void study_others()
 {
     // 2¡¢ÖØÔØº¯Êı
@@ -81,6 +96,7 @@ int test_study_string()
 {
 	study_R();
     study_assign();
+    study_strtok();
 	return 0;
 }
 

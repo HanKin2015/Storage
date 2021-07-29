@@ -1,14 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-@description:
-    暴力破解ftp，目前测试可以使用，需要重构一下
-
-@author: hankin
-@date  : 2021.07.15
-
-Copyright (c) 2021 HanKin. All rights reserved.
-"""
-
 import optparse
 import ftplib
 import threading

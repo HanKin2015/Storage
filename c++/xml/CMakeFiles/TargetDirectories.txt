@@ -1,0 +1,3 @@
+D:/Users/User/Desktop/xml/CMakeFiles/edit_cache.dir
+D:/Users/User/Desktop/xml/CMakeFiles/main.dir
+D:/Users/User/Desktop/xml/CMakeFiles/rebuild_cache.dir

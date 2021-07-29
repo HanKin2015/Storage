@@ -1,11 +1,14 @@
 ﻿#pragma once
 
 #include <cstdio>
-#include "zlib.h"
+#include "library/zlib.h"
 
-#pragma comment(lib, "zlib.lib")
+#pragma comment(lib, "library/zlib.lib")
 
-void zlib_string()
+/*
+* 压缩字符串
+*/
+static int zlib_string()
 {
 	/* 原始数据 */
 	unsigned char strSrc[] = "hello world! aaaaa bbbbb ccccc ddddd 中文测试 yes";
@@ -26,8 +29,18 @@ void zlib_string()
 	printf("After UnCompressed Length:%ld\n", dstLen);
 
 	printf("UnCompressed String:%s\n", strDst);
+	return 0;
+}
 
-	return;
+/*
+* https://blog.csdn.net/wishfly/article/details/46408595
+* 
+* 发现zlib处理zip文件相对来说麻烦，它主要来处理gz后缀的文件
+*/
+static int zlib_file()
+{
+
+	return 0;
 }
 
 int test_study_zlib()
