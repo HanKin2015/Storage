@@ -80,14 +80,14 @@ public:
 	{
 		if (!r.next.empty()) {
 			if (r.is_end) {
-				printf("pvid = %s:%s\n", r.data.vid.c_str(), r.data.pid.c_str());
+				LOGD("pvid = %s:%s", r.data.vid.c_str(), r.data.pid.c_str());
 				json_data.push_back(r.data);
 			}
 			for (auto& it : r.next) {
 				SortOutput(it.second, json_data);
 			}
 		} else {
-			printf("pvid = %s:%s\n", r.data.vid.c_str(), r.data.pid.c_str());
+			LOGD("pvid = %s:%s", r.data.vid.c_str(), r.data.pid.c_str());
 			json_data.push_back(r.data);
 		}
 		return;

@@ -33,15 +33,27 @@
     <ClInclude Include="src\trie.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\unit_test.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\cJSON.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\handle_udevice_info.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\json_interface.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\library\cJSON.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\library\unzip.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\library\zip.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

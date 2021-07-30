@@ -55,3 +55,20 @@
 2021-07-08 18:08:17 [19712/26456] [ERROR] [main] hello world!, 1234
 2021-07-08 18:08:17 [19712/26456] [INFO] [main] hello world!
 2021-07-08 18:08:17 [19712/26456] [WARN] [main] hello world!
+2021-07-29 21:35:04 [15944/4284] [INFO] [handle_udev_main] files_path size = 11
+2021-07-29 21:36:16 [12884/16848] [INFO] [handle_udev_main] files_path size = 11
+2021-07-29 21:39:21 [17432/16612] [INFO] [handle_udev_main] files_path size = 11
+2021-07-29 21:39:21 [17432/16612] [INFO] [handle_udev_main] json data size = 71
+
+2021-07-29 21:41:24 [2108/17156] [ERROR] [UnzipFile] SetUnzipBaseDir failed, 0x10000.
+2021-07-29 21:41:24 [2108/17156] [INFO] [handle_udev_main] files_path size = 0
+2021-07-29 21:41:24 [2108/17156] [INFO] [handle_udev_main] json data size = 0
+
+2021-07-30 09:08:25 [4160/15972] [ERROR] [UnzipFile] SetUnzipBaseDir failed, 0x10000.
+2021-07-30 09:08:25 [4160/15972] [ERROR] [GetFileRelaPath] dir_path is not exist.
+2021-07-30 09:08:25 [4160/15972] [INFO] [handle_udev_main] files_path size = 0
+2021-07-30 09:08:25 [4160/15972] [ERROR] [GetFileRelaPath] dir_path is not exist.
+2021-07-30 09:08:25 [4160/15972] [INFO] [handle_udev_main] json data size = 0
+
+2021-07-30 09:13:48 [17064/16968] [ERROR] [UnzipFile] SetUnzipBaseDir failed, 0x10000.
+2021-07-30 09:13:48 [17064/16968] [ERROR] [handle_udev_main] 解压缩文件到temp文件夹 失败!

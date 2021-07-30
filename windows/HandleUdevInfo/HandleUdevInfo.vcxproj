@@ -50,7 +50,7 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -132,6 +132,8 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalOptions>/std:c++latest -utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>D:\Github\Storage\windows\HandleUdevInfo\src\library;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,11 +149,15 @@
     <ClInclude Include="src\json_interface.hpp" />
     <ClInclude Include="src\log.hpp" />
     <ClInclude Include="src\trie.hpp" />
+    <ClInclude Include="src\unit_test.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\cJSON.c" />
     <ClCompile Include="src\handle_udevice_info.cpp" />
     <ClCompile Include="src\json_interface.cpp" />
+    <ClCompile Include="src\library\cJSON.c" />
+    <ClCompile Include="src\library\unzip.cpp" />
+    <ClCompile Include="src\library\zip.cpp" />
+    <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

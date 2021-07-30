@@ -31,6 +31,7 @@
 #include <stdint.h>
 #include <windowsx.h>
 #include <sys\timeb.h>
+#include <list>
 
 using namespace std;
 
