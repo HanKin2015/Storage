@@ -17,16 +17,28 @@
 #include "common.hpp"
 #include "json_interface.hpp"
 #include "log.hpp"
+#include "trie.hpp"
+#include "zip.h"
+#include "unzip.h"
+#include <tchar.h>
+#include <thread>
+
+#define MAX_BUF_LEN 256
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-const string DATA_FILE_PATH = ".\\data\\test.zip";  // 数据压缩包
-const string TEMP_DIR = ".\\data\\temp";            // 临时解压缩文件夹
-const string JSON_DATA_DIR = ".\\data\\json";       // 全部json文件数据
-const string CSV_FILE_PATH = ".\\data\\result.csv";	// 保存最终数据到本地csv文件中
+const string DATA_FILE_PATH = R"(.\data\外设信息.zip)"; // 数据压缩包
+const string TEMP_DIR = R"(.\data\temp)";	            // 临时解压缩文件夹
+const string JSON_DATA_DIR = R"(.\data\json)";			// 全部json文件数据
+const string CSV_FILE_PATH = R"(.\data\result.csv)";	// 保存最终数据到本地csv文件中
 
 #ifdef __cplusplus
 }
 #endif
+
+void UnzipFileBy7z(vector<string> files_path, string target_dir);
+int GetFileRelaPath(string dir_path, vector<string>& files_path);
+static int SaveData2Csv(vector<udev_info> udev_data);
+int handle_udev_main();

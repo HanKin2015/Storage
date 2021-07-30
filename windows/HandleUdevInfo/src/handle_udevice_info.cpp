@@ -12,11 +12,11 @@
  */
 
 #include "handle_udevice_info.hpp"
-#include "trie.hpp"
 
  /*
   * @brief 判断文件或者目录是否存在
   * @note
+  * 
   * @param path [in] 文件或者目录路径
   * @return 存在返回true，反之false
   */
@@ -26,12 +26,14 @@ static bool IsExist(string path)
 }
 
 /*
- * @brief 获取json文件并拷贝到data/json文件夹中
- * @note 
+ * @brief 解压zip文件到目标文件夹
+ * @note  使用7z.exe工具解压
+ * 
  * @param path [in] 数据文件夹路径
+ * @param target_dir [in] 目标文件夹路径
  * @return 无
  */
-void UnzipFile(vector<string> files_path, string target_dir)
+void UnzipFileBy7z(vector<string> files_path, string target_dir)
 {
     for (string file_path : files_path) {
         // 获取文件后缀
@@ -47,12 +49,102 @@ void UnzipFile(vector<string> files_path, string target_dir)
 }
 
 /*
- * @brief 获取文件夹下所有文件的相对路径
- * @note
- * @param dir_path [in] 数据文件夹路径
+ * @brief string类型转tchar类型
+ * @note 更改通过设置字符集为使用多字节字符集来转换
+ * 
+ * @param src [in] string字符串
+ * @param buf [out] tchar字符串
  * @return 无
  */
-void GetFileRelaPath(string dir_path, vector<string> &files_path)
+static void string2tchar(std::string& src, TCHAR* buf)
+{
+#ifdef _UNICODE  
+    _stprintf_s(buf, MAX_PATH, _T("%S"), src.c_str());  // %S宽字符  
+#else  
+    _stprintf_s(buf, MAX_PATH, _T("%s"), src.c_str());  // %s单字符
+#endif
+    return;
+}
+
+/*
+ * @brief 解压zip文件到目标文件夹
+ * @note  使用Zip Utils库
+ *
+ * @param path [in] 数据文件路径
+ * @param target_dir [in] 目标文件夹路径
+ * @return 无
+ */
+static int UnzipFile(string file_path, string target_dir)
+{
+    // 获取文件后缀
+    size_t idx = file_path.find_last_of('.');
+    string postfix = file_path.substr(idx + 1);
+    if (postfix == "zip") {
+        // 解zip压缩文件到目标文件夹
+        HZIP hz = OpenZip(file_path.c_str(), nullptr);
+        ZRESULT zret = SetUnzipBaseDir(hz, _T(target_dir.c_str()));	// 指定文件夹
+        if (zret != ZR_OK) {
+            LOGE("SetUnzipBaseDir failed, 0x%x.", zret);
+            return -1;
+        }
+
+        ZIPENTRY ze;
+        GetZipItem(hz, -1, &ze);
+        int numitems = ze.index;
+        for (int i = 0; i < numitems; i++) {
+            GetZipItem(hz, i, &ze);
+            UnzipItem(hz, i, ze.name);
+        }
+        CloseZip(hz);
+    }
+    return 0;
+}
+
+/*
+ * @brief 解压zip文件到目标文件夹
+ * @note  使用Zip Utils库（单线程版本）
+ * 
+ * @param path [in] 数据文件夹路径
+ * @param target_dir [in] 目标文件夹路径
+ * @return 无
+ */
+int UnzipFileSinglethread(vector<string> files_path, string target_dir)
+{
+    for (string file_path : files_path) {
+        UnzipFile(file_path, target_dir);
+    }
+    return 0;
+}
+
+/*
+ * @brief 解压zip文件到目标文件夹
+ * @note  使用Zip Utils库（多线程版本）
+ * 
+ * @param path [in] 数据文件夹路径
+ * @param target_dir [in] 目标文件夹路径
+ * @return 无
+ */
+int UnzipFileMultithread(vector<string> files_path, string target_dir)
+{
+    list<thread> threads;
+
+    for (string file_path : files_path) {
+        threads.push_back(thread(UnzipFile, file_path, target_dir));
+    }
+    for (thread& t : threads) {
+        t.join();
+    }
+    return 0;
+}
+
+/*
+ * @brief 获取dir_path文件夹下所有文件的相对路径
+ * @note
+ * @param dir_path [in] 数据文件夹路径
+ * @param files_path [out] 文件的相对路径
+ * @return 无
+ */
+int GetFileRelaPath(string dir_path, vector<string> &files_path)
 {
     // 文件句柄
     intptr_t hFile = 0;
@@ -69,64 +161,83 @@ void GetFileRelaPath(string dir_path, vector<string> &files_path)
                     GetFileRelaPath(file_path, files_path);
                 }
             } else {
-                printf("%s\n\n", file_path.c_str());
+                LOGD("%s", file_path.c_str());
                 files_path.push_back(file_path);
             }
         } while (_findnext(hFile, &file_info) == 0);
         _findclose(hFile);
     }
-    return;
+    else {
+        LOGE("dir_path is not exist.");
+        return -1;
+    }
+    return 0;
 }
 
-void SaveData2Csv(vector<udev_info> udev_data)
+/*
+ * @brief 保存数据到本地csv文件
+ * @note
+ * @param udev_data [in] USB设备信息数据
+ * @return 无
+ */
+static int SaveData2Csv(vector<udev_info> udev_data)
 {
     FILE* fp = fopen(CSV_FILE_PATH.c_str(), "w");
     if (!fp) {
-        //LOGE("open CSV_FILE_PATH failed! strerror", stderr(enon));
-        return;
+        LOGE("open CSV_FILE_PATH failed! strerror: %s", strerror(errno));
+        return -1;
     }
     for (udev_info& it : udev_data) {
         fprintf(fp, "%s,%s,%s,%s,%s\n", it.vid.c_str(), it.pid.c_str(), \
             it.rev.c_str(), it.man_str.c_str(), it.pro_str.c_str());
     }
     fclose(fp);
-    return;
+    return 0;
 }
 
-int main(int argc, char *argv[])
+int handle_udev_main()
 {
-    // 1.利用7z程序解压缩文件到temp文件夹
-    string cmd = ".\\tools\\7zx64.exe x -y " + DATA_FILE_PATH + " -o" + TEMP_DIR;
-    //system(cmd.c_str());
-	
-    // 2.获取json文件并拷贝到data文件夹中
-    clock_t start_time = clock(); 
+    int ret = 0;
+    string cmd = "";
     vector <string> files_path;
-    //GetFileRelaPath(TEMP_DIR, files_path);
-    //LOGI("TEMP_DIR has files_path size = %I64d", files_path.size());
-    //UnzipFile(files_path, JSON_DATA_DIR);
-    clock_t spend_time = clock() - start_time;
-    printf("[GetJsonToData Function] exec time is %lf s.\n\n", (double)spend_time / CLOCKS_PER_SEC);
-    
-    // 3.删除中间创建的文件和文件夹
-    cmd = "rd /s /q " + TEMP_DIR;
-    //system(cmd.c_str());
-
-    // 4.处理json文件
-    files_path.clear();
-    GetFileRelaPath(JSON_DATA_DIR, files_path);
+    Trie* udev_tree = nullptr;
+    string pvid = "";
     vector<JSON_DATA_STRUCT> json_data;
     cJSON* json_obj = nullptr;
+
+    // 1.解压缩文件到temp文件夹
+    ret = UnzipFile(DATA_FILE_PATH, TEMP_DIR);
+    if (ret != 0) {
+        LOGE("解压缩文件到temp文件夹 失败!");
+        goto FAILED;
+    }
+
+    // 2.获取json文件并拷贝到data文件夹中
+    ret = GetFileRelaPath(TEMP_DIR, files_path);
+    if (ret != 0) {
+        LOGE("获取json文件并拷贝到data文件夹中 失败!");
+        goto FAILED;
+    }
+    LOGI("files_path size = %I64d", files_path.size());
+    ret = UnzipFileSinglethread(files_path, JSON_DATA_DIR);
+    if (ret != 0) {
+        LOGE("解压缩文件 失败!");
+        goto FAILED;
+    }
+
+    // 3.处理json文件
+    files_path.clear();
+    GetFileRelaPath(JSON_DATA_DIR, files_path);
     for (string file_path : files_path) {
         json_obj = GetJsonObject(file_path.c_str());
         GetJsonData(json_obj, json_data);
     }
-    printf("json data size = %I64d\n", json_data.size());
+    LOGI("json data size = %I64d\n", json_data.size());
 
-    // 5、字典树存储
-    Trie* udev_tree = new Trie();
+    // 4、字典树存储
+    udev_tree = new Trie();
     for (JSON_DATA_STRUCT udev_data : json_data) {
-        string pvid = udev_data.vid + udev_data.pid;
+        pvid = udev_data.vid + udev_data.pid;
         // 转换为小写字母，前期如果做了处理可以省略
         transform(pvid.begin(), pvid.end(), pvid.begin(), ::tolower);
         udev_tree->Insert(pvid, udev_data);
@@ -134,8 +245,16 @@ int main(int argc, char *argv[])
     json_data.clear();
     udev_tree->SortOutput(udev_tree->root, json_data);
 
-    // 6、保存数据到本地csv表格文件中
+    // 5、保存数据到本地csv表格文件中
     SaveData2Csv(json_data);
-    return 0;
-}
 
+    // 6.删除中间创建的文件和文件夹
+    cmd = "rd /s /q " + TEMP_DIR;
+    system(cmd.c_str());
+    cmd = "rd /s /q " + JSON_DATA_DIR;
+    system(cmd.c_str());
+    return 0;
+
+FAILED:
+    return -1;
+}

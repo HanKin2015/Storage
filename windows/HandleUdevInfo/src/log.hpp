@@ -13,7 +13,7 @@
 
 #include "common.hpp"
 
-const char *LOG_FILE_PATH = ".\\log\\log.txt";
+static const char *LOG_FILE_PATH = ".\\log\\log.txt";
 
 enum {
 	LOG_DEBUG = 0,	// 调试
@@ -23,7 +23,7 @@ enum {
 	LOG_FATAL		// 致命
 };
 
-#define MAX_BUF_LEN 4096
+#define MAX_LOGBUF_LEN 4096
 
 #ifdef _DEBUG
 static unsigned int LOG_LEVEL = LOG_DEBUG;
@@ -41,20 +41,20 @@ static unsigned int LOG_LEVEL = LOG_INFO;
 #define _ftime_s    _ftime64_s
 #endif
 
-void DbgPrintLine(const char *type, const char *funcname, const char *datetime, unsigned short ms, const char* format, ...)
+static void DbgPrintLine(const char *type, const char *funcname, const char *datetime, unsigned short ms, const char* format, ...)
 {
-	char pre_header[MAX_BUF_LEN] = { 0 };
-	snprintf(pre_header, MAX_BUF_LEN, "%s [%04d/%04d] %s [%s]",
+	char pre_header[MAX_LOGBUF_LEN] = { 0 };
+	snprintf(pre_header, MAX_LOGBUF_LEN, "%s [%04d/%04d] %s [%s]",
 		datetime, GetCurrentProcessId(), GetCurrentThreadId(), type, funcname);
 	
-	char line[MAX_BUF_LEN + sizeof(pre_header)] = { 0 };
+	char line[MAX_LOGBUF_LEN + sizeof(pre_header)] = { 0 };
 	char* buf = line + strlen(pre_header) + 1;
 	va_list ap;
 	strncpy(line, pre_header, sizeof(line) - 1);
 	line[strlen(pre_header)] = ' ';
 
 	va_start(ap, format);
-	_vsnprintf(buf, MAX_BUF_LEN * 2 - 1, format, ap);
+	_vsnprintf(buf, MAX_LOGBUF_LEN * 2 - 1, format, ap);
 	va_end(ap);
 	
     FILE *fp = fopen(LOG_FILE_PATH, "a");
