@@ -1,8 +1,8 @@
 /*
  * json_interface.hpp
- * jsonæ–‡ä»¶å¤„ç†æ¥å£
+ * jsonÎÄ¼ş´¦Àí½Ó¿Ú
  * 
- * 1.è§£å‹ç¼©è·å–åˆ°æ¯ä¸ªjsonæ–‡ä»¶
+ * 1.½âÑ¹Ëõ»ñÈ¡µ½Ã¿¸öjsonÎÄ¼ş
  * 
  * date  : 2021.06.25
  * author: hejian
@@ -20,25 +20,25 @@
 extern "C" {
 #endif
 
-// æ–‡ä»¶æ‰“å¼€æ¨¡å¼
+// ÎÄ¼ş´ò¿ªÄ£Ê½
 #define R_OK 4 /* Test for read permission. */
 #define W_OK 2 /* Test for write permission. */
 #define X_OK 1 /* Test for execute permission. */
 #define F_OK 0 /* Test for existence. */
 
-// jsonæ–‡ä»¶æ•°æ®ç»“æ„ä½“
+// jsonÎÄ¼şÊı¾İ½á¹¹Ìå
 struct udev_info {
-    string vid;     // å‚å•†id
-    string pid;     // äº§å“id
-    string rev;     // ç‰ˆæœ¬
-    string man_str; // å‚å•†å­—ç¬¦ä¸²æè¿°ç¬¦
-    string pro_str; // äº§å“å­—ç¬¦ä¸²æè¿°ç¬¦
+    string vid;     // ³§ÉÌid
+    string pid;     // ²úÆ·id
+    string rev;     // °æ±¾
+    string man_str; // ³§ÉÌ×Ö·û´®ÃèÊö·û
+    string pro_str; // ²úÆ·×Ö·û´®ÃèÊö·û
 };
 typedef udev_info JSON_DATA_STRUCT;
 
-// å°†jsonæ–‡ä»¶å†…å®¹è§£ææˆcjsonå¯¹è±¡
+// ½«jsonÎÄ¼şÄÚÈİ½âÎö³Écjson¶ÔÏó
 cJSON* GetJsonObject(const char* json_file_path);
-// é€’å½’è·å–jsonå¯¹è±¡çš„æ•°æ®
+// µİ¹é»ñÈ¡json¶ÔÏóµÄÊı¾İ
 void GetJsonData(cJSON* json_obj, vector<JSON_DATA_STRUCT> &json_data);
 
 

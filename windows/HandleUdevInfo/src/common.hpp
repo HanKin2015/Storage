@@ -1,7 +1,7 @@
 
 /*
  * common.hpp
- * å…¬å…±å¤´æ–‡ä»¶åº“,ç›®çš„æ˜¯ç»™å…¶ä»–å¤´æ–‡ä»¶æä¾›STLæ ‡å‡†åº“
+ * ¹«¹²Í·ÎÄ¼ş¿â,Ä¿µÄÊÇ¸øÆäËûÍ·ÎÄ¼şÌá¹©STL±ê×¼¿â
  *  
  * date  : 2021.06.25
  * author: hejian
@@ -32,10 +32,11 @@
 #include <windowsx.h>
 #include <sys\timeb.h>
 #include <list>
+#include "log.hpp"
 
 using namespace std;
 
-// ä¸è¦åœ¨extern "C"çš„ä¸­å¼•ç”¨C++ STLåº“çš„å¤´æ–‡ä»¶,å¦‚<map>,<vector>ç­‰å…·æœ‰templateçš„å¤´æ–‡ä»¶
+// ²»ÒªÔÚextern "C"µÄÖĞÒıÓÃC++ STL¿âµÄÍ·ÎÄ¼ş,Èç<map>,<vector>µÈ¾ßÓĞtemplateµÄÍ·ÎÄ¼ş
 // error: template with C linkage template<typename _Alloc>
 #ifdef __cplusplus
 extern "C" {

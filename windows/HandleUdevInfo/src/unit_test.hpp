@@ -2,7 +2,7 @@
 
 #include "gtest/gtest.h"
 #pragma comment(lib, "src/library/gtestlib/gtest.lib")
-#include "handle_udevice_info.hpp"
+#include "handle_udev_info.hpp"
 
 
 void unit_test(int argc, char* argv[])

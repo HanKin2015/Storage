@@ -1,6 +1,6 @@
 /*
  * json_interface.cpp
- * jsonæ–‡ä»¶å¤„ç†æ¥å£
+ * jsonÎÄ¼ş´¦Àí½Ó¿Ú
  * 
  * date  : 2021.06.25
  * author: hejian
@@ -12,53 +12,50 @@
 #include "json_interface.hpp"
 
 /*
- * @brief å°†jsonæ–‡ä»¶å†…å®¹è§£ææˆcjsonå¯¹è±¡
- * @param [IN]	json_file_path  jsonæ–‡ä»¶è·¯å¾„
+ * @brief ½«jsonÎÄ¼şÄÚÈİ½âÎö³Écjson¶ÔÏó
+ * @param [IN]	json_file_path  jsonÎÄ¼şÂ·¾¶
  */
 cJSON* GetJsonObject(const char* json_file_path)
 {
-    // 1.åˆ¤æ–­æ–‡ä»¶æ˜¯å¦å­˜åœ¨
+    // 1.ÅĞ¶ÏÎÄ¼şÊÇ·ñ´æÔÚ
     if (_access(json_file_path, F_OK) != 0) {
-        printf("json file is not exist, path error!\n");
+        LOGE("json file is not exist, path error!");
         return nullptr;
     }
 
-    // 2.åˆ›å»ºcjsonå¯¹è±¡
+    // 2.´´½¨cjson¶ÔÏó
     cJSON* json_obj = cJSON_CreateObject();
     if (json_obj == nullptr) {
-      printf("cJSON_CreateObject failed!\n");
+      LOGE("cJSON_CreateObject failed!");
       return nullptr;
     }
     
-    // 3.è¯»å–jsonæ–‡ä»¶å†…å®¹
-    fstream fs(json_file_path); // åˆ›å»ºä¸ªæ–‡ä»¶æµå¯¹è±¡, å¹¶æ‰“å¼€æ–‡ä»¶
-    stringstream ss;            // åˆ›å»ºå­—ç¬¦ä¸²æµå¯¹è±¡
-    ss << fs.rdbuf();           // æŠŠæ–‡ä»¶æµä¸­çš„å­—ç¬¦è¾“å…¥åˆ°å­—ç¬¦ä¸²æµä¸­
-    string content = ss.str();  // è·å–æµä¸­çš„å­—ç¬¦ä¸²å†…å®¹
+    // 3.¶ÁÈ¡jsonÎÄ¼şÄÚÈİ
+    fstream fs(json_file_path); // ´´½¨¸öÎÄ¼şÁ÷¶ÔÏó, ²¢´ò¿ªÎÄ¼ş
+    stringstream ss;            // ´´½¨×Ö·û´®Á÷¶ÔÏó
+    ss << fs.rdbuf();           // °ÑÎÄ¼şÁ÷ÖĞµÄ×Ö·ûÊäÈëµ½×Ö·û´®Á÷ÖĞ
+    string content = ss.str();  // »ñÈ¡Á÷ÖĞµÄ×Ö·û´®ÄÚÈİ
     
-    // 4.è§£æå­—ç¬¦ä¸²ä¸ºjsonå¯¹è±¡
+    // 4.½âÎö×Ö·û´®Îªjson¶ÔÏó
     json_obj = cJSON_Parse(content.c_str());
     if (json_obj == nullptr) {
-        printf("cJSON_Parse failed!\n");
+        LOGE("cJSON_Parse failed!");
         return nullptr;
     }
 
-#if 0
-    // 4.æ‰“å°jsonå¯¹è±¡å†…å®¹
+    // 4.´òÓ¡json¶ÔÏóÄÚÈİ
     char* json_cont = cJSON_Print(json_obj);
-    printf("json_cont:\n%s\n", json_cont);
+    LOGD("json_cont:\n%s.", json_cont);
 
-    // 5.è·å–jsonå¯¹è±¡å¤§å°
+    // 5.»ñÈ¡json¶ÔÏó´óĞ¡
     int json_array_size = cJSON_GetArraySize(json_obj);
-    printf("json_array_size: %d\n", json_array_size);
-#endif
-
+    LOGD("json_array_size: %d.", json_array_size);
     return json_obj;
 }
 
 /*
- * @brief è¾“å‡ºjsonå¯¹è±¡ç±»å‹,å¯¹æ•°å‹ç±»å‹è¿›è¡Œè½¬æ¢ä¸ºå­—ç¬¦ä¸²ç±»å‹
- * @param [IN]	json_obj  jsonå¯¹è±¡
+ * @brief Êä³öjson¶ÔÏóÀàĞÍ,¶ÔÊıĞÍÀàĞÍ½øĞĞ×ª»»Îª×Ö·û´®ÀàĞÍ
+ * @param [IN]	json_obj  json¶ÔÏó
  */
 string PrintCjsonObjectType(cJSON* json_obj)
 {
@@ -73,9 +70,9 @@ string PrintCjsonObjectType(cJSON* json_obj)
 }
 
 /*
- * @brief é€’å½’è·å–jsonå¯¹è±¡çš„æ•°æ®
- * @param [IN]	json_obj  jsonæ–‡ä»¶è·¯å¾„
- * @param [OUT]	json_data jsonå¯¹è±¡æ•°æ®
+ * @brief µİ¹é»ñÈ¡json¶ÔÏóµÄÊı¾İ
+ * @param [IN]	json_obj  jsonÎÄ¼şÂ·¾¶
+ * @param [OUT]	json_data json¶ÔÏóÊı¾İ
  */
 void GetJsonData(cJSON* json_obj, vector<JSON_DATA_STRUCT> &json_data)
 {
@@ -93,7 +90,7 @@ void GetJsonData(cJSON* json_obj, vector<JSON_DATA_STRUCT> &json_data)
             };
             json_data.push_back(tmp_json_data);
         } else {
-            printf("type: %s\n", PrintCjsonObjectType(iter).c_str());
+            LOGW("type: %s\n", PrintCjsonObjectType(iter).c_str());
         }
     }
 }

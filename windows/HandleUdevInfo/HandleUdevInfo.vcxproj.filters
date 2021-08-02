@@ -21,7 +21,7 @@
     <ClInclude Include="src\common.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\handle_udevice_info.hpp">
+    <ClInclude Include="src\handle_udev_info.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\json_interface.hpp">
@@ -38,7 +38,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\handle_udevice_info.cpp">
+    <ClCompile Include="src\handle_udev_info.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\json_interface.cpp">

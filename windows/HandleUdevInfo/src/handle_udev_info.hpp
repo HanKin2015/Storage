@@ -1,9 +1,9 @@
 
 /*
  * handle_udev_info.hpp
- * å¤„ç†å‹ç¼©åŒ…ä¸­æ”¶é›†çš„å¤–è®¾ä¿¡æ¯
+ * ´¦ÀíÑ¹Ëõ°üÖĞÊÕ¼¯µÄÍâÉèĞÅÏ¢
  * 
- * 1.è§£å‹ç¼©è·å–åˆ°æ¯ä¸ªjsonæ–‡ä»¶
+ * 1.½âÑ¹Ëõ»ñÈ¡µ½Ã¿¸öjsonÎÄ¼ş
  * 
  * date  : 2021.05.25
  * author: hejian
@@ -16,7 +16,6 @@
 
 #include "common.hpp"
 #include "json_interface.hpp"
-#include "log.hpp"
 #include "trie.hpp"
 #include "zip.h"
 #include "unzip.h"
@@ -28,15 +27,14 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-const string DATA_FILE_PATH = R"(.\data\å¤–è®¾ä¿¡æ¯.zip)"; // æ•°æ®å‹ç¼©åŒ…
-const string TEMP_DIR = R"(.\data\temp)";	            // ä¸´æ—¶è§£å‹ç¼©æ–‡ä»¶å¤¹
-const string JSON_DATA_DIR = R"(.\data\json)";			// å…¨éƒ¨jsonæ–‡ä»¶æ•°æ®
-const string CSV_FILE_PATH = R"(.\data\result.csv)";	// ä¿å­˜æœ€ç»ˆæ•°æ®åˆ°æœ¬åœ°csvæ–‡ä»¶ä¸­
-
 #ifdef __cplusplus
 }
 #endif
+
+const string DATA_FILE_PATH = R"(.\data\ÍâÉèĞÅÏ¢.zip)"; // Êı¾İÑ¹Ëõ°ü
+const string TEMP_DIR = R"(.\data\temp\)";	            // ÁÙÊ±½âÑ¹ËõÎÄ¼ş¼Ğ
+const string JSON_DATA_DIR = R"(.\data\json)";			// È«²¿jsonÎÄ¼şÊı¾İ
+const string CSV_FILE_PATH = R"(.\data\result.csv)";	// ±£´æ×îÖÕÊı¾İµ½±¾µØcsvÎÄ¼şÖĞ
 
 void UnzipFileBy7z(vector<string> files_path, string target_dir);
 int GetFileRelaPath(string dir_path, vector<string>& files_path);
