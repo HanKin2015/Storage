@@ -10,14 +10,14 @@
 #include "study_zip.h"
 #include "study_gtest.h"
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     //test_study_string();
     //test_safe_function();
     //test_study_zlib();
     //test_study_xxxx_cast();
     //test_study_program_pack();
-    //test_study_zip();
-    test_study_gtest(argc, argv);
+    test_study_zip();
+    //test_study_gtest(argc, argv);
     return 0;
 }

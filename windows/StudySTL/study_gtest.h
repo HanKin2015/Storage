@@ -52,7 +52,7 @@ TEST(swap3_eq, swap3)
 * 1.属性->C/C++->附加目录 增加gtest的include文件夹，这样才不能破坏库的其他文件调用
 * 2.属性->C/C++->代码生成->运行库->多线程 DLL (/MD) 修改为 多线程 (/MT)
 */
-int test_study_gtest(int argc, char** argv)
+int test_study_gtest(int argc, char* argv[])
 {
 	testing::InitGoogleTest(&argc, argv);
 	RUN_ALL_TESTS();

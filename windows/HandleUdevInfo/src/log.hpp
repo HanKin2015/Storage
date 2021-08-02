@@ -41,22 +41,33 @@ static unsigned int LOG_LEVEL = LOG_INFO;
 #define _ftime_s    _ftime64_s
 #endif
 
-static void DbgPrintLine(const char *type, const char *funcname, const char *datetime, unsigned short ms, const char* format, ...)
+static void DbgPrintLine(const int type, const char *file_path, const char *func_name, const char* format, ...)
 {
+	// 1.日志级别
+	const char* type_as_char[] = { "[DEBUG]", "[INFO]", "[WARN]", "[ERROR]", "[FATAL]" };
+	// 2.获取当前时间
+	struct _timeb now;
+	struct tm today;
+	char datetime_str[20];
+	_ftime_s(&now);
+	localtime_s(&today, &now.time);
+	strftime(datetime_str, 20, "%Y-%m-%d %H:%M:%S", &today);
+	// 3.去掉文件路径前缀
+	const char* file_name = strrchr(file_path, '\\');
+	// 4.构造日志前部分
 	char pre_header[MAX_LOGBUF_LEN] = { 0 };
-	snprintf(pre_header, MAX_LOGBUF_LEN, "%s [%04d/%04d] %s [%s]",
-		datetime, GetCurrentProcessId(), GetCurrentThreadId(), type, funcname);
-	
+	snprintf(pre_header, MAX_LOGBUF_LEN, "%s [%04d/%04d] %s [%s:%s]",
+		datetime_str, GetCurrentProcessId(), GetCurrentThreadId(), type_as_char[type], file_name+1, func_name);
+	// 5.拼接日志内容
 	char line[MAX_LOGBUF_LEN + sizeof(pre_header)] = { 0 };
-	char* buf = line + strlen(pre_header) + 1;
+	char* buf = line + strlen(pre_header) + 1;		// bu指向前部分靠后的位置
 	va_list ap;
-	strncpy(line, pre_header, sizeof(line) - 1);
+	strncpy(line, pre_header, sizeof(line) - 1);	// 将前部分内容写入line中
 	line[strlen(pre_header)] = ' ';
-
 	va_start(ap, format);
-	_vsnprintf(buf, MAX_LOGBUF_LEN * 2 - 1, format, ap);
+	_vsnprintf(buf, MAX_LOGBUF_LEN * 2 - 1, format, ap);	// 将后部分动态日志写入line中
 	va_end(ap);
-	
+	// 6.写入日志文件
     FILE *fp = fopen(LOG_FILE_PATH, "a");
     if (!fp) {
         fprintf(stderr, "open log file<%s> failed, errno %s(%d)\n", LOG_FILE_PATH, strerror(errno), errno);
@@ -67,17 +78,14 @@ static void DbgPrintLine(const char *type, const char *funcname, const char *dat
     return ;
 }
 
-#define LOG(type, format, ...) do {                                     \
-    if (type >= LOG_LEVEL && type <= LOG_FATAL) {                                     \
-        const char *type_as_char[] = { "[DEBUG]", "[INFO]", "[WARN]", "[ERROR]", "[FATAL]" }; \
-        struct _timeb now;                                              \
-        struct tm today;                                                \
-        char datetime_str[20];                                          \
-        _ftime_s(&now);                                                 \
-        localtime_s(&today, &now.time);                                 \
-        strftime(datetime_str, 20, "%Y-%m-%d %H:%M:%S", &today);        \
-        DbgPrintLine(type_as_char[type], __FUNCTION__, datetime_str, now.millitm, format, ##__VA_ARGS__); \
-	}																	\
+/*
+* 属性->C/C++->高级->使用完全路径->否
+* 这样无法完全解决，还是会出现相对路径src\xxx.cpp
+*/
+#define LOG(type, format, ...) do {											\
+    if (type >= LOG_LEVEL && type <= LOG_FATAL) {							\
+        DbgPrintLine(type, __FILE__, __FUNCTION__, format, ##__VA_ARGS__);	\
+	}																		\
 } while(0)
 
 #define LOGD(format, ...) LOG(LOG_DEBUG, format, ##__VA_ARGS__)
