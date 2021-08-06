@@ -13,13 +13,13 @@
 
 #include "handle_udev_info.hpp"
 
- /*
-  * @brief 判断文件或者目录是否存在
-  * @note
-  * 
-  * @param path [in] 文件或者目录路径
-  * @return 存在返回true，反之false
-  */
+/*
+ * @brief 判断文件或者目录是否存在
+ * @note
+ * 
+ * @param path [in] 文件或者目录路径
+ * @return 存在返回true，反之false
+ */
 static bool IsExist(string path)
 {
     return (_access(path.c_str(), F_OK) != -1);
@@ -280,8 +280,11 @@ int handle_udev_main()
         //transform(pvid.begin(), pvid.end(), pvid.begin(), ::tolower);
         udev_tree->Insert(pvid, udev_data);
     }
+
+    // 5、排序去重输出到结构体中
     json_data.clear();
-    //udev_tree->SortOutput(udev_tree->root, json_data);
+    udev_tree->SortOutput(udev_tree->root, json_data);
+    LOGI("treated json data size [%I64d].", json_data.size());
 
     // 5、保存数据到本地csv表格文件中
     ret = SaveData2Csv(json_data);

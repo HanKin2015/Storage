@@ -22,10 +22,28 @@
 
 #include "handle_udev_info.hpp"
 #include "unit_test.hpp"
+#include "cmdline.h"
+
+int config_cmdline(int argc, char* argv[])
+{
+	cmdline::parser a;
+	a.add<string>("log",  'l', "log path",  false, "");
+	a.add<string>("data", 'd', "data path", false, "");
+
+	a.parse_check(argc, argv);
+
+	auto log_path  = a.get<string>("log");
+	auto data_path = a.get<string>("data");
+	
+	return 0;
+}
 
 int main(int argc, char* argv[])
 {
     clock_t start_time = clock();
+
+	// 参数配置解析
+	//config_cmdline(argc, argv);
 
     // 单元测试
     //unit_test(argc, argv);

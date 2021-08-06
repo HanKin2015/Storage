@@ -1,0 +1,672 @@
+,,,,
+0000,0538,1.00,, USB OPTICAL MOUSE
+0000,3825,1.00,, USB OPTICAL MOUSE
+0000,6800,1.00,, USB OPTICAL MOUSE
+0001,0001,1.00,Bosi,USB-Key
+0011,7788,1.03,Generic,Mass Storage
+0101,0007,1.00,,USB OPTICAL MOUSE 
+0145,0012,1.00,USB Adapter,USB Dongle
+03eb,201d,0.19,INTELLETTO,INT USB KEYBOARD EMUL
+03f0,0024,1.30,CHICONY,HP Basic USB Keyboard
+03f0,002a,1.00,Hewlett-Packard,HP LaserJet Professional P1108
+03f0,012a,1.00,Hewlett-Packard,HP LaserJet M1536dnf MFP
+03f0,022a,1.00,Hewlett-Packard,HP LaserJet CP1525N
+03f0,0324,1.00,LiteON,HP Basic USB Keyboard
+03f0,0325,1.03,,
+03f0,034a,1.21,Chicony,HP Elite USB Keyboard
+03f0,042a,1.00,Hewlett-Packard,HP LaserJet Professional M1136 MFP
+03f0,052a,1.00,Hewlett-Packard,HP LaserJet Professional M1213nf MFP
+03f0,062a,1.00,Hewlett-Packard,HP LaserJet 100 colorMFP M175a
+03f0,064a,1.11,Primax,HP USB Keyboard
+03f0,0941,1.00,PixArt,HP X500 USB Optical Mouse
+03f0,094a,1.00,PixArt,HP USB Optical Mouse
+03f0,0a2a,1.00,Hewlett-Packard,HP LaserJet Professional P1606dn
+03f0,0b4a,2.00,,
+03f0,0c17,1.00,Hewlett-Packard,hp LaserJet 1010
+03f0,0f2a,1.00,Hewlett-Packard,HP LaserJet 300 color M351a
+03f0,0f71,1.00,Hewlett-Packard,HP LaserJet MFP M437-M443
+03f0,134a,1.00,PixArt,HP USB Optical Mouse
+03f0,152a,1.00,Hewlett-Packard,HP LaserJet 400 M401d
+03f0,1f4a,1.00,PixArt,HP USB Optical Mouse
+03f0,222a,1.00,Hewlett-Packard,HP LaserJet Pro MFP M126a
+03f0,2a4a,2.64,Lite-On Technology Corp,HP USB Slim Keyboard - Skylab
+03f0,2b17,1.00,Hewlett-Packard,HP LaserJet 1020
+03f0,2c17,1.00,Hewlett-Packard,HP LaserJet 1022
+03f0,2c2a,1.00,Hewlett-Packard,HP LaserJet Pro M202n
+03f0,2d2a,1.00,Hewlett-Packard,HP LaserJet Pro MFP M226dw
+03f0,2f4a,0.11,Chicony,HP Business Slim Keyboard
+03f0,322a,1.00,Hewlett-Packard,HP LaserJet Pro MFP M128fw
+03f0,334a,0.10,Chicony,HP Business Slim Keyboard
+03f0,344a,1.22,,HP USB Slim Keyboard
+03f0,3b17,1.00,Hewlett-Packard,HP LaserJet M1005
+03f0,3b2a,1.00,Hewlett-Packard,HP Color LaserJet MFP M277dw
+03f0,3c2a,1.00,Hewlett-Packard,HP Color LaserJet Pro M252n
+03f0,3f17,1.00,Hewlett-Packard,HP LaserJet P1505
+03f0,4117,1.00,Hewlett-Packard,HP LaserJet 1018
+03f0,424a,1.10,,HP USB Premium Mouse
+03f0,4717,1.00,Hewlett-Packard,HP Color LaserJet CP1215
+03f0,4817,1.00,Hewlett-Packard,HP LaserJet P1007
+03f0,4917,1.00,Hewlett-Packard,HP LaserJet P1008
+03f0,5117,1.00,Hewlett-Packard,HP Color LaserJet CP5225dn
+03f0,522a,1.00,Hewlett-Packard,HP Color LaserJet M452dw
+03f0,532a,1.00,Hewlett-Packard,HP LaserJet MFP M427dw
+03f0,542a,1.00,Hewlett-Packard,HP LaserJet M403d
+03f0,5817,1.00,Hewlett-Packard,HP LaserJet M1319f MFP
+03f0,5a07,1.00,HP,v220w
+03f0,5a2a,1.00,Hewlett-Packard,HP LaserJet MFP M427fdw
+03f0,5c17,0.01,Hewlett-Packard,HP LaserJet P2055d
+03f0,5d17,1.00,Hewlett-Packard,HP LaserJet P2035
+03f0,602a,1.00,Hewlett-Packard,HP LaserJet M403dn
+03f0,632a,1.00,HP,HP LaserJet M203-M206
+03f0,642a,1.00,HP,HP LaserJet MFP M227-M231
+03f0,8917,1.00,Hewlett-Packard,HP LaserJet 5200LX
+03f0,aa2a,1.00,Hewlett-Packard,HP LaserJet MFP M436
+03f0,ac2a,1.00,HP,HP ColorLaserJet M253-M254
+03f0,ae2a,1.00,HP,HP ColorLaserJet M153-M154
+03f0,be2a,1.00,HP,HP LaserJet M14-M17
+03f0,c12a,4.09,HP,HP LaserJet Pro M404-M405
+03f0,c32a,4.09,HP,HP LaserJet Pro M428f-M429f
+03f0,de2a,4.09,HP,HP LaserJet Pro M304-M305
+03f0,e82a,1.00,HP Inc.,HP Laser 108a
+03f0,f02a,1.00,HP,HP Laser NS 1020
+03f0,f12a,1.00,HP,HP Laser NS MFP 1005
+03f0,f22a,1.00,HP Inc.,HP Laser MFP 136a
+0400,c35a,0.63,,
+0401,0210,1.00,DASCOM Co.,Ltd,DASCOM DS-600 Printer
+0403,6001,6.00,FTDI,FT232R USB UART
+040b,0002,2.00,,GiGa HiD
+0425,8159,2.00,Routon,USB HID for Routon iDR210
+043d,0122,0.00,Lenovo,Lenovo LJ3900D
+043d,022e,2.31,Pantum,CP2500DN
+0451,82ff,1.00,,
+045e,0745,6.56,Microsoft,Microsoft® 2.4GHz Transceiver v8.0
+045e,0780,1.70,Microsoft,Comfort Curve Keyboard 3000
+045e,078c,1.11,LITEON Technology,USB Keyboard
+0461,0010,1.04,NOVATEK,USB Keyboard
+0461,4d0f,1.00,PixArt,USB Optical Mouse
+0461,4d15,2.00,,USB Optical Mouse
+0461,4d22,2.00,,USB Optical Mouse
+0461,4d64,2.00,,USB Optical Mouse
+0461,4d81,2.00,,USB Optical Mouse
+0461,4de2,2.00,,USB Optical Mouse
+0461,4e04,1.04,NOVATEK,USB NETVISTA FULL WIDTH KEYBOARD
+0461,4e12,1.20,,USB Keyboard
+0461,4e22,1.00,PixArt,USB Optical Mouse
+0461,4e2a,1.00,PixArt,USB Optical Mouse
+0461,4e35,1.00,,
+0461,4e54,1.00,PixArt,Tiger USB Optical Mouse
+0461,4e6e,1.08,,Wired USB Keyboard
+0461,4e6f,1.07,,USB Wired Keyboard
+046d,080c,0.10,,
+046d,081b,0.10,,
+046d,0826,0.10,,HD Webcam C525
+046d,0892,0.19,,HD Pro Webcam C920
+046d,c018,3.01,Logitech,USB Optical Mouse
+046d,c045,7.30,Logitech,USB-PS/2 Optical Mouse
+046d,c05a,3.00,Logitech,USB Optical Mouse
+046d,c05b,4.00,Logitech,USB Optical Mouse
+046d,c06a,3.00,Logitech,USB Optical Mouse
+046d,c077,2.00,Logitech,USB Optical Mouse
+046d,c246,0.03,Logitech,G300s Optical Gaming Mouse
+046d,c30f,3.00,Logitech,Logitech USB Keyboard
+046d,c31c,9.00,Logitech,USB Keyboard
+046d,c31d,6.01,Logitech,USB Keyboard
+046d,c326,9.00,,
+046d,c52b,4.11,Logitech,USB Receiver
+046d,c52f,0.00,Logitech,USB Receiver
+046d,c534,9.00,Logitech,USB Receiver
+046d,c538,6.00,Logitech,USB Receiver
+046d,c542,3.02,Logitech,Wireless Receiver
+046e,55a1,1.20,BTC,HP USB Multimedia Keyboard
+0471,0017,2.02,ZHU HAI SUNCSW Receipt Printer Co.,Ltd,GP  PRINTER 
+0471,0055,1.00,Zhuhai Howbest Label Printer Co.,Ltd.,Gprinter USB Printer
+0471,a112,0.01,,
+0471,a120,0.01,,
+0471,b001,0.01,,
+0480,0820,3.15,TOSHIBA,External USB 3.0
+0482,03af,1.00,Kyocera,TASKalfa 180
+0482,0446,0.00,Kyocera ,Kyocera FS-1110 
+0482,0494,2.27,Kyocera,FS-1060DN
+0482,0495,3.27,Kyocera,FS-1020MFP
+0482,0632,0.00,Kyocera,Kyocera ECOSYS P2135dn
+0482,0696,0.00,Kyocera,Kyocera ECOSYS P2235dn
+0482,0c1a,0.00,Kyocera,Kyocera ECOSYS M4125idn
+0483,0011,0.01,USB Adapter,USB Device
+0483,070b,2.54,Printer-58,USB Printing Support
+0483,3001,2.00,SP,USB Composite
+0483,5720,3.10,Linux 3.10.14 with dwc2-gadget,HID Gadget
+0483,5741,3.10,BarcodeScanners Drives - H2750,H2750  Usb Devices
+0483,5743,1.00,Xprinter ,USB Printer P
+0483,5750,2.00,SCANNER,SCANNER
+048d,04d2,1.00,General ,UDisk           
+048d,1234,1.00,General ,UDisk           
+04a9,10d3,1.11,Canon,iP2700 series
+04a9,10e2,1.03,Canon,iX6700 series
+04a9,183c,1.03,Canon,G1010 series
+04a9,186e,1.00,Canon,TS708 series
+04a9,1906,6.03,Canon,CanoScan
+04a9,1909,7.01,Canon,CanoScan
+04a9,266a,1.00,Canon,Canon CAPT USB Device
+04a9,2676,1.00,Canon,Canon CAPT USB Device
+04a9,26da,1.00,Canon,Canon CAPT USB Device
+04a9,26db,1.00,Canon,Canon CAPT USB Device
+04a9,2737,1.00,Canon Inc,MF4410
+04a9,2774,1.00,Canon Inc,MF4700 Series
+04a9,2776,1.00,Canon Inc,L190/L410 Series
+04a9,278b,1.00,Canon Inc,iR2002/2202
+04a9,2795,0.00,Canon,Inc.,LBP6030/6030B/6018L
+04a9,27d1,1.00,Canon,MF230 Series UFRII LT
+04a9,27d2,1.00,Canon,MF240 Series UFRII LT
+04b3,3025,1.02,CHICONY,USB NetVista Full Width Keyboard
+04b3,3107,1.30,,
+04b3,310c,2.00,,USB Optical Mouse
+04b3,310d,3.01,,
+04b5,0316,3.00,CPU.DOG,USB HID Security Key
+04b8,0005,1.00,EPSON,USB Printer
+04b8,002f,1.00,EPSON,LQ-790K
+04b8,0038,1.00,EPSON,EPSON L300 Series
+04b8,003b,1.00,EPSON,LQ-590K
+04b8,003e,1.00,EPSON,LQ-630K
+04b8,0047,1.00,EPSON,LQ-300KH
+04b8,0066,1.00,EPSON,EPSON L1300 Series
+04b8,006a,1.00,EPSON,LQ-630KII
+04b8,007b,1.00,EPSON,EPSON L310 Series
+04b8,007c,1.00,EPSON,EPSON L130 Series
+04b8,0081,1.00,EPSON,EPSON L805 Series
+04b8,009b,1.00,EPSON,LQ-590KII
+04b8,00a8,1.00,EPSON,L1110 Series
+04b8,013d,1.00,EPSON,Epson Perfection V39
+04b8,0142,1.00,EPSON,EPSON Perfection V33/V330
+04b8,0155,1.00,EPSON,DS-530
+04b8,0157,1.00,EPSON,DS-570W
+04b8,015d,1.00,EPSON,DS-1610
+04b8,08a9,1.00,EPSON,EPSON L550 Series
+04b8,08d1,1.00,EPSON,EPSON L360 Series
+04b8,08d3,1.00,EPSON,EPSON L565 Series
+04b8,112a,1.00,EPSON,L4160 Series
+04b8,114d,1.00,EPSON,L5190 Series
+04c5,106f,0.00,,
+04c5,14e0,1.00,,
+04ca,004b,1.09,Lite-On Technology Corp.,USB Keyboard
+04ca,0061,1.00,PixArt,USB Optical Mouse
+04ca,0062,2.00,,USB Optical Mouse
+04ca,009c,2.65,Lite-On Technology Corp,USB Keyboard
+04ca,00ac,0.01,Liteon,Dell Wireless Device
+04d9,0499,2.90,,
+04d9,1400,1.43,,
+04d9,1503,4.03, ,USB Keyboard
+04d9,1603,3.10, ,USB Keyboard
+04d9,1605,1.01, ,USB Keyboard
+04d9,1702,4.06, ,USB Keyboard
+04d9,1836,0.01,LogoTech,Mechanical Keyboard
+04d9,2832,1.00,Fi3001A,USB Audio Device
+04d9,a002,1.00,E-Signal,USB Gaming Keyboard
+04d9,a088,1.13,,
+04d9,a08c,1.10,Holtek,USB Gaming Mouse
+04da,0e3e,1.00,Panasonic ,Panasonic Document Scanner KV-S5046H 
+04da,0e82,1.00,Panasonic ,Panasonic Document Scanner KV-SL1035 
+04da,2372,1.00,Panasonic,DC-LX100M2
+04dd,9484,1.00,SHARP,AR-2008D
+04dd,9955,1.00,SHARP,SHARP MX-B5621R
+04e8,3292,1.00,Samsung Electronics Co., Ltd.,ML-1640 Series
+04e8,330c,1.00,Samsung Electronics Co., Ltd.,ML-1860 Series
+04e8,3311,1.00,Samsung,ML-371x Series
+04e8,3321,1.00,Samsung Electronics Co., Ltd.,M2020 Series
+04e8,3434,1.00,Samsung,SCX-4623 Series
+04e8,3441,1.00,Samsung Electronics Co., Ltd.,SCX-3200 Series
+04e8,345b,1.00,Samsung Electronics Co., Ltd.,SCX-4650 4x21S Series
+04e8,3461,1.00,Samsung Electronics Co., Ltd.,M267x 287x Series
+04e8,3467,1.00,Samsung Electronics Co., Ltd.,K2200 Series
+04e8,6033,0.00,JMicron,Samsung G2 Portable
+04e8,61b3,e.00,JMicron,Samsung M3 Portable
+04f2,0841,1.00,CHICONY,HP USB Multimedia Keyboard
+04f2,1516,1.11,Chicony ,USB Keyboard
+04f3,0103,1.07,,
+04f3,0234,4.58,,OM
+04f9,0054,1.00,Brother,HL-1110 series
+04f9,006c,1.00,Brother,HL-2260
+04f9,007e,1.00,Brother,HL-5590DN
+04f9,0182,1.00,,
+04f9,024d,1.00,,
+04f9,0271,1.00,,
+04f9,0273,1.00,,
+04f9,02d0,1.00,,
+04f9,02d1,1.00,,
+04f9,0368,1.00,Brother,DCP-7080
+04f9,0369,1.00,Brother,DCP-7180DN
+04f9,036c,1.00,Brother,MFC-7480D
+04f9,0378,1.00,Brother,DCP-1608
+04f9,03e3,1.00,Brother,MFC-J3930DW
+04f9,041b,1.00,Brother,DCP-B7500D series
+04f9,041d,1.00,Brother,DCP-B7530DN series
+04f9,0424,1.00,Brother,DCP-L2550DW series
+04f9,5607,1.00,,
+04f9,5609,1.00,,
+0518,0001,1.00,Plus More Enterprise LTD.,USB-compliant keyboard
+0525,a4ac,3.10,SUNLUX IOT,USB HID Keyboard
+0536,04c1,0.f3,Hand Held Products,4600R
+0536,04c2,0.f3,Hand Held Products,4600R
+0550,012a,1.00,FUJI XEROX,DocuPrint P355 d
+0550,0135,0.01,FUJI XEROX,DocuCentre S1810
+0550,014a,1.00,FUJI XEROX,FUJI XEROX DocuPrint 2108
+0550,016a,0.01,FUJI XEROX,ApeosPort-V C3375 T2
+0550,016f,1.00,FUJI XEROX,DocuCentre SC2020
+0550,018e,1.00,FX,DocuPrint P268 d
+0550,01a3,0.00,FUJI XEROX,DocuCentre-V C2265
+0550,01be,0.01,FUJI XEROX,DocuCentre S2110
+0557,2213,1.00,ATEN Advance Tech Inc.,CS64US V1.1.109
+055c,db08,1.00,Longmai Technologies,Longmai mToken
+055c,e618,1.00,Longmai Technologies,Longmai-GM3000
+0578,0578,5.07,SSD  USB 3.1,SSD  USB 3.1
+0581,0106,2.1a,,
+058f,2010,1.22,TESTQUEST,USB Multimedia Keyboard
+058f,6387,1.00,Generic,Mass Storage
+05ac,024f,1.23,SONiX,USB DEVICE
+05ac,0256,1.07,SONiX,USB DEVICE
+05ac,0304,1.10,Mitsumi Electric,Apple Optical USB Mouse
+05ac,0601,1.05,FET-M-0105,Button Controller
+05ac,12a8,2.01,Apple Inc.,iPhone
+05ca,0403,1.00,RICOH,MP C2504ex
+05ca,0452,0.01,RICOH,RICOH MP 2014
+05ca,0458,1.00,RICOH,RICOH SP 221
+05ca,0459,1.00,RICOH,RICOH SP 325SFNw
+05ca,0463,1.00,RICOH,RICOH SP 330SFN
+05da,3008,1.00,Prolific Technology Inc.,USB Scanner               
+05da,6031,6.01,Microtek,G160
+05e0,1200,2.01,ﾩSymbol Technologies, Inc, 2002,Symbol Bar Code Scanner
+05e3,0510,9.09,GenesysLogic Technology Co., Ltd.,USB2.0 UVC PC Camera
+05e3,0751,4.04,USB Storage,USB Storage
+05e3,0752,2.33,Generic,USB Storage
+05fe,1010,0.01,WIT Electron Company,WIT 133-M - V1.02
+060b,2401,1.00,,USB Keyboard 
+060e,0960,0.00,Newtologic ,NT4010S
+062a,38b3,2.07,MosArt,USB 2.4G Keyboard
+062a,4101,1.11,MOSART Semi.,2.4G Keyboard Mouse
+062a,4102,1.00,MOSART Semi.,2.4G Wireless Mouse
+062a,4182,1.03,MOSART Semi.,2.4G Keyboard Mouse
+062a,4c01,1.03,MOSART Semi.,2.4G Keyboard Mouse
+062a,8508,0.07,MosArt,USB Keyboard
+067b,2303,3.00,Prolific Technology Inc.,USB-Serial Controller
+067b,2305,2.02,Prolific Technology Inc.,IEEE-1284 Controller
+06bc,017d,1.00,OKI DATA CORP,ML5150FS
+072f,9000,1.00,ACS      ,ACR38 USB Reader         
+072f,90d5,0.01,,
+0781,5567,1.27,SanDisk,Cruzer Blade
+0781,557d,1.00,SanDisk,Cruzer Force
+0781,5581,1.00,SanDisk,Ultra
+0781,5583,1.00,SanDisk,Ultra Fit
+0781,5588,1.00,SanDisk,USB Extreme Pro
+0781,5591,1.00,SanDisk,Ultra USB 3.0
+0781,5597,1.00,SanDisk,Cruzer Glide 3.0
+08a6,0034,1.00,,
+08a6,8029,1.00,Manufacturer,e-STUDIO223
+08a6,c047,1.00,TOSHIBA TEC,e-STUDIO301DN
+08bd,020b,1.00,DASCOM Co.,Ltd,DASCOM DS-3200IV Printer
+08e2,0008,4.54,SafeNet Inc.,SuperDog
+08e4,016e,0.00,Pioneer Corporation,Pioneer external optical drive
+08f2,6834,0.08,Ping-IT,DriverFree Pad
+08ff,06fe,0.01,WIT Electron Company,      V2.00      
+090c,1000,1.00,USB,Flash DISK
+090c,3268,1.00,SMI Corporation,USB DISK
+0930,140b,1.10,TOSHIBA,TransMemory
+0930,6544,1.00,Kingston,DataTraveler 2.0
+0930,6545,1.00,TOSHIBA,USB FLASH DRIVE
+093a,2500,1.00,PIXART,USB OPTICAL MOUSE
+093a,2510,1.00,PixArt,USB Optical Mouse
+093a,2521,1.00,,USB OPTICAL MOUSE
+093a,2530,1.00,PixArt,Gaming Mouse
+093a,2533,1.00,,Gaming Mouse
+0951,1603,2.00,Kingston,DataTraveler 2.00000045186
+0951,1624,1.00,Kingston,DataTraveler G2 
+0951,1642,1.00,Kingston,DT 101 G2
+0951,1663,1.00,Kingston,DT CNY 12 Dragon
+0951,1665,2.00,Kingston,DataTraveler 2.0
+0951,1666,0.01,Kingston,DataTraveler 3.0
+096e,0002,1.5a,,ePass1000
+096e,0006,1.09,OEM,HID Dongle
+096e,0303,1.02,FT,USB TOKEN 3000GM
+096e,0309,1.07,FT,USB TOKEN 3000GM
+096e,0401,2.02,FS,USB TOKEN 3000
+096e,0702,0.04,FS,HID TOKEN 3003
+096e,0713,3.04,FS,FT Interpass3000
+096e,0716,1.03,FS,FT Interpass3000
+09da,000a,0.14,A4Tech,USB Mouse
+09da,2267,1.05,A4Tech,USB Keyboard
+09da,2268,1.02,SONiX,USB Keyboard
+09da,2403,1.26,COMPANY,2.4G Device
+09da,90a0,0.01,A4TECH,USB Device
+09da,c10a,0.02,A4Tech,USB Mouse
+09da,fabc,9.01,COMPANY,USB Device
+0a12,0001,8.91,,CSR8510 A10
+0a5f,0053,0.01,Zebra ;,888-TT
+0a5f,00c1,7.18,Zebra Technologies,ZTC GT800 (EPL)
+0a5f,00c9,7.17,Zebra Technologies,ZTC GK888t (EPL)
+0a5f,00df,1.00,Zebra Technologies,ZTC ZT210-203dpi ZPL
+0a5f,00ec,7.22,Zebra Technologies,ZTC 105SLPlus-300dpi ZPL
+0a5f,00fa,1.00,Zebra Technologies,ZTC ZT410-300dpi ZPL
+0a5f,0168,1.00,Zebra Technologies,ZTC ZD888-203dpi ZPL
+0a81,0101,1.10,CHESEN,USB Keyboard
+0aaf,106b,0.00,Deli,DL-820T
+0ac8,3370,1.00,Deasy Corp.,Jetion Digital ScannerJT-DBG003
+0ac8,3420,1.00,Vimicro Corp.,Venus USB2.0 Camera
+0ac8,3500,0.07,A4 TECH,Full HD 1080P PC Camera
+0b05,181b,4.01,ASUS,ROG SICA
+0b0b,106e,3.04,Datamax,H4310
+0bc2,231a,7.08,Seagate,Expansion
+0bc2,ab24,1.00,Seagate,BUP Slim BK
+0bda,0811,2.00,Realtek ,802.11ac WLAN Adapter 
+0bda,58b0,0.05,Sunplus IT Co ,aoni Webcam
+0bda,8152,0.00,Realtek,USB 10/100 LAN
+0bda,b711,2.00,Realtek,802.11n WLAN Adapter
+0bda,f192,2.00,Realtek,802.11n  WLAN Adapter
+0c2e,0200,8.81,Honeywell Scanning and Mobility,Honeywell Scanning and Mobility Scanner
+0c2e,0204,8.99,Honeywell,Honeywell Scanning and Mobility Scanner
+0c2e,0206,5.09,Honeywell Scanning and Mobility,Honeywell Scanning and Mobility Scanner
+0c2e,0901,1.95,Honeywell Imaging & Mobility    ,1900
+0c2e,0a01,0.00,Honeywell Scanning & Mobility ,Voyager-1200
+0c2e,0b41,0.00,Honeywell Scanning & Mobility ,
+0c2e,0ea1,8.41,Honeywell Imaging & Mobility    ,1900hc
+0c2e,0fe1,0.49,Honeywell Imaging & Mobility    ,7120plus
+0c2e,fe10,0.25,Honeywell,Honeywell PC42t-203-FP
+0c45,0c00,1.00,Sonix Technology Co., Ltd.,USB 2.0 Camera
+0c45,6340,0.02,Etron Technology, Inc.,USB2.0 Camera
+0c45,6366,1.00,Sonix Technology Co., Ltd.,USB 2.0 Camera
+0c45,7047,1.07,SONiX,USB DEVICE
+0c45,760b,1.05,SONiX,USB Keyboard
+0d62,a100,3.01,Darfon,USB Optical Mouse
+0d8c,0126,1.00,C-Media Electronics Inc.,USB Audio Device
+0dd8,0c00,1.00,Generic,storage_device
+0dd8,173c,1.00,Netac,OnlyDisk
+0dd8,2004,0.75,Netac,OnlyDisk
+0dd8,2300,1.06,Netac,OnlyDisk
+0dd8,3200,1.00,Netac,OnlyDisk
+0dd8,3201,1.00,Netac,OnlyDisk
+0dd8,3700,2.00,Netac,OnlyDisk
+0e8d,1887,0.00,Hitachi-LG Data Storage Inc,Portable Super Multi Drive
+0e8d,2008,f.ff,MediaTek,dazen 6A
+0e8d,760c,0.01,MediaTek,802.11 n WLAN
+0e8f,0020,2.01,GASIA,PS2toUSB Adapter
+0e8f,0022,2.10,GASIA,USB KB V11
+0ea0,2213,1.00,        ,Android+Mac     
+0ed1,6981,1.00,aigo,Miniking Device
+0fe6,811e,1.01,,IEEE-1284 Controller
+101d,0003,1.00,Aisino  ,USB Flash Disk
+1058,0740,0.03,Western Digital,My Passport 0740
+1058,2620,0.18,Western Digital,Elements 2620
+1058,2621,0.26,Western Digital,Elements 2621
+1058,2627,0.08,Western Digital,My Passport 2627
+1083,1623,1.21,CANON   ,CANON   DR-7550C        
+10c4,8103,0.00,YSPRINGTECH,USB OPTICAL MOUSE
+10c4,8105,0.00,YSPRINGTECH,USB OPTICAL MOUSE
+10c4,ea60,1.00,Silicon Labs,CP2102 USB to UART Bridge Controller
+10c4,ff11,1.00,Gue℉Ā,Gu
+10e9,2208,1.00,Sonix Technology Co., Ltd.,USB 2.0 Camera
+1111,2222,1.00,VRV,USB Flash Disk
+1221,3234,0.00,USB2.0,Flash Disk
+1223,3e67,1.05,W,WirelessUSB
+125f,312b,a.00,ADATA,ADATA USB Flash Drive
+12d1,107e,2.99,HUAWEI,GLK-AL00
+12d1,3b40,0.09,Huawei Technologies Co., Ltd.,ST310-S1
+132b,20ec,1.00,,
+132b,235a,1.00,KONICA MINOLTA,bizhub 3000MF
+13ba,0018,0.01,,Barcode Reader 
+13fd,3940,4.03,e-elei,DVD-RW
+13fe,4200,1.00,        ,USB DISK 2.0
+13fe,6400,1.00,aigo,MiniKing
+1432,07dc,0.01,NISEC TCG-01,NISEC TCG-01
+148f,7601,0.00,,802.11 n WLAN
+148f,760b,0.00,MediaTek,802.11 n WLAN
+152d,0562,4.09,JMicron,JMS579
+152d,9561,1.05,JMicron,JMS56x Series
+1532,0016,1.00,Razer,Razer DeathAdder
+1532,001c,1.00,Razer ,Razer Abyssus
+1532,0042,2.00,Razer,Razer Abyssus
+1532,004f,2.00,Razer,Razer DeathAdder
+1532,006e,2.00,Razer,Razer DeathAdder Essential
+154b,0054,1.00,PNY Technologies,USB 2.0 FD
+154f,1000,0.60,,
+154f,1300,2.78,,BTP-L5252(U) 1
+1567,8902,1.00,USB Flash Disk,USB Product String123456
+15d9,0a4c,1.00,, USB OPTICAL MOUSE
+15d9,0a4e,1.00,, USB OPTICAL MOUSE
+15d9,0a4f,1.00,, USB OPTICAL MOUSE
+1609,3a04,0.00,Flash,USB Disk
+173d,0006,1.51,,
+174c,55aa,1.00,Ugreen,Ugreen Storage Device
+1780,0401,0.01,Tendyron,Tendyron Token
+17ef,3870,1.00,,
+17ef,3898,1.00,,
+17ef,4515,0.00,JMicron,Lenovo Portable HDD
+17ef,451d,1.00,Lenovo,Lenovo Portable HDD
+17ef,5406,1.00,Lenovo,LJ2200
+17ef,540a,1.00,Lenovo,LJ3600D
+17ef,540f,1.00,Lenovo,LJ2400
+17ef,5410,1.00,Lenovo,LJ2400L
+17ef,5412,1.00,Lenovo,LJ2650DN
+17ef,541d,1.00,Lenovo,LJ2405D
+17ef,541e,1.00,Lenovo,LJ2605D
+17ef,5430,1.00,Lenovo,LJ3303DN LJ3803DN Series
+17ef,5434,1.00,Lenovo,LJ2405
+17ef,5445,1.00,Lenovo,L100DW
+17ef,561a,1.00,Lenovo,M7405D
+17ef,561b,1.00,Lenovo,M7615DNA
+17ef,562a,1.00,Lenovo,M7216
+17ef,5637,1.00,Lenovo,M7400
+17ef,600e,1.00,PixArt,Lenovo USB Optical Mouse
+17ef,6018,1.40,Lenovo,Lenovo USB Keyboard
+17ef,6019,1.00,PixArt,Lenovo USB Optical Mouse
+17ef,6025,1.10,,ThinkPad USB Travel Mouse
+17ef,602d,0.40,,Lenovo Black Silk USB Keyboard
+17ef,602e,1.00,PixArt,USB Optical Mouse
+17ef,6039,1.70,,Lenovo Laser Wireless Mouse
+17ef,6050,0.09,,Lenovo Precision USB Mouse
+17ef,6054,0.10,,Lenovo Multi-function Mouse M300
+17ef,608c,1.07,Lenovo,Lenovo Calliope USB Keyboard
+17ef,608d,1.00,PixArt,lenovo USB Optical Mouse
+17ef,6098,1.10,Lenovo,Lenovo Wireless KB_Mouse KN100
+17ef,6099,1.14,LiteOn,Lenovo Traditional USB Keyboard
+17ef,60b1,1.02,Lenovo,Lenovo Wireless Mouse N3903
+17ef,60e0,1.00,Lenovo,Lenovo OpticalMouse
+17ef,730a,0.00,USB2.0 External,ThinkPad Ultraslim DVD
+17ef,730e,0.00,USB2.0 External,Lenovo   Ultraslim DVD
+1871,0142,0.0c,AVEO Technology Corp.,USB2.0 Camera
+18d1,4ee8,4.09,OPPO,SDM450-QRD _SN:B9B7D687
+18ec,3399,1.00,ARKMICRO,USB2.0 PC CAMERA
+18f8,0f97,1.00,,USB OPTICAL MOUSE 
+18f8,0f99,1.00,,USB OPTICAL MOUSE 
+1908,0226,1.11,,
+192f,0416,2.00,,USB Optical Mouse
+192f,0916,2.00,,
+1987,0922,2.00,ViKeyAPP,ViKeyAPP
+1a2c,0002,1.10,USB,USB Keykoard
+1a2c,0042,1.10,SEMICCHIP,Usb Mouse
+1a2c,0044,1.10,SIGMACHIP,Usb Mouse
+1a2c,0b2a,1.10,SEM,USB Keyboard
+1a2c,0c21,1.10,USB,USB Keyboard
+1a2c,0e24,1.10,SEM,USB Keyboard
+1a2c,2124,1.10,SEM,USB Keyboard
+1a2c,2d23,1.10,USB,USB Keyboard
+1a2c,2f2a,1.10,SEMICO,USB Keyboard
+1a2c,4224,1.10,SEM,USB Keyboard
+1a2c,4324,1.10,SEM,USB Keyboard
+1a2c,4c5e,1.10,SEMICO,USB Keyboard
+1a2c,4d7e,1.10,SEMICO,USB Keyboard
+1a2c,93f4,1.10,SEMICO  ,USB Gaming Keyboard 
+1a81,1004,2.40,G-Tech,Wireless Dongle
+1a81,1721,2.03,LOFREE,Maus 2.4G@LOFREE
+1a86,7523,2.63,,USB2.0-Serial
+1a86,7584,2.54,,USB2.0-Print 
+1a86,804b,5.43,,
+1a86,e041,0.00,,
+1b17,0209,1.00,Sonix Technology Co., Ltd.,USB 2.0 Camera
+1b17,020f,1.00,Sonix Technology Co., Ltd.,USB 2.0 Camera
+1b17,0508,1.00,Sonix Technology Co., Ltd.,USB 2.0 Camera
+1b17,0509,1.00,Sonix Technology Co., Ltd.,S1020B
+1b17,0512,1.00,Sonix Technology Co., Ltd.,USB 2.0 Camera
+1b17,0519,1.00,Sonix Technology Co., Ltd.,USB 2.0 Camera
+1b17,0524,1.00,Sonix Technology Co., Ltd.,USB 2.0 Camera
+1b17,05fb,1.00,Sonix Technology Co., Ltd.,USB 2.0 Camera
+1b17,1000,1.00,Sonix Technology Co., Ltd.,USB 2.0 Camera
+1b17,6684,1.00,Sonix Technology Co., Ltd.,USB CAM2
+1b1c,1b09,1.09,Corsair,Corsair K70R Gaming Keyboard
+1b1c,1b15,2.04,Corsair,Corsair STRAFE Gaming Keyboard
+1b55,0120,0.64,ZKTeco Inc.,Live20R
+1b71,0030,1.00,,USB TV TUNER
+1ba0,1109,1.00,Jolimark,USB Printer
+1ba0,111d,1.00,Jolimark,USBPrinter
+1ba0,1133,1.00,Jolimark,USBPrinter
+1bc0,1001,1.00,Senselock,Living
+1bc0,8013,1.01,놱ꦾ볋쮿﷊ꎱ꒻탖쓐,Elite-e 2.x
+1bc3,0003,1.00,START COMPUTER,USB PRINTER
+1bcf,0005,0.14,,USB Optical Mouse
+1bcf,0007,0.14,,USB Optical Mouse
+1bcf,0053,0.72,,
+1bcf,0501,1.10,MLK,RAPOO 3100
+1bcf,08a6,0.21, ,Gaming Mouse
+1bcf,2230,0.05,SHENZHEN AONI ELECTRONIC CO.,LTD,aoni webcam A30
+1c4f,0002,1.10,SIGMACHIP,USB Keyboard
+1c4f,0016,1.10,SIGMACHIP,USB Keyboard
+1c4f,0026,1.10,SIGMACHIP,USB Keyboard
+1c4f,0032,1.10,SIGMACHIP,Usb Mouse
+1c4f,0034,1.10,SIGMACHIP,Usb Mouse
+1c4f,0051,1.10,SIGMACHIP,Usb Mouse
+1c4f,0055,1.10,SIGMACHIP,USB Keyboard
+1c4f,0059,1.00,SIGMACHIP,USB Keyboard
+1c4f,0065,1.10,SIGMACHIP,Usb Mouse
+1c4f,0c07,1.10,SZH,USB Keyboard
+1c4f,0d09,1.10,USB,HCT Keyboard
+1c6b,a223,0.00,USB2.0 External,Mass Storage Device
+1d57,ffa4,1.10,,2.4G Receiver
+1d99,0001,1.01,,
+1e4e,0109,0.00,Sonix Technology Co., Ltd.,ZLPorCamera
+1ea7,0064,2.00,,2.4G Mouse
+1ea7,0066,2.00,,2.4G Mouse
+1ea8,c00d,1.00,ExcelSecu,USB Key
+1ea8,c10f,1.00,ExcelSecu,USB Key
+1eab,0003,1.00,HENEX,HENEX HC-1203
+1eab,1a03,1.00,Newland Auto-ID,NLS IOTC PRDs HID KBW
+1eab,2422,1.03,Newland Auto-ID,EIFFEL
+1eab,8003,1.00,NewLand,HidKeyBoard
+1eab,9310,1.00,Newland Computer,KeyPos SF
+1f75,0917,0.01,aigo,MiniKing USB Device
+1f75,0918,2.10,,STORAGE DEVICE
+1fed,c301,0.10,,
+1ff7,0001,4.13,Touch, Touch Device
+20d1,2010,1.00,DASCOM Co.,Ltd,DASCOM AR-500II Printer
+20d1,7008,1.00,HPRT,Q6
+2101,0201,1.00,ActionStar,
+216a,1102,0.00,SZSanJing,SZSanJing USB Headphone Set
+2188,0ae1,1.00,,USB OPTICAL MOUSE 
+22d9,2769,f.ff,MediaTek,OPPO A83
+22d9,2773,f.ff,MediaTek,OPPO
+22fb,1014,1.01,UltraSec,SMARTCARD READER
+232b,0820,1.00,Pantum,P2500 series
+232b,0e00,0.01,Pantum,M5100 Series
+232b,0ec8,1.00,Pantum,P3300DN series
+232b,1830,1.00,Pantum,P3000 Series
+2357,0135,2.00,Realtek,802.11n  WLAN Adapter
+23a4,020c,1.00,MingTech,Card Reader
+23a9,ef18,1.00,AI210,Mass Storage
+23d0,0b8f,0.65,                                ,4600
+23d0,0c80,3.27,Honeywell,HH400
+248a,8366,1.00,Telink,Wireless Receiver
+248a,8367,1.00,Telink,Wireless Receiver
+248a,ff0f,1.00,Telink,Wireless Receiver
+24ae,1100,1.10,RAPOO,Rapoo 2.4G Wireless Device
+24ae,1813,1.10,RAPOO,Rapoo 2.4G Wireless Device
+24ae,2000,0.01,RAPOO,RAPOO 2.4G Wireless Device
+24ae,2003,0.01,RAPOO,RAPOO 5G Wireless Device
+24ae,2010,1.10,RAPOO,Rapoo 2.4G Wireless Device
+24ae,2013,1.10,RAPOO,Rapoo 2.4G Wireless Device
+24ae,4035,0.26,SINO WEALTH,Rapoo Gaming Keyboard
+2537,1066,1.00,SSK,SHE088(NS1066 2.45)
+2541,cd02,0.01,HaiyiUSBkey,HaiyiUSBkey
+258a,0001,1.00,SINO WEALTH,USB KEYBOARD
+258a,0006,1.00,SINO WEALTH,USB KEYBOARD
+258a,002a,2.62,SINO WEALTH,Gaming KB 
+25a7,fa23,2.40,Compx,2.4G Receiver
+25a7,fa61,6.11,Compx,2.4G Receiver
+261a,000c,1.00,SDSES00001Ver001.11,SS728M05 Card Reader
+261a,002c,1.00,Totinfo,TOT2D PRODUCT HID KBW
+26e3,af02,2.00,ChangHong Air Mouse,2.4G Wireless Air Mouse
+26f1,5669,1.00,LANDI,HIDKeyBoard
+2717,4106,0.00,MediaTek,MI WLAN Adapter
+2717,5018,6.21,MI,MI Wireless Mouse
+2717,ff40,2.23,Xiaomi,Redmi 9A
+273a,0511,1.00,Singular,HID Card Reader
+275d,0ba6,1.00,,USB OPTICAL MOUSE 
+279e,024e,4.07,2.4G wireless USB Device,2.4G wireless USB Device
+27dd,0101,1.00,Minde Electronics,Mindeo Barcode Scanner
+2867,1112,1.00,Dascom Co.,Ltd,USB Printer
+2867,150a,1.00,Dascom Co.,Ltd,USB Printer
+2867,1521,1.00,DASCOM, DL-218
+2867,1522,1.00,DASCOM, DL-520
+28a0,1185,1.00,,USB OPTICAL MOUSE 
+28e9,0283,2.00,SHANG CHEN DIAN ZI,SHANG CHEN HID
+2955,1001,0.00,MediaTek,802.11 n WLAN
+2a45,2008,4.09,Meizu,16th
+2a5c,6119,1.00,NX-730-PRINTER,NX-730-PRINTER
+2a70,f003,4.04,OnePlus,OnePlus
+2a7a,6a18,0.01,CASUE,CASUE USB Keyboard
+2a7a,6a27,0.01,,CASUE USB KB
+2a7a,8a47,0.01,,CASUE USB KB
+2a7a,938f,0.01,,CASUE USB KB
+2a7a,958f,0.01,,CASUE USB KB
+2a7a,9a18,0.01,CASUE,CASUE USB Keyboard
+2b16,6689,1.25,Doccamera,Doccamera
+2b16,bcd2,0.00,doccamera1,doccamera1
+2b19,0200,1.00,Sonix Technology Co., Ltd.,USB 2.0 Camera
+2d95,6002,4.04,vivo,vivo Z1
+3044,4eec,1.07,MIIIW,MIIIW USB Receiver
+3044,eac6,1.00,MIIIW,MIIIW USB Receiver
+30de,6544,0.01,KIOXIA,TransMemory
+30fa,0300,1.00,,USB OPTICAL MOUSE 
+30fa,0301,1.00,,USB OPTICAL MOUSE 
+30fa,1130,1.00,,USB GAMING MOUSE 
+31c0,1234,1.89,Generic ,Mass Storage    
+325d,6300,1.00,        ,USB DISK 2.0
+3689,8762,2.00,USBKey,USBKey
+3c4d,a3e8,1.00,Sonix Technology Co., Ltd.,USB 2.0 Camera
+3c4d,a4b0,1.00,Sonix Technology Co., Ltd.,USB 2.0 Camera
+413c,2003,3.06,Dell,Dell USB Keyboard
+413c,2105,3.52,Dell,Dell USB Keyboard
+413c,2106,1.01,DELL,Dell QuietKey Keyboard
+413c,2107,5.02,Dell,Dell USB Entry Keyboard
+413c,2111,1.07,DELL,Dell USB Wired Entry Keyboard
+413c,2113,1.08,,Dell KB216 Wired Keyboard
+413c,301a,1.00,PixArt,Dell MS116 USB Optical Mouse
+413c,301d,0.12,Dell,Dell Universal Receiver
+413c,5312,1.00,Dell,Dell 1130 Laser Printer
+413c,8505,1.23,Dell,Dell Universal Receiver
+413d,2107,0.00,,
+4348,55e0,1.00,,
+465a,0700,1.30,ZHONG FU,ZF USB KEY
+5448,0001,3.00,USBKey,USBKey
+5448,0004,3.00,USBKey,USBKey
+5448,0604,3.00,AisinoChip,USB Flash Disk
+5678,1234,1.00,USB.2.0 ,DTI             
+6588,1514,0.00,,
+6615,0081,0.00,Beijing IRTOUCHSYSTEMS Co.,LtD,USB TouchScreen
+6868,0500,1.00,Printer,Printer
+69a7,9803,0.01,Smart,Smart Wireless Device
+8001,bc01,1.00,Sonix Technology Co., Ltd.,USB 2.0 Camera
+8644,8005,1.00,General                       ,USB Flash Disk                
+8644,800b,1.00,General                       ,USB Flash Disk                
+8644,800f,1.00,General,USB Flash Disk
+8888,0e1f,2.00,Usb211,Usb211
+abcd,1234,1.00,General ,UDisk           
+c0f4,01b0,1.10,USB,usb keyboard
+c0f4,01e0,1.10,USB,usb keyboard
+c0f4,02e0,1.10,USB,usb keyboard
+c0f4,03a0,1.10,SZH,USB Keyboard
+c0f4,04e0,1.10,SZH,usb keyboard
+c0f4,05e0,1.10,SZH,usb keyboard
+c0f4,06d0,1.10,Usb KeyBoard,Usb KeyBoard
+c0f4,06e0,1.10,USB,usb keyboard
+cbb0,0b00,0.00,,
+d23c,0001,1.00,Starmach Tech.,USB PRINTER
+e0b6,0811,1.00,AC209N,AC309N 
+e5b7,0811,1.00,ZhuHai JieLi Technology,JieLi BR17
+e851,1000,2.33,Manufacturer,Barcode Reader
+ffff,0100,1.00,Minde Electronics,Mindeo Barcode Scanner
+ffff,5678,2.00,USB,Disk 2.0
