@@ -16,7 +16,8 @@
  */
 static bool IsExist(string path)
 {
-	return (_access(path.c_str(), 0) != -1);
+#define F_OK 0
+	return (_access(path.c_str(), F_OK) != -1);
 }
 
 /*
@@ -34,17 +35,10 @@ static bool IsExist(string path)
 */
 int unzip_file()
 {
-	//HZIP hz = OpenZip(_T(R"(.\data\zip\pictures.zip)"), 0);
-
-	// 当这里有中文备注时
-	const string DATA_FILE_PATH = R"(.\data\zip\图片.zip)"; // 数据压缩包
-	const string target_dir = R"(.\data\zip\pictures\)";
-
-	printf("%d\n", IsExist(DATA_FILE_PATH));
-	return 0;
-
+	const string DATA_FILE_PATH = R"(.\data\zip\pictures.zip)"; // 数据压缩包
+	const string TARGET_DIR = R"(.\data\zip\pictures\)";
 	HZIP hz = OpenZip(DATA_FILE_PATH.c_str(), 0);
-	ZRESULT zret = SetUnzipBaseDir(hz, target_dir.c_str());	// 指定文件夹
+	ZRESULT zret = SetUnzipBaseDir(hz, TARGET_DIR.c_str());		// 指定文件夹
 	if (zret != ZR_OK) {
 		printf("SetUnzipBaseDir failed, %x.\n", zret);
 		return -1;

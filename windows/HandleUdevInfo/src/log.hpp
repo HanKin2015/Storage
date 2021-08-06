@@ -68,7 +68,7 @@ static void DbgPrintLine(const int type, const char *file_path, const char *func
 	_vsnprintf(buf, MAX_LOGBUF_LEN * 2 - 1, format, ap);	// 将后部分动态日志写入line中
 	va_end(ap);
 	// 6.写入日志文件
-    FILE *fp = fopen(LOG_FILE_PATH, "a");
+	FILE *fp = fopen(LOG_FILE_PATH, "a");
     if (!fp) {
         fprintf(stderr, "open log file<%s> failed, errno %s(%d)\n", LOG_FILE_PATH, strerror(errno), errno);
         return ;

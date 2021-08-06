@@ -36,6 +36,9 @@
     <ClInclude Include="src\unit_test.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\library\cmdline.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\handle_udev_info.cpp">

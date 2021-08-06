@@ -148,6 +148,7 @@
     <ClInclude Include="src\common.hpp" />
     <ClInclude Include="src\handle_udev_info.hpp" />
     <ClInclude Include="src\json_interface.hpp" />
+    <ClInclude Include="src\library\cmdline.h" />
     <ClInclude Include="src\log.hpp" />
     <ClInclude Include="src\trie.hpp" />
     <ClInclude Include="src\unit_test.hpp" />

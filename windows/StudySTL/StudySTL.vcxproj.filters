@@ -53,5 +53,11 @@
     <ClInclude Include="study_zip.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="study_cmdline.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="study_fopen.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
