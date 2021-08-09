@@ -24,6 +24,9 @@
 #include "unit_test.hpp"
 #include "cmdline.h"
 
+/*
+* todo: 参数配置解析
+*/
 int config_cmdline(int argc, char* argv[])
 {
 	cmdline::parser a;
@@ -42,10 +45,10 @@ int main(int argc, char* argv[])
 {
     clock_t start_time = clock();
 
-	// 参数配置解析
+	// todo: 参数配置解析
 	//config_cmdline(argc, argv);
 
-    // 单元测试
+    // todo: 单元测试
     //unit_test(argc, argv);
 
     // 处理数据

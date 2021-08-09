@@ -1,0 +1,6 @@
+2021-08-07 11:18:43 [7040/20928] [INFO] [handle_udev_info.cpp:handle_udev_main] zip file's relative path size [365].
+2021-08-07 11:18:45 [7040/20928] [INFO] [handle_udev_info.cpp:handle_udev_main] untreated json data size [15613].
+2021-08-07 11:18:45 [7040/20928] [INFO] [handle_udev_info.cpp:handle_udev_main] treated json data size [672].
+2021-08-07 11:18:45 [7040/20928] [INFO] [handle_udev_info.cpp:SaveData2Csv] start to save data to local csv file [.\data\result.csv].
+2021-08-07 11:18:47 [7040/20928] [INFO] [main.cpp:main] exec spent time 6.372000 s.
+
