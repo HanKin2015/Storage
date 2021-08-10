@@ -46,6 +46,31 @@ void study_const_cast()
     return;
 }
 
+/*
+* 3.reinterpret_cast关键字
+*/
+class A {
+public:
+    A(int a = 0, int b = 0) : m_a(a), m_b(b) {}
+private:
+    int m_a;
+    int m_b;
+};
+void study_reinterpret_cast()
+{
+    //将 char* 转换为 float*
+    char str[] = "http://c.biancheng.net";
+    float* p1 = reinterpret_cast<float*>(str);
+    cout << *p1 << endl;
+    //将 int 转换为 int*
+    int* p = reinterpret_cast<int*>(100);
+    //将 A* 转换为 int*
+    p = reinterpret_cast<int*>(new A(25, 96));
+    cout << *p << endl;
+
+    return 0;
+}
+
 int test_study_xxxx_cast()
 {
     sdudy_static_cast();
