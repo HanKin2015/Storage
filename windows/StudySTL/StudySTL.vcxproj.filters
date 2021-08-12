@@ -59,5 +59,8 @@
     <ClInclude Include="study_fopen.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="study_container.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

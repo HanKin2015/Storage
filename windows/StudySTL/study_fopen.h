@@ -1,3 +1,11 @@
+/*
+严重性	代码	说明	项目	文件	行	禁止显示状态
+错误	C4996	'access': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _access. See online help for details.	StudySTL	D:\Github\Storage\windows\StudySTL\study_fopen.h	71
+
+选择“项目->XXX属性”，打开属性页。之后在左侧的树中选择“配置属性->C/C++->预处理器”
+最后，在弹出的预处理器定义的对话框中，输入“_CRT_NONSTDC_NO_DEPRECATE”和“_CRT_SECURE_NO_WARNINGS”，分别表示使用非标准函数和不弹出警告，最后点击“确定”按键
+*/
+
 #pragma once
 
 #include "common.h"
