@@ -67,13 +67,49 @@ void study_reinterpret_cast()
     //将 A* 转换为 int*
     p = reinterpret_cast<int*>(new A(25, 96));
     cout << *p << endl;
-
-    return 0;
+    return;
 }
 
+/*
+* 4.dynamic_cast关键字
+*/
+class Base {
+public:
+    Base(int a = 0) : m_a(a) { }
+    int get_a() const { return m_a; }
+    virtual void func() const { }
+protected:
+    int m_a;
+};
+class Derived : public Base {
+public:
+    Derived(int a = 0, int b = 0) : Base(a), m_b(b) { }
+    int get_b() const { return m_b; }
+private:
+    int m_b;
+};
+void study_dynamic_cast()
+{
+    //情况①
+    Derived* pd1 = new Derived(35, 78);
+    Base* pb1 = dynamic_cast<Derived*>(pd1);
+    cout << "pd1 = " << pd1 << ", pb1 = " << pb1 << endl;
+    cout << pb1->get_a() << endl;
+    pb1->func();
+    //情况②
+    int n = 100;
+    Derived* pd2 = reinterpret_cast<Derived*>(&n);
+    Base* pb2 = dynamic_cast<Base*>(pd2);
+    cout << "pd2 = " << pd2 << ", pb2 = " << pb2 << endl;
+    cout << pb2->get_a() << endl;   //输出一个垃圾值
+    //pb2->func();                    //内存错误
+    return;
+}
 int test_study_xxxx_cast()
 {
     sdudy_static_cast();
     study_const_cast();
+    study_reinterpret_cast();
+    study_dynamic_cast();
 	return 0;
 }
