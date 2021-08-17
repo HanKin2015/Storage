@@ -14,3 +14,13 @@ go install test_hello
 
 export GOPATH="$OLD_GO_PATH"
 export GOBIN="$OLD_GO_BIN"
+
+
+#注：bashrc 对系统所有用户有效，profile 对当前用户有效。
+#有三个变量 GOPATH、PATH、GOROOT：
+#GOROOT 就是 go 的安装路径；
+#GOPATH 就是go的工作目录；
+#PATH是go安装路径下的bin目录。
+export GOROOT="/usr/local/go"
+export GOPATH="/go"
+export PATH=$PATH:/usr/local/go/bin
