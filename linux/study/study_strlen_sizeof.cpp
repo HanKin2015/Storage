@@ -71,6 +71,32 @@ static void study_sizeof()
 }
 
 /*
+有趣的测试说明求长度还是优先选择strlen
+sizeof会计算\0长度
+
+len = 7
+s1 = 123045 7 6
+s2 = 123045 10 6
+s3 = 123045 10 6
+*/
+static void test()
+{
+	char s1[] = "123045";
+    int len = sizeof(s1);
+    char s2[10] = {0}, s3[10] = {0};
+    memset(s2, 0, sizeof(s2));
+    memset(s3, 0, sizeof(s3));
+
+    strncpy(s2, s1, 10);
+    memcpy(s3, s1, len);
+    cout << "len = " << len << endl;
+    cout << "s1 = " << s1 << ' ' << sizeof(s1) << ' ' << strlen(s1) << endl;
+    cout << "s2 = " << s2 << ' ' << sizeof(s2) << ' ' << strlen(s2) << endl;
+    cout << "s3 = " << s3 << ' ' << sizeof(s3) << ' ' << strlen(s3) << endl;
+	return;
+}
+
+/*
 1.strlen函数只能用于const char *类型或char数组，用于求字符串长度
 2.sizeof用于数据类型，结果一定是(2的指数*数组大小)，常用于数组的初始化，求数组或结构体的类型占用大小
 */
@@ -79,5 +105,6 @@ int main()
     array_size();
     study_strlen_sizeof();
     study_sizeof();
+	test();
     return 0;
 }
