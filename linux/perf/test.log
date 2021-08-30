@@ -1,0 +1,54 @@
+==17789== Memcheck, a memory error detector
+==17789== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==17789== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==17789== Command: ./a.out
+==17789== Parent PID: 12567
+==17789== 
+==17789== 
+==17789== HEAP SUMMARY:
+==17789==     in use at exit: 37,664 bytes in 2,011 blocks
+==17789==   total heap usage: 2,012 allocs, 1 frees, 38,688 bytes allocated
+==17789== 
+==17789== 20 bytes in 5 blocks are still reachable in loss record 1 of 7
+==17789==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==17789==    by 0x400F96: main (thread_pool.c:191)
+==17789== 
+==17789== 104 bytes in 1 blocks are still reachable in loss record 2 of 7
+==17789==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==17789==    by 0x400F27: main (thread_pool.c:180)
+==17789== 
+==17789== 160 bytes in 5 blocks are still reachable in loss record 3 of 7
+==17789==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==17789==    by 0x400F7D: main (thread_pool.c:189)
+==17789== 
+==17789== 200 bytes in 5 blocks are still reachable in loss record 4 of 7
+==17789==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==17789==    by 0x400CF9: thread_pool_create(MANAGER*, int) (thread_pool.c:112)
+==17789==    by 0x400F3C: main (thread_pool.c:181)
+==17789== 
+==17789== 1,360 bytes in 5 blocks are possibly lost in loss record 5 of 7
+==17789==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==17789==    by 0x40138E4: allocate_dtv (dl-tls.c:322)
+==17789==    by 0x40138E4: _dl_allocate_tls (dl-tls.c:539)
+==17789==    by 0x4E4226E: allocate_stack (allocatestack.c:588)
+==17789==    by 0x4E4226E: pthread_create@@GLIBC_2.2.5 (pthread_create.c:539)
+==17789==    by 0x400D5A: thread_pool_create(MANAGER*, int) (thread_pool.c:121)
+==17789==    by 0x400F3C: main (thread_pool.c:181)
+==17789== 
+==17789== 3,980 bytes in 995 blocks are indirectly lost in loss record 6 of 7
+==17789==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==17789==    by 0x400F96: main (thread_pool.c:191)
+==17789== 
+==17789== 35,820 (31,840 direct, 3,980 indirect) bytes in 995 blocks are definitely lost in loss record 7 of 7
+==17789==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==17789==    by 0x400F7D: main (thread_pool.c:189)
+==17789== 
+==17789== LEAK SUMMARY:
+==17789==    definitely lost: 31,840 bytes in 995 blocks
+==17789==    indirectly lost: 3,980 bytes in 995 blocks
+==17789==      possibly lost: 1,360 bytes in 5 blocks
+==17789==    still reachable: 484 bytes in 16 blocks
+==17789==         suppressed: 0 bytes in 0 blocks
+==17789== 
+==17789== For counts of detected and suppressed errors, rerun with: -v
+==17789== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-"""
+'''
 Created on Tue Sep  1 19:36:49 2020
 
 @author: hankin
 @description:
     copy tool for ftp
-"""
+'''
 import win32api
 import win32con
 from tkinter import filedialog, messagebox  # 这两个需要单独导入
@@ -20,12 +20,29 @@ from icon import icon_img
 import md5
 import logging
 
+# 工作目录
+work_path = 'D:/copy_tool/'
+
 # 中转文件名称
-temp_file_name = "msg_between_extranet_and_intranet.txt"
+temp_file_name = 'transfer_msg.txt'
+
 # 云端指定中转站文件夹路径
-remote_dir_path = "/VDI/hj/temp/"
+remote_dir_path = '/VDI/hj/temp/'
+
 # 本地临时文件夹路径
-local_dir_path = "D:/Downloads/"
+local_dir_path = 'D:/Downloads/'
+
+# ftp服务器ip地址
+ftp_ip = '199.200.5.88'
+
+# ftp服务器用户名
+ftp_username = 'test'
+
+# ftp服务器密码
+ftp_password = 'test'
+
+# 软件更新日志路径
+update_log_path = 'D:/copy_tool/update_log.log'
 
 if not os.path.exists(local_dir_path):
     os.makedirs(local_dir_path)
@@ -37,28 +54,24 @@ logging.basicConfig(level=logging.INFO,
                     filemode='a')
 
 class MyFTP():
-    host_ip = "199.200.5.88"
-    user_name = "test"
-    password = "test"
-
     def __init__(self):
         logging.info('---ftp init---')
-        self._ftp_connect_()
+        #self.ftp_connect()
 
     def clear_dir(self, dir_path):
         dir_res_details = []
         try:
             self.ftp.cwd(dir_path)
         except Exception as err:
-            logging.error("进入ftp目录失败, error={}".format(str(err)))
+            logging.error('进入ftp目录失败, error={}'.format(str(err)))
         self.ftp.dir('.', dir_res_details.append)  # 对当前目录进行dir()，将结果放入列表
         for elem in dir_res_details:
             print('elem = {}'.format(elem))
             if '<DIR>' in elem:
-                dir_name = elem.split(" ")[-1]
-                logging.info("开始删除{}文件夹".format(dir_name))
+                dir_name = elem.split(' ')[-1]
+                logging.info('开始删除{}文件夹'.format(dir_name))
                 
-                self.clear_dir(self.ftp.pwd() + "/" + dir_name)
+                self.clear_dir(self.ftp.pwd() + '/' + dir_name)
                 self.ftp.cwd('..')
                 if dir_path[-1] == '/':
                     dir_path = dir_path[:-1]
@@ -68,23 +81,23 @@ class MyFTP():
                 except ftplib.error_perm as err:
                     logging.error(err)
             else:
-                file_name = elem.split(" ")[-1]
-                logging.info("删除FTP目录{}下存在的文件:{}".format(dir_path, file_name))
+                file_name = elem.split(' ')[-1]
+                logging.info('删除FTP目录{}下存在的文件:{}'.format(dir_path, file_name))
                 self.ftp.delete(file_name)
 
-    def _ftp_connect_(self):
-        """建立ftp连接
-            """
+    def ftp_connect(self):
+        '''建立ftp连接
+            '''
 
         logging.info('start ftp connect')
         self.ftp = ftplib.FTP()
         # ftp.set_debuglevel(2)
-        self.ftp.connect(self.host_ip, 21)
-        self.ftp.login(self.user_name, self.password)
+        self.ftp.connect(ftp_ip, 21)
+        self.ftp.login(ftp_username, ftp_password)
         self.ftp.encoding = 'gbk'
 
     def download_file(self, local_file_path, remote_file_path):
-        """从ftp下载文件
+        '''从ftp下载文件
             Parameters
         ----------
         local_path : str
@@ -96,7 +109,7 @@ class MyFTP():
         -------
         bool
             成功返回True,失败False
-            """
+            '''
 
         logging.info('正在下载文件{}到{}'.format(remote_file_path, local_file_path))
         bufsize = 1024
@@ -104,7 +117,7 @@ class MyFTP():
         try:
             self.ftp.retrbinary('RETR ' + remote_file_path, fp.write, bufsize)
         except Exception as err:
-            logging.warn(err)
+            logging.warning(err)
             self._ftp_connect_()
             self.ftp.retrbinary('RETR ' + remote_file_path, fp.write, bufsize)
         self.ftp.set_debuglevel(0)
@@ -114,7 +127,7 @@ class MyFTP():
         try:
             self.ftp.cwd(remote_dir_path)
         except Exception as err:
-            logging.warn(err)
+            logging.warning(err)
             self._ftp_connect_()
             self.ftp.cwd(remote_dir_path)
         files = self.ftp.nlst()
@@ -133,7 +146,7 @@ class MyFTP():
                 self.ftp.upload_file(local_file_path, remote_file_path)
 
     def upload_file(self, local_file_path, remote_file_path):
-        """从本地上传文件到ftp
+        '''从本地上传文件到ftp
             Parameters
         ----------
         local_path : str
@@ -145,7 +158,7 @@ class MyFTP():
         -------
         bool
             成功返回True,失败False
-            """
+            '''
 
         logging.info('正在上传文件{}到{}'.format(remote_file_path, local_file_path))
         bufsize = 1024
@@ -153,18 +166,18 @@ class MyFTP():
         try:
             self.ftp.storbinary('STOR ' + remote_file_path, fp, bufsize)
         except Exception as err:
-            logging.warn(err)
+            logging.warning(err)
             self._ftp_connect_()
             self.ftp.storbinary('STOR ' + remote_file_path, fp, bufsize)
         self.ftp.set_debuglevel(0)
         fp.close()
 
     def ftp_quit(self):
-        logging.info("---ftp quit---")
+        logging.info('---ftp quit---')
         try:
             self.ftp.quit()
         except Exception as err:
-            logging.warn(err)
+            logging.warning(err)
 
 class CopyTool(tkinter.Tk):
     '''主窗口ui类
@@ -184,7 +197,7 @@ class CopyTool(tkinter.Tk):
         self._create_right_popup_menu()
 
     def _generate_icon_(self):
-        tmp = open("copy_tool.ico", "wb+")
+        tmp = open('copy_tool.ico', 'wb+')
         tmp.write(base64.b64decode(icon_img))
         tmp.close()
 
@@ -192,15 +205,15 @@ class CopyTool(tkinter.Tk):
         '''设置初始化窗口的属性
         '''
 
-        self.title("CopyTool")  # 窗口名称
+        self.title('CopyTool')  # 窗口名称
         self.resizable(False, False)
         # self.update()
         scn_width, scn_height = self.maxsize()  # 获得程序运行机器的分辨率（屏幕的长和宽）
         wm_val = '750x450+{}+{}'.format((scn_width - 750) //
                                         2, (scn_height - 450) // 2)
         self.geometry(wm_val)  # 将窗口设置在屏幕的中间
-        self.iconbitmap("copy_tool.ico")  # 加载一下窗口的左上方显示的图片
-        os.remove("copy_tool.ico")
+        self.iconbitmap('copy_tool.ico')  # 加载一下窗口的左上方显示的图片
+        os.remove('copy_tool.ico')
         self.protocol('WM_DELETE_WINDOW', self.exit_copy_tool)  # 设置窗口关闭提醒
 
     def _create_menu_bar_(self):
@@ -225,7 +238,7 @@ class CopyTool(tkinter.Tk):
         # FTP菜单
         ftp_menu = tkinter.Menu(menu_bar, tearoff=0)
         ftp_menu.add_command(
-            label='登录FTP服务器', accelerator='Ctrl+U', command=self.upload_file)
+            label='设置FTP服务器', accelerator='Ctrl+F', command=self.set_ftp)
         ftp_menu.add_separator()  # 设置分割线
         ftp_menu.add_command(
             label='从本地上传', accelerator='Ctrl+U', command=self.upload_file)
@@ -291,34 +304,43 @@ class CopyTool(tkinter.Tk):
         about_menu.add_command(label='更新日志', command=lambda: self.show_messagebox('更新日志'))  # 这里暂时未设置快捷键
         menu_bar.add_cascade(label='关于', menu=about_menu)
         # 注意需要把帮助文档绑定为全局事件
-        self.bind_all('<KeyPress-F1>', lambda e: self.show_messagebox("帮助"))
+        self.bind_all('<KeyPress-F1>', lambda e: self.show_messagebox('帮助'))
 
         self['menu'] = menu_bar
+        
+    def set_ftp(self):
+        set_ftp_window = tkinter.Toplevel(self)
+        set_ftp_window.title('设置FTP服务器')
+        print(self.screen_width, self.screen_height)
+        window_width = 800
+        window_hight = 600
+        wm_val = '{}x{}+{}+{}'.format(window_width, window_hight, (self.screen_width - window_width) //
+                                        4, (self.screen_height - window_hight) // 2)
+        set_ftp_window.geometry(wm_val)       # 将窗口设置在屏幕的中间
 
     def show_messagebox(self, type):
         if type == '帮助':
-            messagebox.showinfo("帮助", "这是帮助文档！\nby hankin", icon='question')
+            messagebox.showinfo('帮助', '这是帮助文档！\nby hankin', icon='question')
         elif type == '更新日志':
-            self.update_log_path = './update_log.log'
             try:
-                update_log = open(self.update_log_path, 'r', encoding='utf-8').read()
+                update_log = open(update_log_path, 'r', encoding='utf-8').read()
             except Exception as ex:
                 print('读取更新日志文件失败, error=', ex)
-            messagebox.showinfo("更新日志", update_log, icon='question')
+            messagebox.showinfo('更新日志', update_log, icon='question')
         elif type == '关于':
-            messagebox.showinfo("关于", "CopyTool_V1.0.1.0")
+            messagebox.showinfo('关于', 'CopyTool_V1.0.2.0')
 
     # 通过设置_update_line_num函数来实现主要的功能
     def _toggle_highlight(self):  # 高亮函数
         if self.is_highlight_line.get():  # 如果是选择高亮，进行下一步
-            self.content_text.tag_remove("active_line", 1.0, "end")  # 移除所有的标记
+            self.content_text.tag_remove('active_line', 1.0, 'end')  # 移除所有的标记
             self.content_text.tag_add(
-                "active_line", "insert linestart", "insert lineend+1c")
+                'active_line', 'insert linestart', 'insert lineend+1c')
             # 添加新标记
             self.content_text.after(
                 200, self._toggle_highlight)  # 递归，不断的检查是否高亮
         else:
-            self.content_text.tag_remove("active_line", 1.0, "end")  # 取消高亮
+            self.content_text.tag_remove('active_line', 1.0, 'end')  # 取消高亮
 
     def change_theme(self):
         selected_theme = self.theme_choice.get()  # 选取设定的主体颜色
@@ -328,8 +350,8 @@ class CopyTool(tkinter.Tk):
 
     def _update_line_num_(self):
         if self.is_show_line_num.get():  # 如果是选择了显示行号，进行下面的内容
-            row, col = self.content_text.index("end").split('.')  # 主要是获取行数
-            line_num_content = "\n".join(
+            row, col = self.content_text.index('end').split('.')  # 主要是获取行数
+            line_num_content = '\n'.join(
                 [str(i) for i in range(1, int(row))])  # 获取文本行数据
             self.line_number_bar.config(state='normal')  # 将文本栏状态激活
             self.line_number_bar.delete('1.0', 'end')  # 删除原有的行号数据
@@ -355,9 +377,9 @@ class CopyTool(tkinter.Tk):
         self.input_content.pack(
             side=tkinter.LEFT, expand=True, fill=tkinter.X, padx=5, pady=5)
 
-        # self.input_content.bind(sequence="<Button-1><ButtonRelease-1>", func=mourse_double_clicked)  #单击鼠标左键
+        # self.input_content.bind(sequence='<Button-1><ButtonRelease-1>', func=mourse_double_clicked)  #单击鼠标左键
         self.input_content.bind(
-            sequence="<Double-Button-1><ButtonRelease-1>", func=self.mourse_double_clicked)  # 双击鼠标左键
+            sequence='<Double-Button-1><ButtonRelease-1>', func=self.mourse_double_clicked)  # 双击鼠标左键
 
         upload_btn = tkinter.Button(fm_up, text='send', width=10, height=1,
                                     command=lambda: self.upload_btn_cliecked(self.content_text), font=ft, compound='center')
@@ -386,7 +408,7 @@ class CopyTool(tkinter.Tk):
         self.content_text.bind(
             '<Any-KeyPress>', lambda e: self._update_line_num_())
         self.content_text.tag_configure('active_line', background='#EEEEE0')
-        self.bind_all('<KeyPress-F1>', lambda e: self.show_messagebox("帮助"))
+        self.bind_all('<KeyPress-F1>', lambda e: self.show_messagebox('帮助'))
 
         # 创建滚动条
         scroll_bar = Scrollbar(self.content_text)
@@ -412,48 +434,48 @@ class CopyTool(tkinter.Tk):
                                                        command=self._shortcut_action(it2))
         popup_menu.add_separator()
         popup_menu.add_command(
-            label='全选', command=lambda: self.handle_menu_action("全选"))
+            label='全选', command=lambda: self.handle_menu_action('全选'))
         self.content_text.bind('<Button-3>',
                                lambda event: popup_menu.tk_popup(event.x_root, event.y_root))
 
     def _shortcut_action(self, type):
         def handle():
-            if type == "new_file":
+            if type == 'new_file':
                 self.new_file()
-            elif type == "open_file":
+            elif type == 'open_file':
                 self.open_file()
-            elif type == "save":
+            elif type == 'save':
                 self.save()
-            if type == "cut":
-                self.handle_menu_action("剪切")
-            elif type == "copy":
-                self.handle_menu_action("复制")
-            elif type == "paste":
-                self.handle_menu_action("粘贴")
-            elif type == "undo":
-                self.handle_menu_action("撤销")
-            elif type == "redo":
-                self.handle_menu_action("恢复")
-            elif type == "find_text":
+            if type == 'cut':
+                self.handle_menu_action('剪切')
+            elif type == 'copy':
+                self.handle_menu_action('复制')
+            elif type == 'paste':
+                self.handle_menu_action('粘贴')
+            elif type == 'undo':
+                self.handle_menu_action('撤销')
+            elif type == 'redo':
+                self.handle_menu_action('恢复')
+            elif type == 'find_text':
                 self.find_text()
-            if type != "copy" and type != "save":
+            if type != 'copy' and type != 'save':
                 self._update_line_num_()
         return handle  # 最后返回的是就是handle对象
 
     def handle_menu_action(self, action_type):
-        if action_type == "撤销":
-            self.content_text.event_generate("<<Undo>>")
-        elif action_type == "恢复":
-            self.content_text.event_generate("<<Redo>>")
-        elif action_type == "剪切":
-            self.content_text.event_generate("<<Cut>>")
-        elif action_type == "复制":
-            self.content_text.event_generate("<<Copy>>")
-        elif action_type == "粘贴":
-            self.content_text.event_generate("<<Paste>>")
-        elif action_type == "全选":
-            self.content_text.event_generate("<<SelectAll>>")
-        if action_type != "复制":
+        if action_type == '撤销':
+            self.content_text.event_generate('<<Undo>>')
+        elif action_type == '恢复':
+            self.content_text.event_generate('<<Redo>>')
+        elif action_type == '剪切':
+            self.content_text.event_generate('<<Cut>>')
+        elif action_type == '复制':
+            self.content_text.event_generate('<<Copy>>')
+        elif action_type == '粘贴':
+            self.content_text.event_generate('<<Paste>>')
+        elif action_type == '全选':
+            self.content_text.event_generate('<<SelectAll>>')
+        if action_type != '复制':
             self._update_line_num_()
 
         return 'break'
@@ -503,7 +525,7 @@ class CopyTool(tkinter.Tk):
     def clear_remote_dir(self):
         # 做一下内容清理，防止磁盘爆满以及下载的不方便
         self.my_ftp.clear_dir(remote_dir_path)
-        win32api.MessageBox(0, "清除完毕", "清空文件夹提醒", win32con.MB_OK)
+        win32api.MessageBox(0, '清除完毕', '清空文件夹提醒', win32con.MB_OK)
 
     def send_assign_file(self):
         assign_file_path = self.input_content.get()
@@ -512,8 +534,8 @@ class CopyTool(tkinter.Tk):
             remote_file_path = remote_dir_path + assign_file_name
             self.my_ftp.upload_file(assign_file_path, remote_file_path)
             md5_value = md5.get_file_md5(assign_file_path)
-            win32api.MessageBox(0, "发送指定文件成功\nmd5:{}".format(
-                md5_value), "发送文件提醒", win32con.MB_OK)
+            win32api.MessageBox(0, '发送指定文件成功\nmd5:{}'.format(
+                md5_value), '发送文件提醒', win32con.MB_OK)
 
     def recv_assign_file(self):
         assign_file_path = self.input_content.get()
@@ -522,8 +544,8 @@ class CopyTool(tkinter.Tk):
             remote_file_path = remote_dir_path + assign_file_name
             self.my_ftp.download_file(assign_file_path, remote_file_path)
             md5_value = md5.get_file_md5(assign_file_path)
-            win32api.MessageBox(0, "下载指定文件替换成功\nmd5:{}".format(
-                md5_value), "替换文件提醒", win32con.MB_OK)
+            win32api.MessageBox(0, '下载指定文件替换成功\nmd5:{}'.format(
+                md5_value), '替换文件提醒', win32con.MB_OK)
 
     def upload_file(self):
         '''选择文件，并将文件上传到指定的文件夹中
@@ -542,8 +564,8 @@ class CopyTool(tkinter.Tk):
             file_name = input_file[file_name_index+1:]
             self.my_ftp.upload_file(input_file, remote_dir_path+file_name)
             md5_value = md5.get_file_md5(input_file)
-            win32api.MessageBox(0, "上传成功\nmd5:{}".format(
-                md5_value), "上传文件提醒", win32con.MB_OK)
+            win32api.MessageBox(0, '上传成功\nmd5:{}'.format(
+                md5_value), '上传文件提醒', win32con.MB_OK)
 
     def mourse_double_clicked(self, event):
         logging.info('mouse position is x={}, y={}'.format(event.x, event.y))
@@ -561,7 +583,7 @@ class CopyTool(tkinter.Tk):
 
         self.my_ftp.download_dir(local_dir_path, remote_dir_path)
         # self.my_ftp.download_file('D:/Downloads/crawl_bing.py', 'VDI/hj/temp/crawl_bing.py')
-        win32api.MessageBox(0, "全部下载完毕", "下载文件提醒", win32con.MB_OK)
+        win32api.MessageBox(0, '全部下载完毕', '下载文件提醒', win32con.MB_OK)
 
     def _write_to_file(self, file_name):
         try:
@@ -569,9 +591,9 @@ class CopyTool(tkinter.Tk):
             with open(file_name, 'w') as the_file:
                 the_file.write(content)  # 将数据写入到本地的文件中
             # 这一步就是显示当前窗口的标题不变，可以尝试注释一下这行代码
-            self.title("%s - EditorPlus" % os.path.basename(file_name))
+            self.title('%s - EditorPlus' % os.path.basename(file_name))
         except IOError:
-            messagebox.showwarning("保存", "保存失败！")  # 如果保存失败的话，会弹出消息对话框
+            messagebox.showwarning('保存', '保存失败！')  # 如果保存失败的话，会弹出消息对话框
 
     def upload_btn_cliecked(self, display_content):
         '''
@@ -588,7 +610,7 @@ class CopyTool(tkinter.Tk):
 
         self.my_ftp.upload_file(file_path, remote_dir_path+temp_file_name)
         # 提醒OK消息框
-        win32api.MessageBox(0, "发送成功", "发送内容提醒", win32con.MB_OK)
+        win32api.MessageBox(0, '发送成功', '发送内容提醒', win32con.MB_OK)
 
     def download_btn_cliecked(self, display_content):
         '''
@@ -626,10 +648,10 @@ class CopyTool(tkinter.Tk):
         logging.info(content)
 
         # 将内容弄到剪切板
-        display_content.event_generate("<<SelectAll>>")
-        display_content.event_generate("<<Copy>>")
+        display_content.event_generate('<<SelectAll>>')
+        display_content.event_generate('<<Copy>>')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app = CopyTool()  # 类的实例化
     app.mainloop()  # 程序运行
