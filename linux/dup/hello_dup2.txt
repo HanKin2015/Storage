@@ -1,0 +1,42 @@
+hello i_fd
+333
+2312
+]Β2312
+231231231
+hello i_fd
+dssssssssssssss
+sdsaaaaaaaaaaaaaaaaaa
+bbbbbbbbb
+c
+sss
+sdsaaaaaaaaaaaaaaaaaa
+ddddddd
+ee
+
+sss
+sdsaaaaaaaaaaaaaaaaaa
+hello i_fd
+i_dup2_fd = 1, i_fd= 3, STDOUT_FILENO = 1
+123123
+fjlksjdkf
+O“πιk
+kflds;kf;sd
+kf
+O“πιhello i_fd
+i_dup2_fd = 1, i_fd= 3, STDOUT_FILENO = 1
+123
+234
+1222
+23
+hello i_fd
+i_dup2_fd = 1, i_fd= 3, STDOUT_FILENO = 1
+123214213
+kfjhslkjfklsdjflks
+3123
+kldjfskjfklsjfksdjfksjf
+hello i_fd
+i_dup2_fd = 1, i_fd= 3, STDOUT_FILENO = 1
+jk
+fsd
+fd
+d
