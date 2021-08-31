@@ -311,13 +311,35 @@ class CopyTool(tkinter.Tk):
     def set_ftp(self):
         set_ftp_window = tkinter.Toplevel(self)
         set_ftp_window.title('设置FTP服务器')
-        print(self.screen_width, self.screen_height)
-        window_width = 800
-        window_hight = 600
-        wm_val = '{}x{}+{}+{}'.format(window_width, window_hight, (self.screen_width - window_width) //
-                                        4, (self.screen_height - window_hight) // 2)
+        window_width = 200
+        window_hight = 100
+        pos_x = self.winfo_rootx() + ((self.winfo_width() - window_width) // 2)
+        pos_y = self.winfo_rooty() - 20 + ((self.winfo_height() - window_hight) // 2)
+        wm_val = '{}x{}+{}+{}'.format(window_width, window_hight, pos_x, pos_y)
         set_ftp_window.geometry(wm_val)       # 将窗口设置在屏幕的中间
-
+        
+        ip_label = tkinter.Label(set_ftp_window, text='ip地址：', justify=tkinter.LEFT)
+        ip_entry = tkinter.Entry(set_ftp_window, text='')
+        user_label = tkinter.Label(set_ftp_window, text='用户名：', justify=tkinter.LEFT)
+        user_entry = tkinter.Entry(set_ftp_window, text='')
+        pwd_label = tkinter.Label(set_ftp_window, text='密   码：', justify=tkinter.LEFT)
+        pwd_entry = tkinter.Entry(set_ftp_window, text='')
+        ip_label.grid(row=0, column=0)
+        ip_entry.grid(row=0, column=1)
+        user_label.grid(row=1, column=0)
+        user_entry.grid(row=1, column=1)
+        pwd_label.grid(row=2, column=0, sticky=tkinter.W)
+        pwd_entry.grid(row=2, column=1, sticky=tkinter.W)
+        
+        qry_btn = tkinter.Button(set_ftp_window, text='确定', width=10, height=1,
+                                      command=lambda: self.qry_btn_clicked(), compound='right')
+        qry_btn.grid(row=3, column=1, sticky=tkinter.E)
+        
+        set_ftp_window.mainloop()
+        
+    def qry_btn_clicked(self):
+        print('dsd')
+    
     def show_messagebox(self, type):
         if type == '帮助':
             messagebox.showinfo('帮助', '这是帮助文档！\nby hankin', icon='question')
