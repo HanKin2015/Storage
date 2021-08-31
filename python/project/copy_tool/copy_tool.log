@@ -189,3 +189,114 @@ Mon, 30 Aug 2021 20:55:52 copy_tool.py[line:180] WARNING 'MyFTP' object has no a
 Mon, 30 Aug 2021 20:57:00 copy_tool.py[line:58] INFO ---ftp init---
 Mon, 30 Aug 2021 20:57:08 copy_tool.py[line:176] INFO ---ftp quit---
 Mon, 30 Aug 2021 20:57:08 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 09:40:01 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 09:48:33 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 09:49:57 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 09:50:50 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 09:50:50 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 09:50:52 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 09:51:42 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 09:52:18 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 09:52:18 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 09:52:29 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 09:53:20 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 09:53:20 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 09:53:27 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 09:56:51 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 09:56:51 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 09:57:01 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 10:57:46 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 10:57:46 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 10:57:48 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 10:58:00 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 10:58:00 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 10:59:11 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:02:01 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 11:02:01 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 11:02:04 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:02:21 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 11:02:21 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 11:03:10 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:03:41 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 11:03:41 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 11:04:40 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:04:55 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 11:04:55 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 11:05:22 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:05:34 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 11:05:34 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 11:05:45 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:05:55 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 11:05:55 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 11:06:43 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:07:21 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 11:07:21 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 11:08:10 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:08:30 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 11:08:30 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 11:12:17 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:16:56 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:17:25 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 11:17:25 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 11:18:04 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:20:31 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 11:20:31 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 11:21:24 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:21:55 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 11:21:55 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 11:22:34 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:22:48 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 11:22:48 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 11:23:17 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:23:35 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:24:11 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 11:24:11 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 11:24:54 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:25:04 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 11:25:04 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 11:47:27 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:47:52 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 11:47:52 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 11:49:31 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:49:40 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 11:49:40 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 11:49:51 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:50:03 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 11:50:03 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 11:50:27 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:50:35 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 11:50:35 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 11:50:43 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 11:50:54 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 11:50:54 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 14:26:10 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 14:26:58 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 14:26:58 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 14:28:47 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 14:29:12 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 14:29:12 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 14:29:19 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 14:29:34 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 14:29:34 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 14:29:59 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 14:31:52 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 14:32:44 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 14:32:44 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 14:32:46 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 14:33:21 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 14:33:21 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 14:33:30 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 14:33:43 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 14:33:43 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 14:33:54 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 14:34:03 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 14:34:03 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 14:34:23 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 14:34:41 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 14:34:41 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 14:34:50 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 14:35:05 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 14:35:05 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 14:35:11 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 14:35:34 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 14:35:34 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
