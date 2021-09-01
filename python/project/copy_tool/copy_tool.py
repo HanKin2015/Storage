@@ -23,23 +23,26 @@ import logging
 # 工作目录
 work_path = 'D:/copy_tool/'
 
+# 软件日志路径
+log_path = 'D:/copy_tool/copy_tool.log'
+
 # 中转文件名称
 temp_file_name = 'transfer_msg.txt'
 
 # 云端指定中转站文件夹路径
-remote_dir_path = '/VDI/hj/temp/'
+remote_dir_path = '/01-个人目录/hj/tmp/'
 
 # 本地临时文件夹路径
-local_dir_path = 'D:/Downloads/'
+local_dir_path = 'D:/copy_tool/tmp/'
 
 # ftp服务器ip地址
-ftp_ip = '199.200.5.88'
+ftp_ip = '10.70.48.201'
 
 # ftp服务器用户名
-ftp_username = 'test'
+ftp_username = 'sangfor'
 
 # ftp服务器密码
-ftp_password = 'test'
+ftp_password = 'sangfor'
 
 # 软件更新日志路径
 update_log_path = 'D:/copy_tool/update_log.log'
@@ -50,13 +53,13 @@ if not os.path.exists(local_dir_path):
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                     datefmt='%a, %d %b %Y %H:%M:%S',
-                    filename='./copy_tool.log',
+                    filename=log_path,
                     filemode='a')
 
 class MyFTP():
     def __init__(self):
         logging.info('---ftp init---')
-        #self.ftp_connect()
+        self.ftp_connect()
 
     def clear_dir(self, dir_path):
         dir_res_details = []
@@ -92,10 +95,13 @@ class MyFTP():
         logging.info('start ftp connect')
         self.ftp = ftplib.FTP()
         # ftp.set_debuglevel(2)
-        self.ftp.connect(ftp_ip, 21)
-        self.ftp.login(ftp_username, ftp_password)
-        self.ftp.encoding = 'gbk'
-
+        try:
+            self.ftp.connect(ftp_ip, 21)
+            self.ftp.login(ftp_username, ftp_password)
+            self.ftp.encoding = 'gbk'
+        except Exception as ex:
+            logging.error('登录ftp服务器失败, {}'.format(ex))
+            
     def download_file(self, local_file_path, remote_file_path):
         '''从ftp下载文件
             Parameters
@@ -160,7 +166,7 @@ class MyFTP():
             成功返回True,失败False
             '''
 
-        logging.info('正在上传文件{}到{}'.format(remote_file_path, local_file_path))
+        logging.info('正在上传文件{}到{}'.format(local_file_path, remote_file_path))
         bufsize = 1024
         fp = open(local_file_path, 'rb')
         try:
@@ -350,7 +356,7 @@ class CopyTool(tkinter.Tk):
                 print('读取更新日志文件失败, error=', ex)
             messagebox.showinfo('更新日志', update_log, icon='question')
         elif type == '关于':
-            messagebox.showinfo('关于', 'CopyTool_V1.0.2.0')
+            messagebox.showinfo('关于', 'CopyTool_V1.21.9.1')
 
     # 通过设置_update_line_num函数来实现主要的功能
     def _toggle_highlight(self):  # 高亮函数

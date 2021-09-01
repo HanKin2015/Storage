@@ -300,3 +300,18 @@ Tue, 31 Aug 2021 14:35:05 copy_tool.py[line:180] WARNING 'MyFTP' object has no a
 Tue, 31 Aug 2021 14:35:11 copy_tool.py[line:58] INFO ---ftp init---
 Tue, 31 Aug 2021 14:35:34 copy_tool.py[line:176] INFO ---ftp quit---
 Tue, 31 Aug 2021 14:35:34 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 21:21:04 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 21:21:18 copy_tool.py[line:176] INFO ---ftp quit---
+Tue, 31 Aug 2021 21:21:18 copy_tool.py[line:180] WARNING 'MyFTP' object has no attribute 'ftp'
+Tue, 31 Aug 2021 21:22:04 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 21:22:04 copy_tool.py[line:92] INFO start ftp connect
+Tue, 31 Aug 2021 21:25:00 copy_tool.py[line:58] INFO ---ftp init---
+Tue, 31 Aug 2021 21:25:00 copy_tool.py[line:92] INFO start ftp connect
+Tue, 31 Aug 2021 21:25:01 copy_tool.py[line:100] ERROR 登录ftp服务器失败, [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+Tue, 31 Aug 2021 21:25:11 copy_tool.py[line:179] INFO ---ftp quit---
+Tue, 31 Aug 2021 21:25:11 copy_tool.py[line:183] WARNING 'NoneType' object has no attribute 'sendall'
+Wed, 01 Sep 2021 10:50:16 copy_tool.py[line:58] INFO ---ftp init---
+Wed, 01 Sep 2021 10:50:16 copy_tool.py[line:92] INFO start ftp connect
+Wed, 01 Sep 2021 10:50:17 copy_tool.py[line:100] ERROR 登录ftp服务器失败, [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+Wed, 01 Sep 2021 10:50:23 copy_tool.py[line:179] INFO ---ftp quit---
+Wed, 01 Sep 2021 10:50:23 copy_tool.py[line:183] WARNING 'NoneType' object has no attribute 'sendall'
