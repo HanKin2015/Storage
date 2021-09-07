@@ -38,21 +38,21 @@ int main()
 	if (pid > 0) {
 		printf( "This is in the father process,here write a string to the pipe.\n" );
 		char s[] = "Hello world , this is write by pipe.\n";
-		write(pipefd[1], s, sizeof(s));
 		close(pipefd[0]);
+		write(pipefd[1], s, sizeof(s));
 		printf("line:%d pid:%d\n", __LINE__, pid);
-		//close(pipefd[1]);
 	} else if (pid == 0) {
 		printf( "This is in the child process,here read a string from the pipe.\n" );
+		close(pipefd[1]);
 		read(pipefd[0], buf, sizeof(buf));
 		printf("%s\n", buf);
-		close(pipefd[0]);
 		printf("line:%d pid:%d\n", __LINE__, pid);
-		//close(pipefd[1]);
 	}
 
 	// 定义函数 pid_t waitpid(pid_t pid,int * status,int options);
 	waitpid(pid, NULL, 0);
+	close(pipefd[0]);
+	close(pipefd[1]);
 	
 	test(getpid());
 	return 0;
