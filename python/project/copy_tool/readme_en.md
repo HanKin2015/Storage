@@ -1,4 +1,4 @@
-**[简体中文](./help_zh.md) | English**
+**[简体中文](./readme.md) | English**
 
 Copy tool
 ---

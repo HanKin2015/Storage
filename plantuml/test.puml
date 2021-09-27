@@ -1,0 +1,214 @@
+@startuml
+'colors
+'testdot
+actor actor
+agent agent
+artifact artifact
+boundary boundary
+card card
+cloud cloud
+component component
+control control
+database database
+entity entity
+file file
+folder folder
+frame frame
+interface interface
+node node
+package package
+queue queue
+stack stack
+rectangle rectangle
+storage storage
+usecase usecase
+@enduml
+
+@startuml
+rectangle 服务端创建surface和缓存阶段
+start
+package red_worker.c {
+    :register_callbacks(Dispatcher *dispatcher);
+    split
+        :消息RED_WORKER_MESSAGE_DISPLAY_CONNECT;
+        :handle_dev_display_connect();
+        :handle_new_display_channel();
+        :on_new_display_channel_client(dcc);
+        :red_channel_client_waits_for_migrate_data(rcc);
+        :display_channel_client_wait_for_init(dcc));
+        note left
+            创建glz编码器,以共享字典结构
+            if (dcc->pixmap_cache && dcc->glz_dict) {
+                dcc->pixmap_cache_generation = dcc->pixmap_cache->generation;
+                /* TODO: move common.id? if it's used for a per client structure.. */
+                spice_info("creating encoder with id == %d", dcc->common.id);
+                dcc->glz = glz_encoder_create(dcc->common.id, dcc->glz_dict->dict, &dcc->glz_data.usr);
+                if (!dcc->glz) {
+                    spice_critical("create global lz failed");
+                }
+                return TRUE;
+            }
+        end note
+        :red_current_flush(worker, 0);
+        note right
+            red_current_clear(worker, surface_id);
+        end note    
+        :push_new_primary_surface(dcc);
+        note right
+            下发消息PIPE_ITEM_TYPE_INVAL_PALLET_CACHE
+        end note
+        if (display_channel->enable_mix264) then (不是264编码)
+            :red_push_surface_image(dcc, 0);
+            note left
+                发送整个surface的图像给客户端
+            end note
+        else (264编码)
+            :mix264_client_create_encoder(dcc, &worker->surfaces[0]);
+            note right
+                有独立线程编码
+                dcc->me = me_create(dcc->common.id, surface->context.width,
+                        surface->context.height, dcc->me_quality);
+            end note
+        endif
+
+        :red_push_monitors_config(dcc);
+        :red_pipe_add_verb(rcc, SPICE_MSG_DISPLAY_MARK);
+    split again
+        :消息RED_WORKER_MESSAGE_DISPLAY_CHANNEL_CREATE);
+        :handle_dev_display_channel_create();
+        :display_channel_create(worker, FALSE);
+        :display_channel_handle_message();
+        :display_channel_init(dcc, (SpiceMsgcDisplayInit *)message);
+        :display_channel_init_cache(dcc, init_info);
+        #A020F0:init_cache_manager();
+        :获取缓存器dcc->pixmap_cache = red_get_pixmap_cache();
+    split again
+        :消息RED_WORKER_MESSAGE_CREATE_PRIMARY_SURFACE;
+        :handle_dev_create_primary_surface;
+        :dev_create_primary_surface;
+    end split
+}
+stop
+@enduml
+
+@startuml
+/'
+调试日志开启
+SRAP_ENABLE_DEBUG_COPY
+SRAP_ENABLE_DEBUG_CACHE_COPY
+SRAP_ENABLE_DEBUG
+SRAP_ENABLE_DEBUG_HEALDER
+SRAP_ENABLE_DEBUG_FILL
+SRAP_ENABLE_DEBUG_STROKE
+
+可以确认264编码是没有什么问题的，确认一下每次surface创建的时候pixmap_cache的大小
+
+'/
+
+rectangle 服务端draw阶段
+start
+package red_worker.c {
+    if (pipe_item->type) then (消息PIPE_ITEM_TYPE_DRAW)
+        : marshall_qxl_drawable(rcc, m, dpi);
+        :red_marshall_qxl_drawable(display_channel->common.worker, rcc, m, dpi);
+        note right
+            drawable->type
+        end note
+        split
+            :贴图red_marshall_qxl_draw_copy;
+            if (一系列的判断) then (true)
+                :red_marshall_qxl_draw_copy_opt;
+                if (is_mini_header) then (true)
+                    #F02803:出现图片red_marshall_qxl_draw_copy_list(drawable->self_bitmap_image);
+                    #F02803:red_channel_client_init_send_data();
+                    note left
+                        只有miniheader前提下，才能够启动协议优化
+                        消息SPICE_MSG_LIST
+                    end note
+                    if (display_channel->enable_cf_cache_opt) then (true)
+                        :red_marshall_qxl_draw_copy_cf_grids(image);
+                        note left
+                            SPICE_IMAGE_TYPE_BITMAP == image->descriptor.type;
+                            默认它走缓存模式
+                        end note
+                        :srap_red_marshall_qxl_draw_cache_build(SPICE_CACHE_MGR_TYPE_ADD);
+                        note left 
+                            添加消息SPICE_MSG_DISPLAY_DRAW_CACHE_BUILD
+                        end note
+                        :red_marshall_qxl_draw_copy_cf_cache_block;
+                        note left
+                            先采用屏幕坐标,用于处理clip区域
+                            后面改为图片坐标,便于客户端贴图
+                            采用系统图片坐标,用于提取待处理图片
+                        end note
+                        :srap_red_marshall_qxl_draw_copy_cache_rawdata;
+                        note left
+                            添加消息SPICE_MSG_DISPLAY_DRAW_CACHE_COPY
+                        end note
+                        :srap_red_marshall_qxl_draw_copy_from_cache;
+                        note left
+                            添加消息SPICE_MSG_DISPLAY_DRAW_COPY;
+                        end note
+                    else (false)
+                        :red_marshall_qxl_draw_copy_cut_grids;
+                    endif
+                    :send_data.free_list,清理无效的消息;
+                    note left
+                        添加消息SPICE_MSG_DISPLAY_INVAL_LIST
+                    end note
+                else (false)
+                    :red_marshall_qxl_draw_copy_sublist;
+                endif
+            else (false)
+                :red_fill_srap_qxl_draw_copy;
+                note right
+                    添加消息SPICE_MSG_DISPLAY_DRAW_COPY
+                end note
+                :srap_fill_bits;
+                note right
+                    pixmap_cache_hit(dcc->pixmap_cache, image.descriptor.id, image.descriptor.width,
+                    image.descriptor.height, chksum, &lossy_cache_item, dcc)) {
+                    dcc->send_data.pixmap_cache_items[dcc->send_data.num_pixmap_cache_items++] = image.descriptor.id;
+                end note
+                :simage->descriptor.type;
+            endif          
+        split again
+            :red_marshall_qxl_draw_fill; 
+        end split  
+        
+else (其他消息)
+
+endif
+}
+stop
+@enduml
+
+@startuml
+/'
+调试日志开启
+SRAP_ENABLE_DEBUG_COPY
+SRAP_ENABLE_DEBUG_CACHE_COPY
+SRAP_ENABLE_DEBUG
+SRAP_ENABLE_DEBUG_HEALDER
+SRAP_ENABLE_DEBUG_FILL
+SRAP_ENABLE_DEBUG_STROKE
+
+可以确认264编码是没有什么问题的，确认一下每次surface创建的时候pixmap_cache的大小
+
+'/
+
+rectangle 服务端改变窗口大小阶段
+start
+package red_worker.c {
+    :red_worker_main(void *arg);
+    :red_process_commands(worker, DISPLAY_MAX_PIPE_SIZE, &ring_is_empty);
+    :worker->qxl->st->qif->get_command(worker->qxl, &ext_cmd);
+    :ext_cmd.cmd.type;
+    split 
+        :QXL_CMD_DRAW red_process_drawable(worker, red_drawable, group_id);
+    split again
+        :QXL_CMD_SURFACE red_process_surface(worker, surface, ext_cmd.group_id, FALSE);
+    end split
+}
+stop
+@enduml
