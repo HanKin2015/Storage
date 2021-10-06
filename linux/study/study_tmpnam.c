@@ -60,17 +60,6 @@ int main()
     printf("L_tmpnam: %d, buffer: %s\n", L_tmpnam, buffer);
     
     memset(buffer, 0, sizeof(buffer));
-    
-    /*
-    [root@ubuntu0006:/media/hankin/vdb/study] #ll /tmp/tmpfile
-    tmpfile        tmpfileUM9rKm
-    
-    参数template 所指的文件名称字符串中最后六个字符必须是XXXXXX
-    参数 template 所指的文件名称字符串必须声明为数组, 如:
-    char template[] = "template-XXXXXX";
-    千万不可以使用下列的表达方式
-    char *template = "template-XXXXXX";
-    */
     const char *tmpfile = "/tmp/tmpfileXXXXXX";
     strncpy(buffer, tmpfile, L_tmpnam - 1);
     printf("临时名称 1: %s\n", buffer);

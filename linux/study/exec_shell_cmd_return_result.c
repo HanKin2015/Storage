@@ -40,8 +40,7 @@ static int get_cmd_result_by_system(char *ret_buf, int ret_buf_size, const char 
 
 /*
 2.popen函数
-
-该函数的作用是创建一个管道，fork 一个进程，然后执行 shell，而 shell 的输出可以采用读取文件的方式获得。采用这种方法，既避免了创建临时文件，又不受输出字符数的限制，推荐使用。
+推荐使用
 */
 static int get_cmd_result_by_popen(char *ret_buf, int ret_buf_size, const char *cmd)
 {
@@ -188,7 +187,7 @@ static int get_cmd_result_by_anonymous_pipe(char *ret_buf, int ret_buf_size, con
         // 如果执行成功则返回子进程识别码(PID) ,如果有错误发生则返回返回值-1。失败原因存于 errno 中。
         if (waitpid(pid, NULL, 0) == -1) {
             printf("%s[%d] error[%d]: %s\n", __FUNCTION__, __LINE__, errno, strerror(errno));
-            return -1;
+            //return -1;
         }
         
         printf("ret_buf: %s\n", ret_buf);

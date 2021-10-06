@@ -58,10 +58,9 @@ static int *test3__()
         *p_arr[i] = i;
     }
     
-    // 如果在test3_运行之后，这里访问23下标地址时会出现不会等于NULL的情况，这也是一种野指针
-    assert(p_arr[1700] == NULL);    // 当指针数组下标变得越来越大时，越容易出现段错误
-    p_arr[1700] = p_arr[2];
-    return p_arr[1700];
+    assert(p_arr[153] == NULL);
+    p_arr[153] = p_arr[2];
+    return p_arr[153];
 }
 static void test3()
 {

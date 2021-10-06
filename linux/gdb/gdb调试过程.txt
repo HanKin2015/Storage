@@ -4,7 +4,7 @@ gdb --args ./a.out 4
 
 编译过程中需要添加-g选项，这样才会有符号表。
 
-root@debian-sangfor:~/hejian/lock# gdb ./a.out
+root@debian-hankin:~/hejian/lock# gdb ./a.out
 GNU gdb (Debian 7.7.1+dfsg-5) 7.7.1
 Copyright (C) 2014 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>

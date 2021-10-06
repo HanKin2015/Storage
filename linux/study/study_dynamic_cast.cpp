@@ -200,30 +200,3 @@ int main()
     quote_transfer();
     return 0;
 }
-
-/*
-运行结果：
-
-i
-c
-s
-NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
-int
-char
-short
-std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >
-
-4base
-7derived
-base pointer pointed to base can be dynamic_cast to derived pointer is failed
-base pointer pointed to derived can be dynamic_cast to derived pointer is success
-base pointer pointed to base can be dynamic_cast to base pointer is success
-
-4base to base can be dynamic_cast to derived pointer is failed
-7derived to base can be dynamic_cast to derived pointer is success
-7derived to base can be dynamic_cast to derived pointer is success
-
-we are in derived
-第一种情况：we are in derived
-第二种情况：转化失败,抛出bad_cast异常
-*/

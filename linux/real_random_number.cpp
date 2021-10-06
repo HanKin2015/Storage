@@ -7,7 +7,7 @@
 #if 0
 windows:
     std::wstring resultStr;
-    std::wstring defalut(L"sangforad");
+    std::wstring defalut(L"helloworld");
     BYTE lpBuffer[g_PwdLen + 1] = {0};
     WCHAR buf[g_PwdLen] = { 0 };
     HCRYPTPROV hCryptProv = NULL;

@@ -39,10 +39,10 @@ local_dir_path = 'D:/copy_tool/tmp/'
 ftp_ip = '10.70.48.201'
 
 # ftp服务器用户名
-ftp_username = 'sangfor'
+ftp_username = 'hankin'
 
 # ftp服务器密码
-ftp_password = 'sangfor'
+ftp_password = 'hankin'
 
 # 软件更新日志路径
 update_log_path = 'D:/copy_tool/update_log.log'
