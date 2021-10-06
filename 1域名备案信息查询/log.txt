@@ -10,8 +10,8 @@
 2020-06-14 09:50:18,573 - __main__ - INFO - 2--当前域名为:www.sina.com
 2020-06-14 09:50:19,128 - __main__ - INFO - 3--当前域名为:www.kuaishou.com
 2020-06-14 09:50:19,945 - __main__ - INFO - 4--当前域名为:www.alibaba.com
-2020-06-14 09:50:20,547 - __main__ - INFO - 5--当前域名为:www.sangfor.com
-2020-06-14 09:50:21,318 - __main__ - INFO - 6--当前域名为:sangfor.com
+2020-06-14 09:50:20,547 - __main__ - INFO - 5--当前域名为:www.tencent.com
+2020-06-14 09:50:21,318 - __main__ - INFO - 6--当前域名为:tencent.com
 2020-06-14 09:50:22,136 - __main__ - INFO - 7--当前域名为:sina.com
 2020-06-14 09:50:22,684 - __main__ - INFO - 8--当前域名为:baidu.com
 2020-06-14 09:50:23,286 - __main__ - INFO - 9--当前域名为:kkk.cn

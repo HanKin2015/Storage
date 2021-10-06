@@ -17,7 +17,7 @@ events: Ir
 summary: 2166663
 
 
-ob=(5) /media/sangfor/vdb/study/valgrind/study_valgrind
+ob=(5) /media/hankin/vdb/study/valgrind/study_valgrind
 fl=(68) ???
 fn=(614) 0x00000000004008f0
 0 16
@@ -43,7 +43,7 @@ cfn=(614)
 calls=1 0 
 0 16
 0 4
-cfi=(100) /media/sangfor/vdb/study/valgrind/study_valgrind.cpp
+cfi=(100) /media/hankin/vdb/study/valgrind/study_valgrind.cpp
 cfn=(622) _GLOBAL__sub_I__Z5test1v
 calls=1 40 
 0 100449

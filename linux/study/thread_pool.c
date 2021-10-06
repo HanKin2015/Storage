@@ -130,22 +130,6 @@ int thread_pool_create(THREADPOOL *pool, int workers_num)
 }
 
 /**
- * 线程池销毁
- */
-int thread_pool_destroy(THREADPOOL *pool)
-{
-    struct WORKER *worker = NULL;
-    for (worker = pool->workers; worker != NULL; worker = worker->next) {
-        worker->terminate = true;
-    }
-    
-    pthread_mutex_lock(&pool->jobs_mtx);
-    pthread_cond_broadcast(&pool->jobs_cond);
-    pthread_mutex_unlock(&pool->jobs_mtx);
-    return 0;
-}
-
-/**
  * 线程池添加任务
  */
 void thread_pool_push(THREADPOOL *pool, struct JOB *job)
@@ -158,6 +142,25 @@ void thread_pool_push(THREADPOOL *pool, struct JOB *job)
     pthread_mutex_unlock(&pool->jobs_mtx);
     return;
 }
+
+/**
+ * 线程池销毁
+ */
+int thread_pool_destroy(THREADPOOL *pool)
+{
+    struct WORKER *worker = NULL;
+    for (worker = pool->workers; worker != NULL; worker = worker->next) {
+        worker->terminate = true;
+    }
+    
+    pthread_mutex_lock(&pool->jobs_mtx);
+    pthread_cond_broadcast(&pool->jobs_cond);
+    pthread_mutex_unlock(&pool->jobs_mtx);
+    
+    
+    return 0;
+}
+
 
 /*
 0-999的计数
@@ -195,8 +198,19 @@ int main()
     }
     
     // 4.销毁线程池
-    sleep(5);
+    struct WORKER *worker = NULL;
+    pthread_t tmp[thread_pool_size];
+    int idx = 0;
+    for (worker = pool->workers; worker != NULL; worker = worker->next) {
+        //pthread_join(worker->thread, NULL);
+        tmp[idx++] = worker->thread;
+    }
+        
     thread_pool_destroy(pool);
+    
+    for (int i = 0; i < thread_pool_size; i++) {
+        pthread_join(tmp[i], NULL);
+    }
     return 0;
 }
 #endif

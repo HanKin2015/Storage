@@ -13,9 +13,9 @@
 使用shell脚本反复跑窗口化
 while true
 do
-    echo {\"method\":\"windows_maximsize\"} | socat - unix-connect:/run/sangfor/vdiclient/spicec/socket.[1536366701440]
+    echo {\"method\":\"windows_maximsize\"} | socat - unix-connect:/run/hankin/client/socket.[1536366701440]
     sleep  5
 done
 
-这个153xxx修改为具体/run/sangfor/vdiclient/spicec/socket路径socket的值
+这个153xxx修改为具体/run/hankin/client/socke路径socket的值
 

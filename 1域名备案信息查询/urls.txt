@@ -2,8 +2,8 @@ www.baidu.com
 www.sina.com
 www.kuaishou.com
 www.alibaba.com
-www.sangfor.com
-sangfor.com
+www.tencent.com
+tencent.com
 sina.com
 baidu.com
 kkk.cn

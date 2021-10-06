@@ -37,7 +37,7 @@ int main()
     const char *test = "abcd";
     cout << strlen(test) << endl;
 
-    string s = "sangfor";
+    string s = "hankin";
     const char *str = "he"
                 "jian";
     s.append("123");

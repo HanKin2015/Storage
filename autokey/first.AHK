@@ -5,11 +5,11 @@ Run Cmd.exe
 Return
 
 ::bscol::
-Clipboard = sangfor@123
+Clipboard = tencent@123
 Send ^v
 return
 
 #z:: ;win+z 粘贴文字
-Clipboard = sangfor@123
+Clipboard = tencent@123
 Send ^v
 return
