@@ -74,3 +74,17 @@ int main()
     cout << sizeof(str0) << ' ' << strlen(str0) << endl;
     return 0;
 }
+
+```
+#include <stdio.h>
+#include <string.h>
+#include <stdint.h>
+
+int main()
+{
+        printf("%d\n", sizeof(size_t));
+        printf("%d\n", sizeof(uint32_t));
+        printf("%d\n", sizeof(uint16_t));
+        return 0;
+}
+```
