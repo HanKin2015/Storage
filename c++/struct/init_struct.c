@@ -1,3 +1,5 @@
+// 支持乱序初始化
+
 #include <stdio.h>
 
 #ifdef __cplusplus
