@@ -1,3 +1,13 @@
+/**
+* 文 件 名: tolowler_tranform_toupper.cpp
+* 文件描述: 学习transform函数
+* 作    者: HanKin
+* 创建日期: 2021.03.30
+* 修改日期：2021.10.21
+*
+* Copyright (c) 2021 HanKin. All rights reserved.
+*/
+
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -72,6 +82,7 @@ void TEST()
     return ;
 }
 
+// 大写改为小写字母
 char op(char ch)
 {
 
