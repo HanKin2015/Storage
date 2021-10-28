@@ -1,3 +1,12 @@
+/**
+* 文 件 名: study_getopt.cpp
+* 文件描述: 处理程序传入的参数选项
+* 作    者: HanKin
+* 创建日期: 2020.09.29
+* 修改日期：2021.10.27
+*
+* Copyright (c) 2021 HanKin. All rights reserved.
+*/
 #include <stdio.h>
 #include <fcntl.h>
 #include <signal.h>
