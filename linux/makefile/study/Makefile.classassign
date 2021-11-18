@@ -1,0 +1,24 @@
+# 变量的类别有递归变量和简单扩展变量。 
+# 只用一个“=”符号定义的变量被称为递归变量（recursively expanded variable），递归变量的引用是递归的。
+# 如下测试代码所示，这点和C语言有点区别，C语言中的变量只能是定义了过后才能使用。
+CFLAGS       = $(include_dirs) -o
+include_dirs = -Ifoo -Ibar
+ 
+all:
+	@echo $(CFLAGS)
+
+# 简单扩展变量（simply expanded variable）是用“:=”操作符来定义的。对于这类变量，make只对其进行一次展开。
+x = foo
+y = $(x) b
+x = later
+ 
+xx := foo
+yy := $(xx) b
+xx := later
+
+test:
+	@echo "x=$(y) xx = $(yy)"
+
+# 条件赋值（“？=”）：当变量没有被定义时就定义它，并且将右边的值赋给它；如果变量已经定义了，则不改变其原值。条件赋值可用于为变量赋默认值
+
+# 追加赋值（“+=”）：在当前变量值基础上叠加上当前追加的值
