@@ -1,0 +1,8 @@
+GO_PATH = $(abspath ../go)
+PYTHON_PATH = $(realpath ../python)
+LOG_PATH = $(shell cd ../log; pwd)
+
+test:
+	echo $(GO_PATH)
+	echo $(PYTHON_PATH)
+	echo $(LOG_PATH)

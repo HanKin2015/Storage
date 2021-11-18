@@ -1,0 +1,13 @@
+# 挺有意思
+# make IS_ARM_OS=arm64
+
+all:
+
+ifeq ($(IS_ARM_OS), arm64) #arm64
+	echo "IS_ARM_OS=TRUE"
+else ifeq ($(IS_ARM_OS), mips64) #mips64
+	echo "IS_MIPS_OS=TRUE"
+else
+	echo "DEFAULT"
+endif
+

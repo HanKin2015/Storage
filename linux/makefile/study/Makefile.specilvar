@@ -1,0 +1,8 @@
+.PHONY:all clean
+
+# MAKE变量表示当前的是当前处理Makefile的命令名是什么？一般$(MAKE)的值就是“make”。当需要在Makefile中运行另一个Makefile时，需要用到这个变量。
+# MAKECMDGOALS变量表示的是当前构建的目标名。
+all clean:
+	@echo "MAKE = $(MAKE)"
+	@echo "\$$@=$@"
+	@echo "MAKECMDGOALS = $(MAKECMDGOALS)"
