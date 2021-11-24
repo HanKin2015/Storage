@@ -1,0 +1,1425 @@
+wireless/marvell/libertas/if_usb.c:     { USB_DEVICE(0x1286, 0x2001), .driver_info = MODEL_8388 },
+wireless/marvell/libertas/if_usb.c:     { USB_DEVICE(0x05a3, 0x8388), .driver_info = MODEL_8388 },
+wireless/marvell/libertas_tf/if_usb.c:  { USB_DEVICE(0x1286, 0x2001) },
+wireless/marvell/libertas_tf/if_usb.c:  { USB_DEVICE(0x05a3, 0x8388) },
+wireless/marvell/mwifiex/usb.c: {USB_DEVICE(USB8XXX_VID, USB8766_PID_1)},
+wireless/marvell/mwifiex/usb.c: {USB_DEVICE_AND_INTERFACE_INFO(USB8XXX_VID, USB8766_PID_2,
+wireless/marvell/mwifiex/usb.c: {USB_DEVICE(USB8XXX_VID, USB8797_PID_1)},
+wireless/marvell/mwifiex/usb.c: {USB_DEVICE_AND_INTERFACE_INFO(USB8XXX_VID, USB8797_PID_2,
+wireless/marvell/mwifiex/usb.c: {USB_DEVICE(USB8XXX_VID, USB8801_PID_1)},
+wireless/marvell/mwifiex/usb.c: {USB_DEVICE_AND_INTERFACE_INFO(USB8XXX_VID, USB8801_PID_2,
+wireless/marvell/mwifiex/usb.c: {USB_DEVICE(USB8XXX_VID, USB8997_PID_1)},
+wireless/marvell/mwifiex/usb.c: {USB_DEVICE_AND_INTERFACE_INFO(USB8XXX_VID, USB8997_PID_2,
+wireless/rsi/rsi_91x_usb.c:     { USB_DEVICE(RSI_USB_VENDOR_ID, RSI_USB_PID_9113) },
+wireless/rsi/rsi_91x_usb.c:     { USB_DEVICE(RSI_USB_VENDOR_ID, RSI_USB_PID_9116) },
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x8724, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x1724, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x0724, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x818b, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x2357, 0x0108, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x2001, 0x3319, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x2357, 0x0109, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0xb720, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x7392, 0xa611, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x8176, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x8178, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x817f, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x7392, 0x7811, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x050d, 0x1004, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x20f4, 0x648b, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x2001, 0x3308, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x018a, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x8191, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x8170, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x8177, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x817a, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x817b, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x817d, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x817e, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x818a, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x317f, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x1058, 0x0631, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x04bb, 0x094c, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x050d, 0x1102, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x06f8, 0xe033, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x07b8, 0x8189, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x0846, 0x9041, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x0b05, 0x17ba, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x1e1e, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x5088, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x0df6, 0x0052, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x0df6, 0x005c, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x0eb0, 0x9071, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x103c, 0x1629, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x13d3, 0x3357, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x2001, 0x330b, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x2019, 0x4902, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x2019, 0xab2a, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x2019, 0xab2e, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x2019, 0xed17, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x4855, 0x0090, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x4856, 0x0091, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0xcdab, 0x8010, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x04f2, 0xaff7, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x04f2, 0xaff9, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x04f2, 0xaffa, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x04f2, 0xaff8, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x04f2, 0xaffb, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x04f2, 0xaffc, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x2019, 0x1201, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x04bb, 0x0950, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x050d, 0x2102, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x050d, 0x2103, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x0586, 0x341f, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x06f8, 0xe035, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x0b05, 0x17ab, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x0df6, 0x0061, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x0df6, 0x0070, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x0789, 0x016d, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x07aa, 0x0056, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x07b8, 0x8178, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x0846, 0x9021, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x0846, 0xf001, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x2e2e, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x0e66, 0x0019, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x0e66, 0x0020, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x2001, 0x3307, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x2001, 0x3309, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x2001, 0x330a, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x2019, 0xab2b, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x20f4, 0x624d, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x2357, 0x0100, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x4855, 0x0091, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x7392, 0x7822, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x2357, 0x0107, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(0x2019, 0xab33, 0xff, 0xff, 0xff),
+wireless/realtek/rtl8xxxu/rtl8xxxu_core.c:{USB_DEVICE_AND_INTERFACE_INFO(USB_VENDOR_ID_REALTEK, 0x818c, 0xff, 0xff, 0xff),
+wireless/realtek/rtlwifi/usb.h:#define RTL_USB_DEVICE(vend, prod, cfg) \
+wireless/realtek/rtlwifi/usb.h: .match_flags = USB_DEVICE_ID_MATCH_DEVICE, \
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(USB_VENDOR_ID_REALTEK, 0x8191, rtl92cu_hal_cfg)},
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(USB_VENDOR_ID_REALTEK, 0x018a, rtl92cu_hal_cfg)},
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(USB_VENDOR_ID_REALTEK, 0x8170, rtl92cu_hal_cfg)},
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(USB_VENDOR_ID_REALTEK, 0x8176, rtl92cu_hal_cfg)},
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(USB_VENDOR_ID_REALTEK, 0x8177, rtl92cu_hal_cfg)},
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(USB_VENDOR_ID_REALTEK, 0x817a, rtl92cu_hal_cfg)},
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(USB_VENDOR_ID_REALTEK, 0x817b, rtl92cu_hal_cfg)},
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(USB_VENDOR_ID_REALTEK, 0x817d, rtl92cu_hal_cfg)},
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(USB_VENDOR_ID_REALTEK, 0x817e, rtl92cu_hal_cfg)},
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(USB_VENDOR_ID_REALTEK, 0x817f, rtl92cu_hal_cfg)},
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(USB_VENDOR_ID_REALTEK, 0x818a, rtl92cu_hal_cfg)},
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(USB_VENDOR_ID_REALTEK, 0x819a, rtl92cu_hal_cfg)},
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(USB_VENDOR_ID_REALTEK, 0x8754, rtl92cu_hal_cfg)},
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(USB_VENDOR_ID_REALTEK, 0x8178, rtl92cu_hal_cfg)},
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(USB_VENDOR_ID_REALTEK, 0x817c, rtl92cu_hal_cfg)},
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x050d, 0x1102, rtl92cu_hal_cfg)}, /*Belkin - Edimax*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x050d, 0x11f2, rtl92cu_hal_cfg)}, /*Belkin - ISY*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x06f8, 0xe033, rtl92cu_hal_cfg)}, /*Hercules - Edimax*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x07b8, 0x8188, rtl92cu_hal_cfg)}, /*Abocom - Abocom*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x07b8, 0x8189, rtl92cu_hal_cfg)}, /*Funai - Abocom*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x0846, 0x9041, rtl92cu_hal_cfg)}, /*NetGear WNA1000M*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x0846, 0x9043, rtl92cu_hal_cfg)}, /*NG WNA1000Mv2*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x0b05, 0x17ba, rtl92cu_hal_cfg)}, /*ASUS-Edimax*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x0bda, 0x5088, rtl92cu_hal_cfg)}, /*Thinkware-CC&C*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x0df6, 0x0052, rtl92cu_hal_cfg)}, /*Sitecom - Edimax*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x0df6, 0x005c, rtl92cu_hal_cfg)}, /*Sitecom - Edimax*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x0df6, 0x0070, rtl92cu_hal_cfg)}, /*Sitecom - 150N */
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x0df6, 0x0077, rtl92cu_hal_cfg)}, /*Sitecom-WLA2100V2*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x0eb0, 0x9071, rtl92cu_hal_cfg)}, /*NO Brand - Etop*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x4856, 0x0091, rtl92cu_hal_cfg)}, /*NetweeN - Feixun*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x103c, 0x1629, rtl92cu_hal_cfg)},
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x13d3, 0x3357, rtl92cu_hal_cfg)}, /* AzureWave */
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x2001, 0x3308, rtl92cu_hal_cfg)}, /*D-Link - Alpha*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x2019, 0x4902, rtl92cu_hal_cfg)}, /*Planex - Etop*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x2019, 0xab2a, rtl92cu_hal_cfg)}, /*Planex - Abocom*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x2019, 0xab2e, rtl92cu_hal_cfg)},
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x2019, 0xed17, rtl92cu_hal_cfg)}, /*PCI - Edimax*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x20f4, 0x648b, rtl92cu_hal_cfg)}, /*TRENDnet - Cameo*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x7392, 0x7811, rtl92cu_hal_cfg)}, /*Edimax - Edimax*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x13d3, 0x3358, rtl92cu_hal_cfg)}, /*Azwave 8188CE-VAU*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x13d3, 0x3359, rtl92cu_hal_cfg)},
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x4855, 0x0090, rtl92cu_hal_cfg)}, /* Feixun */
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x4855, 0x0091, rtl92cu_hal_cfg)}, /* NetweeN-Feixun */
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x9846, 0x9041, rtl92cu_hal_cfg)}, /* Netgear Cameo */
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(USB_VENDOR_ID_REALTEK, 0x317f, rtl92cu_hal_cfg)},
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x04f2, 0xaff7, rtl92cu_hal_cfg)}, /*Xavi*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x04f2, 0xaff9, rtl92cu_hal_cfg)}, /*Xavi*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x04f2, 0xaffa, rtl92cu_hal_cfg)}, /*Xavi*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x04f2, 0xaff8, rtl92cu_hal_cfg)}, /*Xavi*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x04f2, 0xaffb, rtl92cu_hal_cfg)}, /*Xavi*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x04f2, 0xaffc, rtl92cu_hal_cfg)}, /*Xavi*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x2019, 0x1201, rtl92cu_hal_cfg)}, /*Planex-Vencer*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x050d, 0x1004, rtl92cu_hal_cfg)}, /*Belcom-SurfN300*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x050d, 0x2102, rtl92cu_hal_cfg)}, /*Belcom-Sercomm*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x050d, 0x2103, rtl92cu_hal_cfg)}, /*Belcom-Edimax*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x0586, 0x341f, rtl92cu_hal_cfg)}, /*Zyxel -Abocom*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x07aa, 0x0056, rtl92cu_hal_cfg)}, /*ATKK-Gemtek*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x07b8, 0x8178, rtl92cu_hal_cfg)}, /*Funai -Abocom*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x0846, 0x9021, rtl92cu_hal_cfg)}, /*Netgear-Sercomm*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x0846, 0xf001, rtl92cu_hal_cfg)}, /*On Netwrks N300MA*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x0b05, 0x17ab, rtl92cu_hal_cfg)}, /*ASUS-Edimax*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x0bda, 0x8186, rtl92cu_hal_cfg)}, /*Realtek 92CE-VAU*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x0df6, 0x0061, rtl92cu_hal_cfg)}, /*Sitecom-Edimax*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x0e66, 0x0019, rtl92cu_hal_cfg)}, /*Hawking-Edimax*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x2001, 0x3307, rtl92cu_hal_cfg)}, /*D-Link-Cameo*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x2001, 0x3309, rtl92cu_hal_cfg)}, /*D-Link-Alpha*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x2001, 0x330a, rtl92cu_hal_cfg)}, /*D-Link-Alpha*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x2001, 0x330d, rtl92cu_hal_cfg)}, /*D-Link DWA-131 */
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x2019, 0xab2b, rtl92cu_hal_cfg)}, /*Planex -Abocom*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x20f4, 0x624d, rtl92cu_hal_cfg)}, /*TRENDNet*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x2357, 0x0100, rtl92cu_hal_cfg)}, /*TP-Link WN8200ND*/
+wireless/realtek/rtlwifi/rtl8192cu/sw.c:        {RTL_USB_DEVICE(0x7392, 0x7822, rtl92cu_hal_cfg)}, /*Edimax -Edimax*/
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x0b05, 0x171d), .driver_info = DEVICE_RTL8187},
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x050d, 0x705e), .driver_info = DEVICE_RTL8187B},
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x0bda, 0x8187), .driver_info = DEVICE_RTL8187},
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x0bda, 0x8189), .driver_info = DEVICE_RTL8187B},
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x0bda, 0x8197), .driver_info = DEVICE_RTL8187B},
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x0bda, 0x8198), .driver_info = DEVICE_RTL8187B},
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x0769, 0x11F2), .driver_info = DEVICE_RTL8187},
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x0789, 0x010C), .driver_info = DEVICE_RTL8187},
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x0846, 0x6100), .driver_info = DEVICE_RTL8187},
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x0846, 0x6a00), .driver_info = DEVICE_RTL8187},
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x0846, 0x4260), .driver_info = DEVICE_RTL8187B},
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x03f0, 0xca02), .driver_info = DEVICE_RTL8187},
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x0df6, 0x000d), .driver_info = DEVICE_RTL8187},
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x0df6, 0x0028), .driver_info = DEVICE_RTL8187B},
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x0df6, 0x0029), .driver_info = DEVICE_RTL8187B},
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x114B, 0x0150), .driver_info = DEVICE_RTL8187},
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x1371, 0x9401), .driver_info = DEVICE_RTL8187},
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x13d1, 0xabe6), .driver_info = DEVICE_RTL8187},
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x18E8, 0x6232), .driver_info = DEVICE_RTL8187},
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x1b75, 0x8187), .driver_info = DEVICE_RTL8187},
+wireless/realtek/rtl818x/rtl8187/dev.c: {USB_DEVICE(0x1737, 0x0073), .driver_info = DEVICE_RTL8187B},
+wireless/broadcom/brcm80211/brcmfmac/usb.c:#define BRCMF_USB_DEVICE(dev_id)     \
+wireless/broadcom/brcm80211/brcmfmac/usb.c:     { USB_DEVICE(BRCM_USB_VENDOR_ID_BROADCOM, dev_id) }
+wireless/broadcom/brcm80211/brcmfmac/usb.c:#define LINKSYS_USB_DEVICE(dev_id)   \
+wireless/broadcom/brcm80211/brcmfmac/usb.c:     { USB_DEVICE(BRCM_USB_VENDOR_ID_LINKSYS, dev_id) }
+wireless/broadcom/brcm80211/brcmfmac/usb.c:#define CYPRESS_USB_DEVICE(dev_id)   \
+wireless/broadcom/brcm80211/brcmfmac/usb.c:     { USB_DEVICE(CY_USB_VENDOR_ID_CYPRESS, dev_id) }
+wireless/broadcom/brcm80211/brcmfmac/usb.c:     BRCMF_USB_DEVICE(BRCM_USB_43143_DEVICE_ID),
+wireless/broadcom/brcm80211/brcmfmac/usb.c:     BRCMF_USB_DEVICE(BRCM_USB_43236_DEVICE_ID),
+wireless/broadcom/brcm80211/brcmfmac/usb.c:     BRCMF_USB_DEVICE(BRCM_USB_43242_DEVICE_ID),
+wireless/broadcom/brcm80211/brcmfmac/usb.c:     BRCMF_USB_DEVICE(BRCM_USB_43569_DEVICE_ID),
+wireless/broadcom/brcm80211/brcmfmac/usb.c:     LINKSYS_USB_DEVICE(BRCM_USB_43235_LINKSYS_DEVICE_ID),
+wireless/broadcom/brcm80211/brcmfmac/usb.c:     CYPRESS_USB_DEVICE(CY_USB_4373_DEVICE_ID),
+wireless/broadcom/brcm80211/brcmfmac/usb.c:     { USB_DEVICE(BRCM_USB_VENDOR_ID_LG, BRCM_USB_43242_LG_DEVICE_ID) },
+wireless/broadcom/brcm80211/brcmfmac/usb.c:     BRCMF_USB_DEVICE(BRCM_USB_BCMFW_DEVICE_ID),
+wireless/broadcom/brcm80211/brcmfmac/usb.c:     CYPRESS_USB_DEVICE(BRCM_USB_BCMFW_DEVICE_ID),
+wireless/mediatek/mt76/mt76x2/usb.c:    { USB_DEVICE(0x0b05, 0x1833) }, /* Asus USB-AC54 */
+wireless/mediatek/mt76/mt76x2/usb.c:    { USB_DEVICE(0x0b05, 0x17eb) }, /* Asus USB-AC55 */
+wireless/mediatek/mt76/mt76x2/usb.c:    { USB_DEVICE(0x0b05, 0x180b) }, /* Asus USB-N53 B1 */
+wireless/mediatek/mt76/mt76x2/usb.c:    { USB_DEVICE(0x0e8d, 0x7612) }, /* Aukey USBAC1200 - Alfa AWUS036ACM */
+wireless/mediatek/mt76/mt76x2/usb.c:    { USB_DEVICE(0x057c, 0x8503) }, /* Avm FRITZ!WLAN AC860 */
+wireless/mediatek/mt76/mt76x2/usb.c:    { USB_DEVICE(0x7392, 0xb711) }, /* Edimax EW 7722 UAC */
+wireless/mediatek/mt76/mt76x2/usb.c:    { USB_DEVICE(0x0e8d, 0x7632) }, /* HC-M7662BU1 */
+wireless/mediatek/mt76/mt76x2/usb.c:    { USB_DEVICE(0x2c4e, 0x0103) }, /* Mercury UD13 */
+wireless/mediatek/mt76/mt76x2/usb.c:    { USB_DEVICE(0x0846, 0x9053) }, /* Netgear A6210 */
+wireless/mediatek/mt76/mt76x2/usb.c:    { USB_DEVICE(0x045e, 0x02e6) }, /* XBox One Wireless Adapter */
+wireless/mediatek/mt76/mt76x2/usb.c:    { USB_DEVICE(0x045e, 0x02fe) }, /* XBox One Wireless Adapter */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x148F, 0x7610) }, /* MT7610U */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x13B1, 0x003E) }, /* Linksys AE6000 */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x0E8D, 0x7610) }, /* Sabrent NTWLAC */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x7392, 0xa711) }, /* Edimax 7711mac */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x7392, 0xb711) }, /* Edimax / Elecom  */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x148f, 0x761a) }, /* TP-Link TL-WDN5200 */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x148f, 0x760a) }, /* TP-Link unknown */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x0b05, 0x17d1) }, /* Asus USB-AC51 */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x0b05, 0x17db) }, /* Asus USB-AC50 */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x0df6, 0x0075) }, /* Sitecom WLA-3100 */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x2019, 0xab31) }, /* Planex GW-450D */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x2001, 0x3d02) }, /* D-LINK DWA-171 rev B1 */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x0586, 0x3425) }, /* Zyxel NWD6505 */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x07b8, 0x7610) }, /* AboCom AU7212 */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x04bb, 0x0951) }, /* I-O DATA WN-AC433UK */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x057c, 0x8502) }, /* AVM FRITZ!WLAN USB Stick AC 430 */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x293c, 0x5702) }, /* Comcast Xfinity KXW02AAA  */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x20f4, 0x806b) }, /* TRENDnet TEW-806UBH  */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x7392, 0xc711) }, /* Devolo Wifi ac Stick */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x0df6, 0x0079) }, /* Sitecom Europe B.V. ac  Stick */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x2357, 0x0123) }, /* TP-LINK T2UHP_US_v1 */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x2357, 0x010b) }, /* TP-LINK T2UHP_UN_v1 */
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE(0x2357, 0x0105), .driver_info = 1, },
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE_AND_INTERFACE_INFO(0x0E8D, 0x7630, 0xff, 0x2, 0xff)},
+wireless/mediatek/mt76/mt76x0/usb.c:    { USB_DEVICE_AND_INTERFACE_INFO(0x0E8D, 0x7650, 0xff, 0x2, 0xff)},
+wireless/mediatek/mt76/mt7615/usb.c:    { USB_DEVICE_AND_INTERFACE_INFO(0x0e8d, 0x7663, 0xff, 0xff, 0xff) },
+wireless/mediatek/mt7601u/usb.c:        { USB_DEVICE(0x0b05, 0x17d3) },
+wireless/mediatek/mt7601u/usb.c:        { USB_DEVICE(0x0e8d, 0x760a) },
+wireless/mediatek/mt7601u/usb.c:        { USB_DEVICE(0x0e8d, 0x760b) },
+wireless/mediatek/mt7601u/usb.c:        { USB_DEVICE(0x13d3, 0x3431) },
+wireless/mediatek/mt7601u/usb.c:        { USB_DEVICE(0x13d3, 0x3434) },
+wireless/mediatek/mt7601u/usb.c:        { USB_DEVICE(0x148f, 0x7601) },
+wireless/mediatek/mt7601u/usb.c:        { USB_DEVICE(0x148f, 0x760a) },
+wireless/mediatek/mt7601u/usb.c:        { USB_DEVICE(0x148f, 0x760b) },
+wireless/mediatek/mt7601u/usb.c:        { USB_DEVICE(0x148f, 0x760c) },
+wireless/mediatek/mt7601u/usb.c:        { USB_DEVICE(0x148f, 0x760d) },
+wireless/mediatek/mt7601u/usb.c:        { USB_DEVICE(0x2001, 0x3d04) },
+wireless/mediatek/mt7601u/usb.c:        { USB_DEVICE(0x2717, 0x4106) },
+wireless/mediatek/mt7601u/usb.c:        { USB_DEVICE(0x2955, 0x0001) },
+wireless/mediatek/mt7601u/usb.c:        { USB_DEVICE(0x2955, 0x1001) },
+wireless/mediatek/mt7601u/usb.c:        { USB_DEVICE(0x2955, 0x1003) },
+wireless/mediatek/mt7601u/usb.c:        { USB_DEVICE(0x2a5f, 0x1000) },
+wireless/mediatek/mt7601u/usb.c:        { USB_DEVICE(0x7392, 0x7710) },
+wireless/zydas/zd1201.c:        {USB_DEVICE(0x0586, 0x3400)}, /* Peabird Wireless USB Adapter */
+wireless/zydas/zd1201.c:        {USB_DEVICE(0x0ace, 0x1201)}, /* ZyDAS ZD1201 Wireless USB Adapter */
+wireless/zydas/zd1201.c:        {USB_DEVICE(0x050d, 0x6051)}, /* Belkin F5D6051 usb  adapter */
+wireless/zydas/zd1201.c:        {USB_DEVICE(0x0db0, 0x6823)}, /* MSI UB11B usb  adapter */
+wireless/zydas/zd1201.c:        {USB_DEVICE(0x1044, 0x8004)}, /* Gigabyte GN-WLBZ101 */
+wireless/zydas/zd1201.c:        {USB_DEVICE(0x1044, 0x8005)}, /* GIGABYTE GN-WLBZ201 usb adapter */
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0105, 0x145f), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0586, 0x3401), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0586, 0x3402), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0586, 0x3407), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0586, 0x3409), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x079b, 0x004a), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x07b8, 0x6001), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0ace, 0x1211), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0ace, 0xa211), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0b05, 0x170c), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0b3b, 0x1630), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0b3b, 0x5630), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0df6, 0x9071), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0df6, 0x9075), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x126f, 0xa006), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x129b, 0x1666), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x13b1, 0x001e), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x1435, 0x0711), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x14ea, 0xab10), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x14ea, 0xab13), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x157e, 0x300a), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x157e, 0x300b), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x157e, 0x3204), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x157e, 0x3207), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x1740, 0x2000), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x6891, 0xa727), .driver_info = DEVICE_ZD1211 },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0053, 0x5301), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0409, 0x0248), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0411, 0x00da), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0471, 0x1236), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0471, 0x1237), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x050d, 0x705c), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x054c, 0x0257), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0586, 0x340a), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0586, 0x340f), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0586, 0x3410), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0586, 0x3412), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0586, 0x3413), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x079b, 0x0062), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x07b8, 0x6001), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x07fa, 0x1196), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x083a, 0x4505), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x083a, 0xe501), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x083a, 0xe503), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x083a, 0xe506), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0ace, 0x1215), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0ace, 0xb215), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0b05, 0x171b), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0baf, 0x0121), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0cde, 0x001a), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0df6, 0x0036), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x129b, 0x1667), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x13b1, 0x0024), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x157e, 0x300d), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x1582, 0x6003), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x2019, 0x5303), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x2019, 0xed01), .driver_info = DEVICE_ZD1211B },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0ace, 0x2011), .driver_info = DEVICE_INSTALLER },
+wireless/zydas/zd1211rw/zd_usb.c:       { USB_DEVICE(0x0ace, 0x20ff), .driver_info = DEVICE_INSTALLER },
+wireless/ralink/rt2x00/rt2x00usb.h:     USB_DEVICE_MODE = 1,
+wireless/ralink/rt2x00/rt2500usb.c:     rt2x00usb_vendor_request_sw(rt2x00dev, USB_DEVICE_MODE, 0x0001,
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x0b05, 0x1706) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x0b05, 0x1707) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x050d, 0x7050) }, /* FCC ID: K7SF5D7050A ver. 2.x */
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x050d, 0x7051) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x13b1, 0x000d) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x13b1, 0x0011) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x13b1, 0x001a) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x14b2, 0x3c02) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x2001, 0x3c00) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x1044, 0x8001) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x1044, 0x8007) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x06f8, 0xe000) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x0411, 0x005e) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x0411, 0x0066) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x0411, 0x0067) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x0411, 0x008b) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x0411, 0x0097) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x0db0, 0x6861) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x0db0, 0x6865) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x0db0, 0x6869) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x148f, 0x1706) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x148f, 0x2570) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x148f, 0x9020) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x079b, 0x004b) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x0681, 0x3c06) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x0707, 0xee13) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x114b, 0x0110) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x0769, 0x11f3) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x0eb0, 0x9020) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x0f88, 0x3012) },
+wireless/ralink/rt2x00/rt2500usb.c:     { USB_DEVICE(0x5a57, 0x0260) },
+wireless/ralink/rt2x00/rt73usb.c:               rt2x00usb_vendor_request_sw(rt2x00dev, USB_DEVICE_MODE, 0,
+wireless/ralink/rt2x00/rt73usb.c:               rt2x00usb_vendor_request_sw(rt2x00dev, USB_DEVICE_MODE, 0,
+wireless/ralink/rt2x00/rt73usb.c:       status = rt2x00usb_vendor_request_sw(rt2x00dev, USB_DEVICE_MODE,
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x07b8, 0xb21b) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x07b8, 0xb21c) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x07b8, 0xb21d) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x07b8, 0xb21e) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x07b8, 0xb21f) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x14b2, 0x3c10) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x148f, 0x9021) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0eb0, 0x9021) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x18c5, 0x0002) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x1690, 0x0722) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0b05, 0x1723) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0b05, 0x1724) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x050d, 0x7050) }, /* FCC ID: K7SF5D7050B ver. 3.x */
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x050d, 0x705a) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x050d, 0x905b) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x050d, 0x905c) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x1631, 0xc019) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x08dd, 0x0120) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0411, 0x00d8) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0411, 0x00d9) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0411, 0x00e6) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0411, 0x00f4) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0411, 0x0116) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0411, 0x0119) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0411, 0x0137) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x178d, 0x02be) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x1371, 0x9022) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x1371, 0x9032) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x14b2, 0x3c22) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x07aa, 0x002e) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x07d1, 0x3c03) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x07d1, 0x3c04) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x07d1, 0x3c06) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x07d1, 0x3c07) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x7392, 0x7318) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x7392, 0x7618) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x1740, 0x3701) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x15a9, 0x0004) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x1044, 0x8008) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x1044, 0x800a) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x1472, 0x0009) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x06f8, 0xe002) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x06f8, 0xe010) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x06f8, 0xe020) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x13b1, 0x0020) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x13b1, 0x0023) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x13b1, 0x0028) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0db0, 0x4600) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0db0, 0x6877) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0db0, 0x6874) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0db0, 0xa861) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0db0, 0xa874) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x1b75, 0x7318) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x04bb, 0x093d) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x148f, 0x2573) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x148f, 0x2671) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0812, 0x3101) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x18e8, 0x6196) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x18e8, 0x6229) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x18e8, 0x6238) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x04e8, 0x4471) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x1740, 0x7100) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0df6, 0x0024) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0df6, 0x0027) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0df6, 0x002f) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0df6, 0x90ac) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0df6, 0x9712) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0769, 0x31f3) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x6933, 0x5001) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0471, 0x200a) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x2019, 0xab01) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x2019, 0xab50) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x7167, 0x3840) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0cde, 0x001c) },
+wireless/ralink/rt2x00/rt73usb.c:       { USB_DEVICE(0x0586, 0x3415) },
+wireless/ralink/rt2x00/rt2800usb.c:     ret = rt2x00usb_vendor_request(rt2x00dev, USB_DEVICE_MODE,
+wireless/ralink/rt2x00/rt2800usb.c:     status = rt2x00usb_vendor_request_sw(rt2x00dev, USB_DEVICE_MODE,
+wireless/ralink/rt2x00/rt2800usb.c:     rt2x00usb_vendor_request_sw(rt2x00dev, USB_DEVICE_MODE, 0,
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07b8, 0x2870) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07b8, 0x2770) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07b8, 0x3070) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07b8, 0x3071) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07b8, 0x3072) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1482, 0x3c09) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1eda, 0x2012) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1eda, 0x2210) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1eda, 0x2310) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x8516, 0x2070) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x8516, 0x2770) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x8516, 0x2870) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x8516, 0x3070) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x8516, 0x3071) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x8516, 0x3072) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x14b2, 0x3c06) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x14b2, 0x3c07) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x14b2, 0x3c09) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x14b2, 0x3c12) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x14b2, 0x3c23) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x14b2, 0x3c25) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x14b2, 0x3c27) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x14b2, 0x3c28) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x14b2, 0x3c2c) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x15c5, 0x0008) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1690, 0x0740) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0b05, 0x1731) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0b05, 0x1732) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0b05, 0x1742) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0b05, 0x1784) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1761, 0x0b05) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x13d3, 0x3247) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x13d3, 0x3273) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x13d3, 0x3305) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x13d3, 0x3307) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x13d3, 0x3321) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x050d, 0x8053) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x050d, 0x805c) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x050d, 0x815c) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x050d, 0x825a) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x050d, 0x825b) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x050d, 0x935a) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x050d, 0x935b) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0411, 0x00e8) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0411, 0x0158) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0411, 0x015d) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0411, 0x016f) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0411, 0x01a2) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0411, 0x01ee) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0411, 0x01a8) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0411, 0x01fd) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07aa, 0x002f) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07aa, 0x003c) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07aa, 0x003f) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x18c5, 0x0012) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07d1, 0x3c09) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07d1, 0x3c0a) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07d1, 0x3c0d) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07d1, 0x3c0e) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07d1, 0x3c0f) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07d1, 0x3c11) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07d1, 0x3c13) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07d1, 0x3c15) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07d1, 0x3c16) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07d1, 0x3c17) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2001, 0x3317) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2001, 0x3c1b) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2001, 0x3c25) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07fa, 0x7712) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0fe9, 0xb307) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x7392, 0x4085) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x7392, 0x7711) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x7392, 0x7717) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x7392, 0x7718) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x7392, 0x7722) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x203d, 0x1480) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x203d, 0x14a9) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1740, 0x9701) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1740, 0x9702) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1740, 0x9703) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1740, 0x9705) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1740, 0x9706) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1740, 0x9707) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1740, 0x9708) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1740, 0x9709) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x15a9, 0x0012) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1044, 0x800b) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1044, 0x800d) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0e66, 0x0001) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0e66, 0x0003) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0e66, 0x0009) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0e66, 0x000b) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0e66, 0x0013) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0e66, 0x0017) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0e66, 0x0018) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x04bb, 0x0945) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x04bb, 0x0947) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x04bb, 0x0948) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x13b1, 0x0031) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1737, 0x0070) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1737, 0x0071) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1737, 0x0077) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1737, 0x0078) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0789, 0x0162) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0789, 0x0163) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0789, 0x0164) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0789, 0x0166) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x100d, 0x9031) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0db0, 0x3820) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0db0, 0x3821) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0db0, 0x3822) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0db0, 0x3870) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0db0, 0x3871) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0db0, 0x6899) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0db0, 0x821a) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0db0, 0x822a) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0db0, 0x822b) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0db0, 0x822c) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0db0, 0x870a) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0db0, 0x871a) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0db0, 0x871b) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0db0, 0x871c) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0db0, 0x899a) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1b75, 0x3070) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1b75, 0x3071) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1b75, 0x3072) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1b75, 0xa200) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x20b8, 0x8888) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1d4d, 0x0002) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1d4d, 0x000c) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1d4d, 0x000e) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1d4d, 0x0011) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0471, 0x200f) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2019, 0x5201) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2019, 0xab25) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2019, 0xed06) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1a32, 0x0304) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x148f, 0x2070) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x148f, 0x2770) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x148f, 0x2870) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x148f, 0x3070) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x148f, 0x3071) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x148f, 0x3072) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x04e8, 0x2018) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x129b, 0x1828) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x0017) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x002b) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x002c) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x002d) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x0039) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x003b) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x003d) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x003e) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x003f) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x0040) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x0042) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x0047) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x0048) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x0051) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x005f) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x0060) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x083a, 0x6618) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x083a, 0x7511) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x083a, 0x7512) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x083a, 0x7522) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x083a, 0x8522) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x083a, 0xa618) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x083a, 0xa701) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x083a, 0xa702) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x083a, 0xa703) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x083a, 0xb522) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x15a9, 0x0006) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x177f, 0x0153) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x177f, 0x0164) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x177f, 0x0302) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x177f, 0x0313) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x177f, 0x0323) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x177f, 0x0324) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x177f, 0x1163) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x157e, 0x300e) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x157e, 0x3013) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0cde, 0x0022) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0cde, 0x0025) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x5a57, 0x0280) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x5a57, 0x0282) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x5a57, 0x0283) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x5a57, 0x5257) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0586, 0x3416) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0586, 0x3418) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0586, 0x341a) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0586, 0x341e) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0586, 0x343e) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x050d, 0x945b) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2001, 0x3c17) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x083a, 0xb511) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x083a, 0xb512) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0471, 0x20dd) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x148f, 0x3370) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x148f, 0x8070) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x0050) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x177f, 0x0163) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x177f, 0x0165) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x8516, 0x3572) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1690, 0x0744) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1690, 0x0761) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1690, 0x0764) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0b05, 0x179d) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x167b, 0x4001) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1740, 0x9801) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x04bb, 0x0944) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x13b1, 0x002f) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1737, 0x0079) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0789, 0x0170) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x148f, 0x3572) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x0041) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x0062) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x0065) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x0066) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x0068) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0930, 0x0a07) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x5a57, 0x0284) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1b75, 0x7733) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0b05, 0x17bc) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0b05, 0x17ad) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x050d, 0x1103) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x148f, 0xf301) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2001, 0x3c1f) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x7392, 0x7733) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0e66, 0x0020) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0e66, 0x0021) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x04bb, 0x094e) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x13b1, 0x003b) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0789, 0x016b) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0846, 0x9012) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0846, 0x9013) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0846, 0x9019) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2019, 0xed14) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2019, 0xed19) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x148f, 0x3573) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x0067) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x006a) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x006e) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0586, 0x3421) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x043e, 0x7a12) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x043e, 0x7a32) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0b05, 0x17e8) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x13d3, 0x3329) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x13d3, 0x3365) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2001, 0x3c15) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2001, 0x3c19) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2001, 0x3c1c) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2001, 0x3c1d) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2001, 0x3c1e) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2001, 0x3c20) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2001, 0x3c22) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2001, 0x3c23) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x043e, 0x7a22) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x043e, 0x7a42) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x04da, 0x1801) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x04da, 0x1800) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x04da, 0x23f6) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0471, 0x2104) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0471, 0x2126) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0471, 0x2180) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0471, 0x2181) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0471, 0x2182) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x148f, 0x5370) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x148f, 0x5372) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x043e, 0x7a32) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x057c, 0x8501) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0411, 0x0241) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0411, 0x0253) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2001, 0x3c1a) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2001, 0x3c21) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x043e, 0x7a13) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x148f, 0x5572) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x20f4, 0x724a) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07b8, 0x3073) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07b8, 0x3074) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x14b2, 0x3c08) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x14b2, 0x3c11) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0e0b, 0x9031) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0e0b, 0x9041) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0b05, 0x166a) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0b05, 0x1760) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0b05, 0x1761) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0b05, 0x1790) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0b05, 0x17a7) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x13d3, 0x3262) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x13d3, 0x3284) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x13d3, 0x3322) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x13d3, 0x3340) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x13d3, 0x3399) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x13d3, 0x3400) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x13d3, 0x3401) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x050d, 0x1003) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0411, 0x012e) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0411, 0x0148) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0411, 0x0150) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07aa, 0x0041) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07aa, 0x0042) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x18c5, 0x0008) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x07d1, 0x3c0b) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x203d, 0x14a1) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1740, 0x0600) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1740, 0x0602) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x15a9, 0x0010) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1044, 0x800c) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x06f8, 0xe036) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x148f, 0xf101) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x04bb, 0x094b) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1740, 0x0605) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1740, 0x0615) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0789, 0x0168) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0789, 0x0169) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x100d, 0x9032) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x05a6, 0x0101) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x1d4d, 0x0010) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2019, 0xab24) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x2019, 0xab29) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x18e8, 0x6259) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x08b9, 0x1197) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x003c) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x004a) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x004d) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x0053) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x0069) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x006f) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x0df6, 0x0078) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x083a, 0xa512) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x083a, 0xc522) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x083a, 0xd522) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x083a, 0xf511) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0x177f, 0x0254) },
+wireless/ralink/rt2x00/rt2800usb.c:     { USB_DEVICE(0xf201, 0x5370) },
+wireless/intersil/orinoco/orinoco_usb.c:        {USB_DEVICE(USB_COMPAQ_VENDOR_ID, USB_COMPAQ_WL215_ID)},
+wireless/intersil/orinoco/orinoco_usb.c:        {USB_DEVICE(USB_COMPAQ_VENDOR_ID, USB_HP_WL215_ID)},
+wireless/intersil/orinoco/orinoco_usb.c:        {USB_DEVICE(USB_COMPAQ_VENDOR_ID, USB_COMPAQ_W200_ID)},
+wireless/intersil/orinoco/orinoco_usb.c:        {USB_DEVICE(USB_MELCO_VENDOR_ID, USB_BUFFALO_L11_ID)},
+wireless/intersil/orinoco/orinoco_usb.c:        {USB_DEVICE(USB_MELCO_VENDOR_ID, USB_BUFFALO_L11G_WR_ID)},
+wireless/intersil/orinoco/orinoco_usb.c:        {USB_DEVICE(USB_MELCO_VENDOR_ID, USB_BUFFALO_L11G_ID)},
+wireless/intersil/orinoco/orinoco_usb.c:        {USB_DEVICE(USB_LUCENT_VENDOR_ID, USB_LUCENT_ORINOCO_ID)},
+wireless/intersil/orinoco/orinoco_usb.c:        {USB_DEVICE(USB_AVAYA8_VENDOR_ID, USB_AVAYA_WIRELESS_ID)},
+wireless/intersil/orinoco/orinoco_usb.c:        {USB_DEVICE(USB_AVAYAE_VENDOR_ID, USB_AVAYA_WIRELESS_ID)},
+wireless/intersil/orinoco/orinoco_usb.c:        {USB_DEVICE(USB_AGERE_VENDOR_ID, USB_AGERE_MODEL0801_ID)},
+wireless/intersil/orinoco/orinoco_usb.c:        {USB_DEVICE(USB_AGERE_VENDOR_ID, USB_AGERE_MODEL0802_ID)},
+wireless/intersil/orinoco/orinoco_usb.c:        {USB_DEVICE(USB_ELSA_VENDOR_ID, USB_ELSA_AIRLANCER_ID)},
+wireless/intersil/orinoco/orinoco_usb.c:        {USB_DEVICE(USB_LEGEND_VENDOR_ID, USB_LEGEND_JOYNET_ID)},
+wireless/intersil/orinoco/orinoco_usb.c:        {USB_DEVICE_VER(USB_SAMSUNG_VENDOR_ID, USB_SAMSUNG_SEW2001U1_ID,
+wireless/intersil/orinoco/orinoco_usb.c:        {USB_DEVICE(USB_SAMSUNG_VENDOR_ID, USB_SAMSUNG_SEW2001U2_ID)},
+wireless/intersil/orinoco/orinoco_usb.c:        {USB_DEVICE(USB_SAMSUNG_VENDOR_ID, USB_SAMSUNG_SEW2003U_ID)},
+wireless/intersil/orinoco/orinoco_usb.c:        {USB_DEVICE(USB_IGATE_VENDOR_ID, USB_IGATE_IGATE_11M_ID)},
+wireless/intersil/orinoco/orinoco_usb.c:        {USB_DEVICE(USB_FUJITSU_VENDOR_ID, USB_FUJITSU_E1100_ID)},
+wireless/intersil/orinoco/orinoco_usb.c:        {USB_DEVICE(USB_2WIRE_VENDOR_ID, USB_2WIRE_WIRELESS_ID)},
+wireless/intersil/orinoco/orinoco_usb.c:        {USB_DEVICE(USB_AGERE_VENDOR_ID, USB_AGERE_REBRANDED_ID)},
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0411, 0x0050)},   /* Buffalo WLI2-USB2-G54 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x045e, 0x00c2)},   /* Microsoft MN-710 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0506, 0x0a11)},   /* 3COM 3CRWE254G72 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0675, 0x0530)},   /* DrayTek Vigor 530 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x06b9, 0x0120)},   /* Thomson SpeedTouch 120g */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0707, 0xee06)},   /* SMC 2862W-G */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x07aa, 0x001c)},   /* Corega CG-WLUSB2GT */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x083a, 0x4501)},   /* Accton 802.11g WN4501 USB */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x083a, 0x4502)},   /* Siemens Gigaset USB Adapter */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x083a, 0x5501)},   /* Phillips CPWUA054 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0846, 0x4200)},   /* Netgear WG121 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0846, 0x4210)},   /* Netgear WG121 the second ? */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0846, 0x4220)},   /* Netgear WG111 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x09aa, 0x1000)},   /* Spinnaker Proto board */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0bf8, 0x1007)},   /* Fujitsu E-5400 USB */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0cde, 0x0006)},   /* Medion 40900, Roper Europe */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0db0, 0x6826)},   /* MSI UB54G (MS-6826) */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x107b, 0x55f2)},   /* Gateway WGU-210 (Gemtek) */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x124a, 0x4023)},   /* Shuttle PN15, Airvast WM168g, IOGear GWU513 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x124a, 0x4026)},   /* AirVasT USB wireless device */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x1435, 0x0210)},   /* Inventel UR054G */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x15a9, 0x0002)},   /* Gemtek WUBI-100GW 802.11g */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x1630, 0x0005)},   /* 2Wire 802.11g USB (v1) / Z-Com */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x182d, 0x096b)},   /* Sitecom WL-107 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x1915, 0x2234)},   /* Linksys WUSB54G OEM */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x1915, 0x2235)},   /* Linksys WUSB54G Portable OEM */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x2001, 0x3701)},   /* DLink DWL-G120 Spinnaker */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x2001, 0x3703)},   /* DLink DWL-G122 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x2001, 0x3762)},   /* Conceptronic C54U */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x5041, 0x2234)},   /* Linksys WUSB54G */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x5041, 0x2235)},   /* Linksys WUSB54G Portable */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0471, 0x1230)},   /* Philips CPWUA054/00 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x050d, 0x7050)},   /* Belkin F5D7050 ver 1000 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0572, 0x2000)},   /* Cohiba Proto board */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0572, 0x2002)},   /* Cohiba Proto board */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x06a9, 0x000e)},   /* Westell 802.11g USB (A90-211WG-01) */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x06b9, 0x0121)},   /* Thomson SpeedTouch 121g */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0707, 0xee13)},   /* SMC 2862W-G version 2 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x07aa, 0x0020)},   /* Corega WLUSB2GTST USB */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0803, 0x4310)},   /* Zoom 4410a */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x083a, 0x4521)},   /* Siemens Gigaset USB Adapter 54 version 2 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x083a, 0x4531)},   /* T-Com Sinus 154 data II */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x083a, 0xc501)},   /* Zoom Wireless-G 4410 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x083a, 0xf503)},   /* Accton FD7050E ver 1010ec  */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0846, 0x4240)},   /* Netgear WG111 (v2) */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0915, 0x2000)},   /* Cohiba Proto board */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0915, 0x2002)},   /* Cohiba Proto board */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0baf, 0x0118)},   /* U.S. Robotics U5 802.11g Adapter*/
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0bf8, 0x1009)},   /* FUJITSU E-5400 USB D1700*/
+wireless/intersil/p54/p54usb.c: /* {USB_DEVICE(0x0cde, 0x0006)}, * Medion MD40900 already listed above,
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0cde, 0x0008)},   /* Sagem XG703A */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0cde, 0x0015)},   /* Zcomax XG-705A */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x0d8e, 0x3762)},   /* DLink DWL-G120 Cohiba */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x124a, 0x4025)},   /* IOGear GWU513 (GW3887IK chip) */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x1260, 0xee22)},   /* SMC 2862W-G version 2 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x13b1, 0x000a)},   /* Linksys WUSB54G ver 2 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x13B1, 0x000C)},   /* Linksys WUSB54AG */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x1413, 0x5400)},   /* Telsey 802.11g USB2.0 Adapter */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x1435, 0x0427)},   /* Inventel UR054G */
+wireless/intersil/p54/p54usb.c: /* {USB_DEVICE(0x15a9, 0x0002)}, * Also SparkLAN WL-682 with 3887 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x1668, 0x1050)},   /* Actiontec 802UIG-1 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x1740, 0x1000)},   /* Senao NUB-350 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x2001, 0x3704)},   /* DLink DWL-G122 rev A2 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x2001, 0x3705)},   /* D-Link DWL-G120 rev C1 */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x413c, 0x5513)},   /* Dell WLA3310 USB Wireless Adapter */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x413c, 0x8102)},   /* Spinnaker DUT */
+wireless/intersil/p54/p54usb.c: {USB_DEVICE(0x413c, 0x8104)},   /* Cohiba Proto board */
+wireless/rndis_wlan.c:  .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+wireless/rndis_wlan.c:                    | USB_DEVICE_ID_MATCH_DEVICE,
+wireless/rndis_wlan.c:  .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+wireless/rndis_wlan.c:                    | USB_DEVICE_ID_MATCH_DEVICE,
+wireless/rndis_wlan.c:  .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+wireless/rndis_wlan.c:                    | USB_DEVICE_ID_MATCH_DEVICE,
+wireless/rndis_wlan.c:  .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+wireless/rndis_wlan.c:                    | USB_DEVICE_ID_MATCH_DEVICE,
+wireless/rndis_wlan.c:  .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+wireless/rndis_wlan.c:                    | USB_DEVICE_ID_MATCH_DEVICE,
+wireless/rndis_wlan.c:  .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+wireless/rndis_wlan.c:                    | USB_DEVICE_ID_MATCH_DEVICE,
+wireless/rndis_wlan.c:  .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+wireless/rndis_wlan.c:                    | USB_DEVICE_ID_MATCH_DEVICE,
+wireless/rndis_wlan.c:  .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+wireless/rndis_wlan.c:                    | USB_DEVICE_ID_MATCH_DEVICE,
+wireless/rndis_wlan.c:  .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+wireless/rndis_wlan.c:                    | USB_DEVICE_ID_MATCH_DEVICE,
+wireless/rndis_wlan.c:  .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+wireless/rndis_wlan.c:                    | USB_DEVICE_ID_MATCH_DEVICE,
+wireless/rndis_wlan.c:  .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+wireless/rndis_wlan.c:                    | USB_DEVICE_ID_MATCH_DEVICE,
+wireless/rndis_wlan.c:  .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+wireless/rndis_wlan.c:                    | USB_DEVICE_ID_MATCH_DEVICE,
+wireless/ath/ath6kl/usb.c:      {USB_DEVICE(0x0cf3, 0x9375)},
+wireless/ath/ath6kl/usb.c:      {USB_DEVICE(0x0cf3, 0x9374)},
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x0cf3, 0x9271) }, /* Atheros */
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x0cf3, 0x1006) }, /* Atheros */
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x0846, 0x9030) }, /* Netgear N150 */
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x07b8, 0x9271) }, /* Altai WA1011N-GU */
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x07D1, 0x3A10) }, /* Dlink Wireless 150 */
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x13D3, 0x3327) }, /* Azurewave */
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x13D3, 0x3328) }, /* Azurewave */
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x13D3, 0x3346) }, /* IMC Networks */
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x13D3, 0x3348) }, /* Azurewave */
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x13D3, 0x3349) }, /* Azurewave */
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x13D3, 0x3350) }, /* Azurewave */
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x04CA, 0x4605) }, /* Liteon */
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x040D, 0x3801) }, /* VIA */
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x0cf3, 0xb003) }, /* Ubiquiti WifiStation Ext */
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x0cf3, 0xb002) }, /* Ubiquiti WifiStation */
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x057c, 0x8403) }, /* AVM FRITZ!WLAN 11N v2 USB */
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x0471, 0x209e) }, /* Philips (or NXP) PTA01 */
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x1eda, 0x2315) }, /* AirTies */
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x0cf3, 0x7015),
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x1668, 0x1200),
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x0cf3, 0x7010),
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x0846, 0x9018),
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x083A, 0xA704),
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x0411, 0x017f),
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x0411, 0x0197),
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x04da, 0x3904),
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x0930, 0x0a08),
+wireless/ath/ath9k/hif_usb.c:   { USB_DEVICE(0x0cf3, 0x20ff),
+wireless/ath/carl9170/hw.h:#define              AR9170_USB_DEVICE_ADDRESS_CONFIGURE     BIT(7)
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x0cf3, 0x9170) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x0cf3, 0x1001) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x0cf3, 0x1002), .driver_info = CARL9170_WPS_BUTTON |
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x0cf3, 0x1010) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x0cf3, 0x1011) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0xcace, 0x0300) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x07d1, 0x3c10) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x07d1, 0x3a09) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x07d1, 0x3a0f) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x0846, 0x9040) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x0846, 0x9010) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x0846, 0x9001), .driver_info = CARL9170_ONE_LED },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x0ace, 0x1221) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x1435, 0x0804) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x1435, 0x0326) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x0586, 0x3417) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x0cde, 0x0023) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x0cde, 0x0026) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x0cde, 0x0027) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x083a, 0xf522) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x2019, 0x5304) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x04bb, 0x093f) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x0409, 0x0249) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x0409, 0x02b4) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x057c, 0x8401) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x057c, 0x8402) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x1668, 0x1200) },
+wireless/ath/carl9170/usb.c:    { USB_DEVICE(0x1b75, 0x9170) },
+wireless/ath/ath10k/usb.c:      {USB_DEVICE(0x13b1, 0x0042)}, /* Linksys WUSB6100M */
+wireless/ath/ar5523/ar5523.c:   { USB_DEVICE((vendor), (device)) }, \
+wireless/ath/ar5523/ar5523.c:   { USB_DEVICE((vendor), (device) + 1), \
+wireless/ath/ar5523/ar5523.c:   { USB_DEVICE((vendor), (device)), \
+wireless/ath/ar5523/ar5523.c:   { USB_DEVICE((vendor), (device) + 1), \
+wireless/atmel/at76c50x-usb.c:#define USB_DEVICE_DATA(__ops)    .driver_info = (kernel_ulong_t)(__ops)
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x03eb, 0x7603), USB_DEVICE_DATA(BOARD_503_ISL3861) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x066b, 0x2211), USB_DEVICE_DATA(BOARD_503_ISL3861) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x0864, 0x4100), USB_DEVICE_DATA(BOARD_503_ISL3861) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x0b3b, 0x1612), USB_DEVICE_DATA(BOARD_503_ISL3861) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x03f0, 0x011c), USB_DEVICE_DATA(BOARD_503_ISL3861) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x0cde, 0x0001), USB_DEVICE_DATA(BOARD_503_ISL3861) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x069a, 0x0320), USB_DEVICE_DATA(BOARD_503_ISL3861) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x0d5c, 0xa001), USB_DEVICE_DATA(BOARD_503_ISL3861) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x04a5, 0x9000), USB_DEVICE_DATA(BOARD_503_ISL3861) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x05dd, 0xff31), USB_DEVICE_DATA(BOARD_503_ISL3861) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x8086, 0x0200), USB_DEVICE_DATA(BOARD_503_ISL3861) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x0d8e, 0x7100), USB_DEVICE_DATA(BOARD_503_ISL3861) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x0d8e, 0x7110), USB_DEVICE_DATA(BOARD_503_ISL3861) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x04bb, 0x0919), USB_DEVICE_DATA(BOARD_503_ISL3861) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x069a, 0x0821), USB_DEVICE_DATA(BOARD_503_ISL3861) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x03eb, 0x7604), USB_DEVICE_DATA(BOARD_503_ISL3863) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x055d, 0xa000), USB_DEVICE_DATA(BOARD_503_ISL3863) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x03eb, 0x7605), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x069a, 0x0321), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x077b, 0x2219), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x077b, 0x2227), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x0864, 0x4102), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x2001, 0x3200), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x1668, 0x7605), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x03eb, 0x4102), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x1371, 0x5743), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x1371, 0x0001), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x1371, 0x0002), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x04a5, 0x9001), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x0506, 0x0a01), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x0681, 0x001b), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x050d, 0x0050), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x07b8, 0xb000), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x1044, 0x8003), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x2019, 0x3220), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x049f, 0x0032), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x07aa, 0x0011), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x07aa, 0x0018), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x05dd, 0xff35), USB_DEVICE_DATA(BOARD_503) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x083a, 0x3501), USB_DEVICE_DATA(BOARD_503_ACC) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x0d5c, 0xa002), USB_DEVICE_DATA(BOARD_503_ACC) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x03eb, 0x7606), USB_DEVICE_DATA(BOARD_505) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x03eb, 0x7613), USB_DEVICE_DATA(BOARD_505_2958) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x1371, 0x0014), USB_DEVICE_DATA(BOARD_505_2958) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x1371, 0x0013), USB_DEVICE_DATA(BOARD_505_2958) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x1915, 0x2233), USB_DEVICE_DATA(BOARD_505_2958) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x12fd, 0x1001), USB_DEVICE_DATA(BOARD_505_2958) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x07aa, 0x7613), USB_DEVICE_DATA(BOARD_505_2958) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x0db0, 0x1020), USB_DEVICE_DATA(BOARD_505_2958) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x03eb, 0x7614), USB_DEVICE_DATA(BOARD_505A) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x03eb, 0x7617), USB_DEVICE_DATA(BOARD_505A) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x1690, 0x0701), USB_DEVICE_DATA(BOARD_505A) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x1557, 0x0002), USB_DEVICE_DATA(BOARD_505A) },
+wireless/atmel/at76c50x-usb.c:  { USB_DEVICE(0x03eb, 0x7615), USB_DEVICE_DATA(BOARD_505AMX) },
+ieee802154/atusb.c:             .match_flags            = USB_DEVICE_ID_MATCH_DEVICE |
+ieee802154/atusb.c:                                       USB_DEVICE_ID_MATCH_INT_INFO,
+mdio/mdio-mvusb.c:      { USB_DEVICE(USB_MARVELL_VID, 0x1fa4) },
+usb/sr9700.c:           USB_DEVICE(0x0fe6, 0x9700),     /* SR9700 device */
+usb/ch9200.c:    USB_DEVICE(0x1A86, 0xE092),
+usb/aqc111.c:   USB_DEVICE_INTERFACE_CLASS((vid), (pid), USB_CLASS_VENDOR_SPEC), \
+usb/aqc111.c:   USB_DEVICE_AND_INTERFACE_INFO((vid), (pid), \
+usb/cx82310_eth.c:#define USB_DEVICE_CLASS(vend, prod, cl, sc, pr) \
+usb/cx82310_eth.c:      .match_flags = USB_DEVICE_ID_MATCH_DEVICE | \
+usb/cx82310_eth.c:                     USB_DEVICE_ID_MATCH_DEV_INFO, \
+usb/cx82310_eth.c:              USB_DEVICE_CLASS(0x0572, 0xcb01, 0xff, 0, 0),
+usb/lan78xx.c:  USB_DEVICE(LAN78XX_USB_VENDOR_ID, LAN7800_USB_PRODUCT_ID),
+usb/lan78xx.c:  USB_DEVICE(LAN78XX_USB_VENDOR_ID, LAN7850_USB_PRODUCT_ID),
+usb/lan78xx.c:  USB_DEVICE(LAN78XX_USB_VENDOR_ID, LAN7801_USB_PRODUCT_ID),
+usb/int51x1.c:  USB_DEVICE(INT51X1_VENDOR_ID, INT51X1_PRODUCT_ID),
+usb/mcs7830.c:          USB_DEVICE(MCS7830_VENDOR_ID, MCS7832_PRODUCT_ID),
+usb/mcs7830.c:          USB_DEVICE(MCS7830_VENDOR_ID, MCS7830_PRODUCT_ID),
+usb/mcs7830.c:          USB_DEVICE(MCS7830_VENDOR_ID, MCS7730_PRODUCT_ID),
+usb/mcs7830.c:          USB_DEVICE(SITECOM_VENDOR_ID, LN_030_PRODUCT_ID),
+usb/cdc_mbim.c: { USB_DEVICE_AND_INTERFACE_INFO(0x03f0, 0xa31d, USB_CLASS_COMM, USB_CDC_SUBCLASS_MBIM, USB_CDC_PROTO_NONE),
+usb/cdc_mbim.c: { USB_DEVICE_AND_INTERFACE_INFO(0x1bc7, 0x1041, USB_CLASS_COMM, USB_CDC_SUBCLASS_MBIM, USB_CDC_PROTO_NONE),
+usb/cdc_mbim.c: { USB_DEVICE_AND_INTERFACE_INFO(0x1bc7, 0x1061, USB_CLASS_COMM, USB_CDC_SUBCLASS_MBIM, USB_CDC_PROTO_NONE),
+usb/plusb.c:    USB_DEVICE(0x067b, 0x0000),     // PL-2301
+usb/plusb.c:    USB_DEVICE(0x067b, 0x0001),     // PL-2302
+usb/plusb.c:    USB_DEVICE(0x067b, 0x25a1),     /* PL-25A1, no eeprom */
+usb/plusb.c:    USB_DEVICE(0x050d, 0x258a),     /* Belkin F5U258/F5U279 (PL-25A1) */
+usb/plusb.c:    USB_DEVICE(0x3923, 0x7825),     /* National Instruments USB
+usb/plusb.c:    USB_DEVICE(0x067b, 0x27a1),     /* PL-27A1, no eeprom
+usb/ax88179_178a.c:     USB_DEVICE(0x0b95, 0x1790),
+usb/ax88179_178a.c:     USB_DEVICE(0x0b95, 0x178a),
+usb/ax88179_178a.c:     USB_DEVICE(0x04b4, 0x3610),
+usb/ax88179_178a.c:     USB_DEVICE(0x2001, 0x4a00),
+usb/ax88179_178a.c:     USB_DEVICE(0x0df6, 0x0072),
+usb/ax88179_178a.c:     USB_DEVICE(0x04e8, 0xa100),
+usb/ax88179_178a.c:     USB_DEVICE(0x17ef, 0x304b),
+usb/ax88179_178a.c:     USB_DEVICE(0x050d, 0x0128),
+usb/ax88179_178a.c:     USB_DEVICE(0x0930, 0x0a13),
+usb/ax88179_178a.c:     USB_DEVICE(0x0711, 0x0179),
+usb/cdc_ncm.c:  { .match_flags = USB_DEVICE_ID_MATCH_INT_INFO
+usb/cdc_ncm.c:          | USB_DEVICE_ID_MATCH_VENDOR,
+usb/cdc_ncm.c:  { USB_DEVICE_AND_INTERFACE_INFO(0x1bc7, 0x0036,
+usb/cdc_ncm.c:  { USB_DEVICE_AND_INTERFACE_INFO(0x413c, 0x81bb,
+usb/cdc_ncm.c:  { USB_DEVICE_AND_INTERFACE_INFO(0x413c, 0x81bc,
+usb/cdc_ncm.c:  { .match_flags = USB_DEVICE_ID_MATCH_INT_INFO
+usb/cdc_ncm.c:          | USB_DEVICE_ID_MATCH_VENDOR,
+usb/cdc_ncm.c:  { .match_flags = USB_DEVICE_ID_MATCH_INT_INFO
+usb/cdc_ncm.c:          | USB_DEVICE_ID_MATCH_VENDOR,
+usb/cdc_ncm.c:  { USB_DEVICE_AND_INTERFACE_INFO(0x1519, 0x0443,
+usb/cdc_ncm.c:  { USB_DEVICE_AND_INTERFACE_INFO(0x1546, 0x1010,
+usb/cdc_ether.c:        .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+usb/cdc_ether.c:                          | USB_DEVICE_ID_MATCH_DEVICE,
+usb/cdc_ether.c:        .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+usb/cdc_ether.c:                          | USB_DEVICE_ID_MATCH_DEVICE,
+usb/cdc_ether.c:        .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+usb/cdc_ether.c:                          | USB_DEVICE_ID_MATCH_DEVICE,
+usb/cdc_ether.c:        .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+usb/cdc_ether.c:                          | USB_DEVICE_ID_MATCH_DEVICE,
+usb/cdc_ether.c:        .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+usb/cdc_ether.c:                 | USB_DEVICE_ID_MATCH_DEVICE,
+usb/cdc_ether.c:        .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+usb/cdc_ether.c:                 | USB_DEVICE_ID_MATCH_DEVICE,
+usb/cdc_ether.c:        .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+usb/cdc_ether.c:                 | USB_DEVICE_ID_MATCH_DEVICE,
+usb/cdc_ether.c:        .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+usb/cdc_ether.c:                 | USB_DEVICE_ID_MATCH_DEVICE,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(0x1004, 0x61aa, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(0x046d, 0xc11f, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(NOVATEL_VENDOR_ID, 0xB001, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(NOVATEL_VENDOR_ID, 0x9010, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(DELL_VENDOR_ID, 0x8195, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(DELL_VENDOR_ID, 0x8196, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(DELL_VENDOR_ID, 0x819b, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(NOVATEL_VENDOR_ID, 0x9011, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(HP_VENDOR_ID, 0x421d, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(0x16d5, 0x650a, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_INTERFACE_NUMBER(HUAWEI_VENDOR_ID, 0x14ac, 1),
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(REALTEK_VENDOR_ID, 0x8152, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(REALTEK_VENDOR_ID, 0x8153, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(SAMSUNG_VENDOR_ID, 0xa101, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(LINKSYS_VENDOR_ID, 0x0041, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(LENOVO_VENDOR_ID, 0x3062, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(LENOVO_VENDOR_ID, 0x3069, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(LENOVO_VENDOR_ID, 0x3082, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(LENOVO_VENDOR_ID, 0x7205, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(LENOVO_VENDOR_ID, 0x720c, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(LENOVO_VENDOR_ID, 0x7214, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(LENOVO_VENDOR_ID, 0x721e, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(LENOVO_VENDOR_ID, 0xa387, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(NVIDIA_VENDOR_ID, 0x09ff, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(MICROSOFT_VENDOR_ID, 0x07ab, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(MICROSOFT_VENDOR_ID, 0x07c6, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(MICROSOFT_VENDOR_ID, 0x0927, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(TPLINK_VENDOR_ID, 0x0601, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(AQUANTIA_VENDOR_ID, 0xc101,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(ASIX_VENDOR_ID, 0x2790, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(ASIX_VENDOR_ID, 0x2791, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(0x20f4, 0xe05a, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(0x1c04, 0x0015, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(ZTE_VENDOR_ID, 0x1003, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(ZTE_VENDOR_ID, 0x1015, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(ZTE_VENDOR_ID, 0x1173, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(ZTE_VENDOR_ID, 0x1177, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(ZTE_VENDOR_ID, 0x1181, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(DELL_VENDOR_ID, 0x81ba, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(HUAWEI_VENDOR_ID, 0x15c1, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(UBLOX_VENDOR_ID, 0x1143, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(UBLOX_VENDOR_ID, 0x1104, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(0x1e2d, 0x0061, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(0x1e2d, 0x0055, USB_CLASS_COMM,
+usb/cdc_ether.c:        USB_DEVICE_AND_INTERFACE_INFO(0x1e2d, 0x0069, USB_CLASS_COMM,
+usb/dm9601.c:    USB_DEVICE(0x07aa, 0x9601),    /* Corega FEther USB-TXC */
+usb/dm9601.c:    USB_DEVICE(0x0a46, 0x9601),    /* Davicom USB-100 */
+usb/dm9601.c:    USB_DEVICE(0x0a46, 0x6688),    /* ZT6688 USB NIC */
+usb/dm9601.c:    USB_DEVICE(0x0a46, 0x0268),    /* ShanTou ST268 USB NIC */
+usb/dm9601.c:    USB_DEVICE(0x0a46, 0x8515),    /* ADMtek ADM8515 USB NIC */
+usb/dm9601.c:   USB_DEVICE(0x0a47, 0x9601),     /* Hirose USB-100 */
+usb/dm9601.c:   USB_DEVICE(0x0fe6, 0x8101),     /* DM9601 USB to Fast Ethernet Adapter */
+usb/dm9601.c:    USB_DEVICE(0x0fe6, 0x9700),    /* DM9601 USB to Fast Ethernet Adapter */
+usb/dm9601.c:    USB_DEVICE(0x0a46, 0x9000),    /* DM9000E */
+usb/dm9601.c:    USB_DEVICE(0x0a46, 0x9620),    /* DM9620 USB to Fast Ethernet Adapter */
+usb/dm9601.c:    USB_DEVICE(0x0a46, 0x9621),    /* DM9621A USB to Fast Ethernet Adapter */
+usb/dm9601.c:    USB_DEVICE(0x0a46, 0x9622),    /* DM9622 USB to Fast Ethernet Adapter */
+usb/dm9601.c:    USB_DEVICE(0x0a46, 0x0269),    /* DM962OA USB to Fast Ethernet Adapter */
+usb/dm9601.c:    USB_DEVICE(0x0a46, 0x1269),    /* DM9621A USB to Fast Ethernet Adapter */
+usb/dm9601.c:    USB_DEVICE(0x0586, 0x3427),    /* ZyXEL Keenetic Plus DSL xDSL modem */
+usb/net1080.c:  USB_DEVICE(0x0525, 0x1080),     // NetChip ref design
+usb/net1080.c:  USB_DEVICE(0x06D0, 0x0622),     // Laplink Gold
+usb/asix_devices.c:     USB_DEVICE (0x077b, 0x2226),
+usb/asix_devices.c:     USB_DEVICE (0x0846, 0x1040),
+usb/asix_devices.c:     USB_DEVICE (0x2001, 0x1a00),
+usb/asix_devices.c:     USB_DEVICE (0x0b95, 0x1720),
+usb/asix_devices.c:     USB_DEVICE (0x07b8, 0x420a),
+usb/asix_devices.c:     USB_DEVICE (0x08dd, 0x90ff),
+usb/asix_devices.c:     USB_DEVICE(0x08dd, 0x0114),
+usb/asix_devices.c:     USB_DEVICE (0x0557, 0x2009),
+usb/asix_devices.c:     USB_DEVICE (0x0411, 0x003d),
+usb/asix_devices.c:     USB_DEVICE (0x0411, 0x006e),
+usb/asix_devices.c:     USB_DEVICE (0x6189, 0x182d),
+usb/asix_devices.c:     USB_DEVICE (0x0df6, 0x0056),
+usb/asix_devices.c:     USB_DEVICE (0x0df6, 0x061c),
+usb/asix_devices.c:     USB_DEVICE (0x07aa, 0x0017),
+usb/asix_devices.c:     USB_DEVICE (0x1189, 0x0893),
+usb/asix_devices.c:     USB_DEVICE (0x1631, 0x6200),
+usb/asix_devices.c:     USB_DEVICE (0x04f1, 0x3008),
+usb/asix_devices.c:     USB_DEVICE (0x17ef, 0x7203),
+usb/asix_devices.c:     USB_DEVICE (0x0b95, 0x772b),
+usb/asix_devices.c:     USB_DEVICE (0x0b95, 0x7720),
+usb/asix_devices.c:     USB_DEVICE (0x0b95, 0x1780),
+usb/asix_devices.c:     USB_DEVICE (0x0789, 0x0160),
+usb/asix_devices.c:     USB_DEVICE (0x13b1, 0x0018),
+usb/asix_devices.c:     USB_DEVICE (0x1557, 0x7720),
+usb/asix_devices.c:     USB_DEVICE (0x07d1, 0x3c05),
+usb/asix_devices.c:     USB_DEVICE (0x2001, 0x3c05),
+usb/asix_devices.c:       USB_DEVICE (0x2001, 0x1a02),
+usb/asix_devices.c:     USB_DEVICE (0x1737, 0x0039),
+usb/asix_devices.c:     USB_DEVICE (0x04bb, 0x0930),
+usb/asix_devices.c:     USB_DEVICE(0x050d, 0x5055),
+usb/asix_devices.c:     USB_DEVICE(0x05ac, 0x1402),
+usb/asix_devices.c:     USB_DEVICE(0x0b95, 0x772a),
+usb/asix_devices.c:     USB_DEVICE(0x14ea, 0xab11),
+usb/asix_devices.c:     USB_DEVICE(0x0db0, 0xa877),
+usb/asix_devices.c:     USB_DEVICE (0x0b95, 0x7e2b),
+usb/asix_devices.c:     USB_DEVICE(0x0b95, 0x172a),
+usb/asix_devices.c:     USB_DEVICE(0x066b, 0x20f9),
+usb/kalmia.c:   { USB_DEVICE(0x04e8, 0x689a) },
+usb/kalmia.c:   { USB_DEVICE(0x04e8, 0x6889),
+usb/gl620a.c:   USB_DEVICE(0x05e3, 0x0502),     // GL620USB-A
+usb/gl620a.c:   /* NOT: USB_DEVICE(0x05e3, 0x0501),     // GL620USB
+usb/qmi_wwan.c: USB_DEVICE_INTERFACE_NUMBER(vend, prod, num), \
+usb/qmi_wwan.c: USB_DEVICE_INTERFACE_NUMBER(vend, prod, num), \
+usb/qmi_wwan.c: USB_DEVICE_AND_INTERFACE_INFO(vend, prod, USB_CLASS_VENDOR_SPEC, \
+usb/qmi_wwan.c:         USB_DEVICE_AND_INTERFACE_INFO(0x1410, 0xb001,
+usb/qmi_wwan.c:         USB_DEVICE_AND_INTERFACE_INFO(0x1410, 0x9010,
+usb/qmi_wwan.c:         USB_DEVICE_AND_INTERFACE_INFO(0x1410, 0x9011,
+usb/qmi_wwan.c:         USB_DEVICE_AND_INTERFACE_INFO(0x413C, 0x8195,
+usb/qmi_wwan.c:         USB_DEVICE_AND_INTERFACE_INFO(0x413C, 0x8196,
+usb/qmi_wwan.c:         USB_DEVICE_AND_INTERFACE_INFO(0x413C, 0x819b,
+usb/qmi_wwan.c:         USB_DEVICE_AND_INTERFACE_INFO(0x16d5, 0x650a,
+usb/qmi_wwan.c:         USB_DEVICE_AND_INTERFACE_INFO(0x03f0, 0x421d,
+usb/qmi_wwan.c:         USB_DEVICE_AND_INTERFACE_INFO(0x03f0, 0x581d, USB_CLASS_VENDOR_SPEC, 1, 7),
+usb/qmi_wwan.c: if (id->match_flags & USB_DEVICE_ID_MATCH_INT_NUMBER &&
+usb/smsc95xx.c:         USB_DEVICE(0x0424, 0x9500),
+usb/smsc95xx.c:         USB_DEVICE(0x0424, 0x9505),
+usb/smsc95xx.c:         USB_DEVICE(0x0424, 0x9E00),
+usb/smsc95xx.c:         USB_DEVICE(0x0424, 0x9E01),
+usb/smsc95xx.c:         USB_DEVICE(0x0424, 0xec00),
+usb/smsc95xx.c:         USB_DEVICE(0x0424, 0x9900),
+usb/smsc95xx.c:         USB_DEVICE(0x0424, 0x9901),
+usb/smsc95xx.c:         USB_DEVICE(0x0424, 0x9902),
+usb/smsc95xx.c:         USB_DEVICE(0x0424, 0x9903),
+usb/smsc95xx.c:         USB_DEVICE(0x0424, 0x9904),
+usb/smsc95xx.c:         USB_DEVICE(0x0424, 0x9905),
+usb/smsc95xx.c:         USB_DEVICE(0x0424, 0x9906),
+usb/smsc95xx.c:         USB_DEVICE(0x0424, 0x9907),
+usb/smsc95xx.c:         USB_DEVICE(0x0424, 0x9908),
+usb/smsc95xx.c:         USB_DEVICE(0x0424, 0x9909),
+usb/smsc95xx.c:         USB_DEVICE(0x0424, 0x9530),
+usb/smsc95xx.c:         USB_DEVICE(0x0424, 0x9730),
+usb/smsc95xx.c:         USB_DEVICE(0x0424, 0x9E08),
+usb/rndis_host.c:       USB_DEVICE_AND_INTERFACE_INFO(0x1630, 0x0042,
+usb/sr9800.c:           USB_DEVICE(0x0fe6, 0x9800),     /* SR9800 Device  */
+usb/catc.c:     { USB_DEVICE(0x0423, 0xa) },    /* CATC Netmate, Belkin F5U011 */
+usb/catc.c:     { USB_DEVICE(0x0423, 0xc) },    /* CATC Netmate II, Belkin F5U111 */
+usb/catc.c:     { USB_DEVICE(0x08d1, 0x1) },    /* smartBridges smartNIC */
+usb/cdc_subset.c:       USB_DEVICE (0x0402, 0x5632),    // ALi defaults
+usb/cdc_subset.c:       USB_DEVICE (0x182d,0x207c),     // SiteCom CN-124
+usb/cdc_subset.c:       USB_DEVICE (0x0547, 0x2720),    // AnchorChips defaults
+usb/cdc_subset.c:       USB_DEVICE (0x0547, 0x2727),    // Xircom PGUNET
+usb/cdc_subset.c:       USB_DEVICE (0x050d, 0x0004),    // Belkin
+usb/cdc_subset.c:       USB_DEVICE (0x056c, 0x8100),    // eTEK
+usb/cdc_subset.c:       USB_DEVICE (0x0525, 0x9901),    // Advance USBNET (eTEK)
+usb/cdc_subset.c:       USB_DEVICE (0x0525, 0x2888),    // EPSON USB client
+usb/cdc_subset.c:       USB_DEVICE (0x050f, 0x0190),    // KC-190
+usb/cdc_subset.c:       USB_DEVICE (0x049F, 0x505A),    // usb-eth, or compatible
+usb/cdc_subset.c:       USB_DEVICE (0x0E7E, 0x1001),    // G.Mate "Yopy"
+usb/cdc_subset.c:       USB_DEVICE (0x8086, 0x07d3),    // "blob" bootloader
+usb/cdc_subset.c:       USB_DEVICE (0x1286, 0x8001),    // "blob" bootloader
+usb/cdc_subset.c:       USB_DEVICE (0x0525, 0xa4a2),
+usb/hso.c:      USB_DEVICE(vendor, product),    \
+usb/hso.c:      USB_DEVICE(vendor, product),    \
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x7301)},           /* GE40x */
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x7361)},           /* GE40x */
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x7381)},           /* GE40x */
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x7401)},           /* GI 0401 */
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x7501)},           /* GTM 382 */
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x7601)},           /* GE40x */
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x7701)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x7706)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x7801)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x7901)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x7A01)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x7A05)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x8200)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x8201)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x8300)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x8302)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x8304)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x8400)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x8600)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x8800)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x8900)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x9000)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0x9200)},           /* Option GTM671WFS */
+usb/hso.c:      {USB_DEVICE(0x0af0, 0xd035)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0xd055)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0xd155)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0xd255)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0xd057)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0xd157)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0xd257)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0xd357)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0xd058)},
+usb/hso.c:      {USB_DEVICE(0x0af0, 0xc100)},
+usb/smsc75xx.c:         USB_DEVICE(USB_VENDOR_ID_SMSC, USB_PRODUCT_ID_LAN7500),
+usb/smsc75xx.c:         USB_DEVICE(USB_VENDOR_ID_SMSC, USB_PRODUCT_ID_LAN7505),
+usb/sierra_net.c:       {USB_DEVICE_INTERFACE_NUMBER(vend, prod, 7), \
+usb/sierra_net.c:       {USB_DEVICE_INTERFACE_NUMBER(vend, prod, 10), \
+usb/sierra_net.c:       {USB_DEVICE_INTERFACE_NUMBER(vend, prod, 11), \
+usb/r8153_ecm.c:        USB_DEVICE_AND_INTERFACE_INFO(VENDOR_ID_REALTEK, 0x8153, USB_CLASS_COMM,
+usb/r8153_ecm.c:        USB_DEVICE_AND_INTERFACE_INFO(VENDOR_ID_LENOVO, 0x721e, USB_CLASS_COMM,
+usb/r8152.c:#define REALTEK_USB_DEVICE(vend, prod)      { \
+usb/r8152.c:    USB_DEVICE_INTERFACE_CLASS(vend, prod, USB_CLASS_VENDOR_SPEC), \
+usb/r8152.c:    USB_DEVICE_AND_INTERFACE_INFO(vend, prod, USB_CLASS_COMM, \
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_REALTEK, 0x8050),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_REALTEK, 0x8053),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_REALTEK, 0x8152),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_REALTEK, 0x8153),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_REALTEK, 0x8155),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_REALTEK, 0x8156),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_MICROSOFT, 0x07ab),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_MICROSOFT, 0x07c6),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_MICROSOFT, 0x0927),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_SAMSUNG, 0xa101),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_LENOVO,  0x304f),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_LENOVO,  0x3062),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_LENOVO,  0x3069),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_LENOVO,  0x3082),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_LENOVO,  0x7205),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_LENOVO,  0x720c),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_LENOVO,  0x7214),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_LENOVO,  0x721e),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_LENOVO,  0xa387),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_LINKSYS, 0x0041),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_NVIDIA,  0x09ff),
+usb/r8152.c:    REALTEK_USB_DEVICE(VENDOR_ID_TPLINK,  0x0601),
+usb/lg-vl600.c:         USB_DEVICE_AND_INTERFACE_INFO(0x1004, 0x61aa, USB_CLASS_COMM,
+usb/pegasus.c:  {.match_flags = USB_DEVICE_ID_MATCH_DEVICE, .idVendor = vid, .idProduct = pid},
+usb/pegasus.c:  {.match_flags = (USB_DEVICE_ID_MATCH_DEVICE | USB_DEVICE_ID_MATCH_DEV_CLASS), \
+usb/pegasus.c:  pegasus_ids[i].match_flags = USB_DEVICE_ID_MATCH_DEVICE;
+usb/zaurus.c:   .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+usb/zaurus.c:                     | USB_DEVICE_ID_MATCH_DEVICE,
+usb/zaurus.c:   .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+usb/zaurus.c:                     | USB_DEVICE_ID_MATCH_DEVICE,
+usb/zaurus.c:   .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+usb/zaurus.c:                     | USB_DEVICE_ID_MATCH_DEVICE,
+usb/zaurus.c:   .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+usb/zaurus.c:             | USB_DEVICE_ID_MATCH_DEVICE,
+usb/zaurus.c:   .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+usb/zaurus.c:            | USB_DEVICE_ID_MATCH_DEVICE,
+usb/zaurus.c:   USB_DEVICE_AND_INTERFACE_INFO(0x04DD, 0x9031, USB_CLASS_COMM,
+usb/zaurus.c:   .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+usb/zaurus.c:            | USB_DEVICE_ID_MATCH_DEVICE,
+usb/zaurus.c:   .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+usb/zaurus.c:            | USB_DEVICE_ID_MATCH_DEVICE,
+usb/zaurus.c:   USB_DEVICE_AND_INTERFACE_INFO(0x22b8, 0x6027, USB_CLASS_COMM,
+usb/zaurus.c:   USB_DEVICE_AND_INTERFACE_INFO(0x22b8, 0x6425, USB_CLASS_COMM,
+usb/zaurus.c:   .match_flags    =   USB_DEVICE_ID_MATCH_INT_INFO
+usb/zaurus.c:            | USB_DEVICE_ID_MATCH_DEVICE,
+usb/zaurus.c:   USB_DEVICE_AND_INTERFACE_INFO(0x046d, 0xc11f, USB_CLASS_COMM,
+usb/rtl8150.c:  {USB_DEVICE(VENDOR_ID_REALTEK, PRODUCT_ID_RTL8150)},
+usb/rtl8150.c:  {USB_DEVICE(VENDOR_ID_MELCO, PRODUCT_ID_LUAKTX)},
+usb/rtl8150.c:  {USB_DEVICE(VENDOR_ID_MICRONET, PRODUCT_ID_SP128AR)},
+usb/rtl8150.c:  {USB_DEVICE(VENDOR_ID_LONGSHINE, PRODUCT_ID_LCS8138TX)},
+usb/rtl8150.c:  {USB_DEVICE(VENDOR_ID_OQO, PRODUCT_ID_RTL8150)},
+usb/rtl8150.c:  {USB_DEVICE(VENDOR_ID_ZYXEL, PRODUCT_ID_PRESTIGE)},
+usb/kaweth.c:   { USB_DEVICE(0x03e8, 0x0008) }, /* AOX Endpoints USB Ethernet */
+usb/kaweth.c:   { USB_DEVICE(0x04bb, 0x0901) }, /* I-O DATA USB-ET/T */
+usb/kaweth.c:   { USB_DEVICE(0x0506, 0x03e8) }, /* 3Com 3C19250 */
+usb/kaweth.c:   { USB_DEVICE(0x0506, 0x11f8) }, /* 3Com 3C460 */
+usb/kaweth.c:   { USB_DEVICE(0x0557, 0x2002) }, /* ATEN USB Ethernet */
+usb/kaweth.c:   { USB_DEVICE(0x0557, 0x4000) }, /* D-Link DSB-650C */
+usb/kaweth.c:   { USB_DEVICE(0x0565, 0x0002) }, /* Peracom Enet */
+usb/kaweth.c:   { USB_DEVICE(0x0565, 0x0003) }, /* Optus@Home UEP1045A */
+usb/kaweth.c:   { USB_DEVICE(0x0565, 0x0005) }, /* Peracom Enet2 */
+usb/kaweth.c:   { USB_DEVICE(0x05e9, 0x0008) }, /* KLSI KL5KUSB101B */
+usb/kaweth.c:   { USB_DEVICE(0x05e9, 0x0009) }, /* KLSI KL5KUSB101B (Board change) */
+usb/kaweth.c:   { USB_DEVICE(0x066b, 0x2202) }, /* Linksys USB10T */
+usb/kaweth.c:   { USB_DEVICE(0x06e1, 0x0008) }, /* ADS USB-10BT */
+usb/kaweth.c:   { USB_DEVICE(0x06e1, 0x0009) }, /* ADS USB-10BT */
+usb/kaweth.c:   { USB_DEVICE(0x0707, 0x0100) }, /* SMC 2202USB */
+usb/kaweth.c:   { USB_DEVICE(0x07aa, 0x0001) }, /* Correga K.K. */
+usb/kaweth.c:   { USB_DEVICE(0x07b8, 0x4000) }, /* D-Link DU-E10 */
+usb/kaweth.c:   { USB_DEVICE(0x07c9, 0xb010) }, /* Allied Telesyn AT-USB10 USB Ethernet Adapter */
+usb/kaweth.c:   { USB_DEVICE(0x0846, 0x1001) }, /* NetGear EA-101 */
+usb/kaweth.c:   { USB_DEVICE(0x0846, 0x1002) }, /* NetGear EA-101 */
+usb/kaweth.c:   { USB_DEVICE(0x085a, 0x0008) }, /* PortGear Ethernet Adapter */
+usb/kaweth.c:   { USB_DEVICE(0x085a, 0x0009) }, /* PortGear Ethernet Adapter */
+usb/kaweth.c:   { USB_DEVICE(0x087d, 0x5704) }, /* Jaton USB Ethernet Device Adapter */
+usb/kaweth.c:   { USB_DEVICE(0x0951, 0x0008) }, /* Kingston Technology USB Ethernet Adapter */
+usb/kaweth.c:   { USB_DEVICE(0x095a, 0x3003) }, /* Portsmith Express Ethernet Adapter */
+usb/kaweth.c:   { USB_DEVICE(0x10bd, 0x1427) }, /* ASANTE USB To Ethernet Adapter */
+usb/kaweth.c:   { USB_DEVICE(0x1342, 0x0204) }, /* Mobility USB-Ethernet Adapter */
+usb/kaweth.c:   { USB_DEVICE(0x13d2, 0x0400) }, /* Shark Pocket Adapter */
+usb/kaweth.c:   { USB_DEVICE(0x1485, 0x0001) }, /* Silicom U2E */
+usb/kaweth.c:   { USB_DEVICE(0x1485, 0x0002) }, /* Psion Dacom Gold Port Ethernet */
+usb/kaweth.c:   { USB_DEVICE(0x1645, 0x0005) }, /* Entrega E45 */
+usb/kaweth.c:   { USB_DEVICE(0x1645, 0x0008) }, /* Entrega USB Ethernet Adapter */
+usb/kaweth.c:   { USB_DEVICE(0x1645, 0x8005) }, /* PortGear Ethernet Adapter */
+usb/kaweth.c:   { USB_DEVICE(0x1668, 0x0323) }, /* Actiontec USB Ethernet */
+usb/kaweth.c:   { USB_DEVICE(0x2001, 0x4000) }, /* D-link DSB-650C */
+usb/cdc-phonet.c:               .match_flags = USB_DEVICE_ID_MATCH_VENDOR
+usb/cdc-phonet.c:                       | USB_DEVICE_ID_MATCH_INT_CLASS
+usb/cdc-phonet.c:                       | USB_DEVICE_ID_MATCH_INT_SUBCLASS,
+can/usb/peak_usb/pcan_usb_core.c:               USB_DEVICE(PCAN_USB_VENDOR_ID, PCAN_USB_PRODUCT_ID),
+can/usb/peak_usb/pcan_usb_core.c:               USB_DEVICE(PCAN_USB_VENDOR_ID, PCAN_USBPRO_PRODUCT_ID),
+can/usb/peak_usb/pcan_usb_core.c:               USB_DEVICE(PCAN_USB_VENDOR_ID, PCAN_USBFD_PRODUCT_ID),
+can/usb/peak_usb/pcan_usb_core.c:               USB_DEVICE(PCAN_USB_VENDOR_ID, PCAN_USBPROFD_PRODUCT_ID),
+can/usb/peak_usb/pcan_usb_core.c:               USB_DEVICE(PCAN_USB_VENDOR_ID, PCAN_USBCHIP_PRODUCT_ID),
+can/usb/peak_usb/pcan_usb_core.c:               USB_DEVICE(PCAN_USB_VENDOR_ID, PCAN_USBX6_PRODUCT_ID),
+can/usb/usb_8dev.c:     { USB_DEVICE(USB_8DEV_VENDOR_ID, USB_8DEV_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_LEAF_DEVEL_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_LEAF_LITE_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_LEAF_PRO_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_LEAF_SPRO_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_LEAF_PRO_LS_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_LEAF_PRO_SWC_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_LEAF_PRO_LIN_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_LEAF_SPRO_LS_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_LEAF_SPRO_SWC_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_MEMO2_DEVEL_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_MEMO2_HSHS_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_UPRO_HSHS_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_LEAF_LITE_GI_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_LEAF_PRO_OBDII_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_MEMO2_HSLS_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_LEAF_LITE_CH_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_BLACKBIRD_SPRO_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_OEM_MERCURY_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_OEM_LEAF_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_CAN_R_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_LEAF_LITE_V2_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_MINI_PCIE_HS_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_LEAF_LIGHT_HS_V2_OEM_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_USBCAN_LIGHT_2HS_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_MINI_PCIE_2HS_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_USBCAN_R_V2_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_LEAF_LIGHT_R_V2_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_LEAF_LIGHT_HS_V2_OEM2_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_USBCAN2_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_USBCAN_REVB_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_MEMORATOR_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_VCI2_PRODUCT_ID),
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_BLACKBIRD_V2_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_MEMO_PRO_5HS_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_USBCAN_PRO_5HS_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_USBCAN_LIGHT_4HS_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_LEAF_PRO_HS_V2_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_USBCAN_PRO_2HS_V2_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_MEMO_2HS_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_MEMO_PRO_2HS_V2_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_HYBRID_2CANLIN_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_ATI_USBCAN_PRO_2HS_V2_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_ATI_MEMO_PRO_2HS_V2_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_HYBRID_PRO_2CANLIN_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_U100_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_U100P_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_U100S_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_USBCAN_PRO_4HS_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_HYBRID_CANLIN_PRODUCT_ID) },
+can/usb/kvaser_usb/kvaser_usb_core.c:   { USB_DEVICE(KVASER_VENDOR_ID, USB_HYBRID_PRO_CANLIN_PRODUCT_ID) },
+can/usb/etas_es58x/es58x_core.c:                USB_DEVICE(ES58X_VENDOR_ID, ES581_4_PRODUCT_ID),
+can/usb/etas_es58x/es58x_core.c:                USB_DEVICE_INTERFACE_PROTOCOL(ES58X_VENDOR_ID, ES582_1_PRODUCT_ID,
+can/usb/etas_es58x/es58x_core.c:                USB_DEVICE_INTERFACE_PROTOCOL(ES58X_VENDOR_ID, ES584_1_PRODUCT_ID,
+can/usb/esd_usb2.c:     {USB_DEVICE(USB_ESDGMBH_VENDOR_ID, USB_CANUSB2_PRODUCT_ID)},
+can/usb/esd_usb2.c:     {USB_DEVICE(USB_ESDGMBH_VENDOR_ID, USB_CANUSBM_PRODUCT_ID)},
+can/usb/mcba_usb.c:     { USB_DEVICE(MCBA_VENDOR_ID, MCBA_PRODUCT_ID) },
+can/usb/ems_usb.c:      {USB_DEVICE(USB_CPCUSB_VENDOR_ID, USB_CPCUSB_ARM7_PRODUCT_ID)},
+can/usb/ucan.c: {USB_DEVICE_INTERFACE_NUMBER(0x2294, 0x425a, 0)},
+can/usb/ucan.c: {USB_DEVICE_INTERFACE_NUMBER(0x2294, 0x425b, 0)},
+can/usb/gs_usb.c:       { USB_DEVICE_INTERFACE_NUMBER(USB_GSUSB_1_VENDOR_ID,
+can/usb/gs_usb.c:       { USB_DEVICE_INTERFACE_NUMBER(USB_CANDLELIGHT_VENDOR_ID,
