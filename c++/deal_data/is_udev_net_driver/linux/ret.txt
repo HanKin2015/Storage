@@ -1,0 +1,40 @@
+root@hankin-H81M-S1:~# ./a.out 
+
+-----main [239]-----
+
+-----find_udev [143] 0x0b95:0x772b-----
+8087:8000 (bus 2, port 1, device 2, speed 3, class 0x9)
+1d6b:0002 (bus 2, port 0, device 1, speed 3, class 0x9)
+8087:8008 (bus 1, port 1, device 2, speed 3, class 0x9)
+1d6b:0002 (bus 1, port 0, device 1, speed 3, class 0x9)
+1d6b:0003 (bus 4, port 0, device 1, speed 4, class 0x9)
+1a2c:2124 (bus 3, port 4, device 10, speed 1, class 0x0)
+0b95:772b (bus 3, port 3, device 17, speed 3, class 0xff)
+find usb device [0x0b95:0x772b].
+
+-----get_symlink_file_path [217]-----
+文件列表: 
+name: virbr0, type: 10
+path: /sys/class/net/virbr0
+name: enx000ec684a637, type: 10
+path: /sys/class/net/enx000ec684a637
+name: lo, type: 10
+path: /sys/class/net/lo
+name: enp2s0, type: 10
+path: /sys/class/net/enp2s0
+
+-----get_usb_device_path [111]-----
+1 3 
+udev_path: 3-1.3
+
+-----is_usb_net_device [81]-----
+index not found, real_path: ../../devices/virtual/net/virbr0, udev_path: 3-1.3
+real_path: ../../devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1.3/3-1.3:1.0/net/enx000ec684a637, udev_path: 3-1.3
+this usb device[0x0b95:0x772b] is usb net device.
+
+-----in_usb_net_driver_list [67]-----
+this usb device in usb net driver list, index: 676, [0x0b95:0x772b]
+this usb device[0x0b95:0x772b] in usb net driver list.
+
+runTime is 0.004950 s
+
