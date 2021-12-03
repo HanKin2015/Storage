@@ -32,6 +32,12 @@ using namespace std;
 
 #define INNER_NET_FILE "./udev_net_driver_vpid.txt"
 #define Info printf
+#define NET_CLASS_PATH "/sys/class/net/"
+#include <dirent.h>
+#include <vector>
+#define LOG_DEBUG printf
+#define LOG_INFO printf
+#define LOG_ERROR printf
 
 // 读取文件方案
 void readInnerUdevNetDriverVpid(unsigned short v, unsigned short p)
@@ -62,7 +68,7 @@ void readInnerUdevNetDriverVpid(unsigned short v, unsigned short p)
 }
 
 // 内联函数
-inline bool in_usb_net_driver_list(unsigned short vid, unsigned short pid)
+inline bool is_in_usb_net_driver_list(unsigned short vid, unsigned short pid)
 {
     Info("\n-----%s [%d]-----\n", __FUNCTION__, __LINE__);
     
@@ -76,37 +82,39 @@ inline bool in_usb_net_driver_list(unsigned short vid, unsigned short pid)
 }
 
 #define MAX_PATH_LEN 256
-static bool is_usb_net_device(vector<string> symlink_file_paths, string udev_path)
+static bool is_usb_net_device(vector<string> net_symlink_file_paths, string udev_path)
 {
     Info("\n-----%s [%d]-----\n", __FUNCTION__, __LINE__);
     
     char real_path[MAX_PATH_LEN];
-    string real_path_str;
+    std::string real_path_str;
     int ret;
     int index;
 
-    for (string symlink_file_path : symlink_file_paths) {
+    std::vector<std::string>::iterator it = net_symlink_file_paths.begin();
+    //for (std::string net_symlink_file_path : net_symlink_file_paths) {
+    for (it != net_symlink_file_paths.end(); it++) {
         memset(real_path, 0, MAX_PATH_LEN);
-        ret = readlink(symlink_file_path.c_str(), real_path, MAX_PATH_LEN);
+        ret = readlink((*it).c_str(), real_path, MAX_PATH_LEN);
         if (ret == -1) {
-            Info("readlink failed, ret:%d (%s)", ret, strerror(errno));
+            LOG_ERROR("readlink failed, ret=%d, err=%u, %s", errno, strerror(errno));
             return false;
         }
 
         real_path_str = real_path;
         index = real_path_str.find(udev_path);
         if (index == -1) {
-            Info("index not found, real_path: %s, udev_path: %s\n", real_path, udev_path.c_str());
+            LOG_DEBUG("real_path: %s, udev_path: %s", real_path, udev_path.c_str());
             continue;
         }
-        Info("real_path: %s, udev_path: %s\n", real_path, udev_path.c_str());
+        LOG_DEBUG("real_path: %s, udev_path: %s\n", real_path, udev_path.c_str());
         return true;
     }
     return false;
 }
 
 #define MAX_PORTS_NUM 256
-static void get_usb_device_path(libusb_device *udev, string &udev_path)
+static bool get_usb_device_path(libusb_device *udev, string &udev_path)
 {
     Info("\n-----%s [%d]-----\n", __FUNCTION__, __LINE__);
     assert(udev != NULL);
@@ -117,7 +125,7 @@ static void get_usb_device_path(libusb_device *udev, string &udev_path)
     int ports_num = libusb_get_port_numbers(udev, ports, MAX_PORTS_NUM);
     if (ports_num < 0) {
         perror("libusb_get_port_numbers");
-        return;
+        return false;
     }
     
     for (int i = 0; i < ports_num; i++) {
@@ -135,7 +143,7 @@ static void get_usb_device_path(libusb_device *udev, string &udev_path)
     }
     udev_path = ss.str();
     Info("udev_path: %s\n", udev_path.data());
-    return;
+    return true;
 }
 
 static libusb_device *find_udev(unsigned short vid, unsigned short pid)
@@ -210,34 +218,73 @@ int fn(const char* file, const struct stat* sb, int flag)
     return 0;
 }
 
-#include <dirent.h>
-#include <vector>
-int get_symlink_file_path(vector<string> &symlink_file_paths)
+static bool get_net_symlink_file_path(vector<string> &net_symlink_file_paths)
 {
     Info("\n-----%s [%d]-----\n", __FUNCTION__, __LINE__);
     
-    struct dirent *ptr;
+    struct dirent *st_dirent;
     DIR *dir;
-    string PATH = "/sys/class/net/";
+    string net_symlink_file_path;
     
-    dir = opendir(PATH.c_str());
-    cout << "文件列表: "<< endl;
-    while ((ptr = readdir(dir)) != NULL) {
-        //cout << ptr->d_name << ' ' << ptr->d_type << endl;
-        if (ptr->d_type == DT_LNK) {
-            printf("name: %s, type: %d\n", ptr->d_name, ptr->d_type);
-            string tmp = PATH + ptr->d_name;
-            symlink_file_paths.push_back(tmp);
-            printf("path: %s\n", tmp.data());
+    dir = opendir(NET_CLASS_PATH);
+    if (dir == NULL) {
+        LOG_ERROR("opendir failed, err=%u, %s", errno, strerror(errno));
+        return false;
+    }
+    while ((st_dirent = readdir(dir)) != NULL) {
+        if (st_dirent->d_type == DT_LNK) {
+            net_symlink_file_path = NET_CLASS_PATH;
+            net_symlink_file_path += st_dirent->d_name;
+            net_symlink_file_paths.push_back(net_symlink_file_path);
+            LOG_DEBUG("net_symlink_file_path: %s", net_symlink_file_path.c_str());
         }
     }
-    return 0;
+    closedir(dir);
+    dir = NULL;
+    return true;
+}
+
+static bool is_ethernet(libusb_device *device, unsigned short vid, unsigned short pid)
+{
+    bool ret;
+    string udev_path;
+    vector<string> net_symlink_file_paths;
+    
+    // 通过网卡驱动名单判断是否是网卡
+    ret = is_in_usb_net_driver_list(vid, pid);
+    if (ret) {
+        LOG_INFO("device 0x%04x 0x%04x is in usb net driver list.\n", vid, pid);
+        return true;
+    }
+    
+    // 获取设备路径(bus-port1.port2...)
+    ret = get_usb_device_path(device, udev_path);
+    if (!ret) {
+        LOG_ERROR("device 0x%04x 0x%04x get usb device path failed!\n", vid, pid);
+        return false;
+    }
+
+    // 获取网卡软链接路径
+    ret = get_net_symlink_file_path(net_symlink_file_paths);
+    if (!ret) {
+        LOG_ERROR("device 0x%04x 0x%04x get net symbolic link file path failed!\n", vid, pid);
+        return false;
+    }
+
+    // 通过软链接判断是否是网卡
+    ret = is_usb_net_device(net_symlink_file_paths, udev_path);
+    if (ret) {
+        LOG_INFO("device 0x%04x 0x%04x is ethernet adapter.\n", vid, pid);
+        return true;
+    }
+    LOG_INFO("device 0x%04x 0x%04x is not ethernet adapter.\n", vid, pid);
+    return false;
 }
 
 int main()
 {
     Info("\n-----%s [%d]-----\n", __FUNCTION__, __LINE__);
-    
+    printf("%lu\n", USB_NET_DRIVER_NUM);
     //ftw("/media/sangfor/vdb/study", fn, 0);
     
     struct timeval timeStart, timeEnd, timeSystemStart; 
@@ -254,26 +301,8 @@ int main()
         return -1;
     }
     
-    assert(udev != NULL);
-    
-    vector<string> symlink_file_paths;
-    get_symlink_file_path(symlink_file_paths);
-
-    string udev_path;
-    get_usb_device_path(udev, udev_path);
-    if (udev_path.empty()) {
-        perror("get_usb_device_path");
-        return -2;;
-    }
-    
-    bool ret = is_usb_net_device(symlink_file_paths, udev_path);
-    if (ret) {
-        Info("this usb device[0x%04x:0x%04x] is usb net device.\n", vid, pid);
-    }
-    
-    ret = in_usb_net_driver_list(vid, pid);
-    if (ret) {
-        Info("this usb device[0x%04x:0x%04x] in usb net driver list.\n", vid, pid);
+    if (is_ethernet(udev, vid, pid)) {
+        LOG_INFO("device 0x%04x 0x%04x is ethernet adapter, we think it is a local device.\n", vid, pid);
     }
     
     gettimeofday(&timeEnd, NULL); 
@@ -281,3 +310,98 @@ int main()
     printf("\nrunTime is %lf s\n", runTime);
     return 0;
 }
+
+/*
+static bool is_in_usb_net_driver_list(unsigned short vid, unsigned short pid)
+{
+    for (int i = 0; i < USB_NET_DRIVER_NUM; i++) {
+        if (usb_net_driver_ist[i][0] == vid && usb_net_driver_ist[i][1] == pid) {
+            LOG_INFO("device 0x%04x 0x%04x is in usb net driver list", vid, pid);
+            return true;
+        }
+    }
+    LOG_INFO("device 0x%04x 0x%04x is not in usb net driver list", vid, pid);
+    return false;
+}
+
+
+static bool get_usb_device_path(libusb_device *device, string &udev_path)
+{
+    assert(device != NULL);
+    
+    uint8_t ports[MAX_PATH_PORTS_NUM];
+    int bus;
+    int ports_num;
+    
+    bus = libusb_get_bus_number(device);
+    ports_num = libusb_get_port_numbers(device, ports, MAX_PATH_PORTS_NUM);
+    if (ports_num < 0) {
+        LOG_ERROR("libusb_get_port_numbers failed");
+        return false;
+    }
+
+    std::stringstream ss;
+    ss << bus;
+    ss << "-";
+    ss << ports[0];
+    for(int i = 1; i < ports_num; i++) {
+        ss << ".";
+        ss << ports[i];
+    }
+    udev_path = ss.str();
+    LOG_INFO("udev_path: %s\n", udev_path.c_str());
+    return true;
+}
+
+static bool get_net_symlink_file_path(std::vector<std::string> &net_symlink_file_paths)
+{
+    struct dirent *st_dirent;
+    DIR *dir;
+    std::string net_symlink_file_path;
+    
+    dir = opendir(NET_CLASS_PATH);
+    if (dir == NULL) {
+        LOG_ERROR("opendir failed, err=%u, %s", errno, strerror(errno));
+        return false;
+    }
+    while ((st_dirent = readdir(dir)) != NULL) {
+        if (st_dirent->d_type == DT_LNK) {
+            net_symlink_file_path = NET_CLASS_PATH;
+            net_symlink_file_path += st_dirent->d_name;
+            net_symlink_file_paths.push_back(net_symlink_file_path);
+            LOG_DEBUG("net_symlink_file_path: %s", net_symlink_file_path.c_str());
+        }
+    }
+    closedir(dir);
+    dir = NULL;
+    return true;
+}
+
+static bool is_usb_net_device(std::vector<std::string> net_symlink_file_paths, std::string udev_path)
+{
+    char real_path[MAX_PATH_LEN];
+    std::string real_path_str;
+    int ret;
+    int index;
+
+    std::vector<std::string>::iterator it = net_symlink_file_paths.begin();
+    for (; it != net_symlink_file_paths.end(); it++) {
+        memset(real_path, 0, MAX_PATH_LEN);
+        ret = readlink((*it).c_str(), real_path, MAX_PATH_LEN);
+        if (ret == -1) {
+            LOG_ERROR("readlink failed, ret=%d, err=%u, %s", ret, errno, strerror(errno));
+            return false;
+        }
+
+        real_path_str = real_path;
+        index = real_path_str.find(udev_path);
+        if (index == -1) {
+            LOG_DEBUG("real_path: %s, udev_path: %s", real_path, udev_path.c_str());
+            continue;
+        }
+        LOG_DEBUG("real_path: %s, udev_path: %s\n", real_path, udev_path.c_str());
+        return true;
+    }
+    return false;
+}
+*/

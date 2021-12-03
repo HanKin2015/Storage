@@ -47,17 +47,18 @@ void readInnerUdevNetDriverVpid(unsigned short v, unsigned short p)
 }
 
 // 内联函数
-inline bool InUSBNetDriverList(unsigned short vid, unsigned short pid)
+inline bool IsInUSBNetDriverList(unsigned short vid, unsigned short pid)
 {
     Info("\n-----%s [%d]-----\n", __FUNCTION__, __LINE__);
     
-    for (int i = 0; i < USB_NET_DRIVER_NUM; i++) {
-        if (USBNetDriverList[i][0] == vid && USBNetDriverList[i][1] == pid) {
-            Info("index: %d, [0x%04x:0x%04x]\n", i + 1, vid, pid);
-            return true;
-        }
-    }
-
+	for (int i = 0; i < USB_NET_DRIVER_NUM; i++)
+	{
+		if (USBNetDriverList[i][0] == vid && USBNetDriverList[i][1] == pid)
+		{
+			Info("[usb]device 0x%04x 0x%04x is in usb net driver list!", vid, pid);
+			return true;
+		}
+	}
     return false;
 }
 
@@ -70,7 +71,7 @@ int main()
     //unsigned short vid = 61953, pid = 21360;
     unsigned short vid = 0x0b95, pid = 0x772b;
     //readInnerUdevNetDriverVpid(vid, pid);
-    InUSBNetDriverList(vid, pid);
+    IsInUSBNetDriverList(vid, pid);
     
     gettimeofday(&timeEnd, NULL); 
     double runTime = (timeEnd.tv_sec - timeStart.tv_sec ) + (double)(timeEnd.tv_usec -timeStart.tv_usec)/1000000;  

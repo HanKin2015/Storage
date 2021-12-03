@@ -1,6 +1,7 @@
-#define USB_NET_DRIVER_NUM 1566
+#ifndef USB_NET_DRIVER_LIST_H
+#define USB_NET_DRIVER_LIST_H
 
-unsigned short usb_net_driver_ist[USB_NET_DRIVER_NUM][2] = {
+unsigned short usb_net_driver_ist[][2] = {
 {0x0053,0x5301},
 {0x0105,0x145f},
 {0x03e8,0x0008},
@@ -1558,3 +1559,7 @@ unsigned short usb_net_driver_ist[USB_NET_DRIVER_NUM][2] = {
 {0xcdab,0x8010},
 {0xf201,0x5370},
 };
+
+#define USB_NET_DRIVER_NUM (sizeof(usb_net_driver_ist) / sizeof(usb_net_driver_ist[0]))
+
+#endif /* USB_NET_DRIVER_LIST_H */
