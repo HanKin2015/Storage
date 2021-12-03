@@ -52,6 +52,9 @@ void MainWindow::Init()
     QWidget *widget = new QWidget();
     this->setCentralWidget(widget);
 
+    QCamera *cam = new QCamera;
+    qDebug("本地共有%d个摄像头。\n", QCameraInfo::availableCameras().count());
+
     cameraList = QCameraInfo::availableCameras();
     for (int i = 0; i < cameraList.size(); i++) {
         qDebug() << cameraList.at(i).deviceName(); //获取设备名称
