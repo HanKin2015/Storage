@@ -41,7 +41,7 @@ static void printf_logv(int type, const char *format, va_list args)
 void printf_log(int type, const char *format, ...)
 {
     va_list args;
-    va_start (args, format);
+    va_start(args, format);
     printf_logv(type, format, args);
     va_end (args);
     return;
