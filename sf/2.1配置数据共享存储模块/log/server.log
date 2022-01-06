@@ -1,0 +1,27 @@
+Wed, 08 Jul 2020 19:30:39 server.py[line:53] INFO 服务器收到消息1: d
+Wed, 08 Jul 2020 19:30:42 server.py[line:53] INFO 服务器收到消息2: s
+Wed, 08 Jul 2020 19:30:44 server.py[line:53] INFO 服务器收到消息3: a
+Wed, 08 Jul 2020 19:30:48 server.py[line:53] INFO 服务器收到消息4: lo
+Wed, 08 Jul 2020 19:30:51 server.py[line:53] INFO 服务器收到消息5: notify
+Wed, 08 Jul 2020 19:33:02 server.py[line:51] INFO 断开连接
+Wed, 08 Jul 2020 19:33:02 server.py[line:66] INFO 服务端关闭成功
+Wed, 08 Jul 2020 19:40:41 server.py[line:53] INFO 服务器收到消息1: das
+Wed, 08 Jul 2020 19:40:43 server.py[line:53] INFO 服务器收到消息2: sa
+Wed, 08 Jul 2020 19:40:45 server.py[line:53] INFO 服务器收到消息3: vcccx
+Wed, 08 Jul 2020 19:40:47 server.py[line:53] INFO 服务器收到消息4: 3432
+Wed, 08 Jul 2020 19:40:49 server.py[line:53] INFO 服务器收到消息5: wqe
+Wed, 08 Jul 2020 19:40:51 server.py[line:53] INFO 服务器收到消息6: sda
+Wed, 08 Jul 2020 19:40:53 server.py[line:53] INFO 服务器收到消息7: qwe
+Wed, 08 Jul 2020 19:40:55 server.py[line:53] INFO 服务器收到消息8: sad
+Wed, 08 Jul 2020 19:40:57 server.py[line:53] INFO 服务器收到消息9: asd
+Wed, 08 Jul 2020 19:40:59 server.py[line:53] INFO 服务器收到消息10: asd
+Wed, 08 Jul 2020 19:41:01 server.py[line:53] INFO 服务器收到消息11: szc
+Wed, 08 Jul 2020 19:41:05 server.py[line:53] INFO 服务器收到消息12: notify
+Wed, 08 Jul 2020 19:41:19 server.py[line:51] INFO 断开连接
+Wed, 08 Jul 2020 19:41:19 server.py[line:66] INFO 服务端关闭成功
+Thu, 09 Jul 2020 12:42:36 server.py[line:57] INFO 服务器收到消息1: 312
+Thu, 09 Jul 2020 12:42:46 server.py[line:57] INFO 服务器收到消息2: 3213
+Thu, 09 Jul 2020 12:42:48 server.py[line:57] INFO 服务器收到消息3: 31231
+Thu, 09 Jul 2020 12:43:06 server.py[line:57] INFO 服务器收到消息4: 2323213
+Thu, 09 Jul 2020 12:43:15 server.py[line:55] INFO 断开连接
+Thu, 09 Jul 2020 12:43:15 server.py[line:70] INFO 服务端关闭成功

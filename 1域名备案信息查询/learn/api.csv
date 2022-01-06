@@ -1,9 +1,0 @@
-# 域名查询站点规则配置
-# 可根据域名查询站点的页面结构调整与更改
-# 格式为 查询站点url规则,域名信息定位方式,域名信息元素位置
-# 查询站点url规则 如 http://icp.chinaz.com/{}  http://icp.chinaz.com/为域名查询网站 {}提供待查询域名的占位符
-# 域名信息定位方式 在查询站点页面中定位域名信息元素
-# 域名信息元素位置 域名信息内容所在的位置
-http://icp.chinaz.com/{}, #first > li > p > a, 0
-https://www.beian88.com/{}, #m_ba_Name, 0
-http://www.beianbeian.com/search/{}.html, #table_tr > tr > td, 1

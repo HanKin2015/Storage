@@ -19,6 +19,15 @@ import base64
 from icon import icon_img
 import md5
 import logging
+import sys
+
+# 增加libary库的搜索路径
+sys.path.append('../../libary/')
+# 导入自定义的Entry库
+from entrywithplaceholder import EntryWithPlaceholder
+
+# 软件名称
+app_name = '拷贝工具'
 
 # 工作目录
 work_path = 'D:/copy_tool/'
@@ -32,24 +41,26 @@ temp_file_name = 'transfer_msg.txt'
 # 云端指定中转站文件夹路径
 remote_dir_path = '/01-个人目录/hj/tmp/'
 
-# 本地临时文件夹路径
-local_dir_path = 'D:/copy_tool/tmp/'
+# 下载路径
+download_path = 'D:/copy_tool/download/'
 
-# ftp服务器ip地址
-ftp_ip = '10.70.48.201'
+# 默认ftp服务器ip地址
+ftp_ip = '127.0.0.1'
 
-# ftp服务器用户名
+# 默认ftp服务器用户名
 ftp_username = 'hankin'
 
-# ftp服务器密码
+# 默认ftp服务器密码
 ftp_password = 'hankin'
 
 # 软件更新日志路径
 update_log_path = 'D:/copy_tool/update_log.log'
 
-if not os.path.exists(local_dir_path):
-    os.makedirs(local_dir_path)
+# 本地下载路径是否存在，不存在则创建，顺手创建工作目录
+if not os.path.exists(download_path):
+    os.makedirs(download_path)
 
+# 日志初始化
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                     datefmt='%a, %d %b %Y %H:%M:%S',
@@ -129,7 +140,7 @@ class MyFTP():
         self.ftp.set_debuglevel(0)
         fp.close()
 
-    def download_dir(self, local_dir_path, remote_dir_path):
+    def download_dir(self, download_path, remote_dir_path):
         try:
             self.ftp.cwd(remote_dir_path)
         except Exception as err:
@@ -140,12 +151,12 @@ class MyFTP():
         # 一定要记得回到根目录，或者后面就不要添加绝对地址，最好回来，防止后面使用
         self.ftp.cwd('/')
         for file in files:
-            local_file_path = local_dir_path + file
+            local_file_path = download_path + file
             remote_file_path = remote_dir_path + file
             self.download_file(local_file_path, remote_file_path)
 
-    def upload_dir(self, local_dir_path, remote_dir_path):
-        for root, dirs, files in os.walk(local_dir_path):
+    def upload_dir(self, download_path, remote_dir_path):
+        for root, dirs, files in os.walk(download_path):
             for file in files:
                 local_file_path = os.path.join(root, file)
                 remote_file_path = os.path.join(remote_dir_path, file)
@@ -211,7 +222,7 @@ class CopyTool(tkinter.Tk):
         '''设置初始化窗口的属性
         '''
 
-        self.title('CopyTool')  # 窗口名称
+        self.title(app_name)  # 窗口名称
         self.resizable(False, False)
         # self.update()
         scn_width, scn_height = self.maxsize()  # 获得程序运行机器的分辨率（屏幕的长和宽）
@@ -401,7 +412,8 @@ class CopyTool(tkinter.Tk):
         # 上面部分
         fm_up = tkinter.Frame()
         # fm_up.propagate(0)
-        self.input_content = tkinter.Entry(fm_up, width=30, font=ft)
+        self.input_content = EntryWithPlaceholder(fm_up, '请输入上传文件路径(可鼠标双击选择)', font=ft)
+        #self.input_content = tkinter.Entry(fm_up, width=30, font=ft)
         self.input_content.pack(
             side=tkinter.LEFT, expand=True, fill=tkinter.X, padx=5, pady=5)
 
@@ -409,10 +421,10 @@ class CopyTool(tkinter.Tk):
         self.input_content.bind(
             sequence='<Double-Button-1><ButtonRelease-1>', func=self.mourse_double_clicked)  # 双击鼠标左键
 
-        upload_btn = tkinter.Button(fm_up, text='send', width=10, height=1,
+        upload_btn = tkinter.Button(fm_up, text='发送', width=10, height=1,
                                     command=lambda: self.upload_btn_cliecked(self.content_text), font=ft, compound='center')
         upload_btn.pack(side=tkinter.LEFT, pady=5)
-        download_btn = tkinter.Button(fm_up, text='recive', width=10, height=1,
+        download_btn = tkinter.Button(fm_up, text='接收', width=10, height=1,
                                       command=lambda: self.download_btn_cliecked(self.content_text), font=ft, compound='center')
         download_btn.pack(side=tkinter.LEFT, padx=5)
 
@@ -449,7 +461,7 @@ class CopyTool(tkinter.Tk):
         # 下面部分：拷贝按钮
         fm_down = tkinter.Frame()
         # fm_down.propagate(0)
-        copy_btn = tkinter.Button(fm_down, text='copy', command=lambda: self.copy_btn_cliecked(
+        copy_btn = tkinter.Button(fm_down, text='拷贝文字', command=lambda: self.copy_btn_cliecked(
             self.content_text), font=ft, compound='center')
         copy_btn.pack(fill='both')
         fm_down.pack(fill='x')
@@ -609,7 +621,7 @@ class CopyTool(tkinter.Tk):
         '''下载指定文件夹中的所有文件
         '''
 
-        self.my_ftp.download_dir(local_dir_path, remote_dir_path)
+        self.my_ftp.download_dir(download_path, remote_dir_path)
         # self.my_ftp.download_file('D:/Downloads/crawl_bing.py', 'VDI/hj/temp/crawl_bing.py')
         win32api.MessageBox(0, '全部下载完毕', '下载文件提醒', win32con.MB_OK)
 
@@ -628,7 +640,7 @@ class CopyTool(tkinter.Tk):
         发送按钮点击事件
         '''
         content = display_content.get('0.0', 'end').strip()
-        file_path = local_dir_path + temp_file_name
+        file_path = download_path + temp_file_name
         logging.info('正在写入{}'.format(file_path))
         try:
             with open(file_path, 'w', encoding='utf-8') as f:
@@ -647,10 +659,10 @@ class CopyTool(tkinter.Tk):
         :param display_content:Text组件
         '''
 
-        file_path = local_dir_path + temp_file_name
+        file_path = download_path + temp_file_name
         # print(file_path)
         self.my_ftp.download_file(file_path, remote_dir_path+temp_file_name)
-        file_path = local_dir_path + temp_file_name
+        file_path = download_path + temp_file_name
         logging.info('正在读取{}'.format(file_path))
         content_list = []
 

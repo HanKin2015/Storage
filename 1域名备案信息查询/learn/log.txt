@@ -1,8 +1,0 @@
-2020-06-13 22:16:06,925 - __main__ - INFO - Finish
-2020-06-13 22:16:06,925 - __main__ - INFO - Finish
-2020-06-13 22:16:35,122 - __main__ - INFO - Start print log
-2020-06-13 22:16:35,122 - __main__ - INFO - Start print log
-2020-06-13 22:16:35,185 - __main__ - WARNING - Something maybe fail.
-2020-06-13 22:16:35,185 - __main__ - WARNING - Something maybe fail.
-2020-06-13 22:16:35,255 - __main__ - INFO - Finish
-2020-06-13 22:16:35,255 - __main__ - INFO - Finish

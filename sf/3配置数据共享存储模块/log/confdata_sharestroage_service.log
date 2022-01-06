@@ -1,0 +1,572 @@
+Tue, 14 Jul 2020 07:41:29 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 07:41:44 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 18132)......
+Tue, 14 Jul 2020 07:41:44 socket_library.py[line:62] INFO 连接端口8384成功
+Tue, 14 Jul 2020 07:41:44 socket_library.py[line:69] INFO 进程13132向8384端口发送消息:13132,connect
+Tue, 14 Jul 2020 07:41:44 socket_library.py[line:133] INFO 收到消息:13132,connect
+Tue, 14 Jul 2020 07:41:44 socket_library.py[line:98] INFO 解析完成后:pid = [13132], msg = [connect]
+Tue, 14 Jul 2020 07:41:44 configure_data_share_storage_service.py[line:78] INFO connect databases - ./data/confdatashare.db.
+Tue, 14 Jul 2020 07:41:44 configure_data_share_storage_service.py[line:316] INFO 收到进程13132端口18132的消息:connect
+Tue, 14 Jul 2020 07:41:44 configure_data_share_storage_service.py[line:320] INFO 添加端口[18132]成功, connect_ports = [{18132}]
+Tue, 14 Jul 2020 07:41:44 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 07:41:44 configure_data_share_storage_service.py[line:134] INFO create employees table sucess.
+Tue, 14 Jul 2020 07:41:44 configure_data_share_storage_service.py[line:109] INFO 注册数据表成功:port = 18132, table_name = employees
+Tue, 14 Jul 2020 07:41:44 configure_data_share_storage_service.py[line:166] INFO insert configure data into employees success.
+Tue, 14 Jul 2020 07:41:44 configure_data_share_storage_service.py[line:372] INFO connect_ports = [{18132}]
+Tue, 14 Jul 2020 07:41:44 configure_data_share_storage_service.py[line:375] INFO 端口18132对数据表employees有业务监控
+Tue, 14 Jul 2020 07:41:44 socket_library.py[line:62] INFO 连接端口18132成功
+Tue, 14 Jul 2020 07:41:44 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+Tue, 14 Jul 2020 07:41:44 socket_library.py[line:69] INFO 进程2020向18132端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 07:41:44 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+Tue, 14 Jul 2020 07:41:44 configure_data_share_storage_service.py[line:345] INFO 收到服务端进程2020的消息:change,employees
+Tue, 14 Jul 2020 07:41:44 configure_data_share_storage_service.py[line:219] INFO change data
+Tue, 14 Jul 2020 07:41:44 configure_data_share_storage_service.py[line:228] INFO update employees table success.
+Tue, 14 Jul 2020 07:41:44 configure_data_share_storage_service.py[line:372] INFO connect_ports = [{18132}]
+Tue, 14 Jul 2020 07:41:44 configure_data_share_storage_service.py[line:375] INFO 端口18132对数据表employees有业务监控
+Tue, 14 Jul 2020 07:41:44 socket_library.py[line:62] INFO 连接端口18132成功
+Tue, 14 Jul 2020 07:41:44 socket_library.py[line:69] INFO 进程2020向18132端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 07:41:44 configure_data_share_storage_service.py[line:261] INFO query configure data result: 
+[
+"employees":[ 
+	{"jobNumber": 1314, "firstName": "whl", "salary": 250}
+	{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+	{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+	{"jobNumber": 100000, "firstName": "whl", "salary": 20000}
+	{"jobNumber": 100001, "firstName": "George", "salary": 250}
+	{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+	{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+	]
+]
+Tue, 14 Jul 2020 07:41:44 configure_data_share_storage_service.py[line:194] INFO detele jobNumber(1314) from employees table success
+Tue, 14 Jul 2020 07:41:44 configure_data_share_storage_service.py[line:372] INFO connect_ports = [{18132}]
+Tue, 14 Jul 2020 07:41:44 configure_data_share_storage_service.py[line:375] INFO 端口18132对数据表employees有业务监控
+Tue, 14 Jul 2020 07:41:44 socket_library.py[line:62] INFO 连接端口18132成功
+Tue, 14 Jul 2020 07:41:44 socket_library.py[line:69] INFO 进程2020向18132端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 07:41:44 configure_data_share_storage_service.py[line:261] INFO query configure data result: 
+[
+"employees":[ 
+	{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+	{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+	{"jobNumber": 100000, "firstName": "whl", "salary": 20000}
+	{"jobNumber": 100001, "firstName": "George", "salary": 250}
+	{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+	{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+	]
+]
+Tue, 14 Jul 2020 07:45:37 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 07:45:52 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 07:45:55 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 5368)......
+Tue, 14 Jul 2020 07:45:55 socket_library.py[line:62] INFO 连接端口8384成功
+Tue, 14 Jul 2020 07:45:55 socket_library.py[line:69] INFO 进程368向8384端口发送消息:368,connect
+Tue, 14 Jul 2020 07:45:55 socket_library.py[line:133] INFO 收到消息:368,connect
+Tue, 14 Jul 2020 07:45:55 socket_library.py[line:98] INFO 解析完成后:pid = [368], msg = [connect]
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:78] INFO connect databases - ./data/confdatashare.db.
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:316] INFO 收到进程368端口5368的消息:connect
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:320] INFO 添加端口[5368]成功, connect_ports = [{5368}]
+Tue, 14 Jul 2020 07:45:55 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:134] INFO create employees table sucess.
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:109] INFO 注册数据表成功:port = 5368, table_name = employees
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:166] INFO insert configure data into employees success.
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:372] INFO connect_ports = [{5368}]
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:375] INFO 端口5368对数据表employees有业务监控
+Tue, 14 Jul 2020 07:45:55 socket_library.py[line:62] INFO 连接端口5368成功
+Tue, 14 Jul 2020 07:45:55 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+Tue, 14 Jul 2020 07:45:55 socket_library.py[line:69] INFO 进程2020向5368端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 07:45:55 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:345] INFO 收到服务端进程2020的消息:change,employees
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:219] INFO change data
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:228] INFO update employees table success.
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:372] INFO connect_ports = [{5368}]
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:375] INFO 端口5368对数据表employees有业务监控
+Tue, 14 Jul 2020 07:45:55 socket_library.py[line:62] INFO 连接端口5368成功
+Tue, 14 Jul 2020 07:45:55 socket_library.py[line:69] INFO 进程2020向5368端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:261] INFO query configure data result: 
+[
+"employees":[ 
+	{"jobNumber": 1314, "firstName": "whl", "salary": 250}
+	{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+	{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+	{"jobNumber": 100000, "firstName": "whl", "salary": 20000}
+	{"jobNumber": 100001, "firstName": "George", "salary": 250}
+	{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+	{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+	]
+]
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:194] INFO detele jobNumber(1314) from employees table success
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:372] INFO connect_ports = [{5368}]
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:375] INFO 端口5368对数据表employees有业务监控
+Tue, 14 Jul 2020 07:45:55 socket_library.py[line:62] INFO 连接端口5368成功
+Tue, 14 Jul 2020 07:45:55 socket_library.py[line:69] INFO 进程2020向5368端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:261] INFO query configure data result: 
+[
+"employees":[ 
+	{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+	{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+	{"jobNumber": 100000, "firstName": "whl", "salary": 20000}
+	{"jobNumber": 100001, "firstName": "George", "salary": 250}
+	{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+	{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+	]
+]
+Tue, 14 Jul 2020 07:45:55 socket_library.py[line:62] INFO 连接端口8384成功
+Tue, 14 Jul 2020 07:45:55 socket_library.py[line:69] INFO 进程368向8384端口发送消息:368,close
+Tue, 14 Jul 2020 07:45:55 socket_library.py[line:133] INFO 收到消息:368,close
+Tue, 14 Jul 2020 07:45:55 socket_library.py[line:98] INFO 解析完成后:pid = [368], msg = [close]
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:316] INFO 收到进程368端口5368的消息:close
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:92] INFO close databases sucess.
+Tue, 14 Jul 2020 07:45:55 configure_data_share_storage_service.py[line:323] INFO 移除端口[5368]成功, connect_ports = [set()]
+Tue, 14 Jul 2020 07:45:55 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 07:46:21 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 07:46:27 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 21676)......
+Tue, 14 Jul 2020 07:46:27 socket_library.py[line:62] INFO 连接端口8384成功
+Tue, 14 Jul 2020 07:46:27 socket_library.py[line:69] INFO 进程16676向8384端口发送消息:16676,connect
+Tue, 14 Jul 2020 07:46:27 socket_library.py[line:133] INFO 收到消息:16676,connect
+Tue, 14 Jul 2020 07:46:27 socket_library.py[line:98] INFO 解析完成后:pid = [16676], msg = [connect]
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:78] INFO connect databases - ./data/confdatashare.db.
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:316] INFO 收到进程16676端口21676的消息:connect
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:320] INFO 添加端口[21676]成功, connect_ports = [{21676}]
+Tue, 14 Jul 2020 07:46:27 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:134] INFO create employees table sucess.
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:109] INFO 注册数据表成功:port = 21676, table_name = employees
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:166] INFO insert configure data into employees success.
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:372] INFO connect_ports = [{21676}]
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:375] INFO 端口21676对数据表employees有业务监控
+Tue, 14 Jul 2020 07:46:27 socket_library.py[line:62] INFO 连接端口21676成功
+Tue, 14 Jul 2020 07:46:27 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+Tue, 14 Jul 2020 07:46:27 socket_library.py[line:69] INFO 进程2020向21676端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 07:46:27 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:345] INFO 收到服务端进程2020的消息:change,employees
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:219] INFO change data
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:228] INFO update employees table success.
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:372] INFO connect_ports = [{21676}]
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:375] INFO 端口21676对数据表employees有业务监控
+Tue, 14 Jul 2020 07:46:27 socket_library.py[line:62] INFO 连接端口21676成功
+Tue, 14 Jul 2020 07:46:27 socket_library.py[line:69] INFO 进程2020向21676端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:261] INFO query configure data result: 
+[
+"employees":[ 
+	{"jobNumber": 1314, "firstName": "whl", "salary": 250}
+	{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+	{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+	{"jobNumber": 100000, "firstName": "whl", "salary": 20000}
+	{"jobNumber": 100001, "firstName": "George", "salary": 250}
+	{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+	{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+	]
+]
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:194] INFO detele jobNumber(1314) from employees table success
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:372] INFO connect_ports = [{21676}]
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:375] INFO 端口21676对数据表employees有业务监控
+Tue, 14 Jul 2020 07:46:27 socket_library.py[line:62] INFO 连接端口21676成功
+Tue, 14 Jul 2020 07:46:27 socket_library.py[line:69] INFO 进程2020向21676端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:261] INFO query configure data result: 
+[
+"employees":[ 
+	{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+	{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+	{"jobNumber": 100000, "firstName": "whl", "salary": 20000}
+	{"jobNumber": 100001, "firstName": "George", "salary": 250}
+	{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+	{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+	]
+]
+Tue, 14 Jul 2020 07:46:27 socket_library.py[line:62] INFO 连接端口8384成功
+Tue, 14 Jul 2020 07:46:27 socket_library.py[line:69] INFO 进程16676向8384端口发送消息:16676,close
+Tue, 14 Jul 2020 07:46:27 socket_library.py[line:133] INFO 收到消息:16676,close
+Tue, 14 Jul 2020 07:46:27 socket_library.py[line:98] INFO 解析完成后:pid = [16676], msg = [close]
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:316] INFO 收到进程16676端口21676的消息:close
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:323] INFO 移除端口[21676]成功, connect_ports = [set()]
+Tue, 14 Jul 2020 07:46:27 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 07:46:27 configure_data_share_storage_service.py[line:92] INFO close databases sucess.
+Tue, 14 Jul 2020 10:35:41 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 10:35:42 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 23632)......
+Tue, 14 Jul 2020 10:35:42 socket_library.py[line:62] INFO 连接端口8384成功
+Tue, 14 Jul 2020 10:35:42 socket_library.py[line:69] INFO 进程18632向8384端口发送消息:18632,connect
+Tue, 14 Jul 2020 10:35:42 socket_library.py[line:133] INFO 收到消息:18632,connect
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:78] INFO connect databases - ./data/confdatashare.db.
+Tue, 14 Jul 2020 10:35:42 socket_library.py[line:98] INFO 解析完成后:pid = [18632], msg = [connect]
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:316] INFO 收到进程18632端口23632的消息:connect
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:320] INFO 添加端口[23632]成功, connect_ports = [{23632}]
+Tue, 14 Jul 2020 10:35:42 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:134] INFO create employees table sucess.
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:109] INFO 注册数据表成功:port = 23632, table_name = employees
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:166] INFO insert configure data into employees success.
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:372] INFO connect_ports = [{23632}]
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:375] INFO 端口23632对数据表employees有业务监控
+Tue, 14 Jul 2020 10:35:42 socket_library.py[line:62] INFO 连接端口23632成功
+Tue, 14 Jul 2020 10:35:42 socket_library.py[line:69] INFO 进程2020向23632端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:219] INFO change data
+Tue, 14 Jul 2020 10:35:42 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+Tue, 14 Jul 2020 10:35:42 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:345] INFO 收到服务端进程2020的消息:change,employees
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:228] INFO update employees table success.
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:372] INFO connect_ports = [{23632}]
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:375] INFO 端口23632对数据表employees有业务监控
+Tue, 14 Jul 2020 10:35:42 socket_library.py[line:62] INFO 连接端口23632成功
+Tue, 14 Jul 2020 10:35:42 socket_library.py[line:69] INFO 进程2020向23632端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:261] INFO query configure data result: 
+[
+"employees":[ 
+	{"jobNumber": 1314, "firstName": "whl", "salary": 250}
+	{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+	{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+	{"jobNumber": 100000, "firstName": "whl", "salary": 20000}
+	{"jobNumber": 100001, "firstName": "George", "salary": 250}
+	{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+	{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+	]
+]
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:194] INFO detele jobNumber(1314) from employees table success
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:372] INFO connect_ports = [{23632}]
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:375] INFO 端口23632对数据表employees有业务监控
+Tue, 14 Jul 2020 10:35:42 socket_library.py[line:62] INFO 连接端口23632成功
+Tue, 14 Jul 2020 10:35:42 socket_library.py[line:69] INFO 进程2020向23632端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:261] INFO query configure data result: 
+[
+"employees":[ 
+	{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+	{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+	{"jobNumber": 100000, "firstName": "whl", "salary": 20000}
+	{"jobNumber": 100001, "firstName": "George", "salary": 250}
+	{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+	{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+	]
+]
+Tue, 14 Jul 2020 10:35:42 socket_library.py[line:62] INFO 连接端口8384成功
+Tue, 14 Jul 2020 10:35:42 socket_library.py[line:69] INFO 进程18632向8384端口发送消息:18632,close
+Tue, 14 Jul 2020 10:35:42 socket_library.py[line:133] INFO 收到消息:18632,close
+Tue, 14 Jul 2020 10:35:42 socket_library.py[line:98] INFO 解析完成后:pid = [18632], msg = [close]
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:316] INFO 收到进程18632端口23632的消息:close
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:323] INFO 移除端口[23632]成功, connect_ports = [set()]
+Tue, 14 Jul 2020 10:35:42 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 10:35:42 configure_data_share_storage_service.py[line:92] INFO close databases sucess.
+Tue, 14 Jul 2020 10:36:42 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 10:36:45 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 24516)......
+Tue, 14 Jul 2020 10:36:45 socket_library.py[line:62] INFO 连接端口8384成功
+Tue, 14 Jul 2020 10:36:45 socket_library.py[line:69] INFO 进程19516向8384端口发送消息:19516,connect
+Tue, 14 Jul 2020 10:36:45 socket_library.py[line:133] INFO 收到消息:19516,connect
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:78] INFO connect databases - ./data/confdatashare.db.
+Tue, 14 Jul 2020 10:36:45 socket_library.py[line:98] INFO 解析完成后:pid = [19516], msg = [connect]
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:316] INFO 收到进程19516端口24516的消息:connect
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:320] INFO 添加端口[24516]成功, connect_ports = [{24516}]
+Tue, 14 Jul 2020 10:36:45 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:134] INFO create employees table sucess.
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:109] INFO 注册数据表成功:port = 24516, table_name = employees
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:166] INFO insert configure data into employees success.
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:372] INFO connect_ports = [{24516}]
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:375] INFO 端口24516对数据表employees有业务监控
+Tue, 14 Jul 2020 10:36:45 socket_library.py[line:62] INFO 连接端口24516成功
+Tue, 14 Jul 2020 10:36:45 socket_library.py[line:69] INFO 进程2020向24516端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:219] INFO change data
+Tue, 14 Jul 2020 10:36:45 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+Tue, 14 Jul 2020 10:36:45 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:345] INFO 收到服务端进程2020的消息:change,employees
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:228] INFO update employees table success.
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:372] INFO connect_ports = [{24516}]
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:375] INFO 端口24516对数据表employees有业务监控
+Tue, 14 Jul 2020 10:36:45 socket_library.py[line:62] INFO 连接端口24516成功
+Tue, 14 Jul 2020 10:36:45 socket_library.py[line:69] INFO 进程2020向24516端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:261] INFO query configure data result: 
+[
+"employees":[ 
+	{"jobNumber": 1314, "firstName": "whl", "salary": 250}
+	{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+	{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+	{"jobNumber": 100000, "firstName": "whl", "salary": 20000}
+	{"jobNumber": 100001, "firstName": "George", "salary": 250}
+	{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+	{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+	]
+]
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:194] INFO detele jobNumber(1314) from employees table success
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:372] INFO connect_ports = [{24516}]
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:375] INFO 端口24516对数据表employees有业务监控
+Tue, 14 Jul 2020 10:36:45 socket_library.py[line:62] INFO 连接端口24516成功
+Tue, 14 Jul 2020 10:36:45 socket_library.py[line:69] INFO 进程2020向24516端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:261] INFO query configure data result: 
+[
+"employees":[ 
+	{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+	{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+	{"jobNumber": 100000, "firstName": "whl", "salary": 20000}
+	{"jobNumber": 100001, "firstName": "George", "salary": 250}
+	{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+	{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+	]
+]
+Tue, 14 Jul 2020 10:36:45 socket_library.py[line:62] INFO 连接端口8384成功
+Tue, 14 Jul 2020 10:36:45 socket_library.py[line:69] INFO 进程19516向8384端口发送消息:19516,close
+Tue, 14 Jul 2020 10:36:45 socket_library.py[line:133] INFO 收到消息:19516,close
+Tue, 14 Jul 2020 10:36:45 socket_library.py[line:98] INFO 解析完成后:pid = [19516], msg = [close]
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:316] INFO 收到进程19516端口24516的消息:close
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:323] INFO 移除端口[24516]成功, connect_ports = [set()]
+Tue, 14 Jul 2020 10:36:45 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 10:36:45 configure_data_share_storage_service.py[line:92] INFO close databases sucess.
+Tue, 14 Jul 2020 12:58:15 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 12:59:08 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 12:59:44 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 13:01:38 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 13:02:09 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 26292)......
+Tue, 14 Jul 2020 13:02:39 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 13:02:42 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 14952)......
+Tue, 14 Jul 2020 13:02:42 socket_library.py[line:62] INFO 连接端口8384成功
+Tue, 14 Jul 2020 13:02:42 socket_library.py[line:69] INFO 进程9952向8384端口发送消息:9952,connect
+Tue, 14 Jul 2020 13:02:42 socket_library.py[line:133] INFO 收到消息:9952,connect
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:92] INFO 客户端9952登录成功，监听数据表:port = 14952, table_name = employees
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:123] INFO connect databases - ./data/confdatashare.db.
+Tue, 14 Jul 2020 13:02:42 socket_library.py[line:98] INFO 解析完成后:pid = [9952], msg = [connect]
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:344] INFO 收到进程9952端口14952的消息:connect
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:348] INFO 添加端口[14952]成功, connect_ports = [{14952}]
+Tue, 14 Jul 2020 13:02:42 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:162] INFO create employees table sucess.
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:194] INFO insert configure data into employees success.
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:400] INFO connect_ports = [{14952}]
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:403] INFO 端口14952对数据表employees有业务监控
+Tue, 14 Jul 2020 13:02:42 socket_library.py[line:62] INFO 连接端口14952成功
+Tue, 14 Jul 2020 13:02:42 socket_library.py[line:69] INFO 进程2020向14952端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:247] INFO change data
+Tue, 14 Jul 2020 13:02:42 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+Tue, 14 Jul 2020 13:02:42 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:373] INFO 收到服务端进程2020的消息:change,employees
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:256] INFO update employees table success.
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:400] INFO connect_ports = [{14952}]
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:403] INFO 端口14952对数据表employees有业务监控
+Tue, 14 Jul 2020 13:02:42 socket_library.py[line:62] INFO 连接端口14952成功
+Tue, 14 Jul 2020 13:02:42 socket_library.py[line:69] INFO 进程2020向14952端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:289] INFO query configure data result: 
+[
+"employees":[ 
+	{"jobNumber": 1314, "firstName": "whl", "salary": 250}
+	{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+	{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+	{"jobNumber": 100000, "firstName": "whl", "salary": 20000}
+	{"jobNumber": 100001, "firstName": "George", "salary": 250}
+	{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+	{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+	]
+]
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:222] INFO detele jobNumber(1314) from employees table success
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:400] INFO connect_ports = [{14952}]
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:403] INFO 端口14952对数据表employees有业务监控
+Tue, 14 Jul 2020 13:02:42 socket_library.py[line:62] INFO 连接端口14952成功
+Tue, 14 Jul 2020 13:02:42 socket_library.py[line:69] INFO 进程2020向14952端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:289] INFO query configure data result: 
+[
+"employees":[ 
+	{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+	{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+	{"jobNumber": 100000, "firstName": "whl", "salary": 20000}
+	{"jobNumber": 100001, "firstName": "George", "salary": 250}
+	{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+	{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+	]
+]
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:137] INFO close databases sucess.
+Tue, 14 Jul 2020 13:02:42 socket_library.py[line:62] INFO 连接端口8384成功
+Tue, 14 Jul 2020 13:02:42 socket_library.py[line:69] INFO 进程9952向8384端口发送消息:9952,connect
+Tue, 14 Jul 2020 13:02:42 socket_library.py[line:133] INFO 收到消息:9952,connect
+Tue, 14 Jul 2020 13:02:42 socket_library.py[line:98] INFO 解析完成后:pid = [9952], msg = [connect]
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:344] INFO 收到进程9952端口14952的消息:connect
+Tue, 14 Jul 2020 13:02:42 configure_data_share_storage_service.py[line:348] INFO 添加端口[14952]成功, connect_ports = [{14952}]
+Tue, 14 Jul 2020 13:02:42 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 13:02:45 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 14952)......
+Tue, 14 Jul 2020 13:02:45 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+Tue, 14 Jul 2020 13:02:45 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+Tue, 14 Jul 2020 13:02:45 configure_data_share_storage_service.py[line:373] INFO 收到服务端进程2020的消息:change,employees
+Tue, 14 Jul 2020 13:02:48 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 14952)......
+Tue, 14 Jul 2020 13:02:48 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+Tue, 14 Jul 2020 13:02:48 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+Tue, 14 Jul 2020 13:02:48 configure_data_share_storage_service.py[line:373] INFO 收到服务端进程2020的消息:change,employees
+Tue, 14 Jul 2020 13:02:48 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 14952)......
+Tue, 14 Jul 2020 13:20:16 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 13:20:21 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 25660)......
+Tue, 14 Jul 2020 13:20:21 socket_library.py[line:62] INFO 连接端口8384成功
+Tue, 14 Jul 2020 13:20:21 socket_library.py[line:69] INFO 进程20660向8384端口发送消息:20660,connect
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:92] INFO 客户端20660登录成功，监听数据表:port = 25660, table_name = employees
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:123] INFO connect databases - ./data/confdatashare.db.
+Tue, 14 Jul 2020 13:20:21 socket_library.py[line:133] INFO 收到消息:20660,connect
+Tue, 14 Jul 2020 13:20:21 socket_library.py[line:98] INFO 解析完成后:pid = [20660], msg = [connect]
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:344] INFO 收到进程20660端口25660的消息:connect
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:348] INFO 添加端口[25660]成功, connect_ports = [{25660}]
+Tue, 14 Jul 2020 13:20:21 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:162] INFO create employees table sucess.
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:194] INFO insert configure data into employees success.
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:400] INFO connect_ports = [{25660}]
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:403] INFO 端口25660对数据表employees有业务监控
+Tue, 14 Jul 2020 13:20:21 socket_library.py[line:62] INFO 连接端口25660成功
+Tue, 14 Jul 2020 13:20:21 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+Tue, 14 Jul 2020 13:20:21 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:373] INFO 收到服务端进程2020的消息:change,employees
+Tue, 14 Jul 2020 13:20:21 socket_library.py[line:69] INFO 进程2020向25660端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:247] INFO change data
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:256] INFO update employees table success.
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:400] INFO connect_ports = [{25660}]
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:403] INFO 端口25660对数据表employees有业务监控
+Tue, 14 Jul 2020 13:20:21 socket_library.py[line:62] INFO 连接端口25660成功
+Tue, 14 Jul 2020 13:20:21 socket_library.py[line:69] INFO 进程2020向25660端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:289] INFO query configure data result: 
+[
+"employees":[ 
+	{"jobNumber": 1314, "firstName": "whl", "salary": 250}
+	{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+	{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+	{"jobNumber": 100000, "firstName": "whl", "salary": 20000}
+	{"jobNumber": 100001, "firstName": "George", "salary": 250}
+	{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+	{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+	]
+]
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:222] INFO detele jobNumber(1314) from employees table success
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:400] INFO connect_ports = [{25660}]
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:403] INFO 端口25660对数据表employees有业务监控
+Tue, 14 Jul 2020 13:20:21 socket_library.py[line:62] INFO 连接端口25660成功
+Tue, 14 Jul 2020 13:20:21 socket_library.py[line:69] INFO 进程2020向25660端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:289] INFO query configure data result: 
+[
+"employees":[ 
+	{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+	{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+	{"jobNumber": 100000, "firstName": "whl", "salary": 20000}
+	{"jobNumber": 100001, "firstName": "George", "salary": 250}
+	{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+	{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+	]
+]
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:137] INFO close databases sucess.
+Tue, 14 Jul 2020 13:20:21 socket_library.py[line:62] INFO 连接端口8384成功
+Tue, 14 Jul 2020 13:20:21 socket_library.py[line:69] INFO 进程20660向8384端口发送消息:20660,connect
+Tue, 14 Jul 2020 13:20:21 socket_library.py[line:133] INFO 收到消息:20660,connect
+Tue, 14 Jul 2020 13:20:21 socket_library.py[line:98] INFO 解析完成后:pid = [20660], msg = [connect]
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:344] INFO 收到进程20660端口25660的消息:connect
+Tue, 14 Jul 2020 13:20:21 configure_data_share_storage_service.py[line:348] INFO 添加端口[25660]成功, connect_ports = [{25660}]
+Tue, 14 Jul 2020 13:20:21 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 13:20:45 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 23484)......
+Tue, 14 Jul 2020 13:20:45 socket_library.py[line:62] INFO 连接端口8384成功
+Tue, 14 Jul 2020 13:20:45 socket_library.py[line:69] INFO 进程18484向8384端口发送消息:18484,connect
+Tue, 14 Jul 2020 13:20:45 socket_library.py[line:133] INFO 收到消息:18484,connect
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:92] INFO 客户端18484登录成功，监听数据表:port = 23484, table_name = employees
+Tue, 14 Jul 2020 13:20:45 socket_library.py[line:98] INFO 解析完成后:pid = [18484], msg = [connect]
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:344] INFO 收到进程18484端口23484的消息:connect
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:123] INFO connect databases - ./data/confdatashare.db.
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:348] INFO 添加端口[23484]成功, connect_ports = [{23484, 25660}]
+Tue, 14 Jul 2020 13:20:45 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:162] INFO create employees table sucess.
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:194] INFO insert configure data into employees success.
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:400] INFO connect_ports = [{23484}]
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:403] INFO 端口23484对数据表employees有业务监控
+Tue, 14 Jul 2020 13:20:45 socket_library.py[line:62] INFO 连接端口23484成功
+Tue, 14 Jul 2020 13:20:45 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+Tue, 14 Jul 2020 13:20:45 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:373] INFO 收到服务端进程2020的消息:change,employees
+Tue, 14 Jul 2020 13:20:45 socket_library.py[line:69] INFO 进程2020向23484端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:247] INFO change data
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:256] INFO update employees table success.
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:400] INFO connect_ports = [{23484}]
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:403] INFO 端口23484对数据表employees有业务监控
+Tue, 14 Jul 2020 13:20:45 socket_library.py[line:62] INFO 连接端口23484成功
+Tue, 14 Jul 2020 13:20:45 socket_library.py[line:69] INFO 进程2020向23484端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:289] INFO query configure data result: 
+[
+"employees":[ 
+	{"jobNumber": 1314, "firstName": "whl", "salary": 250}
+	{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+	{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+	{"jobNumber": 100000, "firstName": "whl", "salary": 20000}
+	{"jobNumber": 100001, "firstName": "George", "salary": 250}
+	{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+	{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+	]
+]
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:222] INFO detele jobNumber(1314) from employees table success
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:400] INFO connect_ports = [{23484}]
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:403] INFO 端口23484对数据表employees有业务监控
+Tue, 14 Jul 2020 13:20:45 socket_library.py[line:62] INFO 连接端口23484成功
+Tue, 14 Jul 2020 13:20:45 socket_library.py[line:69] INFO 进程2020向23484端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:289] INFO query configure data result: 
+[
+"employees":[ 
+	{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+	{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+	{"jobNumber": 100000, "firstName": "whl", "salary": 20000}
+	{"jobNumber": 100001, "firstName": "George", "salary": 250}
+	{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+	{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+	]
+]
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:137] INFO close databases sucess.
+Tue, 14 Jul 2020 13:20:45 socket_library.py[line:62] INFO 连接端口8384成功
+Tue, 14 Jul 2020 13:20:45 socket_library.py[line:133] INFO 收到消息:18484,connect
+Tue, 14 Jul 2020 13:20:45 socket_library.py[line:98] INFO 解析完成后:pid = [18484], msg = [connect]
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:344] INFO 收到进程18484端口23484的消息:connect
+Tue, 14 Jul 2020 13:20:45 configure_data_share_storage_service.py[line:348] INFO 添加端口[23484]成功, connect_ports = [{23484, 25660}]
+Tue, 14 Jul 2020 13:20:45 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 13:20:45 socket_library.py[line:69] INFO 进程18484向8384端口发送消息:18484,connect
+Tue, 14 Jul 2020 13:20:47 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 7628)......
+Tue, 14 Jul 2020 13:20:47 socket_library.py[line:62] INFO 连接端口8384成功
+Tue, 14 Jul 2020 13:20:47 socket_library.py[line:69] INFO 进程2628向8384端口发送消息:2628,connect
+Tue, 14 Jul 2020 13:20:47 socket_library.py[line:133] INFO 收到消息:2628,connect
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:92] INFO 客户端2628登录成功，监听数据表:port = 7628, table_name = employees
+Tue, 14 Jul 2020 13:20:47 socket_library.py[line:98] INFO 解析完成后:pid = [2628], msg = [connect]
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:344] INFO 收到进程2628端口7628的消息:connect
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:348] INFO 添加端口[7628]成功, connect_ports = [{23484, 7628, 25660}]
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:123] INFO connect databases - ./data/confdatashare.db.
+Tue, 14 Jul 2020 13:20:47 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:162] INFO create employees table sucess.
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:194] INFO insert configure data into employees success.
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:400] INFO connect_ports = [{7628}]
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:403] INFO 端口7628对数据表employees有业务监控
+Tue, 14 Jul 2020 13:20:47 socket_library.py[line:62] INFO 连接端口7628成功
+Tue, 14 Jul 2020 13:20:47 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+Tue, 14 Jul 2020 13:20:47 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:373] INFO 收到服务端进程2020的消息:change,employees
+Tue, 14 Jul 2020 13:20:47 socket_library.py[line:69] INFO 进程2020向7628端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:247] INFO change data
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:256] INFO update employees table success.
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:400] INFO connect_ports = [{7628}]
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:403] INFO 端口7628对数据表employees有业务监控
+Tue, 14 Jul 2020 13:20:47 socket_library.py[line:62] INFO 连接端口7628成功
+Tue, 14 Jul 2020 13:20:47 socket_library.py[line:69] INFO 进程2020向7628端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:289] INFO query configure data result: 
+[
+"employees":[ 
+	{"jobNumber": 1314, "firstName": "whl", "salary": 250}
+	{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+	{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+	{"jobNumber": 100000, "firstName": "whl", "salary": 20000}
+	{"jobNumber": 100001, "firstName": "George", "salary": 250}
+	{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+	{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+	]
+]
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:222] INFO detele jobNumber(1314) from employees table success
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:400] INFO connect_ports = [{7628}]
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:403] INFO 端口7628对数据表employees有业务监控
+Tue, 14 Jul 2020 13:20:47 socket_library.py[line:62] INFO 连接端口7628成功
+Tue, 14 Jul 2020 13:20:47 socket_library.py[line:69] INFO 进程2020向7628端口发送消息:2020,change,employees
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:289] INFO query configure data result: 
+[
+"employees":[ 
+	{"jobNumber": 22200, "firstName": "test", "salary": 20000}
+	{"jobNumber": 25200, "firstName": "tangliu", "salary": 20000}
+	{"jobNumber": 100000, "firstName": "whl", "salary": 20000}
+	{"jobNumber": 100001, "firstName": "George", "salary": 250}
+	{"jobNumber": 100002, "firstName": "Thomas", "salary": 30000}
+	{"jobNumber": 222002, "firstName": "'1hj'", "salary": 4321}
+	]
+]
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:137] INFO close databases sucess.
+Tue, 14 Jul 2020 13:20:47 socket_library.py[line:62] INFO 连接端口8384成功
+Tue, 14 Jul 2020 13:20:47 socket_library.py[line:133] INFO 收到消息:2628,connect
+Tue, 14 Jul 2020 13:20:47 socket_library.py[line:69] INFO 进程2628向8384端口发送消息:2628,connect
+Tue, 14 Jul 2020 13:20:47 socket_library.py[line:98] INFO 解析完成后:pid = [2628], msg = [connect]
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:344] INFO 收到进程2628端口7628的消息:connect
+Tue, 14 Jul 2020 13:20:47 configure_data_share_storage_service.py[line:348] INFO 添加端口[7628]成功, connect_ports = [{23484, 7628, 25660}]
+Tue, 14 Jul 2020 13:20:47 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 8384)......
+Tue, 14 Jul 2020 13:20:49 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 7628)......
+Tue, 14 Jul 2020 13:20:49 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+Tue, 14 Jul 2020 13:20:49 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+Tue, 14 Jul 2020 13:20:49 configure_data_share_storage_service.py[line:373] INFO 收到服务端进程2020的消息:change,employees
+Tue, 14 Jul 2020 13:20:50 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 7628)......
+Tue, 14 Jul 2020 13:20:50 socket_library.py[line:133] INFO 收到消息:2020,change,employees
+Tue, 14 Jul 2020 13:20:50 socket_library.py[line:98] INFO 解析完成后:pid = [2020], msg = [change,employees]
+Tue, 14 Jul 2020 13:20:50 configure_data_share_storage_service.py[line:373] INFO 收到服务端进程2020的消息:change,employees
+Tue, 14 Jul 2020 13:20:50 socket_library.py[line:124] INFO 开始监听('127.0.0.1', 7628)......
