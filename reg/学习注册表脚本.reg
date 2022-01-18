@@ -1,0 +1,33 @@
+REGEDIT4
+
+; REGEDIT4                              Windows 95/98/ME/NT4.0  其实9X/2000/XP/2003
+; Windows Registry Editor Version 5.00  Windows 2000/XP
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\study]
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\study]
+
+@="People"
+
+# 这样写回出现左右方向的路径符
+"Message"="systam32\\drivers/StudyKMDF.sys"
+
+"Name"="hejian"
+
+"Gigh"=hex(2):32,34,23
+
+"Age"=hex:f5
+
+"Year"=hex:22
+
+# 这个也是注释
+"Month"=hex(7):32,11,22,33
+
+#
+# When to start the driver:
+# At boot: Start=1
+# Manually: Start=3
+#
+"Start"=dword:00000003
+
+"Type"=dword:00000001

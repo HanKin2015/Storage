@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+ 
+[HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/Session Manager/Debug Print Filter] 
+DEFAULT=dword:ffffffff
+
+# 0xFFFFFFFF
+# 0000000f
+
+

@@ -69,7 +69,6 @@ logging.basicConfig(level=logging.INFO,
 
 class MyFTP():
     def __init__(self):
-        logging.info('---ftp init---')
         self.ftp_connect()
 
     def clear_dir(self, dir_path):
@@ -101,9 +100,13 @@ class MyFTP():
 
     def ftp_connect(self):
         '''建立ftp连接
-            '''
+        
+        ftp_ip
+        ftp_username
+        ftp_password
+        '''
 
-        logging.info('start ftp connect')
+        logging.info('-----建立ftp连接-----')
         self.ftp = ftplib.FTP()
         # ftp.set_debuglevel(2)
         try:
@@ -189,8 +192,8 @@ class MyFTP():
         self.ftp.set_debuglevel(0)
         fp.close()
 
-    def ftp_quit(self):
-        logging.info('---ftp quit---')
+    def ftp_disconnect(self):
+        logging.info('-----断开ftp连接-----')
         try:
             self.ftp.quit()
         except Exception as err:
