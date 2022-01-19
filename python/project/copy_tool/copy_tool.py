@@ -20,6 +20,7 @@ from icon import icon_img
 import md5
 import logging
 import sys
+import configparser
 
 # 增加libary库的搜索路径
 sys.path.append('../../libary/')
@@ -44,6 +45,10 @@ remote_dir_path = '/01-个人目录/hj/tmp/'
 # 下载路径
 download_path = 'D:/copy_tool/download/'
 
+# 常用的保留TCP端口号有：HTTP 80，FTP 20/21，Telnet 23，SMTP 25，DNS 53等。
+# 用于FTP服务的21端口
+ftp_port = 21
+
 # 默认ftp服务器ip地址
 ftp_ip = '127.0.0.1'
 
@@ -52,6 +57,18 @@ ftp_username = 'hankin'
 
 # 默认ftp服务器密码
 ftp_password = 'hankin'
+
+# 配置文件
+config_path = 'D:/copy_tool/config.ini'
+
+# 帮助文件路径
+help_file_path = './config/help.txt'
+
+# 关于文件路径
+about_file_path = './config/about.txt'
+
+# 更新日志文件路径
+update_file_path = './config/update.txt'
 
 # 软件更新日志路径
 update_log_path = 'D:/copy_tool/update_log.log'
@@ -69,6 +86,7 @@ logging.basicConfig(level=logging.INFO,
 
 class MyFTP():
     def __init__(self):
+        logging.info('初始化建立ftp连接')
         self.ftp_connect()
 
     def clear_dir(self, dir_path):
@@ -106,15 +124,23 @@ class MyFTP():
         ftp_password
         '''
 
-        logging.info('-----建立ftp连接-----')
         self.ftp = ftplib.FTP()
         # ftp.set_debuglevel(2)
+        
+        # 判断本地是否存在ftp配置文件
+        if os.path.exists(config_path):
+            config = configparser.ConfigParser()
+            config.read(config_path)
+            if config.has_section('ftp'):
+                ftp_ip = config.get('ftp', 'ip')
+                ftp_ip = config.get('ftp', 'username')
+                ftp_ip = config.get('ftp', 'password')
         try:
-            self.ftp.connect(ftp_ip, 21)
+            self.ftp.connect(ftp_ip, ftp_port)
             self.ftp.login(ftp_username, ftp_password)
             self.ftp.encoding = 'gbk'
         except Exception as ex:
-            logging.error('登录ftp服务器失败, {}'.format(ex))
+            logging.error('登录ftp服务器({})失败, {}'.format(ftp_ip, ex))
             
     def download_file(self, local_file_path, remote_file_path):
         '''从ftp下载文件
@@ -193,12 +219,12 @@ class MyFTP():
         fp.close()
 
     def ftp_disconnect(self):
-        logging.info('-----断开ftp连接-----')
+        logging.info('断开ftp连接')
         try:
             self.ftp.quit()
         except Exception as err:
             logging.warning(err)
-
+            
 class CopyTool(tkinter.Tk):
     '''主窗口ui类
     '''
@@ -329,40 +355,71 @@ class CopyTool(tkinter.Tk):
         self['menu'] = menu_bar
         
     def set_ftp(self):
-        set_ftp_window = tkinter.Toplevel(self)
-        set_ftp_window.title('设置FTP服务器')
+        '''设置FTP服务器
+        '''
+        
+        self.set_ftp_window = tkinter.Toplevel(self)
+        self.set_ftp_window.title('设置FTP服务器')
         window_width = 200
         window_hight = 100
         pos_x = self.winfo_rootx() + ((self.winfo_width() - window_width) // 2)
         pos_y = self.winfo_rooty() - 20 + ((self.winfo_height() - window_hight) // 2)
         wm_val = '{}x{}+{}+{}'.format(window_width, window_hight, pos_x, pos_y)
-        set_ftp_window.geometry(wm_val)       # 将窗口设置在屏幕的中间
+        self.set_ftp_window.geometry(wm_val)       # 将窗口设置在屏幕的中间
         
-        ip_label = tkinter.Label(set_ftp_window, text='ip地址：', justify=tkinter.LEFT)
-        ip_entry = tkinter.Entry(set_ftp_window, text='')
-        user_label = tkinter.Label(set_ftp_window, text='用户名：', justify=tkinter.LEFT)
-        user_entry = tkinter.Entry(set_ftp_window, text='')
-        pwd_label = tkinter.Label(set_ftp_window, text='密   码：', justify=tkinter.LEFT)
-        pwd_entry = tkinter.Entry(set_ftp_window, text='')
+        ip_label = tkinter.Label(self.set_ftp_window, text='ip地址：', justify=tkinter.LEFT)
+        self.ip_entry = tkinter.Entry(self.set_ftp_window, text='')
+        user_label = tkinter.Label(self.set_ftp_window, text='用户名：', justify=tkinter.LEFT)
+        self.user_entry = tkinter.Entry(self.set_ftp_window, text='')
+        pwd_label = tkinter.Label(self.set_ftp_window, text='密   码：', justify=tkinter.LEFT)
+        self.pwd_entry = tkinter.Entry(self.set_ftp_window, text='')
         ip_label.grid(row=0, column=0)
-        ip_entry.grid(row=0, column=1)
+        self.ip_entry.grid(row=0, column=1)
         user_label.grid(row=1, column=0)
-        user_entry.grid(row=1, column=1)
+        self.user_entry.grid(row=1, column=1)
         pwd_label.grid(row=2, column=0, sticky=tkinter.W)
-        pwd_entry.grid(row=2, column=1, sticky=tkinter.W)
+        self.pwd_entry.grid(row=2, column=1, sticky=tkinter.W)
         
-        qry_btn = tkinter.Button(set_ftp_window, text='确定', width=10, height=1,
-                                      command=lambda: self.qry_btn_clicked(), compound='right')
+        qry_btn = tkinter.Button(self.set_ftp_window, text='确定', width=10, height=1,
+                                      command=lambda: self.qry_btn_clicked(self.ip_entry, self.user_entry, self.pwd_entry), compound='right')
         qry_btn.grid(row=3, column=1, sticky=tkinter.E)
         
-        set_ftp_window.mainloop()
+        self.set_ftp_window.mainloop()
         
-    def qry_btn_clicked(self):
-        print('dsd')
+    def qry_btn_clicked(self, ip_entry, user_entry, pwd_entry):
+        '''设置FTP服务器确定按钮
+        '''
+        
+        ip   = ip_entry.get().strip()
+        user = user_entry.get().strip()
+        pwd  = pwd_entry.get().strip()
+        
+        config = configparser.ConfigParser()
+        if os.path.exists(config_path):
+            config.read(config_path)
+        
+        if not config.has_section('ftp'):
+            config.add_section('ftp')
+
+        config.set('ftp', 'ip', ip)
+        config.set('ftp', 'username', user)
+        config.set('ftp', 'password', pwd)
+        config.write(open(config_path, 'w'))
+        
+        logging.info('重新建立ftp连接')
+        self.my_ftp.ftp_connect()
+        
+        self.set_ftp_window.destroy()
     
     def show_messagebox(self, type):
+        content = ''
         if type == '帮助':
-            messagebox.showinfo('帮助', '这是帮助文档！\nby hankin', icon='question')
+            try:
+                with open(help_file_path, 'r', encoding='utf-8') as f:
+                    content = f.read() 
+            except Exception as ex:
+                print('打开文件失败, error=', ex)
+            messagebox.showinfo('帮助', content, icon='question')
         elif type == '更新日志':
             try:
                 update_log = open(update_log_path, 'r', encoding='utf-8').read()
@@ -370,7 +427,7 @@ class CopyTool(tkinter.Tk):
                 print('读取更新日志文件失败, error=', ex)
             messagebox.showinfo('更新日志', update_log, icon='question')
         elif type == '关于':
-            messagebox.showinfo('关于', 'CopyTool_V1.21.9.1')
+            messagebox.showinfo('关于', 'CopyTool_V1.22.1.19\nby hankin')
 
     # 通过设置_update_line_num函数来实现主要的功能
     def _toggle_highlight(self):  # 高亮函数
@@ -686,6 +743,7 @@ class CopyTool(tkinter.Tk):
         '''
         复制内容按钮点击事件
         '''
+        
         # 打印显示内容
         content = display_content.get('0.0', 'end').strip()
         logging.info(content)
@@ -696,5 +754,7 @@ class CopyTool(tkinter.Tk):
 
 
 if __name__ == '__main__':
-    app = CopyTool()  # 类的实例化
-    app.mainloop()  # 程序运行
+    logging.info('-----程序开始运行-----')
+    app = CopyTool()    # 类的实例化
+    app.mainloop()      # 程序运行
+    logging.info('-----程序运行结束-----')
