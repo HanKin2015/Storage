@@ -3,7 +3,7 @@
 block_cipher = None
 
 
-a = Analysis(['copy_tool.py'],
+a = Analysis(['copy_tool.py', 'D:\\Github\\Storage\\python\\libary\\entrywithplaceholder.py'],
              pathex=['D:\\Github\\Storage\\python\\project\\copy_tool'],
              binaries=[],
              datas=[],

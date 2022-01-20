@@ -118,11 +118,9 @@ class MyFTP():
 
     def ftp_connect(self):
         '''建立ftp连接
-        
-        ftp_ip
-        ftp_username
-        ftp_password
         '''
+
+        global ftp_ip, ftp_username, ftp_password
 
         self.ftp = ftplib.FTP()
         # ftp.set_debuglevel(2)
@@ -412,22 +410,25 @@ class CopyTool(tkinter.Tk):
         self.set_ftp_window.destroy()
     
     def show_messagebox(self, type):
-        content = ''
+        '''
+        '''
+        
+        content   = ''
+        file_path = ''
+        
         if type == '帮助':
-            try:
-                with open(help_file_path, 'r', encoding='utf-8') as f:
-                    content = f.read() 
-            except Exception as ex:
-                print('打开文件失败, error=', ex)
-            messagebox.showinfo('帮助', content, icon='question')
+            file_path = help_file_path
         elif type == '更新日志':
-            try:
-                update_log = open(update_log_path, 'r', encoding='utf-8').read()
-            except Exception as ex:
-                print('读取更新日志文件失败, error=', ex)
-            messagebox.showinfo('更新日志', update_log, icon='question')
+            file_path = update_file_path
         elif type == '关于':
-            messagebox.showinfo('关于', 'CopyTool_V1.22.1.19\nby hankin')
+            file_path = about_file_path
+            
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                content = f.read() 
+        except Exception as ex:
+            print('打开文件失败, error=', ex)
+        messagebox.showinfo(type, content, icon='question')
 
     # 通过设置_update_line_num函数来实现主要的功能
     def _toggle_highlight(self):  # 高亮函数
@@ -586,7 +587,7 @@ class CopyTool(tkinter.Tk):
 
         if messagebox.askokcancel('退出?', '确定退出吗?'):  # 设置文本提示框
             self.destroy()  # 满足条件的话主窗口退出
-            self.my_ftp.ftp_quit()
+            self.my_ftp.ftp_disconnect()
 
     def new_file(self, event=None):
         self.title('New - CopyTool')
