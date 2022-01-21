@@ -37,12 +37,12 @@ work_path = 'D:/copy_tool/'
 log_path = 'D:/copy_tool/copy_tool.log'
 
 # 中转文件名称
-temp_file_name = 'transfer_msg.txt'
+temp_file_name = 'copy_words.txt'
 
 # 云端指定中转站文件夹路径
-remote_dir_path = '/01-个人目录/hj/tmp/'
+remote_dir_path = '/01-个人目录/hj/copy_tool/'
 
-# 下载路径
+# 文件下载路径
 download_path = 'D:/copy_tool/download/'
 
 # 常用的保留TCP端口号有：HTTP 80，FTP 20/21，Telnet 23，SMTP 25，DNS 53等。
@@ -86,10 +86,22 @@ logging.basicConfig(level=logging.INFO,
 
 class MyFTP():
     def __init__(self):
+        '''初始化
+        1.建立连接
+        2.创建远程工作目录
+        '''
+        
+        logging.info('-----程序开始运行-----')
         logging.info('初始化建立ftp连接')
         self.ftp_connect()
+        self.add_dir(remote_dir_path)
 
-    def clear_dir(self, dir_path):
+    def add_dir(self, dir_path):
+        self.ftp.create(dir_path)
+
+    def delete_dir(self, dir_path):
+        '''
+        '''
         dir_res_details = []
         try:
             self.ftp.cwd(dir_path)
@@ -102,7 +114,7 @@ class MyFTP():
                 dir_name = elem.split(' ')[-1]
                 logging.info('开始删除{}文件夹'.format(dir_name))
                 
-                self.clear_dir(self.ftp.pwd() + '/' + dir_name)
+                self.delete_dir(self.ftp.pwd() + '/' + dir_name)
                 self.ftp.cwd('..')
                 if dir_path[-1] == '/':
                     dir_path = dir_path[:-1]
@@ -110,7 +122,7 @@ class MyFTP():
                 try:
                     self.ftp.rmd(dir_name)
                 except ftplib.error_perm as err:
-                    logging.error(err)
+                    logging.error('删除文件夹失败, error={}'.format(err))
             else:
                 file_name = elem.split(' ')[-1]
                 logging.info('删除FTP目录{}下存在的文件:{}'.format(dir_path, file_name))
@@ -131,14 +143,15 @@ class MyFTP():
             config.read(config_path)
             if config.has_section('ftp'):
                 ftp_ip = config.get('ftp', 'ip')
-                ftp_ip = config.get('ftp', 'username')
-                ftp_ip = config.get('ftp', 'password')
+                ftp_username = config.get('ftp', 'username')
+                ftp_password = config.get('ftp', 'password')
         try:
             self.ftp.connect(ftp_ip, ftp_port)
             self.ftp.login(ftp_username, ftp_password)
             self.ftp.encoding = 'gbk'
         except Exception as ex:
-            logging.error('登录ftp服务器({})失败, {}'.format(ftp_ip, ex))
+            logging.error('登录ftp服务器({})失败, error={}'.format(ftp_ip, ex))
+            messagebox.showinfo('警告', '建立ftp连接失败', icon='question')
             
     def download_file(self, local_file_path, remote_file_path):
         '''从ftp下载文件
@@ -162,7 +175,7 @@ class MyFTP():
             self.ftp.retrbinary('RETR ' + remote_file_path, fp.write, bufsize)
         except Exception as err:
             logging.warning(err)
-            self._ftp_connect_()
+            self.ftp_connect()
             self.ftp.retrbinary('RETR ' + remote_file_path, fp.write, bufsize)
         self.ftp.set_debuglevel(0)
         fp.close()
@@ -172,7 +185,7 @@ class MyFTP():
             self.ftp.cwd(remote_dir_path)
         except Exception as err:
             logging.warning(err)
-            self._ftp_connect_()
+            self.ftp_connect()
             self.ftp.cwd(remote_dir_path)
         files = self.ftp.nlst()
         # 一定要记得回到根目录，或者后面就不要添加绝对地址，最好回来，防止后面使用
@@ -210,8 +223,8 @@ class MyFTP():
         try:
             self.ftp.storbinary('STOR ' + remote_file_path, fp, bufsize)
         except Exception as err:
-            logging.warning(err)
-            self._ftp_connect_()
+            logging.error('上传文件失败, err={}'.format(err))
+            self.ftp_connect()
             self.ftp.storbinary('STOR ' + remote_file_path, fp, bufsize)
         self.ftp.set_debuglevel(0)
         fp.close()
@@ -221,7 +234,7 @@ class MyFTP():
         try:
             self.ftp.quit()
         except Exception as err:
-            logging.warning(err)
+            logging.error('断开ftp连接失败, error={}'.format(err))
             
 class CopyTool(tkinter.Tk):
     '''主窗口ui类
@@ -290,7 +303,7 @@ class CopyTool(tkinter.Tk):
             label='从服务器下载', accelerator='Ctrl+D', command=self.down_file)
         ftp_menu.add_separator()  # 设置分割线
         ftp_menu.add_command(label='清理', accelerator='Ctrl+L',
-                             command=self.clear_remote_dir)
+                             command=self.delete_remote_dir)
         ftp_menu.add_separator()  # 设置分割线
         ftp_menu.add_command(
             label='发送指定文件', accelerator='Ctrl+Q', command=self.send_assign_file)
@@ -427,7 +440,7 @@ class CopyTool(tkinter.Tk):
             with open(file_path, 'r', encoding='utf-8') as f:
                 content = f.read() 
         except Exception as ex:
-            print('打开文件失败, error=', ex)
+            logging.error('打开文件失败, error={}'.format(ex))
         messagebox.showinfo(type, content, icon='question')
 
     # 通过设置_update_line_num函数来实现主要的功能
@@ -623,9 +636,9 @@ class CopyTool(tkinter.Tk):
             self.file_name = input_file  # 设置文件名称
             self._write_to_file(self.file_name)  # 写入本地
 
-    def clear_remote_dir(self):
+    def delete_remote_dir(self):
         # 做一下内容清理，防止磁盘爆满以及下载的不方便
-        self.my_ftp.clear_dir(remote_dir_path)
+        self.my_ftp.delete_dir(remote_dir_path)
         win32api.MessageBox(0, '清除完毕', '清空文件夹提醒', win32con.MB_OK)
 
     def send_assign_file(self):
@@ -701,7 +714,7 @@ class CopyTool(tkinter.Tk):
         发送按钮点击事件
         '''
         content = display_content.get('0.0', 'end').strip()
-        file_path = download_path + temp_file_name
+        file_path = work_path + temp_file_name
         logging.info('正在写入{}'.format(file_path))
         try:
             with open(file_path, 'w', encoding='utf-8') as f:
@@ -720,10 +733,9 @@ class CopyTool(tkinter.Tk):
         :param display_content:Text组件
         '''
 
-        file_path = download_path + temp_file_name
+        file_path = work_path + temp_file_name
         # print(file_path)
         self.my_ftp.download_file(file_path, remote_dir_path+temp_file_name)
-        file_path = download_path + temp_file_name
         logging.info('正在读取{}'.format(file_path))
         content_list = []
 
@@ -755,7 +767,6 @@ class CopyTool(tkinter.Tk):
 
 
 if __name__ == '__main__':
-    logging.info('-----程序开始运行-----')
     app = CopyTool()    # 类的实例化
     app.mainloop()      # 程序运行
     logging.info('-----程序运行结束-----')
