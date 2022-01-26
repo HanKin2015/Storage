@@ -3,11 +3,17 @@ REGEDIT4
 ; REGEDIT4                              Windows 95/98/ME/NT4.0  其实9X/2000/XP/2003
 ; Windows Registry Editor Version 5.00  Windows 2000/XP
 
+# 删除子项
 [-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\study]
 
+# 增加子项
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\study]
 
+# 默认值
 @="People"
+
+# 删除键值
+"Name"=-
 
 # 这样写回出现左右方向的路径符
 "Message"="systam32\\drivers/StudyKMDF.sys"
