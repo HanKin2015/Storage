@@ -93,11 +93,12 @@ class MyFTP():
         
         logging.info('-----程序开始运行-----')
         logging.info('初始化建立ftp连接')
-        self.ftp_connect()
-        self.add_dir(remote_dir_path)
+        ret = self.ftp_connect()
+        if ret:
+            self.add_dir(remote_dir_path)
 
     def add_dir(self, dir_path):
-        self.ftp.create(dir_path)
+        self.ftp.mkd(dir_path)
 
     def delete_dir(self, dir_path):
         '''
@@ -130,6 +131,7 @@ class MyFTP():
 
     def ftp_connect(self):
         '''建立ftp连接
+        True成功, False失败
         '''
 
         global ftp_ip, ftp_username, ftp_password
@@ -152,6 +154,8 @@ class MyFTP():
         except Exception as ex:
             logging.error('登录ftp服务器({})失败, error={}'.format(ftp_ip, ex))
             messagebox.showinfo('警告', '建立ftp连接失败', icon='question')
+            return False
+        return True
             
     def download_file(self, local_file_path, remote_file_path):
         '''从ftp下载文件
@@ -240,17 +244,22 @@ class CopyTool(tkinter.Tk):
     '''主窗口ui类
     '''
 
+    # tkinter的对话窗口必须要有一个主窗口，就像所有控件都需要放在一个窗口上。建立一个隐形窗口后就不会出现那个影响美观的自带窗口了
+    # 解决多余的tk窗口
+    root = tkinter.Tk()
+    root.withdraw()
+
     my_ftp = MyFTP()
 
     def __init__(self):
         '''初始化自己的创建的CopyTool类
         '''
 
-        super().__init__()  # 在继承Tk这个类的基础上在自己的类中添加内容
-        self._generate_icon_()
-        self._set_window_()  # 设置程序运行主窗口
-        self._create_menu_bar_()  # 创建菜单组件
-        self._create_body_()
+        super().__init__()          # 在继承Tk这个类的基础上在自己的类中添加内容
+        self._generate_icon_()      # 生成图标
+        self._set_window_()         # 设置程序运行主窗口
+        self._create_menu_bar_()    # 创建菜单组件
+        self._create_body_()        # 创建主体
         self._create_right_popup_menu()
 
     def _generate_icon_(self):
@@ -484,7 +493,7 @@ class CopyTool(tkinter.Tk):
             family=r'微软雅黑', weight=tkinter.font.NORMAL, size=12)
 
         # 上面部分
-        fm_up = tkinter.Frame()
+        fm_up = tkinter.Frame(self)
         # fm_up.propagate(0)
         self.input_content = EntryWithPlaceholder(fm_up, '请输入上传文件路径(可鼠标双击选择)', font=ft)
         #self.input_content = tkinter.Entry(fm_up, width=30, font=ft)
@@ -505,7 +514,7 @@ class CopyTool(tkinter.Tk):
         fm_up.pack(fill=tkinter.X)
 
         # 中间部分
-        fm_mid = tkinter.Frame()
+        fm_mid = tkinter.Frame(self)
         fm_mid.propagate(0)
         # 创建行号栏（takefocus屏蔽焦点）
         self.line_number_bar = tkinter.Text(fm_mid, width=3, padx=3, takefocus=0, border=0,
@@ -533,7 +542,7 @@ class CopyTool(tkinter.Tk):
         fm_mid.pack(fill=tkinter.BOTH, expand='yes')
 
         # 下面部分：拷贝按钮
-        fm_down = tkinter.Frame()
+        fm_down = tkinter.Frame(self)
         # fm_down.propagate(0)
         copy_btn = tkinter.Button(fm_down, text='拷贝文字', command=lambda: self.copy_btn_cliecked(
             self.content_text), font=ft, compound='center')
@@ -600,6 +609,7 @@ class CopyTool(tkinter.Tk):
 
         if messagebox.askokcancel('退出?', '确定退出吗?'):  # 设置文本提示框
             self.destroy()  # 满足条件的话主窗口退出
+            self.root.destroy()
             self.my_ftp.ftp_disconnect()
 
     def new_file(self, event=None):
