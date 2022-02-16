@@ -42,6 +42,10 @@ class VisualizedWindow(tkinter.Tk):
     '''可视化窗口ui类
     '''
     
+    # tkinter的对话窗口必须要有一个主窗口，就像所有控件都需要放在一个窗口上。建立一个隐形窗口后就不会出现那个影响美观的自带窗口了
+    root = tkinter.Tk()
+    root.withdraw()
+
     def __init__(self):
         '''初始化自己的创建的CopyTool类
         '''
