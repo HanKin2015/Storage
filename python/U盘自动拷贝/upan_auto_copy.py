@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: upan_auto_copy.py
-文件描述: U盘自动拷贝文件
+文 件 名: upan_auto_copy_v2.py
+文件描述: U盘自动拷贝文件(在电脑上面运行)
 作    者: HanKin
 创建日期: 2022.02.15
-修改日期：2022.02.15
+修改日期：2022.02.17
 
 Copyright (c) 2022 HanKin. All rights reserved.
 """
@@ -41,6 +41,9 @@ logging.basicConfig(level=logging.INFO,
                     filename=log_file,
                     filemode='a')
 
+# U盘路径
+#upan_path = ''
+
 def argument_parser():
     """参数解析
 
@@ -52,12 +55,13 @@ def argument_parser():
     
     parser = argparse.ArgumentParser(description='欢迎使用U盘自动拷贝文件脚本')
     #type是要传入的参数的数据类型  help是该参数的提示信息
-    parser.add_argument('copy_path', type=str, help='拷贝的文件夹路径')
+    parser.add_argument('upan_path', type=str, help='U盘路径')
+    parser.add_argument('file_size', type=str, help='U盘路径')
 
     args = parser.parse_args()
 
     #获得传入的参数
-    #print(args)
+    print(args)
 
 def get_file_md5(file_path):
     """获取文件md5值
@@ -199,7 +203,7 @@ def auto_copy():
     logging.info('------拷贝结束------\n')
 
 def main():
-    #argument_parser()
+    argument_parser()
     auto_copy()
 
 if __name__ == '__main__':

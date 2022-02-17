@@ -1,2 +1,8 @@
 2022-02-16 15:53:52 upan_auto_copy.py[line:124] ERROR 生成临时文件失败, cmd: copy /Y .\data\1.txt .\1.txttemp
 2022-02-16 15:54:51 upan_auto_copy.py[line:127] INFO ------拷贝开始------
+2022-02-17 10:04:05 upan_auto_copy.py[line:128] INFO ------拷贝开始------
+2022-02-17 20:47:09 upan_auto_copy.py[line:128] INFO ------拷贝开始------
+2022-02-17 20:47:22 upan_auto_copy.py[line:159] ERROR 从U盘拷贝到电脑失败, cmd: copy /Y .\1.txt1645102029 D:\
+2022-02-17 20:47:22 upan_auto_copy.py[line:199] INFO ------拷贝结束------
+
+2022-02-17 20:50:12 upan_auto_copy.py[line:128] INFO ------拷贝开始------
