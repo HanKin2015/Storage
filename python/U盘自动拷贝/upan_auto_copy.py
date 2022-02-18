@@ -42,7 +42,7 @@ logging.basicConfig(level=logging.INFO,
                     filemode='a')
 
 # U盘路径
-#upan_path = ''
+upan_path = 'E'
 
 def argument_parser():
     """参数解析
@@ -56,7 +56,7 @@ def argument_parser():
     parser = argparse.ArgumentParser(description='欢迎使用U盘自动拷贝文件脚本')
     #type是要传入的参数的数据类型  help是该参数的提示信息
     parser.add_argument('upan_path', type=str, help='U盘路径')
-    parser.add_argument('file_size', type=str, help='U盘路径')
+    #parser.add_argument('file_size', type=str, help='U盘路径')
 
     args = parser.parse_args()
 
@@ -119,7 +119,7 @@ def auto_copy():
     """
 
     copy_cnt = 1
-    target_path = 'D:\\'
+    target_path = upan_path
     
     # 生成一个临时文件
     temp_data_name = data_name + 'temp'
@@ -149,50 +149,51 @@ def auto_copy():
         # 获取源文件md5值
         source_md5 = get_file_md5(temp_data_name)
 
-        # 从U盘拷贝到电脑
+        # 从电脑拷贝到U盘
         begin_time = time.time()
-        cmd = 'copy /Y .\\{} {}'.format(temp_data_name, target_path)
+        cmd = 'copy /Y .\\{} {}:\\'.format(temp_data_name, target_path)
         ret = os.system(cmd)
         end_time = time.time()
         copy_time = round(end_time - begin_time, 3)
         ave_speed = round(data_size  / copy_time, 3)
-        print('拷贝花费{}秒, 平均拷贝速度为{}MB/s'.format(copy_time, ave_speed))
+        print('从电脑拷贝到U盘拷贝花费{}秒, 平均拷贝速度为{}MB/s'.format(copy_time, ave_speed))
         
         os.system("del {}".format(temp_data_name))
         if ret != 0:
-            logging.error('从U盘拷贝到电脑失败, cmd: {}'.format(cmd))
+            logging.error('从电脑拷贝到U盘失败, cmd: {}'.format(cmd))
             break
 
         # 获取目标文件md5值
-        target_md5 = get_file_md5(target_path+temp_data_name)
+        target_data_path = '{}:\\{}'.format(target_path, temp_data_name)
+        target_md5 = get_file_md5(target_data_path)
 
         # 判断md5值是否吻合
         if source_md5 != target_md5:
-            logging.error('从U盘拷贝到电脑, 文件md5值不吻合, source: {} target: {}'.format(source_md5, target_md5))
+            logging.error('从电脑拷贝到U盘, 文件md5值不吻合, source: {} target: {}'.format(source_md5, target_md5))
             break
             
         time.sleep(3)
 
-        # 从电脑拷贝到U盘
+        # 从U盘拷贝到电脑
         begin_time = time.time()
         source_md5 = target_md5
-        cmd = 'copy /Y {}{} .\\'.format(target_path, temp_data_name)
+        cmd = 'copy /Y {}:\\{} .\\'.format(target_path, temp_data_name)
         ret = os.system(cmd)
         end_time = time.time()
         copy_time = round(end_time - begin_time, 3)
         ave_speed = round(1024  / copy_time, 3)
-        print('拷贝花费{}秒, 平均拷贝速度为{}MB/s'.format(copy_time, ave_speed))
+        print('从U盘拷贝到电脑拷贝花费{}秒, 平均拷贝速度为{}MB/s'.format(copy_time, ave_speed))
         
-        os.system('del {}{}'.format(target_path, temp_data_name))
+        os.system('del {}:\\{}'.format(target_path, temp_data_name))
         if ret != 0:
-            logging.error('从电脑拷贝到U盘失败, cmd: {}'.format(cmd))
+            logging.error('从U盘拷贝到电脑失败, cmd: {}'.format(cmd))
             break
         
         target_md5 = get_file_md5(temp_data_name)
         
         # 判断md5值是否吻合
         if source_md5 != target_md5:
-            logging.error('从电脑拷贝到U盘, 文件md5值不吻合, source:{} target:{}'.format(source_md5, target_md5))
+            logging.error('从U盘拷贝到电脑, 文件md5值不吻合, source:{} target:{}'.format(source_md5, target_md5))
             break
         
         print('第{}次拷贝完成\n'.format(copy_cnt))
@@ -203,7 +204,7 @@ def auto_copy():
     logging.info('------拷贝结束------\n')
 
 def main():
-    argument_parser()
+    #argument_parser()
     auto_copy()
 
 if __name__ == '__main__':
