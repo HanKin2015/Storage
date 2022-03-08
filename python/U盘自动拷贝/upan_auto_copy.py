@@ -109,6 +109,70 @@ def get_file_size(file_path):
     file_size = file_size / float(1024)
     return round(file_size, 2)
 
+def copy_operation(source_path, target_path):
+    """拷贝操作
+
+    使用Windows的copy命令进行拷贝
+    /Y 不使用确认是否要改写现有目标文件 的提示。
+    
+    Parameters
+    ------------
+    source_path : str
+        源文件路径
+    target_path : str
+        目标文件路径
+        
+    Returns
+    -------
+    bool
+        成功True, 失败False
+    """
+    
+    begin_time = time.time()
+    
+    cmd = 'copy /Y {} {}'.format(source_path, target_path)
+    ret = os.system(cmd)
+    if ret != 0:
+        logging.error('拷贝失败, cmd: {}'.format(cmd))
+        return False
+    
+    end_time = time.time()
+    copy_time = round(end_time - begin_time, 3)
+    ave_speed = round(data_size  / copy_time, 3)
+    print('拷贝花费{}秒, 平均拷贝速度为{}MB/s'.format(copy_time, ave_speed))
+    
+    cmd = 'del {}'.format(source_path)
+    ret = os.system(cmd)
+    if ret != 0:
+        logging.error('删除源文件失败, cmd: {}'.format(cmd))
+        return False
+    return True
+
+def check_md5(source_path, target_path):
+    """检查文件md5值
+
+    判断文件拷贝是否正确
+    
+    Parameters
+    ------------
+    source_path : str
+        源文件路径
+    target_path : str
+        目标文件路径
+        
+    Returns
+    -------
+    bool
+        成功True, 失败False
+    """
+    
+    source_md5 = get_file_md5(source_path)
+    target_md5 = get_file_md5(target_path)
+    if source_md5 != target_md5:
+        logging.error('文件md5值不吻合, source: {} target: {}'.format(source_md5, target_md5))
+        return False
+    return True
+
 def auto_copy():
     """自动拷贝
 
@@ -119,7 +183,6 @@ def auto_copy():
     """
 
     copy_cnt = 1
-    target_path = upan_path
     
     # 生成一个临时文件
     temp_data_name = data_name + 'temp'
@@ -150,27 +213,10 @@ def auto_copy():
         source_md5 = get_file_md5(temp_data_name)
 
         # 从电脑拷贝到U盘
-        begin_time = time.time()
-        cmd = 'copy /Y .\\{} {}:\\'.format(temp_data_name, target_path)
-        ret = os.system(cmd)
-        end_time = time.time()
-        copy_time = round(end_time - begin_time, 3)
-        ave_speed = round(data_size  / copy_time, 3)
-        print('从电脑拷贝到U盘拷贝花费{}秒, 平均拷贝速度为{}MB/s'.format(copy_time, ave_speed))
-        
-        os.system("del {}".format(temp_data_name))
-        if ret != 0:
-            logging.error('从电脑拷贝到U盘失败, cmd: {}'.format(cmd))
-            break
+        source_path = '.\\{}'.format(temp_data_name)
+        target_path = '{}:\\{}'.format(upan_path, temp_data_name)
 
-        # 获取目标文件md5值
-        target_data_path = '{}:\\{}'.format(target_path, temp_data_name)
-        target_md5 = get_file_md5(target_data_path)
-
-        # 判断md5值是否吻合
-        if source_md5 != target_md5:
-            logging.error('从电脑拷贝到U盘, 文件md5值不吻合, source: {} target: {}'.format(source_md5, target_md5))
-            break
+        if copy_operation(source_path, target_path)
             
         time.sleep(3)
 

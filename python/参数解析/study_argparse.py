@@ -23,7 +23,7 @@ def argument_parser():
     # 1、创建一个解析器
     parser = argparse.ArgumentParser(description='欢迎使用U盘自动拷贝文件脚本', prog='myprogram')
     
-    # 2、默认的程序名
+    # 2、默认的程序名(默认为study_argparse
     #parser.print_help()
     
     #type是要传入的参数的数据类型  help是该参数的提示信息
