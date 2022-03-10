@@ -1,5 +1,0 @@
-Wed, 08 Jul 2020 20:31:26 server.py[line:57] INFO 服务器收到消息1: dsa
-Wed, 08 Jul 2020 20:31:28 server.py[line:57] INFO 服务器收到消息2: sadasdqw
-Wed, 08 Jul 2020 20:31:31 server.py[line:57] INFO 服务器收到消息3: notify
-Wed, 08 Jul 2020 20:31:37 server.py[line:55] INFO 断开连接
-Wed, 08 Jul 2020 20:31:37 server.py[line:70] INFO 服务端关闭成功
