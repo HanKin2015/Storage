@@ -20,27 +20,20 @@ def argument_parser():
     ----------
     """
     
-    # 1、创建一个解析器，默认的程序名为study_argparse.py，prog属性可修改这值
-    parser = argparse.ArgumentParser(description='欢迎使用优质男性信息采集系统', prog='myprogram')
+    # 1、创建一个解析器
+    parser = argparse.ArgumentParser(description='欢迎使用U盘自动拷贝文件脚本', prog='myprogram')
     
-    # 2、打印帮助信息
+    # 2、默认的程序名(默认为study_argparse
     #parser.print_help()
     
-    # type是要传入的参数的数据类型，有str、int、
-    # help是该参数的提示信息
-    parser.add_argument('name', type=str, help='姓名')
-    parser.add_argument('age',  type=int, help='年龄')
+    #type是要传入的参数的数据类型  help是该参数的提示信息
+    parser.add_argument('upan_path', type=str, help='U盘路径')
+    parser.add_argument('file_size', type=str, help='U盘路径')
     parser.add_argument("-a", "--AddConfData", action='store_true', help="增加配置数据")
     parser.add_argument("-d", "--DelConfData", action='store_true', help="删除配置数据")
     parser.add_argument("-c", "--ChgConfData", action='store_true', help="修改配置数据")
     parser.add_argument("-q", dest="data", action='store', help="查询配置数据")
     parser.add_argument("-x", default=False, dest="x",action='store_true', help="进入交互界面")
-    parser.add_argument('integers', metavar='N', type=int, nargs='+',
-                    help='an integer for the accumulator')
-    parser.add_argument('--sum', dest='accumulate', action='store_const',
-                    const=sum, default=max,
-                    help='sum the integers (default: find the max)')
-    
     args = parser.parse_args()
     if args.data:
         print(args.data)
