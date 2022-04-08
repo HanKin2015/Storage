@@ -28,6 +28,9 @@ data_name = '1.txt'
 data_size = 1024    # 单位MB
 data_file = data_path + data_name
 
+# U盘路径
+upan_path = 'E'
+
 # 建立必要的文件夹
 if not os.path.exists(log_path):
     os.makedirs(log_path)
@@ -40,9 +43,6 @@ logging.basicConfig(level=logging.INFO,
                     datefmt='%Y-%m-%d %H:%M:%S',
                     filename=log_file,
                     filemode='a')
-
-# U盘路径
-upan_path = 'E'
 
 def argument_parser():
     """参数解析

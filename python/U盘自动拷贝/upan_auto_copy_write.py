@@ -21,18 +21,23 @@ import logging
 import hashlib
 
 # 日志路径
-log_path = '.\\log\\'
+log_path = './log/'
 log_name = 'upan_auto_copy.log'
 log_file = log_path + log_name
 
 # 数据路径
-data_path = '.\\data\\'
+data_path = './data/'
 data_name = '1.txt'
 data_size = 1024    # 单位MB
 data_file = data_path + data_name
 
-# U盘路径
+# U盘盘符
 upan_path = 'E'
+
+# 是否为Windows系统
+is_windows = False
+if sys.platform == 'win32' or sys.platform == 'win64':
+    is_windows = True
 
 # 建立必要的文件夹
 if not os.path.exists(log_path):
@@ -59,7 +64,7 @@ def argument_parser():
     parser = argparse.ArgumentParser(description='欢迎使用U盘自动写入文件脚本')
     #type是要传入的参数的数据类型  help是该参数的提示信息
     parser.add_argument('-u', dest='upan_path', default='E', type=str, help='U盘路径')
-    parser.add_argument('-d', dest='data_path', default='.\\data\\', type=str, help='数据路径')
+    parser.add_argument('-d', dest='data_path', default='./data/', type=str, help='数据路径')
 
     args = parser.parse_args()
 
@@ -187,7 +192,10 @@ def copy_operation(source_path, target_path):
     
     begin_time = time.time()
     
-    cmd = 'copy /Y {} {}'.format(source_path, target_path)
+    if is_windows:
+        cmd = 'copy /Y {} {}'.format(source_path, target_path)
+    else:
+        cmd = 'cp -f {} {}'.format(source_path, target_path)
     ret = os.system(cmd)
     if ret != 0:
         logging.error('拷贝失败, cmd: {}'.format(cmd))
@@ -204,7 +212,10 @@ def copy_operation(source_path, target_path):
         return False
     
     # 单向拷贝就删除目标文件
-    cmd = 'del {}'.format(target_path)
+    if is_windows:
+        cmd = 'del /Y {}'.format(target_path)
+    else:
+        cmd = 'rm -f {}'.format(target_path)
     ret = os.system(cmd)
     if ret != 0:
         logging.error('删除目标文件失败, cmd: {}'.format(cmd))
@@ -230,12 +241,15 @@ def auto_copy_write():
         print('数据文件夹 {} 没有 {} 类型的文件'.format(data_path, data_type_suffix))
         return
 
-    target_path = '{}:\\{}'.format(upan_path, data_name)
-    
+    if is_windows:
+        target_path = '{}:/{}'.format(upan_path, data_name)
+    else:
+        target_path = '{}/{}'.format(upan_path, data_name)
+    print('当前操作系统为: {}'.format(sys.platform))
+    print('源文件路径:{}, 目标文件路径:{}'.format(source_path, target_path))
+
     global data_size
     data_size = get_file_size(source_path)
-    
-    print('源文件路径:{}, 目标文件路径:{}'.format(source_path, target_path))
 
     logging.info('------拷贝开始------')
     while True:
