@@ -20,6 +20,8 @@
 #include <fcntl.h>
 #include <sys/mman.h>
 #include <inttypes.h>
+#include <string.h>
+#include <assert.h>
 #define MAXN           5500000
 #define DATA_COUNT     10*1024*1024	// 10MB数据，加空格就会有20MB数据
 #define ROW_DATA_COUNT 100
@@ -121,6 +123,33 @@ void mmap_analyse()
 	int len = lseek(fd,0,SEEK_END);
 	char *mbuf = (char *) mmap(NULL,len,PROT_READ,MAP_PRIVATE,fd,0);	
 	analyse(mbuf,len);
+}
+
+// 0.317s
+void fscanf_read_file(const char *file_name, uint8_t *data)
+{
+	assert(file_name);
+	assert(data);
+	
+    size_t  len   = 0;
+    FILE    *fp   = NULL;
+	int     num   = 0;
+	int     i     = 0;
+
+    fp = fopen(file_name, "r");
+	if (fp == NULL) {
+		printf("fopen failed!\n");
+		return;
+	}
+    for (i = 0; i < DATA_COUNT; i++) {
+        fscanf(fp, "%d", &data[i]);
+        //printf("num: %d\n", data[i]);
+    }
+	printf("i: %d\n", i);
+	
+	fclose(fp);
+	fp = NULL;
+    return;
 }
 
 int main(int argc, char *argv[])

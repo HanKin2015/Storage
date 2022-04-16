@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['upan_auto_copy_read.py'],
-             pathex=['D:\\Github\\Storage\\python\\U盘自动拷贝'],
+             pathex=['D:\\Github\\Storage\\python\\udev\\U盘自动拷贝'],
              binaries=[],
              datas=[],
              hiddenimports=[],

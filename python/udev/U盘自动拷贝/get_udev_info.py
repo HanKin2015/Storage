@@ -82,6 +82,8 @@ def find_library(libname):
     return path
 
 if __name__ == "__main__":
+    print('current path: ', os.getcwd())
+
     find_library('libusb0')
     
     #backend = usb.backend.libusb0.get_backend(find_library=find_library)

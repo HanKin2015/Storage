@@ -5,9 +5,11 @@
 改    进: 1.文件名不固定，data目录下即可
           2.文件位置不固定，默认data，可以参数指定
           3.U盘符位置不固定，默认E盘，可以参数指定
+          4.del使用/F参数
+          5.Windows路径不能使用/，必须要\\，日志路径不受影响，影响的是Windows命令
 作    者: HanKin
 创建日期: 2022.04.06
-修改日期：2022.04.06
+修改日期：2022.04.16
 
 Copyright (c) 2022 HanKin. All rights reserved.
 """
@@ -38,6 +40,9 @@ upan_path = 'E'
 is_windows = False
 if sys.platform == 'win32' or sys.platform == 'win64':
     is_windows = True
+    
+# 拷贝操作过程
+copy_opt_process = '从U盘拷贝到电脑'
 
 # 建立必要的文件夹
 if not os.path.exists(log_path):
@@ -208,7 +213,7 @@ def copy_operation(source_path, target_path):
     end_time = time.time()
     copy_time = round(end_time - begin_time, 3)
     ave_speed = round(data_size  / copy_time, 3)
-    print('拷贝花费{}秒, 平均拷贝速度为{}MB/s'.format(copy_time, ave_speed))
+    print('{}花费{}秒, 平均拷贝速度为{}MB/s'.format(copy_opt_process, copy_time, ave_speed))
     
     print('文件md5值检查中...')
     if not check_md5(source_path, target_path):
@@ -217,7 +222,7 @@ def copy_operation(source_path, target_path):
     
     # 单向拷贝就删除目标文件
     if is_windows:
-        cmd = 'del /Y {}'.format(target_path)
+        cmd = 'del /F {}'.format(target_path)
     else:
         cmd = 'rm -f {}'.format(target_path)
     ret = os.system(cmd)
@@ -247,13 +252,17 @@ def auto_copy_read():
 
     target_path = './{}'.format(data_name)
     print('当前操作系统为: {}'.format(sys.platform))
+    
+    if is_windows:
+        source_path = source_path.replace('/', '\\')
+        target_path = target_path.replace('/', '\\')
     print('源文件路径:{}, 目标文件路径:{}'.format(source_path, target_path))
 
     global data_size
     data_size = get_file_size(source_path)
     print('文件大小为 {} MB'.format(data_size))
     
-    logging.info('------拷贝开始------')
+    logging.info('------{}开始------'.format(copy_opt_process))
     while True:
         # 当前时间
         print(time.strftime("%Y-%m-%d %H:%M:%S"))
@@ -267,10 +276,10 @@ def auto_copy_read():
             logging.info('第{}次拷贝完成'.format(copy_cnt))
         copy_cnt += 1
         
-        # 睡眠2秒
-        time.sleep(2)
+        # 睡眠1秒
+        time.sleep(1)
     
-    logging.info('------拷贝结束------\n')
+    logging.info('------{}结束------'.format(copy_opt_process))
 
 def main():
     argument_parser()

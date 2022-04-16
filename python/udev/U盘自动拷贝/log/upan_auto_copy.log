@@ -12,3 +12,20 @@
 2022-04-06 15:32:54 upan_auto_copy_write.py[line:233] INFO ------拷贝开始------
 2022-04-06 15:33:05 upan_auto_copy_write.py[line:233] INFO ------拷贝开始------
 2022-04-06 15:33:08 upan_auto_copy_write.py[line:191] ERROR 拷贝失败, cmd: copy /Y .\data\1.txt E:\1.txt
+2022-04-15 17:25:06 upan_auto_copy_read.py[line:256] INFO ------拷贝开始------
+2022-04-15 17:25:08 upan_auto_copy_read.py[line:205] ERROR 拷贝失败, cmd: copy /Y D:/data/新建文本文档.txt ./1.txt
+2022-04-15 17:25:15 upan_auto_copy_read.py[line:256] INFO ------拷贝开始------
+2022-04-15 17:25:18 upan_auto_copy_read.py[line:205] ERROR 拷贝失败, cmd: copy /Y D:/data/新建文本文档.txt ./1.txt
+2022-04-15 17:34:42 upan_auto_copy_read.py[line:256] INFO ------拷贝开始------
+2022-04-15 17:34:44 upan_auto_copy_read.py[line:205] ERROR 拷贝失败, cmd: copy /Y D:/data/新建文本文档.txt ./1.txt
+2022-04-15 17:34:54 upan_auto_copy_write.py[line:254] INFO ------拷贝开始------
+2022-04-15 17:34:56 upan_auto_copy_write.py[line:201] ERROR 拷贝失败, cmd: copy /Y ./data/1.txt D:/1.txt
+2022-04-16 09:24:17 upan_auto_copy_write.py[line:254] INFO ------拷贝开始------
+2022-04-16 09:24:20 upan_auto_copy_write.py[line:201] ERROR 拷贝失败, cmd: copy /Y ./data/1.txt D:/1.txt
+2022-04-16 09:24:37 upan_auto_copy_read.py[line:260] INFO ------拷贝开始------
+2022-04-16 09:24:41 upan_auto_copy_read.py[line:225] ERROR 删除目标文件失败, cmd: del /Y .\1.txt
+2022-04-16 09:26:20 upan_auto_copy_read.py[line:260] INFO ------拷贝开始------
+2022-04-16 09:27:04 upan_auto_copy_read.py[line:260] INFO ------拷贝开始------
+2022-04-16 09:31:50 upan_auto_copy_write.py[line:258] INFO ------拷贝开始------
+2022-04-16 09:38:26 upan_auto_copy_write.py[line:262] INFO ------从电脑拷贝到U盘开始------
+2022-04-16 09:39:10 upan_auto_copy_read.py[line:265] INFO ------从U盘拷贝到电脑开始------
