@@ -1,5 +1,5 @@
 <div align="center">
-<img height=150 src="https://github.com/hankin2015/Storage\python\udev\udev_auto_copy\img/blob/master/src-tauri/icons/icon.png" />
+<img height=150 src="https://github.com/HanKin2015/Storage/blob/master/python/udev/upan_auto_copy/img/icon.jpg" />
 </div>
 <p align="center">
 <span >中文</span>
@@ -47,7 +47,7 @@ upan_auto_copy是一款跨平台的**U盘自动拷贝**稳定性测试脚本工�
 
 
 ## 架构
-![arch](doc/img.png)
+![arch](doc/arch.jpg)
 
 
 ## 感谢
@@ -57,4 +57,4 @@ upan_auto_copy是一款跨平台的**U盘自动拷贝**稳定性测试脚本工�
 
 ## LICENSE
 
-[GPL](https://github.com/HanKin2015/Storage/blob/master/LICENSE)
+[GPL](https://github.com/HanKin2015/Storage/blob/master/python/udev/upan_auto_copy/LICENSE)
