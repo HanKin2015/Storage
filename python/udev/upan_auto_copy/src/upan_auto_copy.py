@@ -4,7 +4,7 @@
 文件描述: U盘自动拷贝文件(在电脑上面运行)
 作    者: HanKin
 创建日期: 2022.02.15
-修改日期：2022.04.24
+修改日期：2022.04.25
 
 Copyright (c) 2022 HanKin. All rights reserved.
 """
@@ -16,6 +16,7 @@ import sys
 import argparse
 import logging
 import hashlib
+import random
 
 # 日志路径
 log_path = './log/'
@@ -23,10 +24,7 @@ log_name = 'upan_auto_copy.log'
 log_file = log_path + log_name
 
 # 数据路径
-data_path = './data/'
-data_name = '1.txt'
-data_size = 1024    # 单位MB
-data_file = data_path + data_name
+data_size = 1024    # 单位MB，即1GB大小文件
 
 # U盘盘符
 upan_path = 'E'
@@ -43,8 +41,6 @@ local_copy_upan = '从电脑拷贝到U盘'
 # 建立必要的文件夹
 if not os.path.exists(log_path):
     os.makedirs(log_path)
-if not os.path.exists(data_path):
-    os.makedirs(data_path)
 
 # 配置日志
 logging.basicConfig(level=logging.INFO,
@@ -69,7 +65,7 @@ def argument_parser():
     parser = argparse.ArgumentParser(description='欢迎使用U盘自动拷贝文件脚本')
     #type是要传入的参数的数据类型  help是该参数的提示信息
     parser.add_argument('-u', dest='upan_path', default='E', type=str, help='U盘路径')
-    parser.add_argument('-d', dest='data_path', default='./data/', type=str, help='数据路径')
+    parser.add_argument('-s', dest='data_size', default='1024', type=int, help='数据文件大小(MB)')
 
     args = parser.parse_args()
 
@@ -77,9 +73,9 @@ def argument_parser():
     logging.debug('args: {}'.format(args))
     print(args)
     
-    global upan_path, data_path
+    global upan_path, data_size
     upan_path = args.upan_path
-    data_path = args.data_path
+    data_size = args.data_size
 
 def get_data_files(file_dir, file_type_suffix='.txt'):
     """获取文件夹中的指定类型的文件名及路径
@@ -235,65 +231,37 @@ def copy_operation(source_path, target_path, copy_opt_process):
         return False
     return True
 
-def prepare_before_copy():
-    """拷贝前的准备工作
+def generate_data_file(source_path, data_size):
+    """生成数据文件
 
-    1.检测文件的存在，判断文件的类型
-    2.复制源文件，不在原始文件上面进行任何操作
-
-    Parameters
-    ----------
+    seek() 方法用于移动文件读取指针到指定位置。
     
-    Returns
-    -------
+    Parameters
+    ------------
     source_path : str
         源文件路径
-    target_path : str
-        目标文件路径
+    data_size : int
+        源文件大小
+        
+    Returns
+    -------
+    bool
+        成功True, 失败False
     """
     
-    # 数据文件后缀为txt文件
-    data_type_suffix = '.txt'
-    data_files = get_data_files(data_path, data_type_suffix)
-    if len(data_files):
-        # 只拷贝一个文件（按名字排序第一个）
-        data_file = data_files[0]
-    else:
-        logging.error('数据文件夹 {} 没有 {} 类型的文件'.format(data_path, data_type_suffix))
-        print('数据文件夹 {} 没有 {} 类型的文件'.format(data_path, data_type_suffix))
-        return None, None
-        
-    # 生成一个临时文件（保护原始文件不被破坏）
-    temp_data_name = data_name + 'temp'
-    cmd = 'copy -f {} ./{}'.format(data_file, temp_data_name)
-    if is_windows:
-        data_file = data_file.replace('/', '\\')
-        cmd = 'copy /Y {} .\\{}'.format(data_file, temp_data_name)
-    logging.debug('cmd: {}'.format(cmd))
-    ret = os.system(cmd)
-    if ret != 0:
-        logging.error('生成临时文件失败, cmd: {}'.format(cmd))
-        return None, None
-
-    source_path = './{}'.format(temp_data_name)
-    if is_windows:
-        source_path = source_path.replace('/', '\\')
-        target_path = '{}:\\{}'.format(upan_path, temp_data_name)
-        target_path = target_path.replace('/', '\\')
-    else:
-        target_path = '{}/{}'.format(upan_path, temp_data_name)
-        
-    logging.info('当前操作系统为: {}'.format(sys.platform))
-    logging.info('源文件路径:{}, 目标文件路径:{}'.format(source_path, target_path))
-    print('当前操作系统为: {}'.format(sys.platform))
-    print('源文件路径:{}, 目标文件路径:{}'.format(source_path, target_path))
-
-    global data_size
-    data_size = get_file_size(source_path)
-    logging.info('{}文件大小为 {} MB'.format(temp_data_name, data_size))
-    print('{}文件大小为 {} MB'.format(temp_data_name, data_size))
+    begin_time = time.time()
     
-    return source_path, target_path
+    fp = open(source_path, 'w', encoding='utf-8')
+    fp.seek(1024*1024*data_size)
+    random_content = str(round(random.uniform(0, 1000), 3))
+    fp.write(random_content)
+    fp.close()
+    
+    end_time = time.time()
+    copy_time = round(end_time - begin_time, 3)
+    ave_speed = round(data_size  / copy_time, 3)
+    logging.debug('文件大小为{}MB, 生成数据文件花费{}秒, 平均速度为{}MB/s'.format(data_size, copy_time, ave_speed))
+    print('文件大小为{}MB, 生成数据文件花费{}秒, 平均速度为{}MB/s'.format(data_size, copy_time, ave_speed))
 
 def auto_copy():
     """自动拷贝
@@ -305,47 +273,54 @@ def auto_copy():
     """
 
     copy_cnt = 1
-    
-    source_path, target_path = prepare_before_copy()
-    if source_path is None:
-        logging.error('获取源文件路径失败')
-        print('获取源文件路径失败')
-        return
-    logging.debug('----------准备工作完成----------\n')
-    print('----------准备工作完成----------\n')
 
     while True:
         # 当前时间
         logging.debug(time.strftime("%Y-%m-%d %H:%M:%S"))
         print(time.strftime("%Y-%m-%d %H:%M:%S"))
 
-        logging.debug('文件{}中...'.format(local_copy_upan))
-        print('文件{}中...'.format(local_copy_upan))
-        # 修改文件内容（防止Windows写缓存）
-        os.system("echo !a! >> {}".format(source_path))
-        # 从电脑拷贝到U盘
-        if not copy_operation(source_path, target_path, local_copy_upan):
-            return
+            
+        local_time = time.strftime("%Y%m%d%H%M%S", time.localtime())
+        data_name = '{}.txt'.format(str(local_time))
+        if is_windows:
+            source_path = '{}:\\{}'.format(upan_path, data_name)
+            target_path = '.\\{}'.format(data_name)
+        else:
+            source_path = '{}/{}'.format(upan_path, data_name)
+            target_path = './{}'.format(data_name)
         
+        logging.debug('{}文件随机生成中...'.format(source_path))
+        print('{}文件随机生成中...'.format(source_path))
+        generate_data_file(source_path, data_size)
+
+        logging.debug('文件{}中...'.format(upan_copy_local))
+        print('文件{}中...'.format(upan_copy_local))
+        # 从U盘拷贝到电脑
+        if not copy_operation(source_path, target_path, upan_copy_local):
+            return
+
         # 睡眠1秒
         time.sleep(1)
         
-        logging.debug('文件{}中...'.format(upan_copy_local))
-        print('文件{}中...'.format(upan_copy_local))
-        # 修改文件内容（防止Windows写缓存）
-        os.system("echo !a! >> {}".format(target_path))
-        # 从U盘拷贝到电脑
-        if not copy_operation(target_path, source_path, upan_copy_local):
+        logging.debug('文件{}中...'.format(local_copy_upan))
+        print('文件{}中...'.format(local_copy_upan))
+        # 从电脑拷贝到U盘
+        if not copy_operation(target_path, source_path, local_copy_upan):
             return
+        # 删除源文件
+        if is_windows:
+            cmd = 'del /F {}'.format(source_path)
+        else:
+            cmd = 'rm -f {}'.format(source_path)
+        logging.debug('cmd: {}'.format(cmd))
+        ret = os.system(cmd)
+        if ret != 0:
+            logging.error('删除源文件失败, cmd: {}'.format(cmd))
         
         logging.debug('----------第{}次拷贝完成----------\n'.format(copy_cnt))
         print('----------第{}次拷贝完成----------\n'.format(copy_cnt))
         if copy_cnt % 10 == 0:
             logging.info('第{}次拷贝完成'.format(copy_cnt))
-        if copy_cnt % 1000 == 0:
-            global data_size
-            data_size = get_file_size(source_path)
-            logging.info('拷贝{}次后文件大小为 {} MB'.format(copy_cnt, data_size))
         copy_cnt += 1
         
         # 睡眠1秒
@@ -364,7 +339,7 @@ if __name__ == '__main__':
         # 打印err为空
         logging.warning('捕获到KeyboardInterrupt异常')
         print('捕获到KeyboardInterrupt异常')
-    except Exception as err:
-        logging.error('捕获到异常, {}'.format(err))
-        print('捕获到异常, {}'.format(err))
+    #except Exception as err:
+    #    logging.error('捕获到异常, {}'.format(err))
+    #    print('捕获到异常, {}'.format(err))
     logging.info('------U盘自动拷贝程序结束------')

@@ -29,3 +29,67 @@
 2022-04-16 09:31:50 upan_auto_copy_write.py[line:258] INFO ------拷贝开始------
 2022-04-16 09:38:26 upan_auto_copy_write.py[line:262] INFO ------从电脑拷贝到U盘开始------
 2022-04-16 09:39:10 upan_auto_copy_read.py[line:265] INFO ------从U盘拷贝到电脑开始------
+2022-04-25 15:53:43 upan_auto_copy.py[line:368] INFO ------U盘自动拷贝程序开始------
+2022-04-25 15:53:43 upan_auto_copy.py[line:379] INFO ------U盘自动拷贝程序结束------
+2022-04-25 15:54:27 upan_auto_copy.py[line:368] INFO ------U盘自动拷贝程序开始------
+2022-04-25 15:54:38 upan_auto_copy.py[line:379] INFO ------U盘自动拷贝程序结束------
+2022-04-25 15:57:24 upan_auto_copy.py[line:382] INFO ------U盘自动拷贝程序开始------
+2022-04-25 15:57:24 upan_auto_copy.py[line:391] ERROR 捕获到异常, name 'random' is not defined
+2022-04-25 15:57:24 upan_auto_copy.py[line:393] INFO ------U盘自动拷贝程序结束------
+2022-04-25 15:57:38 upan_auto_copy.py[line:383] INFO ------U盘自动拷贝程序开始------
+2022-04-25 15:57:39 upan_auto_copy.py[line:394] INFO ------U盘自动拷贝程序结束------
+2022-04-25 15:58:30 upan_auto_copy.py[line:383] INFO ------U盘自动拷贝程序开始------
+2022-04-25 15:58:43 upan_auto_copy.py[line:394] INFO ------U盘自动拷贝程序结束------
+2022-04-25 15:59:45 upan_auto_copy.py[line:389] INFO ------U盘自动拷贝程序开始------
+2022-04-25 15:59:54 upan_auto_copy.py[line:400] INFO ------U盘自动拷贝程序结束------
+2022-04-25 16:03:12 upan_auto_copy.py[line:389] INFO ------U盘自动拷贝程序开始------
+2022-04-25 16:03:24 upan_auto_copy.py[line:400] INFO ------U盘自动拷贝程序结束------
+2022-04-25 16:05:13 upan_auto_copy.py[line:393] INFO ------U盘自动拷贝程序开始------
+2022-04-25 16:05:25 upan_auto_copy.py[line:404] INFO ------U盘自动拷贝程序结束------
+2022-04-25 16:05:43 upan_auto_copy.py[line:393] INFO ------U盘自动拷贝程序开始------
+2022-04-25 16:05:52 upan_auto_copy.py[line:404] INFO ------U盘自动拷贝程序结束------
+2022-04-25 16:07:31 upan_auto_copy.py[line:387] INFO ------U盘自动拷贝程序开始------
+2022-04-25 16:07:31 upan_auto_copy.py[line:398] INFO ------U盘自动拷贝程序结束------
+2022-04-25 16:08:00 upan_auto_copy.py[line:387] INFO ------U盘自动拷贝程序开始------
+2022-04-25 16:08:05 upan_auto_copy.py[line:398] INFO ------U盘自动拷贝程序结束------
+2022-04-25 17:19:37 upan_auto_copy.py[line:364] INFO ------U盘自动拷贝程序开始------
+2022-04-25 17:19:37 upan_auto_copy.py[line:373] ERROR 捕获到异常, [Errno 22] Invalid argument: 'D\\:\\20220425171937.txt'
+2022-04-25 17:19:37 upan_auto_copy.py[line:375] INFO ------U盘自动拷贝程序结束------
+2022-04-25 17:19:38 upan_auto_copy.py[line:364] INFO ------U盘自动拷贝程序开始------
+2022-04-25 17:19:38 upan_auto_copy.py[line:373] ERROR 捕获到异常, [Errno 22] Invalid argument: 'D\\:\\20220425171938.txt'
+2022-04-25 17:19:38 upan_auto_copy.py[line:375] INFO ------U盘自动拷贝程序结束------
+2022-04-25 17:19:40 upan_auto_copy.py[line:364] INFO ------U盘自动拷贝程序开始------
+2022-04-25 17:19:40 upan_auto_copy.py[line:373] ERROR 捕获到异常, '<' not supported between instances of 'str' and 'int'
+2022-04-25 17:19:40 upan_auto_copy.py[line:375] INFO ------U盘自动拷贝程序结束------
+2022-04-25 17:22:08 upan_auto_copy.py[line:365] INFO ------U盘自动拷贝程序开始------
+2022-04-25 17:22:08 upan_auto_copy.py[line:374] ERROR 捕获到异常, '<' not supported between instances of 'str' and 'int'
+2022-04-25 17:22:08 upan_auto_copy.py[line:376] INFO ------U盘自动拷贝程序结束------
+2022-04-25 17:22:26 upan_auto_copy.py[line:366] INFO ------U盘自动拷贝程序开始------
+2022-04-25 17:22:26 upan_auto_copy.py[line:375] ERROR 捕获到异常, '<' not supported between instances of 'str' and 'int'
+2022-04-25 17:22:26 upan_auto_copy.py[line:377] INFO ------U盘自动拷贝程序结束------
+2022-04-25 17:22:56 upan_auto_copy.py[line:326] INFO ------U盘自动拷贝程序开始------
+2022-04-25 17:22:56 upan_auto_copy.py[line:335] ERROR 捕获到异常, '<' not supported between instances of 'str' and 'int'
+2022-04-25 17:22:56 upan_auto_copy.py[line:337] INFO ------U盘自动拷贝程序结束------
+2022-04-25 17:24:11 upan_auto_copy.py[line:328] INFO ------U盘自动拷贝程序开始------
+2022-04-25 17:24:11 upan_auto_copy.py[line:337] ERROR 捕获到异常, '<' not supported between instances of 'str' and 'int'
+2022-04-25 17:24:11 upan_auto_copy.py[line:339] INFO ------U盘自动拷贝程序结束------
+2022-04-25 17:24:32 upan_auto_copy.py[line:329] INFO ------U盘自动拷贝程序开始------
+2022-04-25 17:24:32 upan_auto_copy.py[line:338] ERROR 捕获到异常, '<' not supported between instances of 'str' and 'int'
+2022-04-25 17:24:32 upan_auto_copy.py[line:340] INFO ------U盘自动拷贝程序结束------
+2022-04-25 17:25:40 upan_auto_copy.py[line:329] INFO ------U盘自动拷贝程序开始------
+2022-04-25 17:25:40 upan_auto_copy.py[line:338] ERROR 捕获到异常, name 'random' is not defined
+2022-04-25 17:25:40 upan_auto_copy.py[line:340] INFO ------U盘自动拷贝程序结束------
+2022-04-25 17:26:00 upan_auto_copy.py[line:330] INFO ------U盘自动拷贝程序开始------
+2022-04-25 17:26:23 upan_auto_copy.py[line:339] ERROR 捕获到异常, unsupported operand type(s) for /: 'str' and 'float'
+2022-04-25 17:26:23 upan_auto_copy.py[line:341] INFO ------U盘自动拷贝程序结束------
+2022-04-25 17:26:56 upan_auto_copy.py[line:327] INFO ------U盘自动拷贝程序开始------
+2022-04-25 17:27:10 upan_auto_copy.py[line:206] ERROR 拷贝失败, cmd: copy /Y D:\20220425172656.txt .\20220425172656.txt
+2022-04-25 17:27:10 upan_auto_copy.py[line:338] INFO ------U盘自动拷贝程序结束------
+2022-04-25 17:27:56 upan_auto_copy.py[line:327] INFO ------U盘自动拷贝程序开始------
+2022-04-25 17:29:24 upan_auto_copy.py[line:329] INFO ------U盘自动拷贝程序开始------
+2022-04-25 17:30:19 upan_auto_copy.py[line:327] INFO ------U盘自动拷贝程序开始------
+2022-04-25 17:30:46 upan_auto_copy.py[line:333] WARNING 捕获到KeyboardInterrupt异常
+2022-04-25 17:30:46 upan_auto_copy.py[line:338] INFO ------U盘自动拷贝程序结束------
+2022-04-25 17:31:17 upan_auto_copy.py[line:327] INFO ------U盘自动拷贝程序开始------
+2022-04-25 17:31:35 upan_auto_copy.py[line:333] WARNING 捕获到KeyboardInterrupt异常
+2022-04-25 17:31:35 upan_auto_copy.py[line:338] INFO ------U盘自动拷贝程序结束------
