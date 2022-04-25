@@ -22,7 +22,6 @@
 </div>
 
 ## 介绍
-
 ![Demo](screenshot/upan_auto_copy_v1.0.0.gif)
 
 upan_auto_copy是一款跨平台的**U盘自动拷贝**稳定性测试脚本工具。
@@ -34,15 +33,18 @@ upan_auto_copy是一款跨平台的**U盘自动拷贝**稳定性测试脚本工�
 - 轻量安装包
 - 简单大方
 
-## 编译 
-- 搭建Tauri开发环境 (https://tauri.studio/docs/getting-started/setting-up-macos)
-- 运行 `yarn`
-- 运行 `yarn build`
-- 运行 `yarn tauri-build`
+## 待改进
+- 目前只拷贝单个文件，可扩展拷贝文件夹
+- 是否可考虑简单大方的UI
+
+## 编译打包
+- 搭建python3开发环境 (https://m.runoob.com/python3/python3-install.html)
+- 运行 `python upan_auto_copy.py`
+- 运行 `python upan_auto_copy.py -u D`
+- 打包 `pyinstaller.exe --version-file=doc/file_version_info.txt -i doc/dog.ico -F upan_auto_copy.py`
 
 
 ## 下载
-
 点击 [release page](https://github.com/HanKin2015/Storage/releases).
 
 
@@ -51,10 +53,9 @@ upan_auto_copy是一款跨平台的**U盘自动拷贝**稳定性测试脚本工�
 
 
 ## 感谢
-- Tauri https://tauri.studio
-- React https://github.com/facebook/react
+- 菜鸟教程 https://m.runoob.com/python3/
+- python3 https://www.python.org/
 
 
 ## LICENSE
-
 [GPL](https://github.com/HanKin2015/Storage/blob/master/python/udev/upan_auto_copy/LICENSE)

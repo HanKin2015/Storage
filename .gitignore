@@ -1,4 +1,8 @@
 .vs
 x64
-.exe
+*.exe
 build
+.pyc
+dist
+*.spec
+__pycache__

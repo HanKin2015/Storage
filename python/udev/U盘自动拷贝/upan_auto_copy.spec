@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['upan_auto_copy.py'],
-             pathex=['D:\\Github\\Storage\\python\\U盘自动拷贝'],
+             pathex=['D:\\Github\\Storage\\python\\udev\\U盘自动拷贝'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -30,4 +30,4 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=True )
+          console=True , version='doc\\file_version_info.txt', icon='doc\\dog.ico')
