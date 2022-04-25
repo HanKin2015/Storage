@@ -170,6 +170,7 @@ def check_md5(source_path, target_path):
     if source_md5 != target_md5:
         logging.error('文件md5值不吻合, source: {} target: {}'.format(source_md5, target_md5))
         return False
+    print('文件MD5值为: {}'.format(source_md5))
     return True
 
 def copy_operation(source_path, target_path, copy_opt_process):
@@ -207,9 +208,9 @@ def copy_operation(source_path, target_path, copy_opt_process):
     ave_speed = round(data_size  / copy_time, 3)
     print('文件大小为{}MB, {}花费{}秒, 平均速度为{}MB/s'.format(data_size, copy_opt_process, copy_time, ave_speed))
     
-    print('文件md5值检查中...')
+    print('文件MD5值检查中...')
     if not check_md5(source_path, target_path):
-        print('文件md5值不吻合')
+        print('文件MD5值不吻合')
         return False
     
     # 删除源文件
@@ -293,11 +294,15 @@ def auto_copy():
     if source_path is None:
         print('获取源文件路径失败')
         return
+    print('----------准备工作完成----------\n')
 
     while True:
         # 当前时间
         print(time.strftime("%Y-%m-%d %H:%M:%S"))
 
+        print('文件{}中...'.format(local_copy_upan))
+        # 修改文件内容（防止Windows写缓存）
+        os.system("echo !a! >> {}".format(source_path))
         # 从电脑拷贝到U盘
         if not copy_operation(source_path, target_path, local_copy_upan):
             return
@@ -305,14 +310,14 @@ def auto_copy():
         # 睡眠1秒
         time.sleep(1)
         
+        print('文件{}中...'.format(upan_copy_local))
         # 修改文件内容（防止Windows写缓存）
         os.system("echo !a! >> {}".format(target_path))
-
         # 从U盘拷贝到电脑
         if not copy_operation(target_path, source_path, upan_copy_local):
             return
         
-        print('第{}次拷贝完成\n'.format(copy_cnt))
+        print('----------第{}次拷贝完成----------\n'.format(copy_cnt))
         if copy_cnt % 10 == 0:
             logging.info('第{}次拷贝完成'.format(copy_cnt))
         if copy_cnt % 1000 == 0:
