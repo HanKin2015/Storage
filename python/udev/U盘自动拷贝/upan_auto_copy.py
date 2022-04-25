@@ -53,6 +53,10 @@ logging.basicConfig(level=logging.INFO,
                     filename=log_file,
                     filemode='a')
 
+# 开启debug日志方法（创建一个debug文件即可）
+if os.path.exists('debug'):
+    logging.getLogger().setLevel(logging.DEBUG)
+
 def argument_parser():
     """参数解析
 
@@ -70,6 +74,7 @@ def argument_parser():
     args = parser.parse_args()
 
     #获得传入的参数
+    logging.debug('args: {}'.format(args))
     print(args)
     
     global upan_path, data_path
@@ -170,6 +175,7 @@ def check_md5(source_path, target_path):
     if source_md5 != target_md5:
         logging.error('文件md5值不吻合, source: {} target: {}'.format(source_md5, target_md5))
         return False
+    logging.debug('文件MD5值为: {}'.format(source_md5))
     print('文件MD5值为: {}'.format(source_md5))
     return True
 
@@ -198,6 +204,7 @@ def copy_operation(source_path, target_path, copy_opt_process):
         cmd = 'copy /Y {} {}'.format(source_path, target_path)
     else:
         cmd = 'cp -f {} {}'.format(source_path, target_path)
+    logging.debug('cmd: {}'.format(cmd))
     ret = os.system(cmd)
     if ret != 0:
         logging.error('拷贝失败, cmd: {}'.format(cmd))
@@ -206,11 +213,14 @@ def copy_operation(source_path, target_path, copy_opt_process):
     end_time = time.time()
     copy_time = round(end_time - begin_time, 3)
     ave_speed = round(data_size  / copy_time, 3)
+    logging.debug('文件大小为{}MB, {}花费{}秒, 平均速度为{}MB/s'.format(data_size, copy_opt_process, copy_time, ave_speed))
     print('文件大小为{}MB, {}花费{}秒, 平均速度为{}MB/s'.format(data_size, copy_opt_process, copy_time, ave_speed))
     
+    logging.debug('文件MD5值检查中...')
     print('文件MD5值检查中...')
     if not check_md5(source_path, target_path):
         print('文件MD5值不吻合')
+        logging.error('文件MD5值不吻合')
         return False
     
     # 删除源文件
@@ -218,6 +228,7 @@ def copy_operation(source_path, target_path, copy_opt_process):
         cmd = 'del /F {}'.format(source_path)
     else:
         cmd = 'rm -f {}'.format(source_path)
+    logging.debug('cmd: {}'.format(cmd))
     ret = os.system(cmd)
     if ret != 0:
         logging.error('删除源文件失败, cmd: {}'.format(cmd))
@@ -258,6 +269,7 @@ def prepare_before_copy():
     if is_windows:
         data_file = data_file.replace('/', '\\')
         cmd = 'copy /Y {} .\\{}'.format(data_file, temp_data_name)
+    logging.debug('cmd: {}'.format(cmd))
     ret = os.system(cmd)
     if ret != 0:
         logging.error('生成临时文件失败, cmd: {}'.format(cmd))
@@ -270,12 +282,16 @@ def prepare_before_copy():
         target_path = target_path.replace('/', '\\')
     else:
         target_path = '{}/{}'.format(upan_path, temp_data_name)
+        
+    logging.info('当前操作系统为: {}'.format(sys.platform))
+    logging.info('源文件路径:{}, 目标文件路径:{}'.format(source_path, target_path))
     print('当前操作系统为: {}'.format(sys.platform))
     print('源文件路径:{}, 目标文件路径:{}'.format(source_path, target_path))
 
     global data_size
     data_size = get_file_size(source_path)
-    print('文件大小为 {} MB'.format(data_size))
+    logging.info('{}文件大小为 {} MB'.format(temp_data_name, data_size))
+    print('{}文件大小为 {} MB'.format(temp_data_name, data_size))
     
     return source_path, target_path
 
@@ -292,14 +308,18 @@ def auto_copy():
     
     source_path, target_path = prepare_before_copy()
     if source_path is None:
+        logging.error('获取源文件路径失败')
         print('获取源文件路径失败')
         return
+    logging.debug('----------准备工作完成----------\n')
     print('----------准备工作完成----------\n')
 
     while True:
         # 当前时间
+        logging.debug(time.strftime("%Y-%m-%d %H:%M:%S"))
         print(time.strftime("%Y-%m-%d %H:%M:%S"))
 
+        logging.debug('文件{}中...'.format(local_copy_upan))
         print('文件{}中...'.format(local_copy_upan))
         # 修改文件内容（防止Windows写缓存）
         os.system("echo !a! >> {}".format(source_path))
@@ -310,6 +330,7 @@ def auto_copy():
         # 睡眠1秒
         time.sleep(1)
         
+        logging.debug('文件{}中...'.format(upan_copy_local))
         print('文件{}中...'.format(upan_copy_local))
         # 修改文件内容（防止Windows写缓存）
         os.system("echo !a! >> {}".format(target_path))
@@ -317,6 +338,7 @@ def auto_copy():
         if not copy_operation(target_path, source_path, upan_copy_local):
             return
         
+        logging.debug('----------第{}次拷贝完成----------\n'.format(copy_cnt))
         print('----------第{}次拷贝完成----------\n'.format(copy_cnt))
         if copy_cnt % 10 == 0:
             logging.info('第{}次拷贝完成'.format(copy_cnt))
@@ -343,5 +365,6 @@ if __name__ == '__main__':
         logging.warning('捕获到KeyboardInterrupt异常')
         print('捕获到KeyboardInterrupt异常')
     except Exception as err:
+        logging.error('捕获到异常, {}'.format(err))
         print('捕获到异常, {}'.format(err))
     logging.info('------U盘自动拷贝程序结束------')
