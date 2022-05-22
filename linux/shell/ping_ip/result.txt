@@ -1,0 +1,1 @@
+ping 10.70.10.60 is success

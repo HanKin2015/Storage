@@ -1,0 +1,2 @@
+本地日志及配置路径：D:/copy_tool/
+下载本地路径：D:/copy_tool/download/

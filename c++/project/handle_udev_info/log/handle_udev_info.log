@@ -1,0 +1,148 @@
+2021-08-23 10:22:33 [INFO] [23463:23463] [test_log.cpp:13:test_printf_log] info
+2021-08-23 10:22:33 [WARN] [23463:23463] [test_log.cpp:14:test_printf_log] warning
+2021-08-23 10:22:33 [ERROR] [23463:23463] [test_log.cpp:16:test_printf_log] error
+2021-08-23 10:32:08 [INFO] [4571:4571] [test_log.cpp:13:test_printf_log] info
+2021-08-23 10:32:08 [WARN] [4571:4571] [test_log.cpp:14:test_printf_log] warning
+2021-08-23 10:32:08 [ERROR] [4571:4571] [test_log.cpp:16:test_printf_log] error
+2021-08-23 10:32:47 [INFO] [7762:7762] [test_log.cpp:13:test_printf_log] info
+2021-08-23 10:32:47 [WARN] [7762:7762] [test_log.cpp:14:test_printf_log] warning
+2021-08-23 10:32:47 [ERROR] [7762:7762] [test_log.cpp:16:test_printf_log] error
+2021-08-23 17:56:20 [INFO] [20649:20649] [test_log.cpp:17:test_printf_log] test: info
+2021-08-23 17:56:20 [WARN] [20649:20649] [test_log.cpp:18:test_printf_log] test: warning
+2021-08-23 17:56:20 [ERROR] [20649:20649] [test_log.cpp:20:test_printf_log] test: error
+2021-08-23 17:59:20 [INFO] [2985:2985] [test_log.cpp:17:test_printf_log] test: info
+2021-08-23 17:59:20 [WARN] [2985:2985] [test_log.cpp:18:test_printf_log] test: warning
+2021-08-23 17:59:20 [ERROR] [2985:2985] [test_log.cpp:20:test_printf_log] test: error
+2021-08-23 17:59:40 [INFO] [4382:4382] [test_log.cpp:17:test_printf_log] test: info
+2021-08-23 17:59:40 [WARN] [4382:4382] [test_log.cpp:18:test_printf_log] test: warning
+2021-08-23 17:59:40 [ERROR] [4382:4382] [test_log.cpp:20:test_printf_log] test: error
+2021-08-23 17:59:45 [INFO] [4784:4784] [test_log.cpp:17:test_printf_log] test: info
+2021-08-23 17:59:45 [WARN] [4784:4784] [test_log.cpp:18:test_printf_log] test: warning
+2021-08-23 17:59:45 [ERROR] [4784:4784] [test_log.cpp:20:test_printf_log] test: error
+2021-08-23 17:59:45 [ERROR] [4784:4784] [test_log.cpp:22:test_printf_log] pvid = test:test
+2021-08-23 21:36:39 [ERROR] [442:442] [handle_udev_info.cpp:119:handle_udev_main] handle usb device info failed.
+2021-08-23 21:36:39 [INFO] [442:442] [main.cpp:52:main] exec spent time 0.000278 s.
+
+2021-08-23 21:37:20 [ERROR] [3668:3668] [handle_udev_info.cpp:119:handle_udev_main] handle usb device info failed.
+2021-08-23 21:37:20 [INFO] [3668:3668] [main.cpp:52:main] exec spent time 0.000125 s.
+
+2021-08-23 21:37:45 [ERROR] [5657:5657] [handle_udev_info.cpp:119:handle_udev_main] handle usb device info failed.
+2021-08-23 21:37:45 [INFO] [5657:5657] [main.cpp:52:main] exec spent time 0.000123 s.
+
+2021-08-23 21:38:42 [ERROR] [10384:10384] [handle_udev_info.cpp:119:handle_udev_main] handle usb device info failed.
+2021-08-23 21:38:42 [INFO] [10384:10384] [main.cpp:52:main] exec spent time 0.000123 s.
+
+2021-08-24 10:01:29 [ERROR] [17645:17645] [handle_udev_info.cpp:119:handle_udev_main] handle usb device info failed.
+2021-08-24 10:01:29 [INFO] [17645:17645] [main.cpp:52:main] exec spent time 0.000182 s.
+
+2021-08-24 10:05:12 [ERROR] [2837:2837] [handle_udev_info.cpp:84:handle_udev_main] unzip_file failed [-1]
+2021-08-24 10:05:12 [ERROR] [2837:2837] [handle_udev_info.cpp:121:handle_udev_main] handle usb device info failed.
+2021-08-24 10:05:12 [INFO] [2837:2837] [main.cpp:52:main] exec spent time 0.000179 s.
+
+2021-08-24 10:08:28 [ERROR] [18512:18512] [zlib_interface.cpp:157:unzip_file] unzOpen failed, [./data/外设信息.zip)] not found
+2021-08-24 10:08:28 [ERROR] [18512:18512] [handle_udev_info.cpp:84:handle_udev_main] unzip_file failed [-1]
+2021-08-24 10:08:28 [ERROR] [18512:18512] [handle_udev_info.cpp:121:handle_udev_main] handle usb device info failed.
+2021-08-24 10:08:28 [INFO] [18512:18512] [main.cpp:52:main] exec spent time 0.000187 s.
+
+2021-08-24 10:10:21 [ERROR] [27732:27732] [zlib_interface.cpp:157:unzip_file] unzOpen failed, [./data/外设信息.zip)] not found
+2021-08-24 10:10:21 [ERROR] [27732:27732] [handle_udev_info.cpp:84:handle_udev_main] unzip_file failed [-1]
+2021-08-24 10:10:21 [ERROR] [27732:27732] [handle_udev_info.cpp:121:handle_udev_main] handle usb device info failed.
+2021-08-24 10:10:21 [INFO] [27732:27732] [main.cpp:52:main] exec spent time 0.000192 s.
+
+2021-08-24 10:11:08 [ERROR] [31221:31221] [zlib_interface.cpp:157:unzip_file] unzOpen failed, [./data/外设信息.zip)] not found
+2021-08-24 10:11:08 [ERROR] [31221:31221] [handle_udev_info.cpp:84:handle_udev_main] unzip_file failed [-1]
+2021-08-24 10:11:08 [ERROR] [31221:31221] [handle_udev_info.cpp:121:handle_udev_main] handle usb device info failed.
+2021-08-24 10:11:08 [INFO] [31221:31221] [main.cpp:52:main] exec spent time 0.000167 s.
+
+2021-08-24 10:12:40 [ERROR] [6048:6048] [zlib_interface.cpp:157:unzip_file] unzOpen failed, [./data/外设信息.zip] not found
+2021-08-24 10:12:40 [ERROR] [6048:6048] [handle_udev_info.cpp:84:handle_udev_main] unzip_file failed [-1]
+2021-08-24 10:12:40 [ERROR] [6048:6048] [handle_udev_info.cpp:121:handle_udev_main] handle usb device info failed.
+2021-08-24 10:12:40 [INFO] [6048:6048] [main.cpp:52:main] exec spent time 0.000256 s.
+
+2021-08-24 10:13:39 [WARN] [11214:11214] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:13:39 [WARN] [11214:11214] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:13:39 [WARN] [11214:11214] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:13:39 [WARN] [11214:11214] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:13:39 [WARN] [11214:11214] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:13:39 [WARN] [11214:11214] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:13:39 [WARN] [11214:11214] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:13:39 [WARN] [11214:11214] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:13:39 [WARN] [11214:11214] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:13:39 [WARN] [11214:11214] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:13:39 [WARN] [11214:11214] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:13:39 [WARN] [11214:11214] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:13:39 [ERROR] [11214:11214] [handle_udev_info.cpp:84:handle_udev_main] unzip_file failed [-1]
+2021-08-24 10:13:39 [ERROR] [11214:11214] [handle_udev_info.cpp:121:handle_udev_main] handle usb device info failed.
+2021-08-24 10:13:39 [INFO] [11214:11214] [main.cpp:52:main] exec spent time 0.002257 s.
+
+2021-08-24 10:16:18 [WARN] [23712:23712] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:16:18 [WARN] [23712:23712] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:16:18 [WARN] [23712:23712] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:16:18 [WARN] [23712:23712] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:16:18 [WARN] [23712:23712] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:16:18 [WARN] [23712:23712] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:16:18 [WARN] [23712:23712] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:16:18 [WARN] [23712:23712] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:16:18 [WARN] [23712:23712] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:16:18 [WARN] [23712:23712] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:16:18 [WARN] [23712:23712] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:16:18 [WARN] [23712:23712] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:16:18 [INFO] [23712:23712] [handle_udev_info.cpp:94:handle_udev_main] untreated json data size [                                                               0].
+2021-08-24 10:16:18 [INFO] [23712:23712] [handle_udev_info.cpp:108:handle_udev_main] treated json data size [                                                               1].
+2021-08-24 10:16:18 [INFO] [23712:23712] [handle_udev_info.cpp:56:SaveData2Csv] start to save data to local csv file [./data/result.csv].
+2021-08-24 10:16:18 [INFO] [23712:23712] [main.cpp:52:main] exec spent time 0.002667 s.
+
+2021-08-24 10:20:10 [WARN] [9956:9956] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:10 [WARN] [9956:9956] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:10 [WARN] [9956:9956] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:10 [WARN] [9956:9956] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:10 [WARN] [9956:9956] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:10 [WARN] [9956:9956] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:10 [WARN] [9956:9956] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:10 [WARN] [9956:9956] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:10 [WARN] [9956:9956] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:10 [WARN] [9956:9956] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:10 [WARN] [9956:9956] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:10 [WARN] [9956:9956] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:10 [INFO] [9956:9956] [handle_udev_info.cpp:90:handle_udev_main] files_path size [0]
+2021-08-24 10:20:10 [INFO] [9956:9956] [handle_udev_info.cpp:95:handle_udev_main] untreated json data size [0].
+2021-08-24 10:20:10 [INFO] [9956:9956] [handle_udev_info.cpp:109:handle_udev_main] treated json data size [                                                               1].
+2021-08-24 10:20:10 [INFO] [9956:9956] [handle_udev_info.cpp:56:SaveData2Csv] start to save data to local csv file [../data/result.csv].
+2021-08-24 10:20:10 [INFO] [9956:9956] [main.cpp:50:main] exec spent time 0.003677 s.
+
+2021-08-24 10:20:55 [WARN] [13773:13773] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:55 [WARN] [13773:13773] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:55 [WARN] [13773:13773] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:55 [WARN] [13773:13773] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:55 [WARN] [13773:13773] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:55 [WARN] [13773:13773] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:55 [WARN] [13773:13773] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:55 [WARN] [13773:13773] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:55 [WARN] [13773:13773] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:55 [WARN] [13773:13773] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:55 [WARN] [13773:13773] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:55 [WARN] [13773:13773] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:20:55 [INFO] [13773:13773] [handle_udev_info.cpp:90:handle_udev_main] files_path size [0]
+2021-08-24 10:20:55 [INFO] [13773:13773] [handle_udev_info.cpp:95:handle_udev_main] untreated json data size [0].
+2021-08-24 10:20:55 [INFO] [13773:13773] [handle_udev_info.cpp:109:handle_udev_main] treated json data size [                                                               1].
+2021-08-24 10:20:55 [INFO] [13773:13773] [handle_udev_info.cpp:56:SaveData2Csv] start to save data to local csv file [../data/result.csv].
+2021-08-24 10:20:55 [INFO] [13773:13773] [main.cpp:50:main] exec spent time 0.005659 s.
+
+2021-08-24 10:21:53 [WARN] [18420:18420] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:21:53 [WARN] [18420:18420] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:21:53 [WARN] [18420:18420] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:21:53 [WARN] [18420:18420] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:21:53 [WARN] [18420:18420] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:21:53 [WARN] [18420:18420] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:21:53 [WARN] [18420:18420] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:21:53 [WARN] [18420:18420] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:21:53 [WARN] [18420:18420] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:21:53 [WARN] [18420:18420] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:21:53 [WARN] [18420:18420] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:21:53 [WARN] [18420:18420] [zlib_interface.cpp:237:unzip_file] cound not read next file
+2021-08-24 10:21:53 [INFO] [18420:18420] [handle_udev_info.cpp:90:handle_udev_main] files_path size [11]
+2021-08-24 10:21:53 [INFO] [18420:18420] [handle_udev_info.cpp:95:handle_udev_main] untreated json data size [71].
+2021-08-24 10:21:53 [INFO] [18420:18420] [handle_udev_info.cpp:109:handle_udev_main] treated json data size [23].
+2021-08-24 10:21:53 [INFO] [18420:18420] [handle_udev_info.cpp:56:SaveData2Csv] start to save data to local csv file [../data/result.csv].
+2021-08-24 10:21:53 [INFO] [18420:18420] [main.cpp:50:main] exec spent time 0.004745 s.
+

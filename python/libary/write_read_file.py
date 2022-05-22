@@ -44,6 +44,10 @@ def read_file_by_read():
     '''
     
     print('正在读取', file_path)
+<<<<<<< HEAD
+=======
+    content = ''
+>>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             print('是否是一次性全部读取?')

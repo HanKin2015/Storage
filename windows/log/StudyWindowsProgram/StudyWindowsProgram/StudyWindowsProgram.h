@@ -21,7 +21,11 @@ void OutputDebugPrintf(const char * strOutputString, ...)
 	va_list vlArgs;
 	va_start(vlArgs, strOutputString);
 	_vsnprintf_s(strBuffer, sizeof(strBuffer) - 1, strOutputString, vlArgs);  //_vsnprintf_s  _vsnprintf
+<<<<<<< HEAD
 																			  //vsprintf(strBuffer,strOutputString,vlArgs);
+=======
+	//vsprintf(strBuffer,strOutputString,vlArgs);
+>>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
 	va_end(vlArgs);
 
 	// 下面的函数会把内容输出到debugview里面
@@ -46,9 +50,12 @@ void DbgPrint(const char* format, ...)
 	OutputDebugStringA(line);
 }
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
 #ifdef  _USE_32BIT_TIME_T
 
 #define _timeb      __timeb32

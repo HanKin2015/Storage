@@ -1,0 +1,1 @@
+reg add "HKCU\Control Panel\Colors" /v Window /t REG_SZ /d "199 237 204" /f 

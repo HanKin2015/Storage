@@ -27,10 +27,19 @@ class EntryWithPlaceholder(tk.Entry):
         if not self.get():
             self.put_placeholder()
 
+<<<<<<< HEAD
+=======
+'''
+>>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
 if __name__ == "__main__": 
     root = tk.Tk() 
     username = EntryWithPlaceholder(root, "username")
     password = EntryWithPlaceholder(root, "password", 'blue')
     username.pack()
     password.pack()  
+<<<<<<< HEAD
     root.mainloop()
+=======
+    root.mainloop()
+'''
+>>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e

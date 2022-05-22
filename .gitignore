@@ -1,2 +1,11 @@
 .vs
 x64
+<<<<<<< HEAD
+=======
+*.exe
+build
+.pyc
+dist
+*.spec
+__pycache__
+>>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
