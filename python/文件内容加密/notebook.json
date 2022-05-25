@@ -1,0 +1,47 @@
+{
+  "load_extensions": {
+    "nbextensions_configurator/config_menu/main": true,
+    "contrib_nbextensions_help_item/main": true,
+    "jupyter-js-widgets/extension": true,
+    "codefolding/main": true,
+    "code_font_size/code_font_size": false,
+    "toc2/main": true,
+    "scratchpad/main": false,
+    "code_prettify/code_prettify": false,
+    "autoscroll/main": false,
+    "python-markdown/main": false,
+    "scroll_down/main": false,
+    "snippets/main": false,
+    "ruler/main": false,
+    "notify/notify": false,
+    "hide_input/main": false,
+    "freeze/main": false,
+    "hide_input_all/main": false,
+    "qtconsole/qtconsole": false,
+    "code_prettify/autopep8": false
+  },
+  "MarkdownCell": {
+    "cm_config": {
+      "lineWrapping": true
+    }
+  },
+  "CodeCell": {
+    "cm_config": {
+      "lineWrapping": true
+    }
+  },
+  "Cell": {
+    "cm_config": {
+      "lineNumbers": true
+    }
+  },
+  "Notebook": {
+    "Header": true,
+    "Toolbar": true
+  },
+  "toc2": {
+    "number_sections": false,
+    "skip_h1_title": true,
+    "collapse_to_match_collapsible_headings": false
+  }
+}
