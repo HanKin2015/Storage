@@ -1,0 +1,80 @@
+2022-05-31 09:17:17,945 - log.py - main - 66 - INFO:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 09:17:17,949 - log.py - main - 67 - ERROR:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 09:17:17,954 - log.py - main - 68 - WARNING:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 09:17:17,958 - log.py - <module> - 83 - INFO: process spend 0.02 s.
+
+2022-05-31 09:17:40,588 - log.py - main - 66 - INFO:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 09:17:40,594 - log.py - main - 67 - ERROR:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 09:17:40,598 - log.py - main - 68 - WARNING:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 09:17:40,603 - log.py - <module> - 83 - INFO: process spend 0.021 s.
+
+2022-05-31 09:17:41,720 - log.py - main - 66 - INFO:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 09:17:41,723 - log.py - main - 67 - ERROR:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 09:17:41,728 - log.py - main - 68 - WARNING:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 09:17:41,733 - log.py - <module> - 83 - INFO: process spend 0.021 s.
+
+2022-05-31 09:17:44,361 - log.py - main - 66 - INFO:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 09:17:44,366 - log.py - main - 67 - ERROR:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 09:17:44,370 - log.py - main - 68 - WARNING:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 09:17:44,375 - log.py - <module> - 83 - INFO: process spend 0.02 s.
+
+2022-05-31 09:17:46,121 - log.py - main - 66 - INFO:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 09:17:46,127 - log.py - main - 67 - ERROR:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 09:17:46,132 - log.py - main - 68 - WARNING:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 09:17:46,137 - log.py - <module> - 83 - INFO: process spend 0.023 s.
+
+2022-05-31 14:11:57,439 - test.py - main - 20 - WARNING: hello world
+2022-05-31 14:11:57,441 - test.py - <module> - 30 - INFO: process spend 0.003 s.
+
+2022-05-31 14:13:10,278 - test.py - main - 20 - WARNING: hello world
+2022-05-31 14:13:10,280 - test.py - <module> - 31 - INFO: process spend 0.002 s.
+
+2022-05-31 14:13:46,306 - test.py - main - 20 - WARNING: hello world
+2022-05-31 14:13:46,310 - test.py - main - 21 - DEBUG: test test
+2022-05-31 14:13:46,312 - test.py - <module> - 31 - INFO: process spend 0.006 s.
+

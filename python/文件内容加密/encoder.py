@@ -3,8 +3,11 @@
 content = ''
 index = 0
 with open('./notebook.json', encoding = 'utf-8') as fd:
-    ch = fd.read(1)
+    ch = fd.read()  # 括号里可以指定读取的字符数量
     print(ch)
+    fd.close()  # 不生效
+    print('-' * 50)
+    
     content += ch
     
     index += 1
@@ -13,3 +16,13 @@ with open('./notebook.json', encoding = 'utf-8') as fd:
 
 with open('./notebook.txt', 'w') as fd:
     fd.write(content)
+    
+def test():
+    with open('./notebook.json', encoding = 'utf-8') as fd:
+        ch = fd.read()  # 括号里可以指定读取的字符数量
+        print(ch)
+        fd.close()  # 不生效
+        print('-' * 50)
+        return
+        print('-' * 50)
+test()
