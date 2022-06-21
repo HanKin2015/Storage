@@ -78,3 +78,66 @@
 2022-05-31 14:13:46,310 - test.py - main - 21 - DEBUG: test test
 2022-05-31 14:13:46,312 - test.py - <module> - 31 - INFO: process spend 0.006 s.
 
+2022-05-31 19:05:51,605 - test.py - main - 22 - INFO:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 19:05:51,611 - test.py - main - 23 - ERROR:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 19:05:51,616 - test.py - main - 24 - WARNING:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 19:05:51,623 - test.py - main - 31 - WARNING: hello world
+2022-05-31 19:05:51,624 - test.py - main - 32 - DEBUG: test test
+2022-05-31 19:05:51,625 - test.py - <module> - 42 - INFO: process spend 0.027 s.
+
+2022-05-31 19:06:24,972 - test.py - main - 22 - INFO:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 19:06:24,977 - test.py - main - 23 - ERROR:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 19:06:24,982 - test.py - main - 24 - WARNING:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 19:06:24,987 - test.py - main - 31 - WARNING: hello world
+2022-05-31 19:06:24,988 - test.py - <module> - 42 - INFO: process spend 0.021 s.
+
+2022-05-31 19:17:08 - test.py - main - 22 - INFO:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 19:17:08 - test.py - main - 23 - ERROR:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 19:17:08 - test.py - main - 24 - WARNING:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 19:17:08 - test.py - main - 31 - WARNING: hello world
+2022-05-31 19:17:08 - test.py - main - 32 - DEBUG: test test
+2022-05-31 19:17:08 - test.py - <module> - 42 - INFO: process spend 0.026 s.
+
+2022-05-31 20:57:26 test.py[main:22] INFO:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 20:57:26 test.py[main:23] ERROR:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 20:57:26 test.py[main:24] WARNING:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 20:57:26 test.py[main:31] WARNING: hello world
+2022-05-31 20:57:26 test.py[main:32] DEBUG: test test
+2022-05-31 20:57:26 test.py[<module>:42] INFO: process spend 0.029 s.
+

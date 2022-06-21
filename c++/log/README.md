@@ -7,7 +7,31 @@
 # 定标准
 年-月-日 时:分:秒 [进程:线程] [日志级别] [模块名]文件名: 日志内容 {函数名:行数}
 
+# 临时调试专用
+```
+#define LOG(format, ...) printf_log(format, ## __VA_ARGS__)
+void printf_log(int type, const char *format, ...)
+{
+    va_list args;
+    va_start(args, format);
 
+    char logmsg[4096];
+    vsnprintf(logmsg, sizeof(logmsg), format, args);
+
+    FILE *fp = fopen("/home/debug.log", "a");
+    if (!fp) {
+        fprintf(stderr, "open log file</home/debug.log> failed, errno %s(%d)\n",
+        strerror(errno), errno);
+        return;
+    }
+    fprintf(fp, "%s\n", logmsg);
+    fclose(fp);
+    fp = NULL;
+
+    va_end (args);
+    return;
+}
+```
 
 
 
