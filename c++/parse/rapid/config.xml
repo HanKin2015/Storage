@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Conf>
+    <color>
+        <red>0.1</red>
+        <green>0.1</green>
+        <blue>0.1</blue>
+        <alpha>1.0</alpha>
+    </color>
+    <size>
+        <x>640</x>
+        <y>480</y>
+    </size>
+    <mode fullscreen="false">screen mode</mode>
+    <USBDeviceMap>
+        <WhiteList>
+            <Dev ID="1234:4321" Desc="keyborad"/>
+            <Dev ID="1bC4:4321" Desc="ukey"/>
+            <Dev ID="AF34:4Ym1" Desc="iphone"/>
+        </WhiteList>
+        <BlackList>
+            <Dev ID="af34:ge21" Desc="mouce"/>
+            <Dev ID="GTFD:dser" Desc="display"/>
+        </BlackList>
+    </USBDeviceMap>
+</Conf>

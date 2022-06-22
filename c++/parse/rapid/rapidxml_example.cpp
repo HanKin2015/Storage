@@ -109,9 +109,13 @@ void create_usb_list_xml(const char *file_path)
     mode->append_attribute(doc.allocate_attribute("fullscreen", "false"));
     node->append_node(mode);
     
+    // 应用节点
+    xml_node<> *app_node = doc.allocate_node(rapidxml::node_element, "RemoteApp", NULL);
+    node->append_node(app_node);
+    
     // USB名单
     xml_node<> *udev_map = doc.allocate_node(rapidxml::node_element, "USBDeviceMap", NULL);
-    node->append_node(udev_map);
+    app_node->append_node(udev_map);
     xml_node<> *white_list = doc.allocate_node(rapidxml::node_element, "WhiteList", NULL);
     udev_map->append_node(white_list);
     xml_node<> *black_list = doc.allocate_node(rapidxml::node_element, "BlackList", NULL);
@@ -190,10 +194,11 @@ void parse_confxml(const char *confxml)
     xml_document<> doc;
     doc.parse<0>(policies);
 
-    xml_node<>* node = doc.first_node();
-    std::cout << (node->name()) << std::endl;
-    node = node->first_node("USBDeviceMap");
-    node = node->first_node("WhiteList");
+    xml_node<> *root_node = doc.first_node();
+    std::cout << (root_node->name()) << std::endl;
+    root_node = root_node->first_node("RemoteApp");
+    root_node = root_node->first_node("USBDeviceMap");
+    xml_node<> *node = root_node->first_node("WhiteList");
     for(rapidxml::xml_node<> *iter = node->first_node("Dev"); iter != NULL; iter = iter->next_sibling()) {
         // name() value()返回的字符串不会去掉首尾的空白字符
         rapidxml::xml_attribute<char> *vpid = iter->first_attribute("ID");
@@ -219,6 +224,7 @@ int main(int argc, char *argv[])
     if (policies == NULL) {
         std::cout << "policies is NULL" << std::endl;
     }
+    memset(policies, 0, confxml_length*sizeof(char)+1);
     strncpy(policies, confxml.c_str(), confxml_length);
     
     (void)parse_confxml(policies);
