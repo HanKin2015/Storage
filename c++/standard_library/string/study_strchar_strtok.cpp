@@ -41,7 +41,7 @@ int main()
         ret = strtok(NULL, ".");
     }
 	
-	// strchr 对你没有看错，第二个参数就是int类型
+	// strchr 对你没有看错，第二个参数就是int类型：https://cplusplus.com/reference/cstring/strchr/?kw=strchr
     // error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
     // 为啥加了const就会有上面这个错误？？？需要
 	const char *str = "abcdefgghijkl";
