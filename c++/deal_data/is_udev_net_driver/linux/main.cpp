@@ -93,11 +93,11 @@ static bool is_usb_net_device(vector<string> net_symlink_file_paths, string udev
 
     std::vector<std::string>::iterator it = net_symlink_file_paths.begin();
     //for (std::string net_symlink_file_path : net_symlink_file_paths) {
-    for (it != net_symlink_file_paths.end(); it++) {
+    for (; it != net_symlink_file_paths.end(); it++) {
         memset(real_path, 0, MAX_PATH_LEN);
         ret = readlink((*it).c_str(), real_path, MAX_PATH_LEN);
         if (ret == -1) {
-            LOG_ERROR("readlink failed, ret=%d, err=%u, %s", errno, strerror(errno));
+            LOG_ERROR("readlink failed, ret=%d, err=%u, %s", ret, errno, strerror(errno));
             return false;
         }
 
