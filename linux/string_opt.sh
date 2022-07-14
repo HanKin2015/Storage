@@ -2,7 +2,7 @@
 #
 # 编译环境拷贝二进制文件到Linux物理机上面
 #
-# 用法: ./stress_IO.sh
+# 用法: bash string_opt.sh
 #
 # 使用前注意: 
 #   1. 需要安装expect, apt install expect
@@ -14,7 +14,7 @@
 # Copyright (c) 2021 HanKin. All rights reserved.
 #
 
-#FULLVERSION="VDI5.4.2"
+#FULLVERSION="VIP5.4.2"
 FULLVERSION=$1
 VERSION=$(echo "${FULLVERSION}" | tr -d '. ')
 

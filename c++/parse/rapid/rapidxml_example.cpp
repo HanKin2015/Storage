@@ -70,7 +70,12 @@ void createXml2()
         "<age>22</age>"
         "</top>";
     char* p = a;
-    doc.parse<0>(p);
+    /**
+     * parse_non_destructive 参数使rapidxml不会修改policies的内容
+     * @remark 如果传0，会rapidxml会修改该policies的内容
+     */
+    (void)doc.parse<rapidxml::parse_non_destructive>(p);
+    //(void)doc.parse<0>(p);
 
     xml_node<>* node = doc.first_node();//去顶级结点
     std::cout << (node->name()) << std::endl;

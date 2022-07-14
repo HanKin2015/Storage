@@ -14,6 +14,8 @@ int main()
     NODE item;
     printf("%lu %lu %lu\n", sizeof(pitem), sizeof(&pitem), sizeof(item));
     print("%lu %lu\n", sizeof(int), sizeof(*pitem));
+    printf("%lu, %lu\n", sizeof(&NODE), sizeof(*PNODE));    // 都是错误的演示
+    printf("%lu\n", sizeof(NODE));
     return 0;
 }
 /*

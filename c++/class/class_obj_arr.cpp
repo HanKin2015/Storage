@@ -8,32 +8,28 @@ using namespace std;
 #define MAXN 256
 #define RAND 5
 
-class Node{
+class Node
+{
 public:
     /*
-    等价于
-    Node(int a = 2, int b = 3):x(a), y(b)
-    {
+    高级操作初始化
+    Node(int a = 2, int b = 3):x(a), y(b) {
     }
     */
-    Node()
-    {
+    Node() {
         x = 0;
         y = 0;
     }
-    ~Node()
-    {
+    ~Node() {
     }
 
-    void set(int n)
-    {
+    void set(int n) {
         x = n;
         y = n;
     }
     
-    int get()
-    {
-        return x+y;
+    int get() {
+        return x + y;
     }
 
 private:

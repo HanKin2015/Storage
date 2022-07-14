@@ -1,5 +1,12 @@
-/*
-derived：派生的，衍生的
+/**
+* 文 件 名: study_dynamic_cast.cpp
+* 文件描述: 学习dynamic_cast的使用
+* 备    注: derived：派生的，衍生的
+* 作    者: HanKin
+* 创建日期: 2022.07.01
+* 修改日期：2022.07.01
+*
+* Copyright (c) 2022 HanKin. All rights reserved.
 */
 
 #include <iostream>
@@ -8,20 +15,21 @@ derived：派生的，衍生的
 #include <cxxabi.h>
 using namespace std;
 
+// 基类
 class base
 {
-public: 
-    base()
-    {
+public:
+    // 构造函数
+    base() {
         //cout << "base~~~" << endl;
     }
     
-    virtual ~base()
-    {
-
+    // 析构函数
+    virtual ~base() {
     }
-    virtual void print()
-    {
+
+    // 虚函数
+    virtual void print() {
         cout << "we are in base" << endl;
     }
     
@@ -29,11 +37,11 @@ protected:
 private:
 };
 
+// 派生类
 class derived : public base
 {
 public:
-    void print()
-    {
+    void print() {
         cout << "we are in derived" << endl;
     }
 protected:
@@ -42,6 +50,15 @@ private:
 
 /*
 学习typeid函数
+
+i
+c
+s
+NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+int
+char
+short
+std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >
 */
 static void study_typeid()
 {
@@ -165,7 +182,7 @@ int main()
     
     base *base_ptr2 = new derived;
     cout << typeid(*base_ptr2).name() << endl;
-    derived *derived_ptr2 = dynamic_cast<derived*>(base_ptr2);  //base_ptr1实际指向derived，能转化为derived
+    derived *derived_ptr2 = dynamic_cast<derived*>(base_ptr2);  //base_ptr2实际指向derived，能转化为derived
     
     derived *derived_ptr3 = new derived;
     base *base_ptr3 = dynamic_cast<base*>(derived_ptr3);
