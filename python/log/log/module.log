@@ -1,0 +1,71 @@
+2022-05-31 21:31:38 test.py[main:22] INFO:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 21:31:38 test.py[main:23] ERROR:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 21:31:38 test.py[main:24] WARNING:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 21:31:38 test.py[main:31] WARNING: hello world
+2022-05-31 21:31:38 test.py[main:32] DEBUG: test test
+2022-05-31 21:31:38 test.py[main:34] INFO: <class 'tuple'>
+2022-05-31 21:31:38 test.py[main:35] INFO: (3, 2)
+2022-05-31 21:31:38 test.py[<module>:45] INFO: process spend 0.027 s.
+
+2022-05-31 21:35:35 test.py[main:22] INFO:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 21:35:35 test.py[main:23] ERROR:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 21:35:35 test.py[main:24] WARNING:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 21:35:35 test.py[main:31] WARNING: hello world
+2022-05-31 21:35:35 test.py[main:32] DEBUG: test test
+2022-05-31 21:35:35 test.py[main:34] INFO: <class 'tuple'>
+2022-05-31 21:35:35 test.py[<module>:45] INFO: process spend 0.055 s.
+
+2022-05-31 21:35:53 test.py[main:22] INFO:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 21:35:53 test.py[main:23] ERROR:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 21:35:53 test.py[main:24] WARNING:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 21:35:53 test.py[main:31] WARNING: hello world
+2022-05-31 21:35:53 test.py[main:32] DEBUG: test test
+2022-05-31 21:35:53 test.py[main:34] INFO: <class 'tuple'>
+2022-05-31 21:35:53 test.py[main:35] INFO: (3, 2, 3, 2)
+2022-05-31 21:35:53 test.py[<module>:45] INFO: process spend 0.033 s.
+
+2022-05-31 21:36:24 test.py[main:22] INFO:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 21:36:24 test.py[main:23] ERROR:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 21:36:24 test.py[main:24] WARNING:        Name  Age
+0  xiaoming   10
+1  zhangsan   11
+2      lisi   21
+2022-05-31 21:36:24 test.py[main:31] WARNING: hello world
+2022-05-31 21:36:24 test.py[main:32] DEBUG: test test
+2022-05-31 21:36:24 test.py[main:34] INFO: <class 'tuple'>
+2022-05-31 21:36:24 test.py[main:35] INFO: [(3, 2), (3, 2)]
+2022-05-31 21:36:24 test.py[<module>:45] INFO: process spend 0.03 s.
+

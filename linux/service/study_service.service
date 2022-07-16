@@ -1,0 +1,16 @@
+[Unit]
+Description=study_service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/media/hankin/vdb/TransferStation/a.out
+ExecReload=/media/hankin/vdb/TransferStation/a.out
+KillMode=process
+Restart=always
+RestartSec=5
+#WatchdogSec=10
+#LimitCORE=0
+
+[Install]
+WantedBy=multi-user.target

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cat /sys/class/net/eth0/address | awk '{
                   n=split($0,a,":");
                   sum = 0;
@@ -18,7 +20,7 @@ cat /sys/class/net/eth0/address | awk '{
 
 
 
-root@hankin:/usr/local/bin# SERIAL_NUM=$(printf "HEJIAN%d" "0x$(cat /sys/class/net/eth0/address | tr -d ':
+root@hankin:/usr/local/bin# SERIAL_NUM=$(printf "HEJIAN%d" "0x$(cat /sys/class/net/eth0/address | tr -d ':'
 root@hankin:/usr/local/bin# echo $SERIAL_NUM
 HEJIAN225207121345651
 root@hankin:/usr/local/bin# echo ${SERIAL_NUM:0:10}

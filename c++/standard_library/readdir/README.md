@@ -1,0 +1,4 @@
+opendir
+readdir
+closedir
+readlink
