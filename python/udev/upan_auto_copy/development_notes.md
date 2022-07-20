@@ -1,4 +1,12 @@
-# 改进点
+# 开发笔记
+
+## 1、开发步骤
+- 修改src中源码文件
+- 修改doc中file_version_info.txt内容
+- pyinstaller.exe --version-file=doc/file_version_info.txt -i doc/dog.ico -F src/upan_auto_copy.py
+- 取出exe文件，删除多余的文件夹
+
+## 2、改进点
 - 日志改进
 2022-05-31 21:36:24 test.py[main:31] WARNING: hello world
 
@@ -17,5 +25,7 @@
 - 小数点保留位数有问题
 代码中写保留3位，但是遇到如3.140时会输出3.14
 
+- 英文版系统运行会报编码错误
 
+- 英文版在开启DEBUG日志后无法正常运行
 

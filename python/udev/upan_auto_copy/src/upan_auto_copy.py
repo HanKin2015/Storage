@@ -43,11 +43,11 @@ if not os.path.exists(log_path):
     os.makedirs(log_path)
 
 # 配置日志
+file_handler = logging.FileHandler(log_file, encoding='utf-8') 
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
-                    filename=log_file,
-                    filemode='a')
+                    handlers={file_handler})
 
 # 开启debug日志方法（创建一个debug文件即可）
 if os.path.exists('debug'):
