@@ -1,9 +1,20 @@
+# -*- coding: utf-8 -*-
 """
+文 件 名: get_words_frome_picture.py
+文件描述: 个人感觉识别率不高
+
 增加图片处理库PIL
 pip install Pillow
 增加OCR识别库
 pip install pytesseract
+
+作    者: HanKin
+创建日期: 2022.07.26
+修改日期：2022.07.26
+
+Copyright (c) 2022 HanKin. All rights reserved.
 """
+
 #图库引用
 from PIL import Image
 #识别库引用

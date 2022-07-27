@@ -64,7 +64,7 @@ def argument_parser():
     
     parser = argparse.ArgumentParser(description='欢迎使用U盘自动拷贝文件脚本')
     #type是要传入的参数的数据类型  help是该参数的提示信息
-    parser.add_argument('-u', dest='upan_path', default='E', type=str, help='U盘路径')
+    parser.add_argument('-u', dest='upan_path', default='D', type=str, help='U盘路径')
     parser.add_argument('-s', dest='data_size', default='1024', type=int, help='数据文件大小(MB)')
 
     args = parser.parse_args()
@@ -331,6 +331,7 @@ def main():
     auto_copy()
 
 if __name__ == '__main__':
+    os.system('chcp 936 & cls')
     logging.info('------U盘自动拷贝程序开始------')
     try:
         main()

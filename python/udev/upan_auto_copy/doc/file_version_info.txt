@@ -36,7 +36,7 @@ VSVersionInfo(
         StringStruct(u'LegalCopyright', u'Copyright (C) 2022'),
         StringStruct(u'OriginalFilename', u'upan_auto_copy.exe'),
         StringStruct(u'ProductName', u'U盘自动拷贝文件脚本工具'),
-        StringStruct(u'ProductVersion', u'22.7.20.1')])
+        StringStruct(u'ProductVersion', u'22.7.21.2')])
       ]), 
     VarFileInfo([VarStruct(u'Translation', [2052, 1200])])
   ]
