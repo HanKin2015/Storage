@@ -1,0 +1,66 @@
+2022-07-28 19:43:52 get_udev_mount_time.py[main:19] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 19:43:52 get_udev_mount_time.py[main:19] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 19:43:52 get_udev_mount_time.py[main:19] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 19:43:52 get_udev_mount_time.py[main:19] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 19:43:52 get_udev_mount_time.py[main:19] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 19:43:52 get_udev_mount_time.py[main:19] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 19:43:52 get_udev_mount_time.py[main:19] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 19:43:52 get_udev_mount_time.py[main:19] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 19:43:52 get_udev_mount_time.py[main:19] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 19:43:52 get_udev_mount_time.py[main:19] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 19:43:52 get_udev_mount_time.py[main:24] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 19:43:52 get_udev_mount_time.py[main:24] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 19:43:52 get_udev_mount_time.py[main:24] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 19:43:52 get_udev_mount_time.py[main:24] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 19:43:52 get_udev_mount_time.py[main:24] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 19:43:52 get_udev_mount_time.py[main:24] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 19:43:52 get_udev_mount_time.py[main:24] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 19:43:52 get_udev_mount_time.py[main:24] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 19:43:52 get_udev_mount_time.py[main:24] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 19:43:52 get_udev_mount_time.py[main:24] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 19:43:52 get_udev_mount_time.py[<module>:33] INFO: process spend 0.157 s.
+2022-07-28 19:49:56 get_udev_mount_time.py[<module>:28] INFO: ******** starting ********
+2022-07-28 19:49:56 get_udev_mount_time.py[main:19] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 19:49:56 get_udev_mount_time.py[main:19] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 19:49:56 get_udev_mount_time.py[main:19] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 19:49:56 get_udev_mount_time.py[main:19] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 19:49:56 get_udev_mount_time.py[main:19] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 19:49:56 get_udev_mount_time.py[main:19] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 19:49:56 get_udev_mount_time.py[main:19] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 19:49:56 get_udev_mount_time.py[main:19] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 19:49:56 get_udev_mount_time.py[main:19] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 19:49:56 get_udev_mount_time.py[main:19] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 19:49:56 get_udev_mount_time.py[main:24] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 19:49:56 get_udev_mount_time.py[main:24] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 19:49:56 get_udev_mount_time.py[main:24] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 19:49:56 get_udev_mount_time.py[main:24] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 19:49:56 get_udev_mount_time.py[main:24] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 19:49:56 get_udev_mount_time.py[main:24] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 19:49:56 get_udev_mount_time.py[main:24] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 19:49:56 get_udev_mount_time.py[main:24] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 19:49:56 get_udev_mount_time.py[main:24] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 19:49:56 get_udev_mount_time.py[main:24] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 19:49:56 get_udev_mount_time.py[<module>:34] INFO: process spend 0.099 s.
+2022-07-28 19:50:21 get_udev_mount_time.py[<module>:29] INFO: ******** starting ********
+2022-07-28 19:50:21 get_udev_mount_time.py[main:20] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 19:50:21 get_udev_mount_time.py[main:20] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 19:50:21 get_udev_mount_time.py[main:20] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 19:50:21 get_udev_mount_time.py[main:20] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 19:50:21 get_udev_mount_time.py[main:20] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 19:50:21 get_udev_mount_time.py[main:20] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 19:50:21 get_udev_mount_time.py[main:20] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 19:50:21 get_udev_mount_time.py[main:20] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 19:50:21 get_udev_mount_time.py[main:20] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 19:50:21 get_udev_mount_time.py[main:20] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 19:50:21 get_udev_mount_time.py[main:25] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 19:50:21 get_udev_mount_time.py[main:25] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 19:50:21 get_udev_mount_time.py[main:25] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 19:50:21 get_udev_mount_time.py[main:25] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 19:50:21 get_udev_mount_time.py[main:25] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 19:50:21 get_udev_mount_time.py[main:25] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 19:50:21 get_udev_mount_time.py[main:25] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 19:50:21 get_udev_mount_time.py[main:25] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 19:50:21 get_udev_mount_time.py[main:25] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 19:50:21 get_udev_mount_time.py[main:25] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 19:50:21 get_udev_mount_time.py[<module>:35] INFO: process spend 0.093 s.
+2022-07-28 19:50:50 get_udev_mount_time.py[<module>:43] INFO: ******** starting ********
