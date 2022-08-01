@@ -64,3 +64,725 @@
 2022-07-28 19:50:21 get_udev_mount_time.py[main:25] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
 2022-07-28 19:50:21 get_udev_mount_time.py[<module>:35] INFO: process spend 0.093 s.
 2022-07-28 19:50:50 get_udev_mount_time.py[<module>:43] INFO: ******** starting ********
+2022-07-28 20:56:33 get_udev_mount_time.py[<module>:43] INFO: ******** starting ********
+2022-07-28 21:05:31 get_udev_mount_time.py[<module>:51] INFO: ******** starting ********
+2022-07-28 21:07:28 get_udev_mount_time.py[<module>:52] INFO: ******** starting ********
+2022-07-28 21:07:28 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 21:07:28 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 21:07:28 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 21:07:28 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 21:07:28 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 21:07:28 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 21:07:28 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 21:07:28 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 21:07:28 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 21:07:28 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 21:07:28 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 21:07:28 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 21:07:28 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 21:07:28 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 21:07:28 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 21:07:28 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 21:07:28 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 21:07:28 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 21:07:28 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 21:07:28 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 21:07:28 get_udev_mount_time.py[<module>:59] INFO: process spend 0.094 s.
+2022-07-28 21:07:53 get_udev_mount_time.py[<module>:52] INFO: ******** starting ********
+2022-07-28 21:07:59 get_udev_mount_time.py[<module>:52] INFO: ******** starting ********
+2022-07-28 21:08:00 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 21:08:00 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 21:08:00 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 21:08:00 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 21:08:00 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 21:08:00 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 21:08:00 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 21:08:00 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 21:08:00 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 21:08:00 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 21:08:00 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 21:08:00 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 21:08:00 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 21:08:00 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 21:08:00 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 21:08:00 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 21:08:00 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 21:08:00 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 21:08:00 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 21:08:00 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 21:08:00 get_udev_mount_time.py[<module>:59] INFO: process spend 0.081 s.
+2022-07-28 21:10:05 get_udev_mount_time.py[<module>:53] INFO: ******** starting ********
+2022-07-28 21:10:05 get_udev_mount_time.py[debug:49] INFO: Test vehicle USB2.0 device NOT FOUND!
+2022-07-28 21:10:05 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 21:10:05 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 21:10:05 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 21:10:05 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 21:10:05 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 21:10:05 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 21:10:05 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 21:10:05 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 21:10:05 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 21:10:05 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 21:10:05 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 21:10:05 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 21:10:05 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 21:10:05 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 21:10:05 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 21:10:05 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 21:10:05 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 21:10:05 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 21:10:05 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 21:10:05 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 21:10:05 get_udev_mount_time.py[<module>:60] INFO: process spend 0.08 s.
+2022-07-28 21:13:24 get_udev_mount_time.py[<module>:53] INFO: ******** starting ********
+2022-07-28 21:13:27 get_udev_mount_time.py[<module>:53] INFO: ******** starting ********
+2022-07-28 21:14:08 get_udev_mount_time.py[<module>:53] INFO: ******** starting ********
+2022-07-28 21:14:08 get_udev_mount_time.py[debug:49] INFO: Test vehicle USB2.0 device NOT FOUND!
+2022-07-28 21:14:08 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 21:14:08 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 21:14:08 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 21:14:08 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 21:14:08 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 21:14:08 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 21:14:08 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 21:14:08 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 21:14:08 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 21:14:08 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 21:14:08 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 21:14:08 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 21:14:08 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 21:14:08 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 21:14:08 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 21:14:08 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 21:14:08 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 21:14:08 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 21:14:08 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 21:14:08 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 21:14:08 get_udev_mount_time.py[<module>:60] INFO: process spend 0.095 s.
+2022-07-28 21:15:59 get_udev_mount_time.py[<module>:54] INFO: ******** starting ********
+2022-07-28 21:15:59 get_udev_mount_time.py[debug:50] INFO: Test vehicle USB2.0 device NOT FOUND!
+2022-07-28 21:15:59 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 21:15:59 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 21:15:59 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 21:15:59 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 21:15:59 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 21:15:59 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 21:15:59 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 21:15:59 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 21:15:59 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 21:15:59 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 21:15:59 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 21:15:59 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 21:15:59 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 21:15:59 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 21:15:59 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 21:15:59 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 21:15:59 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 21:15:59 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 21:15:59 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 21:15:59 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 21:15:59 get_udev_mount_time.py[<module>:61] INFO: process spend 0.076 s.
+2022-07-28 21:16:10 get_udev_mount_time.py[<module>:54] INFO: ******** starting ********
+2022-07-28 21:16:10 get_udev_mount_time.py[debug:50] INFO: Test vehicle USB2.0 device NOT FOUND!
+2022-07-28 21:16:10 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 21:16:10 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 21:16:10 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 21:16:10 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 21:16:10 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 21:16:10 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 21:16:10 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 21:16:10 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 21:16:10 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 21:16:10 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 21:16:10 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 21:16:10 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 21:16:10 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 21:16:10 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 21:16:10 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 21:16:10 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 21:16:10 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 21:16:10 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 21:16:10 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 21:16:10 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 21:16:10 get_udev_mount_time.py[<module>:61] INFO: process spend 0.076 s.
+2022-07-28 21:16:23 get_udev_mount_time.py[<module>:54] INFO: ******** starting ********
+2022-07-28 21:16:23 get_udev_mount_time.py[debug:50] INFO: Test vehicle USB2.0 device NOT FOUND!
+2022-07-28 21:16:23 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 21:16:23 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 21:16:23 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 21:16:23 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 21:16:23 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 21:16:23 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 21:16:23 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 21:16:23 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 21:16:23 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 21:16:23 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 21:16:23 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 21:16:23 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 21:16:23 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 21:16:23 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 21:16:23 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 21:16:23 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 21:16:23 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 21:16:23 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 21:16:23 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 21:16:23 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 21:16:23 get_udev_mount_time.py[<module>:61] INFO: process spend 0.094 s.
+2022-07-28 21:18:59 get_udev_mount_time.py[<module>:55] INFO: ******** starting ********
+2022-07-28 21:19:26 get_udev_mount_time.py[<module>:55] INFO: ******** starting ********
+2022-07-28 21:21:39 get_udev_mount_time.py[<module>:54] INFO: ******** starting ********
+2022-07-28 21:21:39 get_udev_mount_time.py[debug:50] INFO: Test vehicle USB2.0 device NOT FOUND!
+2022-07-28 21:21:39 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 21:21:39 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 21:21:39 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 21:21:39 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 21:21:39 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 21:21:39 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 21:21:39 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 21:21:39 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 21:21:39 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 21:21:39 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 21:21:39 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 21:21:39 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 21:21:39 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 21:21:39 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 21:21:39 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 21:21:39 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 21:21:39 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 21:21:39 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 21:21:39 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 21:21:39 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 21:21:39 get_udev_mount_time.py[<module>:61] INFO: process spend 0.102 s.
+2022-07-28 21:22:00 get_udev_mount_time.py[<module>:55] INFO: ******** starting ********
+2022-07-28 21:22:09 get_udev_mount_time.py[<module>:55] INFO: ******** starting ********
+2022-07-28 21:22:09 get_udev_mount_time.py[debug:51] INFO: Test vehicle USB2.0 device NOT FOUND!
+2022-07-28 21:22:09 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 21:22:09 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 21:22:09 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 21:22:09 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 21:22:09 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 21:22:09 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 21:22:09 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 21:22:09 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 21:22:09 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 21:22:09 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 21:22:09 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 21:22:09 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 21:22:09 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 21:22:09 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 21:22:09 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 21:22:09 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 21:22:09 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 21:22:09 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 21:22:09 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 21:22:09 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 21:22:09 get_udev_mount_time.py[<module>:62] INFO: process spend 0.09 s.
+2022-07-28 21:23:00 get_udev_mount_time.py[<module>:55] INFO: ******** starting ********
+2022-07-28 21:23:17 get_udev_mount_time.py[<module>:55] INFO: ******** starting ********
+2022-07-28 21:23:22 get_udev_mount_time.py[<module>:55] INFO: ******** starting ********
+2022-07-28 21:23:44 get_udev_mount_time.py[<module>:55] INFO: ******** starting ********
+2022-07-28 21:23:55 get_udev_mount_time.py[<module>:55] INFO: ******** starting ********
+2022-07-28 21:23:55 get_udev_mount_time.py[debug:51] INFO: Test vehicle USB2.0 device NOT FOUND!
+2022-07-28 21:23:55 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 21:23:55 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 21:23:55 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 21:23:55 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 21:23:55 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 21:23:55 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 21:23:55 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 21:23:55 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 21:23:55 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 21:23:55 get_udev_mount_time.py[main:23] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 21:23:55 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 21:23:55 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 21:23:55 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 21:23:55 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 21:23:55 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 21:23:55 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 21:23:55 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 21:23:55 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 21:23:55 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 21:23:55 get_udev_mount_time.py[main:28] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 21:23:55 get_udev_mount_time.py[<module>:62] INFO: process spend 0.097 s.
+2022-07-28 21:26:48 get_udev_mount_time.py[<module>:55] INFO: ******** starting ********
+2022-07-28 21:27:18 get_udev_mount_time.py[<module>:55] INFO: ******** starting ********
+2022-07-28 21:27:27 get_udev_mount_time.py[<module>:55] INFO: ******** starting ********
+2022-07-28 21:27:36 get_udev_mount_time.py[<module>:55] INFO: ******** starting ********
+2022-07-28 21:28:51 get_udev_mount_time.py[<module>:57] INFO: ******** starting ********
+2022-07-28 21:29:04 get_udev_mount_time.py[<module>:58] INFO: ******** starting ********
+2022-07-28 21:29:04 get_udev_mount_time.py[debug:33] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-28 21:29:04 get_udev_mount_time.py[debug:54] INFO: Test vehicle USB2.0 device NOT FOUND!
+2022-07-28 21:29:04 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 21:29:04 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 21:29:04 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 21:29:04 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 21:29:04 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 21:29:04 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 21:29:04 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 21:29:04 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 21:29:04 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 21:29:04 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 21:29:04 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 21:29:04 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 21:29:04 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 21:29:04 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 21:29:04 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 21:29:04 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 21:29:04 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 21:29:04 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 21:29:04 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 21:29:04 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 21:29:04 get_udev_mount_time.py[<module>:65] INFO: process spend 0.096 s.
+2022-07-28 21:30:26 get_udev_mount_time.py[<module>:62] INFO: ******** starting ********
+2022-07-28 21:30:26 get_udev_mount_time.py[debug:33] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-28 21:30:26 get_udev_mount_time.py[debug:58] INFO: Test vehicle USB2.0 device NOT FOUND!
+2022-07-28 21:30:26 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 21:30:26 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 21:30:26 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 21:30:26 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 21:30:26 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 21:30:26 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 21:30:26 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 21:30:26 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 21:30:26 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 21:30:26 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 21:30:26 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 21:30:26 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 21:30:26 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 21:30:26 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 21:30:26 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 21:30:26 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 21:30:26 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 21:30:26 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 21:30:26 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 21:30:26 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 21:30:26 get_udev_mount_time.py[<module>:69] INFO: process spend 0.093 s.
+2022-07-28 21:37:14 get_udev_mount_time.py[<module>:64] INFO: ******** starting ********
+2022-07-28 21:37:14 get_udev_mount_time.py[debug:33] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-28 21:37:56 get_udev_mount_time.py[<module>:64] INFO: ******** starting ********
+2022-07-28 21:37:56 get_udev_mount_time.py[debug:33] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-28 21:39:02 get_udev_mount_time.py[<module>:64] INFO: ******** starting ********
+2022-07-28 21:39:02 get_udev_mount_time.py[debug:33] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-28 21:39:02 get_udev_mount_time.py[debug:49] INFO: type(busses): <class 'generator'>
+2022-07-28 21:39:02 get_udev_mount_time.py[debug:60] INFO: Test vehicle USB2.0 device NOT FOUND!
+2022-07-28 21:39:02 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 21:39:02 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 21:39:02 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 21:39:02 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 21:39:02 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 21:39:02 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 21:39:02 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 21:39:02 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 21:39:02 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 21:39:02 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 21:39:02 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 21:39:02 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 21:39:02 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 21:39:02 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 21:39:02 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 21:39:02 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 21:39:02 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 21:39:02 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 21:39:02 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 21:39:02 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 21:39:02 get_udev_mount_time.py[<module>:71] INFO: process spend 0.096 s.
+2022-07-28 21:40:44 get_udev_mount_time.py[<module>:64] INFO: ******** starting ********
+2022-07-28 21:40:44 get_udev_mount_time.py[debug:33] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-28 21:40:44 get_udev_mount_time.py[debug:43] INFO: <generator object find.<locals>.device_iter at 0x0000000002E11AC8>
+2022-07-28 21:40:44 get_udev_mount_time.py[debug:49] INFO: type(busses): <class 'generator'>
+2022-07-28 21:40:44 get_udev_mount_time.py[debug:60] INFO: Test vehicle USB2.0 device NOT FOUND!
+2022-07-28 21:40:44 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 21:40:44 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 21:40:44 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 21:40:44 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 21:40:44 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 21:40:44 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 21:40:44 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 21:40:44 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 21:40:44 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 21:40:44 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 21:40:44 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 21:40:44 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 21:40:44 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 21:40:44 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 21:40:44 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 21:40:44 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 21:40:44 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 21:40:44 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 21:40:44 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 21:40:44 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 21:40:44 get_udev_mount_time.py[<module>:71] INFO: process spend 0.104 s.
+2022-07-28 21:41:34 get_udev_mount_time.py[<module>:78] INFO: ******** starting ********
+2022-07-28 21:41:34 get_udev_mount_time.py[debug:46] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-28 21:41:34 get_udev_mount_time.py[debug:56] INFO: <generator object find.<locals>.device_iter at 0x0000000002E53AC8>
+2022-07-28 21:42:11 get_udev_mount_time.py[<module>:78] INFO: ******** starting ********
+2022-07-28 21:42:11 get_udev_mount_time.py[debug:46] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-28 21:42:11 get_udev_mount_time.py[debug:56] INFO: <generator object find.<locals>.device_iter at 0x0000000002E33AC8>
+2022-07-28 21:42:11 get_udev_mount_time.py[debug:57] INFO: []
+2022-07-28 21:42:11 get_udev_mount_time.py[debug:63] INFO: type(busses): <class 'generator'>
+2022-07-28 21:42:11 get_udev_mount_time.py[debug:74] INFO: Test vehicle USB2.0 device NOT FOUND!
+2022-07-28 21:42:11 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 21:42:11 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 21:42:11 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 21:42:11 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 21:42:11 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 21:42:11 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 21:42:11 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 21:42:11 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 21:42:11 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 21:42:11 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 21:42:11 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 21:42:11 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 21:42:11 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 21:42:11 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 21:42:11 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 21:42:11 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 21:42:11 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 21:42:11 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 21:42:11 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 21:42:11 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 21:42:11 get_udev_mount_time.py[<module>:85] INFO: process spend 0.099 s.
+2022-07-28 21:42:31 get_udev_mount_time.py[<module>:78] INFO: ******** starting ********
+2022-07-28 21:42:31 get_udev_mount_time.py[debug:46] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-28 21:42:31 get_udev_mount_time.py[debug:56] INFO: <generator object find.<locals>.device_iter at 0x0000000002E43AC8>
+2022-07-28 21:42:46 get_udev_mount_time.py[<module>:78] INFO: ******** starting ********
+2022-07-28 21:42:46 get_udev_mount_time.py[debug:46] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-28 21:42:46 get_udev_mount_time.py[debug:56] INFO: <generator object find.<locals>.device_iter at 0x0000000002E43AC8>
+2022-07-28 21:42:46 get_udev_mount_time.py[debug:57] INFO: []
+2022-07-28 21:42:46 get_udev_mount_time.py[debug:63] INFO: type(busses): <class 'generator'>
+2022-07-28 21:42:46 get_udev_mount_time.py[debug:74] INFO: Test vehicle USB2.0 device NOT FOUND!
+2022-07-28 21:42:46 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 21:42:46 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 21:42:46 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 21:42:46 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 21:42:46 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 21:42:46 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 21:42:46 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 21:42:46 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 21:42:46 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 21:42:46 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 21:42:46 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 21:42:46 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 21:42:46 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 21:42:46 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 21:42:46 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 21:42:46 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 21:42:46 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 21:42:46 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 21:42:46 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 21:42:46 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 21:42:46 get_udev_mount_time.py[<module>:85] INFO: process spend 0.102 s.
+2022-07-28 21:45:14 get_udev_mount_time.py[<module>:88] INFO: ******** starting ********
+2022-07-28 21:45:14 get_udev_mount_time.py[debug:56] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-28 21:45:14 get_udev_mount_time.py[debug:66] INFO: <generator object find.<locals>.device_iter at 0x0000000002E53B48>
+2022-07-28 21:45:14 get_udev_mount_time.py[debug:67] INFO: []
+2022-07-28 21:45:14 get_udev_mount_time.py[debug:73] INFO: type(busses): <class 'generator'>
+2022-07-28 21:45:14 get_udev_mount_time.py[debug:84] INFO: Test vehicle USB2.0 device NOT FOUND!
+2022-07-28 21:45:14 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 21:45:14 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 21:45:14 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 21:45:14 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 21:45:14 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 21:45:14 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 21:45:14 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 21:45:14 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 21:45:14 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 21:45:14 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 21:45:14 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 21:45:14 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 21:45:14 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 21:45:14 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 21:45:14 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 21:45:14 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 21:45:14 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 21:45:14 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 21:45:14 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 21:45:14 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 21:45:22 get_udev_mount_time.py[<module>:88] INFO: ******** starting ********
+2022-07-28 21:45:22 get_udev_mount_time.py[debug:56] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-28 21:45:22 get_udev_mount_time.py[debug:66] INFO: <generator object find.<locals>.device_iter at 0x0000000002EC3B48>
+2022-07-28 21:45:22 get_udev_mount_time.py[debug:67] INFO: []
+2022-07-28 21:45:22 get_udev_mount_time.py[debug:73] INFO: type(busses): <class 'generator'>
+2022-07-28 21:45:22 get_udev_mount_time.py[debug:84] INFO: Test vehicle USB2.0 device NOT FOUND!
+2022-07-28 21:45:22 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 21:45:22 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 21:45:22 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 21:45:22 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 21:45:22 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 21:45:22 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 21:45:22 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 21:45:22 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 21:45:22 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 21:45:22 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 21:45:22 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 21:45:22 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 21:45:22 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 21:45:22 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 21:45:22 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 21:45:22 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 21:45:22 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 21:45:22 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 21:45:23 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 21:45:23 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 21:45:45 get_udev_mount_time.py[<module>:86] INFO: ******** starting ********
+2022-07-28 21:45:45 get_udev_mount_time.py[debug:54] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-28 21:45:45 get_udev_mount_time.py[debug:64] INFO: <generator object find.<locals>.device_iter at 0x0000000002E33B48>
+2022-07-28 21:45:45 get_udev_mount_time.py[debug:65] INFO: []
+2022-07-28 21:45:45 get_udev_mount_time.py[debug:71] INFO: type(busses): <class 'generator'>
+2022-07-28 21:45:45 get_udev_mount_time.py[debug:82] INFO: Test vehicle USB2.0 device NOT FOUND!
+2022-07-28 21:45:45 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-28 21:45:45 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-28 21:45:45 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-28 21:45:45 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-28 21:45:45 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-28 21:45:45 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-28 21:45:45 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-28 21:45:45 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-28 21:45:45 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-28 21:45:45 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-28 21:45:45 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-28 21:45:45 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-28 21:45:45 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-28 21:45:45 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-28 21:45:45 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-28 21:45:45 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-28 21:45:45 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-28 21:45:45 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-28 21:45:45 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-28 21:45:45 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-28 21:45:55 get_udev_mount_time.py[<module>:86] INFO: ******** starting ********
+2022-07-28 21:45:55 get_udev_mount_time.py[debug:54] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-28 21:45:55 get_udev_mount_time.py[debug:64] INFO: <generator object find.<locals>.device_iter at 0x0000000002E13B48>
+2022-07-28 21:45:55 get_udev_mount_time.py[debug:65] INFO: []
+2022-07-28 21:45:55 get_udev_mount_time.py[debug:71] INFO: type(busses): <class 'generator'>
+2022-07-28 21:45:55 get_udev_mount_time.py[debug:82] INFO: Test vehicle USB2.0 device NOT FOUND!
+2022-07-28 21:47:47 get_udev_mount_time.py[<module>:94] INFO: ******** starting ********
+2022-07-28 21:47:47 get_udev_mount_time.py[debug:62] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-28 21:47:47 get_udev_mount_time.py[debug:72] INFO: <generator object find.<locals>.device_iter at 0x0000000002E33B48>
+2022-07-28 21:47:47 get_udev_mount_time.py[debug:73] INFO: []
+2022-07-28 21:47:47 get_udev_mount_time.py[debug:79] INFO: type(busses): <class 'generator'>
+2022-07-28 21:47:47 get_udev_mount_time.py[debug:90] INFO: Test vehicle USB2.0 device NOT FOUND!
+2022-07-28 21:47:47 get_udev_mount_time.py[<module>:102] INFO: process spend 0.022 s.
+2022-07-29 10:34:03 get_udev_mount_time.py[<module>:95] INFO: ******** starting ********
+2022-07-29 10:34:03 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-29 10:34:03 get_udev_mount_time.py[debug:73] INFO: <generator object find.<locals>.device_iter at 0x0000000002E13AC8>
+2022-07-29 10:34:03 get_udev_mount_time.py[debug:74] INFO: []
+2022-07-29 10:34:03 get_udev_mount_time.py[debug:80] INFO: type(busses): <class 'generator'>
+2022-07-29 10:34:03 get_udev_mount_time.py[debug:91] INFO: Test vehicle USB2.0 device NOT FOUND!
+2022-07-29 10:34:04 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-29 10:34:04 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-29 10:34:04 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-29 10:34:04 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-29 10:34:04 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-29 10:34:04 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-29 10:34:04 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-29 10:34:04 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-29 10:34:04 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-29 10:34:04 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-29 10:34:04 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-29 10:34:04 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-29 10:34:04 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-29 10:34:04 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-29 10:34:04 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-29 10:34:04 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-29 10:34:04 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-29 10:34:04 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-29 10:34:04 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-29 10:34:04 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-29 10:34:04 get_udev_mount_time.py[test:45] INFO: 
+2022-07-29 10:34:04 get_udev_mount_time.py[test:59] INFO: test is over
+2022-07-29 10:34:04 get_udev_mount_time.py[<module>:103] INFO: process spend 0.185 s.
+2022-07-29 10:45:33 get_udev_mount_time.py[<module>:95] INFO: ******** starting ********
+2022-07-29 10:45:33 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-29 10:45:33 get_udev_mount_time.py[debug:73] INFO: <generator object find.<locals>.device_iter at 0x0000000002E33AC8>
+2022-07-29 10:45:33 get_udev_mount_time.py[debug:74] INFO: []
+2022-07-29 10:45:33 get_udev_mount_time.py[debug:80] INFO: type(busses): <class 'generator'>
+2022-07-29 10:47:43 get_udev_mount_time.py[<module>:95] INFO: ******** starting ********
+2022-07-29 10:47:43 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-29 10:47:43 get_udev_mount_time.py[debug:73] INFO: <generator object find.<locals>.device_iter at 0x0000000002E62AC8>
+2022-07-29 10:47:43 get_udev_mount_time.py[debug:80] INFO: type(busses): <class 'generator'>
+2022-07-29 11:02:52 get_udev_mount_time.py[<module>:95] INFO: ******** starting ********
+2022-07-29 11:02:52 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-29 11:02:52 get_udev_mount_time.py[debug:73] INFO: <generator object find.<locals>.device_iter at 0x0000000002E23AC8>
+2022-07-29 11:02:52 get_udev_mount_time.py[debug:74] INFO: []
+2022-07-29 11:02:52 get_udev_mount_time.py[debug:80] INFO: type(busses): <class 'generator'>
+2022-07-29 11:03:23 get_udev_mount_time.py[<module>:95] INFO: ******** starting ********
+2022-07-29 11:03:23 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-29 11:03:23 get_udev_mount_time.py[debug:73] INFO: <generator object find.<locals>.device_iter at 0x0000000002DF8648>
+2022-07-29 11:03:23 get_udev_mount_time.py[debug:74] INFO: []
+2022-07-29 11:03:23 get_udev_mount_time.py[debug:80] INFO: type(busses): <class 'generator'>
+2022-07-29 11:03:50 get_udev_mount_time.py[<module>:95] INFO: ******** starting ********
+2022-07-29 11:03:50 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-29 11:03:50 get_udev_mount_time.py[debug:73] INFO: <generator object find.<locals>.device_iter at 0x0000000002DD8648>
+2022-07-29 11:03:50 get_udev_mount_time.py[debug:74] INFO: []
+2022-07-29 11:03:50 get_udev_mount_time.py[debug:80] INFO: type(busses): <class 'generator'>
+2022-07-29 11:05:36 get_udev_mount_time.py[<module>:95] INFO: ******** starting ********
+2022-07-29 11:05:36 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb0.dll
+2022-07-29 11:05:36 get_udev_mount_time.py[debug:73] INFO: <generator object find.<locals>.device_iter at 0x0000000002DD8648>
+2022-07-29 11:05:36 get_udev_mount_time.py[debug:74] INFO: []
+2022-07-29 11:05:36 get_udev_mount_time.py[debug:80] INFO: type(busses): <class 'generator'>
+2022-07-29 11:06:01 get_udev_mount_time.py[<module>:95] INFO: ******** starting ********
+2022-07-29 11:06:01 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:06:01 get_udev_mount_time.py[debug:73] INFO: <generator object find.<locals>.device_iter at 0x0000000002E53AC8>
+2022-07-29 11:06:28 get_udev_mount_time.py[<module>:95] INFO: ******** starting ********
+2022-07-29 11:06:28 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:06:28 get_udev_mount_time.py[debug:73] INFO: <generator object find.<locals>.device_iter at 0x0000000002E33AC8>
+2022-07-29 11:07:37 get_udev_mount_time.py[<module>:95] INFO: ******** starting ********
+2022-07-29 11:07:37 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:07:37 get_udev_mount_time.py[debug:73] INFO: <generator object find.<locals>.device_iter at 0x0000000002E53AC8>
+2022-07-29 11:09:01 get_udev_mount_time.py[<module>:95] INFO: ******** starting ********
+2022-07-29 11:09:01 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:09:01 get_udev_mount_time.py[debug:73] INFO: <generator object find.<locals>.device_iter at 0x0000000002E63AC8>
+2022-07-29 11:09:45 get_udev_mount_time.py[<module>:95] INFO: ******** starting ********
+2022-07-29 11:09:45 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:09:45 get_udev_mount_time.py[debug:73] INFO: <generator object find.<locals>.device_iter at 0x0000000002E82AC8>
+2022-07-29 11:09:45 get_udev_mount_time.py[debug:80] INFO: type(busses): <class 'generator'>
+2022-07-29 11:11:46 get_udev_mount_time.py[<module>:97] INFO: ******** starting ********
+2022-07-29 11:11:46 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:11:46 get_udev_mount_time.py[debug:75] INFO: <generator object find.<locals>.device_iter at 0x0000000002E62648>
+2022-07-29 11:11:46 get_udev_mount_time.py[debug:82] INFO: type(busses): <class 'generator'>
+2022-07-29 11:12:16 get_udev_mount_time.py[<module>:98] INFO: ******** starting ********
+2022-07-29 11:12:16 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:12:16 get_udev_mount_time.py[debug:76] INFO: <generator object find.<locals>.device_iter at 0x0000000002E13648>
+2022-07-29 11:12:16 get_udev_mount_time.py[debug:83] INFO: type(busses): <class 'generator'>
+2022-07-29 11:15:34 get_udev_mount_time.py[<module>:100] INFO: ******** starting ********
+2022-07-29 11:15:34 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:15:34 get_udev_mount_time.py[debug:76] INFO: <generator object find.<locals>.device_iter at 0x0000000002E726C8>
+2022-07-29 11:17:48 get_udev_mount_time.py[<module>:101] INFO: ******** starting ********
+2022-07-29 11:17:48 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:17:48 get_udev_mount_time.py[debug:76] INFO: <generator object find.<locals>.device_iter at 0x0000000002E226C8>
+2022-07-29 11:17:57 get_udev_mount_time.py[<module>:101] INFO: ******** starting ********
+2022-07-29 11:17:57 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:17:57 get_udev_mount_time.py[debug:76] INFO: <generator object find.<locals>.device_iter at 0x0000000002E526C8>
+2022-07-29 11:19:46 get_udev_mount_time.py[<module>:101] INFO: ******** starting ********
+2022-07-29 11:19:46 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:19:46 get_udev_mount_time.py[debug:76] INFO: [<DEVICE ID 8086:2935 on Bus 003 Address 001>, <DEVICE ID 8086:7020 on Bus 010 Address 001>, <DEVICE ID 8086:2938 on Bus 006 Address 001>, <DEVICE ID 8086:2934 on Bus 001 Address 001>, <DEVICE ID 8086:2939 on Bus 007 Address 001>, <DEVICE ID 8086:2937 on Bus 005 Address 001>, <DEVICE ID 8086:2936 on Bus 004 Address 001>, <DEVICE ID 8086:2934 on Bus 002 Address 001>, <DEVICE ID 8086:293a on Bus 008 Address 001>, <DEVICE ID 8086:293c on Bus 009 Address 001>]
+2022-07-29 11:20:06 get_udev_mount_time.py[<module>:101] INFO: ******** starting ********
+2022-07-29 11:20:06 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:20:06 get_udev_mount_time.py[debug:76] INFO: [<DEVICE ID 8086:2935 on Bus 003 Address 001>, <DEVICE ID 8086:7020 on Bus 010 Address 001>, <DEVICE ID 8086:2938 on Bus 006 Address 001>, <DEVICE ID 8086:2934 on Bus 001 Address 001>, <DEVICE ID 8086:2939 on Bus 007 Address 001>, <DEVICE ID 8086:2937 on Bus 005 Address 001>, <DEVICE ID 8086:2936 on Bus 004 Address 001>, <DEVICE ID 8086:2934 on Bus 002 Address 001>, <DEVICE ID 8086:293a on Bus 008 Address 001>, <DEVICE ID 8086:293c on Bus 009 Address 001>]
+2022-07-29 11:20:17 get_udev_mount_time.py[<module>:101] INFO: ******** starting ********
+2022-07-29 11:20:17 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:20:17 get_udev_mount_time.py[debug:76] INFO: [<DEVICE ID 8086:2935 on Bus 003 Address 001>, <DEVICE ID 8086:7020 on Bus 010 Address 001>, <DEVICE ID 8086:2938 on Bus 006 Address 001>, <DEVICE ID 8086:2934 on Bus 001 Address 001>, <DEVICE ID 8086:2939 on Bus 007 Address 001>, <DEVICE ID 8086:2937 on Bus 005 Address 001>, <DEVICE ID 8086:2936 on Bus 004 Address 001>, <DEVICE ID 8086:2934 on Bus 002 Address 001>, <DEVICE ID 8086:293a on Bus 008 Address 001>, <DEVICE ID 8086:293c on Bus 009 Address 001>]
+2022-07-29 11:21:19 get_udev_mount_time.py[<module>:102] INFO: ******** starting ********
+2022-07-29 11:21:19 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:21:19 get_udev_mount_time.py[debug:76] INFO: [<DEVICE ID 8086:2935 on Bus 003 Address 001>, <DEVICE ID 8086:7020 on Bus 010 Address 001>, <DEVICE ID 8086:2938 on Bus 006 Address 001>, <DEVICE ID 8086:2934 on Bus 001 Address 001>, <DEVICE ID 8086:2939 on Bus 007 Address 001>, <DEVICE ID 8086:2937 on Bus 005 Address 001>, <DEVICE ID 8086:2936 on Bus 004 Address 001>, <DEVICE ID 8086:2934 on Bus 002 Address 001>, <DEVICE ID 8086:293a on Bus 008 Address 001>, <DEVICE ID 8086:293c on Bus 009 Address 001>]
+2022-07-29 11:21:37 get_udev_mount_time.py[<module>:104] INFO: ******** starting ********
+2022-07-29 11:21:37 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:21:37 get_udev_mount_time.py[debug:76] INFO: [<DEVICE ID 8086:2935 on Bus 003 Address 001>, <DEVICE ID 8086:7020 on Bus 010 Address 001>, <DEVICE ID 8086:2938 on Bus 006 Address 001>, <DEVICE ID 8086:2934 on Bus 001 Address 001>, <DEVICE ID 8086:2939 on Bus 007 Address 001>, <DEVICE ID 8086:2937 on Bus 005 Address 001>, <DEVICE ID 8086:2936 on Bus 004 Address 001>, <DEVICE ID 8086:2934 on Bus 002 Address 001>, <DEVICE ID 8086:293a on Bus 008 Address 001>, <DEVICE ID 8086:293c on Bus 009 Address 001>]
+2022-07-29 11:21:37 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&32218256&0
+2022-07-29 11:21:37 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&3457D897&0
+2022-07-29 11:21:37 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&36880E1&0
+2022-07-29 11:21:37 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&F9F7C6&0
+2022-07-29 11:21:37 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&2ACC3A04&0
+2022-07-29 11:21:37 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB20\4&326BD9DE&0
+2022-07-29 11:21:37 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&17BD5F01&0
+2022-07-29 11:21:37 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&192D568&0
+2022-07-29 11:21:37 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&1CB239E3&0
+2022-07-29 11:21:37 get_udev_mount_time.py[main:24] INFO: USB\ROOT_HUB\4&2002FA77&0
+2022-07-29 11:21:37 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&17BD5F01&0"
+2022-07-29 11:21:37 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&32218256&0"
+2022-07-29 11:21:37 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&36880E1&0"
+2022-07-29 11:21:37 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&2ACC3A04&0"
+2022-07-29 11:21:37 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB20\\4&326BD9DE&0"
+2022-07-29 11:21:37 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&3457D897&0"
+2022-07-29 11:21:37 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&2002FA77&0"
+2022-07-29 11:21:37 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&F9F7C6&0"
+2022-07-29 11:21:37 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&1CB239E3&0"
+2022-07-29 11:21:37 get_udev_mount_time.py[main:29] INFO: \\WINEDR-VDI0027\root\cimv2:Win32_PnPEntity.DeviceID="USB\\ROOT_HUB\\4&192D568&0"
+2022-07-29 11:21:37 get_udev_mount_time.py[test:45] INFO: DEVICE ID 8086:2935 on Bus 003 Address 001, Specified at interface
+DEVICE ID 8086:7020 on Bus 010 Address 001, Specified at interface
+DEVICE ID 8086:2938 on Bus 006 Address 001, Specified at interface
+DEVICE ID 8086:2934 on Bus 001 Address 001, Specified at interface
+DEVICE ID 8086:2939 on Bus 007 Address 001, Specified at interface
+DEVICE ID 8086:2937 on Bus 005 Address 001, Specified at interface
+DEVICE ID 8086:2936 on Bus 004 Address 001, Specified at interface
+DEVICE ID 8086:2934 on Bus 002 Address 001, Specified at interface
+DEVICE ID 8086:293a on Bus 008 Address 001, Specified at interface
+DEVICE ID 8086:293c on Bus 009 Address 001, Specified at interface
+
+2022-07-29 11:21:37 get_udev_mount_time.py[test:59] INFO: test is over
+2022-07-29 11:21:37 get_udev_mount_time.py[<module>:112] INFO: process spend 0.254 s.
+2022-07-29 11:21:55 get_udev_mount_time.py[<module>:104] INFO: ******** starting ********
+2022-07-29 11:21:55 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:21:55 get_udev_mount_time.py[debug:76] INFO: [<DEVICE ID 8086:2935 on Bus 003 Address 001>, <DEVICE ID 8086:7020 on Bus 010 Address 001>, <DEVICE ID 8086:2938 on Bus 006 Address 001>, <DEVICE ID 8086:2934 on Bus 001 Address 001>, <DEVICE ID 8086:2939 on Bus 007 Address 001>, <DEVICE ID 8086:2937 on Bus 005 Address 001>, <DEVICE ID 8086:2936 on Bus 004 Address 001>, <DEVICE ID 8086:2934 on Bus 002 Address 001>, <DEVICE ID 8086:293a on Bus 008 Address 001>, <DEVICE ID 8086:293c on Bus 009 Address 001>]
+2022-07-29 11:21:55 get_udev_mount_time.py[<module>:112] INFO: process spend 0.046 s.
+2022-07-29 11:22:29 get_udev_mount_time.py[<module>:104] INFO: ******** starting ********
+2022-07-29 11:22:29 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:22:29 get_udev_mount_time.py[<module>:112] INFO: process spend 0.03 s.
+2022-07-29 11:23:03 get_udev_mount_time.py[<module>:104] INFO: ******** starting ********
+2022-07-29 11:23:03 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:23:03 get_udev_mount_time.py[debug:79] INFO: 10
+2022-07-29 11:23:03 get_udev_mount_time.py[<module>:112] INFO: process spend 0.031 s.
+2022-07-29 11:23:24 get_udev_mount_time.py[<module>:104] INFO: ******** starting ********
+2022-07-29 11:23:24 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:23:24 get_udev_mount_time.py[debug:79] INFO: 10
+2022-07-29 11:24:39 get_udev_mount_time.py[<module>:106] INFO: ******** starting ********
+2022-07-29 11:24:39 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:24:39 get_udev_mount_time.py[debug:79] INFO: 10
+2022-07-29 11:24:39 get_udev_mount_time.py[debug:80] INFO: <class 'usb.core.Device'>
+2022-07-29 11:24:39 get_udev_mount_time.py[<module>:114] INFO: process spend 0.028 s.
+2022-07-29 11:25:26 get_udev_mount_time.py[<module>:105] INFO: ******** starting ********
+2022-07-29 11:25:26 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:25:26 get_udev_mount_time.py[debug:79] INFO: 10
+2022-07-29 11:25:26 get_udev_mount_time.py[debug:80] INFO: <class 'usb.core.Device'>
+2022-07-29 11:25:52 get_udev_mount_time.py[<module>:105] INFO: ******** starting ********
+2022-07-29 11:25:52 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:25:52 get_udev_mount_time.py[debug:79] INFO: 10
+2022-07-29 11:25:52 get_udev_mount_time.py[debug:80] INFO: <class 'usb.core.Device'>
+2022-07-29 11:27:02 get_udev_mount_time.py[<module>:106] INFO: ******** starting ********
+2022-07-29 11:27:02 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:27:03 get_udev_mount_time.py[debug:79] INFO: 10
+2022-07-29 11:27:03 get_udev_mount_time.py[debug:80] INFO: <class 'usb.core.Device'>
+2022-07-29 11:27:03 get_udev_mount_time.py[debug:91] INFO: type(busses): <class 'generator'>
+2022-07-29 11:35:17 get_udev_mount_time.py[<module>:111] INFO: ******** starting ********
+2022-07-29 11:35:17 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:35:17 get_udev_mount_time.py[debug:79] INFO: 10
+2022-07-29 11:35:17 get_udev_mount_time.py[debug:80] INFO: <class 'usb.core.Device'>
+2022-07-29 11:44:38 get_udev_mount_time.py[<module>:111] INFO: ******** starting ********
+2022-07-29 11:44:38 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:44:38 get_udev_mount_time.py[debug:79] INFO: 10
+2022-07-29 11:44:38 get_udev_mount_time.py[debug:80] INFO: <class 'usb.core.Device'>
+2022-07-29 11:45:43 get_udev_mount_time.py[<module>:111] INFO: ******** starting ********
+2022-07-29 11:45:43 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:45:43 get_udev_mount_time.py[debug:79] INFO: 10
+2022-07-29 11:45:43 get_udev_mount_time.py[debug:80] INFO: <class 'usb.core.Device'>
+2022-07-29 11:46:08 get_udev_mount_time.py[<module>:112] INFO: ******** starting ********
+2022-07-29 11:46:08 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:46:08 get_udev_mount_time.py[debug:79] INFO: 10
+2022-07-29 11:46:08 get_udev_mount_time.py[debug:80] INFO: <class 'usb.core.Device'>
+2022-07-29 11:46:08 get_udev_mount_time.py[<module>:120] INFO: process spend 0.042 s.
+2022-07-29 11:46:40 get_udev_mount_time.py[<module>:113] INFO: ******** starting ********
+2022-07-29 11:46:40 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:46:40 get_udev_mount_time.py[<module>:121] INFO: process spend 0.047 s.
+2022-07-29 11:46:56 get_udev_mount_time.py[<module>:113] INFO: ******** starting ********
+2022-07-29 11:46:56 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:46:56 get_udev_mount_time.py[debug:80] INFO: 10
+2022-07-29 11:46:56 get_udev_mount_time.py[debug:81] INFO: <class 'usb.core.Device'>
+2022-07-29 11:47:58 get_udev_mount_time.py[<module>:114] INFO: ******** starting ********
+2022-07-29 11:47:58 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:47:58 get_udev_mount_time.py[debug:80] INFO: 10
+2022-07-29 11:47:58 get_udev_mount_time.py[debug:81] INFO: <class 'usb.core.Device'>
+2022-07-29 11:48:04 get_udev_mount_time.py[<module>:114] INFO: ******** starting ********
+2022-07-29 11:48:04 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:48:04 get_udev_mount_time.py[debug:80] INFO: 10
+2022-07-29 11:48:04 get_udev_mount_time.py[debug:81] INFO: <class 'usb.core.Device'>
+2022-07-29 11:53:44 get_udev_mount_time.py[<module>:115] INFO: ******** starting ********
+2022-07-29 11:53:44 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:53:44 get_udev_mount_time.py[debug:80] INFO: 10
+2022-07-29 11:53:44 get_udev_mount_time.py[debug:81] INFO: <class 'usb.core.Device'>
+2022-07-29 11:54:27 get_udev_mount_time.py[<module>:115] INFO: ******** starting ********
+2022-07-29 11:54:27 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-07-29 11:54:27 get_udev_mount_time.py[debug:80] INFO: 10
+2022-07-29 11:54:27 get_udev_mount_time.py[debug:81] INFO: <class 'usb.core.Device'>
+2022-08-01 10:21:07 get_udev_mount_time.py[<module>:115] INFO: ******** starting ********
+2022-08-01 10:21:07 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-08-01 10:21:07 get_udev_mount_time.py[debug:80] INFO: 10
+2022-08-01 10:21:07 get_udev_mount_time.py[debug:81] INFO: <class 'usb.core.Device'>
+2022-08-01 10:22:40 get_udev_mount_time.py[<module>:115] INFO: ******** starting ********
+2022-08-01 10:22:40 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-08-01 10:22:40 get_udev_mount_time.py[debug:80] INFO: 10
+2022-08-01 10:22:40 get_udev_mount_time.py[debug:81] INFO: <class 'usb.core.Device'>
+2022-08-01 10:24:37 get_udev_mount_time.py[<module>:115] INFO: ******** starting ********
+2022-08-01 10:24:37 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-08-01 10:24:37 get_udev_mount_time.py[debug:80] INFO: 10
+2022-08-01 10:24:37 get_udev_mount_time.py[debug:81] INFO: <class 'usb.core.Device'>

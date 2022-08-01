@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: brute_ftp_by_dict.py
-文件描述: 使用字典暴力破解登陆ftp
+文 件 名: round_example.py
+文件描述: 学习round函数
 作    者: HanKin
 创建日期: 2022.07.18
 修改日期：2022.07.18
