@@ -786,3 +786,134 @@ DEVICE ID 8086:293c on Bus 009 Address 001, Specified at interface
 2022-08-01 10:24:37 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
 2022-08-01 10:24:37 get_udev_mount_time.py[debug:80] INFO: 10
 2022-08-01 10:24:37 get_udev_mount_time.py[debug:81] INFO: <class 'usb.core.Device'>
+2022-08-01 16:56:59 get_udev_mount_time.py[<module>:115] INFO: ******** starting ********
+2022-08-01 16:56:59 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-08-01 16:56:59 get_udev_mount_time.py[debug:80] INFO: 10
+2022-08-01 16:56:59 get_udev_mount_time.py[debug:81] INFO: <class 'usb.core.Device'>
+2022-08-01 17:10:45 get_udev_mount_time.py[<module>:115] INFO: ******** starting ********
+2022-08-01 17:10:45 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-08-01 17:10:45 get_udev_mount_time.py[debug:80] INFO: 10
+2022-08-01 17:10:45 get_udev_mount_time.py[debug:81] INFO: <class 'usb.core.Device'>
+2022-08-01 17:10:58 get_udev_mount_time.py[<module>:115] INFO: ******** starting ********
+2022-08-01 17:10:58 get_udev_mount_time.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-08-01 17:10:58 get_udev_mount_time.py[debug:80] INFO: 10
+2022-08-01 17:10:58 get_udev_mount_time.py[debug:81] INFO: <class 'usb.core.Device'>
+2022-08-01 17:11:43 get_udev_mount_time_failed.py[<module>:116] INFO: ******** starting ********
+2022-08-01 17:11:43 get_udev_mount_time_failed.py[debug:63] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-08-01 17:11:43 get_udev_mount_time_failed.py[debug:80] INFO: 10
+2022-08-01 17:11:43 get_udev_mount_time_failed.py[debug:81] INFO: <class 'usb.core.Device'>
+2022-08-01 17:11:43 get_udev_mount_time_failed.py[<module>:124] INFO: process spend 0.063 s.
+2022-08-01 17:42:07 get_udev_mount_time.py[<module>:103] INFO: ******** starting ********
+2022-08-01 17:42:07 get_udev_mount_time.py[test:33] INFO: DEVICE ID 8086:2935 on Bus 003 Address 001, Specified at interface
+DEVICE ID 8086:7020 on Bus 010 Address 001, Specified at interface
+DEVICE ID 8086:2938 on Bus 006 Address 001, Specified at interface
+DEVICE ID 8086:2934 on Bus 001 Address 001, Specified at interface
+DEVICE ID 8086:2939 on Bus 007 Address 001, Specified at interface
+DEVICE ID 8086:2937 on Bus 005 Address 001, Specified at interface
+DEVICE ID 8086:2936 on Bus 004 Address 001, Specified at interface
+DEVICE ID 8086:2934 on Bus 002 Address 001, Specified at interface
+DEVICE ID 8086:293a on Bus 008 Address 001, Specified at interface
+DEVICE ID 8086:293c on Bus 009 Address 001, Specified at interface
+
+2022-08-01 17:42:07 get_udev_mount_time.py[test:47] INFO: test is over
+2022-08-01 17:42:07 get_udev_mount_time.py[<module>:111] INFO: process spend 0.076 s.
+2022-08-01 17:43:22 get_udev_mount_time.py[<module>:104] INFO: ******** starting ********
+2022-08-01 17:43:22 get_udev_mount_time.py[test:33] INFO: DEVICE ID 8086:2935 on Bus 003 Address 001, Specified at interface
+DEVICE ID 8086:7020 on Bus 010 Address 001, Specified at interface
+DEVICE ID 8086:2938 on Bus 006 Address 001, Specified at interface
+DEVICE ID 8086:2934 on Bus 001 Address 001, Specified at interface
+DEVICE ID 8086:2939 on Bus 007 Address 001, Specified at interface
+DEVICE ID 8086:2937 on Bus 005 Address 001, Specified at interface
+DEVICE ID 8086:2936 on Bus 004 Address 001, Specified at interface
+DEVICE ID 8086:2934 on Bus 002 Address 001, Specified at interface
+DEVICE ID 8086:293a on Bus 008 Address 001, Specified at interface
+DEVICE ID 8086:293c on Bus 009 Address 001, Specified at interface
+
+2022-08-01 17:45:39 get_udev_mount_time.py[<module>:106] INFO: ******** starting ********
+2022-08-01 17:45:39 get_udev_mount_time.py[test:33] INFO: DEVICE ID 8086:2935 on Bus 003 Address 001, Specified at interface
+DEVICE ID 8086:7020 on Bus 010 Address 001, Specified at interface
+DEVICE ID 8086:2938 on Bus 006 Address 001, Specified at interface
+DEVICE ID 8086:2934 on Bus 001 Address 001, Specified at interface
+DEVICE ID 8086:2939 on Bus 007 Address 001, Specified at interface
+DEVICE ID 8086:2937 on Bus 005 Address 001, Specified at interface
+DEVICE ID 8086:2936 on Bus 004 Address 001, Specified at interface
+DEVICE ID 8086:2934 on Bus 002 Address 001, Specified at interface
+DEVICE ID 8086:293a on Bus 008 Address 001, Specified at interface
+DEVICE ID 8086:293c on Bus 009 Address 001, Specified at interface
+
+2022-08-01 17:45:57 get_udev_mount_time.py[<module>:106] INFO: ******** starting ********
+2022-08-01 17:45:57 get_udev_mount_time.py[test:33] INFO: DEVICE ID 8086:2935 on Bus 003 Address 001, Specified at interface
+DEVICE ID 8086:7020 on Bus 010 Address 001, Specified at interface
+DEVICE ID 8086:2938 on Bus 006 Address 001, Specified at interface
+DEVICE ID 8086:2934 on Bus 001 Address 001, Specified at interface
+DEVICE ID 8086:2939 on Bus 007 Address 001, Specified at interface
+DEVICE ID 8086:2937 on Bus 005 Address 001, Specified at interface
+DEVICE ID 8086:2936 on Bus 004 Address 001, Specified at interface
+DEVICE ID 8086:2934 on Bus 002 Address 001, Specified at interface
+DEVICE ID 8086:293a on Bus 008 Address 001, Specified at interface
+DEVICE ID 8086:293c on Bus 009 Address 001, Specified at interface
+
+2022-08-01 20:25:41 get_udev_mount_time.py[<module>:106] INFO: ******** starting ********
+2022-08-01 20:25:41 get_udev_mount_time.py[test:33] INFO: DEVICE ID 8086:2935 on Bus 003 Address 001, Specified at interface
+DEVICE ID 8086:7020 on Bus 010 Address 001, Specified at interface
+DEVICE ID 8086:2938 on Bus 006 Address 001, Specified at interface
+DEVICE ID 8086:2934 on Bus 001 Address 001, Specified at interface
+DEVICE ID 8086:2939 on Bus 007 Address 001, Specified at interface
+DEVICE ID 8086:2937 on Bus 005 Address 001, Specified at interface
+DEVICE ID 8086:2936 on Bus 004 Address 001, Specified at interface
+DEVICE ID 8086:2934 on Bus 002 Address 001, Specified at interface
+DEVICE ID 8086:293a on Bus 008 Address 001, Specified at interface
+DEVICE ID 8086:293c on Bus 009 Address 001, Specified at interface
+
+2022-08-01 20:28:15 get_udev_mount_time.py[<module>:106] INFO: ******** starting ********
+2022-08-01 20:28:15 get_udev_mount_time.py[test:33] INFO: 
+2022-08-01 20:28:15 get_udev_mount_time.py[test:50] INFO: test is over
+2022-08-01 20:28:15 get_udev_mount_time.py[<module>:114] INFO: process spend 0.024 s.
+2022-08-01 20:28:39 get_udev_mount_time.py[<module>:106] INFO: ******** starting ********
+2022-08-01 20:28:39 get_udev_mount_time.py[test:33] INFO: 
+2022-08-01 20:28:39 get_udev_mount_time.py[test:50] INFO: test is over
+2022-08-01 20:28:39 get_udev_mount_time.py[<module>:114] INFO: process spend 0.015 s.
+2022-08-01 20:29:19 get_udev_mount_time.py[<module>:115] INFO: ******** starting ********
+2022-08-01 20:29:19 get_udev_mount_time.py[test:34] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-08-01 20:29:56 get_udev_mount_time.py[<module>:115] INFO: ******** starting ********
+2022-08-01 20:29:56 get_udev_mount_time.py[test:34] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-08-01 20:30:07 get_udev_mount_time.py[<module>:115] INFO: ******** starting ********
+2022-08-01 20:30:07 get_udev_mount_time.py[test:34] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-08-01 20:30:52 get_udev_mount_time.py[<module>:115] INFO: ******** starting ********
+2022-08-01 20:30:52 get_udev_mount_time.py[test:34] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-08-01 20:30:52 get_udev_mount_time.py[test:42] INFO: DEVICE ID 8086:2935 on Bus 003 Address 001, Specified at interface
+DEVICE ID 8086:7020 on Bus 010 Address 001, Specified at interface
+DEVICE ID 8086:2938 on Bus 006 Address 001, Specified at interface
+DEVICE ID 8086:2934 on Bus 001 Address 001, Specified at interface
+DEVICE ID 8086:2939 on Bus 007 Address 001, Specified at interface
+DEVICE ID 8086:2937 on Bus 005 Address 001, Specified at interface
+DEVICE ID 8086:2936 on Bus 004 Address 001, Specified at interface
+DEVICE ID 8086:2934 on Bus 002 Address 001, Specified at interface
+DEVICE ID 8086:293a on Bus 008 Address 001, Specified at interface
+DEVICE ID 8086:293c on Bus 009 Address 001, Specified at interface
+
+2022-08-01 20:31:35 get_udev_mount_time.py[<module>:115] INFO: ******** starting ********
+2022-08-01 20:31:35 get_udev_mount_time.py[test:34] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-08-01 20:31:35 get_udev_mount_time.py[test:42] INFO: DEVICE ID 8086:2935 on Bus 003 Address 001, Specified at interface
+DEVICE ID 8086:7020 on Bus 010 Address 001, Specified at interface
+DEVICE ID 8086:2938 on Bus 006 Address 001, Specified at interface
+DEVICE ID 8086:2934 on Bus 001 Address 001, Specified at interface
+DEVICE ID 8086:2939 on Bus 007 Address 001, Specified at interface
+DEVICE ID 8086:2937 on Bus 005 Address 001, Specified at interface
+DEVICE ID 8086:2936 on Bus 004 Address 001, Specified at interface
+DEVICE ID 8086:2934 on Bus 002 Address 001, Specified at interface
+DEVICE ID 8086:293a on Bus 008 Address 001, Specified at interface
+DEVICE ID 8086:293c on Bus 009 Address 001, Specified at interface
+
+2022-08-02 15:02:17 get_udev_mount_time.py[<module>:115] INFO: ******** starting ********
+2022-08-02 15:02:17 get_udev_mount_time.py[test:34] INFO: libusb_dll_path: D:\Github\Storage\python\udev\获取USB设备加载时间/libusb-1.0.dll
+2022-08-02 15:02:17 get_udev_mount_time.py[test:42] INFO: DEVICE ID 8086:2935 on Bus 003 Address 001, Specified at interface
+DEVICE ID 8086:7020 on Bus 010 Address 001, Specified at interface
+DEVICE ID 8086:2938 on Bus 006 Address 001, Specified at interface
+DEVICE ID 8086:2934 on Bus 001 Address 001, Specified at interface
+DEVICE ID 8086:2939 on Bus 007 Address 001, Specified at interface
+DEVICE ID 8086:2936 on Bus 004 Address 001, Specified at interface
+DEVICE ID 8086:2934 on Bus 002 Address 001, Specified at interface
+DEVICE ID 8086:293a on Bus 008 Address 001, Specified at interface
+DEVICE ID 8086:293c on Bus 009 Address 001, Specified at interface
+

@@ -4,7 +4,7 @@
 文件描述: 获取USB设备加载时间
 作    者: HanKin
 创建日期: 2022.07.28
-修改日期：2022.07.28
+修改日期：2022.08.02
 
 Copyright (c) 2022 HanKin. All rights reserved.
 """
@@ -28,27 +28,27 @@ def main():
     for usb in wmi.InstancesOf ("win32_usbcontrollerdevice"):
         logger.info(usb.Dependent)
 
-def get_usb_devices(backend):
-    '''
-    Get USB devices
-
-    @return: list of tuples (dev_idVendor, dev_idProduct, dev_name)
-    '''
-    
-    #backend = usb.backend.libusb0.get_backend(find_library=lambda x: 'D:\\Github\\Storage\\python\\udev\\U盘自动拷贝\\libusb\\amd64\\libusb0.dll')
-
-    return [(device.idVendor, device.idProduct, _get_dev_string_info(device)) 
-                for device in usb.core.find(find_all=True, backend=backend)
-                    if device.idProduct > 2]
 
 def test():
-    logger.info(usb.core.show_devices())
-    devices = usb.core.find(find_all=True)
+    libusb_dll_path = os.getcwd()+'/libusb-1.0.dll'
+    logger.info('libusb_dll_path: {}'.format(libusb_dll_path))
+    if not os.path.exists(libusb_dll_path):
+        logger.error('libusb dll file not exists')
+        #return
+    
+    # 为啥不能直接写成字符串(注意libusb1加载1.dll，不能错位)
+    backend = usb.backend.libusb1.get_backend(find_library=lambda x: libusb_dll_path)
+    
+    logger.info(usb.core.show_devices(backend=backend))
+    devices = usb.core.find(find_all=True, backend=backend)
     
     while True:
         try:
             # 获得下一个值:
             dev = next(devices)
+            logger.info('iManufacturer   : %s' %usb.util.get_string(dev, 256, 1))
+            logger.info('iProduct            : %s' %usb.util.get_string(dev, 256, 2))
+            logger.info('iSerialNumber   : %s' %usb.util.get_string(dev.dev, 256, 3))
             print("device bus:", dev.bus)
             print("device address:", dev.address)
             print("device port:", dev.port_number)
@@ -115,9 +115,9 @@ if __name__ == '__main__':
     logger.info('******** starting ********')
     start_time = time.time()
 
-    debug()
+    #debug()
     #main()
-    #test()
+    test()
 
     end_time = time.time()
     logger.info('process spend {} s.'.format(round(end_time - start_time, 3)))
