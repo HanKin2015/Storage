@@ -917,3 +917,5 @@ DEVICE ID 8086:2934 on Bus 002 Address 001, Specified at interface
 DEVICE ID 8086:293a on Bus 008 Address 001, Specified at interface
 DEVICE ID 8086:293c on Bus 009 Address 001, Specified at interface
 
+2022-08-02 20:20:26 get_udev_mount_time.py[<module>:167] INFO: ******** starting ********
+2022-08-03 15:00:23 get_udev_mount_time.py[<module>:174] INFO: process spend 67197.28 s.

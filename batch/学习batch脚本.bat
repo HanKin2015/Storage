@@ -1,15 +1,17 @@
 ::
-:: 学习batch脚本
+:: 文 件 名: 学习batch脚本.bat
+:: 文件描述: 学习batch脚本
 :: 学习网站：https://baike.baidu.com/item/%E6%89%B9%E5%A4%84%E7%90%86/1448600?fromtitle=Batch&fromid=1079355&fr=aladdin
 :: Rem和::都是注释，推荐::，美观简洁；脚本推荐使用ANCI编码，否则可能出现中文乱码
-::
-:: 作者：hankin
-:: 日期：2021.06.04
-::
-:: Copyright (c) 2020 hejian. All rights reserved.
+:: 注    意：bat脚本文件保存字符集类型是ANSI或者是GB2312，UTF-8会执行失败各种中文乱码；输出的字符串不需要双引号
+:: 作    者: HanKin
+:: 创建日期: 2021.06.04
+:: 修改日期：2022.08.04
+:: 
+:: Copyright (c) 2020 HanKin. All rights reserved.
 ::
 
-:: 关闭回显
+:: 关闭回显(只会显示脚本中输出内容，否则会显示当前路径以及执行的命令)
 @echo off
 
 :: 1、echo命令：打开回显或关闭请求回显功能，或显示消息。
@@ -41,9 +43,17 @@ echo %aa%
 :: 8、assoc命令：添加文件扩展名
 assoc .txp=错误
 
-
-:: 将输入的字符串存储到input变量中
+:: 9、将输入的字符串存储到input变量中
 set /p "input=>"
 echo 您输入的是%input%
 
+:: 10、输出空行，注意点(句号)必须要，不要会报错ECHO处于关闭状态
+echo.
+
+:: 11、输出当前路径
+echo %cd%
+
+:: 12、可以将默认的退出字段进行更换(默认请按任意键退出...)
+echo 替换文件完毕，按任意键退出...
+::pause>nul
 pause

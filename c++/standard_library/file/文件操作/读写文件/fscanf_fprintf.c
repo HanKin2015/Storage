@@ -1,3 +1,13 @@
+/**
+* 文 件 名: fscanf_fprintf.cpp
+* 文件描述: fscanf和fprintf函数读写文件
+* 作    者: HanKin
+* 创建日期: 2021.06.10
+* 修改日期：2022.08.09
+*
+* Copyright (c) 2022 HanKin. All rights reserved.
+*/
+
 #include <stdio.h>
 #include <time.h>
 #include <io.h>
@@ -50,7 +60,7 @@ void file_write(char* data)
     return;
 }
 
-void file_read(char* data)
+void file_read()
 {
     const char* usb_device_operation_path = "./usb_device_operation.txt";
 
@@ -67,9 +77,9 @@ void file_read(char* data)
     return;
 }
 
-int main()
+int main(int argc, char *argv[])
 {
-    file_write("1234");
-    file_write("12345678");
+    file_write("hello world");
+    file_read();
     return 0;
 }
