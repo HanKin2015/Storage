@@ -1,10 +1,10 @@
 /**
-* 文 件 名: read_write.cpp
+* 文 件 名: research_read_write_speed.cpp
 * 文件描述: 探究读写文件速度效率
 * 作    者: HanKin
 * 参    考: https://blog.csdn.net/ZHANG_TIMI/article/details/118120684
 * 创建日期: 2022.04.09
-* 修改日期：2022.04.09
+* 修改日期：2022.08.10
 *
 * Copyright (c) 2022 HanKin. All rights reserved.
 */
@@ -28,7 +28,15 @@
 #define DATA_MAX_VALUE 10
 using namespace std;
 
-static int generate_data(const char *file_name)
+/**
+* @brief 生成10MB数据，加空格文件有20MB
+* @note  使用rand函数生成数字数据，100个数字换行
+* @param cmd [in] shell命令
+* @param output [out] 运行结果输出
+* @param outputLen [in] 运行结果字符串长度
+* @return 无
+*/
+static int generate_data(const char *file_path)
 {
 	srand((unsigned)time(NULL));
 	
