@@ -3,11 +3,7 @@
 block_cipher = None
 
 
-<<<<<<< HEAD
-a = Analysis(['copy_tool.py'],
-=======
-a = Analysis(['copy_tool.py', 'D:\\Github\\Storage\\python\\libary\\entrywithplaceholder.py'],
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
+a = Analysis(['src\\copy_tool.py', 'D:\\Github\\Storage\\python\\libary\\entrywithplaceholder.py'],
              pathex=['D:\\Github\\Storage\\python\\project\\copy_tool'],
              binaries=[],
              datas=[],
@@ -34,4 +30,4 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=False )
+          console=False , version='doc\\file_version_info.txt', icon='img\\copy_tool.ico')

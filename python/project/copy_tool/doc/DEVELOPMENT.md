@@ -47,4 +47,6 @@ v3.0完成，基本功能已经实现
 ## 20220107
 - 过一遍代码，增加相应日志，发现程序员在圈子里混久了就变得规范了
 
-
+## 20220815
+- 简单重构copy_tool.py文件
+- 新的打包命令：pyinstaller --version-file=doc/file_version_info.txt -w -i img/copy_tool.ico -F src/copy_tool.py D:\Github\Storage\python\libary\entrywithplaceholder.py --onefile
