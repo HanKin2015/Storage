@@ -20,10 +20,7 @@ from icon import icon_img
 import md5
 import logging
 import sys
-<<<<<<< HEAD
-=======
 import configparser
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
 
 # 增加libary库的搜索路径
 sys.path.append('../../libary/')
@@ -40,16 +37,6 @@ work_path = 'D:/copy_tool/'
 log_path = 'D:/copy_tool/copy_tool.log'
 
 # 中转文件名称
-<<<<<<< HEAD
-temp_file_name = 'transfer_msg.txt'
-
-# 云端指定中转站文件夹路径
-remote_dir_path = '/01-个人目录/hj/tmp/'
-
-# 下载路径
-download_path = 'D:/copy_tool/download/'
-
-=======
 temp_file_name = 'copy_words.txt'
 
 # 云端指定中转站文件夹路径
@@ -62,7 +49,6 @@ download_path = 'D:/copy_tool/download/'
 # 用于FTP服务的21端口
 ftp_port = 21
 
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
 # 默认ftp服务器ip地址
 ftp_ip = '127.0.0.1'
 
@@ -72,8 +58,6 @@ ftp_username = 'hankin'
 # 默认ftp服务器密码
 ftp_password = 'hankin'
 
-<<<<<<< HEAD
-=======
 # 配置文件
 config_path = 'D:/copy_tool/config.ini'
 
@@ -86,7 +70,6 @@ about_file_path = './config/about.txt'
 # 更新日志文件路径
 update_file_path = './config/update.txt'
 
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
 # 软件更新日志路径
 update_log_path = 'D:/copy_tool/update_log.log'
 
@@ -103,12 +86,6 @@ logging.basicConfig(level=logging.INFO,
 
 class MyFTP():
     def __init__(self):
-<<<<<<< HEAD
-        logging.info('---ftp init---')
-        self.ftp_connect()
-
-    def clear_dir(self, dir_path):
-=======
         '''初始化
         1.建立连接
         2.创建远程工作目录
@@ -126,7 +103,6 @@ class MyFTP():
     def delete_dir(self, dir_path):
         '''
         '''
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
         dir_res_details = []
         try:
             self.ftp.cwd(dir_path)
@@ -139,11 +115,7 @@ class MyFTP():
                 dir_name = elem.split(' ')[-1]
                 logging.info('开始删除{}文件夹'.format(dir_name))
                 
-<<<<<<< HEAD
-                self.clear_dir(self.ftp.pwd() + '/' + dir_name)
-=======
                 self.delete_dir(self.ftp.pwd() + '/' + dir_name)
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
                 self.ftp.cwd('..')
                 if dir_path[-1] == '/':
                     dir_path = dir_path[:-1]
@@ -151,11 +123,7 @@ class MyFTP():
                 try:
                     self.ftp.rmd(dir_name)
                 except ftplib.error_perm as err:
-<<<<<<< HEAD
-                    logging.error(err)
-=======
                     logging.error('删除文件夹失败, error={}'.format(err))
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
             else:
                 file_name = elem.split(' ')[-1]
                 logging.info('删除FTP目录{}下存在的文件:{}'.format(dir_path, file_name))
@@ -163,19 +131,6 @@ class MyFTP():
 
     def ftp_connect(self):
         '''建立ftp连接
-<<<<<<< HEAD
-            '''
-
-        logging.info('start ftp connect')
-        self.ftp = ftplib.FTP()
-        # ftp.set_debuglevel(2)
-        try:
-            self.ftp.connect(ftp_ip, 21)
-            self.ftp.login(ftp_username, ftp_password)
-            self.ftp.encoding = 'gbk'
-        except Exception as ex:
-            logging.error('登录ftp服务器失败, {}'.format(ex))
-=======
         True成功, False失败
         '''
 
@@ -201,8 +156,7 @@ class MyFTP():
             messagebox.showinfo('警告', '建立ftp连接失败', icon='question')
             return False
         return True
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
-            
+        
     def download_file(self, local_file_path, remote_file_path):
         '''从ftp下载文件
             Parameters
@@ -225,11 +179,7 @@ class MyFTP():
             self.ftp.retrbinary('RETR ' + remote_file_path, fp.write, bufsize)
         except Exception as err:
             logging.warning(err)
-<<<<<<< HEAD
-            self._ftp_connect_()
-=======
             self.ftp_connect()
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
             self.ftp.retrbinary('RETR ' + remote_file_path, fp.write, bufsize)
         self.ftp.set_debuglevel(0)
         fp.close()
@@ -239,11 +189,7 @@ class MyFTP():
             self.ftp.cwd(remote_dir_path)
         except Exception as err:
             logging.warning(err)
-<<<<<<< HEAD
-            self._ftp_connect_()
-=======
             self.ftp_connect()
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
             self.ftp.cwd(remote_dir_path)
         files = self.ftp.nlst()
         # 一定要记得回到根目录，或者后面就不要添加绝对地址，最好回来，防止后面使用
@@ -281,65 +227,39 @@ class MyFTP():
         try:
             self.ftp.storbinary('STOR ' + remote_file_path, fp, bufsize)
         except Exception as err:
-<<<<<<< HEAD
-            logging.warning(err)
-            self._ftp_connect_()
-=======
             logging.error('上传文件失败, err={}'.format(err))
             self.ftp_connect()
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
             self.ftp.storbinary('STOR ' + remote_file_path, fp, bufsize)
         self.ftp.set_debuglevel(0)
         fp.close()
 
-<<<<<<< HEAD
-    def ftp_quit(self):
-        logging.info('---ftp quit---')
-        try:
-            self.ftp.quit()
-        except Exception as err:
-            logging.warning(err)
-
-=======
     def ftp_disconnect(self):
         logging.info('断开ftp连接')
         try:
             self.ftp.quit()
         except Exception as err:
             logging.error('断开ftp连接失败, error={}'.format(err))
-            
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
+
 class CopyTool(tkinter.Tk):
     '''主窗口ui类
     '''
 
-<<<<<<< HEAD
-=======
     # tkinter的对话窗口必须要有一个主窗口，就像所有控件都需要放在一个窗口上。建立一个隐形窗口后就不会出现那个影响美观的自带窗口了
     # 解决多余的tk窗口
     root = tkinter.Tk()
     root.withdraw()
 
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
     my_ftp = MyFTP()
 
     def __init__(self):
         '''初始化自己的创建的CopyTool类
         '''
 
-<<<<<<< HEAD
-        super().__init__()  # 在继承Tk这个类的基础上在自己的类中添加内容
-        self._generate_icon_()
-        self._set_window_()  # 设置程序运行主窗口
-        self._create_menu_bar_()  # 创建菜单组件
-        self._create_body_()
-=======
         super().__init__()          # 在继承Tk这个类的基础上在自己的类中添加内容
         self._generate_icon_()      # 生成图标
         self._set_window_()         # 设置程序运行主窗口
         self._create_menu_bar_()    # 创建菜单组件
         self._create_body_()        # 创建主体
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
         self._create_right_popup_menu()
 
     def _generate_icon_(self):
@@ -392,11 +312,7 @@ class CopyTool(tkinter.Tk):
             label='从服务器下载', accelerator='Ctrl+D', command=self.down_file)
         ftp_menu.add_separator()  # 设置分割线
         ftp_menu.add_command(label='清理', accelerator='Ctrl+L',
-<<<<<<< HEAD
-                             command=self.clear_remote_dir)
-=======
                              command=self.delete_remote_dir)
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
         ftp_menu.add_separator()  # 设置分割线
         ftp_menu.add_command(
             label='发送指定文件', accelerator='Ctrl+Q', command=self.send_assign_file)
@@ -459,58 +375,16 @@ class CopyTool(tkinter.Tk):
         self['menu'] = menu_bar
         
     def set_ftp(self):
-<<<<<<< HEAD
-        set_ftp_window = tkinter.Toplevel(self)
-        set_ftp_window.title('设置FTP服务器')
-=======
         '''设置FTP服务器
         '''
         
         self.set_ftp_window = tkinter.Toplevel(self)
         self.set_ftp_window.title('设置FTP服务器')
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
         window_width = 200
         window_hight = 100
         pos_x = self.winfo_rootx() + ((self.winfo_width() - window_width) // 2)
         pos_y = self.winfo_rooty() - 20 + ((self.winfo_height() - window_hight) // 2)
         wm_val = '{}x{}+{}+{}'.format(window_width, window_hight, pos_x, pos_y)
-<<<<<<< HEAD
-        set_ftp_window.geometry(wm_val)       # 将窗口设置在屏幕的中间
-        
-        ip_label = tkinter.Label(set_ftp_window, text='ip地址：', justify=tkinter.LEFT)
-        ip_entry = tkinter.Entry(set_ftp_window, text='')
-        user_label = tkinter.Label(set_ftp_window, text='用户名：', justify=tkinter.LEFT)
-        user_entry = tkinter.Entry(set_ftp_window, text='')
-        pwd_label = tkinter.Label(set_ftp_window, text='密   码：', justify=tkinter.LEFT)
-        pwd_entry = tkinter.Entry(set_ftp_window, text='')
-        ip_label.grid(row=0, column=0)
-        ip_entry.grid(row=0, column=1)
-        user_label.grid(row=1, column=0)
-        user_entry.grid(row=1, column=1)
-        pwd_label.grid(row=2, column=0, sticky=tkinter.W)
-        pwd_entry.grid(row=2, column=1, sticky=tkinter.W)
-        
-        qry_btn = tkinter.Button(set_ftp_window, text='确定', width=10, height=1,
-                                      command=lambda: self.qry_btn_clicked(), compound='right')
-        qry_btn.grid(row=3, column=1, sticky=tkinter.E)
-        
-        set_ftp_window.mainloop()
-        
-    def qry_btn_clicked(self):
-        print('dsd')
-    
-    def show_messagebox(self, type):
-        if type == '帮助':
-            messagebox.showinfo('帮助', '这是帮助文档！\nby hankin', icon='question')
-        elif type == '更新日志':
-            try:
-                update_log = open(update_log_path, 'r', encoding='utf-8').read()
-            except Exception as ex:
-                print('读取更新日志文件失败, error=', ex)
-            messagebox.showinfo('更新日志', update_log, icon='question')
-        elif type == '关于':
-            messagebox.showinfo('关于', 'CopyTool_V1.21.9.1')
-=======
         self.set_ftp_window.geometry(wm_val)       # 将窗口设置在屏幕的中间
         
         ip_label = tkinter.Label(self.set_ftp_window, text='ip地址：', justify=tkinter.LEFT)
@@ -577,7 +451,6 @@ class CopyTool(tkinter.Tk):
         except Exception as ex:
             logging.error('打开文件失败, error={}'.format(ex))
         messagebox.showinfo(type, content, icon='question')
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
 
     # 通过设置_update_line_num函数来实现主要的功能
     def _toggle_highlight(self):  # 高亮函数
@@ -620,11 +493,7 @@ class CopyTool(tkinter.Tk):
             family=r'微软雅黑', weight=tkinter.font.NORMAL, size=12)
 
         # 上面部分
-<<<<<<< HEAD
-        fm_up = tkinter.Frame()
-=======
         fm_up = tkinter.Frame(self)
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
         # fm_up.propagate(0)
         self.input_content = EntryWithPlaceholder(fm_up, '请输入上传文件路径(可鼠标双击选择)', font=ft)
         #self.input_content = tkinter.Entry(fm_up, width=30, font=ft)
@@ -645,11 +514,7 @@ class CopyTool(tkinter.Tk):
         fm_up.pack(fill=tkinter.X)
 
         # 中间部分
-<<<<<<< HEAD
-        fm_mid = tkinter.Frame()
-=======
         fm_mid = tkinter.Frame(self)
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
         fm_mid.propagate(0)
         # 创建行号栏（takefocus屏蔽焦点）
         self.line_number_bar = tkinter.Text(fm_mid, width=3, padx=3, takefocus=0, border=0,
@@ -677,11 +542,7 @@ class CopyTool(tkinter.Tk):
         fm_mid.pack(fill=tkinter.BOTH, expand='yes')
 
         # 下面部分：拷贝按钮
-<<<<<<< HEAD
-        fm_down = tkinter.Frame()
-=======
         fm_down = tkinter.Frame(self)
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
         # fm_down.propagate(0)
         copy_btn = tkinter.Button(fm_down, text='拷贝文字', command=lambda: self.copy_btn_cliecked(
             self.content_text), font=ft, compound='center')
@@ -748,12 +609,8 @@ class CopyTool(tkinter.Tk):
 
         if messagebox.askokcancel('退出?', '确定退出吗?'):  # 设置文本提示框
             self.destroy()  # 满足条件的话主窗口退出
-<<<<<<< HEAD
-            self.my_ftp.ftp_quit()
-=======
             self.root.destroy()
             self.my_ftp.ftp_disconnect()
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
 
     def new_file(self, event=None):
         self.title('New - CopyTool')
@@ -789,15 +646,9 @@ class CopyTool(tkinter.Tk):
             self.file_name = input_file  # 设置文件名称
             self._write_to_file(self.file_name)  # 写入本地
 
-<<<<<<< HEAD
-    def clear_remote_dir(self):
-        # 做一下内容清理，防止磁盘爆满以及下载的不方便
-        self.my_ftp.clear_dir(remote_dir_path)
-=======
     def delete_remote_dir(self):
         # 做一下内容清理，防止磁盘爆满以及下载的不方便
         self.my_ftp.delete_dir(remote_dir_path)
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
         win32api.MessageBox(0, '清除完毕', '清空文件夹提醒', win32con.MB_OK)
 
     def send_assign_file(self):
@@ -873,11 +724,7 @@ class CopyTool(tkinter.Tk):
         发送按钮点击事件
         '''
         content = display_content.get('0.0', 'end').strip()
-<<<<<<< HEAD
-        file_path = download_path + temp_file_name
-=======
         file_path = work_path + temp_file_name
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
         logging.info('正在写入{}'.format(file_path))
         try:
             with open(file_path, 'w', encoding='utf-8') as f:
@@ -896,16 +743,9 @@ class CopyTool(tkinter.Tk):
         :param display_content:Text组件
         '''
 
-<<<<<<< HEAD
-        file_path = download_path + temp_file_name
-        # print(file_path)
-        self.my_ftp.download_file(file_path, remote_dir_path+temp_file_name)
-        file_path = download_path + temp_file_name
-=======
         file_path = work_path + temp_file_name
         # print(file_path)
         self.my_ftp.download_file(file_path, remote_dir_path+temp_file_name)
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
         logging.info('正在读取{}'.format(file_path))
         content_list = []
 
@@ -926,10 +766,7 @@ class CopyTool(tkinter.Tk):
         '''
         复制内容按钮点击事件
         '''
-<<<<<<< HEAD
-=======
-        
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
+
         # 打印显示内容
         content = display_content.get('0.0', 'end').strip()
         logging.info(content)
@@ -940,11 +777,6 @@ class CopyTool(tkinter.Tk):
 
 
 if __name__ == '__main__':
-<<<<<<< HEAD
-    app = CopyTool()  # 类的实例化
-    app.mainloop()  # 程序运行
-=======
     app = CopyTool()    # 类的实例化
     app.mainloop()      # 程序运行
     logging.info('-----程序运行结束-----')
->>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e

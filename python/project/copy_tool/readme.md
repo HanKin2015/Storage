@@ -1,4 +1,4 @@
-**简体中文 | [English](./readme_en.md)**<br>
+**简体中文 | [English](./README_EN.md)**<br>
 # 拷贝工具
 - 使用ftp服务器，使用可视化界面，实现内网和外网进行文字和文件拷贝。
 - 纯python开发(tkinter模块)
