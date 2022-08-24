@@ -18,42 +18,56 @@ class MyFTP():
         2.创建远程工作目录
         '''
         
-        logging.info('-----程序开始运行-----')
-        logging.info('初始化建立ftp连接')
+        logger.info('-----程序开始运行-----')
+        logger.info('初始化建立ftp连接')
         ret = self.ftp_connect()
         if ret:
-            self.add_dir(remote_dir_path)
+            logger.info('建立ftp连接成功')
+            self.make_dir(remote_dir_path)
+        else:
+            logger.error('建立ftp连接失败')
 
-    def add_dir(self, dir_path):
-        self.ftp.mkd(dir_path)
-
-    def delete_dir(self, dir_path):
-        '''
-        '''
+    def make_dir(self, dir_path):
+        """创建文件夹
+        """
+        #logging.debug(self.ftp.pwd())
+        #logging.debug(self.ftp.dir())
+        #logging.debug(self.ftp.getwelcome())
+        logger.debug('dir_path: {}'.format(dir_path))
+        try:
+            self.ftp.mkd(dir_path)
+            logger.info('创建文件夹[{}]成功'.format(dir_path))
+        except Exception as err:
+            logger.error('创建文件夹[{}]失败, error={}'.format(dir_path, str(err)))
+        
+    def remove_dir(self, dir_path):
+        """删除文件夹
+        """
+        logger.debug('dir_path: {}'.format(dir_path))
         dir_res_details = []
         try:
             self.ftp.cwd(dir_path)
         except Exception as err:
-            logging.error('进入ftp目录失败, error={}'.format(str(err)))
+            logger.error('进入ftp目录失败, error={}'.format(str(err)))
         self.ftp.dir('.', dir_res_details.append)  # 对当前目录进行dir()，将结果放入列表
         for elem in dir_res_details:
             print('elem = {}'.format(elem))
             if '<DIR>' in elem:
                 dir_name = elem.split(' ')[-1]
-                logging.info('开始删除{}文件夹'.format(dir_name))
+                logger.info('开始删除{}文件夹'.format(dir_name))
                 
-                self.delete_dir(self.ftp.pwd() + '/' + dir_name)
+                self.remove_dir(self.ftp.pwd() + '/' + dir_name)
                 self.ftp.cwd('..')
                 if dir_path[-1] == '/':
                     dir_path = dir_path[:-1]
-                logging.info('删除空文件夹{}'.format(dir_path+'/'+dir_name))
+                logger.info('删除空文件夹{}'.format(dir_path+'/'+dir_name))
                 try:
                     self.ftp.rmd(dir_name)
                 except ftplib.error_perm as err:
-                    logging.error('删除文件夹失败, error={}'.format(err))
+                    logger.error('删除文件夹失败, error={}'.format(err))
             else:
                 file_name = elem.split(' ')[-1]
-                logging.info('删除FTP目录{}下存在的文件:{}'.format(dir_path, file_name))
+                logger.info('删除FTP目录{}下存在的文件:{}'.format(dir_path, file_name))
                 self.ftp.delete(file_name)
 
     def ftp_connect(self):
@@ -80,9 +94,10 @@ class MyFTP():
             self.ftp.login(ftp_username, ftp_password)
             self.ftp.encoding = 'gbk'
         except Exception as ex:
-            logging.error('登录ftp服务器({})失败, error={}'.format(ftp_ip, ex))
+            logger.error('登录ftp服务器({})失败, error={}'.format(ftp_ip, ex))
             messagebox.showinfo('警告', '建立ftp连接失败', icon='question')
             return False
+        logger.info('登录ftp服务器({})成功'.format(ftp_ip))
         return True
         
     def download_file(self, local_file_path, remote_file_path):
@@ -100,23 +115,23 @@ class MyFTP():
             成功返回True,失败False
             '''
 
-        logging.info('正在下载文件{}到{}'.format(remote_file_path, local_file_path))
+        logger.info('正在下载文件{}到{}'.format(remote_file_path, local_file_path))
         bufsize = 1024
         fp = open(local_file_path, 'wb')
         try:
             self.ftp.retrbinary('RETR ' + remote_file_path, fp.write, bufsize)
         except Exception as err:
-            logging.warning(err)
-            self.ftp_connect()
-            self.ftp.retrbinary('RETR ' + remote_file_path, fp.write, bufsize)
-        self.ftp.set_debuglevel(0)
+            logger.error('下载文件[{}]失败, err={}'.format(remote_file_path, err))
+            return False
+        #self.ftp.set_debuglevel(0)
         fp.close()
+        return True
 
     def download_dir(self, download_path, remote_dir_path):
         try:
             self.ftp.cwd(remote_dir_path)
         except Exception as err:
-            logging.warning(err)
+            logger.warning(err)
             self.ftp_connect()
             self.ftp.cwd(remote_dir_path)
         files = self.ftp.nlst()
@@ -149,21 +164,21 @@ class MyFTP():
             成功返回True,失败False
             '''
 
-        logging.info('正在上传文件{}到{}'.format(local_file_path, remote_file_path))
+        logger.info('正在上传文件{}到{}'.format(local_file_path, remote_file_path))
         bufsize = 1024
         fp = open(local_file_path, 'rb')
         try:
             self.ftp.storbinary('STOR ' + remote_file_path, fp, bufsize)
         except Exception as err:
-            logging.error('上传文件失败, err={}'.format(err))
+            logger.error('上传文件失败, err={}'.format(err))
             self.ftp_connect()
             self.ftp.storbinary('STOR ' + remote_file_path, fp, bufsize)
         self.ftp.set_debuglevel(0)
         fp.close()
 
     def ftp_disconnect(self):
-        logging.info('断开ftp连接')
+        logger.info('断开ftp连接')
         try:
             self.ftp.quit()
         except Exception as err:
-            logging.error('断开ftp连接失败, error={}'.format(err))
+            logger.error('断开ftp连接失败, error={}'.format(err))

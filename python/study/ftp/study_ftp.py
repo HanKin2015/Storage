@@ -5,6 +5,7 @@ Created on Tue Aug 11 13:32:40 2020
 @author: hankin
 
 https://www.cnblogs.com/z3286586/p/11014468.html
+https://blog.csdn.net/ouyang_peng/article/details/79271113
 """
 
 import ftplib

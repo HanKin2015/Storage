@@ -277,7 +277,7 @@ if __name__ == '__main__':
     print('history_data.shape: {}.'.format(history_data.shape))
     
     # 彩票号码
-    lottery_numbers = ['32 11 15 12 31 29 07', '2 1 6 14 9 27 09', '22 14 6 27 20 18 12', '01 06 14 20 22 26 07']
+    lottery_numbers = ['4 11 19 24 28 33 12', '2 1 6 14 9 27 09', '22 14 6 27 20 18 12', '01 06 14 20 22 26 07']
     
     # 查询是否中奖
     for lottery_number in lottery_numbers:

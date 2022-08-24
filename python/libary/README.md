@@ -28,3 +28,12 @@ visualized_window.py
 
 # 5、文件读写
 write_read_file.py
+
+# 6、引入自定义的库方法
+```
+# 增加libary库的搜索路径
+sys.path.append('../../../libary/')
+# 导入自定义的Entry库
+from entrywithplaceholder import EntryWithPlaceholder
+```
+

@@ -420,7 +420,7 @@ class CopyTool(tkinter.Tk):
 
     def delete_remote_dir(self):
         # 做一下内容清理，防止磁盘爆满以及下载的不方便
-        self.my_ftp.delete_dir(remote_dir_path)
+        self.my_ftp.remove_dir(remote_dir_path)
         win32api.MessageBox(0, '清除完毕', '清空文件夹提醒', win32con.MB_OK)
 
     def send_assign_file(self):
@@ -517,7 +517,12 @@ class CopyTool(tkinter.Tk):
 
         file_path = work_path + temp_file_name
         # print(file_path)
-        self.my_ftp.download_file(file_path, remote_dir_path+temp_file_name)
+        ret = self.my_ftp.download_file(file_path, remote_dir_path+temp_file_name)
+        logger.debug('ret = {}'.format(ret))
+        if not ret:
+            win32api.MessageBox(0, '接收失败', '接收内容提醒', win32con.MB_OK)
+            return
+        
         logger.info('正在读取{}'.format(file_path))
         content_list = []
 

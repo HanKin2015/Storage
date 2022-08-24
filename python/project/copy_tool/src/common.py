@@ -25,10 +25,6 @@ import logging
 import sys
 import configparser
 from log import *
-
-# 增加libary库的搜索路径
-sys.path.append('../../../libary/')
-# 导入自定义的Entry库
 from entrywithplaceholder import EntryWithPlaceholder
 
 # 软件名称
@@ -44,7 +40,7 @@ log_path = 'D:/copy_tool/copy_tool.log'
 temp_file_name = 'copy_words.txt'
 
 # 云端指定中转站文件夹路径
-remote_dir_path = '/01-个人目录/hj/copy_tool/'
+remote_dir_path = '/copy/'
 
 # 文件下载路径
 download_path = 'D:/copy_tool/download/'
