@@ -11,114 +11,23 @@ Copyright (c) 2022 HanKin. All rights reserved.
 
 import time
 import sys
-import math
-
-def is_sqr(x):
-    return math.sqrt(x) % 1 == 0
-
-def is_odd(n):
-    return n % 2 == 1
-    
-def filter_example():
-    print('-------- {}[{}] --------'.format(sys._getframe().f_code.co_name, sys._getframe().f_lineno))
-
-    tmplist = filter(is_odd, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-    newlist = list(tmplist)
-    print('过滤出列表中的所有奇数: {}'.format(newlist))
-    
-    tmplist = filter(is_sqr, range(1, 101))
-    newlist = list(tmplist)
-    print('过滤出1~100中平方根是整数的数: {}'.format(newlist))
-
-def square(x) :            # 计算平方数
-    return x ** 2
-
-def format_name(s):
-    ss=s[0:1].upper()+s[1:].lower();
-    return ss;
-    
-def map_example():
-    print('-------- {}[{}] --------'.format(sys._getframe().f_code.co_name, sys._getframe().f_lineno))
-    
-    print(list(map(square, [1,2,3,4,5])))   # 计算列表各个元素的平方
-    print(list(map(lambda x: x ** 2, [1, 2, 3, 4, 5])))  # 使用 lambda 匿名函数
-    # 提供了两个列表，对相同位置的列表数据进行相加
-    print(list(map(lambda x, y: x + y, [1, 3, 5, 7, 9], [2, 4, 6, 8, 10])))
-
-    # 只执行了 4 个元素的的计算
-    listx = [1, 2, 3, 4, 5, 6, 7]       # 7 个元素
-    listy = [2, 3, 4, 5, 6, 7]         # 6 个元素 
-    listz = [100, 100, 100, 100]     # 4 个元素
-    list_result = map(lambda x,y,z : x**2 + y + z, listx, listy, listz)
-    print(list(list_result))
-    
-    name_list = {'tony', 'cHarLIE', 'rachAEl'}
-    print(list(map(format_name, name_list)))
-    print(type(name_list))
-
-    res1 = map(lambda n: n > 5, range(10))
-    lt1 = list(res1)
-    print(lt1)
-    res2 = filter(lambda n: n > 5, range(10))
-    lt = list(res2)
-    print(lt) 
-
-def zip_example():
-    print('-------- {}[{}] --------'.format(sys._getframe().f_code.co_name, sys._getframe().f_lineno))
-    
-    a = [1,2,3]
-    b = [4,5,6]
-    c = [4,5,6,7,8]
-    zipped = zip(a,b)     # 返回一个对象
-    print(zipped)
-    #print(list(zipped))   # list() 转换为列表
-    print(zipped, type(zipped))
-    print(list(zip(a,c)))          # 元素个数与最短的列表一致
-    time.sleep(1)
-    a1, a2 = zip(*zipped)          # 与 zip 相反，zip(*) 可理解为解压，返回二维矩阵式
-    a1, a2 = zip(*zip(a,b))
-    print(type(zip(a,b)))
-    print(type(zipped))
-    print(list(a1))
-    print(list(a2))
-    print(type(a1))
-
-import random
-def zip_in_ml():
-    """
-    机器学习模型训练中，经常需要打乱数据集，用 zip() 函数可以实现
-    """
-    
-    X = [1, 2, 3, 4, 5, 6]
-    y = [0, 1, 0, 0, 1, 1]
-    zipped_data = list(zip(X, y))  
-    # 将样本和标签一 一对应组合起来,并转换成list类型方便后续打乱操作
-
-    random.shuffle(zipped_data)  
-    # 使用random模块中的shuffle函数打乱列表，原地操作，没有返回值
-
-    new_zipped_data = list(map(list, zip(*zipped_data)))  
-    # zip(*)反向解压，map()逐项转换类型，list()做最后转换
-
-    new_X, new_y = new_zipped_data[0], new_zipped_data[1]  
-    # 返回打乱后的新数据
-
-    print('X:',X,'\n','y:',y)
-    print('new_X:',new_X, '\n', 'new_y:',new_y)
 
 def test1():
     """
-    用列表每个元素平方值构建另一份列表
+    列表推导（list commprehension）：根据一份列表来制作另外一份列表
     """
     
     print('-------- {}[{}] --------'.format(sys._getframe().f_code.co_name, sys._getframe().f_lineno))
     
+    # 用列表每个元素平方值构建另一份列表
     a = [1, 2, 3, 4, 5, 6, 7, 8]
     
     # 列表推导写法
     squares = [x ** 2 for x in a]
+    print(squares)
     # map写法
     squares = map(lambda x: x ** 2, a)
+    print(list(squares))
 
     # 条件输出
     # 列表推导输出偶数
@@ -126,15 +35,70 @@ def test1():
     print(squares)
     
     # map辅以filter输出偶数
-    squares = map(lambda x: x, filter(lambda x: x % 2 == 0, a))
-    print(squares)
-    print(list(squares))
+    even = map(lambda x: x, filter(lambda x: x % 2 == 0, a))
+    print(even)
+    print(list(even))
+    even = filter(lambda x: x % 2 == 0, a)
+    print(list(even))
+    even = map(lambda x: x % 2 == 0, a)
+    print(list(even))
+
+def test2():
+    """
+    字典与集也有类似的推导机制，编写算法时，可以通过这些推导机制来创建衍生的数据结构。
+    """
     
+    chile_ranks = {'ghost': 1, 'god': 2, 'man': 3}
+    rank_dict = {rank: name for name,rank in chile_ranks.items()}
+    chile_len_set = {len(name) for name in rank_dict.values()}
+    print(type(chile_ranks), chile_ranks.items())
+    print(type(rank_dict), rank_dict.values())
+    print(rank_dict)
+    print(chile_len_set)
+
+    #元组与dict互转
+    #tuple = dict.items()
+    #dict = tuple.values
+    print(type(chile_ranks.items()))
+    print(type(rank_dict.values()))
+
+def test3():
+    """
+    zip可以将两个或者多个迭代器封装成一个生成器
+    场景说明：需要平行对两个列表进行操作时
+    """
+
+    names = ['alice', 'bob', 'cendy']
+    letters = [len(n) for n in names]
+
+    longest_name = None
+    max_letters = 0
+
+    for name, count in zip(names, letters):
+        if count > max_letters:
+            longest_name = name
+            max_letters = count
+    print(longest_name)
+
+def test4():
+    """
+    尽量用enumerate取代range
+    """
+
+    list = [5, 4, 7, 8, 9]
+    # range写法
+    for i in range(len(list)):
+        value = list[i]
+        index = i
+    # enumerate写法
+    for i, value in enumerate(list):
+        print('%d: %s' % (i + 1, value))
+
 def main():
     test1()
-    filter_example()
-    map_example()
-    zip_example()
+    test2()
+    test3()
+    test4()
 
 if __name__ == '__main__':
     #os.system('chcp 936 & cls')
