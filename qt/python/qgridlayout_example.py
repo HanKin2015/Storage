@@ -1,0 +1,45 @@
+# -*- coding: utf-8 -*-
+"""
+文 件 名: qgridlayout_example.py
+文件描述: 栅格布局
+作    者: HanKin
+创建日期: 2022.09.05
+修改日期：2022.09.05
+
+Copyright (c) 2022 HanKin. All rights reserved.
+"""
+
+import sys
+from PyQt5.QtWidgets import (QWidget, QGridLayout, QPushButton, QApplication)
+
+class Example(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        grid = QGridLayout()
+        self.setLayout(grid)
+
+        names = ['Cls', 'Bck', '', 'Close',
+                 '7', '8', '9', '/',
+                '4', '5', '6', '*',
+                 '1', '2', '3', '-',
+                '0', '.', '=', '+']
+
+        positions = [(i,j) for i in range(5) for j in range(4)]
+
+        for position, name in zip(positions, names):
+            if name == '':
+                continue
+            button = QPushButton(name)
+            grid.addWidget(button, *position)
+
+        self.move(300, 150)
+        self.setWindowTitle('Calculator')
+        self.show()
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = Example()
+    sys.exit(app.exec_())
