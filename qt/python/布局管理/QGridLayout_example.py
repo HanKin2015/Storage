@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: qgridlayout_example.py
+文 件 名: QGridLayout_example.py
 文件描述: 栅格布局
 作    者: HanKin
 创建日期: 2022.09.05

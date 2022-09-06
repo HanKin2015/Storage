@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: qhboxlayout_qvboxlayout_example.py
+文 件 名: QHBoxLayout_QVBoxLayoutt_example.py
 文件描述: 盒布局QHBoxLayout和QVBoxLayout是基本的布局类，分别是水平布局和垂直布局，弹性布局增加一点间隙
 作    者: HanKin
 创建日期: 2022.09.05
