@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: qmainwindow_example.py
+文 件 名: QMainWindow_example.py
 文件描述: 主窗口
 作    者: HanKin
 创建日期: 2022.09.05
