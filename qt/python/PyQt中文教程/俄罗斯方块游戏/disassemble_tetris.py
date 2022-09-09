@@ -13,6 +13,7 @@ from PyQt5.QtWidgets import QMainWindow, QFrame, QDesktopWidget, QApplication
 from PyQt5.QtCore import Qt, QBasicTimer, pyqtSignal
 from PyQt5.QtGui import QPainter, QColor, QIcon
 import sys, random
+from log import logger
 
 class Tetris(QMainWindow):
     '''游戏主体类'''
@@ -22,15 +23,20 @@ class Tetris(QMainWindow):
         self.initUI()
 
     def initUI(self):
-        self.tboard = Board(self)   # 创建了一个Board类的实例，并设置为应用的中心组件
-        self.setCentralWidget(self.tboard)
+        self.tboard = Board(self)           # 创建了一个Board类的实例，并设置为应用的中心组件
+        self.setCentralWidget(self.tboard)  # 这个引起了两次paintEvent事件
 
         self.statusbar = self.statusBar()   # 创建一个statusbar来显示三种信息：消除的行数，游戏暂停状态或者游戏结束状态
         self.tboard.msg2Statusbar[str].connect(self.statusbar.showMessage)  # msg2Statusbar是一个自定义的信号，用在（和）Board类（交互）
+        print(self.statusbar.contentsRect())
+        print(self.statusbar.height(), self.statusbar.width())
+        print(self.statusbar.size())
+        self.statusbar.setStyleSheet('border-width: 0px;border-style: solid;border-color: rgb(255, 170, 0);background-color: rgb(200, 149, 237);')
+        
 
         self.tboard.start()
 
-        self.resize(200, 400)
+        self.resize(200, 418)
         self.center()
         self.setWindowTitle('俄罗斯方块')
         self.setWindowIcon(QIcon('../icon/tencent.ico'))
@@ -43,6 +49,9 @@ class Tetris(QMainWindow):
         size = self.geometry()                      # 程序的大小
         print('screen resolution: {}x{}, application size: {}x{}'.format(screen.width(), screen.height(), size.width(), size.height()))
         self.move((screen.width()-size.width())/2, (screen.height()-size.height())/2)
+
+    #def paintEvent(self, event):
+    #    print('here is statusbar real size:', self.statusbar.contentsRect())
 
 class Board(QFrame):
     '''画板类，即整个画布，整个方块填满的状态'''
@@ -58,10 +67,10 @@ class Board(QFrame):
 
     def start(self):
         '''starts game'''
-        print(len(self.board))
-        if self.isPaused:
-            return
 
+        if self.isPaused:
+            logger.info('游戏已暂停')
+            return
         self.isStarted = True
         #self.isWaitingAfterLine = False
         self.numLinesRemoved = 0
@@ -78,23 +87,18 @@ class Board(QFrame):
         self.curY = 0
         self.numLinesRemoved = 0    # 分数，即消灭的行数
         self.board = []             # self.board定义了方块的形状和位置，取值范围是0-7
-
+        
         self.setFocusPolicy(Qt.StrongFocus)
         
         self.setFrameShape(QFrame.Box)      # 给组件添加边框
         self.setFrameShadow(QFrame.Raised)
         self.setStyleSheet('border-width: 0px;border-style: solid;border-color: rgb(255, 170, 0);background-color: rgb(100, 149, 237);')
         #self.move(30, 30)
-        
+
         self.isStarted = False
         self.isPaused = False
         #self.clearBoard()
-        
-    def squareHeight(self):
-        '''returns the height of one square'''
-
-        return self.contentsRect().height() // Board.BoardHeight
-    
+   
     def clearBoard(self):
         '''清除画布上面所有方块，即重启游戏'''
 
@@ -107,58 +111,67 @@ class Board(QFrame):
         return self.board[(y * Board.BoardWidth) + x]
 
     def squareWidth(self):
-        '''returns the width of one square'''
+        '''计算方块的宽度'''
 
         return self.contentsRect().width() // Board.BoardWidth
 
     def squareHeight(self):
-        '''returns the height of one square'''
+        '''计算方块的高度'''
 
         return self.contentsRect().height() // Board.BoardHeight
         
     def drawSquare(self, painter, x, y, shape):
-        '''draws a square of a shape'''        
+        '''画方块'''        
 
         colorTable = [0x000000, 0xCC6666, 0x66CC66, 0x6666CC,
                       0xCCCC66, 0xCC66CC, 0x66CCCC, 0xDAAA00]
         color = QColor(colorTable[shape])   # 填充颜色
-        painter.fillRect(x + 1, y + 1, self.squareWidth() - 2, 
-            self.squareHeight() - 2, color)
-
+        painter.fillRect(x+1, y+1, self.squareWidth()-2, self.squareHeight()-2, color)
+        print(x+1, y+1, self.squareWidth()-2, self.squareHeight()-2)
+        y -= 15
         painter.setPen(color.lighter())
-        painter.drawLine(x, y + self.squareHeight() - 1, x, y)
-        painter.drawLine(x, y, x + self.squareWidth() - 1, y)
+        painter.drawLine(x, y, x, y+self.squareHeight()-1)  # 画竖线，减一是为了下面的有横线补充，参数为两个点的位置
+        painter.drawLine(x, y, x+self.squareWidth()-1, y)   # 画横线，减一是为了右边的有横线补充，参数为两个点的位置
         painter.setPen(color.darker())
-        painter.drawLine(x + 1, y + self.squareHeight() - 1,
-            x + self.squareWidth() - 1, y + self.squareHeight() - 1)
-        painter.drawLine(x + self.squareWidth() - 1, 
-            y + self.squareHeight() - 1, x + self.squareWidth() - 1, y + 1)
+        #painter.drawLine(x + 1, y + self.squareHeight() - 1,
+        #    x + self.squareWidth() - 1, y + self.squareHeight() - 1)
+        #painter.drawLine(x + self.squareWidth() - 1, 
+        #    y + self.squareHeight() - 1, x + self.squareWidth() - 1, y + 1)
 
     def paintEvent(self, event):
         '''画图'''
 
+        logger.info('-------- {}[{}] --------'.format(sys._getframe().f_code.co_name, sys._getframe().f_lineno))
         painter = QPainter(self)
+        #print(help(painter.drawLine))
         rect = self.contentsRect()  # 还是不怎么理解
+
         print(rect)
+        
         print('board size: {}x{}'.format(Board.BoardWidth, Board.BoardHeight))
         print(rect.bottom(), rect.top(), rect.left(), rect.right(), rect.height(), rect.width())
         
-        boardTop = rect.bottom() - Board.BoardHeight * self.squareHeight()
-        print('boardTop: {} {}'.format(boardTop, self.squareHeight()))
+        boardTop = rect.bottom() - Board.BoardHeight*self.squareHeight()
+        print('{}-{}*{}=boardTop: {}'.format(rect.bottom(), Board.BoardHeight, self.squareHeight(), boardTop))
         
         print('piece count: {}'.format(len(self.board)))
+        
+        print(self.contentsRect().height(), Board.BoardHeight)
+        print('piece size: {}x{}'.format(self.squareWidth(), self.squareHeight()))
+        
+        
         #print(help(self.drawSquare))
         for i in range(Board.BoardHeight):      # 画1x1的方块，即整个画布，先画横向，即一行一行的画
             for j in range(Board.BoardWidth):
                 #print(j, Board.BoardHeight - i - 1)
                 shape = self.shapeAt(j, Board.BoardHeight - i - 1)
                 if shape != Tetrominoe.NoShape:
-                    self.drawSquare(painter,
-                        rect.left() + j * self.squareWidth(),
-                        boardTop + i * self.squareHeight(), shape)
-                #if i % 2 == 0:
-                #    self.drawSquare(painter, rect.left()+j*self.squareWidth(), boardTop + i * self.squareHeight(), i%8)
-                self.drawSquare(painter, rect.left()+j*self.squareWidth(), boardTop + i * self.squareHeight(), i%7+1)
+                    self.drawSquare(painter, rect.left()+j*self.squareWidth(), boardTop+i*self.squareHeight(), shape)
+                if i == 0:
+                    self.drawSquare(painter, rect.left()+j*self.squareWidth(), boardTop+i*self.squareHeight(), i%7+1)
+                #self.drawSquare(painter, rect.left()+j*self.squareWidth(), boardTop + i * self.squareHeight(), i%7+1)
+
+        
         """
         if self.curPiece.shape() != Tetrominoe.NoShape:
             for i in range(4):

@@ -27,6 +27,7 @@ class Example(QWidget):
         self.show()
 
     def paintEvent(self, event):
+        print(1111111111)
         qp = QPainter()
         qp.begin(self)
         self.drawText(event, qp)
