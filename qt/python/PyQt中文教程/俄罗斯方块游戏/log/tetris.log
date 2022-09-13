@@ -1,0 +1,143 @@
+2022-09-13 09:17:14 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:17:14 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:17:57 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:17:57 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:21:49 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:21:49 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:23:23 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:23:23 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:24:32 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:24:32 disassemble_tetris.py[paintEvent:149] INFO: PyQt5.QtCore.QRect(0, 0, 200, 404)
+2022-09-13 09:24:32 disassemble_tetris.py[paintEvent:151] INFO: board size: 10x20
+2022-09-13 09:24:33 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:24:33 disassemble_tetris.py[paintEvent:149] INFO: PyQt5.QtCore.QRect(0, 0, 200, 400)
+2022-09-13 09:24:33 disassemble_tetris.py[paintEvent:151] INFO: board size: 10x20
+2022-09-13 09:25:42 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:25:42 disassemble_tetris.py[paintEvent:149] INFO: PyQt5.QtCore.QRect(0, 0, 200, 404)
+2022-09-13 09:25:42 disassemble_tetris.py[paintEvent:150] INFO: 画布背景的方块个数: 10x20
+2022-09-13 09:25:42 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:25:42 disassemble_tetris.py[paintEvent:149] INFO: PyQt5.QtCore.QRect(0, 0, 200, 400)
+2022-09-13 09:25:42 disassemble_tetris.py[paintEvent:150] INFO: 画布背景的方块个数: 10x20
+2022-09-13 09:26:01 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:26:01 disassemble_tetris.py[paintEvent:149] INFO: PyQt5.QtCore.QRect(0, 0, 200, 400)
+2022-09-13 09:26:01 disassemble_tetris.py[paintEvent:150] INFO: 画布背景的方块个数: 10x20
+2022-09-13 09:26:01 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:26:01 disassemble_tetris.py[paintEvent:149] INFO: PyQt5.QtCore.QRect(0, 0, 200, 400)
+2022-09-13 09:26:01 disassemble_tetris.py[paintEvent:150] INFO: 画布背景的方块个数: 10x20
+2022-09-13 09:30:21 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:30:21 disassemble_tetris.py[paintEvent:149] INFO: PyQt5.QtCore.QRect(0, 0, 200, 400)
+2022-09-13 09:30:21 disassemble_tetris.py[paintEvent:150] INFO: 画布背景的方块个数: 10x20
+2022-09-13 09:30:21 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:30:21 disassemble_tetris.py[paintEvent:149] INFO: PyQt5.QtCore.QRect(0, 0, 200, 400)
+2022-09-13 09:30:21 disassemble_tetris.py[paintEvent:150] INFO: 画布背景的方块个数: 10x20
+2022-09-13 09:30:29 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:30:29 disassemble_tetris.py[paintEvent:149] INFO: PyQt5.QtCore.QRect(0, 0, 200, 400)
+2022-09-13 09:30:29 disassemble_tetris.py[paintEvent:150] INFO: 画布背景的方块个数: 10x20
+2022-09-13 09:30:29 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:30:29 disassemble_tetris.py[paintEvent:149] INFO: PyQt5.QtCore.QRect(0, 0, 200, 400)
+2022-09-13 09:30:29 disassemble_tetris.py[paintEvent:150] INFO: 画布背景的方块个数: 10x20
+2022-09-13 09:30:30 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:30:30 disassemble_tetris.py[paintEvent:149] INFO: PyQt5.QtCore.QRect(0, 0, 200, 400)
+2022-09-13 09:30:30 disassemble_tetris.py[paintEvent:150] INFO: 画布背景的方块个数: 10x20
+2022-09-13 09:30:30 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:30:30 disassemble_tetris.py[paintEvent:149] INFO: PyQt5.QtCore.QRect(0, 0, 200, 400)
+2022-09-13 09:30:30 disassemble_tetris.py[paintEvent:150] INFO: 画布背景的方块个数: 10x20
+2022-09-13 09:30:31 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:30:31 disassemble_tetris.py[paintEvent:149] INFO: PyQt5.QtCore.QRect(0, 0, 200, 400)
+2022-09-13 09:30:31 disassemble_tetris.py[paintEvent:150] INFO: 画布背景的方块个数: 10x20
+2022-09-13 09:30:31 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:30:31 disassemble_tetris.py[paintEvent:149] INFO: PyQt5.QtCore.QRect(0, 0, 200, 400)
+2022-09-13 09:30:31 disassemble_tetris.py[paintEvent:150] INFO: 画布背景的方块个数: 10x20
+2022-09-13 09:31:00 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:31:00 disassemble_tetris.py[paintEvent:149] INFO: PyQt5.QtCore.QRect(0, 0, 200, 400)
+2022-09-13 09:31:00 disassemble_tetris.py[paintEvent:150] INFO: 画布背景的方块个数: 10x20
+2022-09-13 09:31:00 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:31:00 disassemble_tetris.py[paintEvent:149] INFO: PyQt5.QtCore.QRect(0, 0, 200, 400)
+2022-09-13 09:31:00 disassemble_tetris.py[paintEvent:150] INFO: 画布背景的方块个数: 10x20
+2022-09-13 09:31:26 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:31:26 disassemble_tetris.py[paintEvent:149] INFO: PyQt5.QtCore.QRect(0, 0, 200, 400)
+2022-09-13 09:31:26 disassemble_tetris.py[paintEvent:150] INFO: 画布背景的方块个数: 10x20
+2022-09-13 09:31:26 disassemble_tetris.py[paintEvent:144] INFO: -------- paintEvent[144] --------
+2022-09-13 09:31:26 disassemble_tetris.py[paintEvent:149] INFO: PyQt5.QtCore.QRect(0, 0, 200, 400)
+2022-09-13 09:31:26 disassemble_tetris.py[paintEvent:150] INFO: 画布背景的方块个数: 10x20
+2022-09-13 19:20:19 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (2, 0), 2
+2022-09-13 19:20:19 disassemble_tetris.py[setRandomShape:386] INFO: 随机数为: 4
+2022-09-13 19:20:19 disassemble_tetris.py[newPiece:180] INFO: 随机方块第一次出现的位置: (4, 19)
+2022-09-13 19:20:24 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (7, 1), 17
+2022-09-13 19:20:24 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (8, 1), 18
+2022-09-13 19:20:24 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (9, 1), 19
+2022-09-13 19:20:24 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (8, 0), 8
+2022-09-13 19:20:24 disassemble_tetris.py[setRandomShape:386] INFO: 随机数为: 4
+2022-09-13 19:20:24 disassemble_tetris.py[newPiece:180] INFO: 随机方块第一次出现的位置: (4, 19)
+2022-09-13 19:20:27 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (3, 2), 23
+2022-09-13 19:20:27 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 2), 24
+2022-09-13 19:20:27 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (5, 2), 25
+2022-09-13 19:20:27 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 1), 14
+2022-09-13 19:20:27 disassemble_tetris.py[setRandomShape:386] INFO: 随机数为: 4
+2022-09-13 19:20:27 disassemble_tetris.py[newPiece:180] INFO: 随机方块第一次出现的位置: (4, 19)
+2022-09-13 19:20:28 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (3, 4), 43
+2022-09-13 19:20:28 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 4), 44
+2022-09-13 19:20:28 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (5, 4), 45
+2022-09-13 19:20:28 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 3), 34
+2022-09-13 19:20:28 disassemble_tetris.py[setRandomShape:386] INFO: 随机数为: 4
+2022-09-13 19:20:28 disassemble_tetris.py[newPiece:180] INFO: 随机方块第一次出现的位置: (4, 19)
+2022-09-13 19:20:28 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (3, 6), 63
+2022-09-13 19:20:28 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 6), 64
+2022-09-13 19:20:28 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (5, 6), 65
+2022-09-13 19:20:28 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 5), 54
+2022-09-13 19:20:28 disassemble_tetris.py[setRandomShape:386] INFO: 随机数为: 4
+2022-09-13 19:20:28 disassemble_tetris.py[newPiece:180] INFO: 随机方块第一次出现的位置: (4, 19)
+2022-09-13 19:20:30 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (7, 3), 37
+2022-09-13 19:20:30 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (8, 3), 38
+2022-09-13 19:20:30 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (9, 3), 39
+2022-09-13 19:20:30 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (8, 2), 28
+2022-09-13 19:20:30 disassemble_tetris.py[setRandomShape:386] INFO: 随机数为: 4
+2022-09-13 19:20:30 disassemble_tetris.py[newPiece:180] INFO: 随机方块第一次出现的位置: (4, 19)
+2022-09-13 19:20:30 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (3, 8), 83
+2022-09-13 19:20:30 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 8), 84
+2022-09-13 19:20:30 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (5, 8), 85
+2022-09-13 19:20:30 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 7), 74
+2022-09-13 19:20:30 disassemble_tetris.py[setRandomShape:386] INFO: 随机数为: 4
+2022-09-13 19:20:30 disassemble_tetris.py[newPiece:180] INFO: 随机方块第一次出现的位置: (4, 19)
+2022-09-13 19:20:31 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (3, 10), 103
+2022-09-13 19:20:31 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 10), 104
+2022-09-13 19:20:31 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (5, 10), 105
+2022-09-13 19:20:31 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 9), 94
+2022-09-13 19:20:31 disassemble_tetris.py[setRandomShape:386] INFO: 随机数为: 4
+2022-09-13 19:20:31 disassemble_tetris.py[newPiece:180] INFO: 随机方块第一次出现的位置: (4, 19)
+2022-09-13 19:20:31 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (3, 12), 123
+2022-09-13 19:20:31 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 12), 124
+2022-09-13 19:20:31 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (5, 12), 125
+2022-09-13 19:20:31 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 11), 114
+2022-09-13 19:20:31 disassemble_tetris.py[setRandomShape:386] INFO: 随机数为: 4
+2022-09-13 19:20:31 disassemble_tetris.py[newPiece:180] INFO: 随机方块第一次出现的位置: (4, 19)
+2022-09-13 19:20:31 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (3, 14), 143
+2022-09-13 19:20:31 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 14), 144
+2022-09-13 19:20:31 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (5, 14), 145
+2022-09-13 19:20:31 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 13), 134
+2022-09-13 19:20:31 disassemble_tetris.py[setRandomShape:386] INFO: 随机数为: 4
+2022-09-13 19:20:31 disassemble_tetris.py[newPiece:180] INFO: 随机方块第一次出现的位置: (4, 19)
+2022-09-13 19:20:31 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (3, 16), 163
+2022-09-13 19:20:31 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 16), 164
+2022-09-13 19:20:31 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (5, 16), 165
+2022-09-13 19:20:31 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 15), 154
+2022-09-13 19:20:31 disassemble_tetris.py[setRandomShape:386] INFO: 随机数为: 4
+2022-09-13 19:20:31 disassemble_tetris.py[newPiece:180] INFO: 随机方块第一次出现的位置: (4, 19)
+2022-09-13 19:20:32 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (3, 18), 183
+2022-09-13 19:20:32 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 18), 184
+2022-09-13 19:20:32 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (5, 18), 185
+2022-09-13 19:20:32 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 17), 174
+2022-09-13 19:20:32 disassemble_tetris.py[setRandomShape:386] INFO: 随机数为: 4
+2022-09-13 19:20:32 disassemble_tetris.py[newPiece:180] INFO: 随机方块第一次出现的位置: (4, 19)
+2022-09-13 19:24:59 disassemble_tetris.py[initUI:31] INFO: PyQt5.QtCore.QRect(0, 0, 100, 30)
+2022-09-13 19:24:59 disassemble_tetris.py[initUI:32] INFO: 状态栏的大小: 100x30
+2022-09-13 19:24:59 disassemble_tetris.py[initUI:33] INFO: PyQt5.QtCore.QSize(100, 30)
+2022-09-13 19:24:59 disassemble_tetris.py[setRandomShape:386] INFO: 随机数为: 4
+2022-09-13 19:24:59 disassemble_tetris.py[newPiece:180] INFO: 随机方块第一次出现的位置: (4, 19)
+2022-09-13 19:24:59 disassemble_tetris.py[center:49] INFO: 屏幕分辨率: 1920x1080, 应用程序大小: 200x422
+2022-09-13 19:25:05 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 0), 4
+2022-09-13 19:25:05 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 1), 14
+2022-09-13 19:25:05 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (4, 2), 24
+2022-09-13 19:25:05 disassemble_tetris.py[pieceDropped:216] INFO: 方块存储在数组中的位置: (5, 1), 15
+2022-09-13 19:25:05 disassemble_tetris.py[setRandomShape:386] INFO: 随机数为: 4
+2022-09-13 19:25:05 disassemble_tetris.py[newPiece:180] INFO: 随机方块第一次出现的位置: (4, 19)
