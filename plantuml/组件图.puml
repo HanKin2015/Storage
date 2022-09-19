@@ -1,0 +1,276 @@
+/''
+' 文 件 名: component_diagram.puml
+' 文件描述: 组件图
+' 作    者: HanKin
+' 创建日期: 2022.09.19
+' 修改日期：2022.09.19
+' 
+' Copyright (c) 2022 HanKin. All rights reserved.
+'/
+
+/'
+组件
+
+中括号或者关键字component，关键字as给组件定义一个别名
+'/
+@startuml
+[First component]
+[Another component] as Comp2
+component Comp3
+component [Last\ncomponent] as Comp4
+@enduml
+
+/'
+接口
+
+使用()来定义或者关键字interface，关键字as定义一个别名
+'/
+@startuml
+() "First Interface"
+() "Another interface" as Interf2
+interface Interf3
+interface "Last\ninterface" as Interf4
+@enduml
+
+/'
+基础的示例
+
+元素之间可以使用虚线(..)、直线(--)、箭头(-->)进行连接
+点和横线的多少决定线的长度
+'/
+@startuml
+DataAccess - [First Component]
+[First Component] ..> HTTP : use
+[First Component] . HJ
+DataAccess --> TEST
+@enduml
+
+/'
+使用注释
+
+使用 note left of , note right of , note top of , note bottom of 等关键字定义相对于对象位置的注释
+'/
+@startuml
+interface "Data Access" as DA
+
+DA - [First Component]
+[First Component] ..> HTTP : use
+
+note left of HTTP : Web Service only
+
+note right of [First Component]
+  A note can also
+  be on several lines
+end note
+@enduml
+
+/'
+组合组件
+
+使用多个关键字将组件和接口组合在一起
+'/
+@startuml
+package "Some Group" {
+  HTTP - [First Component]
+  [Another Component]
+}
+
+node "Other Groups" {
+  FTP - [Second Component]
+  [First Component] --> FTP
+}
+
+cloud {
+  [Example 1]
+}
+
+database "MySql" {
+  folder "This is my folder" {
+    [Folder 3]
+  }
+  frame "Foo" {
+    [Frame 4]
+  }
+}
+
+[Another Component] --> [Example 1]
+[Example 1] --> [Folder 3]
+[Folder 3] --> [Frame 4]
+@enduml
+
+/'
+改变箭头方向
+
+默认情况下，对象之间用--连接，并且连接是竖直的。不过可以使用一个横线或者点设置水平方向的连接
+'/
+@startuml
+[Component] --> Interface1
+[Component] -> Interface2
+@enduml
+
+' 反向连接
+@startuml
+Interface1 <-- [Component]
+Interface2 <- [Component]
+@enduml
+
+/'
+使用关键字left, right, up or down改变箭头方向
+允许使用方向单词的首字母或者前两个字母表示方向(例如-d-, -do-, -down-都是等价的)
+请不要乱用这些功能：Graphviz(PlantUML的后端引擎)不喜欢这个样子
+'/
+@startuml
+[Component] -left-> left
+[Component] -right-> right
+[Component] -up-> up
+[Component] -down-> down
+@enduml
+
+/'
+使用 UML1 标记
+'/
+@startuml
+interface "Data Access" as DA
+
+DA - [First Component]
+[First Component] ..> HTTP : use
+@enduml
+
+/'
+使用UML1标记符
+
+命令skinparam componentStyle uml2 可以切换到UML2标记符
+'/
+@startuml
+skinparam componentStyle uml2
+
+interface "Data Access" as DA
+
+DA - [First Component]
+[First Component] ..> HTTP : use
+@enduml
+
+/'
+Use rectangle notation (remove UML notation)
+'/
+@startuml
+skinparam componentStyle rectangle
+
+interface "Data Access" as DA
+
+DA - [First Component]
+[First Component] ..> HTTP : use
+
+@enduml
+
+/'
+长描述
+
+可以用方括号"[ ]"在连线上添加描述
+'/
+@startuml
+component comp1 [
+This component
+has a long comment
+on several lines
+]
+@enduml
+
+/'
+不同的颜色表示
+'/
+@startuml
+component [Web Server] #Yellow
+@enduml
+
+/'
+在定型组件中使用精灵图（sprite）
+'/
+@startuml
+sprite $businessProcess [16x16/16] {
+FFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFF
+FFFFFFFFFF0FFFFF
+FFFFFFFFFF00FFFF
+FF00000000000FFF
+FF000000000000FF
+FF00000000000FFF
+FFFFFFFFFF00FFFF
+FFFFFFFFFF0FFFFF
+FFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFF
+}
+
+rectangle " End to End\nbusiness process" <<$businessProcess>> {
+  rectangle "inner process 1" <<$businessProcess>> as src
+  rectangle "inner process 2" <<$businessProcess>> as tgt
+  src -> tgt
+}
+@enduml
+
+/'
+显示参数
+
+用skinparam改变字体和颜色。
+可以在如下场景中使用：
+在图示的定义中，
+在引入的文件中，
+在命令行或者ANT任务提供的配置文件中。
+可以为构造类型和接口定义特殊的颜色和字体
+'/
+@startuml
+skinparam interface {
+  backgroundColor RosyBrown
+  borderColor orange
+}
+
+skinparam component {
+  FontSize 13
+  BackgroundColor<<Apache>> Pink
+  BorderColor<<Apache>> #FF6655
+  FontName Courier
+  BorderColor black
+  BackgroundColor gold
+  ArrowFontName Impact
+  ArrowColor #FF6655
+  ArrowFontColor #777777
+}
+
+() "Data Access" as DA
+Component "Web Server" as WS << Apache >>
+
+DA - [First Component]
+[First Component] ..> () HTTP : use
+HTTP - WS
+@enduml
+
+@startuml
+skinparam component {
+    backgroundColor<<static_lib>> DarkKhaki
+    backgroundColor<<shared_lib>> Green
+}
+
+skinparam node {
+borderColor Green
+backgroundColor Yellow
+backgroundColor<<shared_node>> Magenta
+}
+skinparam databaseBackgroundColor Aqua
+
+[AA] <<static_lib>>
+[BB] <<shared_lib>>
+[CC] <<static_lib>>
+
+node node1
+node node2 <<shared node>>
+database Production
+@enduml
+
+/'
+太多例子了，就不一一赘述了，https://plantuml.com/zh/component-diagram
+'/

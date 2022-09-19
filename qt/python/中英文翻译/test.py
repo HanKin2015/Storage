@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
@@ -30,6 +31,6 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "主窗口"))
-        self.pushButton.setText(_translate("MainWindow", "中文"))
-        self.pushButton_2.setText(_translate("MainWindow", "英文"))
-        self.label.setText(_translate("MainWindow", "测试文字"))
+        self.pushButton.setText(_translate("Chinese", "中文"))
+        self.pushButton_2.setText(_translate("English", "英文"))
+        self.label.setText(_translate("TestWord", "测试文字"))

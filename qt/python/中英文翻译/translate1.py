@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from PyQt5 import QtWidgets
 import sys
 from test import Ui_MainWindow
