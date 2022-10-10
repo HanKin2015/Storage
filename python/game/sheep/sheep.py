@@ -1,4 +1,5 @@
 # 代码使用 pygame-zero 框架，看起来与一般代码稍有不同。可参考：https://pygame-zero.readthedocs.io/zh_CN/latest/
+# 凭借简单玩法和不走寻常路的关卡设置，三消小游戏《羊了个羊》，成为《合成大西瓜》《召唤神龙》后的小微游戏新王者。
 
 import pgzrun
 import pygame
