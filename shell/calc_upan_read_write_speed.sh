@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# 文 件 名: calc_upan_rate.sh
+# 文 件 名: calc_upan_read_write_speed.sh
 # 文件描述: 计算U盘读写速率(只考虑一个U盘情况)
 # 备    注: 虽然文件不同,但是dd命令基本上是写入速度高于读取速度,更换成cp命令后读不规则文件则正常
 # 数    据: dd_write=6.13MB/s dd_read=4.16MB/s cp_write=3.32MB/s cp_read=5.74MB/s
@@ -79,11 +79,3 @@ if [ -d ${upan_mount_path} ]
 then
     rm -rf ${upan_mount_path}
 fi
-
-
-
-
-
-
-
-
