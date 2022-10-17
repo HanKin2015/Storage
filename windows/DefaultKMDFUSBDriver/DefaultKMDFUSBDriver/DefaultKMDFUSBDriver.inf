@@ -1,0 +1,102 @@
+;
+; DefaultKMDFUSBDriver.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=USBDevice
+ClassGuid={88BAE032-5A81-49f0-BC3D-A4FF138216D6}
+Provider=%ManufacturerName%
+CatalogFile=DefaultKMDFUSBDriver.cat
+DriverVer=
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+DefaultKMDFUSBDriver.sys  = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NT$ARCH$
+
+[Standard.NT$ARCH$]
+%DefaultKMDFUSBDriver.DeviceDesc%=DefaultKMDFUSBDriver_Device, USB\VID_vvvv&PID_pppp
+
+[DefaultKMDFUSBDriver_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+DefaultKMDFUSBDriver.sys
+
+[DefaultKMDFUSBDriver_Device.NT.HW]
+AddReg=DefaultKMDFUSBDriver_AddReg
+
+[DefaultKMDFUSBDriver_AddReg]
+; By default, USBDevice class uses iProduct descriptor to name the device in
+; Device Manager on Windows 8 and higher.
+; Uncomment for this device to use %DeviceName% on Windows 8 and higher:
+;HKR,,FriendlyName,,%DefaultKMDFUSBDriver.DeviceDesc%
+
+;-------------- Class definition
+
+;[ClassInstall32]
+;AddReg = ClassInstall_AddReg
+
+[ClassInstall_AddReg]
+HKR,,,,%ClassName%
+HKR,,NoInstallClass,,1
+HKR,,IconPath,%REG_MULTI_SZ%,"%%systemroot%%\system32\setupapi.dll,-20"
+HKR,,LowerLogoVersion,,5.2
+
+;-------------- Service installation
+[DefaultKMDFUSBDriver_Device.NT.Services]
+AddService = DefaultKMDFUSBDriver,%SPSVCINST_ASSOCSERVICE%, DefaultKMDFUSBDriver_Service_Inst
+
+; -------------- DefaultKMDFUSBDriver driver install sections
+[DefaultKMDFUSBDriver_Service_Inst]
+DisplayName    = %DefaultKMDFUSBDriver.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\DefaultKMDFUSBDriver.sys
+
+;
+;--- DefaultKMDFUSBDriver_Device Coinstaller installation ------
+;
+
+[DestinationDirs]
+DefaultKMDFUSBDriver_Device_CoInstaller_CopyFiles = 11
+
+[DefaultKMDFUSBDriver_Device.NT.CoInstallers]
+AddReg=DefaultKMDFUSBDriver_Device_CoInstaller_AddReg
+CopyFiles=DefaultKMDFUSBDriver_Device_CoInstaller_CopyFiles
+
+[DefaultKMDFUSBDriver_Device_CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll,WdfCoInstaller"
+
+[DefaultKMDFUSBDriver_Device_CoInstaller_CopyFiles]
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll
+
+[SourceDisksFiles]
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll=1 ; make sure the number matches with SourceDisksNames
+
+[DefaultKMDFUSBDriver_Device.NT.Wdf]
+KmdfService =  DefaultKMDFUSBDriver, DefaultKMDFUSBDriver_wdfsect
+[DefaultKMDFUSBDriver_wdfsect]
+KmdfLibraryVersion = $KMDFVERSION$
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+ClassName="Universal Serial Bus devices"
+DiskName = "DefaultKMDFUSBDriver Installation Disk"
+DefaultKMDFUSBDriver.DeviceDesc = "DefaultKMDFUSBDriver Device"
+DefaultKMDFUSBDriver.SVCDESC = "DefaultKMDFUSBDriver Service"
+REG_MULTI_SZ = 0x00010000

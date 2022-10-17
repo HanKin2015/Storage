@@ -1,0 +1,82 @@
+;
+; KMDFUSBDriver.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=USB
+ClassGuid={36fc9e60-c465-11cf-8056-444553540000}
+Provider=%ManufacturerName%
+CatalogFile=KMDFUSBDriver.cat
+DriverVer=
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+KMDFUSBDriver.sys  = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NT$ARCH$
+
+[Standard.NT$ARCH$]
+%KMDFUSBDriver.DeviceDesc%=KMDFUSBDriver, *PNP0FAKE
+
+[KMDFUSBDriver.NT]
+CopyFiles=KMDFUSBDriver.CopyFiles
+AddReg = KMDFUSBDriver.AddReg
+
+[KMDFUSBDriver.CopyFiles]
+KMDFUSBDriver.sys
+
+[KMDFUSBDriver.AddReg]
+HKLM, System\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000} , UpperFilters, 0x00010008, KMDFUSBDriver
+
+;-------------- Service installation
+[KMDFUSBDriver.NT.Services]
+AddService = KMDFUSBDriver,  , KMDFUSBDriver_Service_Inst, KMDFUSBDriver_EventLog_Inst
+
+; -------------- KMDFUSBDriver driver install sections
+[KMDFUSBDriver_Service_Inst]
+DisplayName    = %KMDFUSBDriver.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 0               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\KMDFUSBDriver.sys
+
+[KMDFUSBDriver_EventLog_Inst]
+AddReg = KMDFUSBDriver_EventLog_AddReg
+ 
+ 
+[KMDFUSBDriver_EventLog_AddReg]
+HKR,,EventMessageFile, %REG_EXPAND_SZ%,"%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\KMDFUSBDriver.sys"
+HKR,,TypesSupported, %REG_DWORD%, 7
+
+
+[Strings]
+;
+; Non-Localizable Strings
+;
+
+REG_SZ         = 0x00000000
+REG_MULTI_SZ   = 0x00010000
+REG_EXPAND_SZ  = 0x00020000
+REG_BINARY     = 0x00000001
+REG_DWORD      = 0x00010001
+
+;
+; Localizable Strings
+;
+
+ManufacturerName="HeJian Technologies Inc" ;TODO: Replace with your manufacturer name
+DiskName = "HeJian KMDFUSBDriver Source Disk"
+KMDFUSBDriver.DeviceDesc = "HeJian KMDFUSBDriver Device"
+KMDFUSBDriver.SVCDESC = "HeJian KMDFUSBDriver Service"
+

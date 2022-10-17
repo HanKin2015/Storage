@@ -1,0 +1,82 @@
+;
+; KMDFUSBFilterDriver.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=USB
+ClassGuid={36fc9e60-c465-11cf-8056-444553540000}
+Provider=%ManufacturerName%
+CatalogFile=KMDFUSBFilterDriver.cat
+DriverVer=
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+KMDFUSBFilterDriver.sys  = 1
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NT$ARCH$
+
+[Standard.NT$ARCH$]
+%KMDFUSBFilterDriver.DeviceDesc%=KMDFUSBFilterDriver, *PNP0FAKE
+
+[KMDFUSBFilterDriver.NT]
+CopyFiles=KMDFUSBFilterDriver.CopyFiles
+AddReg = KMDFUSBFilterDriver.AddReg
+
+[KMDFUSBFilterDriver.CopyFiles]
+KMDFUSBFilterDriver.sys
+
+[KMDFUSBFilterDriver.AddReg]
+HKLM, System\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000} , UpperFilters, 0x00010009, KMDFUSBFilterDriver
+
+;-------------- Service installation
+[KMDFUSBFilterDriver.NT.Services]
+AddService = KMDFUSBFilterDriver,  , KMDFUSBFilterDriver_Service_Inst, KMDFUSBFilterDriver_EventLog_Inst
+
+; -------------- KMDFUSBFilterDriver driver install sections
+[KMDFUSBFilterDriver_Service_Inst]
+DisplayName    = %KMDFUSBFilterDriver.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 0               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\KMDFUSBFilterDriver.sys
+
+[KMDFUSBFilterDriver_EventLog_Inst]
+AddReg = KMDFUSBFilterDriver_EventLog_AddReg
+ 
+ 
+[KMDFUSBFilterDriver_EventLog_AddReg]
+HKR,,EventMessageFile, %REG_EXPAND_SZ%,"%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\KMDFUSBFilterDriver.sys"
+HKR,,TypesSupported, %REG_DWORD%, 7
+
+
+[Strings]
+;
+; Non-Localizable Strings
+;
+
+REG_SZ         = 0x00000000
+REG_MULTI_SZ   = 0x00010000
+REG_EXPAND_SZ  = 0x00020000
+REG_BINARY     = 0x00000001
+REG_DWORD      = 0x00010001
+
+;
+; Localizable Strings
+;
+
+ManufacturerName="HeJian Technologies Inc" ;TODO: Replace with your manufacturer name
+DiskName = "HeJian KMDFUSBFilterDriver Source Disk"
+KMDFUSBFilterDriver.DeviceDesc = "HeJian KMDFUSBFilterDriver Device"
+KMDFUSBFilterDriver.SVCDESC = "HeJian KMDFUSBFilterDriver Service"
+

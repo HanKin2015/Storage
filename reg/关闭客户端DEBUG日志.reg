@@ -1,0 +1,12 @@
+REGEDIT4
+
+# 第一关，日志服务端控制日志是否输出到文件日志%appdata\Hankin\ABC\Log（默认无Log）
+[-HKEY_CURRENT_USER\Software\Hankin\ABC\Log]
+
+# 第二关，客户端模块日志输出控制（默认为2）
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Hankin\ABC]
+"LogLevel"=dword:00000002
+
+# 第三关，libngs模块日志输出控制（默认为1）
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Hankin\ABC\AppClient]
+"AppLogLevel"=dword:00000001

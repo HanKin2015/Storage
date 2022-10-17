@@ -1,4 +1,0 @@
-2021-08-23 17:56:20 [INFO] [20649:20649] [test_log.cpp:9:test_init_log] hello world!
-2021-08-23 17:59:20 [INFO] [2985:2985] [test_log.cpp:9:test_init_log] hello world!
-2021-08-23 17:59:40 [INFO] [4382:4382] [test_log.cpp:9:test_init_log] hello world!
-2021-08-23 17:59:45 [INFO] [4784:4784] [test_log.cpp:9:test_init_log] hello world!

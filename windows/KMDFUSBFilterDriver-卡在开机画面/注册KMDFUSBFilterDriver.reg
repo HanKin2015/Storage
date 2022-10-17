@@ -1,0 +1,25 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\KMDFUSBFilterDriver]
+
+"ImagePath"="system32\\drivers\\KMDFUSBFilterDriver.sys"
+#"ImagePath"=hex(2):73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,64,00,72,00,\
+  69,00,76,00,65,00,72,00,73,00,5c,00,53,00,74,00,75,00,64,00,79,00,4b,00,4d,\
+  00,44,00,46,00,2e,00,73,00,79,00,73,00,00,00
+
+"DisplayName"="TestKMDFUSBFilterDriver"
+
+"ErrorControl"=dword:00000001
+
+#
+# When to start the driver:
+# At boot: Start=1
+# Manually: Start=3
+#
+"Start"=dword:00000003
+
+"Type"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}]
+
+"UpperFilters"="KMDFUSBFilterDriver"

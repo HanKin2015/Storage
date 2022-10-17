@@ -1,0 +1,22 @@
+TARGETNAME=StudyKMDF
+TARGETTYPE=DRIVER
+TARGETPATH=bin
+
+KMDF_VERSION_MAJOR=1
+KMDF_VERSION_Minor=9
+
+MSC_WARNING_LEVEL=/W4 /WX
+
+TARGETLIBS=$(TARGETLIBS) \
+           $(DDK_LIB_PATH)\ntstrsafe.lib \
+           $(DDK_LIB_PATH)\wdmsec.lib \
+           $(DDK_LIB_PATH)\Rtlver.lib \
+           $(DDK_LIB_PATH)\ntoskrnl.lib \
+           $(DDK_LIB_PATH)\ntmsapi.lib
+
+INCLUDES=$(INCLUDES);
+
+SOURCES= MyWDF.c
+
+TARGET_DESTINATION=wdf
+
