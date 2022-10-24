@@ -13,6 +13,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdbool.h>
 
 /* 链表头插法 */
 #define LL_ADD(item, list) do { \
@@ -87,7 +88,7 @@ static void *thread_callback(void *arg)
 
         job->func(job->user_data);
     }
-    
+
     free(worker);
     pthread_exit(NULL);
 }
@@ -114,7 +115,7 @@ int thread_pool_create(THREADPOOL *pool, int workers_num)
             perror("malloc");
             return -2;
         }
-        memset(worker, 0, sizeof(struct WORKER));   //malloc之后一定要进行memset
+        memset(worker, 0, sizeof(struct WORKER));   // malloc之后一定要进行memset
         worker->pool = pool;
         
         // On success, pthread_create() returns 0; on error, it returns an error number, and the contents of *thread are undefined.
@@ -145,28 +146,34 @@ void thread_pool_push(THREADPOOL *pool, struct JOB *job)
 
 /**
  * 线程池销毁
+ *
+ * todo: 还是有可能还有任务未完成
  */
 int thread_pool_destroy(THREADPOOL *pool)
 {
+    while (pool->jobs != NULL);
+    usleep(500);
+    
     struct WORKER *worker = NULL;
     for (worker = pool->workers; worker != NULL; worker = worker->next) {
         worker->terminate = true;
+        //pthread_join(worker->thread, NULL);
     }
     
     pthread_mutex_lock(&pool->jobs_mtx);
     pthread_cond_broadcast(&pool->jobs_cond);
     pthread_mutex_unlock(&pool->jobs_mtx);
-    
-    
     return 0;
 }
 
 
-/*
-0-999的计数
-用1000个任务，每一个任务打一个数字
-*/
-#if 1   // debug
+/**
+ * 0-999的计数
+ * 用1000个任务，每一个任务打一个数字
+ *
+ * todo: job和job->user->data如何释放
+ */
+#if 0   // debug
 void print_number(void *arg)
 {
     int *number = static_cast<int *>(arg);
@@ -188,29 +195,28 @@ int main()
     }
     
     // 3.创建任务并加入线程池
+    struct JOB *job[1000];
     for (int i = 0; i < 1000; i++) {
-        struct JOB *job = (struct JOB*)malloc(sizeof(struct JOB));
-        job->func = print_number;
+        job[i] = (struct JOB*)malloc(sizeof(struct JOB));
+        job[i]->func = print_number;
         int *tmp = (int *)malloc(sizeof(int));
         *tmp = i;
-        job->user_data = tmp;
-        thread_pool_push(pool, job);
+        job[i]->user_data = tmp;
+        thread_pool_push(pool, job[i]);
     }
     
     // 4.销毁线程池
-    struct WORKER *worker = NULL;
-    pthread_t tmp[thread_pool_size];
-    int idx = 0;
-    for (worker = pool->workers; worker != NULL; worker = worker->next) {
-        //pthread_join(worker->thread, NULL);
-        tmp[idx++] = worker->thread;
-    }
-        
     thread_pool_destroy(pool);
     
-    for (int i = 0; i < thread_pool_size; i++) {
-        pthread_join(tmp[i], NULL);
+    // 5.释放内存
+    for (int i = 0; i < 1000; i++) {
+        free(job[i]->user_data);
+        job[i]->user_data = NULL;
+        free(job[i]);
+        job[i] = NULL;
     }
+    free(pool);
+    pool = NULL;
     return 0;
 }
 #endif
