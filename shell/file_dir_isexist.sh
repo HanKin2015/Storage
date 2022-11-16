@@ -45,7 +45,7 @@ else
 	echo "-e $dir_path not exist!"
 fi
 
-echo "-e filename 如果 filename存在，则为真
+echo -e "\n-e filename 如果 filename存在，则为真
 -d filename 如果 filename为目录，则为真
 -f filename 如果 filename为常规文件，则为真
 -L filename 如果 filename为符号链接，则为真
