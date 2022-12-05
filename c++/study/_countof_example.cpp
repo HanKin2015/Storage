@@ -1,5 +1,5 @@
 /**
-* 文 件 名: _countof_example.c
+* 文 件 名: _countof_example.cpp
 * 文件描述: _countof()函数及用法，windows独有
 * 作    者: HanKin
 * 创建日期: 2022.10.24
@@ -8,7 +8,9 @@
 * Copyright (c) 2022 HanKin. All rights reserved.
 */
 
-#include <stdio.h>
+#include <iostream>
+#include <cstdio>
+using namespace std;
 
 /* _countof helper */
 #if !defined(_countof)
