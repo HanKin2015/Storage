@@ -43,7 +43,7 @@ int main()
 	
 	// strchr 对你没有看错，第二个参数就是int类型：https://cplusplus.com/reference/cstring/strchr/?kw=strchr
     // error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
-    // 为啥加了const就会有上面这个错误？？？需要
+    // 返回值需要加const否则就会有上面这个错误，函数原型const char * strchr ( const char * str, int character );
 	const char *str = "abcdefgghijkl";
 	const char *index1 = strchr(str, 'g');
 	cout << index1 << endl;

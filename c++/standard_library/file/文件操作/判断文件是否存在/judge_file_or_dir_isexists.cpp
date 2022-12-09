@@ -1,6 +1,7 @@
 /**
 * 文 件 名: judge_file_or_dir_isexists.cpp
 * 文件描述: 判断文件或者文件夹是否存在
+* 备    注: https://blog.csdn.net/duiwangxiaomi/article/details/118615006
 * 作    者: HanKin
 * 创建日期: 2022.08.10
 * 修改日期：2022.08.10

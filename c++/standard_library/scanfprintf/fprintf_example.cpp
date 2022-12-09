@@ -1,3 +1,13 @@
+/**
+* 文 件 名: fprintf_example.cpp
+* 文件描述: 学习fprintf函数
+* 作    者: HanKin
+* 创建日期: 2022.09.17
+* 修改日期：2022.12.06
+*
+* Copyright (c) 2022 HanKin. All rights reserved.
+*/
+
 #include <iostream>
 #include <stdio.h>
 #include <unistd.h>

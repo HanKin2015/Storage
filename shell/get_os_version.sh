@@ -35,9 +35,9 @@ then
         if [ "${system_arch}" = "aarch64" ] && [ "${minjor_ver}" = "1032" ]
         then
             uos_ver="uos1032/"
-        elif [ "${system_arch}" = "x86_64" ] && [ "${minjor_ver}" = "1031" ]
+        elif [ "${system_arch}" = "x86_64" ] && [ "${minjor_ver}" = "1040" ]
         then
-            uos_ver="uos1031/"
+            uos_ver="uos1040/"
         else
             uos_ver="uos${minjor_ver:0:3}x/"
         fi
