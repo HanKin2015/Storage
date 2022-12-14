@@ -1,4 +1,13 @@
-// 支持乱序初始化
+/**
+* 文 件 名: c_out_of_order_init.c
+* 文件描述: C语言支持乱序初始化
+* 作    者: HanKin
+* 创建日期: 2022.10.14
+* 修改日期：2022.12.13
+*
+* Copyright (c) 2022 HanKin. All rights reserved.
+*/
+// 
 
 #include <stdio.h>
 
@@ -6,12 +15,11 @@
 extern "C" {
 #endif
 
-
-	int b[10] = {
-		[2] = 2,
-		[3] = 3,
-		[4] = 4,
-	};
+int b[10] = {
+    [2] = 2,
+    [3] = 3,
+    [4] = 4,
+};
 
 int main()
 {
