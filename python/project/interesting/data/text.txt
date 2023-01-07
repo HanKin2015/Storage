@@ -1,0 +1,9 @@
+test
+good
+person
+chinese is problem
+so
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc8 in position 17: invalid continuation byte
+cat
+demo
+add

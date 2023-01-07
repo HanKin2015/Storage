@@ -4,7 +4,7 @@
  * Copyright © 2007-2008 Daniel Drake <dsd@gentoo.org>
  * Copyright © 2012 Pete Batard <pete@akeo.ie>
  * Copyright © 2012 Nathan Hjelm <hjelmn@cs.unm.edu>
- * For more information, please visit: http://libusbx.org
+ * For more information, please visit: http://libusbx.org  http://libusb.info
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
