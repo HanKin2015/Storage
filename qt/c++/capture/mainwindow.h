@@ -30,7 +30,16 @@ private:
     QLabel *displayLabel;
     QHBoxLayout *mainlayout;
     QList<QCameraInfo> cameraList;
-    QComboBox *comboBox;
+    QComboBox *cameraNameCB;        // 摄像头名称下拉框
+    QComboBox *cameraFormatCB;      // 摄像头格式下拉框
+    QList<QVideoFrame::PixelFormat> pixelFormats;
+    QComboBox *cameraResolutionCB;  // 摄像头分辨率下拉框
+    QList<QSize> resolutions;
+    QLabel *statusbarName;
+    QLabel *statusbarFormat;
+    QLabel *statusbarResolution;
+    QLabel *statusbarBaiCheng;
+
     void Init();
     void InitLayout();
 
@@ -39,6 +48,8 @@ private slots:
     void closeBtnResponded();
     void captureBtnResponded();
     void saveBtnResponded();
+    bool sleep(unsigned int msec);
+    void baichengBtnResponded();
     void exitBtnResponded();
     void cameraImageCaptured(int id, QImage image);
 };

@@ -1,0 +1,7 @@
+2023-01-17 10:55:10 switch_resolution_amcap.py[<module>:104] INFO: ******** starting ********
+2023-01-17 10:55:24 switch_resolution_amcap.py[<module>:105] INFO: ******** starting ********
+2023-01-17 10:55:24 switch_resolution_amcap.py[switch_the_resolution:42] INFO: 当前配置: 切换时间间隔 30 s, 是否拍照 0, 是否指定摄像头设备 None
+2023-01-17 10:55:24 switch_resolution_amcap.py[switch_the_resolution:45] INFO: getvideoinfo.exe run result: no video device was found
+2023-01-17 10:55:24 switch_resolution_amcap.py[switch_the_resolution:60] ERROR: 未获取到高拍仪设备，请检查是否接入
+2023-01-17 10:55:24 switch_resolution_amcap.py[<module>:120] INFO: process spend 0.363 s.
+

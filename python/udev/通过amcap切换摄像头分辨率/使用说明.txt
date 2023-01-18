@@ -1,0 +1,11 @@
+1、默认使用：
+双击switch_resolution_amcap.exe，或者cmd窗口运行switch_resolution_amcap.exe
+
+2、调整分辨率切换时间间隔：
+cmd窗口运行switch_resolution_amcap.exe [时间间隔s]，如switch_resolution_amcap.exe 30；默认就是30s切换一次
+
+3、切一次分辨率就拍一次照片
+cmd窗口运行switch_resolution_amcap.exe [时间间隔s] 1
+
+4、脚本切分辨率失败(高拍仪可能不适配)
+cmd窗口运行运行switch_resolution_amcap.exe [时间间隔s] 1 ""；如果不想拍照，就把1改成0

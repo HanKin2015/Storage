@@ -9,6 +9,7 @@
 # Copyright (c) 2023 HanKin. All rights reserved.
 #
 
+# 可能是busybox的问题
 alias busybox='/system/bin/busybox'
 alias awk='busybox awk'
 
