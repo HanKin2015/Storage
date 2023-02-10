@@ -20,11 +20,12 @@ https://blog.csdn.net/tankai19880619/article/details/9984395#
 #include <unistd.h>
 #include <string.h>
 
-int main(){
-	//
-	int fd = open("/dev/video0",O_RDWR);
+int main()
+{
+	// 打开设备文件
+	int fd = open("/dev/video0", O_RDWR);
 	printf("TK------->>>fd is %d\n",fd);
-	//
+	// 取得设备的capability，看看设备具有什么功能，比如是否具有视频输入,或者音频输入输出等
 	struct v4l2_capability cap;
 	ioctl(fd,VIDIOC_QUERYCAP,&cap);
 	printf("TK---------->>>>>Driver Name:%s\nCard Name:%s\nBus info:%s\n",cap.driver,cap.card,cap.bus_info);
@@ -35,16 +36,16 @@ int main(){
 		printf("TK-------->>>>>fmtdesc.description is %s\n",fmtdesc.description);
 		fmtdesc.index ++;
 	}
-	//
+	// 设置视频的制式和帧格式，制式包括PAL，NTSC，帧的格式个包括宽度和高度等
 	struct v4l2_format fmt;
 	fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
 	ioctl(fd,VIDIOC_G_FMT,&fmt);
 	printf("TK----------->>>>>fmt.fmt.width is %d\nfmt.fmt.pix.height is %d\nfmt.fmt.pix.colorspace is %d\n",fmt.fmt.pix.width,fmt.fmt.pix.height,fmt.fmt.pix.colorspace);
-	//
+	// 向驱动申请帧缓冲，一般不超过5个
 	struct v4l2_requestbuffers req;
-	req.count = 4;
-	req.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
-	req.memory = V4L2_MEMORY_MMAP;
+	req.count = 4;  // 缓存数量，也就是说在缓存队列里保持多少张照片
+	req.type = V4L2_BUF_TYPE_VIDEO_CAPTURE; // 数据流类型，必须永远是V4L2_BUF_TYPE_VIDEO_CAPTURE
+	req.memory = V4L2_MEMORY_MMAP;  // V4L2_MEMORY_MMAP 或 V4L2_MEMORY_USERPTR
 	ioctl(fd,VIDIOC_REQBUFS,&req);
 	struct buffer{
 		void *start;
@@ -74,28 +75,31 @@ int main(){
 
 	unsigned int i;
 	enum v4l2_buf_type type;
-	for(i = 0; i < 4; i++){
+	for (i = 0; i < 4; i++) {
 		struct v4l2_buffer buf;
 		buf.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
 		buf.memory = V4L2_MEMORY_MMAP;
 		buf.index = i;
-		ioctl(fd,VIDIOC_QBUF,&buf);
+		ioctl(fd, VIDIOC_QBUF, &buf);   // 申请物理内存
 	}
 	type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
-	ioctl(fd,VIDIOC_STREAMON,&type);
+	ioctl(fd, VIDIOC_STREAMON, &type);  // 开始视频的采集
 
 	struct v4l2_buffer buf;
 	buf.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
 	buf.memory = V4L2_MEMORY_MMAP;
-	ioctl(fd,VIDIOC_DQBUF,&buf);
+	ioctl(fd, VIDIOC_DQBUF, &buf);      // 出队列以取得已采集数据的帧缓冲，取得原始采集数据
+    
+    // 图片数据文件路径
 	char path[20];
-	snprintf(path,sizeof(path),"./yuyv%d",buf.index);
-	int fdyuyv = open(path,O_WRONLY|O_CREAT,00700);
-	printf("TK--------->>>>fdyuyv is %d\n",fdyuyv);
-	int resultyuyv = write(fdyuyv,buffers[buf.index].start,1280*720*2);
-	printf("TK--------->>>resultyuyv is %d\n",resultyuyv);	
+	snprintf(path, sizeof(path), "./yuyv%d", buf.index);
+	int fdyuyv = open(path, O_WRONLY|O_CREAT, 00700);
+	printf("TK--------->>>>fdyuyv is %d\n", fdyuyv);
+	int resultyuyv = write(fdyuyv, buffers[buf.index].start, 1280*720*2);
+	printf("TK--------->>>resultyuyv is %d\n", resultyuyv);	
 	close(fdyuyv);
 
+    // 关闭视频设备
 	close(fd);
 	return 0;
 }

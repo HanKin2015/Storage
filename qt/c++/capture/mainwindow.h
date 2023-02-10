@@ -8,6 +8,9 @@
 #include <QLabel>
 #include <QHBoxLayout>
 #include <QComboBox>
+#include <QFile>
+#include <QMessageBox>
+#include <QCloseEvent>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -24,9 +27,9 @@ public:
 private:
     Ui::MainWindow *ui;
 
-    QCamera *camera;
-    QCameraViewfinder *cameravierfinder;
-    QCameraImageCapture *cameraImageCapture;
+    QCamera *camera;                        // 相机
+    QCameraViewfinder *cameravierfinder;    // 取景器
+    QCameraImageCapture *cameraImageCapture;// 图像捕获
     QLabel *displayLabel;
     QHBoxLayout *mainlayout;
     QList<QCameraInfo> cameraList;
@@ -39,6 +42,9 @@ private:
     QLabel *statusbarFormat;
     QLabel *statusbarResolution;
     QLabel *statusbarBaiCheng;
+    bool isExit;
+    const QString APP_LOGO_FILE_PATH = ".\\image\\alienx64.png";
+    const QString APP_LOG_FILE_PATH = ".\\capture.log";
 
     void Init();
     void InitLayout();
@@ -49,8 +55,13 @@ private slots:
     void captureBtnResponded();
     void saveBtnResponded();
     bool sleep(unsigned int msec);
+    bool deviceExist(const QCameraInfo &cameraInfo) const;
     void baichengBtnResponded();
+    void cameraLog(QString msg);
     void exitBtnResponded();
     void cameraImageCaptured(int id, QImage image);
+
+protected:
+    void closeEvent(QCloseEvent* );
 };
 #endif // MAINWINDOW_H
