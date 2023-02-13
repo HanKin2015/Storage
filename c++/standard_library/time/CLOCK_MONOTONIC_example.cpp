@@ -1,3 +1,13 @@
+/**
+* 文 件 名: CLOCK_MONOTONIC_example.cpp
+* 文件描述: 理解CLOCK_MONOTONIC
+* 作    者: HanKin
+* 创建日期: 2022.03.24
+* 修改日期：2023.02.13
+*
+* Copyright (c) 2023 HanKin. All rights reserved.
+*/
+
 #include <stdio.h>
 #include <dirent.h>
 #include <iostream>
@@ -38,7 +48,6 @@ void translate(int64_t microSecondsSinceEpoch_)
     microseconds);//总秒数加上1900年1月1日然后转换成固定格式
     printf("%s\n",buf);
 }
- 
  
 int main()
 {

@@ -4,7 +4,7 @@
 * 备    注: 翻车没有找到close函数定义，缺少unistd.h头文件，居然两次获取的代码不一样
 * 作    者: HanKin
 * 创建日期: 2023.02.10
-* 修改日期：2023.02.10
+* 修改日期：2023.02.13
 *
 * Copyright (c) 2023 HanKin. All rights reserved.
 */
@@ -63,7 +63,7 @@ static int init_camera(const char *video_dev_node)
     struct v4l2_fmtdesc fmtdesc;
     fmtdesc.index = 0;
     fmtdesc.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
-    while (ioctl(fd, VIDIOC_ENUM_FMT, &fmtdesc) < 0) {
+    while (ioctl(fd, VIDIOC_ENUM_FMT, &fmtdesc) >= 0) {
         printf("\t%d.%s\n", fmtdesc.index + 1, fmtdesc.description);
         fmtdesc.index++;
     }
@@ -74,7 +74,8 @@ static int init_camera(const char *video_dev_node)
     fmt.fmt.pix.height = 480;
     //fmt.fmt.pix.pixelformat = V4L2_PIX_FMT_YUYV;
     //fmt.fmt.pix.field = V4L2_FIELD_INTERLACED;
-    fmt.fmt.pix.pixelformat = V4L2_PIX_FMT_YUV422P;
+    //fmt.fmt.pix.pixelformat = V4L2_PIX_FMT_YUV422P;
+    fmt.fmt.pix.pixelformat = V4L2_PIX_FMT_MJPEG;
     if (ioctl(fd, VIDIOC_S_FMT, &fmt) < 0) {
         perror("VIDIOC_S_FMT");
         printf("set format:V4L2_PIX_FMT_MJPEG failed\n");
@@ -260,6 +261,8 @@ device : Lanseyaoji: Lanseyaoji
 bus : usb-0000:00:18.7-15
 version : 267098
 support capture
+        1.Motion-JPEG
+        2.YUYV 4:2:2
 saving 0 images
 saving 1 images
 saving 2 images
@@ -287,5 +290,8 @@ root@UOS10500001:/home/hankin# ls -l MJPEG/
 ---------- 1 hankin hankin 614400 2月  10 10:59 2.mjpg
 ---------- 1 hankin hankin 614400 2月  10 10:59 3.mjpg
 
-该图片不能直接打开，修改后缀为jpg也不行，还是通过YUVviewerPlus.exe软件进行打开查看。
+该图片不能直接打开，修改后缀为jpg也不行，还是通过YUVviewerPlus.exe软件进行打开查看，原因在于代码有问题，
+应该设置格式为V4L2_PIX_FMT_MJPEG，而不是V4L2_PIX_FMT_YUV422P。
+本来之前就根据有问题，日志和代码对应不上，是使用另外一款摄像头测试发现生成的图片能正常打开，原因是该摄
+像头V4L2_PIX_FMT_MJPEG格式在前，而V4L2_PIX_FMT_YUV422P格式应该比较稀有吧，应该设置成V4L2_PIX_FMT_YUYV
 */
