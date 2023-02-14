@@ -240,9 +240,9 @@ void camera_set_thread_name(int id)
 */
 uint64_t get_current_time()
 {
-	struct timespec ts;
-	clock_gettime(CLOCK_MONOTONIC, &ts);
-	return (ts.tv_sec * (1000ULL) + ts.tv_nsec / (1000000ULL));
+    struct timespec ts;
+    clock_gettime(CLOCK_MONOTONIC, &ts);
+    return (ts.tv_sec * (1000ULL) + ts.tv_nsec / (1000000ULL));
 }
 
 //单个事件消息的最大长度

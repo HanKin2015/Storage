@@ -1,3 +1,13 @@
+/**
+* 文 件 名: client.c
+* 文件描述: socket客户端代码
+* 作    者: HanKin
+* 创建日期: 2021.09.07
+* 修改日期：2023.02.14
+*
+* Copyright (c) 2023 HanKin. All rights reserved.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -58,3 +68,8 @@ EXIT:
     }
     return 0;
 }
+/*
+[root@ubuntu0006:/media/hankin/vdb] #./client 172.22.65.15
+send msg to server:
+
+*/

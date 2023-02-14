@@ -15,14 +15,20 @@
 /*
 在normal.c文件运行中会产生一个进程id
 
-/proc/14291/fd/3 是一个类型为 socket 的文件。（准确来说，它是一个符号链接，链接到一个类型为 socket 的文件。）
+/proc/22424/fd/3 是一个类型为 socket 的文件。（准确来说，它是一个符号链接，链接到一个类型为 socket 的文件。）
 */
 int main() 
 {
     struct stat s;
-    stat("/proc/14291/fd/3", &s);
+    stat("/proc/22424/fd/3", &s);
     if (S_ISSOCK(s.st_mode)) {
-        printf("socket\n");
+        printf("is socket\n");
+    } else {
+        printf("is not socket\n");
     }
     return 0;
 }
+/*
+[root@ubuntu0006:~] #./a.out
+is socket
+*/

@@ -4,9 +4,9 @@
  * 测    试: socat - TCP:localhost:9999 或者写一个客户端demo
  * 作    者: HanKin
  * 创建日期: 2021.09.07
- * 修改日期：2021.09.07
+ * 修改日期：2023.02.14
  *
- * Copyright (c) 2021 HanKin. All rights reserved.
+ * Copyright (c) 2023 HanKin. All rights reserved.
  */
 #include <sys/socket.h>
 #include <sys/select.h>
@@ -62,10 +62,11 @@ int main()
 
     fd_set all_set;
     FD_ZERO(&all_set);
-    FD_SET(socket_fd, &all_set); // 记录 select 将监控哪些文件描述符
-    int max_index = 0; // client_fd 数组中使用过的最大下标
-    int max_client_fd = socket_fd; // 文件描述符中的最大值
+    FD_SET(socket_fd, &all_set);    // 记录 select 将监控哪些文件描述符
+    int max_index = 0;              // client_fd 数组中使用过的最大下标
+    int max_client_fd = socket_fd;  // 文件描述符中的最大值
 
+    printf("\n---------select socket server---------\n");
     while (1) {
         fd_set read_set = all_set;
 

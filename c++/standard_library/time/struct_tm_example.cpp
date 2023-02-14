@@ -1,3 +1,13 @@
+/**
+* 文 件 名: struct_tm_example.cpp
+* 文件描述: 学习tm结构体
+* 作    者: HanKin
+* 创建日期: 2021.05.21
+* 修改日期：2023.02.13
+*
+* Copyright (c) 2023 HanKin. All rights reserved.
+*/
+
 #include <time.h>
 #include <stdio.h>
 #include <stdint.h>

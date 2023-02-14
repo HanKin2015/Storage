@@ -4,9 +4,9 @@
  * 测    试: socat - TCP:localhost:9999 或者写一个客户端demo
  * 作    者: HanKin
  * 创建日期: 2021.09.07
- * 修改日期：2021.09.07
+ * 修改日期：2023.02.14
  *
- * Copyright (c) 2021 HanKin. All rights reserved.
+ * Copyright (c) 2023 HanKin. All rights reserved.
  */
 #include <sys/socket.h>
 #include <sys/select.h>
@@ -56,24 +56,63 @@ int main()
     char buffer[MAXLINE];
     ssize_t n;
     socklen_t len = sizeof(client_address);
-
+    
+    printf("\n---------normal socket server---------\n");
     while (1) {
-        // 连接服务端
+        // 连接客户端（会卡住在accept函数）
+        printf("wait socket connect......\n");
         int connection_fd = accept(socket_fd, (struct sockaddr *)&client_address, &len);
         printf("connection_fd: %d\n", connection_fd);
         
-        // 读取服务端下发的消息
+        // 读取客户端下发的消息
+        printf("wait client message......\n");
         while ((n = read(connection_fd, buffer, sizeof(buffer))) > 0) {
             printf("read clien msg:\n");
             write(STDOUT_FILENO, buffer, n);    // 输出消息到标准输出端
-            printf("\n-------回射消息--------\n");
+            printf("-------回射消息--------\n");
             write(connection_fd, buffer, n);    // 回射消息到客户端
         }
 
         // 关闭服务端
         close(connection_fd);
-        printf("connection_fd: %d [CLOSED]\n", connection_fd);
+        printf("connection_fd: %d [CLOSED]\n\n", connection_fd);
     }
 
     return 0;
 }
+/*
+pid: 1943
+socket_fd: 3
+
+---------normal socket server---------
+wait socket connect......
+connection_fd: 4
+wait client message......
+read clien msg:
+222222
+-------回射消息--------
+read clien msg:
+1111
+-------回射消息--------
+connection_fd: 4 [CLOSED]
+
+wait socket connect......
+connection_fd: 4
+wait client message......
+connection_fd: 4 [CLOSED]
+
+wait socket connect......
+^C
+
+客户端第一次连接，发送了两条消息，然后断开再连接再断开。
+
+打开新的控制台，进入 root 用户：
+[root@ubuntu0006:~] #ll /proc/22424/fd
+总用量 0
+dr-x------ 2 root root  0 2月  14 14:28 ./
+dr-xr-xr-x 9 root root  0 2月  14 14:26 ../
+lrwx------ 1 root root 64 2月  14 14:28 0 -> /dev/pts/4
+lrwx------ 1 root root 64 2月  14 14:28 1 -> /dev/pts/4
+lrwx------ 1 root root 64 2月  14 14:28 2 -> /dev/pts/4
+lrwx------ 1 root root 64 2月  14 14:28 3 -> socket:[1054079230]
+*/

@@ -1,6 +1,6 @@
 /**
-* 文 件 名: study_time.cpp
-* 文件描述: 学习open函数
+* 文 件 名: clock_gettime_gettimeofday_example.cpp
+* 文件描述: clock_gettime和gettimeofday函数学习
 * 作    者: HanKin
 * 创建日期: 2021.11.12
 * 修改日期：2021.11.12
