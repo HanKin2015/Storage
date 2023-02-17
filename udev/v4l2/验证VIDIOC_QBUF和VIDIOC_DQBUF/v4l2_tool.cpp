@@ -163,7 +163,7 @@ struct st_uvc_cli_ctx {
     bool has_err;    //出错
     
 	int event_wfd;	//事件发送
-	int event_rfd;  //时间接收
+	int event_rfd;  //事件接收
 	
 	int event_buff_len; //消息缓冲区长度
 	uint8_t *event_rbuff; //消息读缓冲区
@@ -1039,23 +1039,47 @@ failed:
     return ret;
 }
 
-int main(int argc, char *argv[])
+/**
+* uvc client 初始化
+*
+* @param [in] camera_id 摄像头id
+*
+* @return NULL:初始化失败 非NULL:指针
+*/
+uvc_cli_ctx* uvc_cli_init(uint32_t camera_id)
 {
     uvc_cli_ctx *uvc_cli = (uvc_cli_ctx *)malloc(sizeof(uvc_cli_ctx));
-    uvc_cli->device_id = 0;
+    assert(uvc_cli);
+    memset(uvc_cli, 0, sizeof(uvc_cli_ctx));
+    
+    uvc_cli->device_id = camera_id;
+    
+    uvc_cli->event_rfd = -1;
+    uvc_cli->event_wfd = -1;
+    
     uvc_cli->event_buff_len = sizeof(struct st_uvc_cli_event) + 8192;
     uvc_cli->event_rbuff = (uint8_t *)malloc(uvc_cli->event_buff_len);
     uvc_cli->event_wbuff = (uint8_t *)malloc(uvc_cli->event_buff_len);
     memset(uvc_cli->event_rbuff, 0, uvc_cli->event_buff_len);
     memset(uvc_cli->event_wbuff, 0, uvc_cli->event_buff_len);
+    return uvc_cli;
+}
+
+int main(int argc, char *argv[])
+{
+    // 1、初始化摄像头客户端指针变量
+    uvc_cli_ctx *uvc_cli = uvc_cli_init(0); assert(uvc_cli);
     
+    // 2、打开摄像头
     int ret = uvc_cli_open(uvc_cli); assert(!ret);
+    
     struct uvc_streaming_control probe;
     probe.bFormatIndex = 1;
     probe.bFrameIndex = 1;
     ret = uvc_cli_do_probe(uvc_cli, probe); assert(!ret);
+    
     ret = uvc_cli_do_start(uvc_cli); assert(!ret);
-    (void)uvc_cli_proc(uvc_cli);
+
     while (true);
     (void)uvc_cli_do_stop(uvc_cli);
     return 0;

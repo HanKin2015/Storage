@@ -1,13 +1,14 @@
 /**
- * 文 件 名: select_server.c
- * 文件描述: 学习select/poll/epoll函数对比
- * 测    试: socat - TCP:localhost:9999 或者写一个客户端demo
- * 作    者: HanKin
- * 创建日期: 2021.09.07
- * 修改日期：2021.09.07
- *
- * Copyright (c) 2021 HanKin. All rights reserved.
- */
+* 文 件 名: select_server.c
+* 文件描述: 学习select/poll/epoll函数对比
+* 测    试: socat - TCP:localhost:9999 或者写一个客户端demo
+* 作    者: HanKin
+* 创建日期: 2021.09.07
+* 修改日期：2023.02.16
+*
+* Copyright (c) 2023 HanKin. All rights reserved.
+*/
+ 
 #include <sys/socket.h>
 #include <sys/select.h>
 #include <sys/epoll.h>
@@ -73,12 +74,16 @@ int main()
     // 将 socket_fd 加入监视。当 socket_fd 发生 EPOLLIN 事件时，会将此时写好的 ev.data 的值返回出来
     epoll_ctl(epoll_fd, EPOLL_CTL_ADD, socket_fd, &ev);
 
+    printf("\n---------epoll socket server---------\n");
     while (1) {
+        printf("wait new socket connect......\n");
         int nready = epoll_wait(epoll_fd, events, MAXCLIENT, -1);
+        printf("nready = %d\n", nready);
         if (nready < 0) return 0;
 
         // events[0:nready] 是已准备好的文件描述符的 epoll_event 组成的数组。这里直接利用 events[i].data 部分
         for (int i = 0; i < nready; i++) {
+            printf("events[i].data.fd = %d, socket_fd = %d\n", events[i].data.fd, socket_fd);
             if (events[i].data.fd == socket_fd) { // 有新的 TCP 连接
                 int fd = accept(socket_fd, (struct sockaddr *) &client_address, &len);
                 printf("connection_fd: %d\n", fd);
@@ -86,9 +91,9 @@ int main()
                 epoll_ctl(epoll_fd, EPOLL_CTL_ADD, fd, &ev); // 加入监视
             } else {
                 if ((n = read(events[i].data.fd, buffer, sizeof(buffer))) > 0) {
-                    printf("read: -----\n");
+                    printf("---------read client message---------\n");
                     write(STDOUT_FILENO, buffer, n);
-                    printf("\n-----------\n");
+                    printf("--------------------\n\n");
                     write(events[i].data.fd, buffer, n);
                 } else { // read 返回零，表示 TCP 连接关闭
                     epoll_ctl(epoll_fd, EPOLL_CTL_DEL, events[i].data.fd, &ev); // 注意：必须先退出连接，再调用 close。这与 select 和 poll 的用法不同
@@ -101,3 +106,49 @@ int main()
 
     return 0;
 }
+/*
+非常好理解，可能是学习了select和poll后的效果。
+直接通过nready值来计算events数组数量，events里面直接包含了连接的fd值。
+如果是服务端的socket_fd则是表示新的socket连接，否则是客户端的消息。
+
+[root@ubuntu0006:/media/vdb] #./a.out
+pid: 18343
+socket_fd: 3
+epoll_fd: 4
+
+---------epoll socket server---------
+wait new socket connect......
+
+nready = 1
+events[i].data.fd = 3, socket_fd = 3
+connection_fd: 5
+wait new socket connect......
+
+nready = 1
+events[i].data.fd = 3, socket_fd = 3
+connection_fd: 6
+wait new socket connect......
+
+nready = 1
+events[i].data.fd = 5, socket_fd = 3
+---------read client message---------
+11111
+--------------------
+wait new socket connect......
+
+nready = 1
+events[i].data.fd = 6, socket_fd = 3
+connection_fd: 6 [CLOSED]
+wait new socket connect......
+
+nready = 1
+events[i].data.fd = 5, socket_fd = 3
+---------read client message---------
+11
+--------------------
+wait new socket connect......
+
+nready = 1
+events[i].data.fd = 5, socket_fd = 3
+connection_fd: 5 [CLOSED]
+*/

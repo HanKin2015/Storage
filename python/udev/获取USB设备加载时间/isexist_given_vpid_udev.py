@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: usblist.py
+文 件 名: isexist_given_vpid_udev.py
 文件描述: 查找当前系统是否存在pvid的设备
 用    法: python usblist.py 8086
 作    者: HanKin

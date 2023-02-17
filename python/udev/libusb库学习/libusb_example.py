@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: usb_example.py
+文 件 名: libusb_example.py
 文件描述: usb.busses()无法获取成功
 备    注: 未解决
 作    者: HanKin

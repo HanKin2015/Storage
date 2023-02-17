@@ -69,19 +69,25 @@ int main()
     printf("\n---------select socket server---------\n");
     while (1) {
         fd_set read_set = all_set;
+        printf("[loop start] read_set = %p, all_set = %p\n", &read_set, &all_set);
 
         // select 函数将检查 0 至 max_client_fd 的所有文件描述符。
         // 当这些文件描述符与 read_set 的交集中，部分文件描述符已准备好时，
         // select 函数将返回，并且在 read_set 记录哪些文件描述符已准备好。
         // read_set 将被改变，所以有必要保留 all_set 而把 read_set 传入参数。
+        printf("wait new socket connect......\n");
         int nready = select(max_client_fd+1, &read_set, NULL, NULL, NULL);
 
         // socket_fd 已准备好，表示可接受新的连接
+        printf("current socket_fd = %d\n", socket_fd);
         if (FD_ISSET(socket_fd, &read_set)) {
+            printf("socket_fd [%d] is in read_set [%p]\n", socket_fd, &read_set);
+            // 这里不再阻塞，会直接返回fd值
             int fd = accept(socket_fd, (struct sockaddr *) &client_address, &len);
             printf("connection_fd: %d\n", fd);
-            FD_SET(fd, &all_set);
+            FD_SET(fd, &all_set);   // 由于是set集合，会自动去重
             if (fd > max_client_fd) {
+                printf("before max_client_fd = %d\n", max_client_fd);
                 max_client_fd = fd;
             }
             for (int i = 0; i <= MAXCLIENT; ++i) {
@@ -90,22 +96,30 @@ int main()
                     return 0;
                 }
                 if (client_fd[i] == 0) {
+                    printf("new socket connect, i = %d, fd = %d\n", i, fd);
                     client_fd[i] = fd;
                     if (i > max_index) max_index = i;
                     break;
                 }
             }
             nready--;
+        } else {
+            printf("socket_fd [%d] is not in read_set [%p]\n", socket_fd, &read_set);
         }
 
+        printf("read_set = %p, all_set = %p\n", &read_set, &all_set);
+        printf("************pid: %d\n", getpid());
+
         // client_fd 中，有部分已准备好，可处理数据
+        printf("current max_index = %d, nready = %d\n", max_index, nready);
         for (int i = 0; i <= max_index && nready > 0; ++i) {
             if (client_fd[i] == 0) continue;
             if (FD_ISSET(client_fd[i], &read_set)) {
+                // 这里不再阻塞，会直接进行read操作，读取失败说明断开了连接
                 if ((n = read(client_fd[i], buffer, sizeof(buffer))) > 0) {
-                    printf("read: -----\n");
+                    printf("---------read client message---------\n");
                     write(STDOUT_FILENO, buffer, n);
-                    printf("\n-----------\n");
+                    printf("--------------------\n\n");
                     write(client_fd[i], buffer, n);
                 } else {
                     close(client_fd[i]);
@@ -119,3 +133,57 @@ int main()
     }
     return 0;
 }
+/*
+运行结果特别有意思！！！
+主要是这句日志socket_fd [3] is in read_set [0x7ffe9f9739b0]
+
+当有新的客户端连接时socket_fd在read_set中；
+当有新的消息时socket_fd不在read_set中，会把客户端的socket放在其中。
+
+这一切都是由select函数在进行控制，估计通过nready值来进行判断，如果是0说明是新连接，非0是消息
+
+[root@ubuntu0006:/media/vdb] #./a.out
+pid: 25141
+socket_fd: 3
+
+---------select socket server---------
+[loop start] read_set = 0x7ffe9f9739b0, all_set = 0x7ffe9f973930
+wait new socket connect......
+current socket_fd = 3
+socket_fd [3] is in read_set [0x7ffe9f9739b0]
+connection_fd: 4
+before max_client_fd = 3
+new socket connect, i = 0, fd = 4
+read_set = 0x7ffe9f9739b0, all_set = 0x7ffe9f973930
+************pid: 25141
+current max_index = 0, nready = 0
+[loop start] read_set = 0x7ffe9f9739b0, all_set = 0x7ffe9f973930
+wait new socket connect......
+
+
+current socket_fd = 3
+socket_fd [3] is not in read_set [0x7ffe9f9739b0]
+read_set = 0x7ffe9f9739b0, all_set = 0x7ffe9f973930
+************pid: 25141
+current max_index = 0, nready = 1
+---------read client message---------
+11
+--------------------
+
+[loop start] read_set = 0x7ffe9f9739b0, all_set = 0x7ffe9f973930
+wait new socket connect......
+
+
+
+current socket_fd = 3
+socket_fd [3] is in read_set [0x7ffe9f9739b0]
+connection_fd: 5
+before max_client_fd = 4
+new socket connect, i = 1, fd = 5
+read_set = 0x7ffe9f9739b0, all_set = 0x7ffe9f973930
+************pid: 25141
+current max_index = 1, nready = 0
+[loop start] read_set = 0x7ffe9f9739b0, all_set = 0x7ffe9f973930
+wait new socket connect......
+
+*/
