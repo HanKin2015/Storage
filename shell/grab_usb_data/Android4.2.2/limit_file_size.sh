@@ -2,6 +2,7 @@
 #
 # 文 件 名: limit_file_size.sh
 # 文件描述: 限制文件大小，备份一个100MB大小的文件，如果当前文件超过100MB则删除备份
+# 注    意: shell脚本注意一定要使用Unix换行符
 # 作    者: HanKin
 # 创建日期: 2023.01.07
 # 修改日期：2023.02.09
@@ -21,6 +22,7 @@ MAX_FILE_SIZE=$((100*1024))
 
 # 启动抓取USB数据包脚本
 #chmod +x /sdcard/grab_usb_data.sh
+dos2unix /sdcard/grab_usb_data.sh
 sh /sdcard/grab_usb_data.sh &
 
 while true

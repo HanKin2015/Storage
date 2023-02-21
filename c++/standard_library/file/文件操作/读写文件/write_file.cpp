@@ -68,27 +68,27 @@ long long option_3(std::size_t bytes)
 
 int main(int argc, char * argv[])
 {
-	if(argc < 2)
-	{
-		std::cout << "Need argv[1],like 100 (Unit:MB)" << std::endl;	
-		return 0;
-	}
+    if(argc < 2)
+    {
+        std::cout << "Need argv[1],like 100 (Unit:MB)" << std::endl;	
+        return 0;
+    }
 
     const std::size_t kB = 1024;
     const std::size_t MB = 1024 * kB;
     const std::size_t GB = 1024 * MB;
 
-	size_t size = atoi(argv[1]) *MB;	
-	
-	data = GenerateData(size);
-	
-	std::cout << "Testing begin...."  << std::endl;
-	
+    size_t size = atoi(argv[1]) *MB;	
+
+    data = GenerateData(size);
+
+    std::cout << "Testing begin...."  << std::endl;
+
     std::cout << "option1, " << size / MB << "MB: " << option_1(size) << "ms" << std::endl;
     std::cout << "option2, " << size / MB << "MB: " << option_2(size) << "ms" << std::endl;
     std::cout << "option3, " << size / MB << "MB: " << option_3(size) << "ms" << std::endl;
-	
-	unlink("file.binary");
-	
+
+    unlink("file.binary");
+
     return 0;
 }

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--
+<head>
+-->
+<head>
+  <meta charset='utf-8' />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script type="text/javascript">var NREUMQ=[];NREUMQ.f=function(){}</script>
+
+  <title>mackyle/xar</title>
+
+  <style type="text/css">
+    body {
+      margin-top: 1.0em;
+      background-color: white;
+      font-family: Times, "Times New Roman", serif;
+      color: black;
+    }
+    #container {
+      margin: 0 auto;
+      max-width: 90ex;
+      position: relative;
+    }
+    @media screen {
+      .last { margin-bottom: -1em; }
+      .aftermargin {
+        position: absolute;
+        height: 100%;
+        width: 1px;
+      }
+    }
+    h1 { font-size: 3.8em; color: black; margin-bottom: 0.1em; }
+    h1 .small { font-size: 0.4em; }
+    h1 a { text-decoration: none; }
+    h2 { font-size: 1.5em; color: black; }
+    h3 { color: black; }
+    p.note:before, h1, h2, h3, th, .nb { font-family: Helvetica, Arial, FreeSans, sans-serif; font-weight: normal; }
+    a { color: black; }
+    .description { font-size: 1.2em; margin-bottom: 2em; margin-top: 2em; font-style: italic; }
+    .download { float: right; }
+    tt, .nowrap { white-space: nowrap; }
+    .nb { font-weight: bold; font-size: 75% }
+    pre, ttx, .hash tdx { font-family: Menlo, Monaco, Consolas, Courier, "Courier New", monospace; }
+    pre { font-size: 75%;}
+    pre { padding: 0.5em 1ex; border: thin dotted silver; }
+    hr { border: 0; width: 80%; border-bottom: thin solid silver; }
+    p { text-align: justify; }
+    p.left { text-align: left; }
+    dd { margin-bottom: 0.5em; }
+    .inset { margin-left: 1ex; margin-right: 1ex; }
+    .footer { text-align:center; padding-top:2em; font-style: italic; }
+    p.note:before { content: "Note: "; }
+    .nobreak { white-space: nowrap; }
+    .hash td { font-size: 80%; line-height: 1.0; font-family: monospace; }
+    .hash tr > td:first-child { text-align: right; }
+    .hash tr > td:first-child:after { content: ':'; }
+
+    table.download-list {
+      border-collapse: separate;
+      border-spacing: 1.25ex 0;
+      width: 100%;
+      margin-bottom: 0.5em;
+    }
+
+    table.download-list > * > tr > td:first-child,
+    table.download-list > * > tr > td:first-child + td,
+    table.download-list > * > tr > td:first-child + td + td {
+      white-space: nowrap;
+    }
+
+    tr.header th {
+      text-align: left;
+      border-bottom: thin solid black;
+    }
+    tr.separator {
+      height: 0.25em;
+    }
+
+    :link, :visited {
+      text-decoration: none !important;
+      border-bottom: 1px dotted !important;
+    }
+    :link:hover, :visited:hover {
+      border-bottom: 1px solid !important;
+    }
+    @media print {
+      :link, :visited {
+        border-bottom: 0 !important;
+        color: inherit !important;
+      }
+    }
+
+    span.down {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      margin-right: 2px;
+      vertical-align: baseline;
+      background-repeat: no-repeat;
+      background-position: 0% 100%;
+      background-size: 1em 1em;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQnRFWHRDb21tZW50AHRJTUUgY2h1bmtsZW4gNyBpZ25vcmVkDUFTQ0lJOiAuLi4uLjA3DUhFWDogMDdENjA5MTYxMDMwMzeLgNWuAAACTUlEQVR4nJRQW2iSYRj+tgq6k5BuDILdObqoYLBRxsjBsKvoIoKKokbrMMibrZsMNseojPJAbINg0zZlFVEi1Yi8aNJWiXlG51lvdOiNiBcefp++74tfZGzQXnh43+89PN/zvoTsYhfmeoQrr3oxsngSY0v9UFvPYLfeHe2c8Yjw5rcB7z0v8fHPLNTLA3sjGNIfFqw/n+PFVzUnufu6b28Ep59JBMu6Dk9Xx/DWbcTIwon/I+h5RIrHpruK1xZPYeHHE8x8HsWK2wDNh4u4v9yHByuKnYmi0agzHA7j6MN9uG4Zwuz3STp8D5OOGzB8G+cqphyXcYse1Ww2O7cPD6ZSKVQqFWwVt6AyHsfNpWHMrWmh/XQblg0dxt+dx6V5OcrlMux2O0wmk7JNEAqFnIVCAfF4HLlcDsl0Amf1coxaVZhfm8Yd6zAllcHlcsHv9yMQCECn0/1TEQwGBzc3N1EqlcBUUDW8YePXOhTaQ7hqVmDg8UG43W74fD4kk0mwz+ga0Gg0SuL1evnv+Xwe2WwWmUyGI51OIxqPoHfqABKJBB9knqlkdY/Hg4mJCWd3vV4n1WqV0GFCCxxUCaHNJJvKEX2/g8RiMRKJRAg9MgddmdB7ETbLCPgx2EMQBEJ35A10LUJ/42BkVAEnZj21Wo1IJBI2o+xmj2azycGKIsScmN8eNxoNjv2MQBxqtVpELpdzzwCgnWdxZ575NoFUKuWNrCBCbGTGYmaddZlMxpV02Wy2L3QXFbsBI+v0IkS5DJ2rUqLVvwAAAP//AwDkwh7q3xB35AAAAABJRU5ErkJggg==);
+    }
+
+    span.tar {
+      display: inline-block;
+      width: 54px;
+      height: 72px;
+      vertical-align: baseline;
+      background-repeat: no-repeat;
+      background-position: 0% 100%;
+      background-image: url(data:image/gif;base64,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);
+    }
+
+    span.zip {
+      display: inline-block;
+      width: 54px;
+      height: 72px;
+      vertical-align: baseline;
+      background-repeat: no-repeat;
+      background-position: 0% 100%;
+      background-image: url(data:image/gif;base64,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);
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="container">
+
+<div class="download">
+  <a href="https://github.com/mackyle/xar/archive/master.tar.gz"><span class="tar"></span></a>
+  <a href="https://github.com/mackyle/xar/archive/master.zip"><span class="zip"></span></a>
+</div>
+
+<h1><a href="https://github.com/mackyle/xar">xar</a></h1>
+
+<div class="description">
+  eXtensible ARchiver
+</div>
+
+<p>A fork/clone of the subversion xar repository from <a href="http://xar.googlecode.com/svn/">http://xar.googlecode.com/svn/</a> that includes several enhancements and bug fixes including very basic command line signature support (master branch).
+
+</p><p>
+
+This fork/clone of the <a href="http://code.google.com/p/xar/">xar project</a> includes all the original history (tags, branches, etc.) and wiki pages from the subversion repository with the following changes:
+
+<ol>
+<li>The .wiki pages were converted to a GitHub-friendly .wiki format</li>
+<li>User-specific Xcode project files were omitted</li>
+<li>Non-ASCII text files that were not UTF-8 were converted to UTF-8</li>
+<li>The subversion http://xar.googlecode.com/svn/trunk was converted to the git trunk branch</li>
+</ol>
+
+</p>
+
+<h2>Quick Download</h2>
+
+<table class="download-list">
+<thead>
+<tr class="header">
+<th>Download</th><th>Tag</th><th>Released</th><th>Info</th>
+</tr>
+<tr class="separator"><td colspan="4"></td></tr>
+</thead>
+<tbody>
+
+<tr><td><a href="https://github.com/downloads/mackyle/xar/xar-1.6.1.tar.gz"><span class="down"></span>xar-1.6.1.tar.gz</a></td>
+<td>xar-1.6.1</td>
+<td>2012-09-17</td>
+<td>Pre-bootstrapped source tarball (includes configure script) [<a href="#xar-1.6.1_tb">hashes</a>]</td></tr>
+
+</tbody>
+</table>
+
+<h2>Install</h2>
+<p>See the <a href="https://github.com/mackyle/xar/blob/master/xar/xar_README.txt">xar_README.txt</a> and
+<a href="https://github.com/mackyle/xar/blob/master/xar/INSTALL">INSTALL</a> files.</p>
+
+<h2>More Info</h2>
+<ul>
+<li>The <a href="https://github.com/mackyle/xar/blob/master/xar/NEWS">NEWS</a> (release notes) file</li>
+<li>The <a href="https://github.com/mackyle/xar/blob/master/xar/ChangeLog">ChangeLog</a> file</li>
+<li><a href="xar.html">xar man page</a></li>
+<li><a href="howtosign.html">How to sign an xar archive</a> (<span class="nb">n.b.</span> <a href="http://www.apple.com/safari/">Safari</a> <a href="http://extensions.apple.com/">Extensions</a> are signed xar archives)</li>
+<li><a href="https://github.com/mackyle/xar/wiki">xar wiki pages</a>
+(<a href="https://github.com/mackyle/xar/wiki/API_xar">API doc</a>,
+<a href="https://github.com/mackyle/xar/wiki/xarformat">xar format</a>)</li>
+<li><a href="utf8bom.html">The <tt>utf8bom</tt> git filter</a></li>
+</ul>
+
+<h2>License</h2>
+<p>Modified BSD license
+
+(see <a href="http://www.gnu.org/licenses/license-list.html#ModifiedBSD">here</a>
+and <a href="http://directory.fsf.org/wiki/License:BSD_3Clause">here</a>).<br />
+See also the <a href="https://github.com/mackyle/xar/blob/master/xar/LICENSE">LICENSE</a> file.</p>
+
+<h2>Supported Platforms</h2>
+<p>The xar command line utility program and the libxar library have been built successfully with full support for gzip, bzip2 and lzma/xz compression on these platforms:
+</p>
+
+<dl>
+<dt>Darwin (aka OS X)</dt>
+<dd>Known to work on versions 10.4 and later both powerpc and intel.
+Probably works fine on earlier versions too.</dd>
+<dt>Linux</dt>
+<dd>Known to work on versions 2.6.32 x86_64 and i686.  Should work fine on any GNU/Linux system.</dd>
+<dt>FreeBSD</dt>
+<dd>Known to work on version 8.1 i386.  Should work fine on any FreeBSD or related system.</dd>
+<dt>Cygwin</dt>
+<dd>Known to work on version 1.7.5 i686.  Should work fine on any recent Cygwin version too.</dd>
+</dl>
+
+Other unix-ish/linux-ish platforms that support sh, configure scripts, GNU make, libxml2, OpenSSL&#x2019;s libcrypto and zlib (libz) should build just fine.  The bzip2 and lzma compression support is optional.  Any other platforms may require some effort but if libxml2, libcrypto and zlib can be built on a platform probably libxar and xar can too (with some work).
+
+<h2>Sources</h2>
+<p>
+  You can download the raw source files of this project in either
+  <a href="https://github.com/mackyle/xar/archive/master.tar.gz">tar</a> or
+  <a href="https://github.com/mackyle/xar/archive/master.zip">zip</a> formats.
+</p>
+<p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+  by running:
+</p>
+<pre class="inset">git clone git://github.com/mackyle/xar</pre>
+
+<h2 id="downloads">Downloads</h2>
+<p>Pre-bootstrapped source tarballs (i.e. do not require autotools and have a pre-generated configure script) are available for these tags:</p>
+<dl>
+
+<dt id="xar-1.6.1_tb"><a href="https://github.com/downloads/mackyle/xar/xar-1.6.1.tar.gz"><span class="down"></span><tt>xar-1.6.1.tar.gz</tt></a> Pre-bootstrapped source tarball (tag: <tt>xar-1.6.1</tt>)</dt>
+<dd><table class='hash'><tr><td>MD5</td><td>a624535d6a1e8fdf420b36a6b334047b</td></tr>
+<tr><td>SHA1</td><td>6f7827a034877eda673a22af1c42dc32f14edb4c</td></tr>
+<tr><td>SHA256</td><td>ee46089968457cf710b8cf1bdeb98b7ef232eb8a4cdeb34502e1f16ef4d2153e</td></tr></table></dd>
+
+</dl>
+<p>See also the <a href="https://github.com/mackyle/xar/downloads">project&#x2019;s downloads area</a>.</p>
+
+<h2>Git Repository Browser</h2>
+<p class="left">
+  Repository browsers are available at:
+</p>
+<ul class="last">
+<a href="https://github.com/mackyle/xar">https://github.com/mackyle/xar</a> (GitHub)
+</ul>
+
+</div>
+  
+<span class="aftermargin"></span></body>
+<!--
+</body>
+-->
+</html>

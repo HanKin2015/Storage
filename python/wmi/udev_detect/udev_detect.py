@@ -28,7 +28,10 @@ def print_current_udev_info(wmi):
     count = 0
     for usb in wmi.InstancesOf("Win32_USBHub"):
         if usb.Name != 'USB Root Hub':
-            logger.info('usb.USBVersion: {}'.format(usb.USBVersion))
+            if count == 0:
+                logger.info('usb.USBVersion: {}'.format(usb.USBVersion))
+            else:
+                logger.info('\nusb.USBVersion: {}'.format(usb.USBVersion))
             logger.info('usb.ProtocolCode: {}'.format(usb.ProtocolCode))
             logger.info('usb.SubclassCode: {}'.format(usb.SubclassCode))
             logger.info('usb.Availability: {}'.format(usb.Availability))
@@ -43,9 +46,10 @@ def print_current_udev_info(wmi):
             logger.info('usb.Caption: {}'.format(usb.Caption))
             logger.info('usb.CreationClassName: {}'.format(usb.CreationClassName))
             logger.info('usb.CurrentConfigValue: {}'.format(usb.CurrentConfigValue))
-            logger.info('usb.Description: {}\n'.format(usb.Description))
+            logger.info('usb.Description: {}'.format(usb.Description))
             count += 1
     logger.info('there are {} usb devices'.format(count))
+    logger.info("===================Win32_USBHub=================")
 
 def main():
     """主函数
@@ -63,7 +67,7 @@ def main():
             logger.warning('there is a new usb device')
             print_current_udev_info(wmi)
         elif current_hub_udev_count < hub_udev_count:
-            logger.info('there is a usb device which is hotplug out')
+            logger.warning('there is a usb device which is hotplug out')
         hub_udev_count = current_hub_udev_count
         time.sleep(1)
 
