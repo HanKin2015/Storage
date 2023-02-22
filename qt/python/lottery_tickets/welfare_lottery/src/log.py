@@ -2,10 +2,15 @@
 """
 文 件 名: log.py
 文件描述: 日志文件，支持文件和控制台同时输出
-作    者: Hejian
+用    法: from log import logger
+          logger.info()
+          logger.warning()
+          logger.error()
+          logger.debug()
+作    者: HanKin
 创建日期: 2022.05.31
-修改日期：2022.05.31
-Copyright (c) 2022 Hejian. All rights reserved.
+修改日期：2023.02.16
+Copyright (c) 2023 HanKin. All rights reserved.
 """
 
 import logging
@@ -14,10 +19,11 @@ import os
 # 创建日志文件夹
 if not os.path.exists('./log/'):
     os.makedirs('./log/')
+
 # 配置日志
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
-LOG_FILE_PATH = './log/tetris.log'
+LOG_FILE_PATH = './log/lottery_tickets.log'
 
 # 日志控制台输出
 stream_handler = logging.StreamHandler()

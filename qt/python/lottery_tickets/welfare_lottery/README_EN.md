@@ -1,12 +1,12 @@
 <div align="center">
-<img height=150 src="https://github.com/hankin2015/Storage\python\udev\udev_auto_copy\img/blob/master/src-tauri/icons/icon.png" />
+<img height=150 src="https://github.com/HanKin2015/Storage/blob/master/python/udev/upan_auto_copy/img/icon.jpgg" />
 </div>
 <p align="center">
-<span >中文</span>
+<a href="README.md">中文</a>
 <span> | </span>
-<a href="README_EN.md">English</a>
+<span>English</span>
 </p>
-<p align="center"><span>跨平台的U盘自动拷贝</span></p>
+<p align="center"><span>A cross-platform desktop application for searching local files.</span></p>
 
 
 
@@ -21,40 +21,42 @@
 [![Linux Support](https://img.shields.io/badge/linux-1793D1?style=flat&logo=linux&logoColor=white)](https://github.com/HanKin2015/Storage/releases)
 </div>
 
-## 介绍
+## What is Orange?
 
 ![Demo](screenshot/upan_auto_copy_v1.0.0.gif)
 
-upan_auto_copy是一款跨平台的**U盘自动拷贝**稳定性测试脚本工具。
+upan_auto_copy is a **upan auto copy** stability test script tool. 
 
-## ✨特点
-- 使用简单，自带中文分词、拼音、补全
-- 毫秒级搜索响应
-- 低CPU、内存资源占用
-- 轻量安装包
-- 简单大方
+## ✨Features
 
-## 编译 
-- 搭建Tauri开发环境 (https://tauri.studio/docs/getting-started/setting-up-macos)
-- 运行 `yarn`
-- 运行 `yarn build`
-- 运行 `yarn tauri-build`
+- Fast search response
+- Low memory and low cpu usage
+- Easy to use, comes with tokenization and auto completion
+- Lightweight installation package
+- Simple and elegant UI
 
-
-## 下载
-
-点击 [release page](https://github.com/HanKin2015/Storage/releases).
+## Build 
+- Setup Tauri dev environment (https://tauri.studio/docs/getting-started/setting-up-macos)
+- Run `yarn`
+- Run `yarn build`
+- Run `yarn tauri-build`
 
 
-## 架构
-![arch](doc/img.png)
+## Download
+
+Go to [release page](https://github.com/HanKin2015/Storage/releases).
+
+## Architecture
+![arch](doc/arch.jpg)
 
 
-## 感谢
+## Thanks
 - Tauri https://tauri.studio
 - React https://github.com/facebook/react
 
 
+
+
 ## LICENSE
 
-[GPL](https://github.com/HanKin2015/Storage/blob/master/LICENSE)
+[GPL](https://github.com/HanKin2015/Storage/blob/master/python/udev/upan_auto_copy/LICENSE)
