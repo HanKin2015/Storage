@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>appDemo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body >
+<h1>app api 测试</h1>
+<button onclick="getText()">获取内容</button>
+<button onclick="setText()">写入内容</button>
+<button onclick="clearText()">清除内容</button>
+<script>
+    var gui = require('nw.gui');
+
+    var clipboard = gui.Clipboard.get();
+    function apendText(text) {
+        var element = document.createElement('div');
+        element.appendChild(document.createTextNode(text));
+        document.body.appendChild(element);
+    }
+    function clearText()
+    {
+
+        clipboard.clear();
+        apendText('剪贴板内容已清除');
+    }
+    function setText()
+    {
+
+        clipboard.set('这是node-webkit向剪贴板写的内容', 'text');
+    }
+    function getText()
+    {
+
+        var text = clipboard.get('text');
+        apendText(text);
+    }
+</script>
+</body>
+</html>

@@ -1,131 +1,47 @@
-2023-02-16 20:55:18 udev_detect.py[main:78] INFO: there are 11 hub and usb devices
-2023-02-16 20:55:18 udev_detect.py[main:81] INFO: ===================Win32_SerialPort=================
-2023-02-16 20:55:18 udev_detect.py[main:99] INFO: usb.Name: 通信端口 (COM1)
-2023-02-16 20:55:18 udev_detect.py[main:100] INFO: usb.DeviceID: COM1
-2023-02-16 20:55:18 udev_detect.py[main:101] INFO: usb.Status: OK
-2023-02-16 20:55:18 udev_detect.py[main:102] INFO: usb.StatusInfo: 3
-2023-02-16 20:55:18 udev_detect.py[main:103] INFO: usb.SystemName: WINEDR-VDI0027
-2023-02-16 20:55:18 udev_detect.py[main:104] INFO: usb.Caption: 通信端口 (COM1)
-2023-02-16 20:55:18 udev_detect.py[main:105] INFO: usb.PNPDeviceID: ACPI\PNP0501\1
-2023-02-16 20:55:18 udev_detect.py[main:106] INFO: usb.CreationClassName: Win32_SerialPort
-2023-02-16 20:55:18 udev_detect.py[main:107] INFO: usb.Description: 通信端口
-
-2023-02-16 20:55:18 udev_detect.py[main:109] INFO: there are 1 com devices
-2023-02-16 20:57:51 udev_detect.py[main:21] INFO: <COMObject winmgmts:>
-2023-02-16 20:57:51 udev_detect.py[main:24] INFO: ===================Win32_USBHub=================
-2023-02-16 20:57:51 udev_detect.py[main:28] INFO: usb.USBVersion: None
-2023-02-16 20:57:51 udev_detect.py[main:29] INFO: usb.ProtocolCode: None
-2023-02-16 20:57:51 udev_detect.py[main:30] INFO: usb.SubclassCode: None
-2023-02-16 20:57:51 udev_detect.py[main:31] INFO: usb.Availability: None
-2023-02-16 20:57:51 udev_detect.py[main:32] INFO: usb.NumberOfConfigs: None
-2023-02-16 20:57:51 udev_detect.py[main:33] INFO: usb.Name: USB Composite Device
-2023-02-16 20:57:51 udev_detect.py[main:34] INFO: usb.DeviceID: USB\VID_0AC8&PID_3500\MI1320_SOC
-2023-02-16 20:57:51 udev_detect.py[main:35] INFO: usb.Status: OK
-2023-02-16 20:57:51 udev_detect.py[main:36] INFO: usb.StatusInfo: None
-2023-02-16 20:57:51 udev_detect.py[main:37] INFO: usb.PNPDeviceID: USB\VID_0AC8&PID_3500\MI1320_SOC
-2023-02-16 20:57:51 udev_detect.py[main:38] INFO: usb.ClassCode: None
-2023-02-16 20:57:51 udev_detect.py[main:39] INFO: usb.SystemName: WINEDR-VDI0027
-2023-02-16 20:57:51 udev_detect.py[main:40] INFO: usb.Caption: USB Composite Device
-2023-02-16 20:57:51 udev_detect.py[main:41] INFO: usb.CreationClassName: Win32_USBHub
-2023-02-16 20:57:51 udev_detect.py[main:42] INFO: usb.CurrentConfigValue: None
-2023-02-16 20:57:51 udev_detect.py[main:43] INFO: usb.Description: USB Composite Device
-
-2023-02-16 20:57:51 udev_detect.py[main:45] INFO: there are 11 hub and usb devices
-2023-02-16 21:14:07 udev_detect.py[main:55] INFO: <COMObject winmgmts:>
-2023-02-16 21:14:07 udev_detect.py[main:67] INFO: 1
-2023-02-16 21:14:16 udev_detect.py[main:55] INFO: <COMObject winmgmts:>
-2023-02-16 21:14:16 udev_detect.py[main:67] INFO: 1
-2023-02-16 21:14:18 udev_detect.py[main:67] INFO: 1
-2023-02-16 21:14:21 udev_detect.py[main:67] INFO: 1
-2023-02-16 21:14:23 udev_detect.py[main:67] INFO: 1
-2023-02-16 21:14:38 udev_detect.py[main:55] INFO: <COMObject winmgmts:>
-2023-02-16 21:14:50 udev_detect.py[main:65] WARNING: there is a usb device which is hotplug out
-2023-02-16 21:16:43 udev_detect.py[main:62] WARNING: there is a new usb device
-2023-02-16 21:16:43 udev_detect.py[print_current_udev_info:27] INFO: ===================Win32_USBHub=================
-2023-02-16 21:16:43 udev_detect.py[print_current_udev_info:31] INFO: usb.USBVersion: None
-2023-02-16 21:16:43 udev_detect.py[print_current_udev_info:32] INFO: usb.ProtocolCode: None
-2023-02-16 21:16:43 udev_detect.py[print_current_udev_info:33] INFO: usb.SubclassCode: None
-2023-02-16 21:16:43 udev_detect.py[print_current_udev_info:34] INFO: usb.Availability: None
-2023-02-16 21:16:43 udev_detect.py[print_current_udev_info:35] INFO: usb.NumberOfConfigs: None
-2023-02-16 21:16:43 udev_detect.py[print_current_udev_info:36] INFO: usb.Name: USB Composite Device
-2023-02-16 21:16:43 udev_detect.py[print_current_udev_info:37] INFO: usb.DeviceID: USB\VID_0AC8&PID_3500\MI1320_SOC
-2023-02-16 21:16:43 udev_detect.py[print_current_udev_info:38] INFO: usb.Status: OK
-2023-02-16 21:16:43 udev_detect.py[print_current_udev_info:39] INFO: usb.StatusInfo: None
-2023-02-16 21:16:43 udev_detect.py[print_current_udev_info:40] INFO: usb.PNPDeviceID: USB\VID_0AC8&PID_3500\MI1320_SOC
-2023-02-16 21:16:43 udev_detect.py[print_current_udev_info:41] INFO: usb.ClassCode: None
-2023-02-16 21:16:43 udev_detect.py[print_current_udev_info:42] INFO: usb.SystemName: WINEDR-VDI0027
-2023-02-16 21:16:43 udev_detect.py[print_current_udev_info:43] INFO: usb.Caption: USB Composite Device
-2023-02-16 21:16:43 udev_detect.py[print_current_udev_info:44] INFO: usb.CreationClassName: Win32_USBHub
-2023-02-16 21:16:43 udev_detect.py[print_current_udev_info:45] INFO: usb.CurrentConfigValue: None
-2023-02-16 21:16:43 udev_detect.py[print_current_udev_info:46] INFO: usb.Description: USB Composite Device
-
-2023-02-16 21:16:43 udev_detect.py[print_current_udev_info:48] INFO: there are 1 usb devices
-2023-02-17 20:44:47 udev_detect.py[main:55] INFO: <COMObject winmgmts:>
-2023-02-17 20:44:47 udev_detect.py[main:58] INFO: there are 11 hub and usb devices now
-2023-02-19 03:17:58 udev_detect.py[main:66] INFO: there is a usb device which is hotplug out
-2023-02-19 03:18:10 udev_detect.py[main:63] WARNING: there is a new usb device
-2023-02-19 03:18:10 udev_detect.py[print_current_udev_info:27] INFO: ===================Win32_USBHub=================
-2023-02-19 03:18:10 udev_detect.py[print_current_udev_info:31] INFO: usb.USBVersion: None
-2023-02-19 03:18:10 udev_detect.py[print_current_udev_info:32] INFO: usb.ProtocolCode: None
-2023-02-19 03:18:10 udev_detect.py[print_current_udev_info:33] INFO: usb.SubclassCode: None
-2023-02-19 03:18:10 udev_detect.py[print_current_udev_info:34] INFO: usb.Availability: None
-2023-02-19 03:18:10 udev_detect.py[print_current_udev_info:35] INFO: usb.NumberOfConfigs: None
-2023-02-19 03:18:10 udev_detect.py[print_current_udev_info:36] INFO: usb.Name: USB Composite Device
-2023-02-19 03:18:10 udev_detect.py[print_current_udev_info:37] INFO: usb.DeviceID: USB\VID_0AC8&PID_3500\MI1320_SOC
-2023-02-19 03:18:10 udev_detect.py[print_current_udev_info:38] INFO: usb.Status: OK
-2023-02-19 03:18:10 udev_detect.py[print_current_udev_info:39] INFO: usb.StatusInfo: None
-2023-02-19 03:18:10 udev_detect.py[print_current_udev_info:40] INFO: usb.PNPDeviceID: USB\VID_0AC8&PID_3500\MI1320_SOC
-2023-02-19 03:18:10 udev_detect.py[print_current_udev_info:41] INFO: usb.ClassCode: None
-2023-02-19 03:18:10 udev_detect.py[print_current_udev_info:42] INFO: usb.SystemName: WINEDR-VDI0027
-2023-02-19 03:18:10 udev_detect.py[print_current_udev_info:43] INFO: usb.Caption: USB Composite Device
-2023-02-19 03:18:10 udev_detect.py[print_current_udev_info:44] INFO: usb.CreationClassName: Win32_USBHub
-2023-02-19 03:18:10 udev_detect.py[print_current_udev_info:45] INFO: usb.CurrentConfigValue: None
-2023-02-19 03:18:10 udev_detect.py[print_current_udev_info:46] INFO: usb.Description: USB Composite Device
-
-2023-02-19 03:18:10 udev_detect.py[print_current_udev_info:48] INFO: there are 1 usb devices
-2023-02-19 20:45:09 udev_detect.py[main:66] INFO: there is a usb device which is hotplug out
-2023-02-20 08:58:18 udev_detect.py[main:63] WARNING: there is a new usb device
-2023-02-20 08:58:18 udev_detect.py[print_current_udev_info:27] INFO: ===================Win32_USBHub=================
-2023-02-20 08:58:18 udev_detect.py[print_current_udev_info:31] INFO: usb.USBVersion: None
-2023-02-20 08:58:18 udev_detect.py[print_current_udev_info:32] INFO: usb.ProtocolCode: None
-2023-02-20 08:58:18 udev_detect.py[print_current_udev_info:33] INFO: usb.SubclassCode: None
-2023-02-20 08:58:18 udev_detect.py[print_current_udev_info:34] INFO: usb.Availability: None
-2023-02-20 08:58:18 udev_detect.py[print_current_udev_info:35] INFO: usb.NumberOfConfigs: None
-2023-02-20 08:58:18 udev_detect.py[print_current_udev_info:36] INFO: usb.Name: USB Composite Device
-2023-02-20 08:58:18 udev_detect.py[print_current_udev_info:37] INFO: usb.DeviceID: USB\VID_0AC8&PID_3500\MI1320_SOC
-2023-02-20 08:58:18 udev_detect.py[print_current_udev_info:38] INFO: usb.Status: OK
-2023-02-20 08:58:18 udev_detect.py[print_current_udev_info:39] INFO: usb.StatusInfo: None
-2023-02-20 08:58:18 udev_detect.py[print_current_udev_info:40] INFO: usb.PNPDeviceID: USB\VID_0AC8&PID_3500\MI1320_SOC
-2023-02-20 08:58:18 udev_detect.py[print_current_udev_info:41] INFO: usb.ClassCode: None
-2023-02-20 08:58:18 udev_detect.py[print_current_udev_info:42] INFO: usb.SystemName: WINEDR-VDI0027
-2023-02-20 08:58:18 udev_detect.py[print_current_udev_info:43] INFO: usb.Caption: USB Composite Device
-2023-02-20 08:58:18 udev_detect.py[print_current_udev_info:44] INFO: usb.CreationClassName: Win32_USBHub
-2023-02-20 08:58:18 udev_detect.py[print_current_udev_info:45] INFO: usb.CurrentConfigValue: None
-2023-02-20 08:58:18 udev_detect.py[print_current_udev_info:46] INFO: usb.Description: USB Composite Device
-
-2023-02-20 08:58:18 udev_detect.py[print_current_udev_info:48] INFO: there are 1 usb devices
-2023-02-20 09:06:48 udev_detect.py[main:59] INFO: <COMObject winmgmts:>
-2023-02-20 09:06:48 udev_detect.py[main:62] INFO: there are 11 hub and usb devices now
-2023-02-20 09:07:04 udev_detect.py[main:70] INFO: there is a usb device which is hotplug out
-2023-02-20 09:07:19 udev_detect.py[main:67] WARNING: there is a new usb device
-2023-02-20 09:07:19 udev_detect.py[print_current_udev_info:27] INFO: ===================Win32_USBHub=================
-2023-02-20 09:07:19 udev_detect.py[print_current_udev_info:32] INFO: usb.USBVersion: None
-2023-02-20 09:07:19 udev_detect.py[print_current_udev_info:35] INFO: usb.ProtocolCode: None
-2023-02-20 09:07:19 udev_detect.py[print_current_udev_info:36] INFO: usb.SubclassCode: None
-2023-02-20 09:07:19 udev_detect.py[print_current_udev_info:37] INFO: usb.Availability: None
-2023-02-20 09:07:19 udev_detect.py[print_current_udev_info:38] INFO: usb.NumberOfConfigs: None
-2023-02-20 09:07:19 udev_detect.py[print_current_udev_info:39] INFO: usb.Name: USB Composite Device
-2023-02-20 09:07:19 udev_detect.py[print_current_udev_info:40] INFO: usb.DeviceID: USB\VID_0AC8&PID_3500\MI1320_SOC
-2023-02-20 09:07:19 udev_detect.py[print_current_udev_info:41] INFO: usb.Status: OK
-2023-02-20 09:07:19 udev_detect.py[print_current_udev_info:42] INFO: usb.StatusInfo: None
-2023-02-20 09:07:19 udev_detect.py[print_current_udev_info:43] INFO: usb.PNPDeviceID: USB\VID_0AC8&PID_3500\MI1320_SOC
-2023-02-20 09:07:19 udev_detect.py[print_current_udev_info:44] INFO: usb.ClassCode: None
-2023-02-20 09:07:19 udev_detect.py[print_current_udev_info:45] INFO: usb.SystemName: WINEDR-VDI0027
-2023-02-20 09:07:19 udev_detect.py[print_current_udev_info:46] INFO: usb.Caption: USB Composite Device
-2023-02-20 09:07:19 udev_detect.py[print_current_udev_info:47] INFO: usb.CreationClassName: Win32_USBHub
-2023-02-20 09:07:19 udev_detect.py[print_current_udev_info:48] INFO: usb.CurrentConfigValue: None
-2023-02-20 09:07:19 udev_detect.py[print_current_udev_info:49] INFO: usb.Description: USB Composite Device
-2023-02-20 09:07:19 udev_detect.py[print_current_udev_info:51] INFO: there are 1 usb devices
-2023-02-20 09:07:19 udev_detect.py[print_current_udev_info:52] INFO: ===================Win32_USBHub=================
-2023-02-21 09:15:54 udev_detect.py[main:59] INFO: <COMObject winmgmts:>
-2023-02-21 09:15:54 udev_detect.py[main:62] INFO: there are 11 hub and usb devices now
+2023-02-23 17:33:37 udev_detect.py[<module>:89] INFO: ******** starting ********
+2023-02-23 17:33:37 udev_detect.py[main:67] INFO: <COMObject winmgmts:>
+2023-02-23 17:33:37 udev_detect.py[main:70] INFO: there are 10 hub and usb devices now
+2023-02-23 17:33:48 udev_detect.py[main:80] WARNING: there are 1 usb devices which are hogplug in
+2023-02-23 17:33:48 udev_detect.py[print_hotplug_udev_info:52] INFO: =============== Hotplug USB Device ===============
+2023-02-23 17:33:48 udev_detect.py[print_udev_info:21] INFO: usb.USBVersion: None
+2023-02-23 17:33:48 udev_detect.py[print_udev_info:21] INFO: usb.ProtocolCode: None
+2023-02-23 17:33:48 udev_detect.py[print_udev_info:21] INFO: usb.SubclassCode: None
+2023-02-23 17:33:48 udev_detect.py[print_udev_info:21] INFO: usb.Availability: None
+2023-02-23 17:33:48 udev_detect.py[print_udev_info:21] INFO: usb.NumberOfConfigs: None
+2023-02-23 17:33:48 udev_detect.py[print_udev_info:21] INFO: usb.Name: USB Composite Device
+2023-02-23 17:33:48 udev_detect.py[print_udev_info:21] INFO: usb.DeviceID: USB\VID_0AC8&PID_3500\MI1320_SOC
+2023-02-23 17:33:48 udev_detect.py[print_udev_info:21] INFO: usb.Status: OK
+2023-02-23 17:33:48 udev_detect.py[print_udev_info:21] INFO: usb.StatusInfo: None
+2023-02-23 17:33:48 udev_detect.py[print_udev_info:21] INFO: usb.PNPDeviceID: USB\VID_0AC8&PID_3500\MI1320_SOC
+2023-02-23 17:33:48 udev_detect.py[print_udev_info:21] INFO: usb.ClassCode: None
+2023-02-23 17:33:48 udev_detect.py[print_udev_info:21] INFO: usb.SystemName: WINEDR-VDI0027
+2023-02-23 17:33:48 udev_detect.py[print_udev_info:21] INFO: usb.Caption: USB Composite Device
+2023-02-23 17:33:48 udev_detect.py[print_udev_info:21] INFO: usb.CreationClassName: Win32_USBHub
+2023-02-23 17:33:48 udev_detect.py[print_udev_info:21] INFO: usb.CurrentConfigValue: None
+2023-02-23 17:33:48 udev_detect.py[print_udev_info:21] INFO: usb.Description: USB Composite Device
+2023-02-23 17:33:48 udev_detect.py[print_hotplug_udev_info:59] INFO: =============== Hotplug USB Device ===============
+2023-02-23 17:34:05 udev_detect.py[main:80] WARNING: there are 1 usb devices which are hogplug out
+2023-02-23 17:34:05 udev_detect.py[print_hotplug_udev_info:52] INFO: =============== Hotplug USB Device ===============
+2023-02-23 17:34:05 udev_detect.py[print_udev_info:21] INFO: usb.USBVersion: None
+2023-02-23 17:34:05 udev_detect.py[print_udev_info:21] INFO: usb.ProtocolCode: None
+2023-02-23 17:34:05 udev_detect.py[print_udev_info:21] INFO: usb.SubclassCode: None
+2023-02-23 17:34:05 udev_detect.py[print_udev_info:21] INFO: usb.Availability: None
+2023-02-23 17:34:05 udev_detect.py[print_udev_info:21] INFO: usb.NumberOfConfigs: None
+2023-02-23 17:34:05 udev_detect.py[print_udev_info:21] INFO: usb.Name: USB Composite Device
+2023-02-23 17:34:05 udev_detect.py[print_udev_info:21] INFO: usb.DeviceID: USB\VID_0AC8&PID_3500\MI1320_SOC
+2023-02-23 17:34:05 udev_detect.py[print_udev_info:21] INFO: usb.Status: OK
+2023-02-23 17:34:05 udev_detect.py[print_udev_info:21] INFO: usb.StatusInfo: None
+2023-02-23 17:34:05 udev_detect.py[print_udev_info:21] INFO: usb.PNPDeviceID: USB\VID_0AC8&PID_3500\MI1320_SOC
+2023-02-23 17:34:05 udev_detect.py[print_udev_info:21] INFO: usb.ClassCode: None
+2023-02-23 17:34:05 udev_detect.py[print_udev_info:21] INFO: usb.SystemName: WINEDR-VDI0027
+2023-02-23 17:34:05 udev_detect.py[print_udev_info:21] INFO: usb.Caption: USB Composite Device
+2023-02-23 17:34:05 udev_detect.py[print_udev_info:21] INFO: usb.CreationClassName: Win32_USBHub
+2023-02-23 17:34:05 udev_detect.py[print_udev_info:21] INFO: usb.CurrentConfigValue: None
+2023-02-23 17:34:05 udev_detect.py[print_udev_info:21] INFO: usb.Description: USB Composite Device
+2023-02-23 17:34:05 udev_detect.py[print_hotplug_udev_info:59] INFO: =============== Hotplug USB Device ===============
+2023-02-23 17:35:08 udev_detect.py[<module>:88] INFO: ******** starting ********
+2023-02-23 17:35:08 udev_detect.py[main:66] INFO: <COMObject winmgmts:>
+2023-02-23 17:35:08 udev_detect.py[main:69] INFO: there are 10 hub and usb devices now
+2023-02-23 17:36:28 udev_detect.py[<module>:88] INFO: ******** starting ********
+2023-02-23 17:36:28 udev_detect.py[main:66] INFO: <COMObject winmgmts:>
+2023-02-23 17:36:28 udev_detect.py[main:69] INFO: there are 10 hub and usb devices now

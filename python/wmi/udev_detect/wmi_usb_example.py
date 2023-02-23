@@ -83,6 +83,7 @@ def main():
     for usb in wmi.InstancesOf("Win32_SerialPort"):
         # https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-serialport
         # https://cloud.tencent.com/developer/ask/sof/1442270
+        # https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-processor
         
         #print(usb)
         #print(type(usb))
