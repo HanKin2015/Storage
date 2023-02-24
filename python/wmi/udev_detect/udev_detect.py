@@ -76,7 +76,7 @@ def main():
         if diff_count == 0:
             continue
         
-        logger.warning('\nthere are {} usb devices which are hogplug {}'.format(abs(diff_count), 'in' if diff_count > 0 else 'out'))
+        logger.warning('there are {} usb devices which are hogplug {}'.format(abs(diff_count), 'in' if diff_count > 0 else 'out'))
         print_hotplug_udev_info(diff_count, udev_info_list, current_udev_info_list)
         udev_info_list = current_udev_info_list
 
