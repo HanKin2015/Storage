@@ -1,3 +1,7 @@
+参考：
+https://www.cnblogs.com/Yogile/p/16416229.html
+https://blog.csdn.net/qq_45769063/article/details/124713400
+
 test_pyside6.py 测试pyside6安装是否成功
 pyside6_tray_example1.py
 pyside6_tray_example2.py
