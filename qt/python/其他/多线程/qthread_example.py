@@ -2,7 +2,6 @@ import sys
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QHBoxLayout, QVBoxLayout
 
-
 class Demo(QWidget):
     def __init__(self):
         super(Demo, self).__init__()

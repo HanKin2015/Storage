@@ -41,8 +41,9 @@ upan_auto_copy是一款跨平台的**U盘自动拷贝**稳定性测试脚本工�
 - 搭建python3开发环境 (https://m.runoob.com/python3/python3-install.html)
 - 运行 `python upan_auto_copy.py`
 - 运行 `python upan_auto_copy.py -u D`
-- 打包 `pyinstaller.exe --version-file=doc/file_version_info.txt -i doc/dog.ico -F src/upan_auto_copy.py`
-
+- 打包 `pyinstaller.exe --version-file=doc/file_version_info.txt -i img/udev_detect.ico -w -F src/udev_detect_tray.py`
+注意：图标只能是ico格式，其他格式会报错
+win32ctypes.pywin32.pywintypes.error: (193, 'LoadLibraryEx', '%1 不是有效的 Win32 应用程序。')
 
 ## 下载
 点击 [release page](https://github.com/HanKin2015/Storage/releases).

@@ -14,7 +14,7 @@ import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
 from log import logger
 
-APP_ICON_PATH = '../img/dog.ico'
+APP_ICON_PATH = '../img/usb_camera_monitor_tool.png'
 APP_MSG_PATH = '../img/msg.png'
 APP_NAME = 'USB摄像头监控工具' 
 
