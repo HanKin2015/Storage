@@ -146,7 +146,6 @@ class Ui_MainWindow(object):
         
         logger.info('stop usb device detect')
         self.udevDetect.is_on = False
-        self.udevDetect.start()
 
     def quitApp(self):
         """包含二次确认的退出

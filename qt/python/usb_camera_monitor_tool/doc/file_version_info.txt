@@ -30,13 +30,13 @@ VSVersionInfo(
       StringTable(
         u'080404b0',
         [StringStruct(u'CompanyName', u'hejian'),
-        StringStruct(u'FileDescription', u'U盘自动拷贝文件脚本'),
+        StringStruct(u'FileDescription', u'USB摄像头监控工具'),
         StringStruct(u'FileVersion', u'1.0.0.1'),
-        StringStruct(u'InternalName', u'upan_auto_copy.exe'),
-        StringStruct(u'LegalCopyright', u'Copyright (C) 2022'),
-        StringStruct(u'OriginalFilename', u'upan_auto_copy.exe'),
-        StringStruct(u'ProductName', u'U盘自动拷贝文件脚本工具'),
-        StringStruct(u'ProductVersion', u'22.7.21.2')])
+        StringStruct(u'InternalName', u'usb_camera_monitor_tool.exe'),
+        StringStruct(u'LegalCopyright', u'Copyright (C) 2023'),
+        StringStruct(u'OriginalFilename', u'usb_camera_monitor_tool.exe'),
+        StringStruct(u'ProductName', u'USB摄像头监控工具'),
+        StringStruct(u'ProductVersion', u'2023.02.28.1')])
       ]), 
     VarFileInfo([VarStruct(u'Translation', [2052, 1200])])
   ]

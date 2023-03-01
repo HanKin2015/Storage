@@ -9,6 +9,12 @@
 - pyinstaller.exe --version-file=doc/file_version_info.txt -i doc/dog.ico -F src/upan_auto_copy.py
 - 取出exe文件，删除多余的文件夹
 
+### 编译打包
+- 搭建python3开发环境 (https://m.runoob.com/python3/python3-install.html)
+- 运行 `python upan_auto_copy.py`
+- 运行 `python upan_auto_copy.py -u D`
+- 打包 `pyinstaller.exe --version-file=doc/file_version_info.txt -i img/usb_camera_monitor_tool.ico -w -F src/usb_camera_monitor_tool.py`
+
 ## 3、下一步改进点
 - 日志改进
 2022-05-31 21:36:24 test.py[main:31] WARNING: hello world

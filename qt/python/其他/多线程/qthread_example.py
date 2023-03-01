@@ -52,7 +52,6 @@ class MyThread(QThread):
             self.my_signal.emit(str(self.count))
             self.sleep(1)
 
-
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     demo = Demo()
