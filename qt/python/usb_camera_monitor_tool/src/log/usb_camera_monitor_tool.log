@@ -1,0 +1,39 @@
+2023-03-01 17:49:16 usb_camera_monitor_tool.py[<module>:352] INFO: ******** starting ********
+2023-03-01 17:49:16 usb_camera_monitor_tool.py[__init__:249] INFO: screen size: 1920 x 1080
+2023-03-01 17:49:16 usb_camera_monitor_tool.py[__init__:252] INFO: screenshot_x = 928.0, screenshot_y = 508.0
+2023-03-01 17:49:24 usb_camera_monitor_tool.py[startMonitorScreen:204] INFO: start monitor screen
+2023-03-01 17:50:31 usb_camera_monitor_tool.py[<module>:352] INFO: ******** starting ********
+2023-03-01 17:50:31 usb_camera_monitor_tool.py[__init__:249] INFO: screen size: 1920 x 1080
+2023-03-01 17:50:31 usb_camera_monitor_tool.py[__init__:252] INFO: screenshot_x = 928.0, screenshot_y = 508.0
+2023-03-01 17:50:36 usb_camera_monitor_tool.py[startMonitorScreen:204] INFO: start monitor screen
+2023-03-01 17:52:39 usb_camera_monitor_tool.py[quitApp:229] INFO: ******** stop ********
+
+2023-03-01 17:53:12 usb_camera_monitor_tool.py[<module>:352] INFO: ******** starting ********
+2023-03-01 17:53:12 usb_camera_monitor_tool.py[__init__:249] INFO: screen size: 1920 x 1080
+2023-03-01 17:53:12 usb_camera_monitor_tool.py[__init__:252] INFO: screenshot_x = 928.0, screenshot_y = 508.0
+2023-03-01 17:53:16 usb_camera_monitor_tool.py[startMonitorScreen:204] INFO: start monitor screen
+2023-03-01 17:53:28 usb_camera_monitor_tool.py[run:319] INFO: usb camera is black screen state
+2023-03-01 17:53:32 usb_camera_monitor_tool.py[run:319] INFO: usb camera is black screen state
+2023-03-01 17:53:35 usb_camera_monitor_tool.py[run:319] INFO: usb camera is black screen state
+2023-03-01 17:53:44 usb_camera_monitor_tool.py[quitApp:229] INFO: ******** stop ********
+
+2023-03-01 17:54:47 usb_camera_monitor_tool.py[<module>:352] INFO: ******** starting ********
+2023-03-01 17:54:47 usb_camera_monitor_tool.py[__init__:249] INFO: screen size: 1920 x 1080
+2023-03-01 17:54:47 usb_camera_monitor_tool.py[__init__:252] INFO: screenshot_x = 928.0, screenshot_y = 508.0
+2023-03-01 17:54:50 usb_camera_monitor_tool.py[startMonitorScreen:204] INFO: start monitor screen
+2023-03-01 17:54:53 usb_camera_monitor_tool.py[run:319] INFO: usb camera is black screen state, degree is 1.0
+2023-03-01 17:54:56 usb_camera_monitor_tool.py[run:319] INFO: usb camera is black screen state, degree is 1.0
+2023-03-01 17:54:59 usb_camera_monitor_tool.py[run:319] INFO: usb camera is black screen state, degree is 1.0
+2023-03-01 17:55:06 usb_camera_monitor_tool.py[stopMonitorScreen:212] INFO: stop monitor screen
+2023-03-01 17:55:10 usb_camera_monitor_tool.py[quitApp:229] INFO: ******** stop ********
+
+2023-03-02 13:15:51 usb_camera_monitor_tool.py[<module>:350] INFO: ******** starting ********
+2023-03-02 13:15:52 usb_camera_monitor_tool.py[__init__:247] INFO: screen size: 1920 x 1080
+2023-03-02 13:15:52 usb_camera_monitor_tool.py[__init__:250] INFO: screenshot_x = 928.0, screenshot_y = 508.0
+2023-03-02 13:16:01 usb_camera_monitor_tool.py[quitApp:229] INFO: ******** stop ********
+
+2023-03-02 13:33:25 usb_camera_monitor_tool.py[<module>:302] INFO: ******** starting ********
+2023-03-02 13:33:25 usb_camera_monitor_tool.py[__init__:246] INFO: screen size: 1920 x 1080
+2023-03-02 13:33:25 usb_camera_monitor_tool.py[__init__:249] INFO: screenshot_x = 928.0, screenshot_y = 508.0
+2023-03-02 13:33:41 usb_camera_monitor_tool.py[quitApp:228] INFO: ******** stop ********
+

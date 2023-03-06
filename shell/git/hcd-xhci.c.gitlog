@@ -1,0 +1,1348 @@
+commit 4f67d30b5e74e060b8dbe10528829b47345cd6e8
+Author: Marc-André Lureau <marcandre.lureau@redhat.com>
+Date:   Fri Jan 10 19:30:32 2020 +0400
+
+    qdev: set properties with device_class_set_props()
+    
+    The following patch will need to handle properties registration during
+    class_init time. Let's use a device_class_set_props() setter.
+    
+    spatch --macro-file scripts/cocci-macro-file.h  --sp-file
+    ./scripts/coccinelle/qdev-set-props.cocci --keep-comments --in-place
+    --dir .
+    
+    @@
+    typedef DeviceClass;
+    DeviceClass *d;
+    expression val;
+    @@
+    - d->props = val
+    + device_class_set_props(d, val)
+    
+    Signed-off-by: Marc-André Lureau <marcandre.lureau@redhat.com>
+    Message-Id: <20200110153039.1379601-20-marcandre.lureau@redhat.com>
+    Signed-off-by: Paolo Bonzini <pbonzini@redhat.com>
+
+ hw/usb/hcd-xhci.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 236846a019c4f7aa3111026fc9a1fe09684c8978
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Tue Jan 7 09:36:06 2020 +0100
+
+    xhci: recheck slot status
+    
+    Factor out slot status check into a helper function.  Add an additional
+    check after completing transfers.  This is needed in case a guest
+    queues multiple transfers in a row and a device unplug happens while
+    qemu processes them.
+    
+    Buglink: https://bugzilla.redhat.com/show_bug.cgi?id=1786413
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Reviewed-by: Philippe Mathieu-Daudé <philmd@redhat.com>
+    Message-id: 20200107083606.12393-1-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 15 ++++++++++++---
+ 1 file changed, 12 insertions(+), 3 deletions(-)
+
+commit 34b9d6a1f8dfa8da08e084a7193a1fa3f669164e
+Author: Chen Qun <kuhn.chenqun@huawei.com>
+Date:   Fri Jan 10 18:58:55 2020 +0800
+
+    xhci: Fix memory leak in xhci_kick_epctx when poweroff GuestOS
+    
+    start vm with libvirt, when GuestOS running, enter poweroff command using
+    the xhci keyboard, then ASAN shows memory leak stack：
+    
+    Direct leak of 80 byte(s) in 5 object(s) allocated from:
+        #0 0xfffd1e6431cb in __interceptor_malloc (/lib64/libasan.so.4+0xd31cb)
+        #1 0xfffd1e107163 in g_malloc (/lib64/libglib-2.0.so.0+0x57163)
+        #2 0xaaad39051367 in qemu_sglist_init /qemu/dma-helpers.c:43
+        #3 0xaaad3947c407 in pci_dma_sglist_init /qemu/include/hw/pci/pci.h:842
+        #4 0xaaad3947c407 in xhci_xfer_create_sgl /qemu/hw/usb/hcd-xhci.c:1446
+        #5 0xaaad3947c407 in xhci_setup_packet /qemu/hw/usb/hcd-xhci.c:1618
+        #6 0xaaad3948625f in xhci_submit /qemu/hw/usb/hcd-xhci.c:1827
+        #7 0xaaad3948625f in xhci_fire_transfer /qemu/hw/usb/hcd-xhci.c:1839
+        #8 0xaaad3948625f in xhci_kick_epctx /qemu/hw/usb/hcd-xhci.c:1991
+        #9 0xaaad3948f537 in xhci_doorbell_write /qemu/hw/usb/hcd-xhci.c:3158
+        #10 0xaaad38bcbfc7 in memory_region_write_accessor /qemu/memory.c:483
+        #11 0xaaad38bc654f in access_with_adjusted_size /qemu/memory.c:544
+        #12 0xaaad38bd1877 in memory_region_dispatch_write /qemu/memory.c:1482
+        #13 0xaaad38b1c77f in flatview_write_continue /qemu/exec.c:3167
+        #14 0xaaad38b1ca83 in flatview_write /qemu/exec.c:3207
+        #15 0xaaad38b268db in address_space_write /qemu/exec.c:3297
+        #16 0xaaad38bf909b in kvm_cpu_exec /qemu/accel/kvm/kvm-all.c:2383
+        #17 0xaaad38bb063f in qemu_kvm_cpu_thread_fn /qemu/cpus.c:1246
+        #18 0xaaad39821c93 in qemu_thread_start /qemu/util/qemu-thread-posix.c:519
+        #19 0xfffd1c8378bb  (/lib64/libpthread.so.0+0x78bb)
+        #20 0xfffd1c77616b  (/lib64/libc.so.6+0xd616b)
+    
+    Reported-by: Euler Robot <euler.robot@huawei.com>
+    Signed-off-by: Chen Qun <kuhn.chenqun@huawei.com>
+    Message-id: 20200110105855.81144-1-kuhn.chenqun@huawei.com
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+
+ hw/usb/hcd-xhci.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 7cec2ed9d7aeeb6f873188b96c9f8ae17ab88da1
+Author: fangying <fangying1@huawei.com>
+Date:   Wed Aug 28 14:25:35 2019 +0800
+
+    xhci: Fix memory leak in xhci_kick_epctx
+    
+    Address Sanitizer shows memory leak in xhci_kick_epctx hw/usb/hcd-xhci.c:1912.
+    A sglist is leaked when a packet is retired and returns USB_RET_NAK status.
+    The leak stack is as bellow:
+    
+    Direct leak of 2688 byte(s) in 168 object(s) allocated from:
+        #0 0xffffae8b11db in __interceptor_malloc (/lib64/libasan.so.4+0xd31db)
+        #1 0xffffae5c9163 in g_malloc (/lib64/libglib-2.0.so.0+0x57163)
+        #2 0xaaaabb6fb3f7 in qemu_sglist_init dma-helpers.c:43
+        #3 0xaaaabba705a7 in pci_dma_sglist_init include/hw/pci/pci.h:837
+        #4 0xaaaabba705a7 in xhci_xfer_create_sgl hw/usb/hcd-xhci.c:1443
+        #5 0xaaaabba705a7 in xhci_setup_packet hw/usb/hcd-xhci.c:1615
+        #6 0xaaaabba77a6f in xhci_kick_epctx hw/usb/hcd-xhci.c:1912
+        #7 0xaaaabbdaad27 in timerlist_run_timers util/qemu-timer.c:592
+        #8 0xaaaabbdab19f in qemu_clock_run_timers util/qemu-timer.c:606
+        #9 0xaaaabbdab19f in qemu_clock_run_all_timers util/qemu-timer.c:692
+        #10 0xaaaabbdab9a3 in main_loop_wait util/main-loop.c:524
+        #11 0xaaaabb6ff5e7 in main_loop vl.c:1806
+        #12 0xaaaabb1e1453 in main vl.c:4488
+    
+    Signed-off-by: Ying Fang <fangying1@huawei.com>
+    Message-id: 20190828062535.1573-1-fangying1@huawei.com
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+
+ hw/usb/hcd-xhci.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit c9e385926232f30b7ea84e10725df57795ad0eb7
+Author: Ying Fang <fangying1@huawei.com>
+Date:   Tue Aug 27 16:02:09 2019 +0800
+
+    xhci: Fix memory leak in xhci_address_slot
+    
+    Address Sanitizer shows memory leak in xhci_address_slot
+    hw/usb/hcd-xhci.c:2156 and the stack is as bellow:
+    
+    Direct leak of 64 byte(s) in 4 object(s) allocated from:
+        #0 0xffff91c6f5ab in realloc (/lib64/libasan.so.4+0xd35ab)
+        #1 0xffff91987243 in g_realloc (/lib64/libglib-2.0.so.0+0x57243)
+        #2 0xaaaab0b26a1f in qemu_iovec_add util/iov.c:296
+        #3 0xaaaab07e5ce3 in xhci_address_slot hw/usb/hcd-xhci.c:2156
+        #4 0xaaaab07e5ce3 in xhci_process_commands hw/usb/hcd-xhci.c:2493
+        #5 0xaaaab00058d7 in memory_region_write_accessor qemu/memory.c:507
+        #6 0xaaaab0000d87 in access_with_adjusted_size memory.c:573
+        #7 0xaaaab000abcf in memory_region_dispatch_write memory.c:1516
+        #8 0xaaaaaff59947 in flatview_write_continue exec.c:3367
+        #9 0xaaaaaff59c33 in flatview_write exec.c:3406
+        #10 0xaaaaaff63b3b in address_space_write exec.c:3496
+        #11 0xaaaab002f263 in kvm_cpu_exec accel/kvm/kvm-all.c:2288
+        #12 0xaaaaaffee427 in qemu_kvm_cpu_thread_fn cpus.c:1290
+        #13 0xaaaab0b1a943 in qemu_thread_start util/qemu-thread-posix.c:502
+        #14 0xffff908ce8bb in start_thread (/lib64/libpthread.so.0+0x78bb)
+        #15 0xffff908165cb in thread_start (/lib64/libc.so.6+0xd55cb)
+    
+    Cc: zhanghailiang <zhang.zhanghailiang@huawei.com>
+    Signed-off-by: Ying Fang <fangying1@huawei.com>
+    Reviewed-by: Li Qiang <liq3ea@gmail.com>
+    Message-id: 20190827080209.2365-1-fangying1@huawei.com
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+
+ hw/usb/hcd-xhci.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit dc2c037fd23ea3dcf2e13afda22c1c64ab56f96b
+Author: Hikaru Nishida <hikarupsp@gmail.com>
+Date:   Sat Jul 20 15:04:27 2019 +0900
+
+    xhci: Add No Op Command
+    
+    This commit adds No Op Command (23) to xHC for verifying the operation
+    of the Command Ring mechanisms.
+    No Op Command is defined in XHCI spec (4.6.2) and just reports Command
+    Completion Event with Completion Code == Success.
+    Before this commit, No Op Command is not implemented so xHC reports
+    Command Completion Event with Completion Code == TRB Error. This commit
+    fixes this behaviour to report Completion Code correctly.
+    
+    Signed-off-by: Hikaru Nishida <hikarupsp@gmail.com>
+    Message-id: 20190720060427.50457-1-hikarupsp@gmail.com
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+
+ hw/usb/hcd-xhci.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit a27bd6c779badb8d76e4430d810ef710a1b98f4e
+Author: Markus Armbruster <armbru@redhat.com>
+Date:   Mon Aug 12 07:23:51 2019 +0200
+
+    Include hw/qdev-properties.h less
+    
+    In my "build everything" tree, changing hw/qdev-properties.h triggers
+    a recompile of some 2700 out of 6600 objects (not counting tests and
+    objects that don't depend on qemu/osdep.h).
+    
+    Many places including hw/qdev-properties.h (directly or via hw/qdev.h)
+    actually need only hw/qdev-core.h.  Include hw/qdev-core.h there
+    instead.
+    
+    hw/qdev.h is actually pointless: all it does is include hw/qdev-core.h
+    and hw/qdev-properties.h, which in turn includes hw/qdev-core.h.
+    Replace the remaining uses of hw/qdev.h by hw/qdev-properties.h.
+    
+    While there, delete a few superfluous inclusions of hw/qdev-core.h.
+    
+    Touching hw/qdev-properties.h now recompiles some 1200 objects.
+    
+    Cc: Paolo Bonzini <pbonzini@redhat.com>
+    Cc: "Daniel P. Berrangé" <berrange@redhat.com>
+    Cc: Eduardo Habkost <ehabkost@redhat.com>
+    Signed-off-by: Markus Armbruster <armbru@redhat.com>
+    Reviewed-by: Eduardo Habkost <ehabkost@redhat.com>
+    Message-Id: <20190812052359.30071-22-armbru@redhat.com>
+
+ hw/usb/hcd-xhci.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 650d103d3ea959212f826acb9d3fe80cf30e347b
+Author: Markus Armbruster <armbru@redhat.com>
+Date:   Mon Aug 12 07:23:48 2019 +0200
+
+    Include hw/hw.h exactly where needed
+    
+    In my "build everything" tree, changing hw/hw.h triggers a recompile
+    of some 2600 out of 6600 objects (not counting tests and objects that
+    don't depend on qemu/osdep.h).
+    
+    The previous commits have left only the declaration of hw_error() in
+    hw/hw.h.  This permits dropping most of its inclusions.  Touching it
+    now recompiles less than 200 objects.
+    
+    Signed-off-by: Markus Armbruster <armbru@redhat.com>
+    Reviewed-by: Alistair Francis <alistair.francis@wdc.com>
+    Message-Id: <20190812052359.30071-19-armbru@redhat.com>
+    Reviewed-by: Philippe Mathieu-Daudé <philmd@redhat.com>
+    Tested-by: Philippe Mathieu-Daudé <philmd@redhat.com>
+
+ hw/usb/hcd-xhci.c | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit d6454270575da1f16a8923c7cb240e46ef243f72
+Author: Markus Armbruster <armbru@redhat.com>
+Date:   Mon Aug 12 07:23:45 2019 +0200
+
+    Include migration/vmstate.h less
+    
+    In my "build everything" tree, changing migration/vmstate.h triggers a
+    recompile of some 2700 out of 6600 objects (not counting tests and
+    objects that don't depend on qemu/osdep.h).
+    
+    hw/hw.h supposedly includes it for convenience.  Several other headers
+    include it just to get VMStateDescription.  The previous commit made
+    that unnecessary.
+    
+    Include migration/vmstate.h only where it's still needed.  Touching it
+    now recompiles only some 1600 objects.
+    
+    Signed-off-by: Markus Armbruster <armbru@redhat.com>
+    Reviewed-by: Alistair Francis <alistair.francis@wdc.com>
+    Message-Id: <20190812052359.30071-16-armbru@redhat.com>
+    Tested-by: Philippe Mathieu-Daudé <philmd@redhat.com>
+
+ hw/usb/hcd-xhci.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 0b8fa32f551e863bb548a11394239239270dd3dc
+Author: Markus Armbruster <armbru@redhat.com>
+Date:   Thu May 23 16:35:07 2019 +0200
+
+    Include qemu/module.h where needed, drop it from qemu-common.h
+    
+    Signed-off-by: Markus Armbruster <armbru@redhat.com>
+    Message-Id: <20190523143508.25387-4-armbru@redhat.com>
+    [Rebased with conflicts resolved automatically, except for
+    hw/usb/dev-hub.c hw/misc/exynos4210_rng.c hw/misc/bcm2835_rng.c
+    hw/misc/aspeed_scu.c hw/display/virtio-vga.c hw/arm/stm32f205_soc.c;
+    ui/cocoa.m fixed up]
+
+ hw/usb/hcd-xhci.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit ccb799313a5926a6aa49018bbc67fe6165fad7f3
+Author: Daniel P. Berrangé <berrange@redhat.com>
+Date:   Fri Apr 12 13:16:25 2019 +0100
+
+    hw/usb: avoid format truncation warning when formatting port name
+    
+    hw/usb/hcd-xhci.c: In function ‘usb_xhci_realize’:
+    hw/usb/hcd-xhci.c:3339:66: warning: ‘%d’ directive output may be truncated writing between 1 and 10 bytes into a region of size 5 [-Wformat-trunca\
+    tion=]
+     3339 |             snprintf(port->name, sizeof(port->name), "usb2 port #%d", i+1);
+          |                                                                  ^~
+    hw/usb/hcd-xhci.c:3339:54: note: directive argument in the range [1, 2147483647]
+     3339 |             snprintf(port->name, sizeof(port->name), "usb2 port #%d", i+1);
+          |                                                      ^~~~~~~~~~~~~~~
+    
+    The xhci code formats the port name into a fixed length
+    buffer which is only large enough to hold port numbers
+    upto 5 digits in decimal representation. We're never
+    going to have a port number that large, so aserting the
+    port number is sensible is sufficient to tell GCC the
+    formatted string won't be truncated.
+    
+    Signed-off-by: Daniel P. Berrangé <berrange@redhat.com>
+    Message-Id: <20190412121626.19829-5-berrange@redhat.com>
+    
+    [ kraxel: also s/int/unsigned int/ to tell gcc they can't
+              go negative. ]
+    
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+
+ hw/usb/hcd-xhci.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 0a076730adf469918d5d1cfdf9d740c6928208a4
+Author: Longpeng (Mike) <longpeng2@huawei.com>
+Date:   Tue Apr 30 14:21:41 2019 +0800
+
+    usb/xhci: avoid trigger assertion if guest write wrong epid
+    
+    we found the following core in our environment:
+    0  0x00007fc6b06c2237 in raise ()
+    1  0x00007fc6b06c3928 in abort ()
+    2  0x00007fc6b06bb056 in __assert_fail_base ()
+    3  0x00007fc6b06bb102 in __assert_fail ()
+    4  0x0000000000702e36 in xhci_kick_ep (...)
+    5  0x000000000047897a in memory_region_write_accessor (...)
+    6  0x000000000047767f in access_with_adjusted_size (...)
+    7  0x000000000047944d in memory_region_dispatch_write (...)
+    (mr=mr@entry=0x7fc6a0138df0, addr=addr@entry=156, data=1648892416,
+    size=size@entry=4, attrs=attrs@entry=...)
+    8  0x000000000042df17 in address_space_write_continue (...)
+    10 0x000000000043084d in address_space_rw (...)
+    11 0x000000000047451b in kvm_cpu_exec (cpu=cpu@entry=0x1ab11b0)
+    12 0x000000000045dcf5 in qemu_kvm_cpu_thread_fn (arg=0x1ab11b0)
+    13 0x0000000000870631 in qemu_thread_start (args=args@entry=0x1acfb50)
+    14 0x00000000008959a7 in thread_entry_for_hotfix (pthread_cb=<optimized out>)
+    15 0x00007fc6b0a60dd5 in start_thread ()
+    16 0x00007fc6b078a59d in clone ()
+    
+    (gdb) f 5
+    5  0x000000000047897a in memory_region_write_accessor (...)
+    529         mr->ops->write(mr->opaque, addr, tmp, size);
+    (gdb) p /x tmp
+    $9 = 0x62481a00 <-- last byte 0x00 is @epid
+    
+    xhci_doorbell_write() already check the upper bound of @slotid an @epid,
+    it also need to check the lower bound.
+    
+    Cc: Gonglei <arei.gonglei@huawei.com>
+    Reviewed-by: Philippe Mathieu-Daudé <philmd@redhat.com>
+    Signed-off-by: Longpeng <longpeng2@huawei.com>
+    Tested-by: Philippe Mathieu-Daudé <philmd@redhat.com>
+    Message-id: 1556605301-44112-1-git-send-email-longpeng2@huawei.com
+    
+    [ kraxel: fixed typo in subject line ]
+    
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+
+ hw/usb/hcd-xhci.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7cb513aa34fe5639c71223f06b2b6c7934815317
+Author: Liam Merwick <liam.merwick@oracle.com>
+Date:   Wed Feb 6 13:36:50 2019 +0000
+
+    xhci: check device is not NULL before calling usb_ep_get()
+    
+    Signed-off-by: Liam Merwick <liam.merwick@oracle.com>
+    Message-id: 1549460216-25808-4-git-send-email-liam.merwick@oracle.com
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+
+ hw/usb/hcd-xhci.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 92cf34279ce907cabf6cb0626ad8a9076eeab9b2
+Author: Liam Merwick <liam.merwick@oracle.com>
+Date:   Wed Feb 6 13:36:49 2019 +0000
+
+    xhci: add asserts to help with static code analysis
+    
+    Most callers of xhci_port_update() and xhci_wakeup() pass in a pointer
+    to an array entry and can never be NULL but add two defensive asserts
+    to protect against future changes (e.g. adding a new port speed, etc.)
+    adding a path through xhci_lookup_port() that could result in the
+    return of a NULL XHCIPort.
+    
+    Signed-off-by: Liam Merwick <liam.merwick@oracle.com>
+    Message-id: 1549460216-25808-3-git-send-email-liam.merwick@oracle.com
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+
+ hw/usb/hcd-xhci.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit b4329d1a2a42d3c49ac4b76ec86b6c9db19ea1e9
+Author: Yuri Benditovich <yuri.benditovich@janustech.com>
+Date:   Mon Jan 28 20:05:09 2019 +0000
+
+    usb: implement XHCI underrun/overrun events
+    
+    Implement underrun/overrun events of isochronous endpoints
+    according to XHCI spec (4.10.3.1)
+    Guest software restarts data streaming when receives these events.
+    The XHCI reports these events using interrupter assigned
+    to the slot (as these events do not have TRB), so current
+    commit adds the field of assigned interrupter to the
+    XHCISlot structure. Guest software assigns interrupter to the
+    slot on 'Address Device' and 'Evaluate Context' commands.
+    
+    Signed-off-by: Yuri Benditovich <yuri.benditovich@janustech.com>
+    Message-id: 20190128200444.5128-3-yuri.benditovich@janustech.com
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+
+ hw/usb/hcd-xhci.c | 17 +++++++++++++++--
+ 1 file changed, 15 insertions(+), 2 deletions(-)
+
+commit a587c832a3f1d6d47dce93bda52c80cfa163e7cf
+Author: Yuri Benditovich <yuri.benditovich@janustech.com>
+Date:   Mon Jan 28 20:05:07 2019 +0000
+
+    usb: XHCI shall not halt isochronous endpoints
+    
+    According to the XHCI spec (4.10.2) the controller
+    never halts isochronous endpoints. This commit prevent
+    stop of isochronous streaming when sporadic errors
+    status received from backends.
+    
+    Signed-off-by: Yuri Benditovich <yuri.benditovich@janustech.com>
+    Message-id: 20190128200444.5128-2-yuri.benditovich@janustech.com
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+
+ hw/usb/hcd-xhci.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 8f36ec708834dfad58af6feb0b69bb0be6077f0f
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Mon Jul 2 18:27:52 2018 +0200
+
+    xhci: fix guest-triggerable assert
+    
+    Set xhci into error state instead of throwing a core dump.
+    
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Message-id: 20180702162752.29233-1-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+commit d61a363d3e801fcfdba0767ba0f2b44cd458be37
+Author: Yoni Bettan <ybettan@redhat.com>
+Date:   Tue Jan 16 14:34:56 2018 +0200
+
+    pci: removed the is_express field since a uniform interface was inserted
+    
+    according to Eduardo Habkost's commit fd3b02c889 all PCIEs now implement
+    INTERFACE_PCIE_DEVICE so we don't need is_express field anymore.
+    
+    Devices that implements only INTERFACE_PCIE_DEVICE (is_express == 1)
+    or
+    devices that implements only INTERFACE_CONVENTIONAL_PCI_DEVICE (is_express == 0)
+    where not affected by the change.
+    
+    The only devices that were affected are those that are hybrid and also
+    had (is_express == 1) - therefor only:
+      - hw/vfio/pci.c
+      - hw/usb/hcd-xhci.c
+      - hw/xen/xen_pt.c
+    
+    For those 3 I made sure that QEMU_PCI_CAP_EXPRESS is on in instance_init()
+    
+    Reviewed-by: Marcel Apfelbaum <marcel@redhat.com>
+    Reviewed-by: Eduardo Habkost <ehabkost@redhat.com>
+    Signed-off-by: Yoni Bettan <ybettan@redhat.com>
+    Reviewed-by: Michael S. Tsirkin <mst@redhat.com>
+    Signed-off-by: Michael S. Tsirkin <mst@redhat.com>
+
+ hw/usb/hcd-xhci.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+commit fd56e0612b6454a282fa6a953fdb09281a98c589
+Author: David Gibson <david@gibson.dropbear.id.au>
+Date:   Wed Nov 29 19:46:27 2017 +1100
+
+    pci: Eliminate redundant PCIDevice::bus pointer
+    
+    The bus pointer in PCIDevice is basically redundant with QOM information.
+    It's always initialized to the qdev_get_parent_bus(), the only difference
+    is the type.
+    
+    Therefore this patch eliminates the field, instead creating a pci_get_bus()
+    helper to do the type mangling to derive it conveniently from the QOM
+    Device object underneath.
+    
+    Signed-off-by: David Gibson <david@gibson.dropbear.id.au>
+    Reviewed-by: Michael S. Tsirkin <mst@redhat.com>
+    Signed-off-by: Michael S. Tsirkin <mst@redhat.com>
+    Reviewed-by: Eduardo Habkost <ehabkost@redhat.com>
+    Reviewed-by: Marcel Apfelbaum <marcel@redhat.com>
+    Reviewed-by: Peter Xu <peterx@redhat.com>
+
+ hw/usb/hcd-xhci.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a5fa336f11a1eddad9f2be6506e59ba50ed81818
+Author: Eduardo Habkost <ehabkost@redhat.com>
+Date:   Wed Sep 27 16:56:32 2017 -0300
+
+    pci: Add interface names to hybrid PCI devices
+    
+    The following devices support both PCI Express and Conventional
+    PCI, by including special code to handle the QEMU_PCI_CAP_EXPRESS
+    flag and/or conditional pcie_endpoint_cap_init() calls:
+    
+    * vfio-pci (is_express=1, but legacy PCI handled by
+      vfio_populate_device())
+    * vmxnet3 (is_express=0, but PCIe handled by vmxnet3_realize())
+    * pvscsi (is_express=0, but PCIe handled by pvscsi_realize())
+    * virtio-pci (is_express=0, but PCIe handled by
+      virtio_pci_dc_realize(), and additional legacy PCI code at
+      virtio_pci_realize())
+    * base-xhci (is_express=1, but pcie_endpoint_cap_init() call
+      is conditional on pci_bus_is_express(dev->bus)
+      * Note that xhci does not clear QEMU_PCI_CAP_EXPRESS like the
+        other hybrid devices
+    
+    Cc: Dmitry Fleytman <dmitry@daynix.com>
+    Cc: Jason Wang <jasowang@redhat.com>
+    Cc: Paolo Bonzini <pbonzini@redhat.com>
+    Cc: Gerd Hoffmann <kraxel@redhat.com>
+    Cc: Alex Williamson <alex.williamson@redhat.com>
+    Cc: "Michael S. Tsirkin" <mst@redhat.com>
+    Signed-off-by: Eduardo Habkost <ehabkost@redhat.com>
+    Reviewed-by: David Gibson <david@gibson.dropbear.id.au>
+    Reviewed-by: Marcel Apfelbaum <marcel@redhat.com>
+    Reviewed-by: Michael S. Tsirkin <mst@redhat.com>
+    Signed-off-by: Michael S. Tsirkin <mst@redhat.com>
+
+ hw/usb/hcd-xhci.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 6100dda70d84be83d131c3b35cb9c00f7b07db15
+Author: Alexey Kardashevskiy <aik@ozlabs.ru>
+Date:   Mon Sep 11 16:56:06 2017 +1000
+
+    xhci: Avoid DMA when ERSTBA is set to zero
+    
+    The existing XHCI code reads the Event Ring Segment Table Base Address
+    Register (ERSTBA) every time when it is changed. However zero is its
+    default state so one would think that zero there means it is not in use.
+    
+    This adds a check for ERSTBA in addition to the existing check for
+    the Event Ring Segment Table Size Register (ERSTSZ).
+    
+    Signed-off-by: Alexey Kardashevskiy <aik@ozlabs.ru>
+    Message-id: 20170911065606.40600-1-aik@ozlabs.ru
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+
+ hw/usb/hcd-xhci.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 9a815774bb37d7290d2fa45a8cc313e9e9fdaa23
+Author: Mao Zhongyi <maozy.fnst@cn.fujitsu.com>
+Date:   Tue Jun 27 14:16:49 2017 +0800
+
+    pci: Fix the wrong assertion.
+    
+    pci_add_capability returns a strictly positive value on success,
+    correct asserts.
+    
+    Cc: dmitry@daynix.com
+    Cc: jasowang@redhat.com
+    Cc: kraxel@redhat.com
+    Cc: alex.williamson@redhat.com
+    Cc: armbru@redhat.com
+    Cc: marcel@redhat.com
+    Signed-off-by: Mao Zhongyi <maozy.fnst@cn.fujitsu.com>
+    Reviewed-by: Marcel Apfelbaum <marcel@redhat.com>
+    Reviewed-by: Michael S. Tsirkin <mst@redhat.com>
+    Signed-off-by: Michael S. Tsirkin <mst@redhat.com>
+
+ hw/usb/hcd-xhci.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d54fddea989ba4aa2912d49583d86ce01c0d27ea
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Thu Jun 8 09:41:22 2017 +0200
+
+    xhci: only update dequeue ptr on completed transfers
+    
+    The dequeue pointer should only be updated in case the transfer
+    is actually completed.  If we update it for inflight transfers
+    we will not pick them up again after migration, which easily
+    triggers with HID devices as they typically have a pending
+    transfer, waiting for user input to happen.
+    
+    Fixes: 243afe858b95765b98d16a1f0dd50dca262858ad
+    Fixes: https://bugzilla.redhat.com/show_bug.cgi?id=1451631
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Tested-by: Laurent Vivier <lvivier@redhat.com>
+    Message-id: 20170608074122.32099-1-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 0bbb2f3df1ffd9ccf7135a69a450c6929bc0b915
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Wed May 17 12:33:12 2017 +0200
+
+    xhci: split into multiple files
+    
+    Moved structs and defines to hcd-xhci.h.
+    Move nec controller variant to hcd-xhci-nec.c.
+    No functional changes.
+    
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Message-id: 20170517103313.8459-1-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 238 +-----------------------------------------------------
+ 1 file changed, 2 insertions(+), 236 deletions(-)
+
+commit 99f9aeba5d461f79c9ce73f968ba0feb77fc1f5a
+Author: Ladi Prosek <lprosek@redhat.com>
+Date:   Fri May 12 12:21:00 2017 +0200
+
+    xhci: relax link check
+    
+    The strict td link limit added by commit "05f43d4 xhci: limit the
+    number of link trbs we are willing to process" causes problems with
+    Windows guests. Let's raise the limit.
+    
+    This change is analogous to:
+    
+      commit ab6b1105a2259c7072905887f71caa850ce63190
+      Author: Gerd Hoffmann <kraxel@redhat.com>
+      Date:   Tue Mar 7 09:40:18 2017 +0100
+    
+          ohci: relax link check
+    
+    Signed-off-by: Ladi Prosek <lprosek@redhat.com>
+    Message-id: 20170512102100.22675-1-lprosek@redhat.com
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+
+ hw/usb/hcd-xhci.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ee56264af818dd6c0a97cb9c6e44e5b7d394c0fc
+Author: Ladi Prosek <lprosek@redhat.com>
+Date:   Thu May 11 14:53:13 2017 +0200
+
+    xhci: fix logging
+    
+    slotid and epid were deleted from XHCITransfer in commit d6fcb29.
+    Also deleting one unused forward declaration.
+    
+    Signed-off-by: Ladi Prosek <lprosek@redhat.com>
+    Message-id: 20170511125314.24549-2-lprosek@redhat.com
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+
+ hw/usb/hcd-xhci.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+
+commit 243afe858b95765b98d16a1f0dd50dca262858ad
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Fri Mar 31 12:25:21 2017 +0200
+
+    xhci: flush dequeue pointer to endpoint context
+    
+    When done processing a endpoint ring we must update the dequeue pointer
+    in the endpoint context in guest memory.  This is needed to make sure
+    the guest has a correct view of things and also to make live migration
+    work properly, because xhci post_load restores alot of the state from
+    xhci data structures in guest memory.
+    
+    Add xhci_set_ep_state() call to do that.
+    
+    The recursive calls stopped by commit
+    ddb603ab6c981c1d67cb42266fc700c33e5b2d8f had the (unintentional) side
+    effect to hiding this bug.  xhci_set_ep_state() was called before
+    processing, to set the state to running, which updated the dequeue
+    pointer too.
+    
+    Reported-by: Dr. David Alan Gilbert <dgilbert@redhat.com>
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Tested-by: Dr. David Alan Gilbert <dgilbert@redhat.com>
+    Message-id: 20170331102521.29253-1-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 4f72b8d2a6f5777fa1af2cf5184843e4cb06f182
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Tue Feb 21 08:50:31 2017 +0100
+
+    xhci: properties cleanup
+    
+    Split xhci properties into common and nec specific.
+    
+    Move the backward compat flags to nec, so the new qemu-xhci
+    devices doesn't carry on the compatibiity stuff.
+    
+    Move the msi/msix switches too and just enable msix for qemu-xhci.
+    
+    Also move the intrs and slots properties.  Wasn't a great idea to
+    make them configurable in the first place, nobody needs this.
+    
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Message-id: 1487663432-10410-1-git-send-email-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 29 ++++++++++++++++++++++++++---
+ 1 file changed, 26 insertions(+), 3 deletions(-)
+
+commit 558ff1b6efcebd7f919bae3e36b97fa6f9139f42
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Mon Feb 6 12:55:39 2017 +0100
+
+    xhci: drop via vendor command handling
+    
+    Seems pretty pointless, we don't emulate an via xhci controller.
+    
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Message-id: 1486382139-30630-5-git-send-email-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 31 -------------------------------
+ 1 file changed, 31 deletions(-)
+
+commit 2992d6b49ce7ca2d4c02ff6baf23fc815879eef3
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Mon Feb 6 12:55:38 2017 +0100
+
+    xhci: fix nec vendor quirk handling
+    
+    Only the TYPE_NEC_XHCI controller will have the nec vendor quirks.
+    
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Message-id: 1486382139-30630-4-git-send-email-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 44 +++++++++++++++++++++++++++++---------------
+ 1 file changed, 29 insertions(+), 15 deletions(-)
+
+commit 72a810f411abaabc55f375533220adf69e059c89
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Mon Feb 6 12:55:37 2017 +0100
+
+    xhci: add qemu xhci controller
+    
+    Turn existing TYPE_XHCI into an abstract base class.
+    Create two child classes, TYPE_NEC_XHCI (same name as old xhci
+    controller) and TYPE_QEMU_XHCI (using an ID from our namespace).
+    
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Reviewed-by: Marcel Apfelbaum <marcel@redhat.com>
+    Message-id: 1486382139-30630-3-git-send-email-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 40 ++++++++++++++++++++++++++++++++++++----
+ 1 file changed, 36 insertions(+), 4 deletions(-)
+
+commit 898248a32915024a4f01ce4f0c3519509fb703cb
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Mon Feb 6 12:55:36 2017 +0100
+
+    xhci: drop ER_FULL_HACK workaround
+    
+    The nec/renesas driver problems have finally been debugged and root
+    caused, see commit "7da76e1 xhci: fix event queue IRQ handling".
+    
+    It's pretty clear now that
+     (a) The whole "driver can't handle ring full" story is most likely
+         wrong.
+     (b) The ER_FULL_HACK workaround based on the false assumtion doesn't
+         much.  It avoids the driver crashing (without commit 7da76e1), but
+         it doesn't make usb work.
+     (c) With 7da76e1 applied it doesn't trigger any more.
+    
+    So, lets kill it.  Or, to be exact, lets almost kill it.  Some data
+    fields are kept unused in the state struct, for live migration backward
+    compatibility.
+    
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Message-id: 1486382139-30630-2-git-send-email-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 117 +++++-------------------------------------------------
+ 1 file changed, 11 insertions(+), 106 deletions(-)
+
+commit f89b60f6e5fee3923bedf80e82b4e5efc1bb156b
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Mon Feb 6 13:21:09 2017 +0100
+
+    xhci: apply limits to loops
+    
+    Limits should be big enough that normal guest should not hit it.
+    Add a tracepoint to log them, just in case.  Also, while being
+    at it, log the existing link trb limit too.
+    
+    Reported-by: 李强 <liqiang6-s@360.cn>
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Message-id: 1486383669-6421-1-git-send-email-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+
+commit 7da76e12cc5cc902dda4c168d8d608fd4e61cbc5
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Fri Feb 3 07:51:45 2017 +0100
+
+    xhci: fix event queue IRQ handling
+    
+    The qemu xhci emulation doesn't handle the ERDP_EHB flag correctly.
+    
+    When the host adapter queues a new event the ERDP_EHB flag is set.  The
+    flag is cleared (via w1c) by the guest when it updates the ERDP (event
+    ring dequeue pointer) register to notify the host adapter which events
+    it has fetched.
+    
+    An IRQ must be raised in case the ERDP_EHB flag flips from clear to set.
+    If the flag is set already (which implies there are events queued up
+    which are not yet processed by the guest) xhci must *not* raise a IRQ.
+    
+    Qemu got that wrong and raised an IRQ on every event, thereby generating
+    spurious interrupts in case we've queued events faster than the guest
+    processed them.  This patch fixes that.
+    
+    With that change in place we also have to check ERDP updates, to see
+    whenever the guest has fetched all queued events.  In case there are
+    still pending events set ERDP_EHB and raise an IRQ again, to make sure
+    the events don't linger unseen forever.
+    
+    The linux kernel driver and the microsoft windows driver (shipped with
+    win8+) can deal with the spurious interrupts without problems.  The
+    renesas windows driver (v2.1.39) which can be used on older windows
+    versions is quite upset though.  It does spurious ERDP updates now and
+    then (not every time, seems we must hit a race window for this to
+    happen), which in turn makes the qemu xhci emulation think the event
+    ring is full.  Things go south from here ...
+    
+    tl;dr: This is the "fix xhci on win7" patch.
+    
+    Cc: M.Cerveny@computer.org
+    Cc: 1373228@bugs.launchpad.net
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Message-id: 1486104705-13761-1-git-send-email-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+commit 96d87bdda3919bb16f754b3d3fd1227e1f38f13c
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Thu Feb 2 12:36:12 2017 +0100
+
+    xhci: guard xhci_kick_epctx against recursive calls
+    
+    Track xhci_kick_epctx processing being active in a variable.  Check the
+    variable before calling xhci_kick_epctx from xhci_kick_ep.  Add an
+    assert to make sure we don't call recursively into xhci_kick_epctx.
+    
+    Cc: 1653384@bugs.launchpad.net
+    Fixes: 94b037f2a451b3dc855f9f2c346e5049a361bd55
+    Reported-by: Fabian Lesniak <fabian@lesniak-it.de>
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Message-id: 1486035372-3621-1-git-send-email-kraxel@redhat.com
+    Message-id: 1485790607-31399-5-git-send-email-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit ddb603ab6c981c1d67cb42266fc700c33e5b2d8f
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Mon Jan 30 16:36:46 2017 +0100
+
+    xhci: don't kick in xhci_submit and xhci_fire_ctl_transfer
+    
+    xhci_submit and xhci_fire_ctl_transfer are is called from
+    xhci_kick_epctx processing loop only, so there is no need to call
+    xhci_kick_epctx make sure processing continues.  Also eecursive calls
+    into xhci_kick_epctx can cause trouble.
+    
+    Drop the xhci_kick_epctx calls.
+    
+    Cc: 1653384@bugs.launchpad.net
+    Fixes: 94b037f2a451b3dc855f9f2c346e5049a361bd55
+    Reported-by: Fabian Lesniak <fabian@lesniak-it.de>
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Message-id: 1485790607-31399-4-git-send-email-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 8 --------
+ 1 file changed, 8 deletions(-)
+
+commit 13e8ff7abbf1dde46280536ab4fae5012661b8b0
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Mon Jan 30 16:36:45 2017 +0100
+
+    xhci: rename xhci_complete_packet to xhci_try_complete_packet
+    
+    Make clear that this isn't guaranteed to actually complete the transfer,
+    the usb packet can still be in flight after calling that function.
+    
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Message-id: 1485790607-31399-3-git-send-email-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit f94d18d6c6df388fde196d3ab252f57e33843a8b
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Mon Jan 30 16:36:44 2017 +0100
+
+    xhci: only free completed transfers
+    
+    Most callsites check already, one was missed.
+    
+    Cc: 1653384@bugs.launchpad.net
+    Fixes: 94b037f2a451b3dc855f9f2c346e5049a361bd55
+    Reported-by: Fabian Lesniak <fabian@lesniak-it.de>
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Message-id: 1485790607-31399-2-git-send-email-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit ee640c625e190a0c0e6b8966adc0e4720fb75200
+Author: Cao jin <caoj.fnst@cn.fujitsu.com>
+Date:   Tue Jan 17 14:18:48 2017 +0800
+
+    pci: Convert msix_init() to Error and fix callers
+    
+    msix_init() reports errors with error_report(), which is wrong when
+    it's used in realize().  The same issue was fixed for msi_init() in
+    commit 1108b2f. In order to make the API change as small as possible,
+    leave the return value check to later patch.
+    
+    For some devices(like e1000e, vmxnet3, nvme) who won't fail because of
+    msix_init's failure, suppress the error report by passing NULL error
+    object.
+    
+    Bonus: add comment for msix_init.
+    
+    CC: Jiri Pirko <jiri@resnulli.us>
+    CC: Gerd Hoffmann <kraxel@redhat.com>
+    CC: Dmitry Fleytman <dmitry@daynix.com>
+    CC: Jason Wang <jasowang@redhat.com>
+    CC: Michael S. Tsirkin <mst@redhat.com>
+    CC: Hannes Reinecke <hare@suse.de>
+    CC: Paolo Bonzini <pbonzini@redhat.com>
+    CC: Alex Williamson <alex.williamson@redhat.com>
+    CC: Markus Armbruster <armbru@redhat.com>
+    CC: Marcel Apfelbaum <marcel@redhat.com>
+    Signed-off-by: Cao jin <caoj.fnst@cn.fujitsu.com>
+    Reviewed-by: Michael S. Tsirkin <mst@redhat.com>
+    Signed-off-by: Michael S. Tsirkin <mst@redhat.com>
+
+ hw/usb/hcd-xhci.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 20729dbd0109b9d9065447dba354f10bcf78d0d6
+Author: Cao jin <caoj.fnst@cn.fujitsu.com>
+Date:   Tue Jan 17 14:18:47 2017 +0800
+
+    hcd-xhci: check & correct param before using it
+    
+    usb_xhci_realize() corrects invalid values of property "intrs"
+    automatically, but the uncorrected value is passed to msi_init(),
+    which chokes on invalid values.  Delay that until after the
+    correction.
+    
+    Resources allocated by usb_xhci_init() are leaked when msi_init()
+    fails.  Fix by calling it after msi_init().
+    
+    CC: Gerd Hoffmann <kraxel@redhat.com>
+    CC: Markus Armbruster <armbru@redhat.com>
+    CC: Marcel Apfelbaum <marcel@redhat.com>
+    CC: Michael S. Tsirkin <mst@redhat.com>
+    
+    Reviewed-by: Markus Armbruster <armbru@redhat.com>
+    Acked-by: Marcel Apfelbaum <marcel@redhat.com>
+    Signed-off-by: Cao jin <caoj.fnst@cn.fujitsu.com>
+    Reviewed-by: Michael S. Tsirkin <mst@redhat.com>
+    Signed-off-by: Michael S. Tsirkin <mst@redhat.com>
+
+ hw/usb/hcd-xhci.c | 37 ++++++++++++++++++-------------------
+ 1 file changed, 18 insertions(+), 19 deletions(-)
+
+commit 20daa90a20d2654d82c1d51d542ab56dd27bacbf
+Author: Dr. David Alan Gilbert <dgilbert@redhat.com>
+Date:   Wed Dec 14 19:58:29 2016 +0000
+
+    PCI/migration merge vmstate_pci_device and vmstate_pcie_device
+    
+    The vmstate_pci_device and vmstate_pcie_devices differ
+    just in the size of one buffer; combine the two using a _TEST
+    macro.
+    
+    I think this is safe as long as everywhere which currently
+    uses either of these two uses the right type.
+    
+    One thing that concerns me is that some places use pci_device_load/save
+    which does some irq mangling, but others just use the VMSTATE_PCI_DEVICE
+    macro - how are they getting the same irq mangling?
+    
+    This passes a smoke test migrate of:
+    ./x86_64-softmmu/qemu-system-x86_64 -M pc,accel=kvm -m 1024
+    ./littlefed20.img -device e1000e -device virtio-net -device
+    e1000 -device virtio-rng -device megasas -device megasas-gen2 -device
+    ioh3420 -device nec-usb-xhci
+    
+    to an unmodified qemu.
+    
+    Signed-off-by: Dr. David Alan Gilbert <dgilbert@redhat.com>
+    Message-Id: <20161214195829.18241-1-dgilbert@redhat.com>
+    Reviewed-by: Michael S. Tsirkin <mst@redhat.com>
+    Signed-off-by: Dr. David Alan Gilbert <dgilbert@redhat.com>
+
+ hw/usb/hcd-xhci.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 070eeef9e0821fbaeda7002de4ee61b5b4015fa6
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Tue Sep 27 10:32:52 2016 +0200
+
+    xhci: make xhci_epid_to_usbep accept XHCIEPContext
+    
+    All callsites have a XHCIEPContext pointer anyway, so we can just pass
+    it directly instead of fiddeling with slotid and epid.
+    
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Message-id: 1474965172-30321-9-git-send-email-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 29 +++++++++++++++--------------
+ 1 file changed, 15 insertions(+), 14 deletions(-)
+
+commit d6fcb2936f9bacf3ad696e957e229ee2aadc0d0d
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Tue Sep 27 10:32:51 2016 +0200
+
+    xhci: drop XHCITransfer->{slotid,epid}
+    
+    We can use XHCITransfer->epctx->{slotid,epid} instead.
+    
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Message-id: 1474965172-30321-8-git-send-email-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 16 +++++++---------
+ 1 file changed, 7 insertions(+), 9 deletions(-)
+
+commit 3a533ee8fda6457ddc85d3c5dfeff037a808fcb3
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Tue Sep 27 10:32:50 2016 +0200
+
+    xhci: add & use xhci_kick_epctx()
+    
+    xhci_kick_epctx is a xhci_kick_ep variant which takes an XHCIEPContext
+    as input instead of slotid and epid.  So in case we have a XHCIEPContext
+    at hand at the callsite we can just pass it directly.
+    
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Message-id: 1474965172-30321-7-git-send-email-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 43 ++++++++++++++++++++++++++-----------------
+ 1 file changed, 26 insertions(+), 17 deletions(-)
+
+commit 5612564ea9cf5b9636438a1b58ae9a2ab6ca16ae
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Tue Sep 27 10:32:49 2016 +0200
+
+    xhci: drop XHCITransfer->xhci
+    
+    Use XHCITransfer->epctx->xhci instead.
+    
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Message-id: 1474965172-30321-6-git-send-email-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 22 +++++++++-------------
+ 1 file changed, 9 insertions(+), 13 deletions(-)
+
+commit 94b037f2a451b3dc855f9f2c346e5049a361bd55
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Tue Sep 27 10:32:48 2016 +0200
+
+    xhci: use linked list for transfers
+    
+    xhci has a fixed number of 24 (TD_QUEUE) XHCITransfer structs per
+    endpoint, which turns out to be a problem for usb3 devices with 32 (or
+    more) bulk streams.  xhci re-checks the trb rings on every finished
+    transfer to make sure it'll pick up any pending work.  But that scheme
+    breaks in case the first transfer of a ring can't be started because we
+    ran out of XHCITransfer structs already.
+    
+    So remove static XHCITransfer array from XHCIEPContext.  Use a linked
+    list instead, and allocate/free XHCITransfer as needed.  Add helper
+    functions to allocate & initialize and to cleanup & release
+    XHCITransfer structs.  That also simplifies trb management, we never
+    have to realloc XHCITransfer->trbs because we don't reuse XHCITransfer
+    structs any more.
+    
+    New dynamic limit for in-flight xhci transfers per endpoint is
+    number-of-streams + 16.
+    
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Message-id: 1474965172-30321-5-git-send-email-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 122 ++++++++++++++++++++++++++++++------------------------
+ 1 file changed, 68 insertions(+), 54 deletions(-)
+
+commit 7512b13dd7f77c3e93a5b856eddf78378bddcc7f
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Tue Sep 27 10:32:47 2016 +0200
+
+    xhci: drop unused comp_xfer field
+    
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Message-id: 1474965172-30321-4-git-send-email-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 1fe163feeb31cbd20e2ace071f34141892c8e06b
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Tue Sep 27 10:32:46 2016 +0200
+
+    xhci: decouple EV_QUEUE from TD_QUEUE
+    
+    EV_QUEUE must not change because an array of that size is part of live
+    migration data.  Hard-code current value there, so we can touch TD_QUEUE
+    without breaking live migration.
+    
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Message-id: 1474965172-30321-3-git-send-email-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 05f43d44e4bc26611ce25fd7d726e483f73363ce
+Author: Gerd Hoffmann <kraxel@redhat.com>
+Date:   Mon Oct 10 12:46:22 2016 +0200
+
+    xhci: limit the number of link trbs we are willing to process
+    
+    Needed to avoid we run in circles forever in case the guest builds
+    an endless loop with link trbs.
+    
+    Reported-by: Li Qiang <liqiang6-s@360.cn>
+    Tested-by: P J P <ppandit@redhat.com>
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+    Message-id: 1476096382-7981-1-git-send-email-kraxel@redhat.com
+
+ hw/usb/hcd-xhci.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+commit b53dd4495ced2432a0b652ea895e651d07336f7e
+Author: Li Qiang <liqiang6-s@360.cn>
+Date:   Tue Sep 13 03:20:03 2016 -0700
+
+    usb:xhci:fix memory leak in usb_xhci_exit
+    
+    If the xhci uses msix, it doesn't free the corresponding
+    memory, thus leading a memory leak. This patch avoid this.
+    
+    Signed-off-by: Li Qiang <liqiang6-s@360.cn>
+    Message-id: 57d7d2e0.d4301c0a.d13e9.9a55@mx.google.com
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+
+ hw/usb/hcd-xhci.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit b66ad1f1aa4dba4e8e242ad8339dd01f4ee77c5e
+Author: Hans Petter Selasky <hps@selasky.org>
+Date:   Tue Aug 23 13:39:49 2016 +0200
+
+    xhci: Fix remainder field for TR_SETUP completion event.
+    
+    Previously the code would incorrectly report the remainder as 8 bytes. A
+    remainder of 0 bytes should be reported when the SETUP packet is
+    successfully transferred. Found using FreeBSD's XHCI driver.
+    
+    Signed-off-by: Hans Petter Selasky <hps@selasky.org>
+    
+    [ kraxel: codestyle fixup ]
+    
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+
+ hw/usb/hcd-xhci.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit f81bb347ef80e94204b719e1d5e827babb556220
+Author: Alexey Kardashevskiy <aik@ozlabs.ru>
+Date:   Mon Jul 18 13:29:08 2016 +1000
+
+    xhci: Fix possible side effect from assert()
+    
+    A static analysis tool called BEAM detected possible side effect from
+    assert() calling a helper which may change an XHCI ring after every call.
+    
+    This moves xhci_ring_fetch() out of assert() so it will be called
+    with and without enabled debug.
+    
+    Signed-off-by: Alexey Kardashevskiy <aik@ozlabs.ru>
+    Message-id: 1468812548-31868-1-git-send-email-aik@ozlabs.ru
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+
+ hw/usb/hcd-xhci.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit a4055d85863be76a5fb70ecd001e7db5bc6bd5cb
+Author: Zhang Shuaiyi <zhang_syi@massclouds.com>
+Date:   Wed Jun 29 23:50:40 2016 -0400
+
+    nec-usb-xhci: set the device state to USB_STATE_DEFAULT
+    
+    This patch is a rough fix to "hw/usb/core.c:401: usb_handle_packet:
+     Assertion `dev->state == 3' failed.". Qemu will crash when a usb3
+    device redirect to Windows7 VM via nec-usb-xhci.
+    
+    In extensible-host-controler-interface-usb-xhci.pdf P94(4.6.5
+    Address Device):
+        • If the Block Set Address Request (BSR) flag = ‘1’
+            • If the slot is in the Enabled state:
+                ...
+                • Set the Slot State in the Output Slot Context to Default.
+    
+    BSR = ‘1’: Enabled state to Default state; BSR = ‘0’: Default state
+    to Addressed state. Try to call usb_device_reset to set device state
+    to USB_STATE_DEFAULT in xhci_address_slot wether bsr is zero.
+    
+    Signed-off-by: Zhang Shuaiyi <zhang_syi@massclouds.com>
+    Message-id: 1467258640-11921-1-git-send-email-zhang_syi@massclouds.com
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+
+ hw/usb/hcd-xhci.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 1108b2f8a939fb5778d384149e2f1b99062a72da
+Author: Cao jin <caoj.fnst@cn.fujitsu.com>
+Date:   Mon Jun 20 14:13:39 2016 +0800
+
+    pci: Convert msi_init() to Error and fix callers to check it
+    
+    msi_init() reports errors with error_report(), which is wrong
+    when it's used in realize().
+    
+    Fix by converting it to Error.
+    
+    Fix its callers to handle failure instead of ignoring it.
+    
+    For those callers who don't handle the failure, it might happen:
+    when user want msi on, but he doesn't get what he want because of
+    msi_init fails silently.
+    
+    cc: Gerd Hoffmann <kraxel@redhat.com>
+    cc: John Snow <jsnow@redhat.com>
+    cc: Dmitry Fleytman <dmitry@daynix.com>
+    cc: Jason Wang <jasowang@redhat.com>
+    cc: Michael S. Tsirkin <mst@redhat.com>
+    cc: Hannes Reinecke <hare@suse.de>
+    cc: Paolo Bonzini <pbonzini@redhat.com>
+    cc: Alex Williamson <alex.williamson@redhat.com>
+    cc: Markus Armbruster <armbru@redhat.com>
+    cc: Marcel Apfelbaum <marcel@redhat.com>
+    
+    Reviewed-by: Markus Armbruster <armbru@redhat.com>
+    Signed-off-by: Cao jin <caoj.fnst@cn.fujitsu.com>
+    Reviewed-by: Michael S. Tsirkin <mst@redhat.com>
+    Signed-off-by: Michael S. Tsirkin <mst@redhat.com>
+    Reviewed-by: Hannes Reinecke <hare@suse.com>
+
+ hw/usb/hcd-xhci.c | 23 +++++++++++++++++++----
+ 1 file changed, 19 insertions(+), 4 deletions(-)
+
+commit 290fd20db6e0d739d92ee08f43bff8d3885cd283
+Author: Cao jin <caoj.fnst@cn.fujitsu.com>
+Date:   Mon Jun 20 14:13:34 2016 +0800
+
+    usb xhci: change msi/msix property type
+    
+    >From bit to enum OnOffAuto
+    
+    cc: Gerd Hoffmann <kraxel@redhat.com>
+    cc: Michael S. Tsirkin <mst@redhat.com>
+    cc: Markus Armbruster <armbru@redhat.com>
+    cc: Marcel Apfelbaum <marcel@redhat.com>
+    
+    Reviewed-by: Markus Armbruster <armbru@redhat.com>
+    Signed-off-by: Cao jin <caoj.fnst@cn.fujitsu.com>
+    Reviewed-by: Michael S. Tsirkin <mst@redhat.com>
+    Signed-off-by: Michael S. Tsirkin <mst@redhat.com>
+
+ hw/usb/hcd-xhci.c | 16 +++++++++-------
+ 1 file changed, 9 insertions(+), 7 deletions(-)
+
+commit 491d68d9382dbb588f2ff5132ee3d87ce2f1b230
+Author: Roman Kagan <rkagan@virtuozzo.com>
+Date:   Wed May 4 20:53:55 2016 +0300
+
+    usb:xhci: no DMA on HC reset
+    
+    This patch is a rough fix to a memory corruption we are observing when
+    running VMs with xhci USB controller and OVMF firmware.
+    
+    Specifically, on the following call chain
+    
+    xhci_reset
+      xhci_disable_slot
+        xhci_disable_ep
+          xhci_set_ep_state
+    
+    QEMU overwrites guest memory using stale guest addresses.
+    
+    This doesn't happen when the guest (firmware) driver sets up xhci for
+    the first time as there are no slots configured yet.  However when the
+    firmware hands over the control to the OS some slots and endpoints are
+    already set up with their context in the guest RAM.  Now the OS' driver
+    resets the controller again and xhci_set_ep_state then reads and writes
+    that memory which is now owned by the OS.
+    
+    As a quick fix, skip calling xhci_set_ep_state in xhci_disable_ep if the
+    device context base address array pointer is zero (indicating we're in
+    the HC reset and no DMA is possible).
+    
+    Cc: qemu-stable@nongnu.org
+    Signed-off-by: Roman Kagan <rkagan@virtuozzo.com>
+    Message-id: 1462384435-1034-1-git-send-email-rkagan@virtuozzo.com
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+
+ hw/usb/hcd-xhci.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 182b391e797508deba9704cf580325e99260d8c8
+Author: Peter Xu <peterx@redhat.com>
+Date:   Fri Mar 11 09:51:46 2016 +0800
+
+    usb: fix unbounded stack warning for xhci_dma_write_u32s
+    
+    All the callers for xhci_dma_write_u32s() are using mostly 5 * uint32_t
+    in len. To avoid unbound stack warning for the function, make it
+    statically allocated, and assert when it's not big enough in the
+    future.
+    
+    Signed-off-by: Peter Xu <peterx@redhat.com>
+    Message-id: 1457661106-9569-1-git-send-email-peterx@redhat.com
+    Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
+
+ hw/usb/hcd-xhci.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit e532b2e0080fea57dc2b3b3e5439735792900ae6
+Author: Peter Maydell <peter.maydell@linaro.org>
+Date:   Tue Jan 26 18:17:12 2016 +0000
+
+    usb: Clean up includes
+    
+    Clean up includes so that osdep.h is included first and headers
+    which it implies are not included manually.
+    
+    This commit was created with scripts/clean-includes.
+    
+    Signed-off-by: Peter Maydell <peter.maydell@linaro.org>
+    Message-id: 1453832250-766-20-git-send-email-peter.maydell@linaro.org
+
+ hw/usb/hcd-xhci.c | 1 +
+ 1 file changed, 1 insertion(+)

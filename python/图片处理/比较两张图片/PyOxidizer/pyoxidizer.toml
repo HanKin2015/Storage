@@ -1,0 +1,13 @@
+[project]
+name = "myapp"
+version = "0.1.0"
+
+[build]
+target = "x86_64-pc-windows-msvc"
+
+[python]
+interpreter = "python3"
+packages = [
+    { name = "numpy", version = "1.21.6" },
+    { name = "opencv-python", version = "4.5.3.56" },
+]

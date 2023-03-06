@@ -13,7 +13,7 @@ import time
 import sys
 from log import logger
 import ico
-from PyQt5.QtWidgets import QInputDialog, QWidget, QMainWindow, QAction, QApplication, QMenu, QMessageBox, QSystemTrayIcon
+from PyQt5.QtWidgets import QInputDialog, QWidget, QMainWindow, QAction, QApplication, QMenu, QMessageBox, QSystemTrayIcon, qApp
 from PyQt5.QtCore import QThread, pyqtSignal, QMetaObject, QCoreApplication
 from PyQt5.QtGui import QIcon
 import os
@@ -29,6 +29,7 @@ USB_CAMERA_MONITOR_TOOL_ICO = 'usb_camera_monitor_tool.ico'
 MSG_ICO = 'msg.ico'
 BLACK_SCREEN_PNG = 'black_screen.png'
 ERROR_SCREEN_PNG = 'error_screen.png'
+TMP_SCREENSHOT_PNG = 'tmp.png'
 APP_NAME = 'USB摄像头监控工具' 
 
 class Ui_MainWindow(object):
@@ -70,6 +71,19 @@ class Ui_MainWindow(object):
             logger.debug(messgae)
             self.windowsMessage(datagram.decode())
 
+    def writeDataSlot(self, msg):
+        if msg == 'black_screen':
+            msg = 'USB摄像头现在是黑屏状态'
+        elif msg == 'error_screen':
+            msg = 'USB摄像头现在是异常状态'
+        #msg = 'i love you'
+        datagram = msg.encode()
+        #self.sock.writeDatagram(datagram, QHostAddress.LocalHost, 6666)
+        #self.sock.writeDatagram(datagram, QHostAddress.Broadcast, 6666)
+        if self.clientAddress == None:
+            QMessageBox.warning(self.ui, '警告', '请先设置客户端地址!', QMessageBox.Yes)
+        self.sock.writeDatagram(datagram, QHostAddress(self.clientAddress), 6666)
+        
     def py2ico(self, ico_data, ico_img):
         """将py文件转换成ico图片
         """
@@ -126,6 +140,7 @@ class Ui_MainWindow(object):
         self.startMonitorScreenAction.triggered.connect(self.startMonitorScreen)
         self.stopMonitorScreenAction.triggered.connect(self.stopMonitorScreen)
         self.testMsgAction.triggered.connect(self.windowsMessage)
+        self.aboutAction.triggered.connect(self.about)
         self.quitAppAction.triggered.connect(self.quitApp)
 
         # 初始化菜单列表
@@ -169,6 +184,39 @@ class Ui_MainWindow(object):
         else:
             logger.error('ERROR: windowsMessage()')
 
+    def settingClientAddress(self):
+        """设置服务器
+        """
+        
+        text, ok = QInputDialog.getText(None, '设置客户端地址', '请输入地址:')
+        if ok:
+            self.clientAddress = str(text)
+            msg = '这是一条服务端下发的测试消息'
+            datagram = msg.encode()
+            self.sock.writeDatagram(datagram, QHostAddress(self.clientAddress), 6666)
+
+    def startMonitorScreen(self):
+        """开启监控屏幕
+        """
+
+        logger.info('start monitor screen')
+        self.monitorScreen.is_on = True
+        self.monitorScreen.start()
+
+    def stopMonitorScreen(self):
+        """关闭监控屏幕
+        """
+        
+        logger.info('stop monitor screen')
+        self.monitorScreen.is_on = False
+
+    def about(self):
+        """关于
+        """
+
+        # parent:QtWidget|None -> self.mainwindow
+        QMessageBox.about(self.ui, '关于', 'USB摄像头监控工具')
+
     def quitApp(self):
         """包含二次确认的退出
         """
@@ -179,50 +227,14 @@ class Ui_MainWindow(object):
             logger.info('******** stop ********\n')
             os.remove(USB_CAMERA_MONITOR_TOOL_ICO)
             os.remove(MSG_ICO)
-            self.monitorScreen.black_screen.close()
-            self.monitorScreen.error_screen.close()
             os.remove(BLACK_SCREEN_PNG)
             os.remove(ERROR_SCREEN_PNG)
+            if os.path.exists(TMP_SCREENSHOT_PNG):
+                os.remove(TMP_SCREENSHOT_PNG)
             qApp.quit()
         else:
             pass
-
-    def settingClientAddress(self):
-        """设置服务器
-        """
         
-        text, ok = QInputDialog.getText(None, '设置客户端地址', '请输入地址:')
-        if ok:
-            self.clientAddress = str(text)
-
-    def startMonitorScreen(self):
-        """监控屏幕中心
-        """
-
-        logger.info('start monitor screen')
-        self.monitorScreen.is_on = True
-        self.monitorScreen.start()
-        
-    def writeDataSlot(self, msg):
-        if msg == 'black_screen':
-            msg = 'USB摄像头现在是黑屏状态'
-        elif msg == 'error_screen':
-            msg = 'USB摄像头现在是异常状态'
-        #msg = 'i love you'
-        datagram = msg.encode()
-        #self.sock.writeDatagram(datagram, QHostAddress.LocalHost, 6666)
-        #self.sock.writeDatagram(datagram, QHostAddress.Broadcast, 6666)
-        if self.clientAddress == None:
-            QMessageBox.warning(self.ui, '警告', '请先设置客户端地址!', QMessageBox.Yes)
-        self.sock.writeDatagram(datagram, QHostAddress(self.clientAddress), 6666)
-
-    def stopMonitorScreen(self):
-        """监控屏幕中心
-        """
-        
-        logger.info('stop monitor screen')
-        self.monitorScreen.is_on = False
-
 class Thread_MonitorScreen(QThread):
     msg_signal = pyqtSignal(str)
 
@@ -234,30 +246,29 @@ class Thread_MonitorScreen(QThread):
         self.screenshot_x = pyautogui.size()[0] / 2 - 32
         self.screenshot_y = pyautogui.size()[1] / 2 -32
         logger.info('screenshot_x = {}, screenshot_y = {}'.format(self.screenshot_x, self.screenshot_y))
-        self.black_screen = Image.open(BLACK_SCREEN_PNG)
-        logger.info('black_screen: {}'.format(self.black_screen))
-        self.error_screen = Image.open(ERROR_SCREEN_PNG)
-        logger.info('error_screen: {}'.format(self.error_screen))
     
-    def diff_between_two_images(self, histogram1, histogram2):
-        return math.sqrt(reduce(operator.add, list(map(lambda a,b: (a-b)**2,histogram1, histogram2)))/len(histogram1))
+    def diff_between_two_images(self, image1_path, image2_path):
+        """
+        """
+        
+        return 5
     
     def run(self):
         while self.is_on:
             self.sleep(3)
-            screenshot = pyautogui.screenshot(region=[self.screenshot_x, self.screenshot_y, 32, 32])
-            #logger.info('screenshot: {}'.format(screenshot))
+            screenshot = pyautogui.screenshot(TMP_SCREENSHOT_PNG, region=[self.screenshot_x, self.screenshot_y, 32, 32])
+            logger.debug('screenshot: {}'.format(screenshot))
             
-            black_diff_value = self.diff_between_two_images(self.black_screen.histogram(), screenshot.histogram())
-            logger.debug('black_diff_value: {}'.format(black_diff_value))
-            error_diff_value = self.diff_between_two_images(self.error_screen.histogram(), screenshot.histogram())
-            logger.debug('error_diff_value: {}'.format(error_diff_value))
+            black_diff_degree = self.diff_between_two_images(TMP_SCREENSHOT_PNG, BLACK_SCREEN_PNG)
+            logger.debug('black_diff_degree: {}'.format(black_diff_degree))
+            error_diff_degree = self.diff_between_two_images(TMP_SCREENSHOT_PNG, ERROR_SCREEN_PNG)
+            logger.debug('error_diff_degree: {}'.format(error_diff_degree))
             
-            if black_diff_value == 0:
-                logger.info('usb camera is black screen state')
+            if black_diff_degree > 0.97:
+                logger.info('usb camera is black screen state, degree is {}'.format(black_diff_degree))
                 self.msg_signal.emit('black_screen')
-            elif error_diff_value == 0:
-                logger.info('usb camera is error screen state')
+            elif error_diff_degree > 0.97:
+                logger.info('usb camera is error screen state, degree is {}'.format(error_diff_degree))
                 self.msg_signal.emit('error_screen')
 
 def main():
