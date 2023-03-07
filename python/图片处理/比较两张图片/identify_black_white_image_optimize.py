@@ -1,9 +1,10 @@
 """
-文 件 名: identify_black_white_image_optimize.py
-文件描述: 优化打包大小，未优化为241MB，优化完后241MB，没效果
+文 件 名: convert_to_gray_by_PIL.py
+文件描述: 实现彩色图像转为灰度图像，来替代cv2库
+备    注: https://blog.csdn.net/qq_44368508/article/details/126419058
 作    者: HanKin
-创建日期: 2023.03.06
-修改日期：2023.03.06
+创建日期: 2023.03.07
+修改日期：2023.03.07
 
 Copyright (c) 2023 HanKin. All rights reserved.
 """
@@ -17,6 +18,7 @@ def identify_black_white_image(img_path):
     
     img = imread(img_path)
     gray = cvtColor(img.copy(), COLOR_BGR2GRAY)
+    print(type(gray), gray.shape)
 
     # 计算图片大小
     imgShape = img.shape
