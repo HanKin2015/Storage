@@ -4,7 +4,7 @@
 - 搭建python3开发环境 (https://m.runoob.com/python3/python3-install.html)
 - 运行 `python upan_auto_copy.py`
 - 运行 `python upan_auto_copy.py -u D`
-- 打包 `pyinstaller.exe --version-file=doc/file_version_info.txt -i img/udev_detect.ico -w -F src/upan_auto_copy.py`
+- 打包 `pyinstaller.exe --version-file=doc/file_version_info.txt -i img/udev_detect.ico -w -F src/udev_detect_tray.py`
 
 ## 20230216
 - 工具主体完成，功能基本实现

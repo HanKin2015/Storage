@@ -15,7 +15,7 @@ from log import logger
 import ico
 from PyQt5.QtWidgets import QInputDialog, QWidget, QMainWindow, QAction, QApplication
 from PyQt5.QtWidgets import QMenu, QMessageBox, QSystemTrayIcon, qApp
-from PyQt5.QtCore import QThread, pyqtSignal, QMetaObject, QCoreApplication, Qt, QRect
+from PyQt5.QtCore import QThread, pyqtSignal, QMetaObject, QCoreApplication, Qt, QRect, QTimer
 from PyQt5.QtGui import QIcon, QPainter, QColor, QBrush
 import os
 import base64
@@ -54,7 +54,44 @@ class Ui_MainWindow(object):
         # 监控屏幕线程
         self.monitorScreen = Thread_MonitorScreen()
         self.monitorScreen.msg_signal.connect(self.writeDataSlot)
+
+        # 托盘消息图标闪烁
+        self.timer = QTimer(self.ui)
+        self.timer.timeout.connect(self.toggleIcon)
+        self.usbCameraMonitorToolIcon = QIcon(USB_CAMERA_MONITOR_TOOL_ICO)
+        self.msgIcon = QIcon(MSG_ICO)
+        self.unreadMessageCount = 0                  # 未读消息数
+
+    def toggleIcon(self):
+        """托盘消息图标闪烁
+        """
         
+        if self.trayIcon.isVisible():
+            if self.trayIcon.icon().cacheKey() == self.usbCameraMonitorToolIcon.cacheKey():
+                self.trayIcon.setIcon(self.msgIcon)
+            else:
+                self.trayIcon.setIcon(self.usbCameraMonitorToolIcon)
+    
+    def showMessage(self, title, message, icon=QSystemTrayIcon.Information, timeout=5000):
+        """显示消息并开启未读消息定时器
+        """
+        
+        logger.info('message is {}'.format(message))
+        self.trayIcon.showMessage(title, message, icon, timeout)
+        self.unreadMessageCount += 1  # 未读消息数加1
+        if not self.timer.isActive():
+            self.timer.start(500)       # 开始定时器
+    
+    def clearMessage(self):
+        """关闭消息定时器
+        """
+        
+        if self.timer.isActive():
+            logger.info('current read {} messages'.format(self.unreadMessageCount))
+            self.timer.stop()           # 停止定时器
+            self.unreadMessageCount = 0 # 未读消息数清零
+            self.trayIcon.setIcon(self.usbCameraMonitorToolIcon)   # 设置已读消息图标
+    
     def readDataSlot(self):
         while self.sock.hasPendingDatagrams():
             datagram, host, port = self.sock.readDatagram(
@@ -63,7 +100,7 @@ class Ui_MainWindow(object):
 
             messgae = 'Date time: {}\nHost: {}\nPort: {}\n\n'.format(datagram.decode(), host.toString(), port)
             logger.debug(messgae)
-            self.windowsMessage(datagram.decode())
+            self.hotplugSignalSlot(datagram.decode())
 
     def writeDataSlot(self, msg):
         if msg == 'black_screen':
@@ -124,7 +161,7 @@ class Ui_MainWindow(object):
         
         _translate = QCoreApplication.translate
         self.ui.setWindowTitle(_translate("MainWindow", APP_NAME))
-        self.ui.setWindowIcon(QIcon(USB_CAMERA_MONITOR_TOOL_ICO))
+        self.ui.setWindowIcon(self.usbCameraMonitorToolIcon)
 
     def setTrayIcon(self):
         """最小化右键菜单
@@ -139,7 +176,7 @@ class Ui_MainWindow(object):
         self.quitAppAction = QAction("退出")
         
         #添加一个图标
-        self.aboutAction.setIcon(QIcon(USB_CAMERA_MONITOR_TOOL_ICO))
+        self.aboutAction.setIcon(self.usbCameraMonitorToolIcon)
         
         #添加快捷键
         self.aboutAction.setShortcut(Qt.CTRL + Qt.Key_N)
@@ -148,7 +185,7 @@ class Ui_MainWindow(object):
         self.settingClientAddressAction.triggered.connect(self.settingClientAddress)
         self.startMonitorScreenAction.triggered.connect(self.startMonitorScreen)
         self.showScreenshotAreaAction.triggered.connect(self.showScreenshotArea)
-        self.testMsgAction.triggered.connect(self.windowsMessage)
+        self.testMsgAction.triggered.connect(self.hotplugSignalSlot)
         self.aboutAction.triggered.connect(self.about)
         self.quitAppAction.triggered.connect(self.quitApp)
 
@@ -167,7 +204,7 @@ class Ui_MainWindow(object):
         # 构建菜单UI
         self.trayIcon = QSystemTrayIcon()
         self.trayIcon.setContextMenu(self.trayIconMenu)
-        self.trayIcon.setIcon(QIcon(USB_CAMERA_MONITOR_TOOL_ICO))
+        self.trayIcon.setIcon(self.usbCameraMonitorToolIcon)
         self.trayIcon.setToolTip(APP_NAME)
         
         # 左键双击打开主界面
@@ -178,11 +215,18 @@ class Ui_MainWindow(object):
 
     def openMainWindow(self, reason):
         """双击打开主界面并使其活动
+        QSystemTrayIcon::Unknown 0 未知原因
+        QSystemTrayIcon::Context 1 系统托盘的上下文菜单请求
+        QSystemTrayIcon::DoubleClick 2 双击系统托盘
+        QSystemTrayIcon::Trigger 3 单击系统托盘
+        QSystemTrayIcon::MiddleClick 4 鼠标中键点击系统托盘
         """
         
         if reason == QSystemTrayIcon.DoubleClick:
             self.ui.showNormal()
             self.ui.activateWindow()
+        elif reason == QSystemTrayIcon.Trigger:
+            self.clearMessage()
 
     def showScreenshotArea(self):
         """显示截图区域
@@ -193,15 +237,14 @@ class Ui_MainWindow(object):
         # 显示子窗口
         self.subwindow.show()
 
-    def windowsMessage(self, msg=False):
+    def hotplugSignalSlot(self, msg=False):
         """配置显示 windows 系统消息通知
         """
 
-        logger.info('message is {}'.format(msg))
         if msg == False:
             msg = '这是一条测试消息'
         if self.trayIcon.supportsMessages() == True and self.trayIcon.isSystemTrayAvailable() == True:
-            self.trayIcon.showMessage('新消息', msg, QIcon(MSG_ICO), 10000)
+            self.showMessage('新消息', msg, self.msgIcon, 10000)
         else:
             logger.error('trayIcon supportsMessages {}, isSystemTrayAvailable {}'.format(self.trayIcon.supportsMessages(), self.trayIcon.isSystemTrayAvailable()))
 

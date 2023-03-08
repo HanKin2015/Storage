@@ -12,9 +12,10 @@ Copyright (c) 2023 HanKin. All rights reserved.
 import time
 import win32com.client
 from log import logger
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import Qt, QThread, pyqtSignal
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QInputDialog, QWidget, QMainWindow, QAction, QApplication
+from PyQt5.QtWidgets import QMenu, QMessageBox, QSystemTrayIcon, qApp
+from PyQt5.QtCore import QThread, pyqtSignal, QMetaObject, QCoreApplication, Qt, QRect, QTimer
+from PyQt5.QtGui import QIcon, QPainter, QColor, QBrush
 import sys
 import os
 import ico
@@ -36,12 +37,51 @@ class Ui_MainWindow(object):
         self.pushButton = None
         self.statusbar = None
 
+        # USB设备检测线程
         self.udevDetect = Thread_UdevDetect()
-        self.udevDetect.hotplug_signal.connect(self.windowsMessage)
+        self.udevDetect.hotplug_signal.connect(self.hotplugSignalSlot)
         self.udevDetect.get_udev_info_list_signal.connect(self.get_udev_info_list)
         
+        # 图片打包
         self.py2ico(ico.udev_detect_ico, UDEV_DETECT_ICO)
         self.py2ico(ico.msg_ico, MSG_ICO)
+
+        # 托盘消息图标闪烁
+        self.timer = QTimer(self.ui)
+        self.timer.timeout.connect(self.toggleIcon)
+        self.udevDetectIcon = QIcon(UDEV_DETECT_ICO)
+        self.msgIcon = QIcon(MSG_ICO)
+        self.unreadMessageCount = 0                  # 未读消息数
+
+    def toggleIcon(self):
+        """托盘消息图标闪烁
+        """
+        
+        if self.trayIcon.isVisible():
+            if self.trayIcon.icon().cacheKey() == self.udevDetectIcon.cacheKey():
+                self.trayIcon.setIcon(self.msgIcon)
+            else:
+                self.trayIcon.setIcon(self.udevDetectIcon)
+    
+    def showMessage(self, title, message, icon=QSystemTrayIcon.Information, timeout=5000):
+        """显示消息并开启未读消息定时器
+        """
+        
+        logger.info('message is {}'.format(message))
+        self.trayIcon.showMessage(title, message, icon, timeout)
+        self.unreadMessageCount += 1  # 未读消息数加1
+        if not self.timer.isActive():
+            self.timer.start(500)       # 开始定时器
+    
+    def clearMessage(self):
+        """关闭消息定时器
+        """
+        
+        if self.timer.isActive():
+            logger.info('current read {} messages'.format(self.unreadMessageCount))
+            self.timer.stop()           # 停止定时器
+            self.unreadMessageCount = 0 # 未读消息数清零
+            self.trayIcon.setIcon(self.udevDetectIcon)   # 设置已读消息图标
 
     def py2ico(self, ico_data, ico_img):
         """将py文件转换成ico图片
@@ -59,7 +99,7 @@ class Ui_MainWindow(object):
         self.ui.resize(800, 600)
 
         # 声明内容组件
-        self.centralwidget = QtWidgets.QWidget(self.ui)
+        self.centralwidget = QWidget(self.ui)
         self.centralwidget.setObjectName("centralwidget")
 
         # 构建内容组件
@@ -73,7 +113,7 @@ class Ui_MainWindow(object):
 
         # 配置主窗口
         self.retranslateUi()
-        QtCore.QMetaObject.connectSlotsByName(self.ui)
+        QMetaObject.connectSlotsByName(self.ui)
 
         # 配置最小化
         self.setTrayIcon()
@@ -84,34 +124,34 @@ class Ui_MainWindow(object):
         :param MainWindow:
         :return:
         """
-        _translate = QtCore.QCoreApplication.translate
+        _translate = QCoreApplication.translate
         self.ui.setWindowTitle(_translate("MainWindow", APP_NAME))
-        self.ui.setWindowIcon(QtGui.QIcon(UDEV_DETECT_ICO))
+        self.ui.setWindowIcon(self.udevDetectIcon)
 
     def setTrayIcon(self):
         """最小化右键菜单
         """
 
         # 初始化菜单单项
-        self.startUdevDetectAction = QtWidgets.QAction("开启USB设备检测")
-        self.testMsgAction = QtWidgets.QAction("测试消息")
-        self.aboutAction = QtWidgets.QAction("关于(&N)")
-        self.quitAppAction = QtWidgets.QAction("退出")
+        self.startUdevDetectAction = QAction("开启USB设备检测")
+        self.testMsgAction = QAction("测试消息")
+        self.aboutAction = QAction("关于(&N)")
+        self.quitAppAction = QAction("退出")
         
         #添加一个图标
-        self.aboutAction.setIcon(QtGui.QIcon(UDEV_DETECT_ICO))
+        self.aboutAction.setIcon(self.udevDetectIcon)
         
         #添加快捷键
         self.aboutAction.setShortcut(Qt.CTRL + Qt.Key_N)
 
         # 菜单单项连接方法
         self.startUdevDetectAction.triggered.connect(self.startUdevDetect)
-        self.testMsgAction.triggered.connect(self.windowsMessage)
+        self.testMsgAction.triggered.connect(self.hotplugSignalSlot)
         self.aboutAction.triggered.connect(self.about)
         self.quitAppAction.triggered.connect(self.quitApp)
 
         # 初始化菜单列表
-        self.trayIconMenu = QtWidgets.QMenu()
+        self.trayIconMenu = QMenu()
         self.trayIconMenu.addAction(self.startUdevDetectAction)
         self.trayIconMenu.addSeparator()
         self.trayIconMenu.addAction(self.testMsgAction)
@@ -120,26 +160,33 @@ class Ui_MainWindow(object):
         self.trayIconMenu.addAction(self.quitAppAction)
 
         # 构建菜单UI
-        self.trayIcon = QtWidgets.QSystemTrayIcon()
+        self.trayIcon = QSystemTrayIcon()
         self.trayIcon.setContextMenu(self.trayIconMenu)
-        self.trayIcon.setIcon(QtGui.QIcon(UDEV_DETECT_ICO))
+        self.trayIcon.setIcon(self.udevDetectIcon)
         self.trayIcon.setToolTip(APP_NAME)
         
         # 左键双击打开主界面
-        self.trayIcon.activated[QtWidgets.QSystemTrayIcon.ActivationReason].connect(self.openMainWindow)
+        self.trayIcon.activated[QSystemTrayIcon.ActivationReason].connect(self.openMainWindow)
         
         # 允许托盘菜单显示
         self.trayIcon.show()
 
     def openMainWindow(self, reason):
         """双击打开主界面并使其活动
+        QSystemTrayIcon::Unknown 0 未知原因
+        QSystemTrayIcon::Context 1 系统托盘的上下文菜单请求
+        QSystemTrayIcon::DoubleClick 2 双击系统托盘
+        QSystemTrayIcon::Trigger 3 单击系统托盘
+        QSystemTrayIcon::MiddleClick 4 鼠标中键点击系统托盘
         """
         
-        if reason == QtWidgets.QSystemTrayIcon.DoubleClick:
+        if reason == QSystemTrayIcon.DoubleClick:
             self.ui.showNormal()
             self.ui.activateWindow()
+        elif reason == QSystemTrayIcon.Trigger:
+            self.clearMessage()
 
-    def windowsMessage(self, action=''):
+    def hotplugSignalSlot(self, action=''):
         """配置显示 windows 系统消息通知
         """
 
@@ -149,9 +196,9 @@ class Ui_MainWindow(object):
         elif action == 'in':
             msg = '有USB设备插入'
         if self.trayIcon.supportsMessages() == True and self.trayIcon.isSystemTrayAvailable() == True:
-            self.trayIcon.showMessage('新消息', msg, QtGui.QIcon(MSG_ICO), 10000)
+            self.showMessage('新消息', msg, self.msgIcon, 10000)
         else:
-            logger.error('ERROR: windowsMessage()')
+            logger.error('trayIcon supportsMessages {}, isSystemTrayAvailable {}'.format(self.trayIcon.supportsMessages(), self.trayIcon.isSystemTrayAvailable()))
 
     def startUdevDetect(self):
         """初始化显示为开启USB设备检测，即默认是关闭状态
@@ -178,13 +225,13 @@ class Ui_MainWindow(object):
         """包含二次确认的退出
         """
         
-        checkFlag = QtWidgets.QMessageBox.information(self.ui, "退出确认", "是否确认退出？",
-                                                      QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
-        if checkFlag == QtWidgets.QMessageBox.Yes:
+        checkFlag = QMessageBox.information(self.ui, "退出确认", "是否确认退出？",
+                                                      QMessageBox.Yes | QMessageBox.No)
+        if checkFlag == QMessageBox.Yes:
             logger.info('******** stop ********\n')
             os.remove(UDEV_DETECT_ICO)
             os.remove(MSG_ICO)
-            QtWidgets.qApp.quit()
+            qApp.quit()
         else:
             pass
 
@@ -270,13 +317,13 @@ def main():
     """
 
     # 创建活跃 app 句柄
-    app = QtWidgets.QApplication(sys.argv)
+    app = QApplication(sys.argv)
 
     # 关闭全部窗口后程序不退出
     app.setQuitOnLastWindowClosed(False)
 
     # 声明界面句柄
-    mainWindow = QtWidgets.QMainWindow()
+    mainWindow = QMainWindow()
 
     # 构建程序界面
     ui = Ui_MainWindow()
