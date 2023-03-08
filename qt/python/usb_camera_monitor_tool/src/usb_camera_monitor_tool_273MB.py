@@ -4,7 +4,7 @@
 文件描述: USB摄像头监控工具
 作    者: HanKin
 创建日期: 2023.02.24
-修改日期：2023.03.07
+修改日期：2023.02.24
 
 Copyright (c) 2023 HanKin. All rights reserved.
 """
@@ -13,18 +13,22 @@ import time
 import sys
 from log import logger
 import ico
-from PyQt5.QtWidgets import QInputDialog, QWidget, QMainWindow, QAction, QApplication
-from PyQt5.QtWidgets import QMenu, QMessageBox, QSystemTrayIcon, qApp
-from PyQt5.QtCore import QThread, pyqtSignal, QMetaObject, QCoreApplication, Qt, QRect
-from PyQt5.QtGui import QIcon, QPainter, QColor, QBrush
+from PyQt5.QtWidgets import QInputDialog, QWidget, QMainWindow, QAction, QApplication, QMenu, QMessageBox, QSystemTrayIcon, qApp
+from PyQt5.QtCore import QThread, pyqtSignal, QMetaObject, QCoreApplication
+from PyQt5.QtGui import QIcon
 import os
 import base64
 from PyQt5.QtNetwork import QUdpSocket, QHostAddress
 import pyautogui
 from PIL import Image
+import math
+import operator
+from functools import reduce
 
 USB_CAMERA_MONITOR_TOOL_ICO = 'usb_camera_monitor_tool.ico'
 MSG_ICO = 'msg.ico'
+BLACK_SCREEN_PNG = 'black_screen.png'
+ERROR_SCREEN_PNG = 'error_screen.png'
 TMP_SCREENSHOT_PNG = 'tmp.png'
 APP_NAME = 'USB摄像头监控工具' 
 
@@ -43,6 +47,8 @@ class Ui_MainWindow(object):
         # pyinstaller打包图片
         self.py2ico(ico.usb_camera_monitor_tool_ico, USB_CAMERA_MONITOR_TOOL_ICO)
         self.py2ico(ico.msg_ico, MSG_ICO)
+        self.py2ico(ico.black_screen_png, BLACK_SCREEN_PNG)
+        self.py2ico(ico.error_screen_png, ERROR_SCREEN_PNG)
         
         # 接收消息
         self.sock = QUdpSocket()
@@ -92,23 +98,13 @@ class Ui_MainWindow(object):
         # 主窗口ID
         self.ui.setObjectName("MainWindow")
         self.ui.resize(800, 600)
-        
+
         # 声明内容组件
         self.centralwidget = QWidget(self.ui)
         self.centralwidget.setObjectName("centralwidget")
 
         # 构建内容组件
         self.ui.setCentralWidget(self.centralwidget)
-
-        # 去掉边框和置顶显示以及任务栏显示
-        self.ui.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint | Qt.Tool)
-        
-        # 去掉背景框
-        self.ui.setAttribute(Qt.WA_TranslucentBackground)
-        
-        # QMessageBox第一次打开不居中
-        self.ui.show()
-        self.ui.hide()
 
         # 配置主窗口
         self.retranslateUi()
@@ -123,7 +119,6 @@ class Ui_MainWindow(object):
         :param MainWindow:
         :return:
         """
-        
         _translate = QCoreApplication.translate
         self.ui.setWindowTitle(_translate("MainWindow", APP_NAME))
         self.ui.setWindowIcon(QIcon(USB_CAMERA_MONITOR_TOOL_ICO))
@@ -136,7 +131,6 @@ class Ui_MainWindow(object):
         self.settingClientAddressAction = QAction("设置客户端地址")
         self.startMonitorScreenAction = QAction("开启监控屏幕")
         self.stopMonitorScreenAction = QAction("关闭监控屏幕")
-        self.showScreenshotAreaAction = QAction("显示截图区域")
         self.testMsgAction = QAction("测试消息")
         self.aboutAction = QAction("关于")
         self.quitAppAction = QAction("退出")
@@ -145,7 +139,6 @@ class Ui_MainWindow(object):
         self.settingClientAddressAction.triggered.connect(self.settingClientAddress)
         self.startMonitorScreenAction.triggered.connect(self.startMonitorScreen)
         self.stopMonitorScreenAction.triggered.connect(self.stopMonitorScreen)
-        self.showScreenshotAreaAction.triggered.connect(self.showScreenshotArea)
         self.testMsgAction.triggered.connect(self.windowsMessage)
         self.aboutAction.triggered.connect(self.about)
         self.quitAppAction.triggered.connect(self.quitApp)
@@ -157,7 +150,6 @@ class Ui_MainWindow(object):
         self.trayIconMenu.addAction(self.startMonitorScreenAction)
         self.trayIconMenu.addAction(self.stopMonitorScreenAction)
         self.trayIconMenu.addSeparator()
-        self.trayIconMenu.addAction(self.showScreenshotAreaAction)
         self.trayIconMenu.addAction(self.testMsgAction)
         self.trayIconMenu.addSeparator()
         self.trayIconMenu.addAction(self.aboutAction)
@@ -180,15 +172,6 @@ class Ui_MainWindow(object):
         if reason == QSystemTrayIcon.DoubleClick:
             self.ui.showNormal()
             self.ui.activateWindow()
-
-    def showScreenshotArea(self):
-        """显示截图区域
-        """
-        
-        # 创建子窗口，并将主窗口设置为其父窗口
-        self.subwindow = Example()
-        # 显示子窗口
-        self.subwindow.show()
 
     def windowsMessage(self, msg=False):
         """配置显示 windows 系统消息通知
@@ -244,42 +227,14 @@ class Ui_MainWindow(object):
             logger.info('******** stop ********\n')
             os.remove(USB_CAMERA_MONITOR_TOOL_ICO)
             os.remove(MSG_ICO)
+            os.remove(BLACK_SCREEN_PNG)
+            os.remove(ERROR_SCREEN_PNG)
             if os.path.exists(TMP_SCREENSHOT_PNG):
                 os.remove(TMP_SCREENSHOT_PNG)
             qApp.quit()
         else:
             pass
-
-class Example(QWidget):
-
-    def __init__(self):
-        super().__init__()
-
-        # 设置窗口尺寸和背景色
-        self.setGeometry(0, 0, 800, 600)
-        self.setStyleSheet("background-color:transparent;")
-
-        # 去掉边框和置顶显示
-        self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
         
-        # 去掉背景框
-        self.setAttribute(Qt.WA_TranslucentBackground)
-
-        # 将窗口移动到屏幕中心
-        screen = QCoreApplication.instance().desktop().screenGeometry()
-        self.setGeometry(screen.width() / 2 - 400, screen.height() / 2 - 300, 800, 600)
-
-    def paintEvent(self, event):
-        painter = QPainter(self)
-        painter.setPen(QColor(255, 0, 0))
-        painter.setBrush(QBrush(QColor(255, 0, 0)))
-        rect = QRect(self.width() / 2 - 32, self.height() / 2 - 32, 32, 32)
-        painter.drawRect(rect)
-        
-    def mousePressEvent(self, event):
-        if event.button() == Qt.LeftButton:
-            self.close()
-
 class Thread_MonitorScreen(QThread):
     msg_signal = pyqtSignal(str)
 
@@ -292,38 +247,11 @@ class Thread_MonitorScreen(QThread):
         self.screenshot_y = pyautogui.size()[1] / 2 -32
         logger.info('screenshot_x = {}, screenshot_y = {}'.format(self.screenshot_x, self.screenshot_y))
     
-    def showScreenshotArea(self):
-        """显示截图区域
+    def diff_between_two_images(self, image1_path, image2_path):
+        """
         """
         
-        logger.info('show screenshot area')
-        
-    
-    def identify_image_by_PIL(self, img_path=TMP_SCREENSHOT_PNG):
-        """判定截取区域是否接近指定图片
-        0为黑色，255为白色
-        """
-    
-        color_img = Image.open(img_path)
-
-        # 转换成灰度图像
-        gray_img = color_img.convert('L')
-
-        # 图像中的最高和最低值
-        extrema = gray_img.getextrema()
-
-        # 黑白判断阈值
-        black_threshold = (0, 9)
-        white_threshold = (246, 255)
-        light_white_threshold = (236, 245)
-
-        if black_threshold[0] <= extrema[0] and extrema[1] <= black_threshold[1]:
-            return 'black'
-        if white_threshold[0] <= extrema[0] and extrema[1] <= white_threshold[1]:
-            return 'white'
-        if light_white_threshold[0] <= extrema[0] and extrema[1] <= light_white_threshold[1]:
-            return 'light white'
-        return 'not in range'
+        return 5
     
     def run(self):
         while self.is_on:
@@ -331,13 +259,16 @@ class Thread_MonitorScreen(QThread):
             screenshot = pyautogui.screenshot(TMP_SCREENSHOT_PNG, region=[self.screenshot_x, self.screenshot_y, 32, 32])
             logger.debug('screenshot: {}'.format(screenshot))
             
-            image_type = self.identify_image_by_PIL()
+            black_diff_degree = self.diff_between_two_images(TMP_SCREENSHOT_PNG, BLACK_SCREEN_PNG)
+            logger.debug('black_diff_degree: {}'.format(black_diff_degree))
+            error_diff_degree = self.diff_between_two_images(TMP_SCREENSHOT_PNG, ERROR_SCREEN_PNG)
+            logger.debug('error_diff_degree: {}'.format(error_diff_degree))
             
-            if image_type == 'black':
-                logger.info('usb camera is {} screen state'.format(image_type))
+            if black_diff_degree > 0.97:
+                logger.info('usb camera is black screen state, degree is {}'.format(black_diff_degree))
                 self.msg_signal.emit('black_screen')
-            elif image_type == 'light white':
-                logger.info('usb camera is {} screen state'.format(image_type))
+            elif error_diff_degree > 0.97:
+                logger.info('usb camera is error screen state, degree is {}'.format(error_diff_degree))
                 self.msg_signal.emit('error_screen')
 
 def main():

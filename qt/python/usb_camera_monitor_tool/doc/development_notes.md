@@ -14,9 +14,11 @@
 - 运行 `python upan_auto_copy.py`
 - 运行 `python upan_auto_copy.py -u D`
 - 打包 `pyinstaller.exe --version-file=doc/file_version_info.txt -i img/usb_camera_monitor_tool.ico -w -F src/usb_camera_monitor_tool.py`
+- 打包 `pyinstaller.exe --version-file=doc/file_version_info.txt -i img/usb_camera_monitor_tool.ico -w -F usb_camera_monitor_tool.spec`
 
 ## 3、下一步改进点
 - 打包有326MB，经过from xxx import xxx修改后打包为323MB，优化不明显
+- 第一次打开退出框不居中，第二次打开居中显示
 
 ## 4、参考资料
 
@@ -27,3 +29,28 @@
 
 ### 20230221
 - 项目创建（参考D:\Github\Storage\python\udev\upan_auto_copy项目创建）
+
+### 20230307
+win32ui和pyqt5结合会在退出时崩溃。
+尝试使用pyqt5替代。
+
+### 
+```
+self.setWindowFlags(Qt.FramelessWindowHint)
+self.setWindowFlags(Qt.WindowStaysOnTopHint)
+置顶生效，无边框不生效
+
+self.setWindowFlags(Qt.WindowStaysOnTopHint)
+self.setWindowFlags(Qt.FramelessWindowHint)
+置顶不生效，无边框生效
+
+self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
+置顶生效，无边框生效
+```
+
+会闪一次，体验也不好
+```
+# QMessageBox第一次打开不居中
+mainWindow.show()
+mainWindow.hide()
+```
