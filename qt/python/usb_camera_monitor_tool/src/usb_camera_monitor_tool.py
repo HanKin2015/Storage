@@ -133,16 +133,20 @@ class Ui_MainWindow(object):
         # 初始化菜单单项
         self.settingClientAddressAction = QAction("设置客户端地址")
         self.startMonitorScreenAction = QAction("开启监控屏幕")
-        self.stopMonitorScreenAction = QAction("关闭监控屏幕")
         self.showScreenshotAreaAction = QAction("显示截图区域")
         self.testMsgAction = QAction("测试消息")
-        self.aboutAction = QAction("关于")
+        self.aboutAction = QAction("关于(&N)")
         self.quitAppAction = QAction("退出")
+        
+        #添加一个图标
+        self.aboutAction.setIcon(QIcon(USB_CAMERA_MONITOR_TOOL_ICO))
+        
+        #添加快捷键
+        self.aboutAction.setShortcut(Qt.CTRL + Qt.Key_N)
 
         # 菜单单项连接方法
         self.settingClientAddressAction.triggered.connect(self.settingClientAddress)
         self.startMonitorScreenAction.triggered.connect(self.startMonitorScreen)
-        self.stopMonitorScreenAction.triggered.connect(self.stopMonitorScreen)
         self.showScreenshotAreaAction.triggered.connect(self.showScreenshotArea)
         self.testMsgAction.triggered.connect(self.windowsMessage)
         self.aboutAction.triggered.connect(self.about)
@@ -153,7 +157,6 @@ class Ui_MainWindow(object):
         self.trayIconMenu.addAction(self.settingClientAddressAction)
         self.trayIconMenu.addSeparator()
         self.trayIconMenu.addAction(self.startMonitorScreenAction)
-        self.trayIconMenu.addAction(self.stopMonitorScreenAction)
         self.trayIconMenu.addSeparator()
         self.trayIconMenu.addAction(self.showScreenshotAreaAction)
         self.trayIconMenu.addAction(self.testMsgAction)
@@ -166,8 +169,10 @@ class Ui_MainWindow(object):
         self.trayIcon.setContextMenu(self.trayIconMenu)
         self.trayIcon.setIcon(QIcon(USB_CAMERA_MONITOR_TOOL_ICO))
         self.trayIcon.setToolTip(APP_NAME)
+        
         # 左键双击打开主界面
         self.trayIcon.activated[QSystemTrayIcon.ActivationReason].connect(self.openMainWindow)
+        
         # 允许托盘菜单显示
         self.trayIcon.show()
 
@@ -212,22 +217,21 @@ class Ui_MainWindow(object):
             self.sock.writeDatagram(datagram, QHostAddress(self.clientAddress), 6666)
 
     def startMonitorScreen(self):
-        """开启监控屏幕
+        """初始化显示为开启监控屏幕，即默认是关闭状态
         """
 
-        if self.clientAddress == None:
-            QMessageBox.warning(self.ui, '警告', '请先设置客户端地址!', QMessageBox.Yes)
-            return
-        logger.info('start monitor screen')
-        self.monitorScreen.is_on = True
-        self.monitorScreen.start()
-
-    def stopMonitorScreen(self):
-        """关闭监控屏幕
-        """
-        
-        logger.info('stop monitor screen')
-        self.monitorScreen.is_on = False
+        if self.monitorScreen.is_on == False:
+            if self.clientAddress == None:
+                QMessageBox.warning(self.ui, '警告', '请先设置客户端地址!', QMessageBox.Yes)
+                return
+            logger.info('start monitor screen')
+            self.monitorScreen.is_on = True
+            self.monitorScreen.start()
+            self.startMonitorScreenAction.setText('关闭监控屏幕')
+        else:
+            logger.info('stop monitor screen')
+            self.monitorScreen.is_on = False
+            self.startMonitorScreenAction.setText('开启监控屏幕')
 
     def about(self):
         """关于
@@ -287,7 +291,7 @@ class Thread_MonitorScreen(QThread):
 
     def __init__(self):
         super(Thread_MonitorScreen, self).__init__()
-        self.is_on = True
+        self.is_on = False
         
         logger.info('screen size: {} x {}'.format(pyautogui.size()[0], pyautogui.size()[1]))
         self.screenshot_x = pyautogui.size()[0] / 2 - 32

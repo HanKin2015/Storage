@@ -14,6 +14,7 @@ import win32com.client
 from log import logger
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
+from PyQt5.QtWidgets import QMessageBox
 import sys
 import os
 import ico
@@ -93,14 +94,18 @@ class Ui_MainWindow(object):
 
         # 初始化菜单单项
         self.startUdevDetectAction = QtWidgets.QAction("开启USB设备检测")
-        self.stopUdevDetectAction = QtWidgets.QAction("关闭USB设备检测")
         self.testMsgAction = QtWidgets.QAction("测试消息")
-        self.aboutAction = QtWidgets.QAction("关于")
+        self.aboutAction = QtWidgets.QAction("关于(&N)")
         self.quitAppAction = QtWidgets.QAction("退出")
+        
+        #添加一个图标
+        self.aboutAction.setIcon(QtGui.QIcon(UDEV_DETECT_ICO))
+        
+        #添加快捷键
+        self.aboutAction.setShortcut(Qt.CTRL + Qt.Key_N)
 
         # 菜单单项连接方法
         self.startUdevDetectAction.triggered.connect(self.startUdevDetect)
-        self.stopUdevDetectAction.triggered.connect(self.stopUdevDetect)
         self.testMsgAction.triggered.connect(self.windowsMessage)
         self.aboutAction.triggered.connect(self.about)
         self.quitAppAction.triggered.connect(self.quitApp)
@@ -108,7 +113,6 @@ class Ui_MainWindow(object):
         # 初始化菜单列表
         self.trayIconMenu = QtWidgets.QMenu()
         self.trayIconMenu.addAction(self.startUdevDetectAction)
-        self.trayIconMenu.addAction(self.stopUdevDetectAction)
         self.trayIconMenu.addSeparator()
         self.trayIconMenu.addAction(self.testMsgAction)
         self.trayIconMenu.addSeparator()
@@ -119,9 +123,11 @@ class Ui_MainWindow(object):
         self.trayIcon = QtWidgets.QSystemTrayIcon()
         self.trayIcon.setContextMenu(self.trayIconMenu)
         self.trayIcon.setIcon(QtGui.QIcon(UDEV_DETECT_ICO))
-        self.trayIcon.setToolTip("USB设备检测")
+        self.trayIcon.setToolTip(APP_NAME)
+        
         # 左键双击打开主界面
         self.trayIcon.activated[QtWidgets.QSystemTrayIcon.ActivationReason].connect(self.openMainWindow)
+        
         # 允许托盘菜单显示
         self.trayIcon.show()
 
@@ -147,12 +153,19 @@ class Ui_MainWindow(object):
         else:
             logger.error('ERROR: windowsMessage()')
 
-    def stopUdevDetect(self):
-        """开启USB设备检测
+    def startUdevDetect(self):
+        """初始化显示为开启USB设备检测，即默认是关闭状态
         """
         
-        logger.info('stop usb device detect')
-        self.udevDetect.is_on = False
+        if self.udevDetect.is_on == False:
+            logger.info('start usb device detect')
+            self.udevDetect.is_on = True
+            self.udevDetect.start()
+            self.startUdevDetectAction.setText('关闭USB设备检测')
+        else:
+            logger.info('stop usb device detect')
+            self.udevDetect.is_on = False
+            self.startUdevDetectAction.setText('开启USB设备检测')
 
     def about(self):
         """关于
@@ -174,14 +187,6 @@ class Ui_MainWindow(object):
             QtWidgets.qApp.quit()
         else:
             pass
-
-    def startUdevDetect(self):
-        """关闭USB设备检测
-        """
-        
-        logger.info('start usb device detect')
-        self.udevDetect.is_on = True
-        self.udevDetect.start()
 
     def get_udev_info_list(self):
         """获取USB设备的信息列表（包含Hub和USB设备）
@@ -217,7 +222,7 @@ class Thread_UdevDetect(QThread):
 
     def __init__(self):
         super(Thread_UdevDetect, self).__init__()
-        self.is_on = True
+        self.is_on = False
         self.udev_info_list = []
 
     def run(self):
