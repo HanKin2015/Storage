@@ -4,7 +4,7 @@
 文件描述: usb设备检测（基于windows系统）
 作    者: HanKin
 创建日期: 2023.02.27
-修改日期：2023.02.27
+修改日期：2023.03.08
 
 Copyright (c) 2023 HanKin. All rights reserved.
 """
@@ -63,6 +63,12 @@ class Ui_MainWindow(object):
 
         # 构建内容组件
         self.ui.setCentralWidget(self.centralwidget)
+        
+        # QMessageBox第一次打开不居中
+        self.ui.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint | Qt.Tool)
+        self.ui.setAttribute(Qt.WA_TranslucentBackground)
+        self.ui.show()
+        self.ui.hide()
 
         # 配置主窗口
         self.retranslateUi()
@@ -96,6 +102,7 @@ class Ui_MainWindow(object):
         self.startUdevDetectAction.triggered.connect(self.startUdevDetect)
         self.stopUdevDetectAction.triggered.connect(self.stopUdevDetect)
         self.testMsgAction.triggered.connect(self.windowsMessage)
+        self.aboutAction.triggered.connect(self.about)
         self.quitAppAction.triggered.connect(self.quitApp)
 
         # 初始化菜单列表
@@ -147,6 +154,13 @@ class Ui_MainWindow(object):
         logger.info('stop usb device detect')
         self.udevDetect.is_on = False
 
+    def about(self):
+        """关于
+        """
+
+        # parent:QtWidget|None -> self.mainwindow
+        QMessageBox.about(self.ui, '关于', 'USB摄像头监控工具')
+        
     def quitApp(self):
         """包含二次确认的退出
         """

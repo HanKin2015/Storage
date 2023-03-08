@@ -74,8 +74,6 @@ class Ui_MainWindow(object):
         datagram = msg.encode()
         #self.sock.writeDatagram(datagram, QHostAddress.LocalHost, 6666)
         #self.sock.writeDatagram(datagram, QHostAddress.Broadcast, 6666)
-        if self.clientAddress == None:
-            QMessageBox.warning(self.ui, '警告', '请先设置客户端地址!', QMessageBox.Yes)
         self.sock.writeDatagram(datagram, QHostAddress(self.clientAddress), 6666)
         
     def py2ico(self, ico_data, ico_img):
@@ -186,7 +184,7 @@ class Ui_MainWindow(object):
         """
         
         # 创建子窗口，并将主窗口设置为其父窗口
-        self.subwindow = Example()
+        self.subwindow = ScreenShotArea()
         # 显示子窗口
         self.subwindow.show()
 
@@ -194,12 +192,13 @@ class Ui_MainWindow(object):
         """配置显示 windows 系统消息通知
         """
 
+        logger.info('message is {}'.format(msg))
         if msg == False:
             msg = '这是一条测试消息'
         if self.trayIcon.supportsMessages() == True and self.trayIcon.isSystemTrayAvailable() == True:
             self.trayIcon.showMessage('新消息', msg, QIcon(MSG_ICO), 10000)
         else:
-            logger.error('ERROR: windowsMessage()')
+            logger.error('trayIcon supportsMessages {}, isSystemTrayAvailable {}'.format(self.trayIcon.supportsMessages(), self.trayIcon.isSystemTrayAvailable()))
 
     def settingClientAddress(self):
         """设置服务器
@@ -216,6 +215,9 @@ class Ui_MainWindow(object):
         """开启监控屏幕
         """
 
+        if self.clientAddress == None:
+            QMessageBox.warning(self.ui, '警告', '请先设置客户端地址!', QMessageBox.Yes)
+            return
         logger.info('start monitor screen')
         self.monitorScreen.is_on = True
         self.monitorScreen.start()
@@ -250,7 +252,7 @@ class Ui_MainWindow(object):
         else:
             pass
 
-class Example(QWidget):
+class ScreenShotArea(QWidget):
 
     def __init__(self):
         super().__init__()
@@ -259,8 +261,8 @@ class Example(QWidget):
         self.setGeometry(0, 0, 800, 600)
         self.setStyleSheet("background-color:transparent;")
 
-        # 去掉边框和置顶显示
-        self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
+        # 去掉边框和置顶显示以及任务栏显示
+        self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint | Qt.Tool)
         
         # 去掉背景框
         self.setAttribute(Qt.WA_TranslucentBackground)
@@ -292,13 +294,6 @@ class Thread_MonitorScreen(QThread):
         self.screenshot_y = pyautogui.size()[1] / 2 -32
         logger.info('screenshot_x = {}, screenshot_y = {}'.format(self.screenshot_x, self.screenshot_y))
     
-    def showScreenshotArea(self):
-        """显示截图区域
-        """
-        
-        logger.info('show screenshot area')
-        
-    
     def identify_image_by_PIL(self, img_path=TMP_SCREENSHOT_PNG):
         """判定截取区域是否接近指定图片
         0为黑色，255为白色
@@ -326,19 +321,33 @@ class Thread_MonitorScreen(QThread):
         return 'not in range'
     
     def run(self):
+        black_continuous_count = 0
+        light_white_continuous_count = 0
         while self.is_on:
             self.sleep(3)
             screenshot = pyautogui.screenshot(TMP_SCREENSHOT_PNG, region=[self.screenshot_x, self.screenshot_y, 32, 32])
             logger.debug('screenshot: {}'.format(screenshot))
             
             image_type = self.identify_image_by_PIL()
-            
             if image_type == 'black':
-                logger.info('usb camera is {} screen state'.format(image_type))
-                self.msg_signal.emit('black_screen')
+                black_continuous_count += 1
+                light_white_continuous_count = 0
+                if black_continuous_count >= 3: # 需要连续三次才能判断是黑屏状态
+                    logger.info('usb camera is {} screen state'.format(image_type))
+                    self.msg_signal.emit('black_screen')
+                    black_continuous_count = 0
             elif image_type == 'light white':
-                logger.info('usb camera is {} screen state'.format(image_type))
-                self.msg_signal.emit('error_screen')
+                light_white_continuous_count += 1
+                black_continuous_count = 0
+                if light_white_continuous_count >= 3:   # 需要连续三次才能判断是浅白屏状态
+                    logger.info('usb camera is {} screen state'.format(image_type))
+                    self.msg_signal.emit('error_screen')
+                    light_white_continuous_count = 0
+            else:
+                black_continuous_count = 0
+                light_white_continuous_count = 0
+                
+            
 
 def main():
     """主函数

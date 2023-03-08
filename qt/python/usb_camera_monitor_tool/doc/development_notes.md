@@ -17,8 +17,7 @@
 - 打包 `pyinstaller.exe --version-file=doc/file_version_info.txt -i img/usb_camera_monitor_tool.ico -w -F usb_camera_monitor_tool.spec`
 
 ## 3、下一步改进点
-- 打包有326MB，经过from xxx import xxx修改后打包为323MB，优化不明显
-- 第一次打开退出框不居中，第二次打开居中显示
+- 
 
 ## 4、参考资料
 
@@ -31,10 +30,18 @@
 - 项目创建（参考D:\Github\Storage\python\udev\upan_auto_copy项目创建）
 
 ### 20230307
+- 打包有326MB，经过from xxx import xxx修改后打包为323MB，优化不明显。使用PIL代替cv2库后打包72.4MB
+- 截图区域实现
+- 第一次打开退出框不居中，第二次打开居中显示
+
+### 20230308
+- 优化各种BUG
+
+## 5、问题记录
+
+### 5-1、截图区域实现
 win32ui和pyqt5结合会在退出时崩溃。
 尝试使用pyqt5替代。
-
-### 
 ```
 self.setWindowFlags(Qt.FramelessWindowHint)
 self.setWindowFlags(Qt.WindowStaysOnTopHint)
@@ -48,9 +55,39 @@ self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
 置顶生效，无边框生效
 ```
 
-会闪一次，体验也不好
+### 5-2、QMessageBox第一次打开不居中
+会闪一次，体验也不好。后面挺过增加窗口属性隐藏主窗口解决。
 ```
-# QMessageBox第一次打开不居中
 mainWindow.show()
 mainWindow.hide()
 ```
+
+### 5-3、file_version_info.txt文件书写规范
+需要在一个文件夹内多创建一个文件才能触发鼠标悬停显示文件信息，即两个文件以上。
+filevers变量不能存在前导零，否则打包的时候报错：
+```
+  File "<string>", line 9
+    filevers=(2023, 03, 08, 1),
+                     ^
+```
+
+### 5-4、usb_camera_monitor_tool.spec文件备份
+由于在.gitignore文件中过滤了spec文件，因此备份一份：
+```
+.vs
+x64
+<<<<<<< HEAD
+=======
+*.exe
+build
+.pyc
+dist
+*.spec
+__pycache__
+>>>>>>> 1d36228e2a4f62604d4c94b336da5b53ed28546e
+```
+
+### 5-5、注意截图区域建议不要开启
+很奇怪，在win7系统上面执行显示截图区域的方块并不能截取到，即可以一直开着。但是在win10系统则不能，会截取到红色方块，即需要关闭。
+
+### 5-6、
