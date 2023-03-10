@@ -13,8 +13,9 @@ import time
 import win32com.client
 from log import logger
 from PyQt5.QtWidgets import QInputDialog, QWidget, QMainWindow, QAction, QApplication
-from PyQt5.QtWidgets import QMenu, QMessageBox, QSystemTrayIcon, qApp, QToolTip
-from PyQt5.QtCore import QThread, pyqtSignal, QMetaObject, QCoreApplication, Qt, QRect, QTimer
+from PyQt5.QtWidgets import QMenu, QMessageBox, QSystemTrayIcon, qApp, QToolTip, QListWidgetItem
+from PyQt5.QtWidgets import QLabel, QListWidget, QPushButton, QHBoxLayout, QVBoxLayout, QDesktopWidget
+from PyQt5.QtCore import QThread, pyqtSignal, QMetaObject, QCoreApplication, Qt, QRect, QTimer, QPoint
 from PyQt5.QtGui import QIcon, QPainter, QColor, QBrush, QCursor
 import sys
 import os
@@ -36,11 +37,6 @@ class Ui_MainWindow(object):
         self.centralwidget = None
         self.pushButton = None
         self.statusbar = None
-
-        # USB设备检测线程
-        self.udevDetect = Thread_UdevDetect()
-        self.udevDetect.hotplug_signal.connect(self.hotplugSignalSlot)
-        self.udevDetect.get_udev_info_list_signal.connect(self.get_udev_info_list)
         
         # 图片打包
         self.py2ico(ico.udev_detect_ico, UDEV_DETECT_ICO)
@@ -153,7 +149,7 @@ class Ui_MainWindow(object):
         # 菜单单项连接方法
         self.startUdevDetectAction.triggered.connect(self.startUdevDetect)
         self.testMsgAction.triggered.connect(self.hotplugSignalSlot)
-        self.aboutAction.triggered.connect(self.about)
+        self.aboutAction.triggered.connect(self.showToolTip)
         self.quitAppAction.triggered.connect(self.quitApp)
 
         # 初始化菜单列表
@@ -178,6 +174,25 @@ class Ui_MainWindow(object):
         
         # 允许托盘菜单显示
         self.trayIcon.show()
+
+    def showToolTip(self):
+        self.messageTipForm = Ui_MessageTipForm()
+        
+        rect = self.trayIcon.geometry()
+        trayIconPos = QPoint(rect.left() + rect.width()/2-1, rect.top() + rect.height()/2-1)
+        leftBottom = QPoint(trayIconPos.x() - self.messageTipForm.width()/2+1, trayIconPos.y() - 19)
+        logger.info('原始位置: {}'.format(leftBottom))
+        self.messageTipForm.setFixedLeftBottom(leftBottom)
+        
+        logger.info(rect)
+        logger.info('{} {} {} {}'.format(rect.left(), rect.width(), rect.top(), rect.height()))
+        logger.info('{} {}'.format(rect.left() + rect.width()/2-1, rect.top() + rect.height()/2-1))
+        logger.info('{} {}'.format(trayIconPos.x() - self.messageTipForm.width()/2+1, trayIconPos.y() - 19))
+        
+        self.messageTipForm.addToTipList('张三', '来电话啦')
+        self.messageTipForm.addToTipList('李四', '床前明月光')
+        self.messageTipForm.addToTipList('王麻子', '当前是黑屏状态')
+        self.messageTipForm.show()
 
     def openMainWindow(self, reason):
         """双击打开主界面并使其活动
@@ -243,82 +258,200 @@ class Ui_MainWindow(object):
         else:
             pass
 
-    def get_udev_info_list(self):
-        """获取USB设备的信息列表（包含Hub和USB设备）
-        """
-        
-        wmi = win32com.client.GetObject("winmgmts:")
-        #logger.info(wmi)  # <COMObject winmgmts:>
-        
-        udev_info_list = []
-        for usb in wmi.InstancesOf("Win32_USBHub"):
-            udev_info_list.append({'usb.USBVersion': usb.USBVersion,
-                                 'usb.ProtocolCode': usb.ProtocolCode,
-                                 'usb.SubclassCode': usb.SubclassCode,
-                                 'usb.Availability': usb.Availability,
-                                 'usb.NumberOfConfigs': usb.NumberOfConfigs,
-                                 'usb.Name': usb.Name,
-                                 'usb.DeviceID': usb.DeviceID,
-                                 'usb.Status': usb.Status,
-                                 'usb.StatusInfo': usb.StatusInfo,
-                                 'usb.PNPDeviceID': usb.PNPDeviceID,
-                                 'usb.ClassCode': usb.ClassCode,
-                                 'usb.SystemName': usb.SystemName,
-                                 'usb.Caption': usb.Caption,
-                                 'usb.CreationClassName': usb.CreationClassName,
-                                 'usb.CurrentConfigValue': usb.CurrentConfigValue,
-                                 'usb.Description': usb.Description})
-        # 通知给子进程
-        self.udevDetect.udev_info_list = udev_info_list
-
-class Thread_UdevDetect(QThread):
-    hotplug_signal = pyqtSignal(str)
-    get_udev_info_list_signal = pyqtSignal()
-
+class Ui_MessageTipForm(QWidget):
+    """消息提示窗口类
+    """
+    
     def __init__(self):
-        super(Thread_UdevDetect, self).__init__()
-        self.is_on = False
-        self.udev_info_list = []
+        super().__init__()
+    
+        self.orignalHeight = None
+        self.orignalPoint  = None
+        self.messageCountRole = Qt.UserRole + 0x01
+        self.messageTextRole  = Qt.UserRole + 0x02
+        
+        self.initUI()
 
-    def run(self):
-
-        self.get_udev_info_list_signal.emit()
-        self.sleep(1)   # 等待信号消息处理完成
-        logger.info('there are {} hub and usb devices now'.format(len(self.udev_info_list)))
-        last_udev_info_list = self.udev_info_list
-        while self.is_on:
-            self.sleep(1)
-            
-            self.get_udev_info_list_signal.emit()
-            diff_count = len(self.udev_info_list) - len(last_udev_info_list)
-            if diff_count == 0:
-                continue
-            
-            self.hotplug_signal.emit('in' if diff_count > 0 else 'out')
-            logger.warning('there are {} usb devices which are hogplug {}'.format(abs(diff_count), 'in' if diff_count > 0 else 'out'))
-            self.print_hotplug_udev_info(diff_count, last_udev_info_list, self.udev_info_list)
-            last_udev_info_list = self.udev_info_list
-
-    def print_udev_info(self, udev_info):
-        """打印USB设备信息
+    def initUI(self):
+        """初始化界面
         """
         
-        for key, value in udev_info.items():
-            logger.info('{}: {}'.format(key, value))
-        return
+        # 窗口属性
+        self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowTitleHint | Qt.WindowMinimizeButtonHint | Qt.WindowMaximizeButtonHint)
 
-    def print_hotplug_udev_info(self, diff_count, udev_info_list, current_udev_info_list):
-        """打印出热插拔的设备信息
+        # 创建 QLabel
+        self.label = QLabel('新消息(0)', self)
+        self.label.setMaximumHeight(18)
+
+        # 创建 QListWidget
+        self.listWidget = QListWidget(self)
+        self.listWidget.itemClicked.connect(self.itemClickedSlot)
+        
+        # 去除item选中时的虚线边框
+        self.listWidget.setFocusPolicy(Qt.NoFocus)
+        
+        #self.listWidget.setFixedHeight(0)       # 将高度设置为0
+        self.listWidget.setMaximumHeight(0)
+        logger.info(self.listWidget.height())   # 默认为30
+
+
+        # 创建 QPushButton
+        self.ignoreAllBtn = QPushButton('忽略全部', self)
+        self.ignoreAllBtn.clicked.connect(self.ignoreAllSlot)
+        self.openAllBtn = QPushButton('打开全部', self)
+        self.openAllBtn.clicked.connect(self.openAllSlot)
+
+        # 创建 QHBoxLayout 布局
+        self.hbox = QHBoxLayout()
+        self.hbox.addWidget(self.ignoreAllBtn)
+        self.hbox.addWidget(self.openAllBtn)
+
+        # 创建 QVBoxLayout 布局
+        vbox = QVBoxLayout()
+        vbox.addWidget(self.label)
+        vbox.addWidget(self.listWidget)
+        vbox.addLayout(self.hbox)
+
+        # 设置窗口布局
+        self.setLayout(vbox)
+
+        
+        
+        # 起始高度不包含listWidget
+        self.orignalHeight = self.label.height() + self.ignoreAllBtn.height()
+        # 计算窗口内容的高度
+        frameGeometryHeight = self.frameGeometry().height()
+        frameSizeHeight = self.frameSize().height()
+        contentHeight = frameGeometryHeight - frameSizeHeight
+        logger.info('orignalHeight: {}, window height: {} {} {}'.format(self.orignalHeight, 
+            frameGeometryHeight, frameSizeHeight, contentHeight))
+            
+        # 默认位置宽度和高度
+        logger.info('label: {}, listWidget: {}, hbox: {}'.format(self.label.height(), self.listWidget.height(), self.ignoreAllBtn.height()))
+        
+        logger.info('高度: {}'.format(self.frameGeometry().height()))
+        logger.info(self.frameSize().height())
+        logger.info(self.geometry().height())
+        logger.info(self.height())
+        logger.info(vbox.sizeHint().height())
+        logger.info(self.hbox.sizeHint().height())
+        
+        self.setGeometry(0, 0, 50, self.orignalHeight)
+        self.setWindowTitle('消息提示窗口')
+
+    def calcListWidgetHeight(self):
+        """
         """
         
-        logger.info('=============== Hotplug USB Device ===============')
-        if diff_count > 0:
-            udev_info_list, current_udev_info_list = current_udev_info_list, udev_info_list
-        for udev_info in udev_info_list:
-            if udev_info not in current_udev_info_list:
-                self.print_udev_info(udev_info)
-        logger.info('=============== Hotplug USB Device ===============')
-        return
+        listWidgetHeight = sum([self.listWidget.sizeHintForRow(i) for i in range(self.listWidget.count())]) + self.listWidget.frameWidth() * 2
+        #return sum([self.listWidget.sizeHintForRow(i) for i in range(self.listWidget.count())])
+        return listWidgetHeight
+
+    def setFixedLeftBottom(self, leftBottom):
+        """
+        """
+        
+        self.orignalPoint = leftBottom
+
+    def ignoreAllSlot(self):
+        """
+        """
+        
+        for i in range(self.listWidget.count()):
+            item = self.listWidget.item(i);
+            self.listWidget.removeItemWidget(item);
+
+        # 修改消息盒子的长度，恢复最初的高度
+        self.resizeHeight(self.orignalHeight)
+        #emit signal_NoMessage();
+        
+    def openAllSlot(self):
+        """
+        """
+        
+        for i in range(self.listWidget.count()):
+            item = self.listWidget.item(i);
+            self.listWidget.removeItemWidget(item);
+            self.itemClickedSlot(item);
+        #emit signal_NoMessage();
+
+    def itemClickedSlot(self, item):
+        """
+        """
+        
+        if item == None:
+            logger.error('no item')
+            return
+        
+        text = item.data(self.messageTextRole)
+        logger.info(type(text))
+        #self.listWidget.removeItemWidget(item)
+        self.listWidget.takeItem(self.listWidget.row(item))
+        logger.info('getMessageCount: {}'.format(self.getMessageCount()))
+
+        # 修改消息盒子的长度，每阅读一条消息，减少34pix
+        self.resizeHeight();
+        
+        desktop = QDesktopWidget()
+        logger.debug('桌面大小: {}'.format(desktop.screenGeometry()))
+        # D:\Github\GitBook\gitbook\Python\pyqt5.md
+        #screenGeometry = desktop.screenGeometry()
+        #centerX = (screenGeometry.x() + screenGeometry.width() - self.width()) / 2
+        #centerY = (screenGeometry.y() + screenGeometry.height() - self.height()) / 2
+        #logger.info('中心位置:({}, {})'.format(centerX, centerY))
+        #QMessageBox.warning(self, '消息', text).move(desktop.screenGeometry().center() - msgBox.rect().center())
+        
+        msgBox = QMessageBox(self)
+        msgBox.setWindowTitle('消息')
+        msgBox.setText(text)
+        msgBox.setGeometry(0, 0, 100, 200)       # 设置对话框大小
+        msgBox.move(desktop.screenGeometry().center() - msgBox.rect().center())
+        msgBox.setIcon(QMessageBox.Information)  # 设置对话框类型为信息框
+        msgBox.show()
+
+        if self.getMessageCount() == 0:
+            #emit signal_NoMessage();
+            pass
+
+    def getMessageCount(self):
+        """
+        """
+        
+        return self.listWidget.count()
+    
+    def addToTipList(self, name, text):
+        """
+        """
+        
+        item = QListWidgetItem(self.listWidget);
+        item.setText(' {}'.format(name));
+        item.setData(self.messageTextRole, text);
+        self.listWidget.addItem(item);
+
+        # 显示收到消息数量
+        self.label.setText('新消息({})'.format(self.getMessageCount()));
+
+        # 修改消息盒子的长度，每增加一条消息，增加34pix
+        self.resizeHeight();
+
+    def resizeHeight(self):
+        """
+        """
+        
+        # 设置高度为内容刚好的高度
+        listWidgetHeight = self.calcListWidgetHeight()
+        logger.info('listWidgetHeight: {}'.format(listWidgetHeight))
+        self.listWidget.setMaximumHeight(listWidgetHeight)
+
+        height = self.orignalHeight + listWidgetHeight + self.hbox.sizeHint().height() / 2
+        
+        self.resize(self.width(), height)
+        # 根据新的大小移动窗口至原始位置
+        logger.info(self.label.height())
+        logger.info('消息提示窗口真实高度: {}, 计算高度: {}'.format(self.height(), height))
+        logger.info('新位置: {} {}'.format(self.orignalPoint.x(), self.orignalPoint.y() - height))
+        leftTop = QPoint(self.orignalPoint.x(), self.orignalPoint.y() - height)
+        self.move(leftTop)
 
 def main():
     """主函数
