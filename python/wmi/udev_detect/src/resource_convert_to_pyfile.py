@@ -16,7 +16,7 @@ import time
 import os
 from PIL import Image
 
-def convert_png_to_ico(dir_path):
+def convert_png_to_ico(dir_path, size_list=None):
     """把png转换为ico图标
     """
     
@@ -24,7 +24,10 @@ def convert_png_to_ico(dir_path):
     file_names = os.listdir(dir_path)
     
     # 图标大小
-    size = (40, 40)
+    default_size_list = [
+        (40, 40) # 默认生成ico大小
+    ]
+    size_list = size_list or default_size_list
 
     # 给图标文件单独创建一个icon目录
     #if not os.path.exists('icon'):
@@ -40,11 +43,11 @@ def convert_png_to_ico(dir_path):
             # 打开图片并设置大小
             file_path = '{}\{}'.format(dir_path, file_name)
             new_file_path = '{}\{}'.format(dir_path, new_file_name)
-            im = Image.open(file_path).resize(size)
+            im = Image.open(file_path).resize(size_list[0])
             try:
                 # 图标文件保存至icon目录
                 path = os.path.join(dir_path, new_file_path)
-                im.save(path)
+                im.save(path, sizes=size_list)
 
                 print('{} --> {}'.format(file_name, new_file_name))
             except IOError:
@@ -102,18 +105,22 @@ def main():
     """
     
     pyfile_path = './resource.py'
+    dir_path = r'../img'
+    file_version_info_path = '../doc/file_version_info.txt'
+    
+    if not os.path.exists(dir_path):
+        #print('image path not exist')
+        return
     
     # 因为需要追写文件，所以写之前需要删除
     if os.path.exists(pyfile_path):
         os.remove(pyfile_path)
     
     # 转换图片
-    dir_path = r'D:\Github\Storage\python\wmi\udev_detect\img'
     convert_png_to_ico(dir_path)
     image_convert_to_pyfile(dir_path, pyfile_path)
     
     # 读取文件信息
-    file_version_info_path = '../doc/file_version_info.txt'
     file_version_info_to_pyfile(file_version_info_path, pyfile_path)
 
 if __name__ == '__main__':

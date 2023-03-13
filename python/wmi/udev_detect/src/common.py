@@ -18,8 +18,11 @@ from PyQt5.QtCore import QThread, pyqtSignal, QMetaObject, QCoreApplication, Qt,
 from PyQt5.QtGui import QIcon, QPainter, QColor, QBrush, QCursor
 import sys
 import os
-import resource
+import resource_convert_to_pyfile
 import base64
+
+resource_convert_to_pyfile.main()
+import resource
 
 UDEV_DETECT_ICO = 'udev_detect.ico'
 MSG_ICO = 'msg.ico'

@@ -9,7 +9,7 @@
 Copyright (c) 2023 HanKin. All rights reserved.
 """
 
-from Ui_MessageTipForm import * 
+from Ui_MessageTipForm import *
 
 class Ui_MainWindow(object):
     def __init__(self):
@@ -270,7 +270,8 @@ class Ui_MainWindow(object):
         """关于
         """
 
-        QMessageBox.about(self.ui, 'USB摄像头监控工具', 'udev detect tray V2023.3.8.3\n\nCopyright (c) 2023 HanKin. All rights reserved.')
+        aboutText = '{} V{}\n\n{}'.format(resource.InternalName, resource.ProductVersion, resource.LegalCopyright)
+        QMessageBox.about(self.ui, resource.FileDescription, aboutText)
         
     def quitApp(self):
         """包含二次确认的退出
