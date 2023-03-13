@@ -107,16 +107,16 @@ class Ui_MessageTipForm(QWidget):
             frameGeometryHeight, frameSizeHeight, contentHeight))
             
         # 默认位置宽度和高度
-        logger.info('label: {}, listWidget: {}, hbox: {}'.format(self.label.height(), self.listWidget.height(), self.ignoreAllBtn.height()))
+        logger.debug('label: {}, listWidget: {}, hbox: {}'.format(self.label.height(), self.listWidget.height(), self.ignoreAllBtn.height()))
         
-        logger.info('高度: {}'.format(self.frameGeometry().height()))
-        logger.info(self.frameSize().height())
-        logger.info(self.geometry().height())
-        logger.info(self.height())
-        logger.info(vbox.sizeHint().height())
-        logger.info(self.hbox.sizeHint().height())
+        logger.debug('高度: {}'.format(self.frameGeometry().height()))
+        logger.debug(self.frameSize().height())
+        logger.debug(self.geometry().height())
+        logger.debug(self.height())
+        logger.debug(vbox.sizeHint().height())
+        logger.debug(self.hbox.sizeHint().height())
         
-        self.setGeometry(0, 0, 210, self.orignalHeight)
+        self.setGeometry(0, 0, 350, self.orignalHeight)
         self.setWindowTitle('消息提示窗口')
 
     def calcListWidgetHeight(self):
@@ -173,7 +173,7 @@ class Ui_MessageTipForm(QWidget):
         logger.info('getMessageCount: {}'.format(self.getMessageCount()))
         
         # 修改消息盒子的长度，每阅读一条消息，减少34pix
-        self.resizeHeight();
+        self.resizeHeight()
         
         desktop = QDesktopWidget()
         logger.debug('桌面大小: {}'.format(desktop.screenGeometry()))
@@ -202,17 +202,21 @@ class Ui_MessageTipForm(QWidget):
         return self.listWidget.count()
     
     def addToTipList(self, name, text):
+        """添加信息到QListWidget
         """
-        """
+        
+        current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+        name = '{} {}'.format(current_time, name)
+        text = '{} {}'.format(current_time, text)
         
         item = QListWidgetItem(self.listWidget)
         item.setText(' {}'.format(name))
         item.setData(self.messageTextRole, text)
         self.listWidget.addItem(item)
 
-        # 修改消息盒子的长度，每增加一条消息，增加34pix
+        # 修改消息盒子的长度，每增加一条消息，增加19pix
         self.resizeHeight();
-        self.startFlashingTrayIconSignal.emit('in')
+        self.startFlashingTrayIconSignal.emit(text)
 
     def resizeHeight(self):
         """
@@ -229,8 +233,8 @@ class Ui_MessageTipForm(QWidget):
             self.listWidget.frameWidth()))
 
         self.resize(self.width(), int(height))
-        logger.info('消息提示窗口真实高度: {}, 计算高度: {}'.format(self.height(), int(height)))
-        logger.info('新位置: {} {}'.format(self.orignalPoint.x(), self.orignalPoint.y() - int(height)))
+        logger.debug('消息提示窗口真实高度: {}, 计算高度: {}'.format(self.height(), int(height)))
+        logger.debug('新位置: {} {}'.format(self.orignalPoint.x(), self.orignalPoint.y() - int(height)))
         
         # 根据新的大小移动窗口至原始位置
         leftTop = QPoint(self.orignalPoint.x(), self.orignalPoint.y() - self.height())

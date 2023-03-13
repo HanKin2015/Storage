@@ -19,3 +19,6 @@
 
 ## QQ ToolTip
 在开发时发现窗口默认高度很重要，目前只能通过QWidget.height()获取真实高度，太小了会使QLabel的高度不固定的变大变小。
+
+## QSystemTrayIcon::showMessage: Wrong icon size (32x32), please add standard one: 40x40
+win10系统有这个报错，也可能是python版本高些的问题，3.9.13。win7系统使用3.7.4无这个报错。

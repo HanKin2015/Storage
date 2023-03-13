@@ -18,7 +18,7 @@ from PyQt5.QtCore import QThread, pyqtSignal, QMetaObject, QCoreApplication, Qt,
 from PyQt5.QtGui import QIcon, QPainter, QColor, QBrush, QCursor
 import sys
 import os
-import ico
+import resource
 import base64
 
 UDEV_DETECT_ICO = 'udev_detect.ico'

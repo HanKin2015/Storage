@@ -32,8 +32,8 @@ VSVersionInfo(
         [StringStruct(u'CompanyName', u'HeJian'),
         StringStruct(u'FileDescription', u'USB设备检测'),
         StringStruct(u'FileVersion', u'1.0.0.1'),
-        StringStruct(u'InternalName', u'udev_detect.exe'),
-        StringStruct(u'LegalCopyright', u'Copyright (C) 2023'),
+        StringStruct(u'InternalName', u'udev_detect'),
+        StringStruct(u'LegalCopyright', u'Copyright (c) 2023 HanKin. All rights reserved.'),
         StringStruct(u'OriginalFilename', u'udev_detect.exe'),
         StringStruct(u'ProductName', u'USB设备检测'),
         StringStruct(u'ProductVersion', u'2023.3.8.3')])

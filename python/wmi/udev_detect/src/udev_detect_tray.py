@@ -4,7 +4,7 @@
 文件描述: usb设备检测（基于windows系统）
 作    者: HanKin
 创建日期: 2023.02.27
-修改日期：2023.03.10
+修改日期：2023.03.13
 
 Copyright (c) 2023 HanKin. All rights reserved.
 """
@@ -25,10 +25,15 @@ class Ui_MainWindow(object):
         self.unreadMessageCount = 0
         
         # 图片打包
-        self.py2ico(ico.udev_detect_ico, UDEV_DETECT_ICO)
-        self.py2ico(ico.msg_ico, MSG_ICO)
+        self.py2ico(resource.udev_detect_ico, UDEV_DETECT_ICO)
+        self.py2ico(resource.msg_ico, MSG_ICO)
         self.udevDetectIcon = QIcon(UDEV_DETECT_ICO)
         self.msgIcon = QIcon(MSG_ICO)
+        
+        # USB设备检测线程
+        self.udevDetect = Thread_UdevDetect()
+        self.udevDetect.hotplugSignal.connect(self.hotplugSignalSlot)
+        self.udevDetect.getUdevInfoListSignal.connect(self.get_udev_info_list)
 
         # 托盘图标闪烁定时器
         self.flashTimer = QTimer(self.ui)
@@ -60,7 +65,7 @@ class Ui_MainWindow(object):
 
         # 若鼠标在图片图标内，或鼠标在消息盒子内
         rect = self.trayIcon.geometry()
-        logger.info('{} {} {}'.format(rect, QCursor.pos(), rectForm))
+        logger.debug('{} {} {}'.format(rect, QCursor.pos(), rectForm))
         if rect.contains(QCursor.pos()) or rectForm.contains(QCursor.pos()):
             logger.debug('mouse hover tray icon')
             if self.messageTipForm.isHidden():
@@ -120,8 +125,6 @@ class Ui_MainWindow(object):
         
         QToolTip.showText(QCursor.pos(), '你有新的消息')
 
-
-
     def setTrayIcon(self):
         """最小化右键菜单
         """
@@ -140,7 +143,7 @@ class Ui_MainWindow(object):
 
         # 菜单单项连接方法
         self.startUdevDetectAction.triggered.connect(self.startUdevDetect)
-        self.testMsgAction.triggered.connect(self.startFlashingTrayIconSlot)
+        self.testMsgAction.triggered.connect(self.testMsgSlot)
         self.aboutAction.triggered.connect(self.about)
         self.quitAppAction.triggered.connect(self.quitApp)
 
@@ -179,19 +182,16 @@ class Ui_MainWindow(object):
         self.messageTipForm.stopFlashingTrayIconSignal.connect(self.stopFlashingTrayIconSlot)
         
         rect = self.trayIcon.geometry()
-        trayIconPos = QPoint(rect.left() + rect.width()/2-1, rect.top() + rect.height()/2-1)
-        leftBottom = QPoint(trayIconPos.x() - self.messageTipForm.width()/2+1, trayIconPos.y() - 19)
-        logger.info('原始位置: {}'.format(leftBottom))
+        trayIconPos = QPoint(rect.left() + int(rect.width()/2)-1, rect.top() + int(rect.height()/2)-1)
+        leftBottom = QPoint(trayIconPos.x() - int(self.messageTipForm.width()/2)+1, trayIconPos.y() - 19)
+        logger.debug('原始位置: {}'.format(leftBottom))
         self.messageTipForm.setFixedLeftBottom(leftBottom)
-        
-        logger.info(rect)
-        logger.info('{} {} {} {}'.format(rect.left(), rect.width(), rect.top(), rect.height()))
-        logger.info('{} {}'.format(rect.left() + rect.width()/2-1, rect.top() + rect.height()/2-1))
-        logger.info('{} {}'.format(trayIconPos.x() - self.messageTipForm.width()/2+1, trayIconPos.y() - 19))
-        #self.messageTipForm.setHidden(True)
         
         # 测试使用
         #self.messageTipForm.addToTipList('张三', '来电话啦')
+        
+        # 矫正位置
+        #self.messageTipForm.resizeHeight()
         #self.messageTipForm.show()
 
     def openMainWindow(self, reason):
@@ -209,17 +209,11 @@ class Ui_MainWindow(object):
         elif reason == QSystemTrayIcon.Trigger:
             pass
 
-    def startFlashingTrayIconSlot(self, action=''):
+    def startFlashingTrayIconSlot(self, message):
         """开启图标闪烁
         """
 
-        message = '这是一条测试消息'
-        if action == 'out':
-            message = '有USB设备拔出'
-        elif action == 'in':
-            message = '有USB设备插入'
         logger.info('message is {}'.format(message))
-        
         if self.trayIcon.supportsMessages() == True and self.trayIcon.isSystemTrayAvailable() == True:
             self.trayIcon.showMessage('新消息', message, self.msgIcon, 5000)
             self.unreadMessageCount += 1  # 未读消息数加1
@@ -259,12 +253,24 @@ class Ui_MainWindow(object):
             self.udevDetect.is_on = False
             self.startUdevDetectAction.setText('开启USB设备检测')
 
+    def hotplugSignalSlot(self, text):
+        """拔插槽函数
+        """
+
+        self.messageTipForm.addToTipList(text, text)
+
+    def testMsgSlot(self):
+        """测试消息槽函数
+        """
+        
+        text = '这是一条测试信息'
+        self.messageTipForm.addToTipList(text, text)
+
     def about(self):
         """关于
         """
 
-        # parent:QtWidget|None -> self.mainwindow
-        QMessageBox.about(self.ui, '关于', 'USB摄像头监控工具')
+        QMessageBox.about(self.ui, 'USB摄像头监控工具', 'udev detect tray V2023.3.8.3\n\nCopyright (c) 2023 HanKin. All rights reserved.')
         
     def quitApp(self):
         """包含二次确认的退出
@@ -309,8 +315,8 @@ class Ui_MainWindow(object):
         self.udevDetect.udev_info_list = udev_info_list
 
 class Thread_UdevDetect(QThread):
-    hotplug_signal = pyqtSignal(str)
-    get_udev_info_list_signal = pyqtSignal()
+    hotplugSignal = pyqtSignal(str)
+    getUdevInfoListSignal = pyqtSignal()
 
     def __init__(self):
         super(Thread_UdevDetect, self).__init__()
@@ -319,19 +325,19 @@ class Thread_UdevDetect(QThread):
 
     def run(self):
 
-        self.get_udev_info_list_signal.emit()
+        self.getUdevInfoListSignal.emit()
         self.sleep(1)   # 等待信号消息处理完成
         logger.info('there are {} hub and usb devices now'.format(len(self.udev_info_list)))
         last_udev_info_list = self.udev_info_list
         while self.is_on:
             self.sleep(1)
             
-            self.get_udev_info_list_signal.emit()
+            self.getUdevInfoListSignal.emit()
             diff_count = len(self.udev_info_list) - len(last_udev_info_list)
             if diff_count == 0:
                 continue
             
-            self.hotplug_signal.emit('in' if diff_count > 0 else 'out')
+            self.hotplugSignal.emit('有USB设备插入' if diff_count > 0 else '有USB设备拔出')
             logger.warning('there are {} usb devices which are hogplug {}'.format(abs(diff_count), 'in' if diff_count > 0 else 'out'))
             self.print_hotplug_udev_info(diff_count, last_udev_info_list, self.udev_info_list)
             last_udev_info_list = self.udev_info_list
