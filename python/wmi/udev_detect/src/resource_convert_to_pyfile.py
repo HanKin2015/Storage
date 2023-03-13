@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: ico2py.py
-文件描述: 把ico图标转换成py文件保存
-备    注: 使用时需要base64.b64decode(udev_detect_ico)转换
+文 件 名: resource_convert_to_pyfile.py
+文件描述: 把图片文件转换成py文件保存，并读取文件版本信息
+备    注: 图片使用时需要base64.b64decode(udev_detect_ico)转换
 作    者: HanKin
 创建日期: 2023.02.27
-修改日期：2023.02.27
+修改日期：2023.03.11
 
 Copyright (c) 2023 HanKin. All rights reserved.
 """

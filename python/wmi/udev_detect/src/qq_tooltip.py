@@ -4,7 +4,7 @@
 文件描述: usb设备检测（基于windows系统）
 作    者: HanKin
 创建日期: 2023.02.27
-修改日期：2023.03.08
+修改日期：2023.03.10
 
 Copyright (c) 2023 HanKin. All rights reserved.
 """

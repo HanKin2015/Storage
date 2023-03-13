@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# 文 件 名: rc.local
+# 文件描述: 开机自启动，放在/etc/目录下面或者/etc/rc.d/目录下面
+# 作    者: HanKin
+# 创建日期: 2023.03.11
+# 修改日期：2023.03.11
+# 
+# Copyright (c) 2023 HanKin. All rights reserved.
+#
+
+chmod +x /other/grab_usb_data.sh
+/other/grab_usb_data.sh &

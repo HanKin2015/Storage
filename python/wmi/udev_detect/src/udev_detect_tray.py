@@ -4,26 +4,12 @@
 文件描述: usb设备检测（基于windows系统）
 作    者: HanKin
 创建日期: 2023.02.27
-修改日期：2023.03.08
+修改日期：2023.03.10
 
 Copyright (c) 2023 HanKin. All rights reserved.
 """
 
-import time
-import win32com.client
-from log import logger
-from PyQt5.QtWidgets import QInputDialog, QWidget, QMainWindow, QAction, QApplication
-from PyQt5.QtWidgets import QMenu, QMessageBox, QSystemTrayIcon, qApp, QToolTip
-from PyQt5.QtCore import QThread, pyqtSignal, QMetaObject, QCoreApplication, Qt, QRect, QTimer
-from PyQt5.QtGui import QIcon, QPainter, QColor, QBrush, QCursor
-import sys
-import os
-import ico
-import base64
-
-UDEV_DETECT_ICO = 'udev_detect.ico'
-MSG_ICO = 'msg.ico'
-APP_NAME = 'USB设备检测' 
+from Ui_MessageTipForm import * 
 
 class Ui_MainWindow(object):
     def __init__(self):
@@ -36,24 +22,24 @@ class Ui_MainWindow(object):
         self.centralwidget = None
         self.pushButton = None
         self.statusbar = None
-
-        # USB设备检测线程
-        self.udevDetect = Thread_UdevDetect()
-        self.udevDetect.hotplug_signal.connect(self.hotplugSignalSlot)
-        self.udevDetect.get_udev_info_list_signal.connect(self.get_udev_info_list)
+        self.unreadMessageCount = 0
         
         # 图片打包
         self.py2ico(ico.udev_detect_ico, UDEV_DETECT_ICO)
         self.py2ico(ico.msg_ico, MSG_ICO)
-
-        # 托盘消息图标闪烁
-        self.timer = QTimer(self.ui)
-        self.timer.timeout.connect(self.toggleIcon)
         self.udevDetectIcon = QIcon(UDEV_DETECT_ICO)
         self.msgIcon = QIcon(MSG_ICO)
-        self.unreadMessageCount = 0                  # 未读消息数
 
-    def toggleIcon(self):
+        # 托盘图标闪烁定时器
+        self.flashTimer = QTimer(self.ui)
+        self.flashTimer.timeout.connect(self.flashingTrayIconSlot)
+
+        # 检测鼠标位置定时器
+        self.checkMousePosTimer = QTimer(self.ui)
+        self.checkMousePosTimer.timeout.connect(self.checkTrayIconHoverSlot)
+        self.checkMousePosTimer.setInterval(200)
+
+    def flashingTrayIconSlot(self):
         """托盘消息图标闪烁
         """
         
@@ -63,25 +49,25 @@ class Ui_MainWindow(object):
             else:
                 self.trayIcon.setIcon(self.udevDetectIcon)
     
-    def showMessage(self, title, message, icon=QSystemTrayIcon.Information, timeout=5000):
-        """显示消息并开启未读消息定时器
+    def checkTrayIconHoverSlot(self):
+        """检测鼠标位置
         """
         
-        logger.info('message is {}'.format(message))
-        self.trayIcon.showMessage(title, message, icon, timeout)
-        self.unreadMessageCount += 1  # 未读消息数加1
-        if not self.timer.isActive():
-            self.timer.start(500)       # 开始定时器
-    
-    def clearMessage(self):
-        """关闭消息定时器
-        """
-        
-        if self.timer.isActive():
-            logger.info('current read {} messages'.format(self.unreadMessageCount))
-            self.timer.stop()           # 停止定时器
-            self.unreadMessageCount = 0 # 未读消息数清零
-            self.trayIcon.setIcon(self.udevDetectIcon)   # 设置已读消息图标
+        # 获取消息盒子全局rect
+        pos  = self.messageTipForm.mapToGlobal(QPoint(0, 0))
+        size = self.messageTipForm.size();
+        rectForm = QRect(pos, size);
+
+        # 若鼠标在图片图标内，或鼠标在消息盒子内
+        rect = self.trayIcon.geometry()
+        logger.info('{} {} {}'.format(rect, QCursor.pos(), rectForm))
+        if rect.contains(QCursor.pos()) or rectForm.contains(QCursor.pos()):
+            logger.debug('mouse hover tray icon')
+            if self.messageTipForm.isHidden():
+                self.messageTipForm.show()
+                self.messageTipForm.activateWindow()
+        else:
+            self.messageTipForm.hide()
 
     def py2ico(self, ico_data, ico_img):
         """将py文件转换成ico图片
@@ -129,7 +115,9 @@ class Ui_MainWindow(object):
         self.ui.setWindowIcon(self.udevDetectIcon)
     
     def show_message_box(self):
-        # 弹出消息框
+        """弹出消息框
+        """
+        
         QToolTip.showText(QCursor.pos(), '你有新的消息')
 
 
@@ -152,7 +140,7 @@ class Ui_MainWindow(object):
 
         # 菜单单项连接方法
         self.startUdevDetectAction.triggered.connect(self.startUdevDetect)
-        self.testMsgAction.triggered.connect(self.hotplugSignalSlot)
+        self.testMsgAction.triggered.connect(self.startFlashingTrayIconSlot)
         self.aboutAction.triggered.connect(self.about)
         self.quitAppAction.triggered.connect(self.quitApp)
 
@@ -178,6 +166,33 @@ class Ui_MainWindow(object):
         
         # 允许托盘菜单显示
         self.trayIcon.show()
+        
+        # 初始化消息提示框
+        self.initMessageTipForm()
+
+    def initMessageTipForm(self):
+        """初始化消息提示框
+        """
+        
+        self.messageTipForm = Ui_MessageTipForm()
+        self.messageTipForm.startFlashingTrayIconSignal.connect(self.startFlashingTrayIconSlot)
+        self.messageTipForm.stopFlashingTrayIconSignal.connect(self.stopFlashingTrayIconSlot)
+        
+        rect = self.trayIcon.geometry()
+        trayIconPos = QPoint(rect.left() + rect.width()/2-1, rect.top() + rect.height()/2-1)
+        leftBottom = QPoint(trayIconPos.x() - self.messageTipForm.width()/2+1, trayIconPos.y() - 19)
+        logger.info('原始位置: {}'.format(leftBottom))
+        self.messageTipForm.setFixedLeftBottom(leftBottom)
+        
+        logger.info(rect)
+        logger.info('{} {} {} {}'.format(rect.left(), rect.width(), rect.top(), rect.height()))
+        logger.info('{} {}'.format(rect.left() + rect.width()/2-1, rect.top() + rect.height()/2-1))
+        logger.info('{} {}'.format(trayIconPos.x() - self.messageTipForm.width()/2+1, trayIconPos.y() - 19))
+        #self.messageTipForm.setHidden(True)
+        
+        # 测试使用
+        #self.messageTipForm.addToTipList('张三', '来电话啦')
+        #self.messageTipForm.show()
 
     def openMainWindow(self, reason):
         """双击打开主界面并使其活动
@@ -192,21 +207,43 @@ class Ui_MainWindow(object):
             self.ui.showNormal()
             self.ui.activateWindow()
         elif reason == QSystemTrayIcon.Trigger:
-            self.clearMessage()
+            pass
 
-    def hotplugSignalSlot(self, action=''):
-        """配置显示 windows 系统消息通知
+    def startFlashingTrayIconSlot(self, action=''):
+        """开启图标闪烁
         """
 
-        msg = '这是一条测试消息'
+        message = '这是一条测试消息'
         if action == 'out':
-            msg = '有USB设备拔出'
+            message = '有USB设备拔出'
         elif action == 'in':
-            msg = '有USB设备插入'
+            message = '有USB设备插入'
+        logger.info('message is {}'.format(message))
+        
         if self.trayIcon.supportsMessages() == True and self.trayIcon.isSystemTrayAvailable() == True:
-            self.showMessage('新消息', msg, self.msgIcon, 10000)
+            self.trayIcon.showMessage('新消息', message, self.msgIcon, 5000)
+            self.unreadMessageCount += 1  # 未读消息数加1
+            logger.info('there are {} unread messages now'.format(self.unreadMessageCount))
+            
+            if not self.flashTimer.isActive():
+                self.flashTimer.start(500)       # 开启托盘图标闪烁定时器
+            if not self.checkMousePosTimer.isActive():
+                self.checkMousePosTimer.start()  # 200毫秒间隔
         else:
             logger.error('trayIcon supportsMessages {}, isSystemTrayAvailable {}'.format(self.trayIcon.supportsMessages(), self.trayIcon.isSystemTrayAvailable()))
+        
+    def stopFlashingTrayIconSlot(self):
+        """关闭图标闪烁
+        """
+        
+        if self.flashTimer.isActive():
+            self.flashTimer.stop()           # 停止托盘图标闪烁定时器
+        if self.checkMousePosTimer.isActive():
+            self.checkMousePosTimer.stop()   # 停止检测鼠标位置定时器
+
+        self.unreadMessageCount = 0      # 未读消息数清零
+        self.trayIcon.setIcon(self.udevDetectIcon)   # 设置已读消息图标
+        self.messageTipForm.hide()
 
     def startUdevDetect(self):
         """初始化显示为开启USB设备检测，即默认是关闭状态
