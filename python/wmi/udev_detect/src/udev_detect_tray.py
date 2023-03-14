@@ -23,6 +23,7 @@ class Ui_MainWindow(object):
         self.pushButton = None
         self.statusbar = None
         self.unreadMessageCount = 0
+        self.lastIsTrayIconHover = False
         
         # 图片打包
         self.py2ico(resource.udev_detect_ico, UDEV_DETECT_ICO)
@@ -66,12 +67,20 @@ class Ui_MainWindow(object):
         # 若鼠标在图片图标内，或鼠标在消息盒子内
         rect = self.trayIcon.geometry()
         logger.debug('{} {} {}'.format(rect, QCursor.pos(), rectForm))
-        if rect.contains(QCursor.pos()) or rectForm.contains(QCursor.pos()):
+        #if rect.contains(QCursor.pos()) or rectForm.contains(QCursor.pos()):
+        if rect.contains(QCursor.pos()):
+            self.lastIsTrayIconHover = True
             logger.debug('mouse hover tray icon')
             if self.messageTipForm.isHidden():
                 self.messageTipForm.show()
                 self.messageTipForm.activateWindow()
+        elif self.lastIsTrayIconHover and rectForm.contains(QCursor.pos()):
+            logger.debug('mouse hover message tip form')
+            if self.messageTipForm.isHidden():
+                self.messageTipForm.show()
+                self.messageTipForm.activateWindow()
         else:
+            self.lastIsTrayIconHover = False
             self.messageTipForm.hide()
 
     def py2ico(self, ico_data, ico_img):
@@ -95,10 +104,14 @@ class Ui_MainWindow(object):
 
         # 构建内容组件
         self.ui.setCentralWidget(self.centralwidget)
+
+        # 去掉边框和置顶显示以及任务栏显示
+        self.ui.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint | Qt.Tool)
+        
+        # 去掉背景框
+        self.ui.setAttribute(Qt.WA_TranslucentBackground)
         
         # QMessageBox第一次打开不居中
-        self.ui.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint | Qt.Tool)
-        self.ui.setAttribute(Qt.WA_TranslucentBackground)
         self.ui.show()
         self.ui.hide()
 

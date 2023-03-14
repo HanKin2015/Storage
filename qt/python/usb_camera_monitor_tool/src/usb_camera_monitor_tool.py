@@ -9,24 +9,7 @@
 Copyright (c) 2023 HanKin. All rights reserved.
 """
 
-import time
-import sys
-from log import logger
-import ico
-from PyQt5.QtWidgets import QInputDialog, QWidget, QMainWindow, QAction, QApplication
-from PyQt5.QtWidgets import QMenu, QMessageBox, QSystemTrayIcon, qApp
-from PyQt5.QtCore import QThread, pyqtSignal, QMetaObject, QCoreApplication, Qt, QRect, QTimer
-from PyQt5.QtGui import QIcon, QPainter, QColor, QBrush
-import os
-import base64
-from PyQt5.QtNetwork import QUdpSocket, QHostAddress
-import pyautogui
-from PIL import Image
-
-USB_CAMERA_MONITOR_TOOL_ICO = 'usb_camera_monitor_tool.ico'
-MSG_ICO = 'msg.ico'
-TMP_SCREENSHOT_PNG = 'tmp.png'
-APP_NAME = 'USB摄像头监控工具' 
+from Ui_MessageTipForm import *
 
 class Ui_MainWindow(object):
     def __init__(self):
@@ -39,10 +22,14 @@ class Ui_MainWindow(object):
         self.centralwidget = None
         self.pushButton = None
         self.statusbar = None
+        self.unreadMessageCount = 0
+        self.lastIsTrayIconHover = False
         
         # pyinstaller打包图片
-        self.py2ico(ico.usb_camera_monitor_tool_ico, USB_CAMERA_MONITOR_TOOL_ICO)
-        self.py2ico(ico.msg_ico, MSG_ICO)
+        self.py2ico(resource.usb_camera_monitor_tool_ico, USB_CAMERA_MONITOR_TOOL_ICO)
+        self.py2ico(resource.msg_ico, MSG_ICO)
+        self.usbCameraMonitorToolIcon = QIcon(USB_CAMERA_MONITOR_TOOL_ICO)
+        self.msgIcon = QIcon(MSG_ICO)
         
         # 接收消息
         self.sock = QUdpSocket()
@@ -55,14 +42,41 @@ class Ui_MainWindow(object):
         self.monitorScreen = Thread_MonitorScreen()
         self.monitorScreen.msg_signal.connect(self.writeDataSlot)
 
-        # 托盘消息图标闪烁
-        self.timer = QTimer(self.ui)
-        self.timer.timeout.connect(self.toggleIcon)
-        self.usbCameraMonitorToolIcon = QIcon(USB_CAMERA_MONITOR_TOOL_ICO)
-        self.msgIcon = QIcon(MSG_ICO)
-        self.unreadMessageCount = 0                  # 未读消息数
+        # 托盘图标闪烁定时器
+        self.flashTimer = QTimer(self.ui)
+        self.flashTimer.timeout.connect(self.flashingTrayIconSlot)
 
-    def toggleIcon(self):
+        # 检测鼠标位置定时器
+        self.checkMousePosTimer = QTimer(self.ui)
+        self.checkMousePosTimer.timeout.connect(self.checkTrayIconHoverSlot)
+        self.checkMousePosTimer.setInterval(200)
+
+    def readDataSlot(self):
+        while self.sock.hasPendingDatagrams():
+            datagram, host, port = self.sock.readDatagram(
+                self.sock.pendingDatagramSize()
+            )
+
+            messgae = 'Date time: {}\nHost: {}\nPort: {}\n\n'.format(datagram.decode(), host.toString(), port)
+            logger.debug(messgae)
+            self.monitorSignalSlot(datagram.decode())
+
+    def writeDataSlot(self, msg):
+        """
+        """
+
+        datagram = msg.encode()
+        #self.sock.writeDatagram(datagram, QHostAddress.LocalHost, 6666)
+        #self.sock.writeDatagram(datagram, QHostAddress.Broadcast, 6666)
+        self.sock.writeDatagram(datagram, QHostAddress(self.clientAddress), 6666)
+
+    def monitorSignalSlot(self, text):
+        """监控信号槽函数
+        """
+
+        self.messageTipForm.addToTipList(text, text)
+
+    def flashingTrayIconSlot(self):
         """托盘消息图标闪烁
         """
         
@@ -72,47 +86,34 @@ class Ui_MainWindow(object):
             else:
                 self.trayIcon.setIcon(self.usbCameraMonitorToolIcon)
     
-    def showMessage(self, title, message, icon=QSystemTrayIcon.Information, timeout=5000):
-        """显示消息并开启未读消息定时器
+    def checkTrayIconHoverSlot(self):
+        """检测鼠标位置
         """
         
-        logger.info('message is {}'.format(message))
-        self.trayIcon.showMessage(title, message, icon, timeout)
-        self.unreadMessageCount += 1  # 未读消息数加1
-        if not self.timer.isActive():
-            self.timer.start(500)       # 开始定时器
-    
-    def clearMessage(self):
-        """关闭消息定时器
-        """
-        
-        if self.timer.isActive():
-            logger.info('current read {} messages'.format(self.unreadMessageCount))
-            self.timer.stop()           # 停止定时器
-            self.unreadMessageCount = 0 # 未读消息数清零
-            self.trayIcon.setIcon(self.usbCameraMonitorToolIcon)   # 设置已读消息图标
-    
-    def readDataSlot(self):
-        while self.sock.hasPendingDatagrams():
-            datagram, host, port = self.sock.readDatagram(
-                self.sock.pendingDatagramSize()
-            )
+        # 获取消息盒子全局rect
+        pos  = self.messageTipForm.mapToGlobal(QPoint(0, 0))
+        size = self.messageTipForm.size();
+        rectForm = QRect(pos, size);
 
-            messgae = 'Date time: {}\nHost: {}\nPort: {}\n\n'.format(datagram.decode(), host.toString(), port)
-            logger.debug(messgae)
-            self.hotplugSignalSlot(datagram.decode())
+        # 若鼠标在图片图标内，或鼠标在消息盒子内
+        rect = self.trayIcon.geometry()
+        logger.debug('{} {} {}'.format(rect, QCursor.pos(), rectForm))
+        #if rect.contains(QCursor.pos()) or rectForm.contains(QCursor.pos()):
+        if rect.contains(QCursor.pos()):
+            self.lastIsTrayIconHover = True
+            logger.debug('mouse hover tray icon')
+            if self.messageTipForm.isHidden():
+                self.messageTipForm.show()
+                self.messageTipForm.activateWindow()
+        elif self.lastIsTrayIconHover and rectForm.contains(QCursor.pos()):
+            logger.debug('mouse hover message tip form')
+            if self.messageTipForm.isHidden():
+                self.messageTipForm.show()
+                self.messageTipForm.activateWindow()
+        else:
+            self.lastIsTrayIconHover = False
+            self.messageTipForm.hide()
 
-    def writeDataSlot(self, msg):
-        if msg == 'black_screen':
-            msg = 'USB摄像头现在是黑屏状态'
-        elif msg == 'error_screen':
-            msg = 'USB摄像头现在是异常状态'
-        #msg = 'i love you'
-        datagram = msg.encode()
-        #self.sock.writeDatagram(datagram, QHostAddress.LocalHost, 6666)
-        #self.sock.writeDatagram(datagram, QHostAddress.Broadcast, 6666)
-        self.sock.writeDatagram(datagram, QHostAddress(self.clientAddress), 6666)
-        
     def py2ico(self, ico_data, ico_img):
         """将py文件转换成ico图片
         """
@@ -162,6 +163,12 @@ class Ui_MainWindow(object):
         _translate = QCoreApplication.translate
         self.ui.setWindowTitle(_translate("MainWindow", APP_NAME))
         self.ui.setWindowIcon(self.usbCameraMonitorToolIcon)
+		
+    def show_message_box(self):
+        """弹出消息框
+        """
+        
+        QToolTip.showText(QCursor.pos(), '你有新的消息')
 
     def setTrayIcon(self):
         """最小化右键菜单
@@ -185,7 +192,7 @@ class Ui_MainWindow(object):
         self.settingClientAddressAction.triggered.connect(self.settingClientAddress)
         self.startMonitorScreenAction.triggered.connect(self.startMonitorScreen)
         self.showScreenshotAreaAction.triggered.connect(self.showScreenshotArea)
-        self.testMsgAction.triggered.connect(self.hotplugSignalSlot)
+        self.testMsgAction.triggered.connect(self.testMsgSlot)
         self.aboutAction.triggered.connect(self.about)
         self.quitAppAction.triggered.connect(self.quitApp)
 
@@ -207,11 +214,37 @@ class Ui_MainWindow(object):
         self.trayIcon.setIcon(self.usbCameraMonitorToolIcon)
         self.trayIcon.setToolTip(APP_NAME)
         
+        self.trayIcon.messageClicked.connect(self.show_message_box)
+        
         # 左键双击打开主界面
         self.trayIcon.activated[QSystemTrayIcon.ActivationReason].connect(self.openMainWindow)
         
         # 允许托盘菜单显示
         self.trayIcon.show()
+        
+        # 初始化消息提示框
+        self.initMessageTipForm()
+
+    def initMessageTipForm(self):
+        """初始化消息提示框
+        """
+        
+        self.messageTipForm = Ui_MessageTipForm()
+        self.messageTipForm.startFlashingTrayIconSignal.connect(self.startFlashingTrayIconSlot)
+        self.messageTipForm.stopFlashingTrayIconSignal.connect(self.stopFlashingTrayIconSlot)
+        
+        rect = self.trayIcon.geometry()
+        trayIconPos = QPoint(rect.left() + int(rect.width()/2)-1, rect.top() + int(rect.height()/2)-1)
+        leftBottom = QPoint(trayIconPos.x() - int(self.messageTipForm.width()/2)+1, trayIconPos.y() - 19)
+        logger.debug('原始位置: {}'.format(leftBottom))
+        self.messageTipForm.setFixedLeftBottom(leftBottom)
+        
+        # 测试使用
+        #self.messageTipForm.addToTipList('张三', '来电话啦')
+        
+        # 矫正位置
+        #self.messageTipForm.resizeHeight()
+        #self.messageTipForm.show()
 
     def openMainWindow(self, reason):
         """双击打开主界面并使其活动
@@ -226,7 +259,7 @@ class Ui_MainWindow(object):
             self.ui.showNormal()
             self.ui.activateWindow()
         elif reason == QSystemTrayIcon.Trigger:
-            self.clearMessage()
+            pass
 
     def showScreenshotArea(self):
         """显示截图区域
@@ -237,16 +270,42 @@ class Ui_MainWindow(object):
         # 显示子窗口
         self.subwindow.show()
 
-    def hotplugSignalSlot(self, msg=False):
-        """配置显示 windows 系统消息通知
+    def startFlashingTrayIconSlot(self, message):
+        """开启图标闪烁
         """
 
-        if msg == False:
-            msg = '这是一条测试消息'
+        logger.info('message is {}'.format(message))
         if self.trayIcon.supportsMessages() == True and self.trayIcon.isSystemTrayAvailable() == True:
-            self.showMessage('新消息', msg, self.msgIcon, 10000)
+            self.trayIcon.showMessage('新消息', message, self.msgIcon, 5000)
+            self.unreadMessageCount += 1  # 未读消息数加1
+            logger.info('there are {} unread messages now'.format(self.unreadMessageCount))
+            
+            if not self.flashTimer.isActive():
+                self.flashTimer.start(500)       # 开启托盘图标闪烁定时器
+            if not self.checkMousePosTimer.isActive():
+                self.checkMousePosTimer.start()  # 200毫秒间隔
         else:
             logger.error('trayIcon supportsMessages {}, isSystemTrayAvailable {}'.format(self.trayIcon.supportsMessages(), self.trayIcon.isSystemTrayAvailable()))
+        
+    def stopFlashingTrayIconSlot(self):
+        """关闭图标闪烁
+        """
+        
+        if self.flashTimer.isActive():
+            self.flashTimer.stop()           # 停止托盘图标闪烁定时器
+        if self.checkMousePosTimer.isActive():
+            self.checkMousePosTimer.stop()   # 停止检测鼠标位置定时器
+
+        self.unreadMessageCount = 0      # 未读消息数清零
+        self.trayIcon.setIcon(self.usbCameraMonitorToolIcon)   # 设置已读消息图标
+        self.messageTipForm.hide()
+    
+    def testMsgSlot(self):
+        """测试消息槽函数
+        """
+        
+        text = '这是一条测试信息'
+        self.messageTipForm.addToTipList(text, text)
 
     def settingClientAddress(self):
         """设置服务器
@@ -255,7 +314,7 @@ class Ui_MainWindow(object):
         text, ok = QInputDialog.getText(None, '设置客户端地址', '请输入地址:')
         if ok:
             self.clientAddress = str(text)
-            msg = '这是一条服务端下发的测试消息'
+            msg = '服务端下发的测试消息'
             datagram = msg.encode()
             self.sock.writeDatagram(datagram, QHostAddress(self.clientAddress), 6666)
 
@@ -280,9 +339,9 @@ class Ui_MainWindow(object):
         """关于
         """
 
-        # parent:QtWidget|None -> self.mainwindow
-        QMessageBox.about(self.ui, '关于', 'USB摄像头监控工具')
-
+        aboutText = '{} V{}\n\n{}'.format(resource.InternalName, resource.ProductVersion, resource.LegalCopyright)
+        QMessageBox.about(self.ui, resource.FileDescription, aboutText)
+        
     def quitApp(self):
         """包含二次确认的退出
         """
@@ -379,16 +438,16 @@ class Thread_MonitorScreen(QThread):
             if image_type == 'black':
                 black_continuous_count += 1
                 light_white_continuous_count = 0
-                if black_continuous_count >= 3: # 需要连续三次才能判断是黑屏状态
+                if black_continuous_count >= 5: # 需要连续三次才能判断是黑屏状态
                     logger.info('usb camera is {} screen state'.format(image_type))
-                    self.msg_signal.emit('black_screen')
+                    self.msg_signal.emit('USB摄像头现在是黑屏状态')
                     black_continuous_count = 0
             elif image_type == 'light white':
                 light_white_continuous_count += 1
                 black_continuous_count = 0
-                if light_white_continuous_count >= 3:   # 需要连续三次才能判断是浅白屏状态
+                if light_white_continuous_count >= 5:   # 需要连续三次才能判断是浅白屏状态
                     logger.info('usb camera is {} screen state'.format(image_type))
-                    self.msg_signal.emit('error_screen')
+                    self.msg_signal.emit('USB摄像头现在是异常状态')
                     light_white_continuous_count = 0
             else:
                 black_continuous_count = 0
