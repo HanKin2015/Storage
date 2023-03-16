@@ -9,4 +9,4 @@ usb_camera_monitor_tool_png = b'iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAA
 FileDescription = 'USB摄像头监控工具'
 InternalName = 'usb camera monitor tool'
 LegalCopyright = 'Copyright (c) 2023 HanKin. All rights reserved.'
-ProductVersion = '2023.3.14.6'
+ProductVersion = '2023.3.14.8'

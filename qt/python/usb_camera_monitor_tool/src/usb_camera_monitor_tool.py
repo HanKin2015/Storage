@@ -65,6 +65,8 @@ class Ui_MainWindow(object):
         """
         """
 
+        if msg == '关闭监控屏幕':
+            self.startMonitorScreen()
         datagram = msg.encode()
         #self.sock.writeDatagram(datagram, QHostAddress.LocalHost, 6666)
         #self.sock.writeDatagram(datagram, QHostAddress.Broadcast, 6666)
@@ -163,7 +165,7 @@ class Ui_MainWindow(object):
         _translate = QCoreApplication.translate
         self.ui.setWindowTitle(_translate("MainWindow", APP_NAME))
         self.ui.setWindowIcon(self.usbCameraMonitorToolIcon)
-		
+
     def show_message_box(self):
         """弹出消息框
         """
@@ -440,15 +442,19 @@ class Thread_MonitorScreen(QThread):
                 light_white_continuous_count = 0
                 if black_continuous_count >= 5: # 需要连续三次才能判断是黑屏状态
                     logger.info('usb camera is {} screen state'.format(image_type))
-                    self.msg_signal.emit('USB摄像头现在是黑屏状态')
-                    black_continuous_count = 0
+                    self.msg_signal.emit('警告可能是黑屏状态')
+                    #black_continuous_count = 0
+                    if black_continuous_count >= 20:    # 如果连续超过20次即一分钟停止监控屏幕
+                        self.msg_signal.emit('关闭监控屏幕')
             elif image_type == 'light white':
                 light_white_continuous_count += 1
                 black_continuous_count = 0
                 if light_white_continuous_count >= 5:   # 需要连续三次才能判断是浅白屏状态
                     logger.info('usb camera is {} screen state'.format(image_type))
-                    self.msg_signal.emit('USB摄像头现在是异常状态')
-                    light_white_continuous_count = 0
+                    self.msg_signal.emit('警告可能是异常状态')
+                    #light_white_continuous_count = 0
+                    if light_white_continuous_count >= 20:    # 如果连续超过20次即一分钟停止监控屏幕
+                        self.msg_signal.emit('关闭监控屏幕')
             else:
                 black_continuous_count = 0
                 light_white_continuous_count = 0
