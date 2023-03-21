@@ -18,9 +18,9 @@ import pyautogui
 from PIL import Image
 from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, \
     QVBoxLayout, QPushButton, QTreeView, QTextEdit, QAbstractItemView, \
-    QMenuBar, QStatusBar, QMainWindow, QMenu, QAction, QLabel
-from PyQt5.QtCore import QModelIndex, Qt
-from PyQt5.QtGui import QStandardItemModel, QStandardItem
+    QMenuBar, QStatusBar, QMainWindow, QMenu, QAction, QLabel, QMessageBox
+from PyQt5.QtCore import QModelIndex, Qt, QCoreApplication
+from PyQt5.QtGui import QStandardItemModel, QStandardItem, QIcon
 import resource
 
 USB_CHECK_ICO = 'USBCheck.ico'

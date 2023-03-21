@@ -15,26 +15,35 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         
+        # pyinstaller打包图片
+        self.pyfile_convert_to_image(resource.USBCheck_ico, USB_CHECK_ICO)
+        self.usb_check_icon = QIcon(USB_CHECK_ICO)
+        
+        # 设置窗口
+        _translate = QCoreApplication.translate
+        self.setWindowTitle(_translate("MainWindow", APP_NAME))
+        self.setWindowIcon(self.usb_check_icon)
+        self.setGeometry(0, 0, 600, 400)
+        
         # 创建菜单栏
         menu_bar = QMenuBar(self)
         self.setMenuBar(menu_bar)
 
         # 添加菜单项
-        file_menu = QMenu("File", self)
-        menu_bar.addMenu(file_menu)
+        help_menu = QMenu('帮助', self)
+        menu_bar.addMenu(help_menu)
 
-        new_action = QAction("New", self)
-        file_menu.addAction(new_action)
+        about_action = QAction('关于', self)
+        about_action.triggered.connect(self.about)
+        help_menu.addAction(about_action)
 
-        open_action = QAction("Open", self)
-        file_menu.addAction(open_action)
-
-        exit_action = QAction("Exit", self)
+        exit_action = QAction('退出', self)
         exit_action.triggered.connect(self.close)
-        file_menu.addAction(exit_action)
+        help_menu.addAction(exit_action)
 
         # 创建按钮
-        button1 = QPushButton('Button 1')
+        button1 = QPushButton('扫描检测硬件改动')
+        
         button2 = QPushButton('Button 2')
         button3 = QPushButton('Button 3')
 
@@ -59,7 +68,7 @@ class MainWindow(QMainWindow):
         item2.appendRow(child3)
 
         # 设置标题行
-        model.setHeaderData(0, Qt.Horizontal, "Column 1")
+        model.setHeaderData(0, Qt.Horizontal, '主机控制器')
         tree_view = QTreeView()
         tree_view.setModel(model)
         tree_view.setSelectionMode(QAbstractItemView.SingleSelection)
@@ -95,6 +104,22 @@ class MainWindow(QMainWindow):
 
         status_label = QLabel("Ready")
         status_bar.addWidget(status_label)
+
+    def pyfile_convert_to_image(self, image_data, image):
+        """将py文件转换成图片
+        """
+
+        if not os.path.exists(image):
+            tmp = open(image, 'wb+')
+            tmp.write(base64.b64decode(image_data))
+            tmp.close()
+            
+    def about(self):
+        """关于
+        """
+
+        aboutText = '{} V{}\n\n{}'.format(resource.InternalName, resource.ProductVersion, resource.LegalCopyright)
+        QMessageBox.about(self, resource.FileDescription, aboutText)
 
     def on_tree_view_clicked(self, index: QModelIndex):
         model = index.model()
