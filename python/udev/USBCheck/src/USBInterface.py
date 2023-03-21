@@ -26,14 +26,14 @@ def get_udev_info_list():
     udev_info_list = []
     for pnp in wmi.InstancesOf('Win32_PnPEntity'):
         if 'USB\\VID' in pnp.DeviceID:
-            udev_info_list.append({'pnp.Name': pnp.Name,
-                                 'pnp.deviceID': pnp.deviceID,
-                                 'pnp.PNPClass': pnp.PNPClass,
-                                 'pnp.Service': pnp.Service,
-                                 'pnp.ConfigManagerErrorCode': pnp.ConfigManagerErrorCode,
-                                 'pnp.Status': pnp.Status,
-                                 'pnp.HardWareID': pnp.HardWareID,
-                                 'pnp.SystemName': pnp.SystemName})
+            udev_info_list.append({'Name': pnp.Name,
+                                 'deviceID': pnp.deviceID,
+                                 'PNPClass': pnp.PNPClass,
+                                 'Service': pnp.Service,
+                                 'ConfigManagerErrorCode': pnp.ConfigManagerErrorCode,
+                                 'Status': pnp.Status,
+                                 'HardWareID': pnp.HardWareID,
+                                 'SystemName': pnp.SystemName})
     for udev_info in udev_info_list:
         for key, value in udev_info.items():
             logger.debug('{}: {}'.format(key, value))
@@ -161,9 +161,9 @@ def main():
     get_vid_pid('USB\VID_0AC8&PID_3500&MI_02\6&197C435A&0&0002')
     get_udev_descriptor('0AC8', '3500')
     
-    #get_inf_name(udev_info_list[4]['pnp.HardWareID'][0])
-    #get_sys_path(udev_info_list[4]['pnp.Service'])
-    get_sys_inf_path_name(udev_info_list[2]['pnp.Service'])
+    #get_inf_name(udev_info_list[4]['HardWareID'][0])
+    #get_sys_path(udev_info_list[4]['Service'])
+    get_sys_inf_path_name(udev_info_list[2]['Service'])
 
 if __name__ == '__main__':
     """程序入口

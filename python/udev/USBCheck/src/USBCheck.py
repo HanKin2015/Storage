@@ -10,6 +10,7 @@ Copyright (c) 2023 HanKin. All rights reserved.
 """
 
 from common import *
+import USBInterface
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -23,73 +24,70 @@ class MainWindow(QMainWindow):
         _translate = QCoreApplication.translate
         self.setWindowTitle(_translate("MainWindow", APP_NAME))
         self.setWindowIcon(self.usb_check_icon)
-        self.setGeometry(0, 0, 600, 400)
+        self.setGeometry(0, 0, 700, 500)
+        self.center()
         
         # 创建菜单栏
-        menu_bar = QMenuBar(self)
+        menu_bar = QMenuBar()
         self.setMenuBar(menu_bar)
 
         # 添加菜单项
+        file_memu = QMenu('文件', self)
+        menu_bar.addMenu(file_memu)
+        exit_action = QAction('退出', self)
+        exit_action.triggered.connect(self.close)
+        file_memu.addAction(exit_action)
+        
         help_menu = QMenu('帮助', self)
         menu_bar.addMenu(help_menu)
-
         about_action = QAction('关于', self)
         about_action.triggered.connect(self.about)
         help_menu.addAction(about_action)
 
-        exit_action = QAction('退出', self)
-        exit_action.triggered.connect(self.close)
-        help_menu.addAction(exit_action)
 
         # 创建按钮
-        button1 = QPushButton('扫描检测硬件改动')
-        
-        button2 = QPushButton('Button 2')
-        button3 = QPushButton('Button 3')
+        scan_btn = QPushButton('扫描检测硬件改动')
+        copy_btn = QPushButton('一键复制描述符')
+        save_btn = QPushButton('一键保存USB设备信息')
+        scan_btn.clicked.connect(self.scan_check_hardware_change)
 
-        # 创建树型结构
+        # 创建一个 QStandardItemModel 对象
         model = QStandardItemModel()
-        root_item = model.invisibleRootItem()
+        
+        # 设置表头
+        model.setHorizontalHeaderLabels(['主机控制器'])
+        self.root_item = model.invisibleRootItem()
 
-        item1 = QStandardItem('Item 1')
-        item2 = QStandardItem('Item 2')
-        item3 = QStandardItem('Item 3')
-
-        child1 = QStandardItem('Child 1')
-        child2 = QStandardItem('Child 2')
-        child3 = QStandardItem('Child 3')
-
-        root_item.appendRow(item1)
-        root_item.appendRow(item2)
-        root_item.appendRow(item3)
-
-        item1.appendRow(child1)
-        item1.appendRow(child2)
-        item2.appendRow(child3)
-
-        # 设置标题行
-        model.setHeaderData(0, Qt.Horizontal, '主机控制器')
+        # 创建一个 QTreeView 对象
         tree_view = QTreeView()
+        
+        # 设置模型
         tree_view.setModel(model)
         tree_view.setSelectionMode(QAbstractItemView.SingleSelection)
         tree_view.clicked.connect(self.on_tree_view_clicked)
 
         # 创建文本框
-        text_edit = QTextEdit()
-        text_edit.setReadOnly(True)  # 设置为只读状态
+        self.text_edit = QTextEdit()
+        self.text_edit.setReadOnly(True)  # 设置为只读状态
+        self.text_edit2 = QTextEdit()
+        self.text_edit2.setReadOnly(True)  # 设置为只读状态
 
         # 创建布局
         hbox = QHBoxLayout()
-        hbox.addWidget(button1)
-        hbox.addWidget(button2)
-        hbox.addWidget(button3)
+        hbox.addWidget(scan_btn)
+        hbox.addWidget(copy_btn)
+        hbox.addWidget(save_btn)
 
         vbox = QVBoxLayout()
         vbox.addLayout(hbox)
 
+        vbox2 = QVBoxLayout()
+        vbox2.addWidget(tree_view)
+        vbox2.addWidget(self.text_edit2)
+
         hbox2 = QHBoxLayout()
-        hbox2.addWidget(tree_view)
-        hbox2.addWidget(text_edit)
+        hbox2.addLayout(vbox2)
+        hbox2.addWidget(self.text_edit)
 
         vbox.addLayout(hbox2)
 
@@ -102,8 +100,19 @@ class MainWindow(QMainWindow):
         status_bar = QStatusBar(self)
         self.setStatusBar(status_bar)
 
-        status_label = QLabel("Ready")
-        status_bar.addWidget(status_label)
+        self.status_label = QLabel('当前共有0个USB设备连接')
+        status_bar.addWidget(self.status_label)
+
+    def center(self):
+        """窗口居中显示
+        """
+        
+        # 获取屏幕的大小和分辨率
+        screen = QDesktopWidget().screenGeometry()
+        # 获取主窗口的大小
+        size = self.geometry()
+        # 计算主窗口居中时左上角的坐标
+        self.move(int((screen.width() - size.width()) / 2), int((screen.height() - size.height()) / 2))
 
     def pyfile_convert_to_image(self, image_data, image):
         """将py文件转换成图片
@@ -121,11 +130,37 @@ class MainWindow(QMainWindow):
         aboutText = '{} V{}\n\n{}'.format(resource.InternalName, resource.ProductVersion, resource.LegalCopyright)
         QMessageBox.about(self, resource.FileDescription, aboutText)
 
+    def scan_check_hardware_change(self):
+        """
+        """
+        
+        udev_info_list = USBInterface.get_udev_info_list()
+        if not udev_info_list:
+            QMessageBox.warning(self, '警告', '没有USB设备连接')
+            #return
+        
+        # 清除所有内容
+        self.root_item.removeRows(0, self.root_item.rowCount())
+        
+        for udev_info in udev_info_list:
+            if udev_info['deviceID'].count('&') == 1:
+                logger.debug(udev_info['deviceID'])
+                item = QStandardItem(udev_info['Name'])
+                vid, pid = USBInterface.get_vid_pid(udev_info['deviceID'])
+                
+                for udev_info_child in udev_info_list:
+                    vid_child, pid_child = USBInterface.get_vid_pid(udev_info_child['deviceID'])
+                    if udev_info_child['deviceID'].count('&') > 1 and vid == vid_child and pid == pid_child:
+                        child = QStandardItem(udev_info_child['Name'])
+                        item.appendRow(child)
+                
+                self.root_item.appendRow(item)
+
     def on_tree_view_clicked(self, index: QModelIndex):
         model = index.model()
         item = model.itemFromIndex(index)
         content = item.text()
-        self.findChild(QTextEdit).setPlainText(content)
+        self.text_edit.setPlainText(content)
     
 def main():
     """主函数

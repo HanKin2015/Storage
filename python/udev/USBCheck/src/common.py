@@ -14,11 +14,11 @@ from log import logger
 import sys
 import os
 import base64
-import pyautogui
 from PIL import Image
 from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, \
     QVBoxLayout, QPushButton, QTreeView, QTextEdit, QAbstractItemView, \
-    QMenuBar, QStatusBar, QMainWindow, QMenu, QAction, QLabel, QMessageBox
+    QMenuBar, QStatusBar, QMainWindow, QMenu, QAction, QLabel, QMessageBox, \
+    QDesktopWidget
 from PyQt5.QtCore import QModelIndex, Qt, QCoreApplication
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QIcon
 import resource
