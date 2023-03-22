@@ -19,7 +19,7 @@
 - 打包 `pyinstaller.exe --version-file=doc/file_version_info.txt -i img/USBCheck.ico -w -F USBCheck.spec`
 
 ## 3、下一步改进点
-- hid设备未获取成功，即键盘
+- 设备驱动被替换后获取描述符失败，但是usbview能成功获取，还需要先前的vpid进行获取
 - 看是否可以直接通过py文件打包，而不是通过spec文件
 
 ## 4、更新修改记录
@@ -32,6 +32,10 @@
 - 获取描述符信息
 - 获取系统信息
 - 获取额外的信息
+
+### 20230322
+- hid设备获取成功，即键盘
+- 
 
 ## 5、问题记录
 
@@ -81,3 +85,31 @@ main()
 但是，解决该问题的另一种更健壮的方法是确保QStringListModel拥有父级，因为Qt传递给组合框时很可能没有所有权。当子对象以这种方式链接在一起时，Qt应该始终正确处理子对象的删除。
 
 还得是百度，chagpt果然不是万能的，搜索了一半天就没有给我正确答案。
+
+### 5-2、无法获取设备驱动被替换的情景
+已经无法从PnP中获取设备真实的vpid了。
+```
+import time
+import win32com.client
+from log import logger
+import sys
+
+def main():
+    """主函数
+    """
+
+    wmi = win32com.client.GetObject("winmgmts:")
+    logger.info(wmi)  # <COMObject winmgmts:>
+
+    # 系统的所有PnP设备
+    logger.info("===================Win32_PnPEntity=================")   
+    count = 0
+    for pnp in wmi.InstancesOf('Win32_PnPEntity'):
+        for prop in pnp.Properties_:
+            if prop.Value != None and '090C' in str(prop.Value):
+                print('{} : {}'.format(prop.Name, prop.Value))
+            count += 1
+    logger.info('there are {} PnP devices'.format(count))
+
+    sys.exit()
+```

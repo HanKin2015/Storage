@@ -26,6 +26,9 @@ def get_udev_info_list():
     udev_info_list = []
     for pnp in wmi.InstancesOf('Win32_PnPEntity'):
         if 'USB\\VID' in pnp.DeviceID:
+            for prop in pnp.Properties_:
+                logger.debug('{} : {}'.format(prop.Name, prop.Value))
+                
             udev_info_list.append({'Name': pnp.Name,
                                  'deviceID': pnp.deviceID,
                                  'PNPClass': pnp.PNPClass,
@@ -70,22 +73,19 @@ def get_udev_descriptor(vid, pid):
     backend = usb.backend.libusb1.get_backend(find_library=lambda x: "libusb-1.0.dll")
     udev = usb.core.find(idVendor=int(vid, 16), idProduct=int(pid, 16), backend=backend)
     if udev is None:
-        raise ValueError('Device not found')
+        logger.error('device not found, {}:{}'.format(vid, pid))
+        return None, None
     
     # 获取设备描述符
     desc_type = usb.util.DESC_TYPE_DEVICE
     device_desc = udev._get_full_descriptor_str()
     #device_desc = usb.util.find_descriptor(udev, bDescriptorType=desc_type)
-    logger.info(type(device_desc))
-    #logger.debug(device_desc)
+    logger.debug(device_desc)
 
     # 获取配置描述符
     desc_type = usb.util.DESC_TYPE_CONFIG
     cfg_desc = usb.util.find_descriptor(udev, bDescriptorType=desc_type)
-    logger.info(type(cfg_desc))
-    logger.info(cfg_desc[0, 0].bDescriptorType)
-    logger.info(cfg_desc.bNumInterfaces)
-    #logger.debug(cfg_desc)
+    logger.debug(cfg_desc)
     
     return device_desc, cfg_desc
 
@@ -109,22 +109,22 @@ def get_endpoint_attributes(cfg_desc):
     transfer_types = []
     for interface_number in range(cfg_desc.bNumInterfaces):
         interface = cfg_desc[interface_number, 0]
-        logger.info(interface.bInterfaceNumber)
-        logger.info(interface.bNumEndpoints)
+        logger.debug(interface.bInterfaceNumber)
+        logger.debug(interface.bNumEndpoints)
         if interface.bNumEndpoints:
             ep = usb.util.find_descriptor(interface)
-            logger.info(ep.bmAttributes)
+            logger.debug(ep.bmAttributes)
             transfer_types.append(ep.bmAttributes)
-        logger.info('')
+        logger.debug('')
         try:
             interface = cfg_desc[interface_number, 1]
-            logger.info(interface.bInterfaceNumber)
-            logger.info(interface.bNumEndpoints)
+            logger.debug(interface.bInterfaceNumber)
+            logger.debug(interface.bNumEndpoints)
             if interface.bNumEndpoints:
                 ep = usb.util.find_descriptor(interface)
-                logger.info(ep.bmAttributes)
+                logger.debug(ep.bmAttributes)
                 transfer_types.append(ep.bmAttributes)
-            logger.info('-')
+            logger.debug('-')
         except:
             pass
     map_model = {0: 'ctrl', 1: 'iso', 2: 'bulk', 3: 'int', 5: 'iso'}
@@ -190,7 +190,7 @@ def get_sys_inf_path_name(service):
 
     # 输出键值
     logger.debug(sys_path)
-    logger.info(inf_names)
+    logger.debug(inf_names)
 
     # 关闭键和注册表
     winreg.CloseKey(key)
@@ -206,8 +206,8 @@ def get_computer_system_info():
     wmi = win32com.client.GetObject('winmgmts:')
 
     # 查询操作系统信息
-    #os = wmi.ExecQuery('SELECT * FROM Win32_OperatingSystem')
-    os = wmi.ExecQuery('SELECT * FROM Win32_ComputerSystem')
+    os = wmi.ExecQuery('SELECT * FROM Win32_OperatingSystem')
+    #os = wmi.ExecQuery('SELECT * FROM Win32_ComputerSystem')
     #os = wmi.ExecQuery('SELECT * FROM Win32_Processor')
     
     
@@ -235,12 +235,13 @@ def get_system_info():
     os = wmi.ExecQuery('SELECT * FROM Win32_OperatingSystem')
     cs = wmi.ExecQuery('SELECT * FROM Win32_ComputerSystem')
     
-    logger.info('os len = {}, cs len = {}'.format(len(os), len(cs)))
+    logger.debug('os len = {}, cs len = {}'.format(len(os), len(cs)))
     return {'CSCaption': cs[0].Caption,
             'UserName': cs[0].UserName,
             'OSCaption': os[0].Caption,
             'OSArchitecture': os[0].OSArchitecture,
-            'Version': os[0].Version}
+            'Version': os[0].Version,
+            'LastBootUpTime': os[0].LastBootUpTime}
 
 def main():
     """主函数
@@ -252,13 +253,13 @@ def main():
     
     udev_info_list = get_udev_info_list()
     get_vid_pid('USB\VID_0AC8&PID_3500&MI_02\6&197C435A&0&0002')
-    device_desc, cfg_desc = get_udev_descriptor('0AC8', '3500')
+    device_desc, cfg_desc = get_udev_descriptor('090c', '2000')
     
     #get_inf_name(udev_info_list[4]['HardWareID'][0])
     #get_sys_path(udev_info_list[4]['Service'])
     #get_sys_inf_path_name(udev_info_list[2]['Service'])
     
-    #get_computer_system_info()
+    get_computer_system_info()
     #get_network_adapter_configuration()
     system_info = get_system_info()
     for key, value in system_info.items():

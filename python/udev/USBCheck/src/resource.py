@@ -3,4 +3,4 @@ USBCheck_png = b'iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QA
 FileDescription = 'USB设备检查'
 InternalName = 'usb device check'
 LegalCopyright = 'Copyright (c) 2023 HanKin. All rights reserved.'
-ProductVersion = '2023.3.20.1'
+ProductVersion = '2023.3.22.6'

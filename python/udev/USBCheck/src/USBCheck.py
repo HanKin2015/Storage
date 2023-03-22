@@ -25,7 +25,7 @@ class MainWindow(QMainWindow):
         _translate = QCoreApplication.translate
         self.setWindowTitle(_translate("MainWindow", APP_NAME))
         self.setWindowIcon(self.usb_check_icon)
-        self.setGeometry(0, 0, 900, 530)
+        self.setGeometry(0, 0, 900, 560)
         self.center()
         
         # 创建菜单栏
@@ -33,16 +33,19 @@ class MainWindow(QMainWindow):
         self.setMenuBar(menu_bar)
 
         # 添加菜单项
-        file_memu = QMenu('文件', self)
+        file_memu = QMenu('文件(&F)', self)
         menu_bar.addMenu(file_memu)
-        exit_action = QAction('退出', self)
+        exit_action = QAction('退出(&E)', self)
         exit_action.triggered.connect(self.close)
         file_memu.addAction(exit_action)
         
-        help_menu = QMenu('帮助', self)
+        help_menu = QMenu('帮助(&H)', self)
         menu_bar.addMenu(help_menu)
-        about_action = QAction('关于', self)
+        about_action = QAction('关于(&N)', self)
         about_action.triggered.connect(self.about)
+        #about_action.setIcon(self.usb_check_icon)
+        #about_action.setShortcut(Qt.CTRL + Qt.Key_N)
+        
         help_menu.addAction(about_action)
 
         # 创建按钮
@@ -130,19 +133,35 @@ class MainWindow(QMainWindow):
         aboutText = '{} V{}\n\n{}'.format(resource.InternalName, resource.ProductVersion, resource.LegalCopyright)
         QMessageBox.about(self, resource.FileDescription, aboutText)
 
-    def close(self):
-        """包含二次确认的退出
+    def closeEvent(self, event):
+        """重写 closeEvent 方法来实现窗口关闭按钮的槽函数重写
         """
         
-        checkFlag = QMessageBox.information(self, "退出确认", "是否确认退出？",
-                                                      QMessageBox.Yes | QMessageBox.No)
-        if checkFlag == QMessageBox.Yes:
+        """
+        reply = QMessageBox.question(self, '退出确认', '是否确认退出?', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+        if reply == QMessageBox.Yes:
             logger.info('******** stop ********\n')
             os.remove(USB_CHECK_ICO)
-            qApp.quit()
+            event.accept()
         else:
-            pass
-
+            event.ignore()
+        """
+        
+        # 自定义询问对话框
+        reply = QMessageBox(self)
+        reply.setWindowTitle('退出确认')
+        reply.setText('是否确认退出?')
+        reply.setIcon(QMessageBox.Question)
+        yes_btn = reply.addButton('是', QMessageBox.YesRole)
+        no_btn = reply.addButton('否', QMessageBox.NoRole)
+        reply.exec_()
+        if reply.clickedButton() == yes_btn:
+            logger.info('******** stop ********\n')
+            os.remove(USB_CHECK_ICO)
+            event.accept()
+        else:
+            event.ignore()
+        
     def scan_check_hardware_change(self):
         """
         """
@@ -150,21 +169,21 @@ class MainWindow(QMainWindow):
         self.udev_info_list = USBInterface.get_udev_info_list()
         if not self.udev_info_list:
             QMessageBox.warning(self, '警告', '没有USB设备连接')
-            #return
+            return
         
         # 清除所有内容
         self.root_item.removeRows(0, self.root_item.rowCount())
         
         udev_count = 0
         for udev_info in self.udev_info_list:
-            if udev_info['deviceID'].count('&') == 1:
+            if udev_info['deviceID'].count('&') <= 4:
                 logger.debug(udev_info['deviceID'])
                 item = QStandardItem(udev_info['Name'])
                 vid, pid = USBInterface.get_vid_pid(udev_info['deviceID'])
                 
                 for udev_info_child in self.udev_info_list:
                     vid_child, pid_child = USBInterface.get_vid_pid(udev_info_child['deviceID'])
-                    if udev_info_child['deviceID'].count('&') > 1 and vid == vid_child and pid == pid_child:
+                    if udev_info_child['deviceID'].count('&') > 4 and vid == vid_child and pid == pid_child:
                         child = QStandardItem(udev_info_child['Name'])
                         item.appendRow(child)
                 
@@ -187,6 +206,11 @@ class MainWindow(QMainWindow):
                 
                 # 显示描述符信息
                 device_desc, cfg_desc = USBInterface.get_udev_descriptor(vid, pid)
+                if device_desc == None or cfg_desc == None:
+                    self.text_edit.clear()
+                    self.text_edit2.clear()
+                    QMessageBox.warning(self, '警告', '该USB设备描述符信息获取失败')
+                    return
                 desc = '{}\n\n{}'.format(device_desc, cfg_desc)
                 self.text_edit.setPlainText(desc)
     
@@ -196,18 +220,19 @@ class MainWindow(QMainWindow):
                 bcdUSB = USBInterface.get_bcdUSB(device_desc)
                 transfer_types = USBInterface.get_endpoint_attributes(cfg_desc)
                 udev_extra_info  = '设备名称 : {}\n'.format(udev_info['Name'])
-                udev_extra_info += 'vid:pid  : {}:{}\n'.format(vid, pid)
-                udev_extra_info += 'inf文件  : {}\n'.format(inf_names)
-                udev_extra_info += 'sys路径  : {}\n'.format(sys_path)
+                udev_extra_info += 'vid  pid : {}:{}\n'.format(vid, pid)
+                udev_extra_info += 'inf 文件 : {}\n'.format(inf_names)
+                udev_extra_info += 'sys 路径 : {}\n'.format(sys_path)
                 udev_extra_info += '驱动状态 : {}\n'.format(udev_info['Status'])
                 udev_extra_info += '传输类型 : {}\n'.format(transfer_types)
                 udev_extra_info += '设备类型 : {}\n'.format(udev_info['PNPClass'])
-                udev_extra_info += 'USB协议  : {}\n\n'.format(bcdUSB)
+                udev_extra_info += 'USB 协议 : {}\n\n'.format(bcdUSB)
                 udev_extra_info += '电脑名称 : {}\n'.format(system_info['CSCaption'])
-                udev_extra_info += '使用者   : {}\n'.format(system_info['UserName'])
+                udev_extra_info += '使 用 者 : {}\n'.format(system_info['UserName'])
                 udev_extra_info += '操作系统 : {}\n'.format(system_info['OSCaption'])
                 udev_extra_info += '系统位数 : {}\n'.format(system_info['OSArchitecture'])
-                udev_extra_info += '系统版本 : {}'.format(system_info['Version'])
+                udev_extra_info += '系统版本 : {}\n'.format(system_info['Version'])
+                udev_extra_info += '开机时间 : {}'.format(system_info['LastBootUpTime'])
                 self.text_edit2.setPlainText(udev_extra_info)
     
 def main():
