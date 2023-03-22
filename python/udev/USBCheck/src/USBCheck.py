@@ -15,6 +15,7 @@ import USBInterface
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.udev_info_list = None
         
         # pyinstaller打包图片
         self.pyfile_convert_to_image(resource.USBCheck_ico, USB_CHECK_ICO)
@@ -24,7 +25,7 @@ class MainWindow(QMainWindow):
         _translate = QCoreApplication.translate
         self.setWindowTitle(_translate("MainWindow", APP_NAME))
         self.setWindowIcon(self.usb_check_icon)
-        self.setGeometry(0, 0, 700, 500)
+        self.setGeometry(0, 0, 900, 530)
         self.center()
         
         # 创建菜单栏
@@ -44,7 +45,6 @@ class MainWindow(QMainWindow):
         about_action.triggered.connect(self.about)
         help_menu.addAction(about_action)
 
-
         # 创建按钮
         scan_btn = QPushButton('扫描检测硬件改动')
         copy_btn = QPushButton('一键复制描述符')
@@ -52,7 +52,7 @@ class MainWindow(QMainWindow):
         scan_btn.clicked.connect(self.scan_check_hardware_change)
 
         # 创建一个 QStandardItemModel 对象
-        model = QStandardItemModel()
+        model = QStandardItemModel(self)
         
         # 设置表头
         model.setHorizontalHeaderLabels(['主机控制器'])
@@ -100,7 +100,7 @@ class MainWindow(QMainWindow):
         status_bar = QStatusBar(self)
         self.setStatusBar(status_bar)
 
-        self.status_label = QLabel('当前共有0个USB设备连接')
+        self.status_label = QLabel('当前共有 0 个USB设备连接')
         status_bar.addWidget(self.status_label)
 
     def center(self):
@@ -130,37 +130,85 @@ class MainWindow(QMainWindow):
         aboutText = '{} V{}\n\n{}'.format(resource.InternalName, resource.ProductVersion, resource.LegalCopyright)
         QMessageBox.about(self, resource.FileDescription, aboutText)
 
+    def close(self):
+        """包含二次确认的退出
+        """
+        
+        checkFlag = QMessageBox.information(self, "退出确认", "是否确认退出？",
+                                                      QMessageBox.Yes | QMessageBox.No)
+        if checkFlag == QMessageBox.Yes:
+            logger.info('******** stop ********\n')
+            os.remove(USB_CHECK_ICO)
+            qApp.quit()
+        else:
+            pass
+
     def scan_check_hardware_change(self):
         """
         """
         
-        udev_info_list = USBInterface.get_udev_info_list()
-        if not udev_info_list:
+        self.udev_info_list = USBInterface.get_udev_info_list()
+        if not self.udev_info_list:
             QMessageBox.warning(self, '警告', '没有USB设备连接')
             #return
         
         # 清除所有内容
         self.root_item.removeRows(0, self.root_item.rowCount())
         
-        for udev_info in udev_info_list:
+        udev_count = 0
+        for udev_info in self.udev_info_list:
             if udev_info['deviceID'].count('&') == 1:
                 logger.debug(udev_info['deviceID'])
                 item = QStandardItem(udev_info['Name'])
                 vid, pid = USBInterface.get_vid_pid(udev_info['deviceID'])
                 
-                for udev_info_child in udev_info_list:
+                for udev_info_child in self.udev_info_list:
                     vid_child, pid_child = USBInterface.get_vid_pid(udev_info_child['deviceID'])
                     if udev_info_child['deviceID'].count('&') > 1 and vid == vid_child and pid == pid_child:
                         child = QStandardItem(udev_info_child['Name'])
                         item.appendRow(child)
                 
                 self.root_item.appendRow(item)
+                udev_count += 1
+        
+        # 修改状态栏
+        self.status_label.setText('当前共有 {} 个USB设备连接'.format(udev_count))
 
     def on_tree_view_clicked(self, index: QModelIndex):
+        """树型视图点击槽函数
+        """
+        
         model = index.model()
         item = model.itemFromIndex(index)
         content = item.text()
-        self.text_edit.setPlainText(content)
+        for udev_info in self.udev_info_list:
+            if udev_info['Name'] == content:
+                vid, pid = USBInterface.get_vid_pid(udev_info['deviceID'])
+                
+                # 显示描述符信息
+                device_desc, cfg_desc = USBInterface.get_udev_descriptor(vid, pid)
+                desc = '{}\n\n{}'.format(device_desc, cfg_desc)
+                self.text_edit.setPlainText(desc)
+    
+                # 显示额外信息
+                sys_path, inf_names = USBInterface.get_sys_inf_path_name(udev_info['Service'])
+                system_info = USBInterface.get_system_info()
+                bcdUSB = USBInterface.get_bcdUSB(device_desc)
+                transfer_types = USBInterface.get_endpoint_attributes(cfg_desc)
+                udev_extra_info  = '设备名称 : {}\n'.format(udev_info['Name'])
+                udev_extra_info += 'vid:pid  : {}:{}\n'.format(vid, pid)
+                udev_extra_info += 'inf文件  : {}\n'.format(inf_names)
+                udev_extra_info += 'sys路径  : {}\n'.format(sys_path)
+                udev_extra_info += '驱动状态 : {}\n'.format(udev_info['Status'])
+                udev_extra_info += '传输类型 : {}\n'.format(transfer_types)
+                udev_extra_info += '设备类型 : {}\n'.format(udev_info['PNPClass'])
+                udev_extra_info += 'USB协议  : {}\n\n'.format(bcdUSB)
+                udev_extra_info += '电脑名称 : {}\n'.format(system_info['CSCaption'])
+                udev_extra_info += '使用者   : {}\n'.format(system_info['UserName'])
+                udev_extra_info += '操作系统 : {}\n'.format(system_info['OSCaption'])
+                udev_extra_info += '系统位数 : {}\n'.format(system_info['OSArchitecture'])
+                udev_extra_info += '系统版本 : {}'.format(system_info['Version'])
+                self.text_edit2.setPlainText(udev_extra_info)
     
 def main():
     """主函数

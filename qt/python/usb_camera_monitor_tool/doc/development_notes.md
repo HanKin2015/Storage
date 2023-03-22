@@ -17,7 +17,9 @@
 - 打包 `pyinstaller.exe --version-file=doc/file_version_info.txt -i img/usb_camera_monitor_tool.ico -w -F usb_camera_monitor_tool.spec`
 
 ## 3、下一步改进点
-- 
+- 停止监控偶尔会停不下来，多次之后才会生效
+- 明明托盘显示关闭屏幕监控（即开启屏幕监控），但是并没有开启屏幕监控
+- 添加发送者信息
 
 ## 4、参考资料
 

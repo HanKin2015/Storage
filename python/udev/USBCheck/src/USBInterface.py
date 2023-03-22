@@ -74,15 +74,64 @@ def get_udev_descriptor(vid, pid):
     
     # 获取设备描述符
     desc_type = usb.util.DESC_TYPE_DEVICE
-    device_desc = udev._get_full_descriptor_str() 
+    device_desc = udev._get_full_descriptor_str()
+    #device_desc = usb.util.find_descriptor(udev, bDescriptorType=desc_type)
+    logger.info(type(device_desc))
     #logger.debug(device_desc)
 
     # 获取配置描述符
     desc_type = usb.util.DESC_TYPE_CONFIG
     cfg_desc = usb.util.find_descriptor(udev, bDescriptorType=desc_type)
+    logger.info(type(cfg_desc))
+    logger.info(cfg_desc[0, 0].bDescriptorType)
+    logger.info(cfg_desc.bNumInterfaces)
     #logger.debug(cfg_desc)
     
     return device_desc, cfg_desc
+
+def get_bcdUSB(device_desc):
+    """
+    """
+    
+    lines = device_desc.split('\n')
+    logger.debug(len(lines))
+    
+    for line in lines:
+        if 'bcdUSB' in line:
+            bcdUSB = line.split(':')
+            logger.debug(bcdUSB)
+            return bcdUSB[1].strip()
+
+def get_endpoint_attributes(cfg_desc):
+    """
+    """
+    
+    transfer_types = []
+    for interface_number in range(cfg_desc.bNumInterfaces):
+        interface = cfg_desc[interface_number, 0]
+        logger.info(interface.bInterfaceNumber)
+        logger.info(interface.bNumEndpoints)
+        if interface.bNumEndpoints:
+            ep = usb.util.find_descriptor(interface)
+            logger.info(ep.bmAttributes)
+            transfer_types.append(ep.bmAttributes)
+        logger.info('')
+        try:
+            interface = cfg_desc[interface_number, 1]
+            logger.info(interface.bInterfaceNumber)
+            logger.info(interface.bNumEndpoints)
+            if interface.bNumEndpoints:
+                ep = usb.util.find_descriptor(interface)
+                logger.info(ep.bmAttributes)
+                transfer_types.append(ep.bmAttributes)
+            logger.info('-')
+        except:
+            pass
+    map_model = {0: 'ctrl', 1: 'iso', 2: 'bulk', 3: 'int', 5: 'iso'}
+    transfer_types = list(map(lambda x: map_model[x], transfer_types))
+    transfer_types = list(set(transfer_types))
+    logger.debug(transfer_types)
+    return transfer_types
 
 def get_inf_name(hardware_id):
     """
@@ -149,6 +198,50 @@ def get_sys_inf_path_name(service):
     
     return sys_path, inf_names
 
+def get_computer_system_info():
+    """
+    """
+    
+    # 获取WMI对象
+    wmi = win32com.client.GetObject('winmgmts:')
+
+    # 查询操作系统信息
+    #os = wmi.ExecQuery('SELECT * FROM Win32_OperatingSystem')
+    os = wmi.ExecQuery('SELECT * FROM Win32_ComputerSystem')
+    #os = wmi.ExecQuery('SELECT * FROM Win32_Processor')
+    
+    
+    print(len(os))
+    for prop in os[0].Properties_:
+        print(prop.Name, ":", prop.Value)
+
+def get_network_adapter_configuration():
+    """获取ip地址行不通
+    """
+    
+    # 获取WMI对象
+    wmi = win32com.client.GetObject('winmgmts:')
+    address = wmi.ExecQuery('SELECT * FROM Win32_NetworkAdapterConfiguration')
+    for elem in address:
+        print(elem.IPAddress, elem.ServiceName)
+
+def get_system_info():
+    """
+    """
+    
+    # 获取WMI对象
+    wmi = win32com.client.GetObject('winmgmts:')
+    
+    os = wmi.ExecQuery('SELECT * FROM Win32_OperatingSystem')
+    cs = wmi.ExecQuery('SELECT * FROM Win32_ComputerSystem')
+    
+    logger.info('os len = {}, cs len = {}'.format(len(os), len(cs)))
+    return {'CSCaption': cs[0].Caption,
+            'UserName': cs[0].UserName,
+            'OSCaption': os[0].Caption,
+            'OSArchitecture': os[0].OSArchitecture,
+            'Version': os[0].Version}
+
 def main():
     """主函数
     """
@@ -159,11 +252,21 @@ def main():
     
     udev_info_list = get_udev_info_list()
     get_vid_pid('USB\VID_0AC8&PID_3500&MI_02\6&197C435A&0&0002')
-    get_udev_descriptor('0AC8', '3500')
+    device_desc, cfg_desc = get_udev_descriptor('0AC8', '3500')
     
     #get_inf_name(udev_info_list[4]['HardWareID'][0])
     #get_sys_path(udev_info_list[4]['Service'])
-    get_sys_inf_path_name(udev_info_list[2]['Service'])
+    #get_sys_inf_path_name(udev_info_list[2]['Service'])
+    
+    #get_computer_system_info()
+    #get_network_adapter_configuration()
+    system_info = get_system_info()
+    for key, value in system_info.items():
+        logger.info('{}: {}'.format(key, value))
+
+    bcdUSB = get_bcdUSB(device_desc)
+    logger.debug(bcdUSB)
+    get_endpoint_attributes(cfg_desc)
 
 if __name__ == '__main__':
     """程序入口

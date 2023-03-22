@@ -18,7 +18,7 @@ from PIL import Image
 from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, \
     QVBoxLayout, QPushButton, QTreeView, QTextEdit, QAbstractItemView, \
     QMenuBar, QStatusBar, QMainWindow, QMenu, QAction, QLabel, QMessageBox, \
-    QDesktopWidget
+    QDesktopWidget, qApp
 from PyQt5.QtCore import QModelIndex, Qt, QCoreApplication
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QIcon
 import resource
