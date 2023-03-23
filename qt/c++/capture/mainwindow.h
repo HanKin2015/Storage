@@ -1,4 +1,4 @@
-#ifndef MAINWINDOW_H
+﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
@@ -11,6 +11,7 @@
 #include <QFile>
 #include <QMessageBox>
 #include <QCloseEvent>
+#include <QGroupBox>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -42,6 +43,8 @@ private:
     QLabel *statusbarFormat;
     QLabel *statusbarResolution;
     QLabel *statusbarBaiCheng;
+    QPushButton *baichengBtn;
+    QGroupBox *groupBox;
     bool isExit;
     const QString APP_LOGO_FILE_PATH = ".\\image\\alienx64.png";
     const QString APP_LOG_FILE_PATH = ".\\capture.log";
@@ -59,7 +62,8 @@ private slots:
     void baichengBtnResponded();
     void cameraLog(QString msg);
     void exitBtnResponded();
-    void cameraImageCaptured(int id, QImage image);
+    void onImageCaptured(int id, const QImage image);
+    void onImageSaved(int id, const QString content);
 
 protected:
     void closeEvent(QCloseEvent* );

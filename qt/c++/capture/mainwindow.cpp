@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QPushButton>
 #include <QVBoxLayout>
@@ -16,7 +16,8 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-    , isExit(false)
+    , cameraImageCapture(NULL)
+    , isExit(true)
 {
     ui->setupUi(this);
     cameraLog("摄像头工具打开");
@@ -77,24 +78,27 @@ void MainWindow::Init()
     connect(document_action, SIGNAL(triggered()), this, SLOT(DocumentActionClicked()));
     connect(update_log_action, SIGNAL(triggered()), this, SLOT(UpdateLogActionClicked()));
 
-    qDebug("本地共有%d个摄像头。", QCameraInfo::availableCameras().count());
+    cameraLog(QString("本地共有 %1 个摄像头").arg(QCameraInfo::availableCameras().count()));
 
+    // 为了获取摄像头分辨率创建
     camera = new QCamera(this);
     //camera = new QCamera(cameraList.at(comboBox->currentIndex()));
-    camera->setCaptureMode(QCamera::CaptureStillImage);
-    cameraImageCapture = new QCameraImageCapture(camera);
-    cameraImageCapture->setCaptureDestination(QCameraImageCapture::CaptureToFile);
 
     // 摄像头显示区域
     cameravierfinder = new QCameraViewfinder(this);
     camera->setViewfinder(cameravierfinder);
+    cameravierfinder->resize(QSize(100, 30));
+    QVBoxLayout *innerLayout = new QVBoxLayout;
+    innerLayout->addWidget(cameravierfinder);
+    groupBox = new QGroupBox("Camera Viewfinder");
+    groupBox->setLayout(innerLayout);
 
     cameraList = QCameraInfo::availableCameras();
     for (int i = 0; i < cameraList.size(); i++) {
-        qDebug() << cameraList.at(i).deviceName();  // 获取设备名称
-        qDebug() << cameraList.at(i).description(); // 设备描述信息
-        qDebug() << cameraList.at(i).position();
-        qDebug() << "###############";
+        cameraLog(QString("设备名称: %1").arg(cameraList.at(i).deviceName()));  // 获取设备名称
+        cameraLog(QString("设备描述信息: %1").arg(cameraList.at(i).description())); // 设备描述信息
+        cameraLog(QString("设备positon: %1").arg(cameraList.at(i).position()));
+        cameraLog("###########################");
     }
     for (QList<QCameraInfo>::iterator it = cameraList.begin(); it != cameraList.end(); it++) {
         qDebug("device name : %s", qPrintable(it->deviceName()));
@@ -112,9 +116,9 @@ void MainWindow::Init()
     cameraFormatCB = new QComboBox();
     camera->start();
     pixelFormats = camera->supportedViewfinderPixelFormats();
-    qDebug() << "ViewfinderPixelFormats sizes.len = " << pixelFormats.length();
+    cameraLog(QString("ViewfinderPixelFormats sizes.len = %1").arg(pixelFormats.length()));
     foreach (QVideoFrame::PixelFormat pixelFormat, pixelFormats) {
-        qDebug() << "pixelFormat = " << pixelFormat;
+        cameraLog(QString("pixelFormat = %1").arg(pixelFormat));
         QString pixelFormatStr = "";
         switch (pixelFormat) {
         case QVideoFrame::Format_Jpeg:
@@ -132,20 +136,24 @@ void MainWindow::Init()
     // 摄像头分辨率下拉框
     cameraResolutionCB = new QComboBox();
     resolutions = camera->supportedViewfinderResolutions();
-    qDebug() << "ViewfinderResolutions sizes.len = " << resolutions.length();
+    cameraLog(QString("ViewfinderResolutions sizes.len = %1").arg(resolutions.length()));
     foreach (QSize resolution, resolutions) {
-        qDebug() << "Resolution size = " << resolution;
         QString res = QString("%1 x %2").arg(resolution.width()).arg(resolution.height());
+        cameraLog(QString("Resolution size = %1").arg(res));
         cameraResolutionCB->addItem(res);
     }
     camera->stop();
+    delete camera;
+    camera = NULL;
+    cameravierfinder->setVisible(false);
+    //qDebug() << cameravierfinder->size();
 
     // 摄像头操作按钮
     QPushButton *openBtn = new QPushButton("打开", this);
     QPushButton *closeBtn = new QPushButton("关闭", this);
     QPushButton *captureBtn = new QPushButton("捕获", this);
     QPushButton *saveBtn = new QPushButton("保存", this);
-    QPushButton *baichengBtn = new QPushButton("白城驾考中心", this);
+    baichengBtn = new QPushButton("开启白城驾考中心自动测试", this);
     QPushButton *exitBtn = new QPushButton("退出", this);
 
     // 摄像头捕获区域
@@ -181,7 +189,7 @@ void MainWindow::Init()
 
     //
     mainlayout = new QHBoxLayout();
-    mainlayout->addWidget(cameravierfinder);
+    mainlayout->addWidget(groupBox);
     mainlayout->addLayout(rightLayout);
 
     // 绑定事件槽函数
@@ -191,8 +199,6 @@ void MainWindow::Init()
     connect(saveBtn, SIGNAL(clicked()), this, SLOT(saveBtnResponded()));
     connect(baichengBtn, SIGNAL(clicked()), this, SLOT(baichengBtnResponded()));
     connect(exitBtn, SIGNAL(clicked()), this, SLOT(exitBtnResponded()));
-    (void)QObject::connect(cameraImageCapture, SIGNAL(imageCaptured(int, QImage)), this, SLOT(cameraImageCaptured(int, QImage)));
-
     centralWidget()->setLayout(mainlayout);
 }
 
@@ -202,15 +208,22 @@ void MainWindow::openBtnResponded()
     qDebug() << cameraNameCB->currentIndex();   //camera index
     qDebug() << cameraNameCB->currentText();    //camera name
 
+    if (camera) {
+        qDebug() << "state: " << camera->state();
+        if (camera->state() == QCamera::ActiveState) {
+            camera->stop();
+        }
+        delete camera;
+        camera = NULL;
+    }
+
     // 获取到要打开的设备的名称
     QCameraInfo CameraInfo = cameraList.at(cameraNameCB->currentIndex());
-    qDebug() << "state: " << camera->state();
-    //if (camera->state() == QCamera::ActiveState) {
-    //    camera->stop();
-    //}
     camera = new QCamera(CameraInfo);
-    camera->setCaptureMode(QCamera::CaptureVideo);
     camera->setViewfinder(cameravierfinder);
+    if (!cameravierfinder->isVisible()) {
+        cameravierfinder->setVisible(true);
+    }
     camera->start();
     qDebug() << "state: " << camera->state();
 
@@ -238,6 +251,33 @@ void MainWindow::openBtnResponded()
     default:
         break;
     }
+
+    //camera->setCaptureMode(QCamera::CaptureVideo);
+    if (camera->isCaptureModeSupported(QCamera::CaptureStillImage)) {
+        qDebug() << "Still image capture is supported";
+    } else {
+        qDebug() << "Still image capture is not supported";
+    }
+    if (camera->isCaptureModeSupported(QCamera::CaptureVideo)) {
+        qDebug() << "Video capture is supported";
+    } else {
+        qDebug() << "Video image capture is not supported";
+    }
+    if (cameraImageCapture != NULL) {
+        (void)QObject::disconnect(cameraImageCapture, SIGNAL(imageCaptured(int, const QImage&)), this, SLOT(onImageCaptured(int, const QImage&)));
+        (void)QObject::disconnect(cameraImageCapture, SIGNAL(imageSaved(int, const QString&)), this, SLOT(onImageSaved(int, const QString&)));
+    }
+
+    if (cameraImageCapture) {
+        delete cameraImageCapture;
+        cameraImageCapture = NULL;
+    }
+    cameraImageCapture = new QCameraImageCapture(camera);
+    cameraImageCapture->setCaptureDestination(QCameraImageCapture::CaptureToFile);
+    camera->setCaptureMode(QCamera::CaptureStillImage);
+    (void)QObject::connect(cameraImageCapture, SIGNAL(imageCaptured(int, const QImage&)), this, SLOT(onImageCaptured(int, const QImage&)));
+    (void)QObject::connect(cameraImageCapture, SIGNAL(imageSaved(int, const QString&)), this, SLOT(onImageSaved(int, const QString&)));
+
     statusbarFormat->setText(QString("格式: %1").arg(pixelFormatStr));
     statusbarResolution->setText(QString("分辨率: %1 x %2").arg(resolutionWidth).arg(resolutionHeight));
 }
@@ -245,18 +285,23 @@ void MainWindow::openBtnResponded()
 // 关闭按钮槽函数
 void MainWindow::closeBtnResponded()
 {
+    cameraLog("点击关闭按钮");
     camera->stop();
+    cameravierfinder->setVisible(false);
+    //cameravierfinder->hide();
 }
 
 // 捕获按钮槽函数
 void MainWindow::captureBtnResponded()
 {
+    cameraLog("点击捕获按钮");
     cameraImageCapture->capture();
 }
 
 // 保存按钮槽函数
 void MainWindow::saveBtnResponded()
 {
+    cameraLog("点击保存按钮");
     const QPixmap *pixmap = displayLabel->pixmap();
     if (pixmap) {
         pixmap->save("./capture.jpg");
@@ -286,6 +331,10 @@ bool MainWindow::deviceExist(const QCameraInfo &cameraInfo) const
 // 日志打印
 void MainWindow::cameraLog(QString msg)
 {
+    // 同时打印在窗口
+    qDebug("%s", msg.toStdString().c_str());
+    //qDebug() << msg << endl;
+
     // 创建文件对象
     QFile file(APP_LOG_FILE_PATH);
 
@@ -310,30 +359,46 @@ void MainWindow::cameraLog(QString msg)
 // 白城驾考中心按钮槽函数
 void MainWindow::baichengBtnResponded()
 {
-    cameraLog("白城驾考中心自动测试开始");
+    if (!isExit) {
+        baichengBtn->setText("开启白城驾考中心自动测试");
+        cameraLog("白城驾考中心自动测试结束");
+        cameravierfinder->setVisible(false);
+        isExit = true;
+    } else {
+        baichengBtn->setText("关闭白城驾考中心自动测试");
+        isExit = false;
+        cameraLog("白城驾考中心自动测试开始");
+        if (!cameravierfinder->isVisible()) {
+            cameravierfinder->setVisible(true);
+        }
+        camera->start();
+        statusbarBaiCheng->setText(QString("白城计数: 0"));
+    }
 
     // 获取到要打开的设备的名称
     QCameraInfo CameraInfo = cameraList.at(cameraNameCB->currentIndex());
-
     QVideoFrame::PixelFormat pixelFormat = QVideoFrame::Format_YUYV;
     QList<QSize> resolutions = {QSize(160, 120), QSize(320, 240), QSize(160,120)};
-
-    camera->start();
-    int taskCount = 0;
+    long long taskCount = 0;
     bool isAbnormal = false;
     // 如果写成true会在窗口关闭后一直在执行（任务管理器依然存在进程，并且exe文件删除不掉），正常退出会有exited with code 0字样
     while (!isExit) {
         qDebug() << camera->status() << ' ' << camera->state();
-        if (camera->status() == QCamera::UnloadedStatus) {
+        if (taskCount % 1000 == 0) {
+            // 一段时间后打印一次当前摄像头状态
+            cameraLog(QString("taskCount: %1, status: %2, state: %3").arg(taskCount).arg(camera->status()).arg(camera->state()));
+        }
+        if (camera->status() == QCamera::UnloadedStatus || camera->status() == QCamera::UnavailableStatus) {
             // 记录第一次异常时间点
             if (!isAbnormal) {
-                cameraLog("摄像头出现异常");
+                cameraLog(QString("摄像头出现异常状态taskCount: %1, status: %2, state: %3").arg(taskCount).arg(camera->status()).arg(camera->state()));
                 isAbnormal = true;
             }
 
             if (deviceExist(CameraInfo)) {
+                camera->stop();
                 camera->start();
-                cameraLog("摄像头出现异常恢复");
+                cameraLog(QString("摄像头异常状态恢复, 恢复之前taskCount: %1, status: %2, state: %3").arg(taskCount).arg(camera->status()).arg(camera->state()));
                 isAbnormal = false; // 恢复异常
             } else {
                 if (camera->status() == QCamera::ActiveStatus) {
@@ -358,13 +423,16 @@ void MainWindow::baichengBtnResponded()
             statusbarResolution->setText(QString("分辨率: %1 x %2").arg(resolutions.at(i).width()).arg(resolutions.at(i).height()));
 
             if (i == resolutions.size() - 1) {
-                sleep(60000);   // 睡眠60秒
+                sleep(3000);    // 睡眠3秒
             } else {
                 sleep(1000);    // 睡眠1秒
             }
         }
         taskCount++;
         statusbarBaiCheng->setText(QString("白城计数: %1").arg(taskCount));
+    }
+    if (camera->state() == QCamera::ActiveState) {
+        camera->stop();
     }
 }
 
@@ -374,11 +442,17 @@ void MainWindow::exitBtnResponded()
     this->close();  // 会调用退出事件closeEvent
 }
 
-void MainWindow::cameraImageCaptured(int id, QImage image)
+void MainWindow::onImageCaptured(int id, const QImage image)
 {
+    cameraLog("收到捕获消息信号，开始捕获图像");
     qDebug("%d", id);
     //qDebug() << id << endl;
     displayLabel->setPixmap(QPixmap::fromImage(image));
+}
+
+void MainWindow::onImageSaved(int id, const QString content)
+{
+    cameraLog("收到保存消息信号，开始保存图像");
 }
 
 MainWindow::~MainWindow()
@@ -399,9 +473,13 @@ void MainWindow::closeEvent(QCloseEvent *event)
     close_mb.setButtonText (QMessageBox::Cancel,QString(tr("no")));
     if(close_mb.exec() == QMessageBox::Ok)
     {
-        if (camera->status() == QCamera::ActiveStatus) {
-            camera->stop();
-            camera->unload();
+        if (camera) {
+            if (camera->status() == QCamera::ActiveStatus) {
+                camera->stop();
+                camera->unload();
+            }
+            delete camera;
+            camera = NULL;
         }
         isExit = true;
         event->accept();
