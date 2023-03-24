@@ -192,6 +192,7 @@ class MainWindow(QMainWindow):
         
         # 修改状态栏
         self.status_label.setText('当前共有 {} 个USB设备连接'.format(udev_count))
+        logger.info('scan check hardware change done, there are {} usb devices'.format(udev_count))
 
     def on_tree_view_clicked(self, index: QModelIndex):
         """树型视图点击槽函数
@@ -200,6 +201,7 @@ class MainWindow(QMainWindow):
         model = index.model()
         item = model.itemFromIndex(index)
         content = item.text()
+        logger.info('当前鼠标选择 {} USB设备'.format(content))
         for udev_info in self.udev_info_list:
             if udev_info['Name'] == content:
                 vid, pid = USBInterface.get_vid_pid(udev_info['deviceID'])
@@ -211,11 +213,14 @@ class MainWindow(QMainWindow):
                     self.text_edit2.clear()
                     QMessageBox.warning(self, '警告', '该USB设备描述符信息获取失败')
                     return
+                
+                logger.info('setting usb deivce({}:{}) descriptor on right edit text'.format(vid, pid))
                 desc = '{}\n\n{}'.format(device_desc, cfg_desc)
                 self.text_edit.setPlainText(desc)
     
                 # 显示额外信息
-                sys_path, inf_names = USBInterface.get_sys_inf_path_name(udev_info['Service'])
+                logger.info('set usb device({}:{}) extra info on bottom edit text'.format(vid, pid))
+                sys_path, inf_names = USBInterface.get_sys_inf_path_name(udev_info['Service'], udev_info['HardWareID'][0])
                 system_info = USBInterface.get_system_info()
                 bcdUSB = USBInterface.get_bcdUSB(device_desc)
                 transfer_types = USBInterface.get_endpoint_attributes(cfg_desc)

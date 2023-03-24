@@ -19,6 +19,7 @@ from PyQt5.QtGui import QIcon, QPainter, QColor, QBrush, QCursor
 import sys
 import os
 import base64
+import platform
 
 #import resource_convert_to_pyfile
 #resource_convert_to_pyfile.main()

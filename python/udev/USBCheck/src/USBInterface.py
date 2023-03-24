@@ -13,12 +13,20 @@ import win32com.client
 from log import logger
 import usb.util
 import usb.backend.libusb1
+import usb.backend.libusb1 as libusb1
+import usb.backend.libusb0 as libusb0
+import usb.backend.openusb as openusb
 import time
 import winreg
+import platform
 
 def get_udev_info_list():
     """获取当前所有USB设备信息列表
+    https://learn.microsoft.com/zh-cn/windows/win32/cimwin32prov/win32-pnpentity
+    官方已说明：Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7、Windows Server 2008 和 Windows Vista：不支持属性Present，PNPClass。
     """
+    
+    logger.info('get usb device infomation list')
     
     # 创建WMI服务对象
     wmi = win32com.client.GetObject("winmgmts:")
@@ -28,15 +36,27 @@ def get_udev_info_list():
         if 'USB\\VID' in pnp.DeviceID:
             for prop in pnp.Properties_:
                 logger.debug('{} : {}'.format(prop.Name, prop.Value))
-                
-            udev_info_list.append({'Name': pnp.Name,
+            logger.debug('')
+
+            udev_info = dict({'Name': pnp.Name,
                                  'deviceID': pnp.deviceID,
-                                 'PNPClass': pnp.PNPClass,
                                  'Service': pnp.Service,
                                  'ConfigManagerErrorCode': pnp.ConfigManagerErrorCode,
                                  'Status': pnp.Status,
                                  'HardWareID': pnp.HardWareID,
                                  'SystemName': pnp.SystemName})
+            if platform.system() == 'Windows':
+                win_ver = platform.win32_ver()
+                if win_ver[0] == '7':
+                    logger.info('当前系统为Windows 7')
+                    udev_info['PNPClass'] = 'USB'
+                else:
+                    logger.info('当前系统为Windows，但不是Windows 7')
+                    udev_info['PNPClass'] = pnp.PNPClass
+            else:
+                logger.error('当前系统不是Windows')
+
+            udev_info_list.append(udev_info)
     for udev_info in udev_info_list:
         for key, value in udev_info.items():
             logger.debug('{}: {}'.format(key, value))
@@ -64,14 +84,106 @@ def string2hex(hex_string):
     """
     
     return int(hex_string, 16)
-    
+
+def _load_locate_library_ex(candidates, cygwin_lib, name,
+                        win_cls=None, cygwin_cls=None, others_cls=None,
+                        find_library=None):
+    """Locates and loads a library.
+    Returns: the loaded library
+    arguments:
+    * candidates    -- candidates list for locate_library()
+    * cygwin_lib    -- name of the cygwin library
+    * name          -- lib identifier (for logging). Defaults to None.
+    * win_cls       -- class that is used to instantiate the library on
+                       win32 platforms. Defaults to None (-> ctypes.CDLL).
+    * cygwin_cls    -- library class for cygwin platforms.
+                       Defaults to None (-> ctypes.CDLL).
+    * others_cls    -- library class for all other platforms.
+                       Defaults to None (-> ctypes.CDLL).
+    * find_library  -- see locate_library(). Defaults to None.
+    raises:
+    * NoLibraryCandidatesException
+    * LibraryNotFoundException
+    * LibraryNotLoadedException
+    * LibraryMissingSymbolsException
+    """
+    if sys.platform == 'cygwin':
+        if cygwin_lib:
+            loaded_lib = load_library(cygwin_lib, name, cygwin_cls)
+        else:
+            raise NoLibraryCandidatesException(name)
+    elif candidates:
+        lib = locate_library(candidates, find_library)
+        if lib:
+            if sys.platform == 'win32':
+                loaded_lib = load_library(lib, name, win_cls)
+            else:
+                loaded_lib = load_library(lib, name, others_cls)
+            logger.info('{}'.format(loaded_lib))
+        else:
+            logger.info('%r could not be found', (name or candidates))
+            raise LibraryNotFoundException(name)
+    else:
+        raise NoLibraryCandidatesException(name)
+ 
+    if loaded_lib is None:
+        raise LibraryNotLoadedException(name)
+    else:
+        return loaded_lib
+ 
+ 
+def _load_library_ex(find_library=None):
+    return _load_locate_library_ex(
+                ('usb-0.1', 'usb', 'libusb0'),
+                'cygusb0.dll', 'Libusb 0',
+                find_library=find_library
+    )
+ 
+def _get_backend_ex():
+    try:
+        if libusb0._lib is None:
+            logger.info('_get_backend_ex(): using backend "%s"' % libusb0.__name__)
+            libusb0._lib = _load_library_ex()#find_library
+            libusb0._setup_prototypes(libusb0._lib)
+            libusb0._lib.usb_init()
+        return libusb0._LibUSB()
+    except usb.libloader.LibraryException:
+        # exception already logged (if any)
+        logger.error('Error loading libusb 0.1 backend')
+        return None
+    except Exception:
+        logger.error('Error loading libusb 0.1 backend')
+        return None
+ 
+def my_get_backend_ex():
+ 
+    for m in (libusb1, openusb, libusb0):
+        backend = m.get_backend()
+        if backend is not None:
+            logger.info('my_get_backend_ex(): using backend "%s"' % m.__name__)
+            break
+        elif m == libusb0:
+            backend = _get_backend_ex()
+            if backend is not None: break
+    else:
+        raise ('No backend available')
+ 
+    return backend
+
 def get_udev_descriptor(vid, pid):
     """获取USB设备描述符
     """
     
+    logger.info('get usb devices({}:{}) descriptor'.format(vid, pid))
+    
     # 获取USB设备
-    backend = usb.backend.libusb1.get_backend(find_library=lambda x: "libusb-1.0.dll")
-    udev = usb.core.find(idVendor=int(vid, 16), idProduct=int(pid, 16), backend=backend)
+    #backend = usb.backend.libusb1.get_backend(find_library=lambda x: "libusb-1.0.dll")
+    #backend = my_get_backend_ex()
+    #if backend == None:
+    #    logger.error('libusb-1.0.dll not found, {}:{}'.format(vid, pid))
+    #    return None, None
+    
+    udev = usb.core.find(idVendor=int(vid, 16), idProduct=int(pid, 16))
     if udev is None:
         logger.error('device not found, {}:{}'.format(vid, pid))
         return None, None
@@ -154,6 +266,7 @@ def get_inf_name(hardware_id):
     if drivers:
         for prop in drivers[0].Properties_:
            print(prop.Name, ":", prop.Value)
+        return drivers[0].InfName
 
 def get_sys_path(service):
     """
@@ -171,7 +284,7 @@ def get_sys_path(service):
             for prop in system_driver.Properties_:
                 print(prop.Name, ":", prop.Value)
 
-def get_sys_inf_path_name(service):
+def get_sys_inf_path_name(service, hardware_id):
     """
     """
     
@@ -186,7 +299,10 @@ def get_sys_inf_path_name(service):
 
     # 读取键值
     sys_path = winreg.QueryValueEx(key, 'ImagePath')[0]
-    inf_names = winreg.QueryValueEx(key, 'Owners')[0]
+    if platform.win32_ver()[0] == '7':
+        inf_names = get_inf_name(hardware_id)
+    else:
+        inf_names = winreg.QueryValueEx(key, 'Owners')[0]
 
     # 输出键值
     logger.debug(sys_path)
@@ -257,13 +373,13 @@ def main():
     
     #get_inf_name(udev_info_list[4]['HardWareID'][0])
     #get_sys_path(udev_info_list[4]['Service'])
-    #get_sys_inf_path_name(udev_info_list[2]['Service'])
+    #get_sys_inf_path_name(udev_info_list[2]['Service'], udev_info_list[2]['HardWareID'][0])
     
-    get_computer_system_info()
+    #get_computer_system_info()
     #get_network_adapter_configuration()
-    system_info = get_system_info()
-    for key, value in system_info.items():
-        logger.info('{}: {}'.format(key, value))
+    #system_info = get_system_info()
+    #for key, value in system_info.items():
+     #   logger.info('{}: {}'.format(key, value))
 
     bcdUSB = get_bcdUSB(device_desc)
     logger.debug(bcdUSB)

@@ -6,4 +6,4 @@ udev_detect_png = b'iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c
 FileDescription = 'USB设备检测'
 InternalName = 'udev detect'
 LegalCopyright = 'Copyright (c) 2023 HanKin. All rights reserved.'
-ProductVersion = '2023.3.13.6'
+ProductVersion = '2023.3.23.8'

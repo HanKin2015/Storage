@@ -282,7 +282,8 @@ class Ui_MainWindow(object):
     def about(self):
         """关于
         """
-
+        
+        #self.get_udev_info_list()
         aboutText = '{} V{}\n\n{}'.format(resource.InternalName, resource.ProductVersion, resource.LegalCopyright)
         QMessageBox.about(self.ui, resource.FileDescription, aboutText)
         
@@ -308,23 +309,36 @@ class Ui_MainWindow(object):
         #logger.info(wmi)  # <COMObject winmgmts:>
         
         udev_info_list = []
-        for usb in wmi.InstancesOf("Win32_USBHub"):
-            udev_info_list.append({'usb.USBVersion': usb.USBVersion,
-                                 'usb.ProtocolCode': usb.ProtocolCode,
-                                 'usb.SubclassCode': usb.SubclassCode,
-                                 'usb.Availability': usb.Availability,
-                                 'usb.NumberOfConfigs': usb.NumberOfConfigs,
-                                 'usb.Name': usb.Name,
-                                 'usb.DeviceID': usb.DeviceID,
-                                 'usb.Status': usb.Status,
-                                 'usb.StatusInfo': usb.StatusInfo,
-                                 'usb.PNPDeviceID': usb.PNPDeviceID,
-                                 'usb.ClassCode': usb.ClassCode,
-                                 'usb.SystemName': usb.SystemName,
-                                 'usb.Caption': usb.Caption,
-                                 'usb.CreationClassName': usb.CreationClassName,
-                                 'usb.CurrentConfigValue': usb.CurrentConfigValue,
-                                 'usb.Description': usb.Description})
+        for pnp in wmi.InstancesOf("Win32_PnPEntity"):
+            if 'USB\\VID' in pnp.DeviceID and pnp.DeviceID.count('&') <= 4:
+                for prop in pnp.Properties_:
+                    logger.debug('{} : {}'.format(prop.Name, prop.Value))
+                logger.debug('')
+
+                udev_info = dict({'Name': pnp.Name,
+                                     'deviceID': pnp.deviceID,
+                                     'Service': pnp.Service,
+                                     'ConfigManagerErrorCode': pnp.ConfigManagerErrorCode,
+                                     'Status': pnp.Status,
+                                     'HardWareID': pnp.HardWareID,
+                                     'SystemName': pnp.SystemName})
+                if platform.system() == 'Windows':
+                    win_ver = platform.win32_ver()
+                    if win_ver[0] == '7':
+                        logger.debug('当前系统为Windows 7')
+                        udev_info['PNPClass'] = 'USB'
+                    else:
+                        logger.debug('当前系统为Windows，但不是Windows 7')
+                        udev_info['PNPClass'] = pnp.PNPClass
+                else:
+                    logger.error('当前系统不是Windows')
+
+                udev_info_list.append(udev_info)
+        for udev_info in udev_info_list:
+            for key, value in udev_info.items():
+                logger.debug('{}: {}'.format(key, value))
+            logger.debug('')
+
         # 通知给子进程
         self.udevDetect.udev_info_list = udev_info_list
 

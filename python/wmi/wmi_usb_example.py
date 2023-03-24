@@ -54,7 +54,7 @@ def main():
         count += 1
     logger.info('there are {} usbcontrollers'.format(count))
 
-    # USBHub以及加载的USB设备（网卡设备转换后无法获取）
+    # USBHub以及加载的USB设备（网卡设备转换后无法获取，HID设备也无法获取，串口设备也无法获取，建议不使用这个接口）
     logger.info("===================Win32_USBHub=================")
     count = 0
     for usb in wmi.InstancesOf("Win32_USBHub"):
