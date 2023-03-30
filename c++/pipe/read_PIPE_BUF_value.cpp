@@ -46,3 +46,8 @@ int main()
     sleep(30);
     return 0;
 }
+/*
+BUFSIZ: 8192
+Pipe buffer size: 65536
+new Pipe buffer size: 8192
+*/

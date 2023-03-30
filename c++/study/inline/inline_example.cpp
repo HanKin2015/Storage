@@ -19,6 +19,7 @@ int qemu_shell_call(const char* shell_cmd, char* result)
     }
     return 0;
 }
+
 inline void func()
 {
     printf("hello world!\n");
