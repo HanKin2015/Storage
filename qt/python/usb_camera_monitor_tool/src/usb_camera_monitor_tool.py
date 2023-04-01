@@ -4,7 +4,7 @@
 文件描述: USB摄像头监控工具
 作    者: HanKin
 创建日期: 2023.02.24
-修改日期：2023.03.07
+修改日期：2023.04.01
 
 Copyright (c) 2023 HanKin. All rights reserved.
 """
@@ -66,7 +66,7 @@ class Ui_MainWindow(object):
         """
 
         if msg == '关闭监控屏幕':
-            self.startMonitorScreen()
+            self.startMonitorScreen(True)
         datagram = msg.encode()
         #self.sock.writeDatagram(datagram, QHostAddress.LocalHost, 6666)
         #self.sock.writeDatagram(datagram, QHostAddress.Broadcast, 6666)
@@ -320,11 +320,16 @@ class Ui_MainWindow(object):
             datagram = msg.encode()
             self.sock.writeDatagram(datagram, QHostAddress(self.clientAddress), 6666)
 
-    def startMonitorScreen(self):
+    def startMonitorScreen(self, flag=False):
         """初始化显示为开启监控屏幕，即默认是关闭状态
+        flag是关闭监控屏幕标记，防止线程消息未及时反馈过来，提前设置了is_on为False，导致现有判断错误
         """
 
-        if self.monitorScreen.is_on == False:
+        if self.monitorScreen.is_on == True and flag == False:
+            logger.info('stop monitor screen')
+            self.monitorScreen.is_on = False
+            self.startMonitorScreenAction.setText('开启监控屏幕')
+        else:
             if self.clientAddress == None:
                 QMessageBox.warning(self.ui, '警告', '请先设置客户端地址!', QMessageBox.Yes)
                 return
@@ -332,10 +337,7 @@ class Ui_MainWindow(object):
             self.monitorScreen.is_on = True
             self.monitorScreen.start()
             self.startMonitorScreenAction.setText('关闭监控屏幕')
-        else:
-            logger.info('stop monitor screen')
-            self.monitorScreen.is_on = False
-            self.startMonitorScreenAction.setText('开启监控屏幕')
+        
 
     def about(self):
         """关于
@@ -446,6 +448,7 @@ class Thread_MonitorScreen(QThread):
                     #black_continuous_count = 0
                     if black_continuous_count >= 20:    # 如果连续超过20次即一分钟停止监控屏幕
                         self.msg_signal.emit('关闭监控屏幕')
+                        self.is_on = False
             elif image_type == 'light white':
                 light_white_continuous_count += 1
                 black_continuous_count = 0
@@ -455,6 +458,7 @@ class Thread_MonitorScreen(QThread):
                     #light_white_continuous_count = 0
                     if light_white_continuous_count >= 20:    # 如果连续超过20次即一分钟停止监控屏幕
                         self.msg_signal.emit('关闭监控屏幕')
+                        self.is_on = False
             else:
                 black_continuous_count = 0
                 light_white_continuous_count = 0
