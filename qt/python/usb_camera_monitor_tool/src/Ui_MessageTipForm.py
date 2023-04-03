@@ -160,7 +160,7 @@ class Ui_MessageTipForm(QWidget):
             self.itemClickedSlot(item);
 
     def itemClickedSlot(self, item):
-        """
+        """ListWidget列表item点击槽函数
         """
         
         if item == None:
@@ -177,26 +177,26 @@ class Ui_MessageTipForm(QWidget):
         
         desktop = QDesktopWidget()
         logger.debug('桌面大小: {}'.format(desktop.screenGeometry()))
-        # D:\Github\GitBook\gitbook\Python\pyqt5.md
+        # D:\Github\GitBook\gitbook\Python\pyqt5.md解释为啥高度跟实际不同的问题
         #screenGeometry = desktop.screenGeometry()
         #centerX = (screenGeometry.x() + screenGeometry.width() - self.width()) / 2
         #centerY = (screenGeometry.y() + screenGeometry.height() - self.height()) / 2
         #logger.info('中心位置:({}, {})'.format(centerX, centerY))
         #QMessageBox.warning(self, '消息', text).move(desktop.screenGeometry().center() - msgBox.rect().center())
         
-        #msgBox = QMessageBox(self)
-        #msgBox.setWindowTitle('消息')
-        #msgBox.setText(text)
-        #msgBox.setGeometry(0, 0, 100, 200)       # 设置对话框大小
-        #msgBox.move(desktop.screenGeometry().center() - msgBox.rect().center())
-        #msgBox.setIcon(QMessageBox.Information)  # 设置对话框类型为信息框
-        #msgBox.show()
+        msgBox = QMessageBox(self)
+        msgBox.setWindowTitle('消息')
+        msgBox.setText(text)
+        msgBox.setGeometry(0, 0, 100, 200)       # 设置对话框大小
+        msgBox.move(desktop.screenGeometry().center() - msgBox.rect().center())
+        msgBox.setIcon(QMessageBox.Information)  # 设置对话框类型为信息框
+        msgBox.show()
 
         if self.getMessageCount() == 0:
             self.stopFlashingTrayIconSignal.emit()
 
     def getMessageCount(self):
-        """
+        """获取未读消息数量
         """
         
         return self.listWidget.count()
@@ -219,7 +219,7 @@ class Ui_MessageTipForm(QWidget):
         self.startFlashingTrayIconSignal.emit(text)
 
     def resizeHeight(self):
-        """
+        """重新调整ListWidget的高度
         """
         
          # 显示收到消息数量
