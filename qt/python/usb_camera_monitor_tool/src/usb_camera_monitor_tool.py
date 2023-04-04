@@ -52,6 +52,9 @@ class Ui_MainWindow(object):
         self.checkMousePosTimer.setInterval(200)
 
     def readDataSlot(self):
+        """服务端一直在监听客户端的消息
+        """
+        
         while self.sock.hasPendingDatagrams():
             datagram, host, port = self.sock.readDatagram(
                 self.sock.pendingDatagramSize()
@@ -61,12 +64,30 @@ class Ui_MainWindow(object):
             logger.debug(messgae)
             self.monitorSignalSlot(datagram.decode())
 
-    def writeDataSlot(self, msg):
+    def msgPackage(self, msg):
+        """消息组装
         """
+
+        user_name = get_client_user_name()
+        if user_name == None:
+            logger.error('get user name failed')
+            return
+        user_name = user_name[0].strip()
+        
+        ip, mac = get_ip_mac_address()
+        
+        current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+        msg = '{},{},{},{} {}'.format(user_name, ip, mac, current_time, msg)
+        return msg
+
+    def writeDataSlot(self, msg):
+        """收到本地线程的监控消息，然后上报给服务端
         """
 
         if msg == '关闭监控屏幕':
             self.startMonitorScreen(True)
+        
+        msg = self.msgPackage(msg)
         datagram = msg.encode()
         #self.sock.writeDatagram(datagram, QHostAddress.LocalHost, 6666)
         #self.sock.writeDatagram(datagram, QHostAddress.Broadcast, 6666)
@@ -76,7 +97,9 @@ class Ui_MainWindow(object):
         """监控信号槽函数
         """
 
-        self.messageTipForm.addToTipList(text, text)
+        text_list = text.split(',')
+        name = text_list[3]
+        self.messageTipForm.addToTipList(name, text)
 
     def flashingTrayIconSlot(self):
         """托盘消息图标闪烁
@@ -306,8 +329,10 @@ class Ui_MainWindow(object):
         """测试消息槽函数
         """
         
-        text = '这是一条测试信息'
-        self.messageTipForm.addToTipList(text, text)
+        text = self.msgPackage('这是一条测试信息')
+        text_list = text.split(',')
+        name = text_list[3]
+        self.messageTipForm.addToTipList(name, text)
 
     def settingClientAddress(self):
         """设置服务器

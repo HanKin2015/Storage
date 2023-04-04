@@ -22,6 +22,7 @@ import os
 import base64
 import pyautogui
 from PIL import Image
+from hack_interface import *
 
 #import resource_convert_to_pyfile
 #resource_convert_to_pyfile.main()
