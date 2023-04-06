@@ -1,0 +1,241 @@
+2023-04-04 10:20:24 office_assistant.py[<module>:266] INFO: ******** starting ********
+2023-04-04 10:20:27 D:\Github\Storage\qt\python\office_assistant\src\USBInterface.py[get_udev_info_list:29] INFO: get usb device infomation list
+2023-04-04 10:29:35 office_assistant.py[closeEvent:159] INFO: ******** stop ********
+
+2023-04-04 10:29:39 office_assistant.py[<module>:156] INFO: ******** starting ********
+2023-04-04 10:29:45 office_assistant.py[closeEvent:127] INFO: ******** stop ********
+
+2023-04-04 10:29:47 office_assistant.py[<module>:156] INFO: ******** starting ********
+2023-04-04 10:29:53 office_assistant.py[closeEvent:127] INFO: ******** stop ********
+
+2023-04-04 10:30:07 office_assistant.py[<module>:156] INFO: ******** starting ********
+2023-04-04 10:30:16 office_assistant.py[closeEvent:127] INFO: ******** stop ********
+
+2023-04-04 10:30:50 office_assistant.py[<module>:156] INFO: ******** starting ********
+2023-04-04 10:31:00 office_assistant.py[closeEvent:127] INFO: ******** stop ********
+
+2023-04-04 10:33:23 office_assistant.py[<module>:158] INFO: ******** starting ********
+2023-04-04 10:33:34 office_assistant.py[closeEvent:129] INFO: ******** stop ********
+
+2023-04-04 10:33:53 office_assistant.py[<module>:156] INFO: ******** starting ********
+2023-04-04 11:06:47 office_assistant.py[closeEvent:127] INFO: ******** stop ********
+
+2023-04-04 11:06:51 office_assistant.py[<module>:219] INFO: ******** starting ********
+2023-04-04 11:07:42 office_assistant.py[<module>:219] INFO: ******** starting ********
+2023-04-04 11:08:15 office_assistant.py[<module>:219] INFO: ******** starting ********
+2023-04-04 11:08:44 office_assistant.py[<module>:219] INFO: ******** starting ********
+2023-04-04 11:09:22 office_assistant.py[<module>:219] INFO: ******** starting ********
+2023-04-04 11:10:33 office_assistant.py[<module>:219] INFO: ******** starting ********
+2023-04-04 11:12:51 office_assistant.py[<module>:219] INFO: ******** starting ********
+2023-04-04 11:15:43 office_assistant.py[<module>:216] INFO: ******** starting ********
+2023-04-04 11:16:04 office_assistant.py[<module>:216] INFO: ******** starting ********
+2023-04-04 11:17:41 office_assistant.py[<module>:222] INFO: ******** starting ********
+2023-04-04 11:18:02 office_assistant.py[<module>:222] INFO: ******** starting ********
+2023-04-04 11:18:16 office_assistant.py[<module>:222] INFO: ******** starting ********
+2023-04-04 11:18:45 office_assistant.py[<module>:222] INFO: ******** starting ********
+2023-04-04 11:18:56 office_assistant.py[<module>:222] INFO: ******** starting ********
+2023-04-04 11:19:16 office_assistant.py[<module>:222] INFO: ******** starting ********
+2023-04-04 11:19:44 office_assistant.py[<module>:217] INFO: ******** starting ********
+2023-04-04 11:19:56 office_assistant.py[<module>:217] INFO: ******** starting ********
+2023-04-04 11:20:05 office_assistant.py[<module>:217] INFO: ******** starting ********
+2023-04-04 11:21:49 office_assistant.py[<module>:217] INFO: ******** starting ********
+2023-04-04 11:22:14 office_assistant.py[<module>:217] INFO: ******** starting ********
+2023-04-04 11:22:26 office_assistant.py[<module>:217] INFO: ******** starting ********
+2023-04-04 11:22:52 office_assistant.py[<module>:217] INFO: ******** starting ********
+2023-04-04 11:29:48 office_assistant.py[<module>:207] INFO: ******** starting ********
+2023-04-04 11:30:17 office_assistant.py[<module>:207] INFO: ******** starting ********
+2023-04-04 11:30:20 office_assistant.py[closeEvent:174] INFO: ******** stop ********
+
+2023-04-04 11:33:09 office_assistant.py[<module>:207] INFO: ******** starting ********
+2023-04-04 11:33:16 office_assistant.py[closeEvent:174] INFO: ******** stop ********
+
+2023-04-04 11:33:18 office_assistant.py[<module>:207] INFO: ******** starting ********
+2023-04-04 11:37:14 office_assistant.py[<module>:208] INFO: ******** starting ********
+2023-04-04 11:37:55 office_assistant.py[<module>:208] INFO: ******** starting ********
+2023-04-04 11:38:08 office_assistant.py[<module>:208] INFO: ******** starting ********
+2023-04-04 11:38:10 office_assistant.py[close:175] INFO: ******** stop ********
+
+2023-04-04 11:42:40 office_assistant.py[<module>:189] INFO: ******** starting ********
+2023-04-04 11:42:52 office_assistant.py[<module>:188] INFO: ******** starting ********
+2023-04-04 11:42:57 office_assistant.py[<module>:188] INFO: ******** starting ********
+2023-04-04 11:45:08 office_assistant.py[<module>:201] INFO: ******** starting ********
+2023-04-04 11:45:11 office_assistant.py[close:167] INFO: ******** stop ********
+
+2023-04-04 11:45:41 office_assistant.py[<module>:197] INFO: ******** starting ********
+2023-04-04 11:45:43 office_assistant.py[close:167] INFO: ******** stop ********
+
+2023-04-04 11:45:56 office_assistant.py[<module>:197] INFO: ******** starting ********
+2023-04-04 11:45:58 office_assistant.py[close:167] INFO: ******** stop ********
+
+2023-04-04 11:46:00 office_assistant.py[<module>:197] INFO: ******** starting ********
+2023-04-04 11:46:02 office_assistant.py[close:167] INFO: ******** stop ********
+
+2023-04-04 11:46:04 office_assistant.py[<module>:197] INFO: ******** starting ********
+2023-04-04 11:46:05 office_assistant.py[close:167] INFO: ******** stop ********
+
+2023-04-04 11:46:15 office_assistant.py[<module>:197] INFO: ******** starting ********
+2023-04-04 11:46:17 office_assistant.py[close:167] INFO: ******** stop ********
+
+2023-04-04 11:46:40 office_assistant.py[<module>:197] INFO: ******** starting ********
+2023-04-04 11:46:42 office_assistant.py[close:167] INFO: ******** stop ********
+
+2023-04-04 12:57:05 office_assistant.py[<module>:197] INFO: ******** starting ********
+2023-04-04 12:57:07 office_assistant.py[close:167] INFO: ******** stop ********
+
+2023-04-04 12:58:32 office_assistant.py[<module>:193] INFO: ******** starting ********
+2023-04-04 12:58:40 office_assistant.py[close:163] INFO: ******** stop ********
+
+2023-04-04 12:58:51 office_assistant.py[<module>:193] INFO: ******** starting ********
+2023-04-04 12:58:53 office_assistant.py[close:163] INFO: ******** stop ********
+
+2023-04-04 12:58:55 office_assistant.py[<module>:193] INFO: ******** starting ********
+2023-04-04 12:58:57 office_assistant.py[close:163] INFO: ******** stop ********
+
+2023-04-04 13:01:08 office_assistant.py[<module>:242] INFO: ******** starting ********
+2023-04-04 13:01:08 office_assistant.py[close:212] INFO: ******** stop ********
+
+2023-04-04 13:01:36 office_assistant.py[<module>:242] INFO: ******** starting ********
+2023-04-04 13:01:36 office_assistant.py[close:212] INFO: ******** stop ********
+
+2023-04-04 13:01:47 office_assistant.py[<module>:242] INFO: ******** starting ********
+2023-04-04 13:01:47 office_assistant.py[close:212] INFO: ******** stop ********
+
+2023-04-04 15:43:47 Ui_SystemTrayIcon.py[<module>:86] INFO: ******** starting ********
+2023-04-04 15:48:41 Ui_SystemTrayIcon.py[<module>:86] INFO: ******** starting ********
+2023-04-04 15:49:26 Ui_SystemTrayIcon.py[<module>:220] INFO: ******** starting ********
+2023-04-04 15:50:19 Ui_SystemTrayIcon.py[<module>:220] INFO: ******** starting ********
+2023-04-04 15:50:53 Ui_SystemTrayIcon.py[<module>:226] INFO: ******** starting ********
+2023-04-04 15:52:23 Ui_SystemTrayIcon.py[<module>:226] INFO: ******** starting ********
+2023-04-04 15:52:50 Ui_SystemTrayIcon.py[<module>:226] INFO: ******** starting ********
+2023-04-04 15:53:18 Ui_SystemTrayIcon.py[<module>:226] INFO: ******** starting ********
+2023-04-04 15:53:37 Ui_SystemTrayIcon.py[<module>:226] INFO: ******** starting ********
+2023-04-04 15:55:17 Ui_SystemTrayIcon.py[<module>:226] INFO: ******** starting ********
+2023-04-04 15:56:49 Ui_SystemTrayIcon.py[<module>:226] INFO: ******** starting ********
+2023-04-04 15:56:58 Ui_SystemTrayIcon.py[quitApp:203] INFO: ******** stop ********
+
+2023-04-04 15:57:22 Ui_SystemTrayIcon.py[<module>:226] INFO: ******** starting ********
+2023-04-04 15:57:48 Ui_SystemTrayIcon.py[<module>:226] INFO: ******** starting ********
+2023-04-04 15:57:54 Ui_SystemTrayIcon.py[quitApp:203] INFO: ******** stop ********
+
+2023-04-04 15:59:14 Ui_SystemTrayIcon.py[<module>:229] INFO: ******** starting ********
+2023-04-04 15:59:19 Ui_SystemTrayIcon.py[quitApp:203] INFO: ******** stop ********
+
+2023-04-04 15:59:22 Ui_SystemTrayIcon.py[<module>:229] INFO: ******** starting ********
+2023-04-04 16:03:41 Ui_SystemTrayIcon.py[<module>:229] INFO: ******** starting ********
+2023-04-04 16:04:06 Ui_SystemTrayIcon.py[<module>:229] INFO: ******** starting ********
+2023-04-04 16:04:15 Ui_SystemTrayIcon.py[<module>:229] INFO: ******** starting ********
+2023-04-04 16:04:27 Ui_SystemTrayIcon.py[<module>:229] INFO: ******** starting ********
+2023-04-04 16:06:40 office_assistant.py[<module>:194] INFO: ******** starting ********
+2023-04-04 16:07:20 office_assistant.py[close:164] INFO: ******** stop ********
+
+2023-04-04 16:08:02 office_assistant.py[<module>:191] INFO: ******** starting ********
+2023-04-04 16:08:08 office_assistant.py[close:161] INFO: ******** stop ********
+
+2023-04-04 16:15:30 office_assistant.py[<module>:188] INFO: ******** starting ********
+2023-04-04 16:15:31 office_assistant.py[close:158] INFO: ******** stop ********
+
+2023-04-04 16:15:46 office_assistant.py[<module>:189] INFO: ******** starting ********
+2023-04-04 16:15:53 D:\Github\Storage\qt\python\office_assistant\src\USBInterface.py[get_udev_info_list:29] INFO: get usb device infomation list
+2023-04-04 16:16:29 D:\Github\Storage\qt\python\office_assistant\src\USBCheck.py[closeEvent:159] INFO: ******** stop ********
+
+2023-04-04 16:16:37 D:\Github\Storage\qt\python\office_assistant\src\USBCheck.py[closeEvent:159] INFO: ******** stop ********
+
+2023-04-04 16:16:41 office_assistant.py[<module>:189] INFO: ******** starting ********
+2023-04-04 16:18:03 office_assistant.py[close:159] INFO: ******** stop ********
+
+2023-04-04 16:27:03 office_assistant.py[<module>:189] INFO: ******** starting ********
+2023-04-04 16:27:07 office_assistant.py[close:159] INFO: ******** stop ********
+
+2023-04-04 16:28:30 office_assistant.py[<module>:188] INFO: ******** starting ********
+2023-04-04 16:30:07 office_assistant.py[close:158] INFO: ******** stop ********
+
+2023-04-04 16:30:10 office_assistant.py[<module>:194] INFO: ******** starting ********
+2023-04-04 16:33:31 office_assistant.py[close:164] INFO: ******** stop ********
+
+2023-04-04 16:33:33 office_assistant.py[<module>:197] INFO: ******** starting ********
+2023-04-04 16:36:56 office_assistant.py[close:167] INFO: ******** stop ********
+
+2023-04-04 16:36:58 office_assistant.py[<module>:201] INFO: ******** starting ********
+2023-04-04 16:37:05 office_assistant.py[close:171] INFO: ******** stop ********
+
+2023-04-04 16:38:24 office_assistant.py[<module>:201] INFO: ******** starting ********
+2023-04-04 16:38:45 D:\Github\Storage\qt\python\office_assistant\src\USBInterface.py[get_udev_info_list:29] INFO: get usb device infomation list
+2023-04-04 16:40:46 office_assistant.py[close:171] INFO: ******** stop ********
+
+2023-04-04 16:40:59 office_assistant.py[<module>:202] INFO: ******** starting ********
+2023-04-04 16:41:11 office_assistant.py[close:172] INFO: ******** stop ********
+
+2023-04-04 16:42:12 office_assistant.py[<module>:198] INFO: ******** starting ********
+2023-04-04 16:42:44 office_assistant.py[close:168] INFO: ******** stop ********
+
+2023-04-04 16:42:54 office_assistant.py[<module>:201] INFO: ******** starting ********
+2023-04-04 16:45:00 office_assistant.py[close:171] INFO: ******** stop ********
+
+2023-04-04 16:45:01 office_assistant.py[<module>:201] INFO: ******** starting ********
+2023-04-04 16:45:22 office_assistant.py[close:171] INFO: ******** stop ********
+
+2023-04-04 16:45:35 office_assistant.py[<module>:201] INFO: ******** starting ********
+2023-04-04 16:45:58 office_assistant.py[close:171] INFO: ******** stop ********
+
+2023-04-04 16:46:01 office_assistant.py[<module>:197] INFO: ******** starting ********
+2023-04-04 16:46:39 office_assistant.py[close:167] INFO: ******** stop ********
+
+2023-04-04 16:46:42 office_assistant.py[<module>:197] INFO: ******** starting ********
+2023-04-04 16:46:51 office_assistant.py[close:167] INFO: ******** stop ********
+
+2023-04-04 16:48:17 office_assistant.py[<module>:197] INFO: ******** starting ********
+2023-04-04 16:48:26 D:\Github\Storage\qt\python\office_assistant\src\USBInterface.py[get_udev_info_list:29] INFO: get usb device infomation list
+2023-04-04 16:49:39 office_assistant.py[close:167] INFO: ******** stop ********
+
+2023-04-04 16:53:52 office_assistant.py[<module>:197] INFO: ******** starting ********
+2023-04-04 16:53:53 office_assistant.py[close:167] INFO: ******** stop ********
+
+2023-04-04 16:54:34 office_assistant.py[<module>:198] INFO: ******** starting ********
+2023-04-04 16:54:39 office_assistant.py[close:168] INFO: ******** stop ********
+
+2023-04-04 16:55:16 office_assistant.py[<module>:199] INFO: ******** starting ********
+2023-04-04 16:55:21 office_assistant.py[close:169] INFO: ******** stop ********
+
+2023-04-04 16:55:43 office_assistant.py[<module>:199] INFO: ******** starting ********
+2023-04-04 16:55:44 office_assistant.py[close:169] INFO: ******** stop ********
+
+2023-04-04 16:56:17 Ui_MessageTipForm.py[<module>:267] INFO: ******** starting ********
+2023-04-04 16:56:43 Ui_SystemTrayIcon.py[<module>:229] INFO: ******** starting ********
+2023-04-04 16:56:52 Ui_SystemTrayIcon.py[quitApp:203] INFO: ******** stop ********
+
+2023-04-04 16:57:31 Ui_SystemTrayIcon.py[<module>:229] INFO: ******** starting ********
+2023-04-04 16:57:36 Ui_SystemTrayIcon.py[quitApp:203] INFO: ******** stop ********
+
+2023-04-04 16:57:39 office_assistant.py[<module>:199] INFO: ******** starting ********
+2023-04-04 17:00:31 D:\Github\Storage\qt\python\office_assistant\src\Ui_SystemTrayIcon.py[quitApp:203] INFO: ******** stop ********
+
+2023-04-04 17:00:45 D:\Github\Storage\qt\python\office_assistant\src\Ui_SystemTrayIcon.py[quitApp:203] INFO: ******** stop ********
+
+2023-04-04 17:05:07 test.py[<module>:37] INFO: ******** starting ********
+2023-04-04 17:05:17 test.py[<module>:36] INFO: ******** starting ********
+2023-04-04 17:05:26 test.py[<module>:36] INFO: ******** starting ********
+2023-04-04 17:05:40 test.py[<module>:37] INFO: ******** starting ********
+2023-04-04 17:13:49 test.py[<module>:37] INFO: ******** starting ********
+2023-04-04 17:15:46 test.py[<module>:37] INFO: ******** starting ********
+2023-04-04 17:16:18 test.py[<module>:37] INFO: ******** starting ********
+2023-04-04 17:16:55 office_assistant.py[<module>:199] INFO: ******** starting ********
+2023-04-04 17:17:08 office_assistant.py[close:169] INFO: ******** stop ********
+
+2023-04-04 17:17:17 office_assistant.py[<module>:199] INFO: ******** starting ********
+2023-04-04 17:17:27 D:\Github\Storage\qt\python\office_assistant\src\Ui_SystemTrayIcon.py[quitApp:203] INFO: ******** stop ********
+
+2023-04-04 17:17:36 office_assistant.py[<module>:199] INFO: ******** starting ********
+2023-04-04 17:17:44 D:\Github\Storage\qt\python\office_assistant\src\Ui_SystemTrayIcon.py[quitApp:203] INFO: ******** stop ********
+
+2023-04-04 17:20:24 office_assistant.py[<module>:198] INFO: ******** starting ********
+2023-04-04 17:24:29 D:\Github\Storage\qt\python\office_assistant\src\Ui_SystemTrayIcon.py[quitApp:207] INFO: ******** stop ********
+
+2023-04-04 17:24:30 office_assistant.py[<module>:198] INFO: ******** starting ********
+2023-04-04 17:43:51 D:\Github\Storage\qt\python\office_assistant\src\Ui_SystemTrayIcon.py[quitApp:207] INFO: ******** stop ********
+
+2023-04-06 08:59:39 office_assistant.py[<module>:198] INFO: ******** starting ********
+2023-04-06 09:04:54 office_assistant.py[<module>:202] INFO: ******** starting ********
+2023-04-06 09:07:50 office_assistant.py[<module>:212] INFO: ******** starting ********
+2023-04-06 09:08:33 office_assistant.py[<module>:203] INFO: ******** starting ********
+2023-04-06 09:09:41 office_assistant.py[<module>:203] INFO: ******** starting ********
+2023-04-06 09:10:18 office_assistant.py[<module>:203] INFO: ******** starting ********

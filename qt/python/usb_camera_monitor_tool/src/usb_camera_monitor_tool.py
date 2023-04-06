@@ -4,7 +4,7 @@
 文件描述: USB摄像头监控工具
 作    者: HanKin
 创建日期: 2023.02.24
-修改日期：2023.04.01
+修改日期：2023.04.06
 
 Copyright (c) 2023 HanKin. All rights reserved.
 """
@@ -71,7 +71,8 @@ class Ui_MainWindow(object):
         user_name = get_client_user_name()
         if user_name == None:
             logger.error('get user name failed')
-            return
+            user_name = ('None', 1)
+            #return
         user_name = user_name[0].strip()
         
         ip, mac = get_ip_mac_address()
@@ -85,6 +86,7 @@ class Ui_MainWindow(object):
         """
 
         if msg == '关闭监控屏幕':
+            logger.warning('收到关闭监控屏幕消息')
             self.startMonitorScreen(True)
         
         msg = self.msgPackage(msg)
@@ -202,8 +204,12 @@ class Ui_MainWindow(object):
         # 初始化菜单单项
         self.settingClientAddressAction = QAction("设置客户端地址")
         self.startMonitorScreenAction = QAction("开启监控屏幕")
+        self.startMonitorScreenAction.setToolTip('3秒监控间隔，连续5次触发消息，连续20次停止监控')
         self.showScreenshotAreaAction = QAction("显示截图区域")
         self.testMsgAction = QAction("测试消息")
+        ip, mac = get_ip_mac_address()
+        self.ipMacAddressAction = QAction('本机地址')
+        self.ipMacAddressAction.setToolTip('{} {}'.format(ip, mac))
         self.aboutAction = QAction("关于(&N)")
         self.quitAppAction = QAction("退出")
         
@@ -224,11 +230,11 @@ class Ui_MainWindow(object):
         # 初始化菜单列表
         self.trayIconMenu = QMenu()
         self.trayIconMenu.addAction(self.settingClientAddressAction)
-        self.trayIconMenu.addSeparator()
         self.trayIconMenu.addAction(self.startMonitorScreenAction)
-        self.trayIconMenu.addSeparator()
         self.trayIconMenu.addAction(self.showScreenshotAreaAction)
+        self.trayIconMenu.addSeparator()
         self.trayIconMenu.addAction(self.testMsgAction)
+        self.trayIconMenu.addAction(self.ipMacAddressAction)
         self.trayIconMenu.addSeparator()
         self.trayIconMenu.addAction(self.aboutAction)
         self.trayIconMenu.addAction(self.quitAppAction)
@@ -240,6 +246,7 @@ class Ui_MainWindow(object):
         self.trayIcon.setToolTip(APP_NAME)
         
         self.trayIcon.messageClicked.connect(self.show_message_box)
+        self.trayIconMenu.hovered.connect(self.show_tooltip)
         
         # 左键双击打开主界面
         self.trayIcon.activated[QSystemTrayIcon.ActivationReason].connect(self.openMainWindow)
@@ -249,6 +256,14 @@ class Ui_MainWindow(object):
         
         # 初始化消息提示框
         self.initMessageTipForm()
+
+    def show_tooltip(self):
+        """在鼠标悬停在菜单项上时显示提示框
+        """
+        
+        action = self.trayIconMenu.activeAction()
+        if action is not None:
+            QToolTip.showText(QCursor.pos(), action.toolTip())
 
     def initMessageTipForm(self):
         """初始化消息提示框
@@ -331,7 +346,7 @@ class Ui_MainWindow(object):
         
         text = self.msgPackage('这是一条测试信息')
         text_list = text.split(',')
-        name = text_list[3]
+        name = text_list[3] # 这个跟user_name不是一个概念，目的是name在列表上面简写显示，text是完整信息
         self.messageTipForm.addToTipList(name, text)
 
     def settingClientAddress(self):
@@ -341,7 +356,7 @@ class Ui_MainWindow(object):
         text, ok = QInputDialog.getText(None, '设置客户端地址', '请输入地址:')
         if ok:
             self.clientAddress = str(text)
-            msg = '服务端下发的测试消息'
+            msg = self.msgPackage('服务端下发的测试消息')
             datagram = msg.encode()
             self.sock.writeDatagram(datagram, QHostAddress(self.clientAddress), 6666)
 
@@ -350,11 +365,7 @@ class Ui_MainWindow(object):
         flag是关闭监控屏幕标记，防止线程消息未及时反馈过来，提前设置了is_on为False，导致现有判断错误
         """
 
-        if self.monitorScreen.is_on == True and flag == False:
-            logger.info('stop monitor screen')
-            self.monitorScreen.is_on = False
-            self.startMonitorScreenAction.setText('开启监控屏幕')
-        else:
+        if self.monitorScreen.is_on == False and flag == False:
             if self.clientAddress == None:
                 QMessageBox.warning(self.ui, '警告', '请先设置客户端地址!', QMessageBox.Yes)
                 return
@@ -362,6 +373,10 @@ class Ui_MainWindow(object):
             self.monitorScreen.is_on = True
             self.monitorScreen.start()
             self.startMonitorScreenAction.setText('关闭监控屏幕')
+        else:
+            logger.info('stop monitor screen')
+            self.monitorScreen.is_on = False
+            self.startMonitorScreenAction.setText('开启监控屏幕')
         
 
     def about(self):
@@ -467,21 +482,23 @@ class Thread_MonitorScreen(QThread):
             if image_type == 'black':
                 black_continuous_count += 1
                 light_white_continuous_count = 0
-                if black_continuous_count >= 5: # 需要连续三次才能判断是黑屏状态
-                    logger.info('usb camera is {} screen state'.format(image_type))
-                    self.msg_signal.emit('警告可能是黑屏状态')
+                if black_continuous_count >= 5: # 需要连续五次才能判断是黑屏状态
+                    logger.info('usb camera is {} screen state({})'.format(image_type, black_continuous_count))
+                    self.msg_signal.emit('警告可能是黑屏状态({})'.format(black_continuous_count))
                     #black_continuous_count = 0
                     if black_continuous_count >= 20:    # 如果连续超过20次即一分钟停止监控屏幕
+                        logger.warning('已经连续黑屏1分钟，关闭监控屏幕')
                         self.msg_signal.emit('关闭监控屏幕')
                         self.is_on = False
             elif image_type == 'light white':
                 light_white_continuous_count += 1
                 black_continuous_count = 0
-                if light_white_continuous_count >= 5:   # 需要连续三次才能判断是浅白屏状态
-                    logger.info('usb camera is {} screen state'.format(image_type))
-                    self.msg_signal.emit('警告可能是异常状态')
+                if light_white_continuous_count >= 5:   # 需要连续五次才能判断是浅白屏状态
+                    logger.info('usb camera is {} screen state({})'.format(image_type, light_white_continuous_count))
+                    self.msg_signal.emit('警告可能是异常状态({})'.format(light_white_continuous_count))
                     #light_white_continuous_count = 0
                     if light_white_continuous_count >= 20:    # 如果连续超过20次即一分钟停止监控屏幕
+                        logger.warning('已经连续异常1分钟，关闭监控屏幕')
                         self.msg_signal.emit('关闭监控屏幕')
                         self.is_on = False
             else:

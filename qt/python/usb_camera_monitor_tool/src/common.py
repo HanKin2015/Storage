@@ -11,11 +11,15 @@ Copyright (c) 2023 HanKin. All rights reserved.
 import time
 import win32com.client
 from log import logger
-from PyQt5.QtWidgets import QInputDialog, QWidget, QMainWindow, QAction, QApplication
-from PyQt5.QtWidgets import QMenu, QMessageBox, QSystemTrayIcon, qApp, QToolTip, QListWidgetItem
-from PyQt5.QtWidgets import QLabel, QListWidget, QPushButton, QHBoxLayout, QVBoxLayout, QDesktopWidget
-from PyQt5.QtCore import QThread, pyqtSignal, QMetaObject, QCoreApplication, Qt, QRect, QTimer, QPoint
-from PyQt5.QtGui import QIcon, QPainter, QColor, QBrush, QCursor
+from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, \
+    QVBoxLayout, QPushButton, QTreeView, QTextEdit, QAbstractItemView, \
+    QMenuBar, QStatusBar, QMainWindow, QMenu, QAction, QLabel, QMessageBox, \
+    QDesktopWidget, qApp, QSystemTrayIcon, QListWidgetItem, QListWidget, \
+    QToolTip, QInputDialog
+from PyQt5.QtCore import QModelIndex, Qt, QCoreApplication, pyqtSignal, QThread, \
+    QTimer, QMetaObject, QPoint, QRect
+from PyQt5.QtGui import QStandardItemModel, QStandardItem, QIcon, \
+    QCursor, QPainter, QColor, QBrush
 from PyQt5.QtNetwork import QUdpSocket, QHostAddress
 import sys
 import os
