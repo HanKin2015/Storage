@@ -14,6 +14,7 @@ import USBInterface
 import base64_convert_string
 import USBCheck
 import Ui_SystemTrayIcon
+import check_ip2
 
 class Ui_MainWindow(object):
     def __init__(self):
@@ -28,6 +29,7 @@ class Ui_MainWindow(object):
         self.ui = MainWindow
         self.window_setting()
         QMetaObject.connectSlotsByName(self.ui)
+        self.ui.destroyed.connect(self.close)
         
         # 初始化菜单栏
         self.init_menu()
@@ -57,6 +59,8 @@ class Ui_MainWindow(object):
         self.pyfile_convert_to_image(resource.camera_monitor_ico, CAMERA_MONITOR_ICO)
         self.pyfile_convert_to_image(resource.udev_detect_ico, UDEV_DETECT_ICO)
         
+        self.pyfile_convert_to_image(resource.msg_png, MSG_PNG)
+        self.pyfile_convert_to_image(resource.test_png, TEST_PNG)
         self.pyfile_convert_to_image(resource.about_png, ABOUT_PNG)
         self.pyfile_convert_to_image(resource.exit_png, EXIT_PNG)
         self.pyfile_convert_to_image(resource.help_png, HELP_PNG)
@@ -83,8 +87,10 @@ class Ui_MainWindow(object):
         # 添加菜单项
         file_memu = QMenu('文件(&F)', self.ui)
         menu_bar.addMenu(file_memu)
-        exit_action = QAction('退出(&E)', self.ui)
+        exit_action = QAction('退出(&Q)', self.ui)
         exit_action.triggered.connect(self.ui.close)
+        about_action.setIcon(QIcon(EXIT_PNG))
+        about_action.setShortcut(Qt.CTRL + Qt.Key_Q)
         file_memu.addAction(exit_action)
         
         language_memu = QMenu('语言(&L)', self.ui)
@@ -96,10 +102,10 @@ class Ui_MainWindow(object):
         help_menu = QMenu('帮助(&H)', self.ui)
         menu_bar.addMenu(help_menu)
         
-        about_action = QAction('关于(&N)', self.ui)
+        about_action = QAction('关于(&A)', self.ui)
         about_action.triggered.connect(self.about)
         about_action.setIcon(QIcon(ABOUT_PNG))
-        about_action.setShortcut(Qt.CTRL + Qt.Key_N)
+        about_action.setShortcut(Qt.CTRL + Qt.Key_A)
         help_menu.addAction(about_action)
     
     def init_status_bar(self):
@@ -117,7 +123,7 @@ class Ui_MainWindow(object):
         """初始化托盘
         """
 
-        systemTrayIcon = Ui_SystemTrayIcon.Ui_SystemTrayIcon('../img/office_assistant.png', self.ui)
+        systemTrayIcon = Ui_SystemTrayIcon.Ui_SystemTrayIcon(self.ui)
         systemTrayIcon.show()
 
     def init_tabwidget(self):
@@ -137,6 +143,12 @@ class Ui_MainWindow(object):
 
         # 创建黑客工具选项卡
         tab_widget.addTab(base64_convert_string.MyWindow(), '黑客工具')
+        
+        # 创建IP存活选项卡
+        tab_widget.addTab(check_ip2.MyWindow(), 'IP存活')
+        
+        # 创建复制拷贝选项卡
+        tab_widget.addTab(base64_convert_string.MyWindow(), '复制拷贝')
     
         self.ui.setCentralWidget(tab_widget)
 
@@ -173,7 +185,16 @@ class Ui_MainWindow(object):
         """
         
         logger.info('******** stop ********\n')
-        os.remove(USB_CHECK_ICO)
+        os.remove(OFFICE_ASSISTANT_ICO)
+        os.remove(USB_CHECK_ICO       )
+        os.remove(CAMERA_MONITOR_ICO  )
+        os.remove(UDEV_DETECT_ICO     )
+        os.remove(MSG_PNG             )
+        os.remove(TEST_PNG            )
+        os.remove(HELP_PNG            )
+        os.remove(ABOUT_PNG           )
+        os.remove(EXIT_PNG            )
+
 
 def main():
     """主函数

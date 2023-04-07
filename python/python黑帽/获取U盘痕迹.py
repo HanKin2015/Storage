@@ -1,4 +1,14 @@
-# encoding:utf-8
+# -*- coding: utf-8 -*-
+"""
+文 件 名: 获取U盘痕迹.py
+文件描述: 通过注册表
+作    者: HanKin
+创建日期: 2023.03.31
+修改日期：2023.04.06
+
+Copyright (c) 2023 HanKin. All rights reserved.
+"""
+
 from winreg import *
 import sys
 

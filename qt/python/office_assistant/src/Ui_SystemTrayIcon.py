@@ -17,20 +17,28 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
 
         # 初始化菜单单项
         self.settingClientAddressAction = QAction("设置客户端地址")
+        self.settingClientAddressAction.setIcon(QIcon(CAMERA_MONITOR_ICO))
+        self.settingClientAddressAction.setShortcut(Qt.CTRL + Qt.Key_S)
         self.startMonitorScreenAction = QAction("开启监控屏幕")
+        self.startMonitorScreenAction.setIcon(QIcon(CAMERA_MONITOR_ICO))
+        self.startMonitorScreenAction.setShortcut(Qt.CTRL + Qt.Key_M)
         self.showScreenshotAreaAction = QAction("显示截图区域")
+        self.showScreenshotAreaAction.setIcon(QIcon(CAMERA_MONITOR_ICO))
+        self.showScreenshotAreaAction.setShortcut(Qt.CTRL + Qt.Key_D)
         
         self.startUdevDetectAction = QAction("开启USB设备检测")
+        self.startUdevDetectAction.setIcon(QIcon(USB_CHECK_ICO))
+        self.startUdevDetectAction.setShortcut(Qt.CTRL + Qt.Key_C)
         
         self.testMsgAction = QAction("测试消息")
+        self.testMsgAction.setIcon(QIcon(TEST_PNG))
+        self.testMsgAction.setShortcut(Qt.CTRL + Qt.Key_T)
         self.aboutAction = QAction("关于(&N)")
+        self.aboutAction.setIcon(QIcon(ABOUT_PNG))
+        self.aboutAction.setShortcut(Qt.CTRL + Qt.Key_A)
         self.quitAppAction = QAction("退出")
-        
-        #添加一个图标
-        self.aboutAction.setIcon(QIcon(icon_path))
-        
-        #添加快捷键
-        self.aboutAction.setShortcut(Qt.CTRL + Qt.Key_N)
+        self.quitAppAction.setIcon(QIcon(EXIT_PNG))
+        self.quitAppAction.setShortcut(Qt.CTRL + Qt.Key_Q)
 
         # 菜单单项连接方法
         self.settingClientAddressAction.triggered.connect(self.settingClientAddress)
@@ -56,7 +64,7 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         # 构建菜单UI
         self.trayIcon = QSystemTrayIcon()
         self.trayIcon.setContextMenu(self.trayIconMenu)
-        self.trayIcon.setIcon(QIcon(icon_path))
+        self.trayIcon.setIcon(QIcon(OFFICE_ASSISTANT_ICO))
         self.trayIcon.setToolTip(APP_NAME)
         
         self.trayIcon.messageClicked.connect(self.show_message_box)
@@ -204,11 +212,7 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         checkFlag = QMessageBox.information(None, "退出确认", "是否确认退出？",
                                                       QMessageBox.Yes | QMessageBox.No)
         if checkFlag == QMessageBox.Yes:
-            logger.info('******** stop ********\n')
-            os.remove(USB_CAMERA_MONITOR_TOOL_ICO)
-            os.remove(MSG_ICO)
-            if os.path.exists(TMP_SCREENSHOT_PNG):
-                os.remove(TMP_SCREENSHOT_PNG)
+            logger.info('******** stop ********')
             qApp.quit()
         else:
             pass

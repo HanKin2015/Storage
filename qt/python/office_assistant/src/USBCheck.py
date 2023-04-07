@@ -18,7 +18,7 @@ class MainWindow(QMainWindow):
         self.udev_info_list = None
         
         # pyinstaller打包图片
-        self.pyfile_convert_to_image(resource.USBCheck_ico, USB_CHECK_ICO)
+        self.pyfile_convert_to_image(resource.usb_check_ico, USB_CHECK_ICO)
         self.usb_check_icon = QIcon(USB_CHECK_ICO)
         
         # 设置窗口
