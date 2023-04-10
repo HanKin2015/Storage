@@ -15,6 +15,7 @@ import base64_convert_string
 import USBCheck
 import Ui_SystemTrayIcon
 import check_ip2
+import clear_tool
 
 class Ui_MainWindow(object):
     def __init__(self):
@@ -89,8 +90,8 @@ class Ui_MainWindow(object):
         menu_bar.addMenu(file_memu)
         exit_action = QAction('退出(&Q)', self.ui)
         exit_action.triggered.connect(self.ui.close)
-        about_action.setIcon(QIcon(EXIT_PNG))
-        about_action.setShortcut(Qt.CTRL + Qt.Key_Q)
+        exit_action.setIcon(QIcon(EXIT_PNG))
+        exit_action.setShortcut(Qt.CTRL + Qt.Key_Q)
         file_memu.addAction(exit_action)
         
         language_memu = QMenu('语言(&L)', self.ui)
@@ -124,6 +125,7 @@ class Ui_MainWindow(object):
         """
 
         systemTrayIcon = Ui_SystemTrayIcon.Ui_SystemTrayIcon(self.ui)
+        systemTrayIcon.show_mainwindow_signal.connect(self.show_mainwindow_signal_slot)
         systemTrayIcon.show()
 
     def init_tabwidget(self):
@@ -149,6 +151,9 @@ class Ui_MainWindow(object):
         
         # 创建复制拷贝选项卡
         tab_widget.addTab(base64_convert_string.MyWindow(), '复制拷贝')
+        
+        # 创建清理工具选项卡
+        tab_widget.addTab(clear_tool.MyWindow(), '清理工具')
     
         self.ui.setCentralWidget(tab_widget)
 
@@ -195,6 +200,12 @@ class Ui_MainWindow(object):
         os.remove(ABOUT_PNG           )
         os.remove(EXIT_PNG            )
 
+    def show_mainwindow_signal_slot(self):
+        """双击托盘图标显示主窗口
+        """
+        
+        self.ui.showNormal()
+        self.ui.activateWindow()
 
 def main():
     """主函数

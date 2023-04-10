@@ -13,8 +13,8 @@
 - 搭建python3开发环境 (https://m.runoob.com/python3/python3-install.html)
 - 运行 `python upan_auto_copy.py`
 - 运行 `python upan_auto_copy.py -u D`
-- 打包 `pyinstaller.exe --version-file=doc/file_version_info.txt -i img/usb_camera_monitor_tool.ico -w -F src/usb_camera_monitor_tool.py`
-- 打包 `pyinstaller.exe --version-file=doc/file_version_info.txt -i img/usb_camera_monitor_tool.ico -w -F usb_camera_monitor_tool.spec`
+- 打包 `pyinstaller.exe --version-file=doc/file_version_info.txt -i img/office_assistant.ico -w -F src/office_assistant.py`
+- 打包 `pyinstaller.exe --version-file=doc/file_version_info.txt -i img/office_assistant.ico -w -F office_assistant.spec`
 
 ## 3、下一步改进点
 - 停止监控偶尔会停不下来，多次之后才会生效

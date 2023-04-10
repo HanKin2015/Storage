@@ -1,44 +1,42 @@
-from Ui_SystemTrayIcon import *
-from common import *
+import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtChart import QChart, QChartView, QPieSeries
+from PyQt5.QtCore import Qt, QTimer
 
-class Ui_MainWindow(object):
+class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        systemTrayIcon = Ui_SystemTrayIcon('../img/office_assistant.png', self)
-        systemTrayIcon.show()
+        # 创建一个饼图系列
+        self.series = QPieSeries()
+        self.series.append("A", 1)
+        self.series.append("B", 1)
+        self.series.append("C", 1)
 
-def main():
-    """主函数
-    """
+        # 创建一个图表并将系列添加到图表中
+        self.chart = QChart()
+        self.chart.addSeries(self.series)
+        self.chart.setTitle("Dynamic Pie Chart")
+        self.chart.legend().hide()
 
-    # 创建活跃 app 句柄
-    app = QApplication(sys.argv)
+        # 创建一个图表视图并将图表设置为视图的图表
+        self.chartView = QChartView(self.chart)
+        self.setCentralWidget(self.chartView)
 
-    # 关闭全部窗口后程序不退出
-    #app.setQuitOnLastWindowClosed(False)
+        # 创建一个定时器并将其连接到更新函数
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.updateChart)
+        self.timer.start(3)
 
-    # 声明界面句柄
-    mainWindow = QMainWindow()
-
-    # 构建程序界面
-    ui = Ui_MainWindow()
-
-    # 程序启动时打开主界面
-    mainWindow.show()
-
-    sys.exit(app.exec_())
+    def updateChart(self):
+        # 更新饼图系列的值
+        self.series.clear()
+        self.series.append("A", 1)
+        self.series.append("B", 2)
+        self.series.append("C", 3)
 
 if __name__ == '__main__':
-    """程序入口
-    """
-    
-    #os.system('chcp 936 & cls')
-    logger.info('******** starting ********')
-    start_time = time.time()
-
-    main()
-
-    end_time = time.time()
-    logger.info('process spend {} s.\n'.format(round(end_time - start_time, 3)))
-
+    app = QApplication(sys.argv)
+    mainWindow = MainWindow()
+    mainWindow.show()
+    sys.exit(app.exec_())

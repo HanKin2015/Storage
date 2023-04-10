@@ -19,12 +19,17 @@ from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, \
     QVBoxLayout, QPushButton, QTreeView, QTextEdit, QAbstractItemView, \
     QMenuBar, QStatusBar, QMainWindow, QMenu, QAction, QLabel, QMessageBox, \
     QDesktopWidget, qApp, QTabWidget, QSystemTrayIcon, QToolTip, QListWidgetItem, \
-    QListWidget, QInputDialog
+    QListWidget, QInputDialog, QStyledItemDelegate, QLineEdit, QFrame, \
+    QComboBox, QFormLayout, QSizePolicy, QGridLayout
 from PyQt5.QtCore import QModelIndex, Qt, QCoreApplication, QMetaObject, QThread, pyqtSignal, QRect, QTimer, QPoint
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QIcon, \
-    QPainter, QColor, QBrush
+    QPainter, QColor, QBrush, QPen, QFont
 from PyQt5.QtNetwork import QUdpSocket, QHostAddress
+from  PyQt5.QtChart import QChart, QChartView, QPieSeries, QPieSlice
 import resource
+from concurrent.futures import ThreadPoolExecutor
+from subprocess import Popen, PIPE
+import datetime
 
 OFFICE_ASSISTANT_ICO = 'office_assistant.ico'
 USB_CHECK_ICO        = 'udev_check.ico'

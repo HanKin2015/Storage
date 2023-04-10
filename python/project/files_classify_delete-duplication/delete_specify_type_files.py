@@ -15,8 +15,8 @@ import shutil
 import random
 
 DIR_PATH = r'D:\Users\Administrator\My Document\WeChat Files\wxid_2gh9d5knc6th21\FileStorage\MsgAttach'
-DIR_PATH = r'D:\Github\Storage\python\project\files_classify_delete-duplication\a'
-DIR_PATH = r'C:\Users\Administrator\AppData\Local\口袋助理\files'
+#DIR_PATH = r'D:\Github\Storage\python\project\files_classify_delete-duplication\a'
+#DIR_PATH = r'C:\Users\Administrator\AppData\Local\口袋助理\files'
 TMP_PATH = r'D:\hj'
 
 def get_dir_file_types(path):
@@ -117,7 +117,7 @@ def main():
     """
     
     #move_files_to_specify_dir(DIR_PATH)
-    delete_specify_type_files(TMP_PATH)
+    delete_specify_type_files(DIR_PATH)
     get_dir_file_types(TMP_PATH)
     for i in range(5):
         delete_empty_dirs()

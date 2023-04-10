@@ -12,6 +12,11 @@ Copyright (c) 2023 HanKin. All rights reserved.
 from Ui_MessageTipForm import *
 
 class Ui_SystemTrayIcon(QSystemTrayIcon):
+    """托盘类
+    """
+
+    show_mainwindow_signal = pyqtSignal()
+
     def __init__(self, parent=None):
         super().__init__(parent)
 
@@ -109,8 +114,7 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         """
         
         if reason == QSystemTrayIcon.DoubleClick:
-            self.ui.showNormal()
-            self.ui.activateWindow()
+            self.show_mainwindow_signal.emit()
         elif reason == QSystemTrayIcon.Trigger:
             pass
 

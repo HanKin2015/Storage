@@ -9,18 +9,7 @@
 Copyright (c) 2023 HanKin. All rights reserved.
 """
 
-import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel, \
-    QLineEdit, QGridLayout, QPushButton, QHBoxLayout, QDesktopWidget, \
-    QFrame, QListWidget, QListWidgetItem, QVBoxLayout, QHeaderView, \
-    QStyledItemDelegate, QMessageBox
-import base64
-from PyQt5.QtGui import QPen, QPainter
-from PyQt5.QtCore import Qt, QThread, pyqtSignal
-from log import *
-import time
-import _thread
-from subprocess import Popen, PIPE
+from common import *
 
 class ListDelegate(QStyledItemDelegate):
     def paint(self, painter, option, index):
@@ -180,7 +169,7 @@ class Thread_CheckIP(QThread):
         self.ip_address_segment5 = 0
         self.ip_up_list = []
 
-    def ping_check(self, ip):
+    def ping_check(self, index, ip):
         """使用ping命令检测存活
         """
         
@@ -188,9 +177,10 @@ class Thread_CheckIP(QThread):
         data = check.stdout.read()  # 数据
         data = data.decode('gbk')   # 编码转换:byte->str
         if 'TTL' in data: # 存活
-            sys.stdout.write('%s is up \n' % ip)
+            #sys.stdout.write('%s is up \n' % ip)
             logger.debug('{} is up'.format(ip))
-            self.ip_up_signal.emit('{} is up'.format(ip))
+            self.ip_up_list.append((index, '{} is up'.format(ip)))
+            
             return True
         return False
 
@@ -198,16 +188,32 @@ class Thread_CheckIP(QThread):
         """
         """
         
-        for i in range(self.ip_address_segment4, self.ip_address_segment5 + 1):
-            ip = '{}.{}.{}.{}'.format(self.ip_address_segment1, self.ip_address_segment2, self.ip_address_segment3, i)
-            logger.info('ping {}......'.format(ip))
-            _thread.start_new_thread(self.ping_check, (ip, ))
-            time.sleep(0.1)
-        time.sleep(3)
+        tasks = []
+        with ThreadPoolExecutor(max_workers=64) as pool:
+            for i in range(self.ip_address_segment4, self.ip_address_segment5 + 1):
+                ip = '{}.{}.{}.{}'.format(self.ip_address_segment1, self.ip_address_segment2, self.ip_address_segment3, i)
+                logger.info('ping {}......'.format(ip))
+
+                task = pool.submit(self.ping_check, i, ip)
+                tasks.append(task)
+    
+        self.ip_up_list = sorted(self.ip_up_list, key=lambda x: x[0])
+        for ip_up in self.ip_up_list:
+            self.ip_up_signal.emit(ip_up[1])
         self.check_done_signal.emit()
         
-if __name__ == '__main__':
+def main():
     app = QApplication(sys.argv)
     window = MyWindow()
     sys.exit(app.exec_())
+
+if __name__ == '__main__':
+    #os.system('chcp 936 & cls')
+    logger.info('******** starting ********')
+    start_time = time.time()
+
+    main()
+
+    end_time = time.time()
+    logger.info('process spend {} s.\n'.format(round(end_time - start_time, 3)))
 
