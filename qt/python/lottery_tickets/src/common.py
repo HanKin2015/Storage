@@ -32,15 +32,12 @@ from subprocess import Popen, PIPE
 import datetime
 import random
 
-OFFICE_ASSISTANT_ICO = 'office_assistant.ico'
-USB_CHECK_ICO        = 'udev_check.ico'
-CAMERA_MONITOR_ICO   = 'camera_monitor.ico'
-UDEV_DETECT_ICO      = 'udev_detect.ico'
+LOTTERY_TICKETS_ICO = 'lottery_tickets.ico'
 
-MSG_PNG              = 'msg.png'
-TEST_PNG             = 'test.png'
-HELP_PNG             = 'help.png'
-ABOUT_PNG            = 'about.png'
-EXIT_PNG             = 'exit.png'
+MSG_PNG             = 'msg.png'
+TEST_PNG            = 'test.png'
+HELP_PNG            = 'help.png'
+ABOUT_PNG           = 'about.png'
+EXIT_PNG            = 'exit.png'
 
 APP_NAME = '办公助手'

@@ -68,7 +68,6 @@ class MyWindow(QWidget):
 
         self.setLayout(vbox)
         self.center()
-        self.show()
 
     def center(self):
         qr = self.frameGeometry()
@@ -107,5 +106,6 @@ class MyWindow(QWidget):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     window = MyWindow()
+    window.show()
     sys.exit(app.exec_())
 

@@ -81,7 +81,6 @@ class MyWindow(QWidget):
         self.setStyleSheet("QLineEdit { border: 1px solid black; }")
         self.setLayout(vbox)
         self.center()
-        self.show()
 
     def center(self):
         """居中显示
@@ -205,6 +204,7 @@ class Thread_CheckIP(QThread):
 def main():
     app = QApplication(sys.argv)
     window = MyWindow()
+    window.show()
     sys.exit(app.exec_())
 
 if __name__ == '__main__':
