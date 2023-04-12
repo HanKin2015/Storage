@@ -35,7 +35,7 @@ VIDIOC_QUERYBUF: Invalid argument
 代码来源：https://mp.weixin.qq.com/s/bbh9uY5q0CrqXDCc8rzLQA
 demo见：D:\Github\Storage\udev\v4l2\验证VIDIOC_QBUF和VIDIOC_DQBUF\v4l2_perfect_example.cpp
 图片数据见：D:\Github\Storage\udev\v4l2\验证VIDIOC_QBUF和VIDIOC_DQBUF\3.mjpg
-
+备注：直接使用Windows照片查看器进行查看
 
 
 

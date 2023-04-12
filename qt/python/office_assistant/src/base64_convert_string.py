@@ -65,6 +65,34 @@ class MyWindow(QWidget):
         
         time_convert_frame.setStyleSheet("QFrame { background-color: white; border: 1px solid black; } QFrame QLabel { border: none; }")
         vbox.addWidget(time_convert_frame)
+        
+        # 第三个QFrame，字符串编码
+        string_encode_frame = QFrame(self)
+        string_decode_label = QLabel('解码字符串:', string_encode_frame)
+        self.string_decode_lineedit = QLineEdit(string_encode_frame)
+
+        string_encode_label = QLabel('编码字符串:', string_encode_frame)
+        self.string_encode_lineedit = QLineEdit(string_encode_frame)
+
+        encode_button = QPushButton('编码', string_encode_frame)
+        encode_button.clicked.connect(self.encode_button_slot)
+        decode_button = QPushButton('解码', string_encode_frame)
+        decode_button.clicked.connect(self.decode_button_slot)
+        
+        hbox = QHBoxLayout()
+        hbox.addWidget(encode_button)
+        hbox.addStretch(1)
+        hbox.addWidget(decode_button)
+
+        grid = QGridLayout(string_encode_frame)
+        grid.addWidget(string_decode_label, 0, 0)
+        grid.addWidget(self.string_decode_lineedit, 0, 1)
+        grid.addWidget(string_encode_label, 1, 0)
+        grid.addWidget(self.string_encode_lineedit, 1, 1)
+        grid.addLayout(hbox, 2, 0, 1, 2)
+        
+        string_encode_frame.setStyleSheet("QFrame { border: 1px solid black; } QFrame QLabel { border: none; }")
+        vbox.addWidget(string_encode_frame)
 
         self.setLayout(vbox)
         self.center()
@@ -102,6 +130,34 @@ class MyWindow(QWidget):
         time_stamp = int(self.time_edit.text())
         logger.info('time stamp is {}'.format(time_stamp))
         self.time_label.setText(str(datetime.date.fromtimestamp(time_stamp)))
+
+    def decode_button_slot(self):
+        """
+        """
+        
+        string_encode = self.string_encode_lineedit.text()
+        print('string_encode: {}'.format(string_encode))
+        
+        string_decode = string_encode.decode('gbk')
+        print('string_decode: {}'.format(string_decode))
+        
+        self.string_decode_lineedit.setText(str(string_decode))
+        
+    def encode_button_slot(self):
+        """
+        """
+        
+        my_bytes = b'v10z&F\xc3\xf8\xfet\xae\x0e@\xf2?\x06lQ\xa3%\xc3\x98\xa6>\x90\xd7g1i\xdc\xaf\x14\x9a\xdc\r\x058\x81F'
+        my_string = my_bytes.decode('utf-8')
+        print('my_string: {}'.format(my_string))
+        
+        string_decode = self.string_decode_lineedit.text()
+        print('string_decode: {}'.format(string_decode))
+        
+        string_encode = string_decode.encode('gbk')
+        print('string_encode: {}'.format(string_encode))
+        
+        self.string_encode_lineedit.setText(str(string_encode))
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

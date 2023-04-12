@@ -281,8 +281,6 @@ struct v4l2_buffer {
     return 0;
 }
 
-
-
 int main()
 {
     judge_usable_videox();
