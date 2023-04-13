@@ -6,9 +6,11 @@
 *           lunch
 *           编辑Android.mk文件
 *           mm
+*
+*           gcc v4l2_test_compatibility_tool.c -lpthread
 * 作    者: HanKin
 * 创建日期: 2023.02.10
-* 修改日期：2023.04.12
+* 修改日期：2023.04.13
 *
 * Copyright (c) 2023 HanKin. All rights reserved.
 */
@@ -31,6 +33,7 @@
 #include <sys/epoll.h>
 #include <assert.h>
 #include <inttypes.h>
+#include <time.h>
 #include <linux/usb/video.h>
 #include <linux/videodev2.h>
 #if __GLIBC__ == 2 && __GLIBC_MINOR__ < 30
@@ -52,6 +55,8 @@ typedef enum {
 	CAMERA_LOG_LEVEL_DEBUG           = 3,    // 调试
 	CAMERA_LOG_LEVEL_UNKNOWN         = 4     // 未知
 } CAMERA_LOG_LEVEL;
+
+FILE *g_log_fd = NULL;
 
 /**
 * 打印日志
@@ -82,6 +87,9 @@ void camera_log_print(int level, const char* fmt, ...)
         (uint64_t)gettid(), buffer);
 
     printf("%s", logmsg);
+    if (g_log_fd) {
+        fprintf(g_log_fd, "%s", logmsg);
+    }
     return;
 }
 
@@ -120,6 +128,53 @@ void camera_log_print(int level, const char* fmt, ...)
 						## __VA_ARGS__, \
 						__FUNCTION__, __LINE__); \
 } while(0)
+
+typedef struct uvc_message
+{
+    uint32_t    type;		//消息类型
+    uint32_t    length;		//消息data长度
+    uint32_t    id;  		//消息ID
+    uint8_t     data[0];	
+} uvc_message;
+
+/*34个字节
+struct uvc_streaming_control {
+    __u16 bmHint;
+    __u8 bFormatIndex;
+    __u8 bFrameIndex;
+
+    __u32 dwFrameInterval;
+    __u16 wKeyFrameRate;
+    __u16 wPFrameRate;
+    __u16 wCompQuality;
+
+    __u16 wCompWindowSize;
+    __u16 wDelay;
+    __u32 dwMaxVideoFrameSize;
+    __u32 dwMaxPayloadTransferSize;
+
+    __u32 dwClockFrequency;
+    __u8 bmFramingInfo;
+    __u8 bPreferedVersion;
+    __u8 bMinVersion;
+
+    __u8 bMaxVersion;
+} __attribute__((__packed__));
+*/
+
+typedef struct uvcmsg_probe_data{
+    uvc_message			msg_head;
+    struct uvc_streaming_control	commit;
+    /*
+     * &brief video format sub_type
+     *        yuy2 UVC_VS_FORMAT_UNCOMPRESSED 0x04
+     *        mjpg UVC_VS_FORMAT_MJPEG 0x06
+     */
+    uint16_t    format; 
+    uint16_t    width;
+    uint16_t    height;
+
+} uvcmsg_probe_data;
 
 struct st_driver_buffer {
     void  *virt;        // 虚拟起始地址
@@ -162,33 +217,38 @@ typedef struct st_uvc_cli_event
 *
 */
 struct st_uvc_cli_ctx {
-	int device_id;
-	camctx*			cam_ctx;				//uvc驱动 interface 
+    int device_id;
+    camctx*			cam_ctx;    //uvc驱动 interface 
 
-	int32_t			main_state;				//工作状态
-	pthread_t		main_thread;			//工作线程id
-	pthread_mutex_t mutex;				//状态锁
-	bool is_running; //正在运行
+    int32_t			main_state; //工作状态
+    pthread_t		main_thread;//工作线程id
+    pthread_mutex_t mutex;      //状态锁
+    bool is_running; //正在运行
     bool has_err;    //出错
-    
-	int event_wfd;	//事件发送
-	int event_rfd;  //事件接收
-	
-	int event_buff_len; //消息缓冲区长度
-	uint8_t *event_rbuff; //消息读缓冲区
-	uint8_t *event_wbuff; //消息读缓冲区
-    
+    bool is_cfged;   //是否已经配置摄像头格式和分辨率
+
+    int event_wfd;  //事件发送
+    int event_rfd;  //事件接收
+
+    int event_buff_len;     //消息缓冲区长度
+    uint8_t *event_rbuff;   //消息读缓冲区
+    uint8_t *event_wbuff;   //消息读缓冲区
+
     uint32_t fps;
-	uint32_t bps;
-	uint32_t encode_time;
+    uint32_t bps;
+    uint32_t encode_time;
     uint64_t last_time;
     uint64_t last_frame_time;
-	uint32_t frame_interval;
-    
+    uint32_t frame_interval;
+
     struct uvc_streaming_control		probe; 	//启动参数
 };
 typedef struct st_uvc_cli_ctx uvc_cli_ctx;
 
+static int uvc_cli_do_start(uvc_cli_ctx *cli);
+static int uvc_cli_do_probe(uvc_cli_ctx* cli, struct uvc_streaming_control probe);
+
+// 初始化摄像头上下文
 camctx *libcam_init()
 {
     camctx* ctx = (camctx*)malloc(sizeof(camctx));
@@ -200,6 +260,13 @@ camctx *libcam_init()
     ctx->fd = -1;
 
     return ctx;
+}
+
+// 释放摄像头上下文
+void libcam_fini(camctx* ctx)
+{
+    free(ctx);
+    ctx = NULL;
 }
 
 int libcam_setdev_byid(camctx* ctx, const uint8_t id)
@@ -335,6 +402,13 @@ static int uvc_cli_do_stop(uvc_cli_ctx *cli)
 
     enum v4l2_buf_type type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
     int try_times = 0;
+    
+    // 未启动或者已经关闭情况下
+    if (!cam_ctx->is_start) {
+        CAMERA_LOGW("camera do not start or close.");
+        return 0;
+    }
+    
     do {
         if (ioctl(cam_ctx->fd, VIDIOC_STREAMOFF, &type) >= 0) {
             break;
@@ -357,8 +431,10 @@ static int uvc_cli_do_stop(uvc_cli_ctx *cli)
                 munmap(cam_ctx->buffers[i].virt, cam_ctx->buffers[i].length);
             }
         }
-        free(cli->cam_ctx->buffers);
-        cli->cam_ctx->buffers = NULL;
+        if (cam_ctx->buffers) {
+            free(cam_ctx->buffers);
+            cam_ctx->buffers = NULL;
+        }
         
         memset(&cam_ctx->reqbuf, 0, sizeof(struct v4l2_requestbuffers));
         cam_ctx->reqbuf.count = 0;
@@ -371,8 +447,6 @@ static int uvc_cli_do_stop(uvc_cli_ctx *cli)
         
         cam_ctx->reqbuf.reserved[0] = 0;
         cam_ctx->reqbuf.reserved[1] = 0;
-        free(cam_ctx);
-        cam_ctx = NULL;
     }
     return 0;
 }
@@ -566,6 +640,85 @@ const char* uvc_event2str(em_event event)
     }
 }
 
+/**
+* 工作状态类型转换为字符串
+* 
+* @param [in] state 工作状态
+*/
+const char* uvc_state2str(em_camera_state state)
+{
+    switch(state)
+    {
+        case CAMERA_INIT:
+            return "CAMERA_INIT";
+        case CAMERA_READY:
+            return "CAMERA_READY";
+        case CAMERA_RUN:
+            return "CAMERA_RUN";	
+        case CAMERA_EXIT:
+            return "CAMERA_EXIT";
+        default:
+            return "UVC_CLI_UNEXPECTED";
+    }
+}
+
+/*
+*	@function is_vaild_event
+*	@breif 事件是否需要处理
+*
+*/
+static bool is_valid_event(uvc_cli_ctx* cli, em_event ev)
+{
+    assert(cli);
+
+    em_camera_state state = cli->main_state;
+    CAMERA_LOGI("current work state:(%d)%s", state, uvc_state2str(state));
+    switch(ev){
+        case UVC_CLI_READY:
+            return true;
+
+        case UVC_CLI_START://需要已经init过buff
+            if(state != CAMERA_READY)
+                return false;
+
+            break;
+
+        case UVC_CLI_STOP://需要处于RUN状态
+            if(state != CAMERA_RUN)
+                return false;
+
+            break;
+
+        case UVC_CLI_CMD:
+            if(state != CAMERA_READY && state != CAMERA_RUN)
+                return false;
+
+            break;
+
+        case UVC_CLI_FAKE:
+            if(state != CAMERA_READY && state != CAMERA_RUN)
+                return false;
+
+            break;
+
+        case UVC_CLI_PROBE:
+        case UVC_CLI_INFO:
+            if(state != CAMERA_READY)
+                return false;
+
+            break;
+
+        case UVC_CLI_PERF:
+        case UVC_CLI_EXIT:
+            return true;
+
+        default:
+            return false;
+    }
+
+    return true;
+}
+
 /*
 *	@function uvc_cli_deal_event
 *	@breif 事件处理函数
@@ -573,13 +726,58 @@ const char* uvc_event2str(em_event event)
 static int uvc_cli_deal_event(uvc_cli_ctx* cli, uvc_cli_event* event)
 {
     int ret = 0;
-    em_event ev	= (em_event)event->type;	
-    CAMERA_LOGI("get event:(%d)%s", ev, uvc_event2str(ev));
+    uvc_message* msg = NULL;
+    uint32_t msg_len = 0;
+    uvcmsg_probe_data* req = NULL;
+    
+    em_event ev	= (em_event)event->type;
+    CAMERA_LOGI("get event:(%d)%s.", ev, uvc_event2str(ev));
+    
+    if (!is_valid_event(cli, ev)) {
+        CAMERA_LOGI("get unexpected event:(%d)%s.", ev, uvc_event2str(ev));
+        return 0;
+    }
 
     switch (ev) {
-        default:
-            CAMERA_LOGE("unexpected camera event:(%d)%s", ev, uvc_event2str(ev));
-            break;
+    case UVC_CLI_START:
+        if (!cli->is_cfged) {
+            CAMERA_LOGE("uvc's configure had not inited:%d.", ret);
+            return -1;
+        }
+
+        ret = uvc_cli_do_start(cli);
+        if (ret == 0) {
+            cli->main_state = CAMERA_RUN;
+        }
+        break;
+
+    case UVC_CLI_STOP:
+        (void)uvc_cli_do_stop(cli);
+        cli->main_state = CAMERA_READY;
+        break;
+
+    case UVC_CLI_PROBE:
+        msg = (uvc_message*)event->msg;
+        msg_len = event->msg_len;
+        req = (uvcmsg_probe_data*)msg;
+        CAMERA_LOGI("msg->type %d msg->length %d msg_len %d.", msg->type, msg->length, msg_len);
+        ret = uvc_cli_do_probe(cli, req->commit);
+        if (ret != 0) {
+            cli->is_cfged = false;
+            CAMERA_LOGE("probe failed :%d", ret);
+        } else {
+            cli->is_cfged = true;
+        }
+
+        break;
+
+    case UVC_CLI_EXIT:
+        (void)uvc_cli_do_stop(cli);
+        cli->main_state = CAMERA_EXIT;
+        break;
+    default:
+        CAMERA_LOGE("unexpected camera event:(%d)%s", ev, uvc_event2str(ev));
+        break;
     }
 
     return ret;
@@ -696,6 +894,71 @@ FUNC_END:
 }
 
 /**
+* 通知camera线程事件
+*
+* @param cli 客户端对象
+* @param event 事件消息
+*/
+static int uvc_cli_write_data(int fd, uint8_t* data, int len)
+{
+    assert(fd != -1);
+    assert(data);
+    assert(len > 0);
+
+    int ret = 0;
+    int left = len;
+    int try_times = 0;
+
+    do {
+        ret = write(fd, data, left);
+        if (ret < 0) {
+            if (errno == EAGAIN || errno == EINTR){
+                try_times++;
+                continue;
+            }
+
+            CAMERA_LOGE("uvc client:%d post event failed,errno:%d.", fd, errno);
+            break;
+        } else if (ret == 0) {
+            try_times++;
+            continue;
+        }
+
+        data += ret;
+        left -= ret;
+    } while (left > 0 && try_times < 100);
+
+    return (len - left);
+}
+
+/**
+* 通知camera线程事件
+*
+* @param cli 客户端对象
+* @param event 事件消息
+*/
+static void uvc_cli_send_event(uvc_cli_ctx* cli, int type, uint8_t* data, int len)
+{
+    assert(cli);
+    assert(len < UVC_CLI_EVENT_LEN_MAX);
+
+    int ret = 0;
+    uvc_cli_event* event = (uvc_cli_event*)cli->event_wbuff;    // 这个event_wbuff只是一个分配空间的作用
+    event->type = type;
+    event->flag = 0;
+    event->msg_len = len;
+    CAMERA_LOGI("copy data to msg, len %d.", len);
+    memcpy(event->msg, data, len);
+
+    ret = uvc_cli_write_data(cli->event_wfd, cli->event_wbuff, (sizeof(uvc_cli_event)+len));
+    if (ret != (sizeof(uvc_cli_event)+len)) {
+        CAMERA_LOGE("uvc client post event:%d len:%d ret:%d.", type, (sizeof(uvc_cli_event)+len), ret);
+    }
+    
+    return;
+}
+
+/**
 * uvc client 打开camera，启动线程抓数据
 *
 * @param [in] uvc_cli 
@@ -726,6 +989,7 @@ int uvc_cli_open(uvc_cli_ctx* uvc_cli)
 
     // 设置初始事件，并启动工作线程
     uvc_cli->is_running = true;
+    
     /*线程id 一般为NULL 线程执行函数 函数传入的参数*/
     ret = pthread_create(&uvc_cli->main_thread, NULL, uvc_cli_main_loop, (void *)uvc_cli);	
     if (ret != 0) {
@@ -735,7 +999,89 @@ int uvc_cli_open(uvc_cli_ctx* uvc_cli)
         free(uvc_cli->cam_ctx);
         return -1;
     }
+    
     return 0;
+}
+
+/**
+* uvc client 关闭camera，停止线程抓数据
+*
+* @param [in] uvc_cli
+*/
+void uvc_cli_close(uvc_cli_ctx* uvc_cli)
+{
+    if (!uvc_cli) {
+        return;
+    }
+
+    CAMERA_LOGI("uvc_cli_close ......begin.");
+
+    uvc_cli->is_running = false;
+    
+    uvc_cli_send_event(uvc_cli, UVC_CLI_EXIT, NULL, 0);
+    
+    if (uvc_cli->main_thread) {
+        pthread_join(uvc_cli->main_thread, NULL);
+        uvc_cli->main_thread = 0;
+    }
+
+    pthread_mutex_lock(&uvc_cli->mutex);
+
+    if (uvc_cli->cam_ctx) {
+        libcam_close(uvc_cli->cam_ctx);
+        libcam_fini(uvc_cli->cam_ctx);
+        uvc_cli->cam_ctx = NULL;
+    }
+
+    pthread_mutex_unlock(&uvc_cli->mutex);
+
+    CAMERA_LOGI("uvc_cli_close ......end.");
+}
+
+/**
+* uvc client 释放
+*
+* @param [in] uvc_cli
+*/
+void uvc_cli_deinit(uvc_cli_ctx* uvc_cli)
+{
+    if (!uvc_cli) {
+        return;
+    }
+
+    CAMERA_LOGI("uvc_cli deinit cli:%p, cam_ctx:%p.", uvc_cli, uvc_cli->cam_ctx);
+
+    uvc_cli_close(uvc_cli);
+
+    if (uvc_cli->event_rfd != -1) {
+        close(uvc_cli->event_rfd);
+        uvc_cli->event_rfd = -1;
+    }
+
+    if (uvc_cli->event_wfd != -1) {
+        close(uvc_cli->event_wfd);
+        uvc_cli->event_wfd = -1;
+    }
+
+    if (uvc_cli->event_rbuff) {
+        free(uvc_cli->event_rbuff);
+        uvc_cli->event_rbuff = NULL;
+    }
+
+    if (uvc_cli->event_wbuff) {
+        free(uvc_cli->event_wbuff);
+        uvc_cli->event_wbuff = NULL;
+    }
+    #if UVC_USE_LOCAL_YUV
+    if (uvc_cli->yuv2) {
+        free(uvc_cli->yuv2);
+        uvc_cli->yuv2 = NULL;
+    }
+    #endif
+
+    pthread_mutex_destroy(&uvc_cli->mutex);
+
+    free(uvc_cli);
 }
 
 /**
@@ -850,7 +1196,7 @@ static int uvc_cli_do_probe(uvc_cli_ctx* cli, struct uvc_streaming_control probe
     int ret = libcam_getfmt(cam_ctx);
     assert(!ret);
     int id = cli->probe.bFormatIndex;
-    assert(id !=0 && cam_ctx->fmt_max && id <= cam_ctx->fmt_max);
+    assert(id != 0 && cam_ctx->fmt_max && id <= cam_ctx->fmt_max);
     cam_ctx->fmt_idx = id - 1; // 索引下标比实际下标小1(数组索引下标从0开始，枚举index值从1开始)
 
     ret = libcam_getframesizes(cam_ctx);
@@ -1022,7 +1368,7 @@ static int uvc_cli_do_start(uvc_cli_ctx *cli)
     uint32_t format = cam_ctx->fmt[cam_ctx->fmt_idx].pixelformat; 
     CAMERA_LOGI("INIT frame[%d %d] fmt:%d.", width, height, format);  
 
-    //初始化空间
+    // 初始化空间(说明会保存5张照片在本地)
     ret = libcam_initbuff(cam_ctx, 5);
     if (ret != 0) {
         CAMERA_LOGE("initbuff failed %d", ret);
@@ -1064,8 +1410,16 @@ uvc_cli_ctx* uvc_cli_init(uint32_t camera_id)
     
     uvc_cli->device_id = camera_id;
     
-    uvc_cli->event_rfd = -1;
-    uvc_cli->event_wfd = -1;
+    //Fix me 暂时不考虑SSL连接
+    int fds[2];
+    if (pipe(fds) == -1) {
+        CAMERA_LOGE("uvc_cli pipe open failed， errno:%d.", errno);
+        free(uvc_cli);
+        uvc_cli = NULL;
+        return NULL;
+    }
+    uvc_cli->event_rfd = fds[0];
+    uvc_cli->event_wfd = fds[1];
     
     uvc_cli->event_buff_len = sizeof(struct st_uvc_cli_event) + 8192;
     uvc_cli->event_rbuff = (uint8_t *)malloc(uvc_cli->event_buff_len);
@@ -1075,8 +1429,16 @@ uvc_cli_ctx* uvc_cli_init(uint32_t camera_id)
     return uvc_cli;
 }
 
+#define MESSAGE_HEAD_LEN (sizeof(uvc_message))
 int main(int argc, char *argv[])
 {
+    // 初始化日志(a模式只能进行写操作，而a+模式可以进行读写操作)
+    g_log_fd = fopen("./v4l2_test_compatibility_tool.log", "a+");
+    if (g_log_fd == NULL) {
+        perror("fopen log file failed.\n");
+        return -1;
+    }
+    
     // 1、初始化摄像头客户端指针变量
     uvc_cli_ctx *uvc_cli = uvc_cli_init(0); assert(uvc_cli);
     
@@ -1086,14 +1448,60 @@ int main(int argc, char *argv[])
     struct uvc_streaming_control probe;
     probe.bFormatIndex = 1;
     probe.bFrameIndex = 1;
-    ret = uvc_cli_do_probe(uvc_cli, probe); assert(!ret);
+    //ret = uvc_cli_do_probe(uvc_cli, probe); assert(!ret);
     
-    ret = uvc_cli_do_start(uvc_cli); assert(!ret);
+    //ret = uvc_cli_do_start(uvc_cli); assert(!ret);
 
-    while (true);
-    (void)uvc_cli_do_stop(uvc_cli);
+    long long count = 0;
+    uvc_message* msg = (uvc_message*)malloc(1024);
+    uint8_t data[40] = {0x01, 0x0, 0x01, 0x03, 0x15, 0x16, 0x05, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x20, 0x00, 0x00, 0x96, 0x0, 0x0, 0x80, 0x0a, 0x0, 0x0, 0x33, 0x51, 0xb2, 0x7f, 0x0, 0x0, 0x76, 0x6e, 0x04, 0x00, 0xa0, 0x00, 0x78, 0x00};
+    em_event events[3] = {UVC_CLI_PROBE, UVC_CLI_START, UVC_CLI_STOP};  // 一次摄像头打开关闭需要三个步骤
+    while (1) {
+        count++;
+        CAMERA_LOGW("current count %lld.", count);
+        
+        #if 0
+        if (count > 3) {
+            CAMERA_LOGW("current count %lld, stop demo.", count); 
+            break;      // 停止程序
+        }
+        #endif
+        
+        for (int i = 0; i < 3; i++) {   // 切换三种分辨率
+            memset(msg, 0, 1024);
+            msg->type   = UVC_CLI_PROBE;
+            msg->length = 40;
+            msg->id     = 0;
+            
+            //CAMERA_LOGI("MESSAGE_HEAD_LEN %d.", MESSAGE_HEAD_LEN);
+            
+            data[3] = 0x3;
+            if (i == 1) {   // 切换成320*240分辨率
+                data[3] = 0x6;
+            }
+            memcpy(msg->data, data, 40);
+            for (int j = 0; j < 3; j++) {
+                uvc_cli_send_event(uvc_cli, events[j], (uint8_t *)msg, MESSAGE_HEAD_LEN+msg->length);
+                sleep(1);
+            }
+        }
+        sleep(1);
+    }
+    
+    /*
+    uvc_cli_deinit -- free uvc_cli
+                   |--libcam_close
+                   |--libcam_fini free cam_ctx
+    */
+    uvc_cli_deinit(uvc_cli);
     return 0;
 }
 /*
+[admin@HanKin ~]$ ll
+total 115876
+-rw-r--r-- 1 admin admin    49630 Apr 11 15:20 1.mjpg
+---S--sr-- 1 admin admin   349120 Apr 13 15:18 3.mjpg
+drwxrwxr-x 2 admin admin     4096 Mar 23 14:45 android4
 
+居然还会有图片拖曳不出去问题，修改3.mjpg的文件权限为0644即可。
 */
