@@ -402,6 +402,7 @@ static int uvc_cli_do_stop(uvc_cli_ctx *cli)
 
     enum v4l2_buf_type type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
     int try_times = 0;
+    int i = 0;
     
     // 未启动或者已经关闭情况下
     if (!cam_ctx->is_start) {
@@ -426,7 +427,7 @@ static int uvc_cli_do_stop(uvc_cli_ctx *cli)
 
     if (cam_ctx) {
         if (cam_ctx->reqbuf.count == 0 || cam_ctx->buffers == NULL) return 0;
-        for (int i = 0 ; i < cam_ctx->reqbuf.count ; i++) {
+        for (i = 0 ; i < cam_ctx->reqbuf.count ; i++) {
             if (cam_ctx->buffers[i].length > 0 && cam_ctx->buffers[i].virt != NULL) {
                 munmap(cam_ctx->buffers[i].virt, cam_ctx->buffers[i].length);
             }
@@ -1218,8 +1219,9 @@ int libcam_finibuff(camctx* ctx)
 {
     assert(ctx->reqbuf.count > 0);
     assert(ctx->buffers);
-
-    for (int i = 0 ; i < ctx->reqbuf.count ; i++){
+    
+    int i = 0;
+    for (i = 0 ; i < ctx->reqbuf.count ; i++){
         if (ctx->buffers[i].length > 0 && ctx->buffers[i].virt != NULL)
             munmap(ctx->buffers[i].virt, ctx->buffers[i].length);
     }
@@ -1453,6 +1455,7 @@ int main(int argc, char *argv[])
     //ret = uvc_cli_do_start(uvc_cli); assert(!ret);
 
     long long count = 0;
+    int i = 0, j = 0;
     uvc_message* msg = (uvc_message*)malloc(1024);
     uint8_t data[40] = {0x01, 0x0, 0x01, 0x03, 0x15, 0x16, 0x05, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x20, 0x00, 0x00, 0x96, 0x0, 0x0, 0x80, 0x0a, 0x0, 0x0, 0x33, 0x51, 0xb2, 0x7f, 0x0, 0x0, 0x76, 0x6e, 0x04, 0x00, 0xa0, 0x00, 0x78, 0x00};
     em_event events[3] = {UVC_CLI_PROBE, UVC_CLI_START, UVC_CLI_STOP};  // 一次摄像头打开关闭需要三个步骤
@@ -1467,7 +1470,7 @@ int main(int argc, char *argv[])
         }
         #endif
         
-        for (int i = 0; i < 3; i++) {   // 切换三种分辨率
+        for (i = 0; i < 3; i++) {   // 切换三种分辨率
             memset(msg, 0, 1024);
             msg->type   = UVC_CLI_PROBE;
             msg->length = 40;
@@ -1480,7 +1483,7 @@ int main(int argc, char *argv[])
                 data[3] = 0x6;
             }
             memcpy(msg->data, data, 40);
-            for (int j = 0; j < 3; j++) {
+            for (j = 0; j < 3; j++) {
                 uvc_cli_send_event(uvc_cli, events[j], (uint8_t *)msg, MESSAGE_HEAD_LEN+msg->length);
                 sleep(1);
             }

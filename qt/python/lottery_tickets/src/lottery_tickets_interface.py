@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: lottery_tickets.py
+文 件 名: lottery_tickets_interface.py
 文件描述: 分析福利彩票双色球中奖号码
 备    注: 网站：http://kaijiang.zhcw.com/zhcw/html/ssq/list_1.html
 作    者: HanKin
@@ -36,7 +36,7 @@ from log import logger
 import os
 
 # 单注奖金
-PRIZE_MONEY = np.array([0, 5000000, 200000, 3000, 200, 10, 5])
+PRIZE_MONEY = np.array([0, 5000000, 200000, 3000, 200, 10, 5, 0])
 
 # 历史开奖数据存储的文件夹（因为文件名不固定）
 HISTORY_PRIZE_DATA_PATH = './data/history_prize_data'
@@ -125,6 +125,8 @@ def is_win_a_prize_in_a_lottery(history_data, lottery_number):
                 prize_list.append(4)
             elif count_same_red_ball == 6:
                 prize_list.append(2)
+            else:
+                prize_list.append(7)
     
     #logger.info('sum: {}, prize_list: {}.'.format(len(prize_list), sorted(prize_list)))
     total_cost = history_data.shape[0] * 2
@@ -138,6 +140,7 @@ def is_win_a_prize_in_a_lottery(history_data, lottery_number):
     logger.info('winning prize ratio: {} / {}, {:.2f}%'.format(len(prize_list), history_data.shape[0], len(prize_list) / history_data.shape[0] * 100))
     logger.info('total_cost: {}'.format(total_cost))
     logger.info('winning_prize_money: {}\n'.format(winning_prize_money))
+    return prize_list
 
 def get_history_data(is_online=True, pages=50):
     """获取历史中奖数据

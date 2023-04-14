@@ -31,6 +31,7 @@ from concurrent.futures import ThreadPoolExecutor
 from subprocess import Popen, PIPE
 import datetime
 import random
+import numpy as np
 
 LOTTERY_TICKETS_ICO = 'lottery_tickets.ico'
 
@@ -40,4 +41,17 @@ HELP_PNG            = 'help.png'
 ABOUT_PNG           = 'about.png'
 EXIT_PNG            = 'exit.png'
 
-APP_NAME = '办公助手'
+APP_NAME = '彩票分析工具'
+
+# 福利双色球单注奖金
+SSQ_PRIZE_MONEY = np.array([0, 5000000, 200000, 3000, 200, 10, 5, 0])
+
+# 福利双色球历史开奖数据存储的文件夹（因为文件名不固定）
+SSQ_HISTORY_PRIZE_DATA_PATH = './data/history_prize_data'
+
+
+
+
+
+
+
