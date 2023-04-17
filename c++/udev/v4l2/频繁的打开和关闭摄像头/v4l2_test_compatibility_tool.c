@@ -394,6 +394,7 @@ int libcam_putpic(camctx* ctx)
 *	@param	cli	uvc优化客户端环境变量
 *	@return	0  成功 非0 失败
 */
+bool is_streamoffing = false;
 static int uvc_cli_do_stop(uvc_cli_ctx *cli)
 {
     assert(cli);
@@ -411,18 +412,25 @@ static int uvc_cli_do_stop(uvc_cli_ctx *cli)
     }
     
     do {
+        is_streamoffing = true;
         if (ioctl(cam_ctx->fd, VIDIOC_STREAMOFF, &type) >= 0) {
             break;
         }
-        
+
+        CAMERA_LOGI("retrying [%d] ......", try_times);
         try_times++;
         usleep(1000LL);
     } while (try_times < UVC_STREAMOFF_TRYTIMES_MAX);
+    
     if (try_times == UVC_STREAMOFF_TRYTIMES_MAX) {
         CAMERA_LOGI("libcam:%p STREAMOFF failed, fd:%d, err:%d(%s)", cam_ctx, cam_ctx->fd, errno, strerror(errno));
     } else {
+        if (try_times != 0) {
+            CAMERA_LOGI("there are try times, %d.", try_times);
+        }
         cam_ctx->is_start = 0;
         CAMERA_LOGI("libcam:%p STREAMOFF success.", cam_ctx);
+        is_streamoffing = false;
     }
 
     if (cam_ctx) {
@@ -1484,6 +1492,7 @@ int main(int argc, char *argv[])
             }
             memcpy(msg->data, data, 40);
             for (j = 0; j < 3; j++) {
+                while (is_streamoffing);
                 uvc_cli_send_event(uvc_cli, events[j], (uint8_t *)msg, MESSAGE_HEAD_LEN+msg->length);
                 sleep(1);
             }
