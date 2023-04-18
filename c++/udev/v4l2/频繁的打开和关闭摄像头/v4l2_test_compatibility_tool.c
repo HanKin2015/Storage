@@ -422,6 +422,7 @@ static int uvc_cli_do_stop(uvc_cli_ctx *cli)
         usleep(1000LL);
     } while (try_times < UVC_STREAMOFF_TRYTIMES_MAX);
     
+    is_streamoffing = false;
     if (try_times == UVC_STREAMOFF_TRYTIMES_MAX) {
         CAMERA_LOGI("libcam:%p STREAMOFF failed, fd:%d, err:%d(%s)", cam_ctx, cam_ctx->fd, errno, strerror(errno));
     } else {
@@ -430,7 +431,6 @@ static int uvc_cli_do_stop(uvc_cli_ctx *cli)
         }
         cam_ctx->is_start = 0;
         CAMERA_LOGI("libcam:%p STREAMOFF success.", cam_ctx);
-        is_streamoffing = false;
     }
 
     if (cam_ctx) {
@@ -837,12 +837,13 @@ static void* uvc_cli_main_loop(void* pri)
     CAMERA_LOGI("cli->is_running: %d, cli->has_err: %d", cli->is_running, cli->has_err);
     while (cli->is_running && !cli->has_err) {
         num = epoll_wait(epfd, events, UVC_EPOLL_EVENT_SIZE, 30*1000);
-        CAMERA_LOGI("num: %d", num);
+        CAMERA_LOGI("num: %d, is_streamoffing: %d", num, is_streamoffing);
         if (num < 0) {
-            if (errno == EINTR) {
+            if (errno == EINTR) { // 表示 epoll_wait 被信号中断
+                CAMERA_LOGI("uvc epoll wait errno:%d.", errno);
                 continue;
             }
-            CAMERA_LOGI("uvc epoll wait failed, errno:%d.", errno);
+            CAMERA_LOGE("uvc epoll wait failed, errno:%d.", errno);
             break;
         } else if (num == 0) {
             continue;
@@ -952,6 +953,7 @@ static void uvc_cli_send_event(uvc_cli_ctx* cli, int type, uint8_t* data, int le
     assert(len < UVC_CLI_EVENT_LEN_MAX);
 
     int ret = 0;
+    CAMERA_LOGI("uvc_cli_send_event.");
     uvc_cli_event* event = (uvc_cli_event*)cli->event_wbuff;    // 这个event_wbuff只是一个分配空间的作用
     event->type = type;
     event->flag = 0;
@@ -1078,6 +1080,7 @@ void uvc_cli_deinit(uvc_cli_ctx* uvc_cli)
     }
 
     if (uvc_cli->event_wbuff) {
+        CAMERA_LOGI("free uvc_cli->event_wbuff.");
         free(uvc_cli->event_wbuff);
         uvc_cli->event_wbuff = NULL;
     }
@@ -1463,6 +1466,7 @@ int main(int argc, char *argv[])
     //ret = uvc_cli_do_start(uvc_cli); assert(!ret);
 
     long long count = 0;
+    long long sleep_count = 0;
     int i = 0, j = 0;
     uvc_message* msg = (uvc_message*)malloc(1024);
     uint8_t data[40] = {0x01, 0x0, 0x01, 0x03, 0x15, 0x16, 0x05, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x20, 0x00, 0x00, 0x96, 0x0, 0x0, 0x80, 0x0a, 0x0, 0x0, 0x33, 0x51, 0xb2, 0x7f, 0x0, 0x0, 0x76, 0x6e, 0x04, 0x00, 0xa0, 0x00, 0x78, 0x00};
@@ -1492,13 +1496,26 @@ int main(int argc, char *argv[])
             }
             memcpy(msg->data, data, 40);
             for (j = 0; j < 3; j++) {
-                while (is_streamoffing);
+                sleep_count = 0;
+                while (is_streamoffing) {
+                    sleep(2);
+                    CAMERA_LOGE("camera could STREAMOFF failed, sleep 2 seconds [%d], sleep_count %d.", is_streamoffing, sleep_count);
+                    sleep_count++;
+                    if (sleep_count > 60) {
+                        CAMERA_LOGE("there is 2 miniutes ago");
+                        is_streamoffing = false;
+                        break;
+                    }
+                }
                 uvc_cli_send_event(uvc_cli, events[j], (uint8_t *)msg, MESSAGE_HEAD_LEN+msg->length);
                 sleep(1);
             }
         }
         sleep(1);
     }
+    
+    free(msg);
+    msg = NULL;
     
     /*
     uvc_cli_deinit -- free uvc_cli

@@ -45,10 +45,11 @@ class Example(QWidget):
         cur = conn.cursor()
 
         # 执行查询
-        cur.execute("SELECT * FROM table_name WHERE column_name=?", (self.edit.text(),))
+        cur.execute("SELECT * FROM users WHERE name=?", (self.edit.text(),))
 
         # 获取结果
         results = cur.fetchall()
+        print(results)
 
         # 清空列表小部件
         self.listwidget.clear()
