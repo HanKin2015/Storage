@@ -7,10 +7,10 @@
 *           编辑Android.mk文件
 *           mm
 *
-*           gcc v4l2_test_compatibility_tool.c -lpthread
+*           gcc v4l2_test_compatibility_tool.c -lpthread -g
 * 作    者: HanKin
 * 创建日期: 2023.02.10
-* 修改日期：2023.04.13
+* 修改日期：2023.04.19
 *
 * Copyright (c) 2023 HanKin. All rights reserved.
 */
@@ -45,6 +45,25 @@
 #define true  1
 #define false 0
 
+#if defined(__ANDROID__)
+    // 如果是安卓系统，执行相应的代码
+    #define ASSERT(expr) \
+        do                                                                       \
+        {                                                                        \
+            if (!(expr))                                                         \
+            {                                                                    \
+              fprintf (stderr, "%s:%d: ASSERTion failed\n",                      \
+                       __FILE__, __LINE__);                                      \
+              fflush(stderr);                                                    \
+              abort();                                                           \
+            }                                                                    \
+        }                                                                        \
+        while (0)
+#else
+    // 如果不是安卓系统，执行相应的代码
+    #define ASSERT(expr) assert(expr)
+#endif
+
 /**
  *日志级别
  **/
@@ -56,7 +75,8 @@ typedef enum {
 	CAMERA_LOG_LEVEL_UNKNOWN         = 4     // 未知
 } CAMERA_LOG_LEVEL;
 
-FILE *g_log_fd = NULL;
+FILE *g_log_fd  = NULL;
+int g_log_level = CAMERA_LOG_LEVEL_INFO;
 
 /**
 * 打印日志
@@ -66,7 +86,11 @@ FILE *g_log_fd = NULL;
 */
 void camera_log_print(int level, const char* fmt, ...)
 {
-    assert(fmt);
+    if (level > g_log_level) {
+        return;
+    }
+    
+    ASSERT(fmt);
 
     va_list al;
     char buffer[BUFSIZ] = { 0 };
@@ -98,7 +122,7 @@ void camera_log_print(int level, const char* fmt, ...)
  * @param [in] fmt 日志信息格式
  **/
 #define CAMERA_LOGI(fmt, ...)  do { \
-    assert(fmt); \
+    ASSERT(fmt); \
 	(void)camera_log_print(CAMERA_LOG_LEVEL_INFO, \
 						fmt " {%s:%d}" , \
 						## __VA_ARGS__, \
@@ -110,7 +134,7 @@ void camera_log_print(int level, const char* fmt, ...)
  * @param [in] fmt 日志信息格式
  **/
 #define CAMERA_LOGW(fmt, ...)  do { \
-    assert(fmt); \
+    ASSERT(fmt); \
 	(void)camera_log_print(CAMERA_LOG_LEVEL_WARN, \
 						fmt " {%s:%d}" , \
 						## __VA_ARGS__, \
@@ -122,8 +146,20 @@ void camera_log_print(int level, const char* fmt, ...)
  * @param [in] fmt 日志信息格式
  **/
 #define CAMERA_LOGE(fmt, ...)  do { \
-    assert(fmt); \
+    ASSERT(fmt); \
 	(void)camera_log_print(CAMERA_LOG_LEVEL_ERROR, \
+						fmt " {%s:%d}" , \
+						## __VA_ARGS__, \
+						__FUNCTION__, __LINE__); \
+} while(0)
+
+/**
+ * 打印DEBUG日志
+ * @param [in] fmt 日志信息格式
+ **/
+#define CAMERA_LOGD(fmt, ...)  do { \
+    ASSERT(fmt); \
+	(void)camera_log_print(CAMERA_LOG_LEVEL_DEBUG, \
 						fmt " {%s:%d}" , \
 						## __VA_ARGS__, \
 						__FUNCTION__, __LINE__); \
@@ -272,24 +308,25 @@ void libcam_fini(camctx* ctx)
 int libcam_setdev_byid(camctx* ctx, const uint8_t id)
 {
     int len = snprintf(ctx->camera_dev, BUFSIZ, "/dev/video%d", id);
-    assert(len > 0);
+    ASSERT(len > 0);
     return 0;
 }
 
 int libcam_open(camctx* ctx)
 {
-    assert(ctx);
-    assert(ctx->fd == -1);
+    ASSERT(ctx);
+    ASSERT(ctx->fd == -1);
 
     ctx->fd = open(ctx->camera_dev, O_RDWR);
-    assert(ctx->fd >= 0);
+    ASSERT(ctx->fd >= 0);
+    CAMERA_LOGI("ctx->fd %d", ctx->fd);
     return 0;
 }
 
 int libcam_close(camctx* ctx)
 {
-    assert(ctx);
-    assert(ctx->fd >= 0);
+    ASSERT(ctx);
+    ASSERT(ctx->fd >= 0);
 
     close(ctx->fd);
     ctx->fd = -1;
@@ -354,7 +391,7 @@ typedef enum em_camera_state{
 
 int libcam_getpic(camctx* ctx, struct st_driver_buffer* data)
 {
-    assert(ctx);
+    ASSERT(ctx);
     int ret = 0;
 
     memset(&ctx->buf, 0, sizeof(struct v4l2_buffer));
@@ -376,9 +413,9 @@ int libcam_getpic(camctx* ctx, struct st_driver_buffer* data)
 
 int libcam_putpic(camctx* ctx)
 {
-    CAMERA_LOGI("libcam_putpic");
+    CAMERA_LOGD("libcam_putpic");
     
-    assert(ctx);
+    ASSERT(ctx);
 
     if (ioctl(ctx->fd, VIDIOC_QBUF, &ctx->buf) < 0) {
         CAMERA_LOGE("VIDIOC_DQBUF failed, err:%d(%s)", errno, strerror(errno));
@@ -397,7 +434,7 @@ int libcam_putpic(camctx* ctx)
 bool is_streamoffing = false;
 static int uvc_cli_do_stop(uvc_cli_ctx *cli)
 {
-    assert(cli);
+    ASSERT(cli);
     CAMERA_LOGI("camera stop!");
     camctx* cam_ctx = cli->cam_ctx;
 
@@ -431,6 +468,7 @@ static int uvc_cli_do_stop(uvc_cli_ctx *cli)
         }
         cam_ctx->is_start = 0;
         CAMERA_LOGI("libcam:%p STREAMOFF success.", cam_ctx);
+		printf("\n\n");
     }
 
     if (cam_ctx) {
@@ -494,8 +532,8 @@ static int save_image_to_local(int index, void *data, int length)
 */
 static void uvc_cli_proc(uvc_cli_ctx* cli)
 {
-    assert(cli);
-    CAMERA_LOGI("camera capture image!");
+    ASSERT(cli);
+    CAMERA_LOGD("camera capture image!");
 
     camctx* cam_ctx		= cli->cam_ctx;
     uint64_t last_time	=	0;
@@ -517,7 +555,7 @@ static void uvc_cli_proc(uvc_cli_ctx* cli)
     }
 
     dstsize = data.length;
-    CAMERA_LOGI("handle pic size:%d", dstsize);
+    CAMERA_LOGD("handle pic size:%d", dstsize);
 
     now_time = get_current_time();
     if (dstsize > 0) {
@@ -554,8 +592,8 @@ END:
 */
 static int uvc_cli_recv_data(int fd, uint8_t* buff, int len)
 {
-    assert(fd != -1);
-    assert(buff && len > 0);
+    ASSERT(fd != -1);
+    ASSERT(buff && len > 0);
 
     int ret = 0;
     int try_times = 0;
@@ -593,9 +631,9 @@ static int uvc_cli_recv_data(int fd, uint8_t* buff, int len)
 */
 static int uvc_cli_recv_event(uvc_cli_ctx*	cli, int fd, uvc_cli_event* event)
 {
-    assert(cli);
-    assert(fd != -1);
-    assert(event);
+    ASSERT(cli);
+    ASSERT(fd != -1);
+    ASSERT(event);
 
     int len = sizeof(uvc_cli_event);
     uint8_t* buff = (uint8_t*)event;
@@ -678,10 +716,10 @@ const char* uvc_state2str(em_camera_state state)
 */
 static bool is_valid_event(uvc_cli_ctx* cli, em_event ev)
 {
-    assert(cli);
+    ASSERT(cli);
 
     em_camera_state state = cli->main_state;
-    CAMERA_LOGI("current work state:(%d)%s", state, uvc_state2str(state));
+    CAMERA_LOGD("current work state:(%d)%s", state, uvc_state2str(state));
     switch(ev){
         case UVC_CLI_READY:
             return true;
@@ -804,7 +842,7 @@ static void* uvc_cli_main_loop(void* pri)
     CAMERA_LOGI("uvc_cli_main_loop");
     
     uvc_cli_ctx* cli = (uvc_cli_ctx *)pri;
-    assert(cli);
+    ASSERT(cli);
 
     camera_set_thread_name(cli->device_id);
     camctx* cam_ctx = cli->cam_ctx;
@@ -817,7 +855,7 @@ static void* uvc_cli_main_loop(void* pri)
     memset(&events, 0, sizeof(struct epoll_event)*UVC_EPOLL_EVENT_SIZE);
 
     int epfd = epoll_create(UVC_SOCK_SIZE_MAX); 
-    assert(epfd != -1);
+    ASSERT(epfd != -1);
 
     ev.data.fd = cli->event_rfd;
     ev.events = EPOLLIN;
@@ -880,7 +918,7 @@ static void* uvc_cli_main_loop(void* pri)
                     CAMERA_LOGI("uvc epoll  fd:%d add/del failed, errno:%d.", cam_ctx->fd, errno);
                 }
                 
-                CAMERA_LOGI("type: %d", event->type);
+                CAMERA_LOGD("type: %d", event->type);
                 memset(cli->event_rbuff, 0, cli->event_buff_len);
                 continue;
             } 
@@ -911,9 +949,9 @@ FUNC_END:
 */
 static int uvc_cli_write_data(int fd, uint8_t* data, int len)
 {
-    assert(fd != -1);
-    assert(data);
-    assert(len > 0);
+    ASSERT(fd != -1);
+    ASSERT(data);
+    ASSERT(len > 0);
 
     int ret = 0;
     int left = len;
@@ -949,11 +987,11 @@ static int uvc_cli_write_data(int fd, uint8_t* data, int len)
 */
 static void uvc_cli_send_event(uvc_cli_ctx* cli, int type, uint8_t* data, int len)
 {
-    assert(cli);
-    assert(len < UVC_CLI_EVENT_LEN_MAX);
+    ASSERT(cli);
+    ASSERT(len < UVC_CLI_EVENT_LEN_MAX);
 
     int ret = 0;
-    CAMERA_LOGI("uvc_cli_send_event.");
+    CAMERA_LOGD("uvc_cli_send_event.");
     uvc_cli_event* event = (uvc_cli_event*)cli->event_wbuff;    // 这个event_wbuff只是一个分配空间的作用
     event->type = type;
     event->flag = 0;
@@ -976,11 +1014,11 @@ static void uvc_cli_send_event(uvc_cli_ctx* cli, int type, uint8_t* data, int le
 */
 int uvc_cli_open(uvc_cli_ctx* uvc_cli)
 {
-    assert(uvc_cli);
+    ASSERT(uvc_cli);
     
     // camctx初始化	
     uvc_cli->cam_ctx = libcam_init();
-    assert(uvc_cli->cam_ctx);
+    ASSERT(uvc_cli->cam_ctx);
 
     // 绑定id
     int ret = libcam_setdev_byid(uvc_cli->cam_ctx, uvc_cli->device_id);
@@ -1104,15 +1142,15 @@ void uvc_cli_deinit(uvc_cli_ctx* uvc_cli)
 */
 int libcam_getfmt(camctx* ctx)
 {
-    assert(ctx);
-    assert(ctx->fd >= 0);
+    ASSERT(ctx);
+    ASSERT(ctx->fd >= 0);
 
     ctx->fmt_max = 0;
     struct v4l2_fmtdesc* fmt;
     do {
         if (ctx->fmt_max > 0) {
             int i = ctx->fmt_max - 1;
-            CAMERA_LOGI("[%d]idx:%d pixelformat:%d", i, ctx->fmt[i].index, ctx->fmt[i].pixelformat);
+            CAMERA_LOGD("[%d]idx:%d pixelformat:%d", i, ctx->fmt[i].index, ctx->fmt[i].pixelformat);
         }
         
         ctx->fmt[ctx->fmt_max].index	=	ctx->fmt_max;
@@ -1136,9 +1174,9 @@ int libcam_getfmt(camctx* ctx)
 */
 int libcam_getframesizes(camctx* ctx)
 {
-    assert(ctx);
+    ASSERT(ctx);
     if (ctx->fd == -1 || ctx->fmt_idx >= ctx->fmt_max) {
-        CAMERA_LOGI("libcam_getsize invalid fmt fd:%d id:%d max:%d.", ctx->fd, ctx->fmt_idx, ctx->fmt_max);
+        CAMERA_LOGE("libcam_getsize invalid fmt fd:%d id:%d max:%d.", ctx->fd, ctx->fmt_idx, ctx->fmt_max);
         ctx->size_max = 0;
         return -1;
     }
@@ -1149,7 +1187,7 @@ int libcam_getframesizes(camctx* ctx)
     do {
         if (ctx->size_max > 0) {
             int i = ctx->size_max - 1;
-            CAMERA_LOGI("[%d]idx:%d, width:%d, height:%d", i, ctx->size[i].index, ctx->size[i].discrete.width, ctx->size[i].discrete.height);
+            CAMERA_LOGD("[%d]idx:%d, width:%d, height:%d", i, ctx->size[i].index, ctx->size[i].discrete.width, ctx->size[i].discrete.height);
         }
         
         ctx->size[ctx->size_max].index			= ctx->size_max;
@@ -1171,7 +1209,7 @@ int libcam_getframesizes(camctx* ctx)
 */
 int libcam_setprop(camctx* ctx)
 {
-    assert(ctx);
+    ASSERT(ctx);
     CAMERA_LOGI("setprop");
 
     struct v4l2_format format;
@@ -1198,7 +1236,7 @@ int libcam_setprop(camctx* ctx)
 */
 static int uvc_cli_do_probe(uvc_cli_ctx* cli, struct uvc_streaming_control probe)
 {
-    assert(cli);
+    ASSERT(cli);
     cli->probe = probe;
 
     CAMERA_LOGI("camera init format:%d frame:%d", cli->probe.bFormatIndex, cli->probe.bFrameIndex);
@@ -1206,30 +1244,30 @@ static int uvc_cli_do_probe(uvc_cli_ctx* cli, struct uvc_streaming_control probe
     camctx*	 cam_ctx = cli->cam_ctx;
 
     int ret = libcam_getfmt(cam_ctx);
-    assert(!ret);
+    ASSERT(!ret);
     int id = cli->probe.bFormatIndex;
-    assert(id != 0 && cam_ctx->fmt_max && id <= cam_ctx->fmt_max);
+    ASSERT(id != 0 && cam_ctx->fmt_max && id <= cam_ctx->fmt_max);
     cam_ctx->fmt_idx = id - 1; // 索引下标比实际下标小1(数组索引下标从0开始，枚举index值从1开始)
 
     ret = libcam_getframesizes(cam_ctx);
-    assert(!ret);
+    ASSERT(!ret);
     id = cli->probe.bFrameIndex;
-    assert(id !=0 && cam_ctx->fmt_max && id <= cam_ctx->size_max);
+    ASSERT(id !=0 && cam_ctx->fmt_max && id <= cam_ctx->size_max);
     cam_ctx->size_idx = id - 1; // 索引下标比实际下标小1(数组索引下标从0开始，枚举index值从1开始)
     
-    CAMERA_LOGI("libcam:%p dev:%s, fd:%d", cam_ctx, cam_ctx->camera_dev, cam_ctx->fd);
-	CAMERA_LOGI("[fmt]max:%d idx:%d", cam_ctx->fmt_max, cam_ctx->fmt_idx);
-    CAMERA_LOGI("[size]max:%d idx:%d", cam_ctx->size_max, cam_ctx->size_idx);
+    CAMERA_LOGD("libcam:%p dev:%s, fd:%d", cam_ctx, cam_ctx->camera_dev, cam_ctx->fd);
+	CAMERA_LOGD("[fmt]max:%d idx:%d", cam_ctx->fmt_max, cam_ctx->fmt_idx);
+    CAMERA_LOGD("[size]max:%d idx:%d", cam_ctx->size_max, cam_ctx->size_idx);
     
     ret = libcam_setprop(cam_ctx);
-    assert(!ret);
+    ASSERT(!ret);
     return ret;
 }
 
 int libcam_finibuff(camctx* ctx)
 {
-    assert(ctx->reqbuf.count > 0);
-    assert(ctx->buffers);
+    ASSERT(ctx->reqbuf.count > 0);
+    ASSERT(ctx->buffers);
     
     int i = 0;
     for (i = 0 ; i < ctx->reqbuf.count ; i++){
@@ -1258,10 +1296,10 @@ int libcam_finibuff(camctx* ctx)
 
 static int libcam_initbuff(camctx* ctx, uint32_t buf_count) 
 {
-    CAMERA_LOGI("libcam_initbuff");
+    CAMERA_LOGD("libcam_initbuff");
     
-    assert(ctx);
-    assert(buf_count > 0);
+    ASSERT(ctx);
+    ASSERT(buf_count > 0);
 
     uint32_t	i	= 0;
     int			ret	= 0;
@@ -1274,7 +1312,7 @@ static int libcam_initbuff(camctx* ctx, uint32_t buf_count)
     ctx->reqbuf.reserved[0] = 0;
     ctx->reqbuf.reserved[1] = 0;
 
-    CAMERA_LOGI("init uvc buff, count:%d", buf_count);
+    CAMERA_LOGD("init uvc buff, count:%d", buf_count);
     if (ioctl(ctx->fd, VIDIOC_REQBUFS, &ctx->reqbuf) < 0) {
         CAMERA_LOGE("REQBUFS count %d failed: ret:%d errno:%d(%s)", 
             buf_count, ret, errno, strerror(errno));
@@ -1309,7 +1347,7 @@ static int libcam_initbuff(camctx* ctx, uint32_t buf_count)
         }
         
         ctx->buffers[i].length = buf.length;
-        CAMERA_LOGI("init uvc buff[%d] len:%d", i, buf.length);
+        CAMERA_LOGD("init uvc buff[%d] len:%d", i, buf.length);
         ctx->buffers[i].virt = mmap(NULL, buf.length, PROT_READ|PROT_WRITE,
             MAP_SHARED, ctx->fd, buf.m.offset);
         if (MAP_FAILED == ctx->buffers[i].virt) {
@@ -1319,7 +1357,7 @@ static int libcam_initbuff(camctx* ctx, uint32_t buf_count)
             goto failed;
         }
         
-        CAMERA_LOGI("uvc buff[%d] virt:0x%p phys:0x%x len:%d.", i, ctx->buffers[i].virt, ctx->buffers[i].phys, ctx->buffers[i].length);
+        CAMERA_LOGD("uvc buff[%d] virt:0x%p phys:0x%x len:%d.", i, ctx->buffers[i].virt, ctx->buffers[i].phys, ctx->buffers[i].length);
     }
 
     for (i = 0 ; i < ctx->reqbuf.count ; i++){
@@ -1335,7 +1373,7 @@ static int libcam_initbuff(camctx* ctx, uint32_t buf_count)
         }
     }
 
-    CAMERA_LOGI("uvc buff init success.");
+    CAMERA_LOGD("uvc buff init success.");
     return 0;
 
 failed:
@@ -1345,7 +1383,7 @@ failed:
 
 int libcam_start(camctx* ctx)
 {
-    assert(ctx);
+    ASSERT(ctx);
 
     enum v4l2_buf_type type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
     if (ioctl(ctx->fd, VIDIOC_STREAMON, &type) < 0) {
@@ -1367,8 +1405,8 @@ int libcam_start(camctx* ctx)
 */
 static int uvc_cli_do_start(uvc_cli_ctx *cli)
 {
-    assert(cli);   
-    CAMERA_LOGI("camera init format:%d frame:%d", cli->probe.bFormatIndex, cli->probe.bFrameIndex);
+    ASSERT(cli);   
+    CAMERA_LOGD("camera init format:%d frame:%d", cli->probe.bFormatIndex, cli->probe.bFrameIndex);
 
     int	ret = 0;
     camctx*	cam_ctx	=	cli->cam_ctx;
@@ -1388,7 +1426,7 @@ static int uvc_cli_do_start(uvc_cli_ctx *cli)
         goto failed;
     }	
 
-    CAMERA_LOGI("camera start format:%d Frame:%d width:%d height:%d", cli->probe.bFormatIndex, cli->probe.bFrameIndex, width, height);
+    CAMERA_LOGD("camera start format:%d Frame:%d width:%d height:%d", cli->probe.bFormatIndex, cli->probe.bFrameIndex, width, height);
     ret = libcam_start(cam_ctx);
     if (ret != 0) {
         CAMERA_LOGE("Faild to start camera %p", cli);
@@ -1418,7 +1456,7 @@ failed:
 uvc_cli_ctx* uvc_cli_init(uint32_t camera_id)
 {
     uvc_cli_ctx *uvc_cli = (uvc_cli_ctx *)malloc(sizeof(uvc_cli_ctx));
-    assert(uvc_cli);
+    ASSERT(uvc_cli);
     memset(uvc_cli, 0, sizeof(uvc_cli_ctx));
     
     uvc_cli->device_id = camera_id;
@@ -1452,18 +1490,20 @@ int main(int argc, char *argv[])
         return -1;
     }
     
+    CAMERA_LOGI("============ v4l2_test_compatibility_tool_lite ============");
+    
     // 1、初始化摄像头客户端指针变量
-    uvc_cli_ctx *uvc_cli = uvc_cli_init(0); assert(uvc_cli);
+    uvc_cli_ctx *uvc_cli = uvc_cli_init(0); ASSERT(uvc_cli);
     
     // 2、打开摄像头
-    int ret = uvc_cli_open(uvc_cli); assert(!ret);
+    int ret = uvc_cli_open(uvc_cli); ASSERT(!ret);
     
     struct uvc_streaming_control probe;
     probe.bFormatIndex = 1;
     probe.bFrameIndex = 1;
-    //ret = uvc_cli_do_probe(uvc_cli, probe); assert(!ret);
+    //ret = uvc_cli_do_probe(uvc_cli, probe); ASSERT(!ret);
     
-    //ret = uvc_cli_do_start(uvc_cli); assert(!ret);
+    //ret = uvc_cli_do_start(uvc_cli); ASSERT(!ret);
 
     long long count = 0;
     long long sleep_count = 0;
@@ -1499,7 +1539,8 @@ int main(int argc, char *argv[])
                 sleep_count = 0;
                 while (is_streamoffing) {
                     sleep(2);
-                    CAMERA_LOGE("camera could STREAMOFF failed, sleep 2 seconds [%d], sleep_count %d.", is_streamoffing, sleep_count);
+                    // 可能会由于long long使用%d输出导致Segmentation fault错误，开始还纳闷为何这个sleep_count数值不符合预期
+                    CAMERA_LOGE("camera could STREAMOFF failed, sleep 2 seconds [%d], sleep_count %lld.", is_streamoffing, sleep_count);
                     sleep_count++;
                     if (sleep_count > 60) {
                         CAMERA_LOGE("there is 2 miniutes ago");

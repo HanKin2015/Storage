@@ -1,16 +1,24 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: baidubaike.py
+文 件 名: wikipedia.py
 文件描述: 存储一些日常查询百度百科的一些词条
 作    者: HanKin
 创建日期: 2023.04.17
-修改日期：2023.04.17
+修改日期：2023.04.18
 
 Copyright (c) 2023 HanKin. All rights reserved.
 """
 
 from common import *
-import baidubaike_interface
+import wikipedia_interface
+
+class ListDelegate(QStyledItemDelegate):
+    def paint(self, painter, option, index):
+        super().paint(painter, option, index)
+        if index.row() < index.model().rowCount() - 1:
+            pen = QPen(Qt.gray, 1, Qt.SolidLine)
+            painter.setPen(pen)
+            painter.drawLine(option.rect.bottomLeft(), option.rect.bottomRight())
 
 class Ui_MainWindow(object):
     def __init__(self):
@@ -31,7 +39,7 @@ class Ui_MainWindow(object):
         self.init_menu()
         
         # 初始化状态栏
-        #self.init_status_bar()
+        self.init_status_bar()
 
         # 构建内容组件
         self.init_body()
@@ -48,6 +56,17 @@ class Ui_MainWindow(object):
         # 百科词条目录加载显示
         self.load_wikipedia_catalog()
 
+    def init_status_bar(self):
+        """初始化状态栏
+        """
+        
+        # 创建状态栏
+        status_bar = QStatusBar(self.ui)
+        self.ui.setStatusBar(status_bar)
+
+        self.status_label = QLabel('当前共有 0 个百科词条')
+        status_bar.addWidget(self.status_label)
+
     def init_body(self):
         """初始化主体界面
         """
@@ -59,9 +78,9 @@ class Ui_MainWindow(object):
         hbox_top.addWidget(self.edit)
 
         # 创建按钮
-        btn = QPushButton('查询', self.ui)
-        btn.clicked.connect(self.search)
-        hbox_top.addWidget(btn)
+        query_btn = QPushButton('查询', self.ui)
+        query_btn.clicked.connect(self.query_btn_slot)
+        hbox_top.addWidget(query_btn)
         
         # 创建编辑框小部件
         self.display_text_edit = QTextEdit()
@@ -71,9 +90,10 @@ class Ui_MainWindow(object):
         # 创建列表小部件
         self.listwidget = QListWidget(self.ui)
         self.listwidget.itemClicked.connect(self.item_clicked_slot)
+        self.listwidget.setItemDelegate(ListDelegate())
         
         hbox_bottom = QHBoxLayout()
-        hbox_bottom.addWidget(self.display_text_edit, 4)
+        hbox_bottom.addWidget(self.display_text_edit, 3)
         hbox_bottom.addWidget(self.listwidget, 1)
 
         # 将编辑器和列表小部件添加到垂直布局中
@@ -124,37 +144,25 @@ class Ui_MainWindow(object):
         about_action.setShortcut(Qt.CTRL + Qt.Key_A)
         help_menu.addAction(about_action)
 
-    def search(self):
+    def query_btn_slot(self):
+        """
+        """
 
-        # 连接到数据库
-        conn = sqlite3.connect('example.db')
-
-        # 获取光标
-        cur = conn.cursor()
-
-        # 执行查询
-        cur.execute("SELECT * FROM users WHERE name=?", (self.edit.text(),))
-
-        # 获取结果
-        results = cur.fetchall()
-        print(results)
-
-        # 清空列表小部件
-        self.listwidget.clear()
-
-        # 将结果添加到列表小部件中
-        for result in results:
-            self.listwidget.addItem(str(result))
-
-        # 关闭数据库连接
-        conn.close()
-
+        key = self.edit.text().strip()
+        if key == '':
+            logger.warning('input query content please')
+            return
+        logger.info('query {}...'.format(key))
+        
+        value = wikipedia_interface.db_query(key)
+        self.display_text_edit.setText(value)
+        
     def image_prepare(self):
         """图片预处理
         pyinstaller打包图片
         """
         
-        self.pyfile_convert_to_image(resource.baidubaike_ico, BAIDUBAIKE_ICO)
+        self.pyfile_convert_to_image(resource.wikipedia_ico, WIKIPEDIA_ICO)
         self.pyfile_convert_to_image(resource.about_png, ABOUT_PNG)
         self.pyfile_convert_to_image(resource.exit_png, EXIT_PNG)
         self.pyfile_convert_to_image(resource.help_png, HELP_PNG)
@@ -166,7 +174,7 @@ class Ui_MainWindow(object):
         self.ui.setObjectName('MainWindow')
         _translate = QCoreApplication.translate
         self.ui.setWindowTitle(_translate('MainWindow', APP_NAME))
-        self.ui.setWindowIcon(QIcon(BAIDUBAIKE_ICO))
+        self.ui.setWindowIcon(QIcon(WIKIPEDIA_ICO))
         self.ui.setGeometry(0, 0, 900, 560)
         self.center()
 
@@ -203,36 +211,41 @@ class Ui_MainWindow(object):
         """
         
         logger.info('******** stop ********\n')
-        os.remove(BAIDUBAIKE_ICO)
-        os.remove(HELP_PNG      )
-        os.remove(ABOUT_PNG     )
-        os.remove(EXIT_PNG      )
+        os.remove(WIKIPEDIA_ICO)
+        os.remove(HELP_PNG     )
+        os.remove(ABOUT_PNG    )
+        os.remove(EXIT_PNG     )
 
     def remove_dimension_slot(self):
         """
         """
-        
-        file_path = 'D:\\Github\\GitBook\\gitbook\\Others\\baidubaike.md'
-        baidubaike_interface.remove_eference_dimension(file_path)
+
+        result = wikipedia_interface.remove_eference_dimension(NEW_ENTRY_PATH)
+        if result == -1:
+            QMessageBox.about(self.ui, '警告', '{} 文件不存在'.format(NEW_ENTRY_PATH))
+            return
         
     def import_database_slot(self):
         """
         """
-        
-        file_path = 'D:\\Github\\Storage\\qt\\python\\baidubaike\\src\\baidubaike.md'
-        entry_list = baidubaike_interface.parse_content(file_path)
-        baidubaike_interface.db_import(entry_list)
+
+        entry_list = wikipedia_interface.parse_content(NEW_ENTRY_PATH)
+        if entry_list == None:
+            QMessageBox.about(self.ui, '警告', '{} 文件不存在'.format(NEW_ENTRY_PATH))
+            return
+        wikipedia_interface.db_import(entry_list)
         self.load_wikipedia_catalog()
         
     def load_wikipedia_catalog(self):
         """加载维基百科目录
         """
         
-        key_list = baidubaike_interface.get_wikipedia_entries()
+        key_list = wikipedia_interface.get_wikipedia_entries()
         
         self.listwidget.clear()
         for key in key_list:
             self.listwidget.addItem(str(key))
+        self.status_label.setText('当前共有 {} 个百科词条'.format(len(key_list)))
     
     def item_clicked_slot(self, item):
         """百科目录列表点击槽函数
@@ -244,7 +257,7 @@ class Ui_MainWindow(object):
         
         key = item.text()
         logger.info(key)
-        value = baidubaike_interface.db_query(key)
+        value = wikipedia_interface.db_query(key)
         self.display_text_edit.setText(value)
 
 def main():

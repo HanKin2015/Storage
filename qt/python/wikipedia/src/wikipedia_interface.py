@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: baidubaike_interface.py
+文 件 名: wikipedia_interface.py
 文件描述: 接口类
 作    者: HanKin
 创建日期: 2023.04.17
@@ -14,6 +14,10 @@ from common import *
 def remove_eference_dimension(file_path):
     """移除引用标注
     """
+
+    if not os.path.exists(file_path):
+        logger.error('{} file is not exists'.format(file_path))
+        return -1
 
     # 读取中文时需要添加编码utf-8
     with open(file_path, 'r', encoding = 'utf-8') as f:
@@ -37,12 +41,16 @@ def remove_eference_dimension(file_path):
             #     line = line.replace('TCL', 'HJ')
             f.write(line)
         logger.info('modify_count = {}'.format(modify_count))
-    return
+    return 0
 
 def parse_content(file_path):
-    """
+    """解析markdown文件内容
     """
     
+    if not os.path.exists(file_path):
+        logger.error('{} file is not exists'.format(file_path))
+        return None
+        
     with open(file_path, 'r', encoding = 'utf-8') as f:
         lines = f.readlines()
     logger.info('{} have {} lines'.format(file_path, len(lines)))
@@ -51,7 +59,7 @@ def parse_content(file_path):
     key   = None
     value = ''
     for line in lines:
-        if line.find('#') != -1:
+        if line.find('#') != -1 and line[0] == '#':
             if key != None:
                 value = value.strip()
                 entry_list.append((key, value))
@@ -59,6 +67,10 @@ def parse_content(file_path):
             value = ''
         else:
             value += line
+    
+    if key != None:
+        value = value.strip()
+        entry_list.append((key, value))
     
     for entry in entry_list:
         logger.debug(entry[0])
@@ -82,16 +94,23 @@ def db_import(entry_list):
                  value TEXT NOT NULL);''')
 
     # 插入数据
+    insert_count = 0
+    repeat_list = []
     for entry in entry_list:
         try:
             conn.execute("INSERT INTO wikipedia (key, value) VALUES (?, ?)", (entry[0], entry[1]))
+            insert_count += 1
         except sqlite3.IntegrityError as err:
             logger.debug('[{}] sqlite3.IntegrityError ignore, {}'.format(entry[0], err))
+            repeat_list.append(entry[0])
         except Exception as err:
             logger.error('[{}] there is a other exception, {}'.format(entry[0], err))
         finally:
             # 无论是否发生异常，都会执行的代码
             logger.debug('[{}] insert success'.format(entry[0]))
+    logger.info('there are new insert {} wikipedia entries'.format(insert_count))
+    if len(repeat_list) < 10:
+        logger.info('{} repeat key, {}'.format(len(repeat_list), repeat_list))
 
     # 提交更改并关闭连接
     conn.commit()
@@ -136,7 +155,7 @@ def main():
     """主函数
     """
     
-    file_path = 'D:\\Github\\Storage\\qt\\python\\baidubaike\\src\\baidubaike.md'
+    file_path = 'D:\\Github\\Storage\\qt\\python\\wikipedia\\src\\baidubaike.md'
     remove_eference_dimension(file_path)
     
     entry_list = parse_content(file_path)

@@ -4,7 +4,7 @@
 文件描述: 公共文件
 作    者: HanKin
 创建日期: 2023.03.20
-修改日期：2023.03.20
+修改日期：2023.04.18
 Copyright (c) 2023 HanKin. All rights reserved.
 """
 
@@ -34,9 +34,10 @@ import random
 import re
 import sqlite3
 
-BAIDUBAIKE_ICO = 'baidubaike.ico'
-HELP_PNG       = 'help.png'
-ABOUT_PNG      = 'about.png'
-EXIT_PNG       = 'exit.png'
-APP_NAME       = '维基百科词条'
-DATABASE_PATH  = 'wikipedia.db'
+WIKIPEDIA_ICO = 'wikipedia.ico'
+HELP_PNG      = 'help.png'
+ABOUT_PNG     = 'about.png'
+EXIT_PNG      = 'exit.png'
+APP_NAME      = '百科词条'
+DATABASE_PATH = 'wikipedia.db'
+NEW_ENTRY_PATH= 'wikipedia.md'

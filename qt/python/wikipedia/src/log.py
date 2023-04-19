@@ -23,7 +23,7 @@ if not os.path.exists('./log/'):
 # 配置日志
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
-LOG_FILE_PATH = './log/USBCheck.log'
+LOG_FILE_PATH = './log/wikipedia.log'
 
 # 日志控制台输出
 stream_handler = logging.StreamHandler()
