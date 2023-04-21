@@ -1,9 +1,21 @@
+# -*- coding: utf-8 -*-
+"""
+文 件 名: mouse_hook_example.py
+文件描述: 给鼠标增加一个钩子
+作    者: HanKin
+创建日期: 2023.04.19
+修改日期：2023.04.19
+
+Copyright (c) 2023 HanKin. All rights reserved.
+"""
+
 from ctypes import *
 from ctypes.wintypes import *
 
 user32 = WinDLL('user32', use_last_error=True)
 
 HC_ACTION = 0
+WH_KEYBOARD_LL = 13
 WH_MOUSE_LL = 14
 
 WM_QUIT        = 0x0012

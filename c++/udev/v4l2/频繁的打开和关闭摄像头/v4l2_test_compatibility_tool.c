@@ -45,23 +45,28 @@
 #define true  1
 #define false 0
 
-#if defined(__ANDROID__)
-    // 如果是安卓系统，执行相应的代码
-    #define ASSERT(expr) \
-        do                                                                       \
-        {                                                                        \
-            if (!(expr))                                                         \
-            {                                                                    \
-              fprintf (stderr, "%s:%d: ASSERTion failed\n",                      \
-                       __FILE__, __LINE__);                                      \
-              fflush(stderr);                                                    \
-              abort();                                                           \
-            }                                                                    \
-        }                                                                        \
-        while (0)
-#else
-    // 如果不是安卓系统，执行相应的代码
+// 安卓系统测试使用，不想调用abort停止，因为偶尔在摄像头异常后会自动恢复
+#if 1
     #define ASSERT(expr) assert(expr)
+#else
+    #if defined(__ANDROID__)
+        // 如果是安卓系统，执行相应的代码
+        #define ASSERT(expr) \
+            do                                                                       \
+            {                                                                        \
+                if (!(expr))                                                         \
+                {                                                                    \
+                  fprintf (stderr, "%s:%d: ASSERTion failed\n",                      \
+                           __FILE__, __LINE__);                                      \
+                  fflush(stderr);                                                    \
+                  abort();                                                           \
+                }                                                                    \
+            }                                                                        \
+            while (0)
+    #else
+        // 如果不是安卓系统，执行相应的代码
+        #define ASSERT(expr) assert(expr)
+    #endif
 #endif
 
 /**
@@ -441,6 +446,7 @@ static int uvc_cli_do_stop(uvc_cli_ctx *cli)
     enum v4l2_buf_type type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
     int try_times = 0;
     int i = 0;
+    int ret = -1;
     
     // 未启动或者已经关闭情况下
     if (!cam_ctx->is_start) {
@@ -450,7 +456,16 @@ static int uvc_cli_do_stop(uvc_cli_ctx *cli)
     
     do {
         is_streamoffing = true;
-        if (ioctl(cam_ctx->fd, VIDIOC_STREAMOFF, &type) >= 0) {
+        /*
+        每次异常时，在ioctl调用STREAMOFF时都会有5秒时间延时，但是success
+        使用usbmon抓取usb数据包发现是control包刚好有5秒超时错误
+        ffffffc027923f00 1684449044 S Co:1:002:0 s 01 0b 0000 0001 0000 0
+        ffffffc027923f00 1689447339 C Co:1:002:0 -2 0
+        因此打印返回值看看ioctl函数是否真的返回success
+        */
+        ret = ioctl(cam_ctx->fd, VIDIOC_STREAMOFF, &type);
+        CAMERA_LOGI("ioctl STREAMOFF return %d.", ret);
+        if (ret >= 0) {
             break;
         }
 
