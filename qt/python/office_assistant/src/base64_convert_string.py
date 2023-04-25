@@ -24,16 +24,16 @@ class MyWindow(QWidget):
         vbox = QVBoxLayout()
         
         # 第一个QFrame，base64编码字符串
-        base64_convert_string_frame = QFrame(self)
-        original_string_label = QLabel('原字符串:', base64_convert_string_frame)
-        self.original_string_lineedit = QLineEdit(base64_convert_string_frame)
+        base64_convert_string_gb = QGroupBox('base64编解码', self)
+        original_string_label = QLabel('原字符串:', base64_convert_string_gb)
+        self.original_string_lineedit = QLineEdit(base64_convert_string_gb)
 
-        base64_string_label = QLabel('新字符串:', base64_convert_string_frame)
-        self.base64_string_lineedit = QLineEdit(base64_convert_string_frame)
+        base64_string_label = QLabel('新字符串:', base64_convert_string_gb)
+        self.base64_string_lineedit = QLineEdit(base64_convert_string_gb)
 
-        convert_button = QPushButton('转换', base64_convert_string_frame)
+        convert_button = QPushButton('转换', base64_convert_string_gb)
         convert_button.clicked.connect(self.base64_convert_string)
-        copy_button = QPushButton('复制', base64_convert_string_frame)
+        copy_button = QPushButton('复制', base64_convert_string_gb)
         copy_button.clicked.connect(self.copy_to_clipboard)
 
         hbox = QHBoxLayout()
@@ -41,15 +41,15 @@ class MyWindow(QWidget):
         hbox.addStretch(1)
         hbox.addWidget(copy_button)
 
-        grid = QGridLayout(base64_convert_string_frame)
+        grid = QGridLayout(base64_convert_string_gb)
         grid.addWidget(original_string_label, 0, 0)
         grid.addWidget(self.original_string_lineedit, 0, 1)
         grid.addWidget(base64_string_label, 1, 0)
         grid.addWidget(self.base64_string_lineedit, 1, 1)
         grid.addLayout(hbox, 2, 0, 1, 2)
         
-        base64_convert_string_frame.setStyleSheet("QFrame { border: 1px solid black; } QFrame QLabel { border: none; }")
-        vbox.addWidget(base64_convert_string_frame)
+        #base64_convert_string_gb.setStyleSheet("QFrame { border: 1px solid black; } QFrame QLabel { border: none; }")
+        vbox.addWidget(base64_convert_string_gb)
 
         
         # 第二个QFrame， 时间转换
@@ -67,16 +67,16 @@ class MyWindow(QWidget):
         vbox.addWidget(time_convert_frame)
         
         # 第三个QFrame，字符串编码
-        string_encode_frame = QFrame(self)
-        string_decode_label = QLabel('解码字符串:', string_encode_frame)
-        self.string_decode_lineedit = QLineEdit(string_encode_frame)
+        string_encode_gb = QGroupBox('gbk编解码', self)
+        string_decode_label = QLabel('解码字符串:', string_encode_gb)
+        self.string_decode_lineedit = QLineEdit(string_encode_gb)
 
-        string_encode_label = QLabel('编码字符串:', string_encode_frame)
-        self.string_encode_lineedit = QLineEdit(string_encode_frame)
+        string_encode_label = QLabel('编码字符串:', string_encode_gb)
+        self.string_encode_lineedit = QLineEdit(string_encode_gb)
 
-        encode_button = QPushButton('编码', string_encode_frame)
+        encode_button = QPushButton('编码', string_encode_gb)
         encode_button.clicked.connect(self.encode_button_slot)
-        decode_button = QPushButton('解码', string_encode_frame)
+        decode_button = QPushButton('解码', string_encode_gb)
         decode_button.clicked.connect(self.decode_button_slot)
         
         hbox = QHBoxLayout()
@@ -84,15 +84,15 @@ class MyWindow(QWidget):
         hbox.addStretch(1)
         hbox.addWidget(decode_button)
 
-        grid = QGridLayout(string_encode_frame)
+        grid = QGridLayout(string_encode_gb)
         grid.addWidget(string_decode_label, 0, 0)
         grid.addWidget(self.string_decode_lineedit, 0, 1)
         grid.addWidget(string_encode_label, 1, 0)
         grid.addWidget(self.string_encode_lineedit, 1, 1)
         grid.addLayout(hbox, 2, 0, 1, 2)
         
-        string_encode_frame.setStyleSheet("QFrame { border: 1px solid black; } QFrame QLabel { border: none; }")
-        vbox.addWidget(string_encode_frame)
+        #string_encode_gb.setStyleSheet("QGroupBox { border: 1px solid black; } QGroupBox QLabel { border: none; }")
+        vbox.addWidget(string_encode_gb)
 
         self.setLayout(vbox)
         self.center()
@@ -132,24 +132,32 @@ class MyWindow(QWidget):
         self.time_label.setText(str(datetime.date.fromtimestamp(time_stamp)))
 
     def decode_button_slot(self):
-        """
+        """解码
+        搞了半天，还问了半天chagpt，始终不能明白我的心，害
+        还好我机灵，万物皆可eval
         """
         
         string_encode = self.string_encode_lineedit.text()
+        # 在Qt中，QLineEdit的text()函数返回的字符串已经是取消转义的，因此不需要再添加反斜杠
+        #string_encode = string_encode.replace('\\', '\\\\')
         print('string_encode: {}'.format(string_encode))
+        print(type(string_encode))
+        #new_string_encode = "b'{}'".format(string_encode)
+        #print(new_string_encode)
         
+        # b'\xba\xcd\xc9\xd0'，字符串需要增加反斜杠
+        #string_encode = "b'\\xba\\xcd\\xc9\\xd0'"
+        print(string_encode)
+        string_encode = eval(string_encode)
+        print(type(string_encode))
         string_decode = string_encode.decode('gbk')
         print('string_decode: {}'.format(string_decode))
         
         self.string_decode_lineedit.setText(str(string_decode))
         
     def encode_button_slot(self):
+        """编码
         """
-        """
-        
-        my_bytes = b'v10z&F\xc3\xf8\xfet\xae\x0e@\xf2?\x06lQ\xa3%\xc3\x98\xa6>\x90\xd7g1i\xdc\xaf\x14\x9a\xdc\r\x058\x81F'
-        my_string = my_bytes.decode('utf-8')
-        print('my_string: {}'.format(my_string))
         
         string_decode = self.string_decode_lineedit.text()
         print('string_decode: {}'.format(string_decode))

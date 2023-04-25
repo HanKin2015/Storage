@@ -20,7 +20,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, \
     QMenuBar, QStatusBar, QMainWindow, QMenu, QAction, QLabel, QMessageBox, \
     QDesktopWidget, qApp, QTabWidget, QSystemTrayIcon, QToolTip, QListWidgetItem, \
     QListWidget, QInputDialog, QStyledItemDelegate, QLineEdit, QFrame, \
-    QComboBox, QFormLayout, QSizePolicy, QGridLayout
+    QComboBox, QFormLayout, QSizePolicy, QGridLayout, QGroupBox
 from PyQt5.QtCore import QModelIndex, Qt, QCoreApplication, QMetaObject, QThread, pyqtSignal, QRect, QTimer, QPoint
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QIcon, \
     QPainter, QColor, QBrush, QPen, QFont

@@ -73,7 +73,10 @@ def get_client_version():
     registry     = winreg.HKEY_LOCAL_MACHINE
     b64_key_path = b'U09GVFdBUkVcV09XNjQzMk5vZGVcU2FuZ2ZvclxWREk='
     value        = 'Version'
-    return regedit(registry, b64_key_path, value)
+    result = regedit(registry, b64_key_path, value)
+    if result:
+        result = result[0].strip()
+    return result
 
 def get_vdc_version():
     """获取vdc版本
@@ -82,7 +85,10 @@ def get_vdc_version():
     registry     = winreg.HKEY_LOCAL_MACHINE
     b64_key_path = b'U09GVFdBUkVcV09XNjQzMk5vZGVcU2FuZ2ZvclxTU0xcVkRJ'
     value        = 'VdcVersion'
-    return regedit(registry, b64_key_path, value)
+    result = regedit(registry, b64_key_path, value)
+    if result:
+        result = result[0].strip()
+    return result
 
 def get_agent_version():
     """获取agent版本
@@ -91,7 +97,10 @@ def get_agent_version():
     registry     = winreg.HKEY_LOCAL_MACHINE
     b64_key_path = b'U09GVFdBUkVcV09XNjQzMk5vZGVcU2FuZ2ZvclxTU0xcVkRJ'
     value        = 'Version'
-    return regedit(registry, b64_key_path, value)
+    result = regedit(registry, b64_key_path, value)
+    if result:
+        result = result[0].strip()
+    return result
 
 def get_usb_lower_filters():
     """获取usb设备加载的驱动
@@ -100,7 +109,10 @@ def get_usb_lower_filters():
     registry     = winreg.HKEY_LOCAL_MACHINE
     b64_key_path = b'U1lTVEVNXEN1cnJlbnRDb250cm9sU2V0XENvbnRyb2xcQ2xhc3NcezM2ZmM5ZTYwLWM0NjUtMTFjZi04MDU2LTQ0NDU1MzU0MDAwMH0='
     value        = 'LowerFilters'
-    return regedit(registry, b64_key_path, value)
+    result = regedit(registry, b64_key_path, value)
+    if result:
+        result = result[0]
+    return result
 
 def get_image_lower_filters():
     """获取image设备加载的驱动
@@ -109,7 +121,10 @@ def get_image_lower_filters():
     registry     = winreg.HKEY_LOCAL_MACHINE
     b64_key_path = b'U1lTVEVNXEN1cnJlbnRDb250cm9sU2V0XENvbnRyb2xcQ2xhc3NcezZiZGQxZmM2LTgxMGYtMTFkMC1iZWM3LTA4MDAyYmUyMDkyZn0='
     value        = 'LowerFilters'
-    return regedit(registry, b64_key_path, value)
+    result = regedit(registry, b64_key_path, value)
+    if result:
+        result = result[0]
+    return result
 
 def get_camera_lower_filters():
     """获取camera设备加载的驱动
@@ -118,7 +133,10 @@ def get_camera_lower_filters():
     registry     = winreg.HKEY_LOCAL_MACHINE
     b64_key_path = b'U1lTVEVNXEN1cnJlbnRDb250cm9sU2V0XENvbnRyb2xcQ2xhc3Nce2NhM2U3YWI5LWI0YzMtNGFlNi04MjUxLTU3OWVmOTMzODkwZn0='
     value        = 'LowerFilters'
-    return regedit(registry, b64_key_path, value)
+    result = regedit(registry, b64_key_path, value)
+    if result:
+        result = result[0]
+    return result
 
 def get_client_user_name():
     """获取客户端用户名
@@ -127,33 +145,40 @@ def get_client_user_name():
     registry     = winreg.HKEY_LOCAL_MACHINE
     b64_key_path = b'U09GVFdBUkVcV09XNjQzMk5vZGVcU2FuZ2ZvclxFRFVPUFRJT05cQ2xpZW50SW5mbw=='
     value        = 'username'
-    return regedit(registry, b64_key_path, value)
+    result = regedit(registry, b64_key_path, value)
+    if result:
+        result = result[0].strip()
+    return result
     
 def get_client_sn():
-    """
+    """获取客户端SN码
     """
     
     registry     = winreg.HKEY_LOCAL_MACHINE
     b64_key_path = b'U09GVFdBUkVcV09XNjQzMk5vZGVcU2FuZ2ZvclxFRFVPUFRJT05cQ2xpZW50SW5mbw=='
     value        = 'ClientSN'
-    return regedit(registry, b64_key_path, value)
+    result = regedit(registry, b64_key_path, value)
+    if result:
+        result = result[0].strip()
+    return result
 
 def get_computer_system_info():
-    """
+    """获取电脑系统信息
     """
     
     # 获取WMI对象
     wmi = win32com.client.GetObject('winmgmts:')
-
-    # 查询操作系统信息
+    
     os = wmi.ExecQuery('SELECT * FROM Win32_OperatingSystem')
-    #os = wmi.ExecQuery('SELECT * FROM Win32_ComputerSystem')
-    #os = wmi.ExecQuery('SELECT * FROM Win32_Processor')
+    cs = wmi.ExecQuery('SELECT * FROM Win32_ComputerSystem')
     
-    
-    print(len(os))
-    for prop in os[0].Properties_:
-        print(prop.Name, ":", prop.Value)
+    logger.debug('os len = {}, cs len = {}'.format(len(os), len(cs)))
+    return {'CSCaption': cs[0].Caption,
+            'UserName': cs[0].UserName,
+            'OSCaption': os[0].Caption,
+            'OSArchitecture': os[0].OSArchitecture,
+            'Version': os[0].Version,
+            'LastBootUpTime': os[0].LastBootUpTime}
 
 def get_ip_mac_address():
     """获取ip和mac地址

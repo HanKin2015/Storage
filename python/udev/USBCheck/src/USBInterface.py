@@ -4,7 +4,7 @@
 文件描述: USB设备接口
 作    者: HanKin
 创建日期: 2023.03.20
-修改日期：2023.03.20
+修改日期：2023.04.25
 
 Copyright (c) 2023 HanKin. All rights reserved.
 """
@@ -239,7 +239,22 @@ def get_endpoint_attributes(cfg_desc):
             logger.debug('-')
         except:
             pass
-    map_model = {0: 'ctrl', 1: 'iso', 2: 'bulk', 3: 'int', 5: 'iso'}
+    logger.debug(transfer_types)
+    transfer_types = [x & 3 for x in transfer_types]
+    logger.debug(transfer_types)
+    """
+    USB中的端点（Endpoint）是USB设备和主机之间进行数据传输的通道。每个端点都有一个描述符（Endpoint Descriptor），其中包含了一些属性信息，其中之一就是bmAttributes。
+
+    bmAttributes是一个8位的字段，用于描述端点的属性。它的各个位的含义如下(在usb_20.pdf中9.6.6章有介绍)：
+        Bit 0-1: Transfer Type（传输类型）：0表示控制传输，1表示同步传输，2表示批量传输，3表示中断传输。
+        Bit 2-3: Synchronization Type（同步类型）：仅在传输类型为同步传输时有效。0表示没有同步，1表示异步，2表示自适应，3表示同步。
+        Bit 4-5: Usage Type（使用类型）：仅在传输类型为同步传输时有效。0表示数据端点，1表示反馈端点，2表示显式反馈数据端点，3保留。
+        Bit 6: Reserved（保留）：必须为0。
+        Bit 7: Direction（方向）：0表示输出端点（从主机到设备），1表示输入端点（从设备到主机）。
+    
+    因此，bmAttributes字段可以用来描述端点的传输类型、同步类型、使用类型和方向等属性。
+    """
+    map_model = {0: 'ctrl', 1: 'iso', 2: 'bulk', 3: 'int'}
     transfer_types = list(map(lambda x: map_model[x], transfer_types))
     transfer_types = list(set(transfer_types))
     logger.debug(transfer_types)

@@ -3,13 +3,14 @@
 文 件 名: parse_bushound.py
 文件描述: 解析bushound软件保存的usb数据包数据
 作    者: HanKin
-创建日期: 2023.01.04
-修改日期：2023.01.04
+创建日期: 2023.04.24
+修改日期：2023.04.24
 
 Copyright (c) 2023 HanKin. All rights reserved.
 """
 
 import time
+import numpy as np
 
 def convert_unified_unit(time_str):
     """转换成统一单位ms
@@ -65,8 +66,11 @@ def main():
             else:
                 break
     print(line_len_set)
-    print('time_sum: {} ms'.format(round(sum(time_list), 2)))
-    print('time max: {}, time min: {}, time count: {}'.format(max(time_list), min(time_list), len(time_list)))
+    print('time count: {}, time_sum: {} ms'.format(len(time_list), round(sum(time_list), 2)))
+    time_list = sorted(time_list, reverse=True)
+    #time_list.sort(reverse=True)   # 自排序
+    print(time_list[27])
+    print('time max: {}, time min: {}, median: {}'.format(max(time_list), min(time_list), np.median(time_list)))
 
 if __name__ == '__main__':
     """程序入口
