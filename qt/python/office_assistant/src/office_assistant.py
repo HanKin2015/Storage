@@ -16,11 +16,15 @@ import USBCheck
 import Ui_SystemTrayIcon
 import check_ip2
 import clear_tool
+import Ui_HackTool
+import Ui_CopyTool
 
 class Ui_MainWindow(object):
     def __init__(self):
         super().__init__()
         self.image_prepare()
+        self.cpu_memory_thread = Thread_CPUMemory()
+        self.cpu_memory_thread.flush_signal.connect(self.flush_signal_slot)
     
     def setupUi(self, MainWindow):
         """
@@ -117,8 +121,11 @@ class Ui_MainWindow(object):
         status_bar = QStatusBar(self.ui)
         self.ui.setStatusBar(status_bar)
 
-        self.status_label = QLabel('当前共有 0 个USB设备连接')
-        status_bar.addWidget(self.status_label)
+        self.cpu_label = QLabel()
+        status_bar.addWidget(self.cpu_label)
+        self.memory_label = QLabel()
+        status_bar.addWidget(self.memory_label)
+        self.cpu_memory_thread.start()
     
     def init_tray_icon(self):
         """初始化托盘
@@ -144,13 +151,13 @@ class Ui_MainWindow(object):
         tab_widget.addTab(base64_convert_string.MyWindow(), 'base64编码')
 
         # 创建黑客工具选项卡
-        tab_widget.addTab(base64_convert_string.MyWindow(), '黑客工具')
+        tab_widget.addTab(Ui_HackTool.MainWindow(), '黑客工具')
         
         # 创建IP存活选项卡
         tab_widget.addTab(check_ip2.MyWindow(), 'IP存活')
         
         # 创建复制拷贝选项卡
-        tab_widget.addTab(base64_convert_string.MyWindow(), '复制拷贝')
+        tab_widget.addTab(Ui_CopyTool.MainWindow(), '复制拷贝')
         
         # 创建清理工具选项卡
         tab_widget.addTab(clear_tool.MyWindow(), '清理工具')
@@ -206,6 +213,37 @@ class Ui_MainWindow(object):
         
         self.ui.showNormal()
         self.ui.activateWindow()
+
+    def flush_signal_slot(self, cpu_percent, mem_percent):
+        """每隔1秒刷新CPU和内存使用率
+        """
+
+        self.cpu_label.setText('CPU: {:.1f}%'.format(cpu_percent))
+        self.memory_label.setText('内存: {:.1f}%'.format(mem_percent))
+    
+class Thread_CPUMemory(QThread):
+    flush_signal = pyqtSignal(float, float)
+
+    def __init__(self):
+        super(Thread_CPUMemory, self).__init__()
+
+    def run(self):
+        """
+        """
+
+        while True:
+            # 获取CPU使用率
+            cpu_percent = psutil.cpu_percent(interval=1)
+
+            # 获取内存使用率
+            mem = psutil.virtual_memory()
+            mem_percent = mem.percent
+
+            logger.debug("CPU使用率：{}%".format(cpu_percent))
+            logger.debug("内存使用率：{}%".format(mem_percent))
+
+            self.flush_signal.emit(cpu_percent, mem_percent)
+            time.sleep(1)
 
 def main():
     """主函数

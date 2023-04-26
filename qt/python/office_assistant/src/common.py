@@ -20,7 +20,8 @@ from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, \
     QMenuBar, QStatusBar, QMainWindow, QMenu, QAction, QLabel, QMessageBox, \
     QDesktopWidget, qApp, QTabWidget, QSystemTrayIcon, QToolTip, QListWidgetItem, \
     QListWidget, QInputDialog, QStyledItemDelegate, QLineEdit, QFrame, \
-    QComboBox, QFormLayout, QSizePolicy, QGridLayout, QGroupBox
+    QComboBox, QFormLayout, QSizePolicy, QGridLayout, QGroupBox, QFileDialog, \
+    QToolBar
 from PyQt5.QtCore import QModelIndex, Qt, QCoreApplication, QMetaObject, QThread, pyqtSignal, QRect, QTimer, QPoint
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QIcon, \
     QPainter, QColor, QBrush, QPen, QFont
@@ -31,6 +32,7 @@ from concurrent.futures import ThreadPoolExecutor
 from subprocess import Popen, PIPE
 import datetime
 import random
+import psutil
 
 OFFICE_ASSISTANT_ICO = 'office_assistant.ico'
 USB_CHECK_ICO        = 'udev_check.ico'

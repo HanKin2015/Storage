@@ -161,3 +161,9 @@ root      10497 1     888    460   c043e4d4 400bc09c S sh
 root      10514 10497 892    92    bf0ab7c0 400bb4a0 S sh
 ```
 似乎只能一个一个去杀死，搜索了一遍只有killall命令，但是在这里不适用。
+
+## 4、开机自启动
+尝试过/system/bin/custom_boot.sh不靠谱
+发现在/etc/init.d/目录中创建一个sh脚本，记得添加执行权限，chmod +x不行就chmod 0755就可以了。测试了一下，还是不行。
+
+

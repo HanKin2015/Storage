@@ -33,13 +33,20 @@ class MyWindow(QWidget):
 
         convert_button = QPushButton('转换', base64_convert_string_gb)
         convert_button.clicked.connect(self.base64_convert_string)
-        copy_button = QPushButton('复制', base64_convert_string_gb)
-        copy_button.clicked.connect(self.copy_to_clipboard)
+        original_copy_button = QPushButton('原复制', base64_convert_string_gb)
+        original_copy_button.clicked.connect(self.original_copy_to_clipboard)
+        
+        reverse_button = QPushButton('反转', base64_convert_string_gb)
+        reverse_button.clicked.connect(self.base64_reverse_string)
+        new_copy_button = QPushButton('新复制', base64_convert_string_gb)
+        new_copy_button.clicked.connect(self.new_copy_to_clipboard)
 
         hbox = QHBoxLayout()
         hbox.addWidget(convert_button)
+        hbox.addWidget(original_copy_button)
         hbox.addStretch(1)
-        hbox.addWidget(copy_button)
+        hbox.addWidget(reverse_button)
+        hbox.addWidget(new_copy_button)
 
         grid = QGridLayout(base64_convert_string_gb)
         grid.addWidget(original_string_label, 0, 0)
@@ -116,8 +123,29 @@ class MyWindow(QWidget):
         
         self.base64_string_lineedit.setText(str(base64_string))
 
-    def copy_to_clipboard(self):
+    def base64_reverse_string(self):
         """
+        """
+        
+        base64_string = self.base64_string_lineedit.text()
+        print('base64_string: {}'.format(base64_string))
+        
+        # 解码： 字符串 -> 二进制 -> base64编码
+        base64_string = eval(base64_string)
+        original_string = base64.b64decode(base64_string).decode()
+        print('original_string: {}'.format(original_string))
+        
+        self.original_string_lineedit.setText(str(original_string))
+
+    def original_copy_to_clipboard(self):
+        """原字符串内容拷贝
+        """
+        
+        clipboard = QApplication.clipboard()
+        clipboard.setText(self.original_string_lineedit.text())
+
+    def new_copy_to_clipboard(self):
+        """新字符串内容拷贝
         """
         
         clipboard = QApplication.clipboard()

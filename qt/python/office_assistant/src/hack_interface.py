@@ -138,8 +138,8 @@ def get_camera_lower_filters():
         result = result[0]
     return result
 
-def get_client_user_name():
-    """获取客户端用户名
+def get_login_user_name():
+    """获取登录的用户名
     """
     
     registry     = winreg.HKEY_LOCAL_MACHINE
@@ -150,8 +150,9 @@ def get_client_user_name():
         result = result[0].strip()
     return result
     
-def get_client_sn():
-    """获取客户端SN码
+def get_hardware_sn():
+    """获取硬件SN码
+    只能获取真正的硬件信息
     """
     
     registry     = winreg.HKEY_LOCAL_MACHINE
@@ -204,8 +205,8 @@ def main():
     get_usb_lower_filters()
     get_image_lower_filters()
     get_camera_lower_filters()
-    get_client_user_name()
-    get_client_sn()
+    get_login_user_name()
+    get_hardware_sn()
 
 if __name__ == '__main__':
     """程序入口
