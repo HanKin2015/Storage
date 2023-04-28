@@ -31,7 +31,7 @@ import resource
 from concurrent.futures import ThreadPoolExecutor
 from subprocess import Popen, PIPE
 import datetime
-import random
+#import random
 import psutil
 
 OFFICE_ASSISTANT_ICO = 'office_assistant.ico'

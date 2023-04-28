@@ -1,0 +1,9 @@
+package:test 
+Version: 1.0
+Section: BioInfoServ
+Priority: optional
+Architecture: amd64
+Installed-Size: 4096
+Maintainer: gatieme
+Provides: bioinfoserv-arb
+Description: A test for using dpkg cmd

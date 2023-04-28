@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# chroot运行环境直接退出
+test -e /var/chroot_running && exit 0
+
+chmod +x /usr/local/bin/*
+rm -rf /usr/local/lib/libusbredirhost.so.1
+
+ln -s /usr/local/lib/libusbredirhost.so.1.0.0 /usr/local/lib/libusbredirhost.so.1
+
+#ldconfig
+
+exit 0

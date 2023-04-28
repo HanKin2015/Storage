@@ -166,4 +166,7 @@ root      10514 10497 892    92    bf0ab7c0 400bb4a0 S sh
 尝试过/system/bin/custom_boot.sh不靠谱
 发现在/etc/init.d/目录中创建一个sh脚本，记得添加执行权限，chmod +x不行就chmod 0755就可以了。测试了一下，还是不行。
 
+使用log -t "hankin" "$?"打印日志发现是权限问题，执行sh /sdcard/limit_file_size.sh &报错255，执行echo "test" > /etc/init.d/hj或者echo "test" > /sdcard/hj都是报错1，执行touch命令也是255。
+
+已验证是权限问题。
 
