@@ -26,6 +26,7 @@ pip freeze > requirements.txt
 - 明明托盘显示关闭屏幕监控（即开启屏幕监控），但是并没有开启屏幕监控
 - 添加发送者信息
 - 防止多个程序打开
+- 在线更新功能参考：https://github.com/fandesfyf/JamTools/commit/27e6cf38187db474fcd8bd7e21ce2a740f1c3ebc#diff-84cfe7a66221384d5b6ddb703f513230afac2ebc351bc05666b6905e8c722fe6
 
 ## 4、更新修改记录
 
