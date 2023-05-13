@@ -1,0 +1,124 @@
+/**
+* 文 件 名: video_file_operation.abandon
+* 文件描述: 加载usbfs驱动其实就是调用usbfs接口需要进行操作usb设备进行的一番操作
+* 备    注: 此为xubuntu编译版本，以U盘为例，睡眠中使用另外一个窗口查看驱动情况
+* 作    者: HanKin
+* 创建日期: 2023.05.13
+* 修改日期：2023.05.13
+*
+* Copyright (c) 2023 HanKin. All rights reserved.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <linux/usbdevice_fs.h>
+#include <sys/ioctl.h>
+#include <libusb-1.0/libusb.h>
+#include <linux/videodev2.h>
+
+#define USB_VENDOR_ID  0x0ac8
+#define USB_PRODUCT_ID 0x3500
+
+static libusb_device *libusb_get_udev_with_vid_pid(libusb_context *ctx, uint16_t vendor_id, uint16_t product_id)
+{
+    libusb_device **devs;
+    int result, i;
+
+    // 初始化libusb库
+    result = libusb_init(NULL);
+    if (result < 0) {
+        fprintf(stderr, "libusb_init error: %s\n", libusb_error_name(result));
+        exit(1);
+    }
+
+    // 获取连接到系统上的所有USB设备
+    result = libusb_get_device_list(NULL, &devs);
+    if (result < 0) {
+        fprintf(stderr, "libusb_get_device_list error: %s\n", libusb_error_name(result));
+        exit(1);
+    }
+
+    // 遍历USB设备列表，查找指定的设备
+    for (i = 0; devs[i] != NULL; i++) {
+        struct libusb_device_descriptor desc;
+        result = libusb_get_device_descriptor(devs[i], &desc);
+        if (result < 0) {
+            fprintf(stderr, "libusb_get_device_descriptor error: %s\n", libusb_error_name(result));
+            continue;
+        }
+
+        printf("Found USB device with VID=0x%04x, PID=0x%04x\n", vid, pid);
+        if (desc.idVendor == vendor_id && desc.idProduct == product_id) {
+            // 找到了指定的设备
+            printf("Found designated USB device with VID=0x%04x, PID=0x%04x\n", desc.idVendor, desc.idProduct);
+            return devs[i];
+        }
+    }
+    printf("not find USB device with VID=0x%04x, PID=0x%04x\n", vendor_id, product_id);
+    return NULL;
+}
+
+int main(int argc, char *argv[])
+{
+    int fd = open("/dev/video0", O_RDWR);
+    if (fd == -1) {
+        perror("Failed to open device");
+        exit(EXIT_FAILURE);
+    }
+
+    struct v4l2_capability cap;
+    if (ioctl(fd, VIDIOC_QUERYCAP, &cap) == -1) {
+        perror("Failed to query device capabilities");
+        exit(EXIT_FAILURE);
+    }
+
+    printf("Vendor ID: 0x%x\n", cap.vendor);
+
+    close(fd);
+    
+    libusb_device_handle *dev_handle = NULL;
+    libusb_device *udev = NULL;
+    int result, i, fd;
+    
+    // dev_handle确实可以直接通过vpid获取，但是libusb_device却不能
+    //dev_handle = libusb_open_device_with_vid_pid(NULL, USB_VENDOR_ID, USB_PRODUCT_ID);
+    //if (dev_handle == NULL) {
+    //    fprintf(stderr, "libusb_open_device_with_vid_pid error: %s\n", libusb_error_name(errno));
+    //    continue;
+    //}
+
+    udev = libusb_get_udev_with_vid_pid(NULL, USB_VENDOR_ID, USB_PRODUCT_ID);
+    if (dev_handle == NULL) {
+        fprintf(stderr, "libusb_get_udev_with_vid_pid error: %s\n", libusb_error_name(errno));
+        return -1;
+    }
+    result = libusb_open(udev, &dev_handle);
+    if (result < 0) {
+        fprintf(stderr, "libusb_open error: %s\n", libusb_error_name(errno));
+        return -1;
+    }
+    
+    uint8_t busnum = libusb_get_bus_number(udev);
+    uint8_t devnum = libusb_get_device_address(udev);
+    
+    // 获取USB设备文件描述符，思考这个文件描述符是否能进行ioctl函数？？？
+    int bus_number = libusb_get_bus_number(devs[i]);
+    int device_address = libusb_get_device_address(devs[i]);
+    char path[64];
+    snprintf(path, sizeof(path), "/dev/bus/usb/%03d/%03d", bus_number, device_address);
+    fd = open(path, O_RDWR);
+    if (fd < 0) {
+        fprintf(stderr, "open error: %m\n");
+        libusb_close(handle);
+        continue;
+    }
+
+    return 0;
+}
+/*
+
+*/

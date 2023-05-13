@@ -1,0 +1,48 @@
+/**
+* 文 件 名: video_file_operation.discard
+* 文件描述: 之前的代码有些不规范，这个比较规范写法
+* 作    者: HanKin
+* 创建日期: 2023.05.13
+* 修改日期：2023.05.13
+*
+* Copyright (c) 2023 HanKin. All rights reserved.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <libusb-1.0/libusb.h>
+
+int main()
+{
+    libusb_context *ctx = NULL;
+    libusb_device **devs = NULL;
+    int r;
+
+    r = libusb_init(&ctx);
+    if (r < 0) {
+        fprintf(stderr, "Failed to initialize libusb: %s\n", libusb_error_name(r));
+        exit(EXIT_FAILURE);
+    }
+
+    ssize_t cnt = libusb_get_device_list(ctx, &devs);
+    if (cnt < 0) {
+        fprintf(stderr, "Failed to get device list: %s\n", libusb_error_name(cnt));
+        libusb_exit(ctx);
+        exit(EXIT_FAILURE);
+    }
+
+    for (int i = 0; i < cnt; i++) {
+        libusb_device *dev = devs[i];
+        struct libusb_device_descriptor desc;
+        r = libusb_get_device_descriptor(dev, &desc);
+        if (r < 0) {
+            fprintf(stderr, "Failed to get device descriptor: %s\n", libusb_error_name(r));
+            continue;
+        }
+        printf("VID: 0x%04X, PID: 0x%04X\n", desc.idVendor, desc.idProduct);
+    }
+
+    libusb_free_device_list(devs, 1);
+    libusb_exit(ctx);
+    return 0;
+}
