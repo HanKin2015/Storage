@@ -21,7 +21,6 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-
 std::vector<uint64_t> data;
 
 std::vector<uint64_t> GenerateData(std::size_t bytes)

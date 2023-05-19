@@ -10,17 +10,47 @@
 
 #include <stdio.h>
 
+#define linfo printf
+#define bool int
+#define true 1
+#define false 0
+
+static void test1()
+{
+    FILE *fp = fopen("/sf/data/local/bytes_per_transfer", "r");
+    if (fp != NULL) {
+        int bytes_per_transfer = 0;
+        while (fscanf(fp, "%d\n", &bytes_per_transfer) == 1) {
+            linfo("custom bytes_per_transfer %d\n", bytes_per_transfer);
+        }
+        fclose(fp);
+        fp = NULL;
+        linfo("set udev bytes_per_transfer is %d\n", bytes_per_transfer);
+    } else {
+        linfo("open file failed\n");
+    }
+    return;
+}
+
+static bool test2()
+{
+    FILE *fp = fopen("/other/custom", "r");
+    if (fp) {
+        int vid = 0, pid = 0;
+        while (fscanf(fp, "%x:%x\n", &vid, &pid) == 2) {
+            printf("custom udev %04x:%04x\n", vid, pid);
+            if (0x1234 == vid && 0x4321 == pid) {
+                return true;
+           }
+        }
+        fclose(fp);
+        fp = NULL;
+    }
+    return false;
+}
+
 int main()
 {
-   FILE *fp = fopen("/other/custom", "r");
-   int vid = 0, pid = 0;
-    while (fscanf(fp, "%x:%x\n", &vid, &pid) == 2) {
-        printf("custom udev %04x:%04x\n", vid, pid);
-        if (desc.idVendor == vid && desc.idProduct == pid) {
-            return true;
-       }
-    }
-   fclose(fp);
-   fp = NULL;
-   return 0;
+    test1();
+    return 0;
 }
