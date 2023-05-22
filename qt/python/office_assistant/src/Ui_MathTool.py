@@ -43,6 +43,7 @@ class MainWindow(QMainWindow):
         self.bin_label = QLabel('0', decimal_conversion_gb)
         
         self.number_lineedit = QLineEdit(decimal_conversion_gb)
+        self.number_lineedit.textChanged.connect(number_lineedit_slot)
         
         decimal_conversion_grid = QGridLayout(decimal_conversion_gb)
         decimal_conversion_grid.addWidget(dec_rb, 0, 0)
@@ -98,6 +99,14 @@ class MainWindow(QMainWindow):
         """
         
         pass
+
+    
+
+    def number_lineedit_slot(self):
+        """
+        """
+        
+        current_decimal = self.
 
     def center(self):
         """窗口居中显示
@@ -158,7 +167,31 @@ class MainWindow(QMainWindow):
         
         clipboard = QApplication.clipboard()
         clipboard.setText(self.text_edit.toPlainText())
-    
+
+class Thread_DdecimalConversion(QThread):
+    flush_signal = pyqtSignal(str, str, str, str)
+
+    def __init__(self):
+        super(Thread_DdecimalConversion, self).__init__()
+
+    def run(self):
+        """每隔1秒监听一下输入框的变化
+        """
+
+        while True:
+            # 获取CPU使用率
+            cpu_percent = psutil.cpu_percent(interval=1)
+
+            # 获取内存使用率
+            mem = psutil.virtual_memory()
+            mem_percent = mem.percent
+
+            logger.debug("CPU使用率：{}%".format(cpu_percent))
+            logger.debug("内存使用率：{}%".format(mem_percent))
+
+            self.flush_signal.emit(cpu_percent, mem_percent)
+            time.sleep(1)
+
 def main():
     """主函数
     """
