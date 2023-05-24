@@ -18,6 +18,7 @@ import check_ip2
 import clear_tool
 import Ui_HackTool
 import Ui_CopyTool
+import Ui_MathTool
 
 class Ui_MainWindow(object):
     def __init__(self):

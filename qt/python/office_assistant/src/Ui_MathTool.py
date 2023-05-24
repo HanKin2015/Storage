@@ -10,11 +10,13 @@ Copyright (c) 2023 HanKin. All rights reserved.
 """
 
 from common import *
+import math_interface
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.udev_info_list = None
+        self.decimal_type = 'DEC'
         
         # 设置窗口
         _translate = QCoreApplication.translate
@@ -25,25 +27,26 @@ class MainWindow(QMainWindow):
 
         # 进制转换
         decimal_conversion_gb = QGroupBox('进制转换', self)
-        dec_rb = QRadioButton('十进制')
+        dec_rb = QRadioButton('DEC')
         dec_rb.setChecked(True) # 设置单选按钮为选中状态
         dec_rb.toggled.connect(self.radio_button_slot)
         self.dec_label = QLabel('0', decimal_conversion_gb)
         
-        hex_rb = QRadioButton('十六进制')
+        hex_rb = QRadioButton('HEX')
         hex_rb.toggled.connect(self.radio_button_slot)
         self.hex_label = QLabel('0', decimal_conversion_gb)
         
-        oct_rb = QRadioButton('八进制')
+        oct_rb = QRadioButton('OCT')
         oct_rb.toggled.connect(self.radio_button_slot)
         self.oct_label = QLabel('0', decimal_conversion_gb)
         
-        bin_rb = QRadioButton('二进制')
+        bin_rb = QRadioButton('BIN')
         bin_rb.toggled.connect(self.radio_button_slot)
         self.bin_label = QLabel('0', decimal_conversion_gb)
         
         self.number_lineedit = QLineEdit(decimal_conversion_gb)
-        self.number_lineedit.textChanged.connect(number_lineedit_slot)
+        self.number_lineedit.textChanged.connect(self.number_lineedit_slot)
+        self.number_lineedit.setAlignment(Qt.AlignRight)
         
         decimal_conversion_grid = QGridLayout(decimal_conversion_gb)
         decimal_conversion_grid.addWidget(dec_rb, 0, 0)
@@ -54,25 +57,35 @@ class MainWindow(QMainWindow):
         decimal_conversion_grid.addWidget(self.oct_label, 2, 1)
         decimal_conversion_grid.addWidget(bin_rb, 3, 0)
         decimal_conversion_grid.addWidget(self.bin_label, 3, 1)
-        decimal_conversion_grid.addWidget(self.number_lineedit, 4, 0)
+        decimal_conversion_grid.addWidget(self.number_lineedit, 4, 0, 1, 2)
+        decimal_conversion_grid.setColumnStretch(0, 1)
+        decimal_conversion_grid.setColumnStretch(1, 3)
 
         # 最大公约数和最小公倍数
         gcd_lcm_gb = QGroupBox('公约倍数', self)
-        self.gcd_label = QLabel('最大公约数: 0', gcd_lcm_gb)
-        self.lcm_label = QLabel('最小公倍数: 0', gcd_lcm_gb)
-        self.cd_label = QLabel('公约数: 0', gcd_lcm_gb)
+        gcd_label = QLabel('最大公约数', gcd_lcm_gb)
+        self.gcd_value = QLabel('0', gcd_lcm_gb)
+        lcm_label = QLabel('最小公倍数', gcd_lcm_gb)
+        self.lcm_value = QLabel('0', gcd_lcm_gb)
+        cd_label = QLabel('公约数', gcd_lcm_gb)
+        self.cd_value = QLabel('0', gcd_lcm_gb)
         self.x_lineedit = QLineEdit(gcd_lcm_gb)
         self.y_lineedit = QLineEdit(gcd_lcm_gb)
         gcd_lcm_btn = QPushButton('求值', gcd_lcm_gb)
         gcd_lcm_btn.clicked.connect(self.gcd_lcm_btn_slot)
        
         gcd_lcm_grid = QGridLayout(gcd_lcm_gb)
-        gcd_lcm_grid.addWidget(self.gcd_label, 0, 0)
-        gcd_lcm_grid.addWidget(self.lcm_label, 1, 0)
-        gcd_lcm_grid.addWidget(self.cd_label, 2, 0)
+        gcd_lcm_grid.addWidget(gcd_label, 0, 0)
+        gcd_lcm_grid.addWidget(self.gcd_value, 0, 1, 1, 3)
+        gcd_lcm_grid.addWidget(lcm_label, 1, 0)
+        gcd_lcm_grid.addWidget(self.lcm_value, 1, 1, 1, 3)
+        gcd_lcm_grid.addWidget(cd_label, 2, 0)
+        gcd_lcm_grid.addWidget(self.cd_value, 2, 1, 1, 3)
         gcd_lcm_grid.addWidget(self.x_lineedit, 3, 0)
         gcd_lcm_grid.addWidget(self.y_lineedit, 3, 1)
-        gcd_lcm_grid.addWidget(gcd_lcm_btn, 3, 2)
+        gcd_lcm_grid.addWidget(gcd_lcm_btn, 3, 2, 1, 2)
+        for col in range(gcd_lcm_grid.columnCount()):
+            gcd_lcm_grid.setColumnStretch(col, 1)
 
         # 创建布局
         vbox = QVBoxLayout()
@@ -91,6 +104,7 @@ class MainWindow(QMainWindow):
         rb = self.sender()
         if rb.isChecked() == True: # 判断单选按钮是否被选中
             print('<' + rb.text() + '> 被选中')
+            self.decimal_type = rb.text()
         else:
             print('<' + rb.text() + '> 被取消选中状态')
 
@@ -98,15 +112,34 @@ class MainWindow(QMainWindow):
         """
         """
         
-        pass
-
-    
+        gcd, lcm, cd = math_interface.get_gcd_lcm(self.x_lineedit.text(), self.y_lineedit.text())
+        if gcd == None:
+            self.gcd_value.setText('0')
+            self.lcm_value.setText('0')
+            self.cd_value.setText('0')
+        else:
+            self.gcd_value.setText(str(gcd))
+            self.lcm_value.setText(str(lcm))
+            self.cd_value.setText(', '.join(list(map(str, cd))))
 
     def number_lineedit_slot(self):
         """
         """
         
-        current_decimal = self.
+        number_str = self.number_lineedit.text()
+        bin_str, oct_str, dec_number, hex_str = math_interface.decimal_conversion(number_str, self.decimal_type)
+        if bin_str == None:
+            if number_str != '':
+                QMessageBox.warning(self, '提示', '可能填写的内容不属于该进制')
+            self.bin_label.setText('0')
+            self.oct_label.setText('0')
+            self.dec_label.setText('0')
+            self.hex_label.setText('0')
+        else:
+            self.bin_label.setText(bin_str[2:])
+            self.oct_label.setText(oct_str[2:])
+            self.dec_label.setText(str(dec_number))
+            self.hex_label.setText(hex_str[2:].upper())
 
     def center(self):
         """窗口居中显示
