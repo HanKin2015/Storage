@@ -30,7 +30,7 @@ class ListDelegate(QStyledItemDelegate):
             painter.setPen(pen)
             painter.drawLine(option.rect.bottomLeft(), option.rect.bottomRight())
 
-class MyWindow(QWidget):
+class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()

@@ -11,7 +11,7 @@ Copyright (c) 2023 HanKin. All rights reserved.
 
 from common import *
 
-class MyWindow(QWidget):
+class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()

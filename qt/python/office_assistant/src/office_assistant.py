@@ -12,10 +12,10 @@ Copyright (c) 2023 HanKin. All rights reserved.
 from common import *
 import USBInterface
 import base64_convert_string
-import USBCheck
+import Ui_USBCheck
 import Ui_SystemTrayIcon
-import check_ip2
-import clear_tool
+import Ui_CheckIP
+import Ui_ClearTool
 import Ui_HackTool
 import Ui_CopyTool
 import Ui_MathTool
@@ -146,22 +146,25 @@ class Ui_MainWindow(object):
         tab_widget.setTabPosition(QTabWidget.East)
 
         # 创建USB检测选项卡
-        tab_widget.addTab(USBCheck.MainWindow(), 'USB检测')
+        tab_widget.addTab(Ui_USBCheck.MainWindow(), 'USB检测')
 
         # 创建base64编码选项卡
-        tab_widget.addTab(base64_convert_string.MyWindow(), 'base64编码')
+        tab_widget.addTab(base64_convert_string.MainWindow(), 'base64编码')
 
         # 创建黑客工具选项卡
         tab_widget.addTab(Ui_HackTool.MainWindow(), '黑客工具')
         
         # 创建IP存活选项卡
-        tab_widget.addTab(check_ip2.MyWindow(), 'IP存活')
+        tab_widget.addTab(Ui_CheckIP.MainWindow(), 'IP存活')
         
         # 创建复制拷贝选项卡
         tab_widget.addTab(Ui_CopyTool.MainWindow(), '复制拷贝')
         
         # 创建清理工具选项卡
-        tab_widget.addTab(clear_tool.MyWindow(), '清理工具')
+        tab_widget.addTab(Ui_ClearTool.MainWindow(), '清理工具')
+        
+        # 创建数学工具选项卡
+        tab_widget.addTab(Ui_MathTool.MainWindow(), '数学工具')
     
         self.ui.setCentralWidget(tab_widget)
 

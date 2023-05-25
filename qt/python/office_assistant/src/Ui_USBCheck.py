@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: USBCheck.py
+文 件 名: Ui_USBCheck.py
 文件描述: USB设备检查
 作    者: HanKin
 创建日期: 2023.03.20
@@ -126,7 +126,7 @@ class MainWindow(QMainWindow):
         reply.setText('是否确认退出?')
         reply.setIcon(QMessageBox.Question)
         yes_btn = reply.addButton('是', QMessageBox.YesRole)
-        no_btn = reply.addButton('否', QMessageBox.NoRole)
+        no_btn  = reply.addButton('否', QMessageBox.NoRole)
         reply.exec_()
         if reply.clickedButton() == yes_btn:
             logger.info('******** stop ********\n')

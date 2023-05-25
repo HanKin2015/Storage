@@ -1,24 +1,47 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: office_assistant.py
-文件描述: 办公助手
+文 件 名: Ui_SystemTrayIcon.py
+文件描述: 托盘类
 作    者: HanKin
 创建日期: 2023.04.04
-修改日期：2023.04.04
+修改日期：2023.05.25
 
 Copyright (c) 2023 HanKin. All rights reserved.
 """
 
 from Ui_MessageTipForm import *
+import udev_detect_interface
+import hack_interface
 
 class Ui_SystemTrayIcon(QSystemTrayIcon):
     """托盘类
     """
 
     show_mainwindow_signal = pyqtSignal()
+    standalone = False
 
     def __init__(self, parent=None):
+        """托盘菜单列表初始化
+        """
+        
         super().__init__(parent)
+        
+        self.unreadMessageCount = 0
+        self.lastIsTrayIconHover = False
+        
+        # USB设备检测线程
+        self.udevDetect = udev_detect_interface.Thread_UdevDetect()
+        self.udevDetect.hotplugSignal.connect(self.hotplugSignalSlot)
+        self.udevDetect.getUdevInfoListSignal.connect(self.getUdevInfoListSlot)
+
+        # 托盘图标闪烁定时器
+        self.flashTimer = QTimer()
+        self.flashTimer.timeout.connect(self.flashingTrayIconSlot)
+
+        # 检测鼠标位置定时器
+        self.checkMousePosTimer = QTimer()
+        self.checkMousePosTimer.timeout.connect(self.checkTrayIconHoverSlot)
+        self.checkMousePosTimer.setInterval(200)
 
         # 初始化菜单单项
         self.settingClientAddressAction = QAction("设置客户端地址")
@@ -38,6 +61,9 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         self.testMsgAction = QAction("测试消息")
         self.testMsgAction.setIcon(QIcon(TEST_PNG))
         self.testMsgAction.setShortcut(Qt.CTRL + Qt.Key_T)
+        ip, mac = hack_interface.get_ip_mac_address()
+        self.ipMacAddressAction = QAction('本机地址')
+        self.ipMacAddressAction.setToolTip('{} {}'.format(ip, mac))
         self.aboutAction = QAction("关于(&N)")
         self.aboutAction.setIcon(QIcon(ABOUT_PNG))
         self.aboutAction.setShortcut(Qt.CTRL + Qt.Key_A)
@@ -49,30 +75,40 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         self.settingClientAddressAction.triggered.connect(self.settingClientAddress)
         self.startMonitorScreenAction.triggered.connect(self.startMonitorScreen)
         self.showScreenshotAreaAction.triggered.connect(self.showScreenshotArea)
+        self.startUdevDetectAction.triggered.connect(self.startUdevDetect)
         self.testMsgAction.triggered.connect(self.testMsgSlot)
         self.aboutAction.triggered.connect(self.about)
         self.quitAppAction.triggered.connect(self.quitApp)
 
-        # 初始化菜单列表
+        # 初始化托盘菜单列表
         self.trayIconMenu = QMenu()
         self.trayIconMenu.addAction(self.settingClientAddressAction)
         self.trayIconMenu.addAction(self.startMonitorScreenAction)
         self.trayIconMenu.addAction(self.showScreenshotAreaAction)
-        self.trayIconMenu.addSeparator()
+        self.trayIconMenu.addSeparator()    # 分割线
         self.trayIconMenu.addAction(self.startUdevDetectAction)
-        self.trayIconMenu.addSeparator()
+        self.trayIconMenu.addSeparator()    # 分割线
         self.trayIconMenu.addAction(self.testMsgAction)
-        self.trayIconMenu.addSeparator()
+        self.trayIconMenu.addAction(self.ipMacAddressAction)
+        self.trayIconMenu.addSeparator()    # 分割线
         self.trayIconMenu.addAction(self.aboutAction)
         self.trayIconMenu.addAction(self.quitAppAction)
 
-        # 构建菜单UI
+        # 构建托盘菜单UI
         self.trayIcon = QSystemTrayIcon()
+        # 本来应该由父进程创建图片，但是单独执行会不存在
+        if parent == None:
+            self.standalone = True
+            tmp = open(OFFICE_ASSISTANT_ICO, 'wb+')
+            tmp.write(base64.b64decode(resource.office_assistant_ico))
+            tmp.close()
+        self.trayIconIcon = QIcon(OFFICE_ASSISTANT_ICO)
+        self.trayIcon.setIcon(self.trayIconIcon)
         self.trayIcon.setContextMenu(self.trayIconMenu)
-        self.trayIcon.setIcon(QIcon(OFFICE_ASSISTANT_ICO))
         self.trayIcon.setToolTip(APP_NAME)
         
         self.trayIcon.messageClicked.connect(self.show_message_box)
+        self.trayIconMenu.hovered.connect(self.show_tooltip)
         
         # 左键双击打开主界面
         self.trayIcon.activated[QSystemTrayIcon.ActivationReason].connect(self.openMainWindow)
@@ -83,6 +119,52 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         # 初始化消息提示框
         self.initMessageTipForm()
     
+    def show_tooltip(self):
+        """在鼠标悬停在菜单项上时显示提示框
+        """
+        
+        action = self.trayIconMenu.activeAction()
+        if action is not None:
+            QToolTip.showText(QCursor.pos(), action.toolTip())
+            
+    def flashingTrayIconSlot(self):
+        """托盘消息图标闪烁
+        """
+        
+        if self.trayIcon.isVisible():
+            if self.trayIcon.icon().cacheKey() == self.trayIconIcon.cacheKey():
+                self.trayIcon.setIcon(QIcon(MSG_PNG))
+            else:
+                self.trayIcon.setIcon(self.trayIconIcon)
+    
+    def checkTrayIconHoverSlot(self):
+        """检测鼠标位置
+        """
+        
+        # 获取消息盒子全局rect
+        pos  = self.messageTipForm.mapToGlobal(QPoint(0, 0))
+        size = self.messageTipForm.size();
+        rectForm = QRect(pos, size);
+
+        # 若鼠标在图片图标内，或鼠标在消息盒子内
+        rect = self.trayIcon.geometry()
+        logger.debug('{} {} {}'.format(rect, QCursor.pos(), rectForm))
+        #if rect.contains(QCursor.pos()) or rectForm.contains(QCursor.pos()):
+        if rect.contains(QCursor.pos()):
+            self.lastIsTrayIconHover = True
+            logger.debug('mouse hover tray icon')
+            if self.messageTipForm.isHidden():
+                self.messageTipForm.show()
+                self.messageTipForm.activateWindow()
+        elif self.lastIsTrayIconHover and rectForm.contains(QCursor.pos()):
+            logger.debug('mouse hover message tip form')
+            if self.messageTipForm.isHidden():
+                self.messageTipForm.show()
+                self.messageTipForm.activateWindow()
+        else:
+            self.lastIsTrayIconHover = False
+            self.messageTipForm.hide()
+        
     def initMessageTipForm(self):
         """初始化消息提示框
         """
@@ -139,7 +221,7 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
 
         logger.info('message is {}'.format(message))
         if self.trayIcon.supportsMessages() == True and self.trayIcon.isSystemTrayAvailable() == True:
-            self.trayIcon.showMessage('新消息', message, self.msgIcon, 5000)
+            self.trayIcon.showMessage('新消息', message, QIcon(MSG_PNG), 5000)
             self.unreadMessageCount += 1  # 未读消息数加1
             logger.info('there are {} unread messages now'.format(self.unreadMessageCount))
             
@@ -149,7 +231,22 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
                 self.checkMousePosTimer.start()  # 200毫秒间隔
         else:
             logger.error('trayIcon supportsMessages {}, isSystemTrayAvailable {}'.format(self.trayIcon.supportsMessages(), self.trayIcon.isSystemTrayAvailable()))
+    
+    def msgPackage(self, msg):
+        """消息组装
+        """
+
+        user_name = hack_interface.get_login_user_name()
+        if user_name == None:
+            logger.error('get user name failed')
+            user_name = ('None', 1)
         
+        ip, mac = hack_interface.get_ip_mac_address()
+        
+        current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+        msg = '{},{},{},{} {}'.format(user_name, ip, mac, current_time, msg)
+        return msg
+    
     def stopFlashingTrayIconSlot(self):
         """关闭图标闪烁
         """
@@ -160,8 +257,34 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
             self.checkMousePosTimer.stop()   # 停止检测鼠标位置定时器
 
         self.unreadMessageCount = 0      # 未读消息数清零
-        self.trayIcon.setIcon(self.usbCameraMonitorToolIcon)   # 设置已读消息图标
+        self.trayIcon.setIcon(self.trayIconIcon)   # 设置已读消息图标
         self.messageTipForm.hide()
+    
+    def startUdevDetect(self):
+        """初始化显示为开启USB设备检测，即默认是关闭状态
+        """
+        
+        if self.udevDetect.is_on == False:
+            logger.info('start usb device detect')
+            self.udevDetect.is_on = True
+            self.udevDetect.start()
+            self.startUdevDetectAction.setText('关闭USB设备检测')
+        else:
+            logger.info('stop usb device detect')
+            self.udevDetect.is_on = False
+            self.startUdevDetectAction.setText('开启USB设备检测')
+    
+    def hotplugSignalSlot(self, text):
+        """USB设备拔插信号槽函数
+        """
+
+        self.messageTipForm.addToTipList(text, text)
+    
+    def getUdevInfoListSlot(self):
+        """获取USB信息列表槽函数
+        """
+        
+        self.udevDetect.udev_info_list = udev_detect_interface.get_udev_info_list()
     
     def testMsgSlot(self):
         """测试消息槽函数
@@ -200,7 +323,6 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
             self.monitorScreen.is_on = True
             self.monitorScreen.start()
             self.startMonitorScreenAction.setText('关闭监控屏幕')
-        
 
     def about(self):
         """关于
@@ -213,6 +335,23 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         """包含二次确认的退出
         """
         
+        # 自定义询问对话框
+        reply = QMessageBox()
+        reply.setWindowTitle('退出确认')
+        reply.setText('是否确认退出?')
+        reply.setIcon(QMessageBox.Question)
+        yes_btn = reply.addButton('是', QMessageBox.YesRole)
+        no_btn  = reply.addButton('否', QMessageBox.NoRole)
+        reply.exec_()
+        if reply.clickedButton() == yes_btn:
+            logger.info('******** stop ********\n')
+            if self.standalone:
+                os.remove(OFFICE_ASSISTANT_ICO)
+            qApp.quit()
+        else:
+            pass
+        
+        """
         checkFlag = QMessageBox.information(None, "退出确认", "是否确认退出？",
                                                       QMessageBox.Yes | QMessageBox.No)
         if checkFlag == QMessageBox.Yes:
@@ -220,7 +359,8 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
             qApp.quit()
         else:
             pass
-    
+        """
+        
     def showMessage(self, title, message, icon=QSystemTrayIcon.Information, duration=5000):
         self.showMessage(title, message, icon, duration)
 
@@ -229,8 +369,10 @@ def main():
     """
 
     app = QApplication(sys.argv)
-    systemTrayIcon = Ui_SystemTrayIcon('../img/office_assistant.png')
-    systemTrayIcon.show()
+    systemTrayIcon = Ui_SystemTrayIcon()
+    #systemTrayIcon.show()
+    # 关闭全部窗口后程序不退出
+    app.setQuitOnLastWindowClosed(False)
     sys.exit(app.exec_())
 
 if __name__ == '__main__':

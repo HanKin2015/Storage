@@ -4,7 +4,7 @@
 文件描述: 接口
 作    者: HanKin
 创建日期: 2023.03.31
-修改日期：2023.04.03
+修改日期：2023.05.25
 
 Copyright (c) 2023 HanKin. All rights reserved.
 """
@@ -58,16 +58,15 @@ def base64_example():
 
     # 编码： 字符串 -> 二进制 -> base64编码
     b64_name = base64.b64encode(name.encode())
-    print(b64_name)
+    logger.debug(b64_name)
     # b'546L5aSn6ZSk'
 
     # 解码：base64编码 -> 二进制 -> 字符串
-    print(base64.b64decode(b64_name).decode())
+    logger.debug(base64.b64decode(b64_name).decode())
     # 王大锤
 
 def get_client_version():
     """获取客户端版本
-    
     """
     
     registry     = winreg.HKEY_LOCAL_MACHINE
@@ -190,9 +189,9 @@ def get_ip_mac_address():
     address = wmi.ExecQuery('SELECT * FROM Win32_NetworkAdapterConfiguration')
     for elem in address:
         if elem.IPAddress and elem.DefaultIPGateway:
-            print(elem.IPAddress, elem.ServiceName)
-            print(type(elem.IPAddress))
-            print(len(elem.IPAddress))  # 可能存在第二个成员是本地链接IPv6地址
+            logger.debug(elem.IPAddress, elem.ServiceName)
+            logger.debug(type(elem.IPAddress))
+            logger.debug(len(elem.IPAddress))  # 可能存在第二个成员是本地链接IPv6地址
             return elem.IPAddress[0], elem.MACAddress
 
 def main():

@@ -4,7 +4,7 @@
 文件描述: 数学工具
 作    者: HanKin
 创建日期: 2023.05.19
-修改日期：2023.05.19
+修改日期：2023.05.25
 
 Copyright (c) 2023 HanKin. All rights reserved.
 """
@@ -98,18 +98,19 @@ class MainWindow(QMainWindow):
         central_widget.setLayout(vbox)
 
     def radio_button_slot(self):
-        """
+        """单选按钮槽函数
         """
         
         rb = self.sender()
         if rb.isChecked() == True: # 判断单选按钮是否被选中
-            print('<' + rb.text() + '> 被选中')
+            logger.debug('<' + rb.text() + '> 被选中')
             self.decimal_type = rb.text()
+            self.number_lineedit_slot()
         else:
-            print('<' + rb.text() + '> 被取消选中状态')
+            logger.debug('<' + rb.text() + '> 被取消选中状态')
 
     def gcd_lcm_btn_slot(self):
-        """
+        """求最大公约数和最小公倍数按钮槽函数
         """
         
         gcd, lcm, cd = math_interface.get_gcd_lcm(self.x_lineedit.text(), self.y_lineedit.text())
@@ -123,7 +124,7 @@ class MainWindow(QMainWindow):
             self.cd_value.setText(', '.join(list(map(str, cd))))
 
     def number_lineedit_slot(self):
-        """
+        """进制转换编辑框槽函数
         """
         
         number_str = self.number_lineedit.text()
@@ -185,45 +186,6 @@ class MainWindow(QMainWindow):
             event.accept()
         else:
             event.ignore()
-    
-    def send_file_slot(self):
-        """
-        """
-        
-    def send_word_slot(self):
-        """
-        """
-    
-    def copy_word_slot(self):
-        """拷贝文字槽函数
-        """
-        
-        clipboard = QApplication.clipboard()
-        clipboard.setText(self.text_edit.toPlainText())
-
-class Thread_DdecimalConversion(QThread):
-    flush_signal = pyqtSignal(str, str, str, str)
-
-    def __init__(self):
-        super(Thread_DdecimalConversion, self).__init__()
-
-    def run(self):
-        """每隔1秒监听一下输入框的变化
-        """
-
-        while True:
-            # 获取CPU使用率
-            cpu_percent = psutil.cpu_percent(interval=1)
-
-            # 获取内存使用率
-            mem = psutil.virtual_memory()
-            mem_percent = mem.percent
-
-            logger.debug("CPU使用率：{}%".format(cpu_percent))
-            logger.debug("内存使用率：{}%".format(mem_percent))
-
-            self.flush_signal.emit(cpu_percent, mem_percent)
-            time.sleep(1)
 
 def main():
     """主函数

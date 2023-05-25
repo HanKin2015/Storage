@@ -4,7 +4,7 @@
 文件描述: 消息提示窗口类
 作    者: HanKin
 创建日期: 2023.03.10
-修改日期：2023.03.10
+修改日期：2023.04.06
 Copyright (c) 2023 HanKin. All rights reserved.
 """
 
@@ -116,7 +116,7 @@ class Ui_MessageTipForm(QWidget):
         logger.debug(vbox.sizeHint().height())
         logger.debug(self.hbox.sizeHint().height())
         
-        self.setGeometry(0, 0, 350, self.orignalHeight)
+        self.setGeometry(0, 0, 400, self.orignalHeight)
         self.setWindowTitle('消息提示窗口')
 
     def calcListWidgetHeight(self):
@@ -134,7 +134,7 @@ class Ui_MessageTipForm(QWidget):
         self.orignalPoint = leftBottom
 
     def ignoreAllSlot(self):
-        """
+        """忽略全部消息
         """
         
         # 必须是倒序否则会删除不全有问题
@@ -152,15 +152,16 @@ class Ui_MessageTipForm(QWidget):
         self.stopFlashingTrayIconSignal.emit()
         
     def openAllSlot(self):
-        """
+        """打开全部消息
         """
         
         for i in range(self.listWidget.count() - 1, -1, -1):
             item = self.listWidget.item(i);
             self.itemClickedSlot(item);
 
-    def itemClickedSlot(self, item):
-        """
+    def itemClickedSlot0(self, item):
+        """ListWidget列表item点击槽函数
+        过多的测试代码，已淘汰
         """
         
         if item == None:
@@ -177,26 +178,70 @@ class Ui_MessageTipForm(QWidget):
         
         desktop = QDesktopWidget()
         logger.debug('桌面大小: {}'.format(desktop.screenGeometry()))
-        # D:\Github\GitBook\gitbook\Python\pyqt5.md
+        # D:\Github\GitBook\gitbook\Python\pyqt5.md解释为啥高度跟实际不同的问题
         #screenGeometry = desktop.screenGeometry()
         #centerX = (screenGeometry.x() + screenGeometry.width() - self.width()) / 2
         #centerY = (screenGeometry.y() + screenGeometry.height() - self.height()) / 2
         #logger.info('中心位置:({}, {})'.format(centerX, centerY))
         #QMessageBox.warning(self, '消息', text).move(desktop.screenGeometry().center() - msgBox.rect().center())
+        #QMessageBox.warning(self, '消息', text)
         
-        #msgBox = QMessageBox(self)
-        #msgBox.setWindowTitle('消息')
-        #msgBox.setText(text)
-        #msgBox.setGeometry(0, 0, 100, 200)       # 设置对话框大小
-        #msgBox.move(desktop.screenGeometry().center() - msgBox.rect().center())
-        #msgBox.setIcon(QMessageBox.Information)  # 设置对话框类型为信息框
-        #msgBox.show()
+        msgBox = QMessageBox(self)
+        msgBox.setWindowTitle('消息')
+        #msgBox.setFixedSize(800, 800)
+        msgBox.setText(text)
+        msgBox.setGeometry(0, 0, 400, 100)       # 设置对话框大小
+        
+        logger.info(desktop.screenGeometry().center())
+        logger.info(msgBox.rect().center())
+        msgBox.move(desktop.screenGeometry().center() - msgBox.rect().center())
+        #qr = msgBox.frameGeometry()
+        #cp = QApplication.desktop().availableGeometry().center()
+        #qr.moveCenter(cp)
+        #msgBox.move(qr.topLeft())
+        msgBox.setWindowIcon(QIcon('msg.ico'))
+        msgBox.setIcon(QMessageBox.Information)  # 设置对话框类型为信息框
+        logger.info(msgBox.geometry())
+        msgBox.show()
+        
+        if self.getMessageCount() == 0:
+            self.stopFlashingTrayIconSignal.emit()
 
+    def itemClickedSlot(self, item):
+        """ListWidget列表item点击槽函数
+        """
+        
+        if item == None:
+            logger.error('no item')
+            return
+        
+        text = item.data(self.messageTextRole)
+        self.listWidget.takeItem(self.listWidget.row(item))
+        logger.info('getMessageCount: {}'.format(self.getMessageCount()))
+        
+        # 修改消息盒子的长度，每阅读一条消息，减少34pix
+        self.resizeHeight()
+        
+        desktop = QDesktopWidget()
+        logger.debug('桌面大小: {}'.format(desktop.screenGeometry()))
+        
+        logger.info('text = {}'.format(text))
+        text_list = text.split(',')
+        
+        msgBox = QMessageBox(self)
+        msgBox.setWindowTitle(text_list[0])
+        msgBox.setText('IP    地址: {}\nMAC地址: {}\n\n{}'.format(text_list[1], text_list[2], text_list[3]))
+        msgBox.setGeometry(0, 0, 400, 100)       # 设置对话框大小
+        msgBox.move(desktop.screenGeometry().center() - msgBox.rect().center())
+        msgBox.setWindowIcon(QIcon('msg.ico'))
+        msgBox.setIcon(QMessageBox.Information)  # 设置对话框类型为信息框
+        msgBox.show()
+        
         if self.getMessageCount() == 0:
             self.stopFlashingTrayIconSignal.emit()
 
     def getMessageCount(self):
-        """
+        """获取未读消息数量
         """
         
         return self.listWidget.count()
@@ -204,11 +249,7 @@ class Ui_MessageTipForm(QWidget):
     def addToTipList(self, name, text):
         """添加信息到QListWidget
         """
-        
-        current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
-        name = '{} {}'.format(current_time, name)
-        text = '{} {}'.format(current_time, text)
-        
+
         item = QListWidgetItem(self.listWidget)
         item.setText(' {}'.format(name))
         item.setData(self.messageTextRole, text)
@@ -216,10 +257,10 @@ class Ui_MessageTipForm(QWidget):
 
         # 修改消息盒子的长度，每增加一条消息，增加19pix
         self.resizeHeight();
-        self.startFlashingTrayIconSignal.emit(text)
+        self.startFlashingTrayIconSignal.emit(name)
 
     def resizeHeight(self):
-        """
+        """重新调整ListWidget的高度
         """
         
          # 显示收到消息数量

@@ -155,7 +155,7 @@ def main():
     """主函数
     """
     
-    file_path = 'D:\\Github\\Storage\\qt\\python\\wikipedia\\src\\baidubaike.md'
+    file_path = 'D:\\Github\\Storage\\qt\\python\\wikipedia\\src\\wikipedia.md'
     remove_eference_dimension(file_path)
     
     entry_list = parse_content(file_path)

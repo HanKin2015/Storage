@@ -24,7 +24,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, \
     QToolBar, QRadioButton
 from PyQt5.QtCore import QModelIndex, Qt, QCoreApplication, QMetaObject, QThread, pyqtSignal, QRect, QTimer, QPoint
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QIcon, \
-    QPainter, QColor, QBrush, QPen, QFont
+    QPainter, QColor, QBrush, QPen, QFont, QCursor
 from PyQt5.QtNetwork import QUdpSocket, QHostAddress
 from  PyQt5.QtChart import QChart, QChartView, QPieSeries, QPieSlice
 import resource

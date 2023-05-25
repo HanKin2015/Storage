@@ -19,4 +19,4 @@ usb_check_png = b'iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6Q
 FileDescription = '办公助手'
 InternalName = 'office assistant'
 LegalCopyright = 'Copyright (c) 2023 HanKin. All rights reserved.'
-ProductVersion = '2023.4.26.8'
+ProductVersion = '2023.5.25.9'

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: check_ip.py
+文 件 名: Ui_CheckIP.py
 文件描述: 检测ip存活
 作    者: HanKin
 创建日期: 2023.04.06
@@ -19,7 +19,7 @@ class ListDelegate(QStyledItemDelegate):
             painter.setPen(pen)
             painter.drawLine(option.rect.bottomLeft(), option.rect.bottomRight())
 
-class MyWindow(QWidget):
+class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()

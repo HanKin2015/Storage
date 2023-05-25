@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: clear_tool.py
+文 件 名: Ui_ClearTool.py
 文件描述: 清理工具
 作    者: HanKin
 创建日期: 2023.04.10
@@ -11,7 +11,7 @@ Copyright (c) 2023 HanKin. All rights reserved.
 
 from common import *
 
-class MyWindow(QWidget):
+class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
