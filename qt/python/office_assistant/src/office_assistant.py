@@ -134,7 +134,7 @@ class Ui_MainWindow(object):
 
         systemTrayIcon = Ui_SystemTrayIcon.Ui_SystemTrayIcon(self.ui)
         systemTrayIcon.show_mainwindow_signal.connect(self.show_mainwindow_signal_slot)
-        systemTrayIcon.show()
+        #systemTrayIcon.show()
 
     def init_tabwidget(self):
         """初始化选项卡
@@ -210,6 +210,8 @@ class Ui_MainWindow(object):
         os.remove(HELP_PNG            )
         os.remove(ABOUT_PNG           )
         os.remove(EXIT_PNG            )
+        if os.path.exists(TMP_SCREENSHOT_PNG):
+            os.remove(TMP_SCREENSHOT_PNG)
 
     def show_mainwindow_signal_slot(self):
         """双击托盘图标显示主窗口

@@ -12,6 +12,7 @@ Copyright (c) 2023 HanKin. All rights reserved.
 from Ui_MessageTipForm import *
 import udev_detect_interface
 import hack_interface
+import screen_monitor_interface
 
 class Ui_SystemTrayIcon(QSystemTrayIcon):
     """托盘类
@@ -19,15 +20,57 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
 
     show_mainwindow_signal = pyqtSignal()
     standalone = False
+    unreadMessageCount = 0
+    lastIsTrayIconHover = False
+    ip, mac   = hack_interface.get_ip_mac_address()
+    user_name = hack_interface.get_login_user_name()
 
     def __init__(self, parent=None):
         """托盘菜单列表初始化
         """
         
         super().__init__(parent)
+
+        self.initThreadTimer()
+        self.initUI()
+
+        # 构建托盘对象
+        self.trayIcon = QSystemTrayIcon()
+        # 本来应该由父进程创建图片，但是单独执行会不存在
+        if parent == None:
+            self.standalone = True
+            tmp = open(OFFICE_ASSISTANT_ICO, 'wb+')
+            tmp.write(base64.b64decode(resource.office_assistant_ico))
+            tmp.close()
+        self.trayIconIcon = QIcon(OFFICE_ASSISTANT_ICO)
+        self.trayIcon.setIcon(self.trayIconIcon)
+        self.trayIcon.setContextMenu(self.trayIconMenu)
+        self.trayIcon.setToolTip(APP_NAME)
         
-        self.unreadMessageCount = 0
-        self.lastIsTrayIconHover = False
+        # 鼠标悬浮显示提示框
+        self.trayIcon.messageClicked.connect(self.showMessageBox)
+        self.trayIconMenu.hovered.connect(self.showTooltip)
+        
+        # 左键双击打开主界面
+        self.trayIcon.activated[QSystemTrayIcon.ActivationReason].connect(self.openMainWindow)
+        
+        # 允许托盘菜单显示
+        self.trayIcon.show()
+        
+        # 初始化消息提示框
+        self.initMessageTipForm()
+    
+    def initThreadTimer(self):
+        """初始化各种线程定时器
+        """
+        
+        # 监控屏幕线程
+        self.monitorScreen = screen_monitor_interface.Thread_MonitorScreen()
+        self.monitorScreen.ip = self.ip
+        self.monitorScreen.mac = self.mac
+        self.monitorScreen.user_name = self.user_name
+        self.monitorScreen.recv_msg_signal.connect(self.recvMsgSignalSlot)
+        self.monitorScreen.stop_monitor_signal.connect(self.startMonitorScreen)
         
         # USB设备检测线程
         self.udevDetect = udev_detect_interface.Thread_UdevDetect()
@@ -42,7 +85,11 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         self.checkMousePosTimer = QTimer()
         self.checkMousePosTimer.timeout.connect(self.checkTrayIconHoverSlot)
         self.checkMousePosTimer.setInterval(200)
-
+    
+    def initUI(self):
+        """初始化菜单列表界面
+        """
+        
         # 初始化菜单单项
         self.settingClientAddressAction = QAction("设置客户端地址")
         self.settingClientAddressAction.setIcon(QIcon(CAMERA_MONITOR_ICO))
@@ -50,6 +97,7 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         self.startMonitorScreenAction = QAction("开启监控屏幕")
         self.startMonitorScreenAction.setIcon(QIcon(CAMERA_MONITOR_ICO))
         self.startMonitorScreenAction.setShortcut(Qt.CTRL + Qt.Key_M)
+        self.startMonitorScreenAction.setToolTip('3秒监控间隔，连续5次触发消息，连续20次停止监控')
         self.showScreenshotAreaAction = QAction("显示截图区域")
         self.showScreenshotAreaAction.setIcon(QIcon(CAMERA_MONITOR_ICO))
         self.showScreenshotAreaAction.setShortcut(Qt.CTRL + Qt.Key_D)
@@ -61,9 +109,8 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         self.testMsgAction = QAction("测试消息")
         self.testMsgAction.setIcon(QIcon(TEST_PNG))
         self.testMsgAction.setShortcut(Qt.CTRL + Qt.Key_T)
-        ip, mac = hack_interface.get_ip_mac_address()
         self.ipMacAddressAction = QAction('本机地址')
-        self.ipMacAddressAction.setToolTip('{} {}'.format(ip, mac))
+        self.ipMacAddressAction.setToolTip('{} {}'.format(self.ip, self.mac))
         self.aboutAction = QAction("关于(&N)")
         self.aboutAction.setIcon(QIcon(ABOUT_PNG))
         self.aboutAction.setShortcut(Qt.CTRL + Qt.Key_A)
@@ -93,33 +140,8 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         self.trayIconMenu.addSeparator()    # 分割线
         self.trayIconMenu.addAction(self.aboutAction)
         self.trayIconMenu.addAction(self.quitAppAction)
-
-        # 构建托盘菜单UI
-        self.trayIcon = QSystemTrayIcon()
-        # 本来应该由父进程创建图片，但是单独执行会不存在
-        if parent == None:
-            self.standalone = True
-            tmp = open(OFFICE_ASSISTANT_ICO, 'wb+')
-            tmp.write(base64.b64decode(resource.office_assistant_ico))
-            tmp.close()
-        self.trayIconIcon = QIcon(OFFICE_ASSISTANT_ICO)
-        self.trayIcon.setIcon(self.trayIconIcon)
-        self.trayIcon.setContextMenu(self.trayIconMenu)
-        self.trayIcon.setToolTip(APP_NAME)
-        
-        self.trayIcon.messageClicked.connect(self.show_message_box)
-        self.trayIconMenu.hovered.connect(self.show_tooltip)
-        
-        # 左键双击打开主界面
-        self.trayIcon.activated[QSystemTrayIcon.ActivationReason].connect(self.openMainWindow)
-        
-        # 允许托盘菜单显示
-        self.trayIcon.show()
-        
-        # 初始化消息提示框
-        self.initMessageTipForm()
     
-    def show_tooltip(self):
+    def showTooltip(self):
         """在鼠标悬停在菜单项上时显示提示框
         """
         
@@ -200,7 +222,7 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         elif reason == QSystemTrayIcon.Trigger:
             pass
 
-    def show_message_box(self):
+    def showMessageBox(self):
         """弹出消息框
         """
         
@@ -211,7 +233,7 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         """
         
         # 创建子窗口，并将主窗口设置为其父窗口
-        self.subwindow = ScreenShotArea()
+        self.subwindow = screen_monitor_interface.ScreenShotArea()
         # 显示子窗口
         self.subwindow.show()
 
@@ -232,20 +254,14 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         else:
             logger.error('trayIcon supportsMessages {}, isSystemTrayAvailable {}'.format(self.trayIcon.supportsMessages(), self.trayIcon.isSystemTrayAvailable()))
     
-    def msgPackage(self, msg):
-        """消息组装
+    def recvMsgSignalSlot(self, text):
+        """屏幕监控线程发送消息过来显示消息
         """
-
-        user_name = hack_interface.get_login_user_name()
-        if user_name == None:
-            logger.error('get user name failed')
-            user_name = ('None', 1)
         
-        ip, mac = hack_interface.get_ip_mac_address()
-        
-        current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
-        msg = '{},{},{},{} {}'.format(user_name, ip, mac, current_time, msg)
-        return msg
+        logger.info(text)
+        text_list = text.split(',')
+        name = text_list[3]
+        self.messageTipForm.addToTipList(name, text)
     
     def stopFlashingTrayIconSlot(self):
         """关闭图标闪烁
@@ -289,8 +305,9 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
     def testMsgSlot(self):
         """测试消息槽函数
         """
-        
-        text = self.msgPackage('这是一条测试信息')
+
+        current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+        text = '{},{},{},{} 这是一条测试信息'.format(self.user_name, self.ip, self.mac, current_time)
         text_list = text.split(',')
         name = text_list[3]
         self.messageTipForm.addToTipList(name, text)
@@ -301,10 +318,12 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         
         text, ok = QInputDialog.getText(None, '设置客户端地址', '请输入地址:')
         if ok:
-            self.clientAddress = str(text)
-            msg = '服务端下发的测试消息'
+            self.monitorScreen.clientAddress = str(text)
+            logger.info('setting client address success, {}'.format(text))
+            current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+            msg = '{},{},{},{} 服务端下发的测试消息'.format(self.user_name, self.ip, self.mac, current_time)
             datagram = msg.encode()
-            self.sock.writeDatagram(datagram, QHostAddress(self.clientAddress), 6666)
+            self.monitorScreen.sock.writeDatagram(datagram, QHostAddress(self.monitorScreen.clientAddress), 6666)
 
     def startMonitorScreen(self, flag=False):
         """初始化显示为开启监控屏幕，即默认是关闭状态
@@ -316,8 +335,8 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
             self.monitorScreen.is_on = False
             self.startMonitorScreenAction.setText('开启监控屏幕')
         else:
-            if self.clientAddress == None:
-                QMessageBox.warning(self.ui, '警告', '请先设置客户端地址!', QMessageBox.Yes)
+            if self.monitorScreen.clientAddress == None:
+                QMessageBox.warning(None, '警告', '请先设置客户端地址!', QMessageBox.Yes)
                 return
             logger.info('start monitor screen')
             self.monitorScreen.is_on = True
@@ -344,7 +363,7 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         no_btn  = reply.addButton('否', QMessageBox.NoRole)
         reply.exec_()
         if reply.clickedButton() == yes_btn:
-            logger.info('******** stop ********\n')
+            logger.info('******** stop ********')
             if self.standalone:
                 os.remove(OFFICE_ASSISTANT_ICO)
             qApp.quit()

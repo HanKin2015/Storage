@@ -32,6 +32,7 @@ from concurrent.futures import ThreadPoolExecutor
 from subprocess import Popen, PIPE
 import datetime
 #import random
+import pyautogui
 import psutil
 
 OFFICE_ASSISTANT_ICO = 'office_assistant.ico'
@@ -44,5 +45,6 @@ TEST_PNG             = 'test.png'
 HELP_PNG             = 'help.png'
 ABOUT_PNG            = 'about.png'
 EXIT_PNG             = 'exit.png'
+TMP_SCREENSHOT_PNG   = 'tmp.png'
 
 APP_NAME = '办公助手'
