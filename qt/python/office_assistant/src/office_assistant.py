@@ -122,9 +122,15 @@ class Ui_MainWindow(object):
         status_bar = QStatusBar(self.ui)
         self.ui.setStatusBar(status_bar)
 
-        self.cpu_label = QLabel()
+        system = platform.system()
+        release = platform.release()
+        status_bar.addWidget(QLabel('{}{}'.format(system, release)))
+        cpu_count = psutil.cpu_count()
+        mem_total = psutil.virtual_memory().total
+        status_bar.addWidget(QLabel('{}核 {}G'.format(cpu_count, math.ceil(mem_total/1024/1024/1024))))
+        self.cpu_label = QLabel('CPU: 5.5%')
         status_bar.addWidget(self.cpu_label)
-        self.memory_label = QLabel()
+        self.memory_label = QLabel('内存: 50.5%')
         status_bar.addWidget(self.memory_label)
         self.cpu_memory_thread.start()
     

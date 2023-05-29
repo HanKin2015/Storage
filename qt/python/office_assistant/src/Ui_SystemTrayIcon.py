@@ -294,7 +294,11 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         """USB设备拔插信号槽函数
         """
 
-        self.messageTipForm.addToTipList(text, text)
+        current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+        text = '{},{},{},{} {}'.format(self.user_name, self.ip, self.mac, current_time, text)
+        text_list = text.split(',')
+        name = text_list[3]
+        self.messageTipForm.addToTipList(name, text)
     
     def getUdevInfoListSlot(self):
         """获取USB信息列表槽函数

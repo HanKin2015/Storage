@@ -29,9 +29,11 @@ class MainWindow(QMainWindow):
         self.center()
 
         # 创建按钮
-        scan_btn = QPushButton('扫描检测硬件改动')
-        copy_btn = QPushButton('一键复制描述符')
-        save_btn = QPushButton('一键保存USB设备信息')
+        self.count_btn = QPushButton('当前共有 0 个USB设备连接')
+        self.count_btn.setEnabled(False)
+        scan_btn  = QPushButton('扫描检测硬件改动')
+        copy_btn  = QPushButton('一键复制描述符')
+        save_btn  = QPushButton('一键保存USB设备信息')
         scan_btn.clicked.connect(self.scan_check_hardware_change)
 
         # 创建一个 QStandardItemModel 对象
@@ -57,6 +59,7 @@ class MainWindow(QMainWindow):
 
         # 创建布局
         hbox = QHBoxLayout()
+        hbox.addWidget(self.count_btn)
         hbox.addWidget(scan_btn)
         hbox.addWidget(copy_btn)
         hbox.addWidget(save_btn)
@@ -164,7 +167,7 @@ class MainWindow(QMainWindow):
                 udev_count += 1
         
         # 修改状态栏
-        self.status_label.setText('当前共有 {} 个USB设备连接'.format(udev_count))
+        self.count_btn.setText('当前共有 {} 个USB设备连接'.format(udev_count))
         logger.info('scan check hardware change done, there are {} usb devices'.format(udev_count))
 
     def on_tree_view_clicked(self, index: QModelIndex):

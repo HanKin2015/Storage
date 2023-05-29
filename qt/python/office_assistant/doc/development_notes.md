@@ -55,6 +55,20 @@ pip freeze > requirements.txt
 ### 20230526
 - 完成屏幕监控
 - 其他小问题，第一个beta版本发布
+- 修复USB设备检测状态栏问题
+
+### 20230529
+- 修复pyinstaller打包后程序无法获取描述符问题
+- 拔插设备显示vid和pid
 
 ## 5、问题记录
+
+### 5-1、pyinstaller打包后程序获取描述符崩溃
+没有任何提示，日志无记录。
+通过增加日志只能追踪到出事点，即行数，但是原因是未知的。
+最好的办法是使用trycatch捕获异常，并打印机出错详细。
+
+最终发现是udev = usb.core.find(idVendor=int(vid, 16), idProduct=int(pid, 16))这句执行失败，错误日志为No Backend。
+因为之前遇到过很多次，已确认一定需要将libusb-1.0.dll文件放在src目录和C:\Windows\System32目录，二者缺一不可。
+
 

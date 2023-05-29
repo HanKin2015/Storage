@@ -34,6 +34,8 @@ import datetime
 #import random
 import pyautogui
 import psutil
+import platform
+import math
 
 OFFICE_ASSISTANT_ICO = 'office_assistant.ico'
 USB_CHECK_ICO        = 'udev_check.ico'

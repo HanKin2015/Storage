@@ -80,9 +80,15 @@ class Thread_UdevDetect(QThread):
             if diff_count == 0:
                 continue
             
-            self.hotplugSignal.emit('有USB设备插入' if diff_count > 0 else '有USB设备拔出')
+            hwID = self.print_hotplug_udev_info(diff_count, last_udev_info_list, self.udev_info_list)
+            if hwID != None:
+                vid_idx = hwID[0].find('VID_')
+                vid = hwID[0][vid_idx+4:vid_idx+8]
+                pid_idx = hwID[0].find('PID_')
+                pid = hwID[0][pid_idx+4:pid_idx+8]
+                vpid = '{}:{}'.format(vid, pid)
+                self.hotplugSignal.emit('{} hotplug in'.format(vpid) if diff_count > 0 else '{} hotplug out'.format(vpid))
             logger.warning('there are {} usb devices which are hogplug {}'.format(abs(diff_count), 'in' if diff_count > 0 else 'out'))
-            self.print_hotplug_udev_info(diff_count, last_udev_info_list, self.udev_info_list)
             last_udev_info_list = self.udev_info_list
 
     def print_udev_info(self, udev_info):
@@ -90,7 +96,7 @@ class Thread_UdevDetect(QThread):
         """
         
         for key, value in udev_info.items():
-            logger.info('{}: {}'.format(key, value))
+            logger.debug('{}: {}'.format(key, value))
         return
 
     def print_hotplug_udev_info(self, diff_count, udev_info_list, current_udev_info_list):
@@ -103,10 +109,9 @@ class Thread_UdevDetect(QThread):
         for udev_info in udev_info_list:
             if udev_info not in current_udev_info_list:
                 self.print_udev_info(udev_info)
+                return udev_info['HardWareID']
         logger.info('=============== Hotplug USB Device ===============')
-        return
-
-
+        return None
 
 def main():
     """主函数
