@@ -16,7 +16,7 @@
 - 运行 `python upan_auto_copy.py`
 - 运行 `python upan_auto_copy.py -u D`
 - 打包 `pyinstaller.exe --version-file=doc/file_version_info.txt -i img/USBCheck.ico -w -F src/USBCheck.py`
-- 打包 `pyinstaller.exe --version-file=doc/file_version_info.txt -i img/USBCheck.ico -w -F USBCheck.spec`
+- 打包 `pyinstaller.exe -w -F USBCheck.spec`
 
 ## 3、下一步改进点
 - 设备驱动被替换后获取描述符失败，但是usbview能成功获取，还需要先前的vpid进行获取
@@ -115,3 +115,9 @@ def main():
 
     sys.exit()
 ```
+
+### 5-3、打包或者执行都报错无法找到设备获取描述符
+解决方式：D:\Github\GitBook\gitbook\Python\pyinstaller.md
+
+将libusb-1.0.dll文件拷贝到C:\Windows\System32目录下，并且可以在py文件中直接调用libusb接口，并不需要进行backend指定。
+这时候打出来的包就是正常的。

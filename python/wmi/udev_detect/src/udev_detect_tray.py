@@ -267,7 +267,7 @@ class Ui_MainWindow(object):
             self.startUdevDetectAction.setText('开启USB设备检测')
 
     def hotplugSignalSlot(self, text):
-        """拔插槽函数
+        """USB设备拔插信号槽函数
         """
 
         self.messageTipForm.addToTipList(text, text)
@@ -303,6 +303,7 @@ class Ui_MainWindow(object):
 
     def get_udev_info_list(self):
         """获取USB设备的信息列表（包含Hub和USB设备）
+        不能在线程中执行，否则会有报错
         """
         
         wmi = win32com.client.GetObject("winmgmts:")

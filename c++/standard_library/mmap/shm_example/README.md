@@ -1,6 +1,6 @@
 参考：https://blog.csdn.net/ababab12345/article/details/102931841
 
-writer.c, 创建内存共享文件并写入数据。
+writer.c 创建内存共享文件并写入数据。
 reader.c 打开内存共享文件读数据。
 
 如果写入程序调用了 shm_unlink("shm-file0001");则读者程序将无法打开共享内存文件。
