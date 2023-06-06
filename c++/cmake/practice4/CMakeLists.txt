@@ -97,7 +97,7 @@ endif()
 
 
 set(${PROJECT_NAME}_LINK_LIBS
-    ${PROJECT_SOURCE_DIR}/../libusb-1.0.19/libusb/.libs/libusb-1.0.so
+    /usr/local/lib/libusb-1.0.so.0.3.0
 )
 
 list(APPEND ${PROJECT_NAME}_LINK_LIBS
@@ -120,19 +120,28 @@ target_link_libraries(${PROJECT_NAME}_shared
     ${UDEV_LIBRARIES}
 )
 
+# 设置了 C++ 标准为 11
+# 要求编译器必须支持这个标准
+# 禁用了 C++ 扩展
+# 将输出路径设置为 ${CMAKE_BINARY_DIR}
 set_target_properties(${PROJECT_NAME}_shared
     PROPERTIES
     OUTPUT_NAME "main"
-    C_STANDARD 99
+    CXX_STANDARD 11
+    CXX_STANDARD_REQUIRED YES
+    CXX_EXTENSIONS NO
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
     POSITION_INDEPENDENT_CODE TRUE
     INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib"
     BUILD_WITH_INSTALL_RPATH TRUE
     SKIP_BUILD_RPATH FALSE
 )
 
-message(STATUS "[options]")
+message(STATUS "[main options]")
 message(STATUS "ENABLE_LIBUVC_BACKEND=" ${ENABLE_LIBUVC_BACKEND})
 message(STATUS "BUILD_TESTING=" ${BUILD_TESTING})
 message(STATUS "BUILD_COVERAGE_REPORT=" ${BUILD_COVERAGE_REPORT})
-
+message(STATUS "${${PROJECT_NAME}_SRC}=" ${${PROJECT_NAME}_SRC})
+message(STATUS "PROJECT_NAME_SRC=" ${${PROJECT_NAME}_SRC})
+message(STATUS "PROJECT_NAME_SRC=" ${CMakeStudy_SRC})
 

@@ -24,16 +24,16 @@ public:
 
     void add(string key) {
         for (int i = 0; i < hash_func_count; i++) {
-            int hash = hash_func(key, i);
-            cout << hash << ' ' << bitset_size << ' ' << hash % bitset_size << endl;
-            bitset->set(hash % bitset_size, true);
+            int hash_value = hash_func(key, i);
+            //cout << hash_value << ' ' << bitset_size << endl;
+            bitset->set(hash_value, true);
         }
     }
 
     bool contains(string key) {
         for (int i = 0; i < hash_func_count; i++) {
-            int hash = hash_func(key, i);
-            if (!bitset->test(hash % bitset_size)) {
+            int hash_value = hash_func(key, i);
+            if (!bitset->test(hash_value)) {
                 return false;
             }
         }
@@ -48,11 +48,12 @@ private:
     int hash_func(string key, int index) {
         std::hash<std::string> str_hash;
         size_t hash_value = hash<string>{}(key);
-        cout << "hash value: " << hash_value << endl;
-        cout << sizeof(size_t) << endl;
+        //cout << "hash value: " << hash_value << endl;
+        //cout << sizeof(size_t) << endl;
         // hash函数返回size_t类型，是一个64位数，不能使用int类型存储，会越界
         // terminate called after throwing an instance of 'std::out_of_range'
-        return str_hash(key + to_string(index));
+        // 可以通过%取余转换为int类型范围内
+        return str_hash(key + to_string(index)) % bitset_size;
     }
 };
 
@@ -69,3 +70,9 @@ int main() {
 
     return 0;
 }
+/*
+1
+1
+1
+0
+*/
