@@ -85,6 +85,7 @@ if(CMAKE_HOST_SYSTEM_PROCESSOR MATCHES "x86_64")
     link_directories(
         /usr/local/lib/
     )
+    message(STATUS "CMAKE_HOST_SYSTEM_PROCESSOR=" ${CMAKE_HOST_SYSTEM_PROCESSOR})
 else()
     list(APPEND ${PROJECT_NAME}_PRIVATE_INCLUDE_DIR
         ${PROJECT_SOURCE_DIR}/../three-part-depends/libjpeg-turbo-1.4.1
@@ -93,6 +94,7 @@ else()
         /usr/local/lib/
         /usr/lib/loongarch64-linux-gnu/
     )
+    message(STATUS "CMAKE_HOST_SYSTEM_PROCESSOR=" ${CMAKE_HOST_SYSTEM_PROCESSOR})
 endif()
 
 
@@ -104,16 +106,26 @@ list(APPEND ${PROJECT_NAME}_LINK_LIBS
     Threads::Threads
 )
 
-# target
-add_library(${PROJECT_NAME}_shared SHARED
+# 生成so文件
+#add_library(${PROJECT_NAME}_shared SHARED
+#    ${${PROJECT_NAME}_SRC}
+#)
+
+# 生成执行文件
+add_executable(${PROJECT_NAME}_shared
     ${${PROJECT_NAME}_SRC}
 )
+
+# target_include_directories 是 CMake 中用于指定目标（target）的头文件搜索路径的命令
+# SYSTEM 表示这些头文件是系统头文件，会被编译器以不同的方式处理；BEFORE 表示这些路径会被添加到已有的路径之前；INTERFACE 表示这些路径只会被添加到目标的接口属性中，不会被添加到目标自身的编译选项中；PUBLIC 表示这些路径会被添加到目标自身的编译选项中，同时也会被添加到目标的依赖项的编译选项中；PRIVATE 表示这些路径只会被添加到目标自身的编译选项中，不会被添加到目标的依赖项的编译选项中。
 target_include_directories(${PROJECT_NAME}_shared
     PUBLIC
     ${${PROJECT_NAME}_PUBLIC_INCLUDE_DIR}
     PRIVATE
     ${${PROJECT_NAME}_PRIVATE_INCLUDE_DIR}
 )
+
+# target_link_libraries 是 CMake 中用于将库链接到目标文件的命令
 target_link_libraries(${PROJECT_NAME}_shared
     PUBLIC
     ${${PROJECT_NAME}_LINK_LIBS}
@@ -124,6 +136,13 @@ target_link_libraries(${PROJECT_NAME}_shared
 # 要求编译器必须支持这个标准
 # 禁用了 C++ 扩展
 # 将输出路径设置为 ${CMAKE_BINARY_DIR}
+# COMPILE_FLAGS：编译选项
+# LINK_FLAGS：链接选项
+# INCLUDE_DIRECTORIES：头文件搜索路径
+# LINK_DIRECTORIES：库文件搜索路径
+# OUTPUT_NAME：输出文件名
+# ARCHIVE_OUTPUT_DIRECTORY：静态库输出路径
+# LIBRARY_OUTPUT_DIRECTORY：动态库输出路径
 set_target_properties(${PROJECT_NAME}_shared
     PROPERTIES
     OUTPUT_NAME "main"

@@ -41,6 +41,12 @@ CMake Error at CMakeLists.txt:48 (add_subdirectory):
 -- Build files have been written to: /root/cmake/build
 ```
 
+## 3、执行结果
+```
+[root@ubuntu0006:~/cmake/build] #./main
+ret = 11
+3
+```
 
 
 
