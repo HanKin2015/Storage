@@ -40,17 +40,22 @@ static bool test2()
         while (fscanf(fp, "%x:%x\n", &vid, &pid) == 2) {
             printf("custom udev %04x:%04x\n", vid, pid);
             if (0x1234 == vid && 0x4321 == pid) {
+                printf("/other/custom file found 1234:4321 device\n");
                 return true;
            }
         }
         fclose(fp);
         fp = NULL;
+    } else {
+        printf("open file[/other/custom] failed\n");
+        return false;
     }
+    printf("/other/custom file not found 1234:4321 device\n");
     return false;
 }
 
 int main()
 {
-    test1();
+    test2();
     return 0;
 }
