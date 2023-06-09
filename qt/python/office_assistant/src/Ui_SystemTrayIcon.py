@@ -13,6 +13,7 @@ from Ui_MessageTipForm import *
 import udev_detect_interface
 import hack_interface
 import screen_monitor_interface
+import qrcode_interface
 
 class Ui_SystemTrayIcon(QSystemTrayIcon):
     """托盘类
@@ -105,6 +106,9 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         self.startUdevDetectAction = QAction("开启USB设备检测")
         self.startUdevDetectAction.setIcon(QIcon(USB_CHECK_ICO))
         self.startUdevDetectAction.setShortcut(Qt.CTRL + Qt.Key_C)
+        self.qrcodeAction = QAction("截图识别二维码")
+        self.qrcodeAction.setIcon(QIcon(USB_CHECK_ICO))
+        self.qrcodeAction.setShortcut(Qt.CTRL + Qt.Key_C)
         
         self.testMsgAction = QAction("测试消息")
         self.testMsgAction.setIcon(QIcon(TEST_PNG))
@@ -123,6 +127,7 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         self.startMonitorScreenAction.triggered.connect(self.startMonitorScreen)
         self.showScreenshotAreaAction.triggered.connect(self.showScreenshotArea)
         self.startUdevDetectAction.triggered.connect(self.startUdevDetect)
+        self.qrcodeAction.triggered.connect(self.recognitionQrcode)
         self.testMsgAction.triggered.connect(self.testMsgSlot)
         self.aboutAction.triggered.connect(self.about)
         self.quitAppAction.triggered.connect(self.quitApp)
@@ -134,6 +139,7 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         self.trayIconMenu.addAction(self.showScreenshotAreaAction)
         self.trayIconMenu.addSeparator()    # 分割线
         self.trayIconMenu.addAction(self.startUdevDetectAction)
+        self.trayIconMenu.addAction(self.qrcodeAction)
         self.trayIconMenu.addSeparator()    # 分割线
         self.trayIconMenu.addAction(self.testMsgAction)
         self.trayIconMenu.addAction(self.ipMacAddressAction)
@@ -289,6 +295,14 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
             logger.info('stop usb device detect')
             self.udevDetect.is_on = False
             self.startUdevDetectAction.setText('开启USB设备检测')
+    
+    def recognitionQrcode(self):
+        """识别二维码
+        """
+        
+        screenshot_window = qrcode_interface.Screenshot()
+        screenshot_window.show()
+        screenshot_window.exec_()
     
     def hotplugSignalSlot(self, text):
         """USB设备拔插信号槽函数

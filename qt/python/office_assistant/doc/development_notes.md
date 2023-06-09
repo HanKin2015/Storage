@@ -19,7 +19,7 @@ pip freeze > requirements.txt
 - 运行 `python upan_auto_copy.py`
 - 运行 `python upan_auto_copy.py -u D`
 - 打包 `pyinstaller.exe --version-file=doc/file_version_info.txt -i img/office_assistant.ico -w -F src/office_assistant.py`
-- 打包 `pyinstaller.exe -w -F office_assistant.spec`
+- 打包 `pyinstaller.exe office_assistant.spec`
 
 ## 3、下一步改进点
 - 停止监控偶尔会停不下来，多次之后才会生效
@@ -61,6 +61,9 @@ pip freeze > requirements.txt
 - 修复pyinstaller打包后程序无法获取描述符问题
 - 拔插设备显示vid和pid
 
+### 20230609
+- 增加截图扫描二维码功能，但是需要引入numpy库，尝试改写实现，最终实现失败
+
 ## 5、问题记录
 
 ### 5-1、pyinstaller打包后程序获取描述符崩溃
@@ -71,4 +74,28 @@ pip freeze > requirements.txt
 最终发现是udev = usb.core.find(idVendor=int(vid, 16), idProduct=int(pid, 16))这句执行失败，错误日志为No Backend。
 因为之前遇到过很多次，已确认一定需要将libusb-1.0.dll文件放在src目录和C:\Windows\System32目录，二者缺一不可。
 
+### 5-2、逃不过的numpy库
+pyzbar.decode 函数需要读取图像数据才能进行二维码或条形码的解码。在大多数情况下，这意味着需要将图像文件加载到内存中，然后将其转换为 numpy 数组。例如，可以使用 OpenCV 库中的 cv2.imread 函数来加载图像文件，然后使用 numpy 库中的 numpy.array 函数将其转换为 numpy 数组。然后，可以将该数组传递给 pyzbar.decode 函数进行解码。
+```
+import cv2
+import numpy as np
+import pyzbar.pyzbar as pyzbar
 
+# 读取图像文件
+img = cv2.imread('barcode.png')
+
+# 将图像转换为 numpy 数组
+img_array = np.array(img)
+
+# 解码二维码或条形码
+decoded = pyzbar.decode(img_array)
+
+# 打印解码结果
+for obj in decoded:
+    print(obj.data)
+```使用numpy库可以更方便地进行数值计算和数组操作。如果您不想使用numpy库，可以使用Python内置的列表和基本数学运算符来进行数值计算和数组操作。但是需要注意的是，使用Python内置的列表进行数值计算和数组操作可能会比使用numpy库更慢，因为numpy库是专门为数值计算和数组操作而设计的，具有更高的效率和性能。
+
+### 5-3、Failed to execute script 
+其实是确认库文件，你会发现很难排查，可以通过去掉w参数，然后在dos窗口执行exe文件即可。
+
+pyzbar库需要libzbar-64.dll和libiconv.dll文件。需要将这个文件C:\Users\Administrator\Anaconda3\Lib\site-packages\pyzbar放在C:\Windows\System32目录下，以及src目录下。

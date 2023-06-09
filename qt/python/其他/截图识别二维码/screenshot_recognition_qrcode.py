@@ -16,6 +16,7 @@ import pyzbar.pyzbar as pyzbar
 import numpy as np
 import time
 import screenshot_interface
+import qrcode
 
 from Ui_Qrcode import *
 
@@ -28,26 +29,22 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.isImageExist = False   # 判断当前是否存在已经解析的二维码
         self.NowCodeData = ""       # 当前解析出来的数据，刚开始没解析，所以为空
         self.codeImage = None       # 右下角当前解析出来的二维码，刚开始没解析，所以为空
+        self.screenshot = None
 
         self.PauseButton.clicked.connect(self.startVideo)   # 绑定事件，开启/关闭摄像头
+        self.RecognitionButton.clicked.connect(self.recognitionQrcode)     # 绑定事件，识别二维码
         self.SaveButton.clicked.connect(self.saveImage)     # 绑定事件，存储解析生成的二维码
 
     def startVideo(self):
         """# 开启 / 关闭摄像头
         """
         
-        if self.isStartState:
-            self.isStartState = False
-            self.PauseButton.setText("关闭截图")
-            self.hide()
-            time.sleep(0.2)
-            screenshot_window = screenshot_interface.Screenshot()
-            screenshot_window.screenshot_signal.connect(self.screenshot_signal_slot)
-            screenshot_window.show()
-            screenshot_window.exec_()
-        else:
-            self.isStartState = True
-            self.PauseButton.setText("开启截图")
+        self.hide()
+        time.sleep(0.2)
+        screenshot_window = screenshot_interface.Screenshot()
+        screenshot_window.screenshot_signal.connect(self.screenshot_signal_slot)
+        screenshot_window.show()
+        screenshot_window.exec_()
 
     def screenshot_signal_slot(self, screenshot_data):
         """
@@ -55,7 +52,38 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         print(screenshot_data)
         self.show()
-        self.ImageLabel.setPixmap(screenshot_data)
+        self.screenshot = screenshot_data
+        self.VideoLabel.setPixmap(screenshot_data)
+
+    def recognitionQrcode(self):
+        """
+        """
+        
+        # 将截图转换为OpenCV格式
+        image = self.screenshot.toImage()
+        width, height = image.width(), image.height()
+        ptr = image.constBits()
+        print(type(ptr))
+        print(ptr)
+
+        # chatgpt真有点坑，自己写的代码指不出来错误ValueError: cannot reshape array of size 1 into shape (1080,1920,4)
+        ptr.setsize(image.byteCount())
+
+        # 将Qt的图像数据转换为NumPy数组，并去除了Alpha通道，只保留RGB三个通道的数据，使用切片操作[:, :, :3]去除Alpha通道
+        arr = np.array(ptr).reshape(height, width, 4)[:, :, :3]
+
+        # 使用pyzbar库识别二维码
+        decoded_objects = pyzbar.decode(arr)
+
+        # 显示识别结果
+        #for obj in decoded_objects:
+        #    print("二维码内容：", obj.data.decode("utf-8"))
+        print(decoded_objects)
+        if len(decoded_objects) == 0:
+            self.DataLabel.setText('解析失败')
+        else:
+            self.DataLabel.setText("解析成功 : {}".format(decoded_objects[0].data.decode('utf-8')))
+            self.createCode(decoded_objects[0].data.decode('utf-8'))
 
     # 存储二维码图片
     def saveImage(self):
@@ -108,7 +136,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         code.save("code.temp.jpg")
         pix = QPixmap("code.temp.jpg")
          # 展示解析生成的二维码图片
-        self.ImageLabel.setPixmap(pix.scaled(200, 200)) 
+        self.ImageLabel.setPixmap(pix.scaled(150, 150)) 
         self.isImageExist = True
         
 def main():
