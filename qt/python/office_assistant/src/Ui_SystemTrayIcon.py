@@ -15,6 +15,47 @@ import hack_interface
 import screen_monitor_interface
 import qrcode_interface
 
+class MyMessageBox(QMessageBox):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.initUI()
+
+    def initUI(self):
+        self.lineEdit = QLineEdit(self.text(), self)
+        self.lineEdit.selectAll()
+        self.layout().addWidget(self.lineEdit)
+        self.layout().setContentsMargins(20, 20, 20, 20)
+
+    def contextMenuEvent(self, event):
+        print('hj')
+        menu = self.createStandardContextMenu()
+        for action in menu.actions():
+            print(action.text())
+            if action.text() == 'Copy':
+                action.setText('复制')
+        menu.exec_(event.globalPos())
+
+class EventFilter(QObject):
+    def eventFilter(self, obj, event):
+        if event.type() != QEvent.UpdateRequest and event.type() != QEvent.Paint:
+            print('event.type = {}'.format(event.type()))
+        if event.type() == QEvent.MouseButtonPress:
+            menu = QMenu()
+            copyAction = QAction('复制', menu)
+            copyAction.triggered.connect(lambda: self.copyText(obj))
+            menu.addAction(copyAction)
+            selectAllAction = QAction('全选', menu)
+            selectAllAction.triggered.connect(lambda: obj.lineEdit.selectAll())
+            menu.addAction(selectAllAction)
+            menu.exec_(event.globalPos())
+            return True
+        return False
+
+    def copyText(self, obj):
+        clipboard = QApplication.clipboard()
+        text = obj.text()
+        clipboard.setText(text)
+
 class Ui_SystemTrayIcon(QSystemTrayIcon):
     """托盘类
     """
@@ -379,6 +420,9 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         reply.setIcon(QMessageBox.Question)
         yes_btn = reply.addButton('是', QMessageBox.YesRole)
         no_btn  = reply.addButton('否', QMessageBox.NoRole)
+        #reply.setTextInteractionFlags(Qt.TextSelectableByMouse)
+        #eventFilter = EventFilter()
+        #reply.installEventFilter(eventFilter)
         reply.exec_()
         if reply.clickedButton() == yes_btn:
             logger.info('******** stop ********')

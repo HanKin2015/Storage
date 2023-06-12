@@ -27,6 +27,7 @@ pip freeze > requirements.txt
 - 添加发送者信息
 - 防止多个程序打开
 - 在线更新功能参考：https://github.com/fandesfyf/JamTools/commit/27e6cf38187db474fcd8bd7e21ce2a740f1c3ebc#diff-84cfe7a66221384d5b6ddb703f513230afac2ebc351bc05666b6905e8c722fe6
+- QMessageBox控件右键菜单不完美，无法捕获ContextMenu事件
 
 ## 4、更新修改记录
 
@@ -64,6 +65,9 @@ pip freeze > requirements.txt
 ### 20230609
 - 增加截图扫描二维码功能，但是需要引入numpy库，尝试改写实现，最终实现失败
 
+### 20230612
+- 扫描内容复制粘贴，并重写右键菜单
+
 ## 5、问题记录
 
 ### 5-1、pyinstaller打包后程序获取描述符崩溃
@@ -99,3 +103,17 @@ for obj in decoded:
 其实是确认库文件，你会发现很难排查，可以通过去掉w参数，然后在dos窗口执行exe文件即可。
 
 pyzbar库需要libzbar-64.dll和libiconv.dll文件。需要将这个文件C:\Users\Administrator\Anaconda3\Lib\site-packages\pyzbar放在C:\Windows\System32目录下，以及src目录下。
+
+### 5-4、QMessageBox弹框能够复制粘贴
+box.setTextInteractionFlags(Qt.TextSelectableByMouse)
+
+### 5-5、QMessageBox弹框右键菜单重写
+事件捕获不到，使用everything搜索源文件QEvent，发现C:\Users\Administrator\Anaconda3\Library\include\qt\QtCore\qcoreevent.h文件，就是需要的。
+
+
+
+
+
+
+
+

@@ -9,13 +9,46 @@
 Copyright (c) 2023 HanKin. All rights reserved.
 """
 
-import sys, time, logging
-from PyQt5.QtCore import Qt, QRect, pyqtSignal
-from PyQt5.QtGui import QPen, QPainter, QColor, QGuiApplication, QPixmap
-from PyQt5.QtWidgets import QApplication, QWidget, QFileDialog, QDialog, QMessageBox
+from common import *
 import numpy as np
 import pyzbar.pyzbar as pyzbar
 
+class MyMessageBox(QMessageBox):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.initUI()
+
+    def initUI(self):
+        pass
+
+    def contextMenuEvent(self, event):
+        menu = self.createStandardContextMenu()
+        for action in menu.actions():
+            print(action.text())
+            if action.text() == 'Copy':
+                action.setText('复制')
+        menu.exec_(event.globalPos())
+
+class EventFilter(QObject):
+    def eventFilter(self, obj, event):
+        if event.type() != QEvent.UpdateRequest and event.type() != QEvent.Paint:
+            logger.debug('event.type = {}'.format(event.type()))
+        if event.type() == QEvent.MouseButtonPress:
+            menu = QMenu()
+            copyAction = QAction('复制', menu)
+            copyAction.triggered.connect(lambda: self.copyText(obj))
+            menu.addAction(copyAction)
+            selectAllAction = QAction('全选', menu)
+            menu.addAction(selectAllAction)
+            menu.exec_(event.globalPos())
+            return True
+        return False
+
+    def copyText(self, obj):
+        clipboard = QApplication.clipboard()
+        text = obj.text()
+        clipboard.setText(text[7:])
+        
 class Screenshot(QDialog):
     """截图"""
 
@@ -139,7 +172,15 @@ class Screenshot(QDialog):
         if len(decoded_objects) == 0:
             QMessageBox.about(None, '二维码内容', '解析失败，可能不存在二维码')
         else:
-            QMessageBox.about(None, '二维码内容', '解析成功 : {}'.format(decoded_objects[0].data.decode('utf-8')))
+            # 自定义对话框
+            box = MyMessageBox()
+            box.setWindowTitle('二维码内容')
+            box.setText('解析成功 : {}'.format(decoded_objects[0].data.decode('utf-8')))
+            box.setIcon(QMessageBox.Information)    # NoIcon/Information/Warning/Critical/Question 
+            box.setTextInteractionFlags(Qt.TextSelectableByMouse)
+            eventFilter = EventFilter()
+            box.installEventFilter(eventFilter)
+            box.exec_()
 
     def paintBackgroundImage(self):
         """绘制背景图"""

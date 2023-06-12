@@ -21,10 +21,11 @@ from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, \
     QDesktopWidget, qApp, QTabWidget, QSystemTrayIcon, QToolTip, QListWidgetItem, \
     QListWidget, QInputDialog, QStyledItemDelegate, QLineEdit, QFrame, \
     QComboBox, QFormLayout, QSizePolicy, QGridLayout, QGroupBox, QFileDialog, \
-    QToolBar, QRadioButton
-from PyQt5.QtCore import QModelIndex, Qt, QCoreApplication, QMetaObject, QThread, pyqtSignal, QRect, QTimer, QPoint
+    QToolBar, QRadioButton, QDialog
+from PyQt5.QtCore import QModelIndex, Qt, QCoreApplication, QMetaObject, QThread, \
+    pyqtSignal, QRect, QTimer, QPoint, QObject, QEvent
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QIcon, \
-    QPainter, QColor, QBrush, QPen, QFont, QCursor
+    QPainter, QColor, QBrush, QPen, QFont, QCursor, QGuiApplication
 from PyQt5.QtNetwork import QUdpSocket, QHostAddress
 from  PyQt5.QtChart import QChart, QChartView, QPieSeries, QPieSlice
 import resource
