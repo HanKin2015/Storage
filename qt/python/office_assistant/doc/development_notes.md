@@ -10,6 +10,7 @@
 - 取出exe文件，删除多余的文件夹
 - 如果使用office_assistant.spec文件生成，可以省略文件信息和图标，以及可以修改生成exe文件的文件名
 - 鱼和熊掌不可兼得，如果不使用spec文件可以使用-n或--name参数来指定PyInstaller生成的可执行文件的名称
+- Lite版本需要更改office_assistant.spec文件和common.py文件
 
 ### 2-1、导出requirements.txt文件
 pip freeze > requirements.txt
@@ -67,6 +68,8 @@ pip freeze > requirements.txt
 
 ### 20230612
 - 扫描内容复制粘贴，并重写右键菜单
+- 推出Lite版本，即简化版本，主要是为了去掉numpy带来的影响
+- 增加NET FrameWork版本读取
 
 ## 5、问题记录
 
@@ -110,8 +113,8 @@ box.setTextInteractionFlags(Qt.TextSelectableByMouse)
 ### 5-5、QMessageBox弹框右键菜单重写
 事件捕获不到，使用everything搜索源文件QEvent，发现C:\Users\Administrator\Anaconda3\Library\include\qt\QtCore\qcoreevent.h文件，就是需要的。
 
-
-
+### 5-6、发现不管怎么限制import都会打进exe文件中
+如在common.py中通过if语句限制了numpy库的导入，但是使用pyinstaller打包还是会导入，只有注释掉了才正常。
 
 
 

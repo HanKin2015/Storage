@@ -37,6 +37,7 @@ import pyautogui
 import psutil
 import platform
 import math
+import pyzbar.pyzbar as pyzbar
 
 OFFICE_ASSISTANT_ICO = 'office_assistant.ico'
 USB_CHECK_ICO        = 'udev_check.ico'
@@ -51,3 +52,9 @@ EXIT_PNG             = 'exit.png'
 TMP_SCREENSHOT_PNG   = 'tmp.png'
 
 APP_NAME = '办公助手'
+
+# 简化版本
+LITE_VERSION = True
+
+#if not LITE_VERSION:
+#    import numpy as np

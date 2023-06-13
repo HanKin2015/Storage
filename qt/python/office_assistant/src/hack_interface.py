@@ -162,6 +162,21 @@ def get_hardware_sn():
         result = result[0].strip()
     return result
 
+def get_dotnet_versions():
+    """获取.NET Framework版本信息列表
+    """
+
+    versions = []
+    with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, r'SOFTWARE\Microsoft\NET Framework Setup\NDP') as ndpKey:
+        for i in range(winreg.QueryInfoKey(ndpKey)[0]):
+            subkey_name = winreg.EnumKey(ndpKey, i)
+            if subkey_name.startswith('v'):
+                version = subkey_name[1:]
+                if version not in versions:
+                    versions.append(version)
+    logger.info(versions)
+    return versions
+
 def get_computer_system_info():
     """获取电脑系统信息
     """
@@ -206,6 +221,7 @@ def main():
     get_camera_lower_filters()
     get_login_user_name()
     get_hardware_sn()
+    get_dotnet_versions()
 
 if __name__ == '__main__':
     """程序入口

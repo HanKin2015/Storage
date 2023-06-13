@@ -4,14 +4,12 @@
 文件描述: 截图识别二维码接口
 作    者: HanKin
 创建日期: 2023.06.09
-修改日期：2023.06.09
+修改日期：2023.06.12
 
 Copyright (c) 2023 HanKin. All rights reserved.
 """
 
 from common import *
-import numpy as np
-import pyzbar.pyzbar as pyzbar
 
 class MyMessageBox(QMessageBox):
     def __init__(self, *args, **kwargs):

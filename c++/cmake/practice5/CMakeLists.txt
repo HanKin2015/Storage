@@ -17,6 +17,7 @@ if(BUILD_TESTING)
     # 覆盖率
     if(BUILD_COVERAGE_REPORT)
         if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+            message(WARNING "have debug parameter")
             include(${PROJECT_SOURCE_DIR}/cmake/CodeCoverage.cmake)
             append_coverage_compiler_flags()
             setup_target_for_coverage_gcovr_xml(

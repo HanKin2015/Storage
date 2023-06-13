@@ -198,7 +198,10 @@ class Ui_MainWindow(object):
         """关于
         """
 
-        aboutText = '{} V{}\n\n{}'.format(resource.InternalName, resource.ProductVersion, resource.LegalCopyright)
+        if LITE_VERSION:
+            aboutText = '{} v{} (lite)\n\n{}'.format(resource.InternalName, resource.ProductVersion, resource.LegalCopyright)
+        else:
+            aboutText = '{} v{}\n\n{}'.format(resource.InternalName, resource.ProductVersion, resource.LegalCopyright)
         QMessageBox.about(self.ui, resource.FileDescription, aboutText)
 
     def close(self):

@@ -150,6 +150,8 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         self.qrcodeAction = QAction("截图识别二维码")
         self.qrcodeAction.setIcon(QIcon(USB_CHECK_ICO))
         self.qrcodeAction.setShortcut(Qt.CTRL + Qt.Key_C)
+        if LITE_VERSION:
+            self.qrcodeAction.setEnabled(False) # 将动作置灰不可点击
         
         self.testMsgAction = QAction("测试消息")
         self.testMsgAction.setIcon(QIcon(TEST_PNG))
@@ -406,7 +408,10 @@ class Ui_SystemTrayIcon(QSystemTrayIcon):
         """关于
         """
 
-        aboutText = '{} V{}\n\n{}'.format(resource.InternalName, resource.ProductVersion, resource.LegalCopyright)
+        if LITE_VERSION:
+            aboutText = '{} v{} (lite)\n\n{}'.format(resource.InternalName, resource.ProductVersion, resource.LegalCopyright)
+        else:
+            aboutText = '{} v{}\n\n{}'.format(resource.InternalName, resource.ProductVersion, resource.LegalCopyright)
         QMessageBox.about(None, resource.FileDescription, aboutText)
         
     def quitApp(self):

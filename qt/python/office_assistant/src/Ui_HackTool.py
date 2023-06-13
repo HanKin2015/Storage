@@ -122,6 +122,7 @@ class MainWindow(QMainWindow):
         os_info += 'camera设备加载的驱动 : {}\n'.format(get_camera_lower_filters())
         os_info += '登录的用户名 : {}\n'.format(get_login_user_name())
         os_info += '硬件SN码 : {}\n'.format(get_hardware_sn())
+        os_info += '.NET Framwork版本 : {}\n'.format(get_dotnet_versions())
         IP, MAC = get_ip_mac_address()
         os_info += 'IP地址 : {}\n'.format(IP)
         os_info += 'MAC地址 : {}\n'.format(MAC)
