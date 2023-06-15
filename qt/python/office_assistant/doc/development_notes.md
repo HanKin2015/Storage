@@ -29,6 +29,9 @@ pip freeze > requirements.txt
 - 防止多个程序打开
 - 在线更新功能参考：https://github.com/fandesfyf/JamTools/commit/27e6cf38187db474fcd8bd7e21ce2a740f1c3ebc#diff-84cfe7a66221384d5b6ddb703f513230afac2ebc351bc05666b6905e8c722fe6
 - QMessageBox控件右键菜单不完美，无法捕获ContextMenu事件
+- libzbar-64.dll文件为何不像libusb-1.0.dll打包进入exe文件
+- 复合设备，未能识别出正确的vpid
+- 复合设备，如何来判断设备的连接数量（usbview也是这样判断数量，包含了hub，但是usbtree却去掉了hub）
 
 ## 4、更新修改记录
 

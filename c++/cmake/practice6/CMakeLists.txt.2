@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.5)
+
+include(${PROJECT_SOURCE_DIR}/cmake/CodeCoverage.cmake)
+append_coverage_compiler_flags()
+
+add_executable(mytest test/test.cpp)
+target_link_libraries(mytest gcov)
+
+add_test(NAME mytest COMMAND mytest)
+
+message(STATUS "CMAKE_SOURCE_DIR=" ${CMAKE_SOURCE_DIR})
+message(STATUS "CMAKE_BINARY_DIR=" ${CMAKE_BINARY_DIR})
+
+setup_target_for_coverage_gcovr_html(
+    NAME coverage
+    DEPENDENCIES mytest
+    EXCLUDE "/usr/*"
+    BASE_DIRECTORY "${CMAKE_SOURCE_DIR}/src"
+    FILTER "./*"
+    HTML_DIRECTORY "${CMAKE_BINARY_DIR}/html"
+    HTML_TITLE "My Project Coverage Report"
+)

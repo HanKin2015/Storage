@@ -1,0 +1,35 @@
+cmake_minimum_required(VERSION 3.5)
+
+add_executable(mytest test/test.cpp)
+target_link_libraries(mytest gcov)
+
+add_test(NAME mytest COMMAND mytest)
+
+# 将我们下载好的gcov对应的cmake包引入项目中
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
+
+# if判断语句是为了确保编译器是GNUCXX（即g++）以支持gcov功能
+if(CMAKE_COMPILER_IS_GNUCXX)
+    message(STATUS "CMAKE_COMPILER_IS_GNUCXX=" ${CMAKE_COMPILER_IS_GNUCXX})
+
+    # 引入CodeCoverage功能
+    include(CodeCoverage)
+    append_coverage_compiler_flags()
+    
+    # 我的理解是：
+    # NAME后指定加入gcov功能的可执行文件名
+    # EXECUTABLE后指定原始可执行文件（也就是要进行分析的那个可执行文件）名字
+    # DEPENDENCIES也是原始可执行文件名字
+    setup_target_for_coverage_lcov(NAME ${PROJECT_NAME}_coverage EXECUTABLE ${PROJECT_NAME} DEPENDENCIES ${PROJECT_NAME})
+    message(WARNING "PROJECT_NAME=" ${PROJECT_NAME})
+    
+    setup_target_for_coverage_gcovr_html(
+        NAME coverage
+        DEPENDENCIES mytest
+        EXCLUDE "/usr/*"
+        BASE_DIRECTORY "${CMAKE_SOURCE_DIR}/src"
+        FILTER "./*"
+        HTML_DIRECTORY "${CMAKE_BINARY_DIR}/html"
+        HTML_TITLE "My Project Coverage Report"
+    )
+endif()

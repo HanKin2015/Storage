@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.5)
+
 # 添加 CTest 模块
 include(CTest)
 
@@ -5,7 +7,7 @@ include(CTest)
 add_compile_options(-g -O0 --coverage)
 
 # 添加测试目标
-add_executable(mytest test.cpp)
+add_executable(mytest test/test.cpp)
 target_link_libraries(mytest gcov)
 
 # 添加测试
