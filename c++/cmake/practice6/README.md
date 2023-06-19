@@ -176,7 +176,7 @@ make: *** [coverage] Error 2
 ```
 跟之前一样的错误，说明是这两个函数存在问题。但是可以看出append_coverage_compiler_flags函数没有问题，参数是加进去了。问题出现在setup_target_for_coverage_gcovr_html函数，由于网上下载了CodeCoverage.cmake文件，不清楚是不是这个文件的问题。
 
-## 7、使用百度答案解决
+## 7、使用百度答案未解决
 代码见：D:\Github\Storage\c++\cmake\practice6\CMakeLists.txt.3
 
 ```
@@ -204,10 +204,63 @@ Makefile:131: recipe for target 'Project_coverage' failed
 make: *** [Project_coverage] Error 2
 ```
 
+## 8、查了许久终解决
+百度了很久，相关问题情况很少，几乎没有，因此找不到答案，怀疑可能是gcovr版本低问题，但是想不通为何直接使用gcovr命令能正常生成html文件。现在想通了，可能是后面进行了大改呢，改变了一些参数以及依赖文件库。
 
+最终使用chatGPT寻求答案，其实也可以使用高版本的ubuntu安装高版本的gcovr，直接一测试就出结果了，但是没有这个环境。因此一个高版本ubuntu是多么的迫切需求。
 
+问：使用CodeCoverage.cmake库，对gcovr有版本要求，我的版本是3.2
+答：根据CodeCoverage.cmake的官方文档，gcovr的最低版本要求是3.3。因此，如果您的gcovr版本是3.2，建议升级到3.3或更高版本以确保与CodeCoverage.cmake库的兼容性。
 
+CodeCoverage.cmake是CMake官方提供的一个模块，用于生成代码覆盖率报告。它的官方文档可以在CMake官方文档网站上找到，链接为：https://cmake.org/cmake/help/latest/module/CodeCoverage.html。
+在CMake官方没有找到答案。
 
+至于gcovr的最低版本要求是3.3，这个信息可以在gcovr的官方文档中找到。gcovr的官方文档可以在其官方网站上找到，链接为：https://gcovr.com/en/stable/installation.html。在该页面中，有一段关于版本要求的说明，其中提到了gcovr的最低版本要求是3.3。
 
+但是这里发现：
+```
+Python	gcovr
+2.6	    3.4
+2.7	    4.2
+3.4	    4.1
+3.5	    4.2
+3.6	    5.0
+```
+我的python3是3.5.9，因此需要对应的4.2版本，先是安装了3.3版本，行不通，最后安装了4.2版本，以及
+```
+配置镜像源
+mkdir .pip
+vi .pip/pip.conf
 
+安装依赖包
+pip install jinja2
+pip install lxml
+
+安装4.2版本gcovr：https://github.com/gcovr/gcovr/releases
+python3 setup.py install
+
+原版本卸载不掉，直接覆盖whereis
+mv /usr/local/bin/gcovr /usr/bin/gcovr
+
+[root@ubuntu0006:~/cmake/hj/build] #make coverage
+-- Appending code coverage compiler flags: -g --coverage -O0
+-- CMAKE_SOURCE_DIR=/root/cmake/hj
+-- CMAKE_BINARY_DIR=/root/cmake/hj/build
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /root/cmake/hj/build
+[ 66%] Built target mytest
+[100%] Running gcovr to produce HTML code coverage report.
+lines: 100.0% (4 out of 4)
+branches: 50.0% (2 out of 4)
+Open ./coverage/index.html in your browser to view the coverage report.
+[100%] Built target coverage
+[root@ubuntu0006:~/cmake/hj/build] #gcovr --version
+gcovr 4.2
+
+Copyright 2013-2018 the gcovr authors
+Copyright 2013 Sandia Corporation
+Under the terms of Contract DE-AC04-94AL85000 with Sandia Corporation,
+the U.S. Government retains certain rights in this software.
+```
 

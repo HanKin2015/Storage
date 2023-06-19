@@ -16,9 +16,11 @@
 
 ## 2、实际中的状态机
 参考：https://blog.csdn.net/qq_30519005/article/details/122562055
+用c++的状态模式写状态机
+状态是固定的，事件可扩展
+由事件触发，然后根据状态有不同的处理
 
-
-
+fsm: Finite State Machine
 
 
 
