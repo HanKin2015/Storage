@@ -3,6 +3,9 @@
 
 #include <unordered_map>
 
+const char *state2str(int state);
+const char *event2str(int event);
+
 // 事件
 enum {
      CONNECT_EVENT     = 1,             // 连接事件

@@ -1,3 +1,14 @@
+/**
+* 文 件 名: main.cpp
+* 文件描述: 探究读写文件速度效率
+* 备    注：https://blog.csdn.net/qq_30519005/article/details/122562055
+* 作    者: HanKin
+* 创建日期: 2023.06.19
+* 修改日期：2023.06.19
+*
+* Copyright (c) 2023 HanKin. All rights reserved.
+*/
+
 /************************************************************************************
 * 状态是固定的，事件是可扩展的
 * 状态模式实现状态机
@@ -12,7 +23,6 @@
 *************************************************************************************/
 
 #include <iostream>
-
 #include "event_connect.h"
 #include "event_supply.h"
 
@@ -40,6 +50,5 @@ int main()
     fsm->EventTick(DISCONNECT_EVENT);
 
     std::cout << "cur state: " << fsm->GetCurState() << std::endl;
-
     return 0;
 }

@@ -1,9 +1,11 @@
 #include <iostream>
 #include <unistd.h>
 #include "event_supply.h"
+#include "log.h"
 
 using namespace std;
 
+// ****补给事件类****
 SupplyEvent::SupplyEvent(FSM* fsm) : Event(fsm) 
 {
     init();
@@ -28,45 +30,52 @@ void SupplyEvent::init()
 // 补给处理
 int SupplyEvent::supply()
 {   
-    cout << "supply start" << endl;
+    //cout << "supply start" << endl;
+    LOGI("supply start");
     fsm->StateTrans(SUPPLYING_STATE);
     sleep(3);
     fsm->StateTrans(SUPPLY_SUCCESS_STATE);
-    cout << "supply success" << endl;
+    //cout << "supply success" << endl;
+    LOGI("supply success");
     return 0;
 }
 
 // 补给中处理
 int SupplyEvent::supplying()
 {
-    cout << "supplying" << endl;
+    //cout << "supplying" << endl;
+    LOGI("supplying");
     return 0;
 }
 
 // 补给成功处理
 int SupplyEvent::supply_success()
 {
-    cout << "supply_success" << endl;
+    //cout << "supply_success" << endl;
+    LOGI("supply_success");
     return 0;
 }
 
 // 不能补给处理
 int SupplyEvent::not_allow_supply()
 {
-    cout << "not_allow_supply" << endl;
+    //cout << "not_allow_supply" << endl;
+    LOGI("not_allow_supply");
     return 0;
 }
 
 // 事件资源申请处理
 void SupplyEvent::OnEventEnter() 
 {
-    cout << "---- SupplyEvent Enter" << endl;
+    //cout << "---- SupplyEvent Enter" << endl;
+    LOGI("---- SupplyEvent Enter");
 }
 
 // 事件处理
 void SupplyEvent::OnEventHandle(int cur_state) 
 {
-    cout << "OnEventHandle cur state: " << cur_state << endl;
+    //cout << "OnEventHandle cur state: " << cur_state << endl;
+    LOGI("OnEventHandle cur state: %s", state2str(cur_state));
     OnEventEnter();
 
     (this->*e_state[cur_state])();                  // 不加this会编译出错
@@ -78,12 +87,11 @@ void SupplyEvent::OnEventHandle(int cur_state)
 // 事件资源释放处理
 void SupplyEvent::OnEventExit() 
 { 
-    cout << "==== SupplyEvent Exit" << endl; 
+    //cout << "==== SupplyEvent Exit" << endl;
+    LOGI("==== SupplyEvent Exit");    
 }
 
-
-
-
+// ****停止补给事件类****
 StopSupplyEvent::StopSupplyEvent(FSM* fsm) : Event(fsm) 
 {
     init();

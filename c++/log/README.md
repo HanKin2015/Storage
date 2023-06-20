@@ -1,4 +1,3 @@
-
 # 示例
 2022-05-05 16:50:34 [3089:3089] [info] [keyboard]study.c: 123 {main:36}
 2022-05-06 16:12:54 [3089:3089] [debug] [keyboard]study.c: this is a error! {main:37}
@@ -33,8 +32,16 @@ void printf_log(int type, const char *format, ...)
 }
 ```
 
-
-
+# 该项目日志文件调用使用方式
+该版本还是有一些年份了，2021.08.23版本，现在已是2023.06.19，这次不改变整体逻辑，做一点小优化，可不需要初始化日志文件位置。
+示例见：D:\Github\Storage\c++\log\test_log.cpp
+```
+[root@ubuntu0006:~/cmake] #g++ test_log.cpp log.cpp -std=c++11
+[root@ubuntu0006:~/cmake] #./a.out
+not init log file path, use default log file path, ./log/project.log.
+2023-06-19 15:25:06 [INFO] [17927:17927] [test_log.cpp:6:main] I am hero, 34
+2023-06-19 15:25:06 [ERROR] [17927:17927] [test_log.cpp:9:main] I am hero, 34
+```
 
 
 

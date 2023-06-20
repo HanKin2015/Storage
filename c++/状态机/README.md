@@ -22,9 +22,40 @@
 
 fsm: Finite State Machine
 
+运行结果：
+```
+[root@ubuntu0006:~/cmake/build] #./main
+OnEventHandle cur state: 0
+---- ConnectEvent Enter
+connect start
+connect success
+==== ConnectEvent Exit
+OnEventHandle cur state: 2
+---- ConnectEvent Enter
+connect_success
+==== ConnectEvent Exit
+not init log file path, use default log file path, ./log/project.log.
+create log directory success.
+2023-06-19 15:34:28 [INFO] [26311:26311] [/root/cmake/event_supply.cpp:78:OnEventHandle] OnEventHandle cur state: 对接成功
+2023-06-19 15:34:28 [INFO] [26311:26311] [/root/cmake/event_supply.cpp:71:OnEventEnter] ---- SupplyEvent Enter
+2023-06-19 15:34:28 [INFO] [26311:26311] [/root/cmake/event_supply.cpp:34:supply] supply start
+2023-06-19 15:34:31 [INFO] [26311:26311] [/root/cmake/event_supply.cpp:39:supply] supply success
+2023-06-19 15:34:31 [INFO] [26311:26311] [/root/cmake/event_supply.cpp:91:OnEventExit] ==== SupplyEvent Exit
+OnEventHandle cur state: 5
+---- StopSupplyEvent Enter
+stop_supply start
+stop_supply success
+==== StopSupplyEvent Exit
+OnEventHandle cur state: 8
+---- DisconnectEvent Enter
+disconnect start
+disconnect success
+==== DisconnectEvent Exit
+cur state: 0
+```
+使用当前的状态值，连接下一个状态的函数进行状态转换调用。
 
-
-
+## 3、写成cmake版本
 
 
 

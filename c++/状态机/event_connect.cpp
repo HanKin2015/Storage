@@ -1,9 +1,11 @@
 #include <iostream>
 #include <unistd.h>
 #include "event_connect.h"
+#include "log.h"
 
 using namespace std;
 
+// ****连接事件类****
 ConnectEvent::ConnectEvent(FSM* fsm) : Event(fsm) 
 {
     init();
@@ -74,10 +76,7 @@ void ConnectEvent::OnEventExit()
     cout << "==== ConnectEvent Exit" << endl; 
 }
 
-
-
-
-
+// ****断开连接事件类****
 DisconnectEvent::DisconnectEvent(FSM* fsm) : Event(fsm) 
 {
     init();
