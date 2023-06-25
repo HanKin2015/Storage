@@ -49,7 +49,7 @@ conda-verify==3.4.2
 conda_package_streaming @ file:///C:/b/abs_0e5n5hdal3/croot/conda-package-streaming_1670508162902/work
 contextlib2==0.6.0
 cowsay==5.0
-cryptography==40.0.1
+cryptography==41.0.0
 cycler==0.10.0
 Cython==0.29.13
 cytoolz==0.10.0
