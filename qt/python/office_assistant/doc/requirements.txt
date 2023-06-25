@@ -234,7 +234,7 @@ QtAwesome==0.6.0
 qtconsole==4.5.5
 QtPy==1.9.0
 recommonmark==0.6.0
-requests==2.22.0
+requests==2.31.0
 rich==10.11.0
 rope==0.14.0
 rsa==4.6
