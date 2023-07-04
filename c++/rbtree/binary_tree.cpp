@@ -9,6 +9,7 @@
 */
 
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -20,7 +21,7 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
-// 插入节点
+// 插入节点（创建二叉排序树，更多创建方式见D:\Github\ACM\ACM_Template(HanKin)\二叉树实战.cpp）
 void insert(TreeNode*& root, int val)
 {
     if (root == NULL) {
@@ -90,6 +91,36 @@ void sequential_storage_create_binary_tree(int *root, int *nodes, int len)
     return;
 }
 
+// 查找节点
+bool search(TreeNode* root, int val)
+{
+    if (root == NULL) {
+        return false;
+    }
+    if (root->val == val) {
+        return true;
+    } else if (val < root->val) {
+        return search(root->left, val);
+    } else {
+        return search(root->right, val);
+    }
+}
+
+//统计二叉树的深度
+/*
+    当左子树的深度大于右子树时，则返回左子树的深度+1，否则返回右子树的深度+1
+    当root为叶子结点时，停止递归，返回1，然后逐层向上累加。
+*/
+int binary_tree_depth(TreeNode* root)
+{
+    if (root == NULL) {
+        return 0;
+    }
+    int left_depth = binary_tree_depth(root->left);
+    int right_depth = binary_tree_depth(root->right);
+    return max(left_depth, right_depth) + 1;
+}
+
 int main()
 {
     TreeNode* root = NULL;
@@ -110,5 +141,15 @@ int main()
     preorder(root); cout << endl;
     inorder(root);  cout << endl;
     postorder(root);cout << endl;
+    
+    int val = 7;
+    if (search(root, val)) {
+        cout << val << " 存在于二叉搜索树中" << endl;
+    } else {
+        cout << val << " 不存在于二叉搜索树中" << endl;
+    }
+    
+    int depth = binary_tree_depth(root);
+    cout << "二叉树深度为：" << depth << endl;
     return 0;
 }
