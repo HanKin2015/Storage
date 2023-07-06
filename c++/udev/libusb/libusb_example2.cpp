@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <libusb-1.0/libusb.h>
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
     libusb_device **devs;
     libusb_device_handle *dev_handle;
     struct libusb_device_descriptor desc;

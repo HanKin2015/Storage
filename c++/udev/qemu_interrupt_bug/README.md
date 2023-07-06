@@ -63,3 +63,4 @@ Note: On ehci the usb_wakeup() call only schedules a BH for the actual
 work, which hides this bug because the allocation happens before ehci
 calls back even without this patch.
 
+之前的排查方向有问题。
