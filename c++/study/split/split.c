@@ -49,6 +49,7 @@ static int split1(char *src, const char *separator, char ***dest, int *num)
     return 0;
 }
 
+// 完美选择
 char **split(char *str, const char *delim, int *count)
 {
     if (str == NULL || strlen(str) == 0) {

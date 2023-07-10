@@ -52,7 +52,13 @@ sizeof(struct usb_redir_extend_bulk_cache_packet) = 24
 
 第1节的两种结构体长度将会都是13字节，直接全部加起来即可。
 
+# 3、结构体的0长数组及使用
+详解：https://blog.csdn.net/psr1999/article/details/129043655
 
-
-
+结构体中的0长数组是指数组长度为0的数组，它的定义方式为在数组声明时不指定数组长度，例如：
+```
+struct example {
+    int arr[0];
+};
+```
 
