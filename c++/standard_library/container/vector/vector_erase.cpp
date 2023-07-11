@@ -25,6 +25,63 @@ static bool check_bulk_cache_list(int x)
     return false;
 }
 
+static void practice1(vector<int> v)
+{
+    printf("%d: %s\n", __LINE__, __FUNCTION__);
+    int count = v.size();
+    for (int i = 0; i < count; i++) {
+        if (v[i] == 3) {
+            printf("%d%c", v[i], i == count - 1 ? '\n' : ' ');
+            //v.erase(v.begin() + i);
+        }
+    }
+    
+    remove(v.begin(), v.end(), 3);  // 1 2 4 5 6 6（虽然没有删除，但是也改变了里面的内容）
+    v.erase(remove_if(v.begin(), v.end(), check_bulk_cache_list), v.end());
+    
+    count = v.size();
+    printf("count = %d\n", count);
+    for (int i = 0; i < count; i++) {
+        printf("%d%c", v[i], i == count - 1 ? '\n' : ' ');
+    }
+    return;
+}
+
+#define VECTOR_ERASE_ELEMENT(vec, idx) \
+    free(vec[idx]); \
+    vec[idx] = NULL; \
+    vec.erase(vec.begin() + idx); \
+    idx--;
+static void practice2()
+{
+    printf("%d: %s\n", __LINE__, __FUNCTION__);
+    vector<int *> vec;
+    for (int i = 1; i < 7; i++) {
+        int *j = (int *)calloc(1, sizeof(int));
+        *j = i;
+        vec.push_back(j);
+    }
+
+    int count = vec.size();
+    printf("count = %d\n", count);
+    for (int i = 0; i < vec.size(); i++) {  // 这里一定要注意上限
+        if (*vec[i] > 5) {
+            VECTOR_ERASE_ELEMENT(vec, i);
+            //free(vec[i]);
+            //vec[i] = NULL;
+            //vec.erase(vec.begin() + i);
+            //i--;
+        }
+    }
+    
+    count = vec.size();
+    printf("count = %d\n", count);
+    for (int i = 0; i < count; i++) {
+        printf("%d%c", *vec[i], i == count - 1 ? '\n' : ' ');
+    }
+    return;
+}
+
 int main(int argc, char *argv[])
 {
     vector<int> v;
@@ -41,20 +98,7 @@ int main(int argc, char *argv[])
         printf("%d%c", v[i], i == count - 1 ? '\n' : ' ');
     }
     
-    for (int i = 0; i < count; i++) {
-        if (v[i] == 3) {
-            printf("%d%c", v[i], i == count - 1 ? '\n' : ' ');
-            //v.erase(v.begin() + i);
-        }
-    }
-    
-    remove(v.begin(), v.end(), 3);  // 1 2 4 5 6 6（虽然没有删除，但是也改变了里面的内容）
-    v.erase(remove_if(v.begin(), v.end(), check_bulk_cache_list), v.end());
-    
-    count = v.size();
-    printf("count = %d\n", count);
-    for (int i = 0; i < count; i++) {
-        printf("%d%c", v[i], i == count - 1 ? '\n' : ' ');
-    }
+    practice1(v);
+    practice2();
     return 0;
 }
