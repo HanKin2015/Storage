@@ -1,0 +1,43 @@
+body, ul, li { margin: 0px; padding: 0px; list-style: none; }
+img { border: 0px none; }
+body.zh_CN { font-size:12px; font-family:Verdana, Geneva, sans-serif; -webkit-text-size-adjust:none; background-color:#F7FAFD; }
+body.en_US { font-size:11px; font-family:Verdana, Geneva, sans-serif; -webkit-text-size-adjust:none; background-color:#F7FAFD; }
+button {cursor: pointer;}
+.zh_CN select, .zh_CN input { font-size:12px; font-family:Verdana, Geneva, sans-serif; }
+.en_US select, .en_US input { font-size:12px; font-family:Verdana, Geneva, sans-serif; }
+.zh_CN .content .title {font-size:16px !important;}
+.en_US .content .title {font-size:16px !important;}
+a{ text-decoration: none; }
+.span_opacity{opacity: 0; -moz-opacity: 0;filter:alpha(opacity=0);}
+
+.banners .language {
+    position: absolute;
+    top: 22px;
+    right: 10px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 30px;
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#19000000,endColorstr=#19000000); /*兼容IE8*/
+}
+.banners .language a {
+    background:url(language.gif) no-repeat;
+    line-height:15px;
+    display:block;
+    float:left;
+    margin:2px 7px;
+    padding:0 0 0 20px !important;
+    text-align:left;
+    color:#393A3B;
+}
+
+.zh_CN_enable, .zh_CN_disable{ font-size: 12px; }
+.banners .language .zh_CN_enable{ background-position:0px 0px; margin-left: 5px}
+.banners .language .en_US_enable{ background-position:0px -17px; margin-right: 10px}
+.banners .language .zh_CN_disable{ background-position:0px 0px; text-decoration: none; cursor: default; color: #000000;}
+.banners .language .en_US_disable{ background-position:0px -10px; text-decoration: none; cursor: default; color: #000000;}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* 可以根据需要设置容器的高度 */
+}

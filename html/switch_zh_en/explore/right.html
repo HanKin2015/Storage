@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>网页标题</title>
+  <style>
+    #language-switch {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+    }
+  </style>
+  <script>
+    window.addEventListener("DOMContentLoaded", function() {
+      var languageSwitch = document.getElementById("language-switch");
+      languageSwitch.addEventListener("click", function() {
+        if (document.documentElement.lang === "zh") {
+          document.documentElement.lang = "en";
+          languageSwitch.textContent = "中文";
+          updateContent("en");
+        } else {
+          document.documentElement.lang = "zh";
+          languageSwitch.textContent = "English";
+          updateContent("zh");
+        }
+      });
+
+      function updateContent(lang) {
+        var elements = document.querySelectorAll("[data-lang]");
+        for (var i = 0; i < elements.length; i++) {
+          var element = elements[i];
+          var text = element.getAttribute("data-lang-" + lang);
+          if (text) {
+            element.textContent = text;
+          }
+        }
+      }
+    });
+  </script>
+</head>
+<body>
+  <h1 data-lang data-lang-zh="我是右边frame网页" data-lang-en="I am the right frame webpage"></h1>
+  <p data-lang data-lang-zh="这是一段中文文本。" data-lang-en="This is a paragraph of English text."></p>
+  <button id="language-switch" data-lang data-lang-zh="English" data-lang-en="中文">English</button>
+</body>
+</html>

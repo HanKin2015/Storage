@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>网页标题</title>
+  <script>
+    //切换语言language: zh_CN, en_US...
+	window.toLang1 = function(language) {
+        alert("window.LANG_RELOAD = "+window.LANG_RELOAD);
+		if (window.LANG_RELOAD) {
+			var baseUrl = window.location.pathname;
+            alert(baseUrl);
+			if(baseUrl.indexOf('token') !== -1) {
+				baseUrl = '/por/login';
+			}
+            alert(window.location.search + window.location.search.length);
+			if (window.location.search.length > 1) {
+                alert("这里是提示内容2!");
+				var data = _request(), temp = [];
+				for(var j in data){
+					if(data.hasOwnProperty(j)){
+						if(j !== 'language'){
+							temp.push(j + '=' + encodeURIComponent(data[j]));
+						}
+					}
+				}
+				temp.push('language=' + language);
+				window.location.href = baseUrl + '?' + temp.join('&');
+			}else{
+				window.location.href = baseUrl + '?language=' + language;
+			}
+		}else{
+            alert("这里是提示内容3!");
+			window.location.reload();
+		}
+	}
+    
+    function toLang(lang) {
+      if (lang === "en_US") {
+        document.getElementById("left_frame").src = "right.html";
+        document.getElementById("right_frame").src = "left.html";
+        document.body.className = "en_US";
+      } else if (lang === "zh_CN") {
+        document.getElementById("left_frame").src = "left.html";
+        document.getElementById("right_frame").src = "right.html";
+        document.body.className = "zh_CN";
+      }
+    }
+  </script>
+  <style>
+    * html { overflow-y: hidden }
+    body { -webkit-text-size-adjust:none; background-color:#F7FAFD; }
+    body, dl, dt, dd, ul, li, p, form { margin: 0px; padding: 0px; list-style: none; }
+    img { border: 0px none; }
+    body.zh_CN { font-size:12px; font-family:Verdana, Geneva, sans-serif; -webkit-text-size-adjust:none; background-color:#F7FAFD; }
+    body.en_US { font-size:11px; font-family:Verdana, Geneva, sans-serif; -webkit-text-size-adjust:none; background-color:#F7FAFD; }
+    body{min-height:900px;min-width: 950px; padding: 0px;margin: 0px;background-repeat: no-repeat;background-position-x: center;background-size: cover;}
+    button {cursor: pointer;}
+    .zh_CN select, .zh_CN input { font-size:12px; font-family:Verdana, Geneva, sans-serif; }
+    .en_US select, .en_US input { font-size:12px; font-family:Verdana, Geneva, sans-serif; }
+    .zh_CN .content .title {font-size:16px !important;}
+    .en_US .content .title {font-size:16px !important;}
+    a{ text-decoration: none; }
+    .span_opacity{opacity: 0; -moz-opacity: 0;filter:alpha(opacity=0);}
+
+    .banners .language {
+        position: absolute;
+        top: 22px;
+        right: 10px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 30px;
+        filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#19000000,endColorstr=#19000000); /*兼容IE8*/
+    }
+    .banners .language a {
+        background:url(language.gif) no-repeat;
+        line-height:15px;
+        display:block;
+        float:left;
+        margin:2px 7px;
+        padding:0 0 0 20px !important;
+        text-align:left;
+        color:#393A3B;
+    }
+    
+    .zh_CN_enable, .zh_CN_disable{ font-size: 12px; }
+    .banners .language .zh_CN_enable{ background-position:0px 0px; margin-left: 5px}
+    .banners .language .en_US_enable{ background-position:0px -17px; margin-right: 10px}
+    .banners .language .zh_CN_disable{ background-position:0px 0px; text-decoration: none; cursor: default; color: #000000;}
+    .banners .language .en_US_disable{ background-position:0px -10px; text-decoration: none; cursor: default; color: #000000;}
+  </style>
+</head>
+<body class="zh_CN" style="background-image: url(background.jpg);">
+    <span id="titleInnerHTML" style="display: none;">欢迎访问</span>
+  <div class="banners" style="background-color:;">
+    <ul style="background-image: url(logo.png);">
+      <li class="language">
+        <a id="zh_CN" href="javascript:toLang('zh_CN')" class="zh_CN_enable" _html="简体中文">简体中文</a>
+        <a id="en_US" href="javascript:toLang('en_US')" class="en_US_enable" _html="English">English</a>
+      </li>
+    </ul>
+  </div>
+  <iframe id="left_frame" src="left.html"></iframe>
+  <iframe id="right_frame" src="right.html"></iframe>
+</body>
+</html>
