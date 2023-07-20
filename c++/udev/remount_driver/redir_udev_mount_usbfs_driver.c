@@ -100,7 +100,7 @@ int main(int argc, char *argv[])
                     printf("libusb_claim_interface failed\n");
                 }
                 printf("waiting 20 seconds\n");
-                sleep(20);
+                sleep(10);
             } else if (strcmp(argv[1], "3") == 0) {
                 // 恢复回来
                 result = libusb_attach_kernel_driver(handle, 0);

@@ -198,5 +198,45 @@ int status = usbredirhost_set_device(host, NULL);
 ```
 实战代码见：D:\Github\Storage\c++\udev\remount_driver\redir_udev_mount_usbfs_driver.c
 
+## 17、usbfs驱动
+libusb_set_auto_detach_kernel_driver函数是在libusb 1.0.16版本中引入的，因此只有在该版本或更高版本的libusb中才可用。
+libusb_detach_kernel_driver函数是在libusb 0.1.8版本中引入的，因此只有在该版本或更高版本的libusb中才可用。
+
+usbfs是Linux内核中的一种虚拟文件系统，用于与USB设备进行交互。它是一种用户空间和内核空间之间的接口，允许用户空间的应用程序通过文件系统API与USB设备进行通信。
+
+在Linux系统中，usbfs驱动通常被挂载在/proc/bus/usb目录下。当用户空间的应用程序打开/proc/bus/usb目录下的某个文件时，usbfs驱动会将该文件映射到相应的USB设备上，并将USB设备的数据传输到用户空间的应用程序中。
+
+usbfs驱动提供了一种简单而灵活的方式来访问USB设备，因为它允许用户空间的应用程序直接访问USB设备的原始数据。但是，由于usbfs驱动是一种虚拟文件系统，因此它的性能可能不如其他更专门的USB驱动程序。
+
+需要注意的是，usbfs驱动已经被usbdevfs驱动所取代，后者提供了更好的性能和更多的功能。因此，在新的Linux系统中，usbfs驱动已经被弃用，而usbdevfs驱动则成为了主流的USB驱动程序。
+
+## 18、usbdevfs驱动
+usbdevfs驱动是在Linux内核2.3.15版本中引入的，用于与USB设备进行交互。它是一种用户空间和内核空间之间的接口，允许用户空间的应用程序通过文件系统API与USB设备进行通信。
+
+libusb库从0.1.8版本开始支持usbdevfs驱动。在这个版本中，libusb库添加了对usbdevfs驱动的支持，使得用户空间的应用程序可以通过libusb库来访问USB设备。在此之前，libusb库只支持usbfs驱动。
+
+需要注意的是，libusb库的不同版本对usbdevfs驱动的支持程度可能不同。在使用libusb库时，请务必仔细阅读相关文档和示例代码，以确保正确地使用API函数。
+
+与usbfs驱动相比，usbdevfs驱动提供了更好的性能和更多的功能。例如，usbdevfs驱动支持异步I/O操作、USB设备的热插拔、USB设备的权限管理等功能。此外，usbdevfs驱动还提供了一些特殊的文件，例如/dev/usbmon，用于监视USB设备的数据流量。
+
+没有相关过多的资料。
+
+## 19、libusb和libusb1.0的区别
+在libusb的发展历程中，从0.1.x版本开始，到1.0版本，API发生了一些变化，因此在1.0版本之后，libusb被称为libusb1.0。
+
+## 20、整体操作流程
+- 初始化libusb1.0库。可以使用libusb_init()函数来初始化libusb1.0库。
+
+- 打开USB设备。可以使用libusb_open_device_with_vid_pid()函数来打开指定Vendor ID和Product ID的USB设备。
+
+- 分离内核驱动程序。如果USB设备已经被内核驱动程序所占用，需要先将其分离。可以使用libusb_detach_kernel_driver()函数来分离内核驱动程序。
+
+- 将设备挂载到usbdevfs驱动上。可以使用libusb_set_configuration()函数来设置USB设备的配置，然后使用libusb_claim_interface()函数来声明使用USB设备的接口。
+
+- 进行USB数据传输。可以使用libusb_bulk_transfer()函数或libusb_interrupt_transfer()函数来进行USB数据传输。
+
+- 关闭USB设备。可以使用libusb_release_interface()函数来释放USB设备的接口，然后使用libusb_close()函数来关闭USB设备。
+
+- 退出libusb1.0库。可以使用libusb_exit()函数来退出libusb1.0库。
 
 
