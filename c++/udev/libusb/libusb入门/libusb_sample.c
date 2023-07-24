@@ -1,3 +1,13 @@
+/**
+* 文 件 名: libusb_sample.c
+* 文件描述: libusb_introduction.cpp的简写版
+* 作    者: HanKin
+* 创建日期: 2023.07.20
+* 修改日期：2023.07.20
+*
+* Copyright (c) 2023 HanKin. All rights reserved.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -194,6 +204,7 @@ int main(int argc, char *argv[])
     unsigned char buffer[256] = { 0 };
     read_device(handle, buffer, 256, 5000);
     
+    // 这步一定需要，不然后面函数加载原驱动会失败，并且必须要在读写设备后面
     ret = libusb_release_interface(handle, interface_number);
     assert(ret == LIBUSB_SUCCESS);
     

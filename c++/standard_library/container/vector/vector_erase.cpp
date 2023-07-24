@@ -26,6 +26,7 @@ static bool check_bulk_cache_list(int x)
     return false;
 }
 
+// remove和remove_if函数
 static void practice1(vector<int> v)
 {
     printf("%d: %s\n", __LINE__, __FUNCTION__);
