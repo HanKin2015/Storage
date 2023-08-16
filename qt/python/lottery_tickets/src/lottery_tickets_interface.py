@@ -137,7 +137,8 @@ def is_win_a_prize_in_a_lottery(history_data, lottery_number):
     logger.info('count grade 5: {}'.format(prize_list.count(5)))
     logger.info('count grade 6: {}'.format(prize_list.count(6)))
     logger.info('max winning prize grade: {}'.format(min(prize_list) if len(prize_list) else 0))
-    logger.info('winning prize ratio: {} / {}, {:.2f}%'.format(len(prize_list), history_data.shape[0], len(prize_list) / history_data.shape[0] * 100))
+    logger.info('winning prize ratio: {} / {}, {:.2f}%'.format(len(prize_list) - prize_list.count(7),
+        history_data.shape[0], (len(prize_list) - prize_list.count(7)) / history_data.shape[0] * 100))
     logger.info('total_cost: {}'.format(total_cost))
     logger.info('winning_prize_money: {}\n'.format(winning_prize_money))
     return prize_list
@@ -206,6 +207,7 @@ def get_history_data(is_online=True, pages=50):
             logger.error('history prize data file path is null')
         else:
             history_prize_data_file_path = '{}/{}'.format(HISTORY_PRIZE_DATA_PATH, history_prize_data_file_path[0])
+            logger.info('history prize data file path: {}'.format(history_prize_data_file_path))
             history_data = pd.read_excel(history_prize_data_file_path)
         
     return history_data
@@ -234,7 +236,7 @@ def statistics_analyse(history_data):
     @return history_data: 返回历史中奖数据
     """
 
-    save_data_file_path = './统计分析历史中奖数据.xlsx'
+    save_data_file_path = 'data/统计分析历史中奖数据.xlsx'
 
     # 构造列名
     red_ball_number = list(range(1, 34))
@@ -284,7 +286,7 @@ def statistics_analyse(history_data):
     return statistics_dataframe
 
 def generate_lottery_number(statistics_data=None):
-    save_data_file_path = './统计分析历史中奖数据.xlsx'
+    save_data_file_path = 'data/统计分析历史中奖数据.xlsx'
     statistics_data = pd.read_excel(save_data_file_path, index=False)
     logger.info(statistics_data.shape)
     #logger.info(statistics_data)
@@ -304,8 +306,8 @@ def generate_lottery_number(statistics_data=None):
     
     lottery_number1 = [sorted(red_ball_number[0:6]), blue_ball_number[0:1]]
     lottery_number2 = [sorted(red_ball_number[33-6:]), blue_ball_number[-1:]]
-    logger.info('频繁率高推荐彩票号码:', lottery_number1)
-    logger.info('频繁率低推荐彩票号码:', lottery_number2)
+    logger.info('频繁率高推荐彩票号码: {}'.format(lottery_number1))
+    logger.info('频繁率低推荐彩票号码: {}'.format(lottery_number2))
 
 def debug():
     issue_number_list = ['2023019', '2023018', '2023017', '2023016', '2023015', '2023014', '2023013', '2023012', '2023011', '2023010', '2023009', '2023008', '2023007', '2023006', '2023005', '2023004', '2023003', '2023002', '2023001', '2022150']
@@ -324,7 +326,7 @@ def main():
     logger.info('history_data.shape: {}.'.format(history_data.shape))
 
     # 彩票号码
-    lottery_numbers = ['3 10 13 17 26 33 8', '1 2 4 9 12 16 12', '22 14 6 27 20 18 12', '01 06 14 20 22 26 07']
+    lottery_numbers = ['20 23 07 25 2 22 6', '20 23 07 25 2 22 8', '1 2 4 9 12 16 12', '5 8 13 21 28 29 9']
     
     # 查询是否中奖
     for lottery_number in lottery_numbers:

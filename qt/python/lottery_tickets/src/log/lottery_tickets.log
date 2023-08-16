@@ -1,0 +1,655 @@
+2023-08-11 10:31:20 lottery_tickets_GUI.py[<module>:196] INFO: ******** starting ********
+2023-08-11 10:31:31 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 1 2 4 14 21 26 5.
+2023-08-11 10:31:31 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:31:31 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 0
+2023-08-11 10:31:31 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 12
+2023-08-11 10:31:31 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 50
+2023-08-11 10:31:31 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 5
+2023-08-11 10:31:31 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:31:31 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:31:31 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 370
+
+2023-08-11 10:31:37 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 2 19 22 25 30 32 2.
+2023-08-11 10:31:37 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:31:37 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 2
+2023-08-11 10:31:37 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 6
+2023-08-11 10:31:37 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 58
+2023-08-11 10:31:37 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 4
+2023-08-11 10:31:37 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:31:37 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:31:37 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 750
+
+2023-08-11 10:31:40 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 8 9 23 24 29 30 12.
+2023-08-11 10:31:40 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:31:40 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 0
+2023-08-11 10:31:40 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 6
+2023-08-11 10:31:40 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 61
+2023-08-11 10:31:40 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 5
+2023-08-11 10:31:40 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:31:40 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:31:40 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 365
+
+2023-08-11 10:31:43 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 1 4 8 22 24 32 1.
+2023-08-11 10:31:43 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:31:43 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 0
+2023-08-11 10:31:43 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 13
+2023-08-11 10:31:43 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 70
+2023-08-11 10:31:43 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 5
+2023-08-11 10:31:43 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:31:43 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:31:43 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 480
+
+2023-08-11 10:31:45 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 5 9 14 21 28 32 4.
+2023-08-11 10:31:45 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:31:45 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 1
+2023-08-11 10:31:45 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 10
+2023-08-11 10:31:45 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 56
+2023-08-11 10:31:45 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 4
+2023-08-11 10:31:45 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:31:45 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:31:45 D:\Github\Storage\qt\python\lottery_tickets\src\lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 580
+
+2023-08-11 10:32:22 lottery_tickets_interface.py[<module>:344] INFO: ******** starting ********
+2023-08-11 10:32:22 lottery_tickets_interface.py[main:324] INFO: history_data.shape: (980, 6).
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 3 10 13 17 26 33 8.
+2023-08-11 10:32:22 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 1
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 7
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 57
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 4
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 555
+
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 1 2 4 9 12 16 12.
+2023-08-11 10:32:22 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 1
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 7
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 58
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 4
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 560
+
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 22 14 6 27 20 18 12.
+2023-08-11 10:32:22 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 0
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 12
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 58
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 5
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 410
+
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 01 06 14 20 22 26 07.
+2023-08-11 10:32:22 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 1
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 15
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 65
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 4
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:32:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 675
+
+2023-08-11 10:33:22 lottery_tickets_interface.py[<module>:344] INFO: ******** starting ********
+2023-08-11 10:33:22 lottery_tickets_interface.py[main:324] INFO: history_data.shape: (980, 6).
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 20 23 07 25 2 22 6.
+2023-08-11 10:33:22 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 0
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 10
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 59
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 5
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 395
+
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 20 23 07 25 2 22 8.
+2023-08-11 10:33:22 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 1
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 6
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 55
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 4
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 535
+
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 22 14 6 27 20 18 12.
+2023-08-11 10:33:22 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 0
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 12
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 58
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 5
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 410
+
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 01 06 14 20 22 26 07.
+2023-08-11 10:33:22 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 1
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 15
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 65
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 4
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:33:22 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 675
+
+2023-08-11 10:36:35 lottery_tickets_interface.py[<module>:345] INFO: ******** starting ********
+2023-08-11 10:36:35 lottery_tickets_interface.py[get_history_data:209] INFO: history prize data file path: ./data/history_prize_data/2016085-2023019.xlsx
+2023-08-11 10:36:36 lottery_tickets_interface.py[main:325] INFO: history_data.shape: (980, 6).
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 20 23 07 25 2 22 6.
+2023-08-11 10:36:36 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 0
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 10
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 59
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 5
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 395
+
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 20 23 07 25 2 22 8.
+2023-08-11 10:36:36 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 1
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 6
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 55
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 4
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 535
+
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 22 14 6 27 20 18 12.
+2023-08-11 10:36:36 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 0
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 12
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 58
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 5
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 410
+
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 01 06 14 20 22 26 07.
+2023-08-11 10:36:36 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 1
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 15
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 65
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 4
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:36:36 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 675
+
+2023-08-11 10:36:56 lottery_tickets_interface.py[<module>:345] INFO: ******** starting ********
+2023-08-11 10:36:56 lottery_tickets_interface.py[get_history_data:209] INFO: history prize data file path: ./data/history_prize_data/2016085-2023019.xlsx
+2023-08-11 10:36:56 lottery_tickets_interface.py[main:325] INFO: history_data.shape: (980, 6).
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 20 23 07 25 2 22 6.
+2023-08-11 10:36:56 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 0
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 10
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 59
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 5
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 395
+
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 20 23 07 25 2 22 8.
+2023-08-11 10:36:56 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 1
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 6
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 55
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 4
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 535
+
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 22 14 6 27 20 18 12.
+2023-08-11 10:36:56 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 0
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 12
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 58
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 5
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 410
+
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 01 06 14 20 22 26 07.
+2023-08-11 10:36:56 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 1
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 15
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 65
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 4
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:140] INFO: winning prize ratio: 980 / 980, 100.00%
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: total_cost: 1960
+2023-08-11 10:36:56 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: winning_prize_money: 675
+
+2023-08-11 10:36:56 lottery_tickets_interface.py[generate_lottery_number:290] INFO: (4, 50)
+2023-08-11 10:36:56 lottery_tickets_interface.py[generate_lottery_number:299] INFO: (4, 9, 1, 16, 12, 2, 26, 22, 17, 15, 10, 32, 14, 6, 24, 19, 18, 7, 33, 11, 3, 27, 25, 20, 31, 30, 23, 21, 8, 5, 29, 28, 13)
+2023-08-11 10:36:56 lottery_tickets_interface.py[generate_lottery_number:300] INFO: (15, 13, 13, 12, 12, 12, 11, 11, 11, 11, 11, 10, 10, 10, 9, 9, 9, 9, 8, 8, 8, 7, 7, 7, 6, 6, 6, 6, 6, 6, 5, 5, 5)
+2023-08-11 10:36:56 lottery_tickets_interface.py[generate_lottery_number:303] INFO: (12, 1, 11, 8, 5, 4, 16, 15, 14, 7, 6, 3, 13, 10, 2, 9)
+2023-08-11 10:36:56 lottery_tickets_interface.py[generate_lottery_number:304] INFO: (5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 2, 2, 1, 0)
+2023-08-11 10:36:56 lottery_tickets_interface.py[<module>:352] INFO: process spend 0.372 s.
+
+2023-08-11 10:39:46 lottery_tickets_interface.py[<module>:346] INFO: ******** starting ********
+2023-08-11 10:39:46 lottery_tickets_interface.py[get_history_data:210] INFO: history prize data file path: ./data/history_prize_data/2016085-2023019.xlsx
+2023-08-11 10:39:46 lottery_tickets_interface.py[main:326] INFO: history_data.shape: (980, 6).
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 20 23 07 25 2 22 6.
+2023-08-11 10:39:46 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 0
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 10
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 59
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 5
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: winning prize ratio: 69 / 980, 7.04%
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: total_cost: 1960
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:143] INFO: winning_prize_money: 395
+
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 20 23 07 25 2 22 8.
+2023-08-11 10:39:46 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 1
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 6
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 55
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 4
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: winning prize ratio: 62 / 980, 6.33%
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: total_cost: 1960
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:143] INFO: winning_prize_money: 535
+
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 22 14 6 27 20 18 12.
+2023-08-11 10:39:46 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 0
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 12
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 58
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 5
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: winning prize ratio: 70 / 980, 7.14%
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: total_cost: 1960
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:143] INFO: winning_prize_money: 410
+
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 01 06 14 20 22 26 07.
+2023-08-11 10:39:46 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 1
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 15
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 65
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 4
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: winning prize ratio: 81 / 980, 8.27%
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: total_cost: 1960
+2023-08-11 10:39:46 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:143] INFO: winning_prize_money: 675
+
+2023-08-11 10:39:46 lottery_tickets_interface.py[generate_lottery_number:291] INFO: (4, 50)
+2023-08-11 10:39:46 lottery_tickets_interface.py[generate_lottery_number:300] INFO: (4, 9, 1, 16, 12, 2, 26, 22, 17, 15, 10, 32, 14, 6, 24, 19, 18, 7, 33, 11, 3, 27, 25, 20, 31, 30, 23, 21, 8, 5, 29, 28, 13)
+2023-08-11 10:39:46 lottery_tickets_interface.py[generate_lottery_number:301] INFO: (15, 13, 13, 12, 12, 12, 11, 11, 11, 11, 11, 10, 10, 10, 9, 9, 9, 9, 8, 8, 8, 7, 7, 7, 6, 6, 6, 6, 6, 6, 5, 5, 5)
+2023-08-11 10:39:46 lottery_tickets_interface.py[generate_lottery_number:304] INFO: (12, 1, 11, 8, 5, 4, 16, 15, 14, 7, 6, 3, 13, 10, 2, 9)
+2023-08-11 10:39:46 lottery_tickets_interface.py[generate_lottery_number:305] INFO: (5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 2, 2, 1, 0)
+2023-08-11 10:39:46 lottery_tickets_interface.py[<module>:353] INFO: process spend 0.36 s.
+
+2023-08-11 10:41:01 lottery_tickets_interface.py[<module>:346] INFO: ******** starting ********
+2023-08-11 10:41:01 lottery_tickets_interface.py[get_history_data:210] INFO: history prize data file path: ./data/history_prize_data/2016085-2023019.xlsx
+2023-08-11 10:41:01 lottery_tickets_interface.py[main:326] INFO: history_data.shape: (980, 6).
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 20 23 07 25 2 22 6.
+2023-08-11 10:41:01 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 0
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 10
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 59
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 5
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: winning prize ratio: 69 / 980, 7.04%
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: total_cost: 1960
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:143] INFO: winning_prize_money: 395
+
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 20 23 07 25 2 22 8.
+2023-08-11 10:41:01 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 1
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 6
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 55
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 4
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: winning prize ratio: 62 / 980, 6.33%
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: total_cost: 1960
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:143] INFO: winning_prize_money: 535
+
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 22 14 6 27 20 18 12.
+2023-08-11 10:41:01 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 0
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 12
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 58
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 5
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: winning prize ratio: 70 / 980, 7.14%
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: total_cost: 1960
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:143] INFO: winning_prize_money: 410
+
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 01 06 14 20 22 26 07.
+2023-08-11 10:41:01 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 1
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 15
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 65
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 4
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: winning prize ratio: 81 / 980, 8.27%
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: total_cost: 1960
+2023-08-11 10:41:01 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:143] INFO: winning_prize_money: 675
+
+2023-08-11 10:41:01 lottery_tickets_interface.py[generate_lottery_number:291] INFO: (4, 50)
+2023-08-11 10:41:01 lottery_tickets_interface.py[generate_lottery_number:300] INFO: (4, 9, 1, 16, 12, 2, 26, 22, 17, 15, 10, 32, 14, 6, 24, 19, 18, 7, 33, 11, 3, 27, 25, 20, 31, 30, 23, 21, 8, 5, 29, 28, 13)
+2023-08-11 10:41:01 lottery_tickets_interface.py[generate_lottery_number:301] INFO: (15, 13, 13, 12, 12, 12, 11, 11, 11, 11, 11, 10, 10, 10, 9, 9, 9, 9, 8, 8, 8, 7, 7, 7, 6, 6, 6, 6, 6, 6, 5, 5, 5)
+2023-08-11 10:41:01 lottery_tickets_interface.py[generate_lottery_number:304] INFO: (12, 1, 11, 8, 5, 4, 16, 15, 14, 7, 6, 3, 13, 10, 2, 9)
+2023-08-11 10:41:01 lottery_tickets_interface.py[generate_lottery_number:305] INFO: (5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 2, 2, 1, 0)
+2023-08-11 10:41:01 lottery_tickets_interface.py[generate_lottery_number:309] INFO: 频繁率高推荐彩票号码: [[1, 2, 4, 9, 12, 16], (12,)]
+2023-08-11 10:41:01 lottery_tickets_interface.py[generate_lottery_number:310] INFO: 频繁率低推荐彩票号码: [[5, 8, 13, 21, 28, 29], (9,)]
+2023-08-11 10:41:01 lottery_tickets_interface.py[<module>:353] INFO: process spend 0.271 s.
+
+2023-08-11 10:42:16 lottery_tickets_interface.py[<module>:346] INFO: ******** starting ********
+2023-08-11 10:42:16 lottery_tickets_interface.py[get_history_data:210] INFO: history prize data file path: ./data/history_prize_data/2016085-2023019.xlsx
+2023-08-11 10:42:16 lottery_tickets_interface.py[main:326] INFO: history_data.shape: (980, 6).
+2023-08-11 10:42:16 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 20 23 07 25 2 22 6.
+2023-08-11 10:42:16 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:42:16 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 0
+2023-08-11 10:42:16 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 10
+2023-08-11 10:42:16 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 59
+2023-08-11 10:42:16 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 5
+2023-08-11 10:42:16 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: winning prize ratio: 69 / 980, 7.04%
+2023-08-11 10:42:16 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: total_cost: 1960
+2023-08-11 10:42:16 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:143] INFO: winning_prize_money: 395
+
+2023-08-11 10:42:16 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 20 23 07 25 2 22 8.
+2023-08-11 10:42:16 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:42:16 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 1
+2023-08-11 10:42:16 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 6
+2023-08-11 10:42:16 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 55
+2023-08-11 10:42:16 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 4
+2023-08-11 10:42:16 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: winning prize ratio: 62 / 980, 6.33%
+2023-08-11 10:42:16 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: total_cost: 1960
+2023-08-11 10:42:16 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:143] INFO: winning_prize_money: 535
+
+2023-08-11 10:42:16 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 1, 2, 4, 9, 12, 16, 12.
+2023-08-11 10:42:16 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:43:06 lottery_tickets_interface.py[<module>:346] INFO: ******** starting ********
+2023-08-11 10:43:06 lottery_tickets_interface.py[get_history_data:210] INFO: history prize data file path: ./data/history_prize_data/2016085-2023019.xlsx
+2023-08-11 10:43:06 lottery_tickets_interface.py[main:326] INFO: history_data.shape: (980, 6).
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 20 23 07 25 2 22 6.
+2023-08-11 10:43:06 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 0
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 10
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 59
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 5
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: winning prize ratio: 69 / 980, 7.04%
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: total_cost: 1960
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:143] INFO: winning_prize_money: 395
+
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 20 23 07 25 2 22 8.
+2023-08-11 10:43:06 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 1
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 6
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 55
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 4
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: winning prize ratio: 62 / 980, 6.33%
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: total_cost: 1960
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:143] INFO: winning_prize_money: 535
+
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 1 2 4 9 12 16 12.
+2023-08-11 10:43:06 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 1
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 7
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 58
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 4
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: winning prize ratio: 66 / 980, 6.73%
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: total_cost: 1960
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:143] INFO: winning_prize_money: 560
+
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 5 8 13 21 28 29 9.
+2023-08-11 10:43:06 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 0
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 7
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 51
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 5
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: winning prize ratio: 58 / 980, 5.92%
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: total_cost: 1960
+2023-08-11 10:43:06 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:143] INFO: winning_prize_money: 325
+
+2023-08-11 10:43:06 lottery_tickets_interface.py[generate_lottery_number:291] INFO: (4, 50)
+2023-08-11 10:43:06 lottery_tickets_interface.py[generate_lottery_number:300] INFO: (4, 9, 1, 16, 12, 2, 26, 22, 17, 15, 10, 32, 14, 6, 24, 19, 18, 7, 33, 11, 3, 27, 25, 20, 31, 30, 23, 21, 8, 5, 29, 28, 13)
+2023-08-11 10:43:06 lottery_tickets_interface.py[generate_lottery_number:301] INFO: (15, 13, 13, 12, 12, 12, 11, 11, 11, 11, 11, 10, 10, 10, 9, 9, 9, 9, 8, 8, 8, 7, 7, 7, 6, 6, 6, 6, 6, 6, 5, 5, 5)
+2023-08-11 10:43:06 lottery_tickets_interface.py[generate_lottery_number:304] INFO: (12, 1, 11, 8, 5, 4, 16, 15, 14, 7, 6, 3, 13, 10, 2, 9)
+2023-08-11 10:43:06 lottery_tickets_interface.py[generate_lottery_number:305] INFO: (5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 2, 2, 1, 0)
+2023-08-11 10:43:06 lottery_tickets_interface.py[generate_lottery_number:309] INFO: 频繁率高推荐彩票号码: [[1, 2, 4, 9, 12, 16], (12,)]
+2023-08-11 10:43:06 lottery_tickets_interface.py[generate_lottery_number:310] INFO: 频繁率低推荐彩票号码: [[5, 8, 13, 21, 28, 29], (9,)]
+2023-08-11 10:43:06 lottery_tickets_interface.py[<module>:353] INFO: process spend 0.268 s.
+
+2023-08-11 10:43:40 lottery_tickets_interface.py[<module>:346] INFO: ******** starting ********
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [20 x 6].
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [40 x 6].
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [60 x 6].
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [80 x 6].
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [100 x 6].
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:41 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [120 x 6].
+2023-08-11 10:43:42 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:42 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:42 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:42 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [140 x 6].
+2023-08-11 10:43:42 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:42 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:42 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:42 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [160 x 6].
+2023-08-11 10:43:42 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:42 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:42 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:42 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [180 x 6].
+2023-08-11 10:43:42 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:42 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:42 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:42 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [200 x 6].
+2023-08-11 10:43:42 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:42 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:42 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:42 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [220 x 6].
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [240 x 6].
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [260 x 6].
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [280 x 6].
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [300 x 6].
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [320 x 6].
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:43 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [340 x 6].
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [360 x 6].
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [380 x 6].
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [400 x 6].
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [420 x 6].
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [440 x 6].
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:44 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [460 x 6].
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [480 x 6].
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [500 x 6].
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [520 x 6].
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [540 x 6].
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [560 x 6].
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [580 x 6].
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:45 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [600 x 6].
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [620 x 6].
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [640 x 6].
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [660 x 6].
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [680 x 6].
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [700 x 6].
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:46 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [720 x 6].
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [740 x 6].
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [760 x 6].
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [780 x 6].
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [800 x 6].
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [820 x 6].
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:47 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [840 x 6].
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [860 x 6].
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [880 x 6].
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [900 x 6].
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [920 x 6].
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [940 x 6].
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:48 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [960 x 6].
+2023-08-11 10:43:49 lottery_tickets_interface.py[get_history_data:171] INFO: table count = 22, type = <class 'pandas.core.frame.DataFrame'>.
+2023-08-11 10:43:49 lottery_tickets_interface.py[get_history_data:174] INFO: ['开奖日期', '期号', '中奖号码', '销售额(元)', '中奖注数', '中奖注数.1', '详细']
+2023-08-11 10:43:49 lottery_tickets_interface.py[get_history_data:175] INFO: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖' '详细']
+2023-08-11 10:43:49 lottery_tickets_interface.py[get_history_data:187] INFO: DataFrame [history_data] shape: [980 x 6].
+2023-08-11 10:43:49 lottery_tickets_interface.py[get_history_data:190] INFO: history_data type: <class 'pandas.core.frame.DataFrame'>, columns: ['开奖日期' '期号' '中奖号码' '销售额(元)' '一等奖' '二等奖'].
+2023-08-11 10:43:49 lottery_tickets_interface.py[main:326] INFO: history_data.shape: (980, 6).
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 20 23 07 25 2 22 6.
+2023-08-11 10:43:49 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 0
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 11
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 61
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 5
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: winning prize ratio: 72 / 980, 7.35%
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: total_cost: 1960
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:143] INFO: winning_prize_money: 415
+
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 20 23 07 25 2 22 8.
+2023-08-11 10:43:49 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 1
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 7
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 60
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 4
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: winning prize ratio: 68 / 980, 6.94%
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: total_cost: 1960
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:143] INFO: winning_prize_money: 570
+
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 1 2 4 9 12 16 12.
+2023-08-11 10:43:49 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 1
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 7
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 57
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 4
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: winning prize ratio: 65 / 980, 6.63%
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: total_cost: 1960
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:143] INFO: winning_prize_money: 555
+
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:92] INFO: lottery_number: 5 8 13 21 28 29 9.
+2023-08-11 10:43:49 lottery_tickets_interface.py[lottery_number_handler:59] INFO: there are not space.
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:136] INFO: count grade 4: 0
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:137] INFO: count grade 5: 5
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:138] INFO: count grade 6: 52
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:139] INFO: max winning prize grade: 5
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:141] INFO: winning prize ratio: 57 / 980, 5.82%
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:142] INFO: total_cost: 1960
+2023-08-11 10:43:49 lottery_tickets_interface.py[is_win_a_prize_in_a_lottery:143] INFO: winning_prize_money: 310
+
+2023-08-11 10:43:49 lottery_tickets_interface.py[generate_lottery_number:291] INFO: (4, 50)
+2023-08-11 10:43:49 lottery_tickets_interface.py[generate_lottery_number:300] INFO: (4, 9, 1, 16, 12, 2, 26, 22, 17, 15, 10, 32, 14, 6, 24, 19, 18, 7, 33, 11, 3, 27, 25, 20, 31, 30, 23, 21, 8, 5, 29, 28, 13)
+2023-08-11 10:43:49 lottery_tickets_interface.py[generate_lottery_number:301] INFO: (15, 13, 13, 12, 12, 12, 11, 11, 11, 11, 11, 10, 10, 10, 9, 9, 9, 9, 8, 8, 8, 7, 7, 7, 6, 6, 6, 6, 6, 6, 5, 5, 5)
+2023-08-11 10:43:49 lottery_tickets_interface.py[generate_lottery_number:304] INFO: (12, 1, 11, 8, 5, 4, 16, 15, 14, 7, 6, 3, 13, 10, 2, 9)
+2023-08-11 10:43:49 lottery_tickets_interface.py[generate_lottery_number:305] INFO: (5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 2, 2, 1, 0)
+2023-08-11 10:43:49 lottery_tickets_interface.py[generate_lottery_number:309] INFO: 频繁率高推荐彩票号码: [[1, 2, 4, 9, 12, 16], (12,)]
+2023-08-11 10:43:49 lottery_tickets_interface.py[generate_lottery_number:310] INFO: 频繁率低推荐彩票号码: [[5, 8, 13, 21, 28, 29], (9,)]
+2023-08-11 10:43:49 lottery_tickets_interface.py[<module>:353] INFO: process spend 8.817 s.
+

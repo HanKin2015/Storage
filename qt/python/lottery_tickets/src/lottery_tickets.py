@@ -10,8 +10,8 @@ Copyright (c) 2023 HanKin. All rights reserved.
 """
 
 from common import *
-import lottery_tickets-GUI
-import sports_tickets-GUI
+import lottery_tickets_GUI
+import sports_tickets_GUI
 
 class Ui_MainWindow(object):
     def __init__(self):
