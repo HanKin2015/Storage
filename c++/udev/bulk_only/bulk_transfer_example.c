@@ -71,6 +71,9 @@ struct scsi_data_read_capacity10 {
 #define BULK_CSW_SIGNATURE_1    'S'
 #define BULK_CSW_SIGNATURE_2    'B'
 #define BULK_CSW_SIGNATURE_3    'S'
+
+#pragma pack(push)
+#pragma pack(1)
 // Section 5.1: Command Block Wrapper (CBW)
 struct cmd_block_wrapper {
     uint8_t dCBWSignature[BULK_CBW_SIGNATURE_SIZE];     // 0x43425355
@@ -89,6 +92,7 @@ struct cmd_status_wrapper {
     uint32_t dCSWDataResidue;
     uint8_t bCSWStatus;
 };
+#pragma pack(pop)
 
 void set_cbw_signature(struct cmd_block_wrapper *cbw)
 {
@@ -121,6 +125,39 @@ void cbw_h2le(void *buf)
     cbw->dCBWDataTransferLength = htole32(cbw->dCBWDataTransferLength);
 }
 
+/**
+ * 进行bulk transfer 传输时，如果出现 LIBUSB_ERROR_PIPE 错误，则
+ * libusb_clear_halt 该端点，重试。直到达到重试次数(5次)，返回。
+ * @return
+ *  see libusb_error
+ */
+int bulk_transfer_clear_halt(struct libusb_device_handle *dev_handle,
+	unsigned char ep, unsigned char *data, int length, int *transferred,
+	unsigned int timeout)
+{
+    #define BULK_RETRY_MAX 5
+
+    int i = 0;
+    int ret = 0;
+    // 这里就不对超时错误进行重复传输了，使用前自己分配足够的时间
+    while(i < BULK_RETRY_MAX) {
+        ret = libusb_bulk_transfer(dev_handle, ep, data, length, transferred,
+                                    timeout);
+        INFO("libusb_bulk_transfer finish, ret %d, i %d, ep 0x%x, transferred %d\n",
+            ret, i, ep, transferred == NULL ? -1 : *transferred);
+        // LIBUSB_ERROR_OTHER -99
+        // LIBUSB_ERROR_PIPE -9
+        // LIBUSB_ERROR_IO -1
+        if (ret != LIBUSB_ERROR_PIPE) {
+            return ret;
+        }
+        INFO("libusb_clear_halt finish, ret %d, ep 0x%x\n",
+                libusb_clear_halt(dev_handle, ep), ep);
+        i++;
+    }
+    return ret;
+}
+
 static int deal_datain(struct cmd_block_wrapper *cbw,
     unsigned char *data, int data_size)
 {
@@ -128,30 +165,72 @@ static int deal_datain(struct cmd_block_wrapper *cbw,
     int result = libusb_init(&ctx);
     assert(result >= 0);
     
-    // 通过libusb_open_device_with_vid_pid函数
+    // 通过libusb_open_device_with_vid_pid函数获取libusb_device_handle
     libusb_device_handle *dev_handle = libusb_open_device_with_vid_pid(NULL, USB_VENDOR_ID, USB_PRODUCT_ID);
     assert(dev_handle);
     
-    unsigned int timeout = 5000;
-    unsigned char ep = 0x81;
-    // 发送cbw
-    int transferred = 0;
-    int length = data_size;
-    int ret = libusb_bulk_transfer(dev_handle, ep, data, length, &transferred, timeout);
-    INFO("libusb_bulk_transfer finish, ret %d, ep 0x%x, transferred %d\n",
-            ret, ep, transferred == 0 ? -1 : transferred);
-    // LIBUSB_ERROR_OTHER -99
-    // LIBUSB_ERROR_PIPE -9
-    // LIBUSB_ERROR_IO -1
-    if (ret == LIBUSB_SUCCESS) {
-        struct scsi_data_read_capacity10 *read_capacity10data = (struct scsi_data_read_capacity10 *)data;
-        INFO("deal_datain success, size_per_sector=%d, all_sector_count=%d\n",
-            read_capacity10data->size_per_block, read_capacity10data->ret_lba);
-        return 0;
+    // 替换usbfs驱动进行操作
+    libusb_set_auto_detach_kernel_driver(dev_handle, 1);
+    // 只打开0 interface
+    int ret = libusb_claim_interface(dev_handle, 0);
+    if (ret != LIBUSB_SUCCESS) {
+        printf("libusb cliam interface 0 failed, %d %s\n", ret, libusb_strerror(ret));
+        goto close_libusb;
     }
-    ERROR("deal_datain failed\n");
+    
+    unsigned int timeout = 5000;
+    unsigned char ep_in  = 0x81;
+    unsigned char ep_out = 0x02;
+    
+    // 发送cbw
+    INFO("%02x %02x %02x %02x %08x %08x %02x %02x %02x\n", cbw->dCBWSignature[0], cbw->dCBWSignature[1],
+        cbw->dCBWSignature[2], cbw->dCBWSignature[3], cbw->dCBWTag, cbw->dCBWDataTransferLength,
+        cbw->bmCBWFlags, cbw->bCBWLUN, cbw->bCBWCBLength);
+    for (int i = 0; i < 16; i++) {
+        INFO("%02x\n", cbw->CBWCB[i]);
+    }
+    INFO("%d %d\n", data_size, sizeof(*cbw));
+    
+    int transferred = 0;
+    ret = bulk_transfer_clear_halt(dev_handle, ep_out, (unsigned char*)cbw,
+            sizeof(*cbw), &transferred, timeout);
+    INFO("CBW bulk_transfer_clear_halt cbw finish, ret %d, ep_out 0x%x, transferred 0x%x\n",
+        ret, ep_out, transferred);
+    if (ret != LIBUSB_SUCCESS) {
+        ERROR("bulk_transfer_clear_halt cbw fail, ret=%d, actual_length=%d\n",
+            ret, transferred);
+        return -1;
+    }
+
+    // data_in（LIBUSB_ERROR_TIMEOUT -7）
+    transferred = 0;
+    ret = libusb_bulk_transfer(dev_handle, ep_in, data, data_size,
+        &transferred, timeout);
+    INFO("DATA bulk_transfer_clear_halt data-in finish, ret %d, ep_in 0x%x, actual_length 0x%x\n",
+        ret, ep_in, transferred);
+    
+    // 处理csw
+    struct cmd_status_wrapper csw;
+    transferred = 0;
+    ret = bulk_transfer_clear_halt(dev_handle, ep_in, (unsigned char*)&csw,
+            sizeof(csw), &transferred, timeout);
+    INFO("CSW bulk_transfer_clear_halt csw finish, ret %d, ep_in 0x%x, actual_length 0x%x\n",
+        ret, ep_in, transferred);
+    if (ret != LIBUSB_SUCCESS) {
+        ERROR("bulk_transfer_clear_halt cbw fail, ret=%d, actual_length=%d\n",
+            ret, transferred);
+        return -1;
+    }
+    
+    INFO("deal_datain done\n");
+    
+release_interface:
+    libusb_release_interface(dev_handle, 0);
+close_libusb:
+    libusb_close(dev_handle);
+exit_libusb:
     libusb_exit(ctx);
-    return -1;
+    return 0;
 }
 
 static int read_capacity(struct scsi_data_read_capacity10 *data)
@@ -168,7 +247,7 @@ static int read_capacity(struct scsi_data_read_capacity10 *data)
     // 构造 cbw
     memset(&cbw, 0,  sizeof(cbw));
     set_cbw_signature(&cbw);
-    cbw.dCBWTag = 1;
+    cbw.dCBWTag = 0xed3839b0;
     cbw.dCBWDataTransferLength = sizeof(*data);
     cbw.bmCBWFlags = LIBUSB_ENDPOINT_IN;
     cbw.bCBWLUN = 0;
@@ -183,6 +262,8 @@ static int read_capacity(struct scsi_data_read_capacity10 *data)
         ERROR("deal_datain fail, ret %d\n", ret);
         return -1;
     }
+    
+    // 打印出结果
     data->ret_lba = be32toh(data->ret_lba);
     data->size_per_block = be32toh(data->size_per_block);
     INFO("last_block_lba=0x%x, size_per_block=0x%x\n",

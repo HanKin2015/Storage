@@ -1,11 +1,21 @@
+/**
+* 文 件 名: libusb_operate_upan.c
+* 文件描述: libusb使用scsi操作U盘
+* 备    注: gcc libusb_operate_upan.c -lusb-1.0
+* 作    者: HanKin
+* 创建日期: 2023.08.17
+* 修改日期：2023.08.17
+*
+* Copyright (c) 2023 HanKin. All rights reserved.
+*/
+
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdarg.h>
 #include <assert.h>
-#include "libusb.h"
-
+#include <libusb-1.0/libusb.h>
 
 #define BULK_TRANSFER_TIMEOUT 2000
 
@@ -30,21 +40,23 @@ struct command_status_wrapper {
 
 #define READ_BUFFER_LENGTH 524288
 
-static uint8_t cbw_read[] = {
+// USBC ==> 55 53 42 43
+static uint8_t cbw_read[31] = {
     0x55, 0x53, 0x42, 0x43,
-    0x10, 0x30, 0x6e, 0x96,
-    0x00, 0x00, 0x08, 0x00,
+    0xb0, 0x39, 0x38, 0xed,
+    0x00, 0x02, 0x00, 0x00,
     0x80, 0x00, 0x0a, 0x28,
-    0x00, 0x01, 0x93, 0x7b,
-    0x00, 0x00, 0x04, 0x00,
+    0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x01,
     0x00, 0x00, 0x00, 0x00,
     0x00, 0x00, 0x00
 };
 
-static uint8_t cbw_read_capacity[] = {
+// USBC ==> 55 53 42 43
+static uint8_t cbw_read_capacity[31] = {
     0x55, 0x53, 0x42, 0x43,
-    0x00, 0x00, 0x00, 0x00,
-    0x08, 0x00, 0x08, 0x00,
+    0xb0, 0x39, 0x38, 0xed,
+    0x08, 0x00, 0x00, 0x00,
     0x80, 0x00, 0x0a, 0x25,
     0x00, 0x00, 0x00, 0x00,
     0x00, 0x00, 0x00, 0x00,
@@ -114,7 +126,40 @@ static void test_device(uint16_t vid, uint16_t pid, uint8_t epin, uint8_t epout)
     printf("DATA read result=%d, %s, actual_length=%d\n", ret, libusb_strerror(ret), actual_len);
     display_buffer_hex(data_buff, 64); // 仅打印64字节数据
 
-	//libusb_reset_device(handle);
+    /*
+    没有这一行结果就是：
+    CBW read result=0, Success, actual_length=31
+    DATA read result=0, Success, actual_length=512
+
+      00000000  33 c0 fa 8e d8 8e d0 bc 00 7c 89 e6 06 57 8e c0  3........|...W..
+      00000010  fb fc bf 00 06 b9 00 01 f3 a5 ea 1f 06 00 00 52  ...............R
+      00000020  52 b4 41 bb aa 55 31 c9 30 f6 f9 cd 13 72 13 81  R.A..U1.0....r..
+      00000030  fb 55 aa 75 0d d1 e9 73 09 66 c7 06 8d 06 b4 42  .U.u...s.f.....B
+    CBW read_capcity result=0, Success, actual_length=31
+    DATA read_capcity result=-8, Overflow, actual_length=0
+
+      00000000  33 c0 fa 8e d8 8e d0 bc                          3.......
+    CSW read_capcity result=-1, Input/Output Error, actual_length=0
+
+      00000000  33 c0 fa 8e d8 8e d0 bc 00 7c 89 e6 06           3........|...
+
+    添加了这一行结果就是：
+    CBW read result=0, Success, actual_length=31
+    DATA read result=0, Success, actual_length=512
+
+      00000000  33 c0 fa 8e d8 8e d0 bc 00 7c 89 e6 06 57 8e c0  3........|...W..
+      00000010  fb fc bf 00 06 b9 00 01 f3 a5 ea 1f 06 00 00 52  ...............R
+      00000020  52 b4 41 bb aa 55 31 c9 30 f6 f9 cd 13 72 13 81  R.A..U1.0....r..
+      00000030  fb 55 aa 75 0d d1 e9 73 09 66 c7 06 8d 06 b4 42  .U.u...s.f.....B
+    CBW read_capcity result=0, Success, actual_length=31
+    DATA read_capcity result=0, Success, actual_length=8
+
+      00000000  07 33 f3 f3 00 00 02 00                          .3......
+    CSW read_capcity result=0, Success, actual_length=13
+
+      00000000  55 53 42 53 b0 39 38 ed 00 00 00 00 00           USBS.98......
+    */
+    //libusb_reset_device(handle);
 
     // SCSI_READ_CAPACITY=====================
     //cbw
@@ -126,7 +171,7 @@ static void test_device(uint16_t vid, uint16_t pid, uint8_t epin, uint8_t epout)
     display_buffer_hex(data_buff, 8);
     //csw
     ret = libusb_bulk_transfer(handle, epin, data_buff, 13, &actual_len, BULK_TRANSFER_TIMEOUT);
-    printf("DATA read_capcity result=%d, %s, actual_length=%d\n", ret, libusb_strerror(ret), actual_len);
+    printf("CSW read_capcity result=%d, %s, actual_length=%d\n", ret, libusb_strerror(ret), actual_len);
     display_buffer_hex(data_buff, 13);
 
     free(data_buff);
@@ -146,8 +191,7 @@ int main(void)
         return ret;
     }
 
-    //test_device(0x325d, 0x6410, 0x81, 0x02);
-	test_device(0x090c, 0x1000, 0x82, 0x01);
+	test_device(0x0951, 0x1666, 0x81, 0x02);
 
     libusb_exit(NULL);
     return 0;
