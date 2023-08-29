@@ -14,6 +14,8 @@ static union {
             unsigned long ul;
 } endian = {{ 'l', '?', '?', 'b' }};
 const char ENDIANNESS = ((char)endian.ul);
+
+// 不出意外，这个比较的写法是有问题的，#if不支持变量比较
 #if (ENDIANNESS == 'l')
 #define BYTE_LITTLE_ENDIAN
 #else

@@ -5,18 +5,17 @@ using namespace std;
 static union { char c[4]; unsigned long mylong; } endian_test = {{ 'l', '?', '?', 'b' } };
 #define ENDIANNESS ((char)endian_test.mylong)
 
-
 static union {
-        int i;
-            char c;
+    int i;
+    char c;
 } temp={1};
 
+// 不出意外，这个比较的写法是有问题的，#if不支持变量比较
 #if ((temp.c[0]) == 1)
 #define BYTE_LITTLE_ENDIAN
 #else
 #define BYTE_BIG_ENDIAN
 #endif
-
 
 static union {
     int i;
@@ -38,7 +37,7 @@ int checkCPU()
 {
     union w
     {
-        int a;
+        int  a;
         char b;
     }c;
     c.a = '1';

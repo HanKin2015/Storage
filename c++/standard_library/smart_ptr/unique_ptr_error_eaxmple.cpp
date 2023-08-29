@@ -4,10 +4,10 @@
 * 编    译: g++ unique_ptr_error_eaxmple.cpp -std=c++11
 * 备    注: https://zhuanlan.zhihu.com/p/359964081
 * 作    者: HanKin
-* 创建日期: 2022.07.11
-* 修改日期：2022.07.11
+* 创建日期: 2023.08.09
+* 修改日期：2023.08.09
 *
-* Copyright (c) 2022 HanKin. All rights reserved.
+* Copyright (c) 2023 HanKin. All rights reserved.
 */
 
 #include <memory>
