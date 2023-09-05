@@ -40,9 +40,9 @@ static void printf_logv(int type, const char *format, va_list args)
     const char *type_names[] = { "[DEBUG]", "[INFO]", "[WARN]", "[ERROR]", "[FATAL]" };
     
     time_t timep = time(NULL);
-	struct tm *lt = localtime(&timep);
-	char ntime[MAX_LOGBUF_LEN] = {0};
-	strftime(ntime, sizeof(ntime), "%Y-%m-%d %H:%M:%S", lt);
+    struct tm *lt = localtime(&timep);
+    char ntime[MAX_LOGBUF_LEN] = {0};
+    strftime(ntime, sizeof(ntime), "%Y-%m-%d %H:%M:%S", lt);
 
     char logmsg[MAX_LOGBUF_LEN];
     vsnprintf(logmsg, sizeof(logmsg), format, args);

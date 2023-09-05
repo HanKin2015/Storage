@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: lottery_tickets-GUI.py
+文 件 名: lottery_tickets.py
 文件描述: 福利彩票分析工具
 作    者: HanKin
 创建日期: 2022.09.16
