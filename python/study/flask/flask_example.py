@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: popen_example.py
-文件描述: 通过popen函数执行dos命令
+文 件 名: flask_example.py
+文件描述: flask框架学习
 作    者: HanKin
 创建日期: 2023.09.04
 修改日期：2023.09.04
@@ -23,8 +23,8 @@ app = Flask(__name__)
 # 访问根路由，就会执行hello_world这个函数
 @app.route('/')
 def hello_world():  # put application's code here
- return 'Hello World!'
+    return 'Hello World!'
 
 # 运行代码
 if __name__ == '__main__':
- app.run()
+    app.run()

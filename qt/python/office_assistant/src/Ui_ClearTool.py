@@ -214,7 +214,7 @@ class Thread_ClearTool(QThread):
 
 def main():
     app = QApplication(sys.argv)
-    window = MyWindow()
+    window = MainWindow()
     window.show()
     sys.exit(app.exec_())
 
