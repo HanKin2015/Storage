@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 文 件 名: pandas_read_excel_example.py
-文件描述: 使用openyxl打开xlxs表格
+文件描述: 使用pandas打开xlxs表格
 作    者: HanKin
 创建日期: 2023.09.05
 修改日期：2023.09.05

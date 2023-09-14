@@ -14,3 +14,33 @@ JavaFX：用于Java图形用户界面开发的库。
 
 
 通过对比openpyxl和pandas，发现还是pandas好用。
+
+## openpyxl的缺点
+当我的表格是使用ctrl+A，ctrl+C，然后ctrl+V拷贝的数据，然后表格的数据大小统计就是巨大的，如1048554 10，但是pandas没有这种情况。
+另外openpyxl不能识别第一行的列名，只能通过ABCDEF来进行遍历，或者使用12345遍历行，另外使用iter_cols或者iter_rows。
+
+今天发现pip show numpy并没有发现库有多大，可能使用打包成exe文件会导致exe文件过大。
+
+还有就是import导入openpyxl会慢几秒中，大约会卡住3.6秒左右。
+```
+import openpyxl
+import time
+
+if __name__ == '__main__':
+    """程序入口
+    """
+    
+    #os.system('chcp 936 & cls')
+    print('******** starting ********')
+    start_time = time.time()
+    
+    import openpyxl
+
+    end_time = time.time()
+    print('process spend {} s.\n'.format(round(end_time - start_time, 3)))
+
+(base) D:\Users\User\Desktop>python k.py
+******** starting ********
+process spend 3.741 s.
+```
+发现一个有趣的地方，如果在前面导入了openpyxl后，后面再导入就不会消耗时间了。
