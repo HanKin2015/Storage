@@ -1,0 +1,287 @@
+{
+  "苍牙": [
+    {
+      "scenario": "大招",
+      "troubleshooting": [
+        {
+          "step": "1",
+          "item": "皮肤",
+          "operation": "是否是默认",
+          "pictures": []
+        },
+        {
+          "step": "2",
+          "item": "充钱",
+          "operation": "是否充钱",
+          "pictures": []
+        },
+        {
+          "step": "3",
+          "item": "会员",
+          "operation": "是我们的会员吗",
+          "pictures": []
+        },
+        {
+          "step": "4",
+          "item": "段位",
+          "operation": "是否上过天下无敌",
+          "pictures": []
+        },
+        {
+          "step": "5",
+          "item": "操作",
+          "operation": "玩家操作问题",
+          "pictures": []
+        }
+      ]
+    },
+    {
+      "scenario": "皮肤",
+      "troubleshooting": [
+        {
+          "step": "1",
+          "item": "默认皮肤",
+          "operation": "是默认皮肤吗",
+          "pictures": []
+        },
+        {
+          "step": "2",
+          "item": "多少钱",
+          "operation": "价值如何",
+          "pictures": []
+        },
+        {
+          "step": "3",
+          "item": "总金额",
+          "operation": "冲了多少钱",
+          "pictures": []
+        }
+      ]
+    },
+    {
+      "scenario": "武器",
+      "troubleshooting": [
+        {
+          "step": "1",
+          "item": "品质",
+          "operation": "是SSR吗",
+          "pictures": []
+        },
+        {
+          "step": "2",
+          "item": "星级",
+          "operation": "是五星吗",
+          "pictures": []
+        },
+        {
+          "step": "3",
+          "item": "等级",
+          "operation": "多少级了",
+          "pictures": []
+        },
+        {
+          "step": "4",
+          "item": "幻化吗",
+          "operation": "是不是幻化",
+          "pictures": []
+        },
+        {
+          "step": "5",
+          "item": "属性",
+          "operation": "进步水货他",
+          "pictures": []
+        }
+      ]
+    }
+  ],
+  "卫鲤": [
+    {
+      "scenario": "大招",
+      "troubleshooting": [
+        {
+          "step": "1",
+          "item": "皮肤",
+          "operation": "是否是默认",
+          "pictures": []
+        },
+        {
+          "step": "2",
+          "item": "充钱",
+          "operation": "是否充钱",
+          "pictures": []
+        },
+        {
+          "step": "3",
+          "item": "会员",
+          "operation": "是我们的会员吗",
+          "pictures": []
+        },
+        {
+          "step": "4",
+          "item": "段位",
+          "operation": "是否上过天下无敌",
+          "pictures": []
+        },
+        {
+          "step": "5",
+          "item": "操作",
+          "operation": "玩家操作问题",
+          "pictures": []
+        }
+      ]
+    },
+    {
+      "scenario": "皮肤",
+      "troubleshooting": [
+        {
+          "step": "1",
+          "item": "默认皮肤",
+          "operation": "是默认皮肤吗",
+          "pictures": []
+        },
+        {
+          "step": "2",
+          "item": "多少钱",
+          "operation": "价值如何",
+          "pictures": []
+        },
+        {
+          "step": "3",
+          "item": "总金额",
+          "operation": "冲了多少钱",
+          "pictures": []
+        }
+      ]
+    },
+    {
+      "scenario": "武器",
+      "troubleshooting": [
+        {
+          "step": "1",
+          "item": "品质",
+          "operation": "是SSR吗",
+          "pictures": []
+        },
+        {
+          "step": "2",
+          "item": "星级",
+          "operation": "是五星吗",
+          "pictures": []
+        },
+        {
+          "step": "3",
+          "item": "等级",
+          "operation": "多少级了",
+          "pictures": []
+        },
+        {
+          "step": "4",
+          "item": "幻化吗",
+          "operation": "是不是幻化",
+          "pictures": []
+        },
+        {
+          "step": "5",
+          "item": "属性",
+          "operation": "进步水货他",
+          "pictures": []
+        }
+      ]
+    }
+  ],
+  "洛青": [
+    {
+      "scenario": "大招",
+      "troubleshooting": [
+        {
+          "step": "1",
+          "item": "皮肤",
+          "operation": "是否是默认",
+          "pictures": []
+        },
+        {
+          "step": "2",
+          "item": "充钱",
+          "operation": "是否充钱",
+          "pictures": []
+        },
+        {
+          "step": "3",
+          "item": "会员",
+          "operation": "是我们的会员吗",
+          "pictures": []
+        },
+        {
+          "step": "4",
+          "item": "段位",
+          "operation": "是否上过天下无敌",
+          "pictures": []
+        },
+        {
+          "step": "5",
+          "item": "操作",
+          "operation": "玩家操作问题",
+          "pictures": []
+        }
+      ]
+    },
+    {
+      "scenario": "皮肤",
+      "troubleshooting": [
+        {
+          "step": "1",
+          "item": "默认皮肤",
+          "operation": "是默认皮肤吗",
+          "pictures": []
+        },
+        {
+          "step": "2",
+          "item": "多少钱",
+          "operation": "价值如何",
+          "pictures": []
+        },
+        {
+          "step": "3",
+          "item": "总金额",
+          "operation": "冲了多少钱",
+          "pictures": []
+        }
+      ]
+    },
+    {
+      "scenario": "武器",
+      "troubleshooting": [
+        {
+          "step": "1",
+          "item": "品质",
+          "operation": "是SSR吗",
+          "pictures": []
+        },
+        {
+          "step": "2",
+          "item": "星级",
+          "operation": "是五星吗",
+          "pictures": []
+        },
+        {
+          "step": "3",
+          "item": "等级",
+          "operation": "多少级了",
+          "pictures": []
+        },
+        {
+          "step": "4",
+          "item": "幻化吗",
+          "operation": "是不是幻化",
+          "pictures": []
+        },
+        {
+          "step": "5",
+          "item": "属性",
+          "operation": "进步水货他",
+          "pictures": []
+        }
+      ]
+    }
+  ]
+}

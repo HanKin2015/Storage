@@ -2,6 +2,7 @@
 """
 文 件 名: Ui_ClearTool.py
 文件描述: 清理工具
+备    注: C:\Windows\Temp和%temp%
 作    者: HanKin
 创建日期: 2023.04.10
 修改日期：2023.04.10

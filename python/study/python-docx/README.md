@@ -17,3 +17,15 @@ pip install python-docx
 ## 3、mailmerge（用作按照模板生成大量同类型文档）
 
 ## 4、matplotlib（Python 的绘图库）
+
+## 5、实战
+- 填写排查报告
+- 更新目录
+- 复制已有表格样式
+
+
+
+
+
+
+
