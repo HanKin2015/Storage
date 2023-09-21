@@ -22,6 +22,8 @@ pip install python-docx
 - 填写排查报告
 - 更新目录
 - 复制已有表格样式
+- 添加背景色https://codeantenna.com/a/Cpu3P4LkX6
+- 表格设置指定的中文字体，如微软雅黑
 
 
 

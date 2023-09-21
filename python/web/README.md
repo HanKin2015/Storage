@@ -65,9 +65,17 @@ process spend 0.538 s.
 chatgpt告诉我是这个错误是由于 paramiko 库的版本不兼容所导致的。在 paramiko 2.7.2 版本中，_sanitize_window_size() 方法的参数类型已经从字符串改为整数，但是在旧版本中，该方法的参数类型仍然是字符串。
 
 最后发现原因是port变量类型问题，需要传入是int整型。demo见：D:\Github\Storage\python\web\paramiko_example2.py
+https://stackoverflow.com/questions/66524953/paramiko-typeerror-not-supported-between-instances-of-int-and-str
 
+## 高级输入密码
+```
+该命令使用了sshpass工具来自动输入密码，避免了需要手动输入密码的麻烦
+command = "echo %s | sudo -S %s -p 'hj@123whl' ssh -o StrictHostKeyChecking=no root@localhost -p %s " % (
+                conn.password, sshpass_filename, port)
 
-
+使用echo命令将SSH连接的密码传递给sudo命令
+"echo %s |sudo -S adesk_debug.sh -s %s" % (conn.password, online)
+```
 
 
 
