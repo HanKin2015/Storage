@@ -1,7 +1,7 @@
+# python进行web开发
 Utils：工具类; 效用; 实用工具;
 
-
-# paramiko
+## 1、paramiko
 Paramiko是一个用于SSH协议的Python库，它提供了SSH客户端和服务器的实现，可以用于远程执行命令、传输文件等操作。以下是Paramiko库的一些常用功能：
 
 - SSH客户端连接：使用paramiko.SSHClient()类可以创建一个SSH客户端对象，然后使用connect()方法连接到远程服务器。
@@ -12,7 +12,7 @@ Paramiko是一个用于SSH协议的Python库，它提供了SSH客户端和服务
 
 Paramiko库的使用需要一定的SSH协议和网络编程基础，但是它提供了非常方便的API，可以大大简化SSH连接和操作的编程工作。
 
-# retrying
+## 2、retrying
 retrying是一个Python库，用于在函数执行失败时自动重试。它提供了一些装饰器和函数，可以方便地实现函数重试的逻辑。
 
 retrying库的主要特点包括：
@@ -21,7 +21,7 @@ retrying库的主要特点包括：
 - 支持返回值过滤：可以通过设置retry_on_result参数来指定需要重试的返回值，或者通过自定义函数来判断是否需要重试。
 - 支持日志输出：可以通过设置log_level和log_formatter参数来控制日志输出的级别和格式。
 
-# traceback
+## 3、traceback
 traceback是Python标准库中的一个模块，用于打印和处理异常信息。它提供了一些函数，可以方便地获取和处理异常信息，以便进行调试和错误处理。
 
 以下是traceback库的一些常用函数：
@@ -32,7 +32,7 @@ traceback.format_exception(etype, value, tb[, limit])：返回指定异常的回
 traceback.extract_tb(tb[, limit])：返回指定回溯信息中的栈帧列表。
 traceback.extract_stack([f[, limit]])：返回当前调用栈中的栈帧列表。
 
-## 又一次体现出chatgpt的智障
+### 3-1、又一次体现出chatgpt的智障
 ```
 (base) D:\Users\User\Desktop>python k.py
 ******** starting ********
@@ -67,7 +67,7 @@ chatgpt告诉我是这个错误是由于 paramiko 库的版本不兼容所导致
 最后发现原因是port变量类型问题，需要传入是int整型。demo见：D:\Github\Storage\python\web\paramiko_example2.py
 https://stackoverflow.com/questions/66524953/paramiko-typeerror-not-supported-between-instances-of-int-and-str
 
-## 高级输入密码
+### 3-2、高级输入密码
 ```
 该命令使用了sshpass工具来自动输入密码，避免了需要手动输入密码的麻烦
 command = "echo %s | sudo -S %s -p 'hj@123whl' ssh -o StrictHostKeyChecking=no root@localhost -p %s " % (
@@ -77,6 +77,12 @@ command = "echo %s | sudo -S %s -p 'hj@123whl' ssh -o StrictHostKeyChecking=no r
 "echo %s |sudo -S adesk_debug.sh -s %s" % (conn.password, online)
 ```
 
+### 3-3、压缩成tar.gz文件
+发现使用7zip软件不能压缩成这个格式，还是老老实实使用linux系统的tar命令进行压缩：
+```
+tar zcvf ../filename.tar.gz ./*
+```
+注意，最后的路径存在什么文件夹就会压缩进去，如果填写成abd/*则会把adb文件夹压缩进去。
 
 
 

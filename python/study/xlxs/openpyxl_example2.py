@@ -46,6 +46,12 @@ def test():
     all_vid_pids = []
     for i in range(2, sheet.max_row+1):
         vid_pids = sheet.cell(i, vid_pid_col_idx).value.split(';')
+        
+        # 筛选内容过多的行
+        suggestion = sheet.cell(i, vid_pid_col_idx + 1).value
+        if len(suggestion) > 200:
+            print("index {}".format(i))
+        
         for vid_pid in vid_pids:
             all_vid_pids.append(vid_pid.lower())
     print("all_vid_pids size {}".format(len(all_vid_pids)))
