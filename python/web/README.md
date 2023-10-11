@@ -67,25 +67,30 @@ chatgpt告诉我是这个错误是由于 paramiko 库的版本不兼容所导致
 最后发现原因是port变量类型问题，需要传入是int整型。demo见：D:\Github\Storage\python\web\paramiko_example2.py
 https://stackoverflow.com/questions/66524953/paramiko-typeerror-not-supported-between-instances-of-int-and-str
 
-### 3-2、高级输入密码
+## 4、高级输入密码
 ```
 该命令使用了sshpass工具来自动输入密码，避免了需要手动输入密码的麻烦
 command = "echo %s | sudo -S %s -p 'hj@123whl' ssh -o StrictHostKeyChecking=no root@localhost -p %s " % (
                 conn.password, sshpass_filename, port)
 
 使用echo命令将SSH连接的密码传递给sudo命令
-"echo %s |sudo -S adesk_debug.sh -s %s" % (conn.password, online)
+"echo %s |sudo -S test.sh -s %s" % (conn.password, online)
 ```
 
-### 3-3、压缩成tar.gz文件
+## 5、压缩成tar.gz文件
 发现使用7zip软件不能压缩成这个格式，还是老老实实使用linux系统的tar命令进行压缩：
 ```
 tar zcvf ../filename.tar.gz ./*
 ```
 注意，最后的路径存在什么文件夹就会压缩进去，如果填写成abd/*则会把adb文件夹压缩进去。
 
+## 6、git bash不支持chmod命令修改文件权限
+sh文件只需要在首行添加#!/bin/bash就可以改变其文件执行权限，不需要任何修改。
 
-
-
+对于其他二进制文件若需要添加执行权限，都是失败的，只能在linux系统进行修改：
+部分教程是这样，无效：https://deepinout.com/git/git-questions/735_git_how_to_add_chmod_permissions_to_file_in_git.html
+个人认为正确的答案：https://ceshiren.com/t/topic/4328
+Windows不支持chmod这种权限修改，只有Linux、mac支持；练习这些命令的话，推荐在提供的shell练习服务器上学习
+Git Bash 是伪终端，对于一些命令是不支持的，所以导致修改并没有生效。
 
 

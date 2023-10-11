@@ -39,7 +39,7 @@ msgfmt messages.po -o messages.mo
 
 这些是使用 gettext 工具创建翻译文件的基本步骤。你可以根据自己的需求和项目的规模来进行更复杂的国际化和本地化处理。
 
-## 3、实战失败了
+## 3、实战
 必须要有这样的路径结构：locale\en_US\LC_MESSAGES
 
 可以在网上下载一个gettext工具：gettext0.21-iconv1.16-static-64.exe
@@ -48,3 +48,5 @@ https://github.com/autotools-mirror/gettext
 pygettext.py -d <domain> -o <output_file>.po <source_file>.py
 msgfmt -o <output_file>.mo <input_file>.po
 ```
+
+代码见：D:\Github\Storage\python\study\gettext\main.py

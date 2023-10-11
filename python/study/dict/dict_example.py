@@ -15,6 +15,13 @@ def main():
     """主函数
     """
 
+    # 字典判空
+    my_dict = {}
+    if not my_dict:
+        print("字典为空")
+    else:
+        print("字典不为空")
+
 def debug():
     """调试
     """
