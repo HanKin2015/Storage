@@ -18,12 +18,14 @@ pip install python-docx
 
 ## 4、matplotlib（Python 的绘图库）
 
-## 5、实战
+## 5、python-docx库实战
 - 填写排查报告
-- 更新目录
-- 复制已有表格样式
+- 更新目录（无法实现）
+- 复制已有表格样式（无法实现）
 - 添加背景色https://codeantenna.com/a/Cpu3P4LkX6
 - 表格设置指定的中文字体，如微软雅黑
+- 清楚单元格内容
+- 合并单元格
 
 
 

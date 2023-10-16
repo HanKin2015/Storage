@@ -22,6 +22,24 @@ def main():
     else:
         print("字典不为空")
 
+    # 判断一个变量是否为字典类型
+    my_dict = {'key': 'value'}
+    if isinstance(my_dict, dict):
+        print('my_dict是字典类型')
+    else:
+        print('my_dict不是字典类型')
+
+    # 字典判断是否存在某个键
+    my_dict = {'name': 'Alice', 'age': 25, 'city': 'Beijing'}
+    if 'name' in my_dict:
+        print("键 'name' 存在于字典中")
+    else:
+        print("键 'name' 不存在于字典中")
+    if 'gender' in my_dict:
+        print("键 'gender' 存在于字典中")
+    else:
+        print("键 'gender' 不存在于字典中")
+
 def debug():
     """调试
     """

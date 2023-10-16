@@ -9,15 +9,14 @@
 Copyright (c) 2022 HanKin. All rights reserved.
 """
 
-def fab(max): 
-    n, a, b = 0, 0, 1 
-    while n < max: 
-        yield b      # 使用 yield
-        # print b 
-        a, b = b, a + b 
-        n = n + 1
+print('%d小时%d分%d秒' % (10.1, 20.2, 30.3))    # 10小时20分30秒
 
-for n in fab(5): 
-    print n
+# 将十进制数字字符串转换为十六进制
+decimal_str = '255'
+hex_str = hex(int(decimal_str))
+print(hex_str)  # 0xff
 
-print('%d小时%d分%d秒' % (10.1, 20.2, 30.3))
+# 使用Python的字符串格式化功能来输出四位的十六进制数，不足四位时补0
+hex_num = 255
+hex_str = '{:04x}'.format(hex_num)
+print(hex_str)  # 00ff

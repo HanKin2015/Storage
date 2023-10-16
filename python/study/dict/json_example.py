@@ -34,3 +34,7 @@ json_str_tab = json.dumps(data, indent="\t", ensure_ascii=True)
 
 print(json_str)
 print(json_str_tab)
+
+json_obj = json.loads(json_str)
+print(json_obj)
+print(type(json_obj))

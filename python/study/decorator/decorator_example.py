@@ -21,3 +21,9 @@ def say_hello():
     print("Hello!")
 
 say_hello()
+
+"""
+Before the function is called.
+Hello!
+After the function is called.
+"""
