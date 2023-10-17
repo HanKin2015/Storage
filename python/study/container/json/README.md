@@ -52,7 +52,25 @@ json.dump()和json.dumps()方法中的 indent 参数是用于指定 JSON 对象�
 
 代码见：D:\Github\Storage\python\study\dict\json_example.py
 
+## 1-6、json.load和json.loads的区别
+son.load和json.loads都是Python中用于解析JSON数据的函数，但它们之间有一些区别。
 
+json.load是用于从文件中读取JSON数据并将其解析为Python对象。它接受一个文件对象作为参数，并返回解析后的JSON数据。例如：
+```
+import json
 
+with open('data.json', 'r') as file:
+    data = json.load(file)
+```
+在上面的例子中，data.json是包含JSON数据的文件。json.load函数将文件对象作为参数传递给它，并返回解析后的JSON数据。
 
+json.loads是用于将JSON字符串解析为Python对象。它接受一个JSON字符串作为参数，并返回解析后的JSON数据。例如：
+```
+import json
 
+json_string = '{"name": "John", "age": 30}'
+data = json.loads(json_string)
+```
+在上面的例子中，json_string是一个包含JSON数据的字符串。json.loads函数将该字符串作为参数传递给它，并返回解析后的JSON数据。
+
+因此，json.load用于解析JSON文件，而json.loads用于解析JSON字符串。

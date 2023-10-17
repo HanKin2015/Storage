@@ -15,6 +15,12 @@ def main():
     """主函数
     """
 
+    # 这两种定义都是对的
+    my_dict = {}
+    print(type(my_dict))
+    my_dict = dict()
+    print(type(my_dict))
+
     # 字典判空
     my_dict = {}
     if not my_dict:

@@ -19,4 +19,5 @@ retrying库的主要特点包括：
 
 使用retrying库非常简单，只需要在需要重试的函数上添加@retry装饰器即可。
 
-代码见：
+代码见：D:\Github\Storage\python\study\decorator\retry_example.py
+发现默认情况下重试没有间隔时间阻拦。

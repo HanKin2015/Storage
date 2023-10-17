@@ -24,6 +24,16 @@ def main():
     my_list = [{"a": 1, "b": 2}, {"a": 1, "b": 2}, {"a": 3, "b": 4}]
     unique_list = [dict(t) for t in {tuple(d.items()) for d in my_list}]
     print(unique_list)
+    
+    for d in my_list:
+        print(d.items())
+        for key, value in d.items():
+            pass
+        for value in d.values():
+            pass
+    x = {tuple(d.items()) for d in my_list}
+    print(x)
+
 
 def debug():
     """调试
