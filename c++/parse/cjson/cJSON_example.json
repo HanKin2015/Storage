@@ -1,0 +1,45 @@
+{
+	"device_list":	[{
+			"bLength":	18,
+			"bDescriptorType":	1,
+			"bNumConfigurations":	1,
+			"product":	"DataTraveler 3.0"
+		}, [{
+				"bLength":	9,
+				"bDescriptorType":	2,
+				"bNumInterfaces":	1
+			}, [{
+					"bLength":	9,
+					"bDescriptorType":	4,
+					"bNumEndpoints":	2
+				}, [{
+						"bLength":	7,
+						"bDescriptorType":	5,
+						"bEndpointAddress":	129
+					}, {
+						"bLength":	7,
+						"bDescriptorType":	5,
+						"bEndpointAddress":	129
+					}]]], {
+			"bLength":	18,
+			"bDescriptorType":	1,
+			"bNumConfigurations":	1,
+			"product":	"DataTraveler 3.0"
+		}, [{
+				"bLength":	9,
+				"bDescriptorType":	2,
+				"bNumInterfaces":	1
+			}, [{
+					"bLength":	9,
+					"bDescriptorType":	4,
+					"bNumEndpoints":	2
+				}, [{
+						"bLength":	7,
+						"bDescriptorType":	5,
+						"bEndpointAddress":	129
+					}, {
+						"bLength":	7,
+						"bDescriptorType":	5,
+						"bEndpointAddress":	129
+					}]]]]
+}

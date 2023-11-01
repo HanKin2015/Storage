@@ -103,7 +103,7 @@ void PrintJsonFile(char* fileName, char* option1, char* option2)
     cJSON_AddStringToObject(fld, "fid", "2");  
 
     out = cJSON_Print(root);
-    fprintf(fp, out);   
+    fprintf(fp, "%s", out);   
     fclose(fp);
 
     cJSON_Delete(root);
