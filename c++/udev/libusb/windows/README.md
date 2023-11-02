@@ -1,4 +1,10 @@
-更多内容可见：D:\Github\GitBook\gitbook\USBDevice\libusb.md
+# 在windows系统上获取usb设备信息
+
+## 0、前言
+由于一开始打算使用libusb库，因此部分内容见：D:\Github\GitBook\gitbook\USBDevice\libusb.md
+LibusbExample：简单使用libusb库的例子
+device_helper：计划使用libusb库获取usb设备信息，结果获取字符串描述符失败
+UsbviewGetDescriptor：最终的成果，可行
 
 ## 1、vs编译器警告（等级 1）C4026
 使用形参表声明的函数
@@ -109,3 +115,15 @@ RapidJSON 是一个 C++ 库，因此在纯 C 项目中直接使用会有一些�
 如果您的项目是 C++ 项目，那么您可以使用 RapidJSON 库，并在代码中使用命名空间来访问其功能。在 C++ 项目中，您可以包含 RapidJSON 的头文件，并使用其提供的类和函数来解析和生成 JSON 数据。
 
 选择使用cJSON，项目更加小巧。
+demo见：D:\Github\Storage\c++\parse\cjson\cJSON_example.c
+
+## 10、获取hid设备字符串描述符失败（指的是翻译出来的字符串，而不是raw）
+设备是一个hid类型ukey，465a:1053。
+最终发现是设备问题，在物理机上面使用开源的usbview软件多次获取会出现获取失败：String Descriptor for index 4 not available while device is in low power state.
+
+参考usbview的代码编写的程序同样的效果，拔插一开始能正常获取几次字符串描述符，后面就会失败。
+一开始我以为是代码问题，有缺陷获取不到字符串描述符。于是在网上找了使用HidD_GetProductString函数获取的方法，结果更糟糕，从来没有获取成功。但是这个函数是有作用的，在测试了其他的键盘、鼠标、指纹仪都能获取成功。对于此ukey表现只会比usbview的方法更差。
+
+demo见：D:\Github\Storage\c++\udev\libusb\windows\GetHidAttribute.c
+exe见：D:\Github\Storage\c++\udev\libusb\windows\GetHidAttribute.exe
+

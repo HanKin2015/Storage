@@ -1,0 +1,1 @@
+更多详情见：D:\Github\GitBook\gitbook\USBDevice\libusb.md
