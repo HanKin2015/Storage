@@ -38,6 +38,15 @@ def exception_example():
     except Exception as e:
         print(e)
 
+def raise_example():
+    """
+    主动抛出异常
+    """
+    try:
+        raise Exception("有问题")
+    except Exception as e:
+        print(e)
+
 def main():
     """主函数
     """
@@ -45,6 +54,7 @@ def main():
     traceback_example1()
     traceback_example2()
     exception_example()
+    raise_example()
 
 if __name__ == '__main__':
     """程序入口

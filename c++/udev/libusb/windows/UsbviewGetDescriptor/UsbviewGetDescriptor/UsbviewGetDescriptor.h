@@ -325,12 +325,11 @@ PCHAR GetExternalHubName(
 #define COMMAND_LINE_PARAMETERS 3			//命令行参数必须是2个，第二个参数是文件存储路径
 #define MAX_FILE_PATH_NAME		4096		//json文件路径长度
 #define DEV_NAME_MAX_LENGTH		256			//设备名称长度
-#define PRODUCT					"product"	//设备名称标签
 
 // 把描述符转换成json格式
 VOID DescriptorConvertJson(VOID *desc, UCHAR descType, cJSON *descListObj);
 
-// json格式写到文件中
+// 获取描述符信息
 VOID GetDescriptors(PUSB_DEVICE_DESCRIPTOR DeviceDesc,
 					PUSB_CONFIGURATION_DESCRIPTOR ConfigDesc);
 
@@ -339,3 +338,6 @@ CHAR gDeviceName[DEV_NAME_MAX_LENGTH];
 
 // 输出文件流
 FILE *gOutFileFp;
+
+// 是否记录当前端点描述符信息（由于只记录interfaceDesc->bAlternateSetting为0的接口描述符）
+INT gIsRecordEp;

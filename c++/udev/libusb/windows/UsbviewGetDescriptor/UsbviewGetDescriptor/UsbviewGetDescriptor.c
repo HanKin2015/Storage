@@ -1,4 +1,4 @@
-// UsbviewGetDescriptor.cpp : 定义控制台应用程序的入口点。
+// UsbviewGetDescriptor.c : 定义控制台应用程序的入口点。
 //
 
 #include "stdafx.h"
@@ -627,10 +627,10 @@ VOID DescriptorConvertJson(VOID *desc, UCHAR descType, cJSON *descListObj)
 	case USB_DEVICE_DESCRIPTOR_TYPE:
 		deviceDesc = (PUSB_DEVICE_DESCRIPTOR)desc;
 		INFO("---------------------- Device Descriptor ----------------------");
-		INFO("bLength				: 0x%02x", deviceDesc->bLength);
+		INFO("bLength		: 0x%02x", deviceDesc->bLength);
 		INFO("bDescriptorType		: 0x%02x", deviceDesc->bDescriptorType);
-		INFO("bcdUSB	     	    : 0x%x", deviceDesc->bcdUSB);
-		INFO("idVendor			    : 0x%04x", deviceDesc->idVendor);
+		INFO("bcdUSB	     			: 0x%x", deviceDesc->bcdUSB);
+		INFO("idVendor			: 0x%04x", deviceDesc->idVendor);
 		INFO("idProduct			    : 0x%04x", deviceDesc->idProduct);
 		INFO("");
 
@@ -670,9 +670,20 @@ VOID DescriptorConvertJson(VOID *desc, UCHAR descType, cJSON *descListObj)
 		cJSON_AddNumberToObject(DescObj, "bmAttributes", configurationDesc->bmAttributes);
 		cJSON_AddNumberToObject(DescObj, "MaxPower", configurationDesc->MaxPower);
 		cJSON_AddItemToArray(descListObj, DescObj);
+
 		break;
 	case USB_INTERFACE_DESCRIPTOR_TYPE:
 		interfaceDesc = (PUSB_INTERFACE_DESCRIPTOR)desc;
+
+		// 只记录bAlternateSetting为0的接口描述符
+		if (interfaceDesc->bAlternateSetting != 0)
+		{
+			WARN("filter interfaceDesc->bAlternateSetting %d", interfaceDesc->bAlternateSetting);
+			gIsRecordEp = 0;
+			return;
+		}
+		gIsRecordEp = 1;
+
 		INFO("----------------- Interface Descriptor -----------------");
 		INFO("bLength			    : 0x%02x", interfaceDesc->bLength);
 		INFO("bDescriptorType		: 0x%02x", interfaceDesc->bDescriptorType);
@@ -694,6 +705,11 @@ VOID DescriptorConvertJson(VOID *desc, UCHAR descType, cJSON *descListObj)
 		cJSON_AddItemToArray(descListObj, DescObj);
 		break;
 	case USB_ENDPOINT_DESCRIPTOR_TYPE:
+		if (gIsRecordEp == 0)
+		{
+			WARN("this is not interfaceDesc->bAlternateSetting's endpoint descriptor");
+			return;
+		}
 		endpointDesc = (PUSB_ENDPOINT_DESCRIPTOR)desc;
 		INFO("----------------- Endpoint Descriptor -----------------");
 		INFO("bLength			    : 0x%02x", endpointDesc->bLength);
@@ -951,18 +967,16 @@ GetDescriptors(
 	PUSB_DEVICE_DESCRIPTOR          DeviceDesc,
 	PUSB_CONFIGURATION_DESCRIPTOR   ConfigDesc)
 {
-	PUCHAR                  descEnd = NULL;
-	PUSB_COMMON_DESCRIPTOR  commonDesc = NULL;
-	PUSB_INTERFACE_DESCRIPTOR interfaceDesc = NULL;
-	PUSB_ENDPOINT_DESCRIPTOR  endpointDesc = NULL;
-	cJSON                     *confDescListObj = cJSON_CreateArray(); // 配置描述符列表
-	cJSON                     *infDescListObj = cJSON_CreateArray();  // 接口描述符列表
-	cJSON                     *epDescListObj = cJSON_CreateArray();   // 端点描述符列表
+	PUCHAR                    descEnd          = NULL;
+	PUSB_COMMON_DESCRIPTOR    commonDesc       = NULL;
+	PUSB_INTERFACE_DESCRIPTOR interfaceDesc    = NULL;
+	PUSB_ENDPOINT_DESCRIPTOR  endpointDesc     = NULL;
+	cJSON                     *confDescListObj = cJSON_CreateArray();	// 配置描述符列表
+	cJSON                     *infDescListObj  = cJSON_CreateArray();	// 接口描述符列表
+	cJSON                     *epDescListObj   = cJSON_CreateArray();   // 端点描述符列表
 
 	// 打印设备和配置描述符信息
 	DescriptorConvertJson(DeviceDesc, USB_DEVICE_DESCRIPTOR_TYPE, NULL);
-	PUSB_CONFIGURATION_DESCRIPTOR configurationDesc = (PUSB_CONFIGURATION_DESCRIPTOR)ConfigDesc;
-	DescriptorConvertJson(configurationDesc, USB_CONFIGURATION_DESCRIPTOR_TYPE, confDescListObj);
 
 	//
 	// Get the Configuration and Interface Descriptor strings
@@ -983,6 +997,16 @@ GetDescriptors(
 				OOPS();
 				break;
 			}
+
+			if (cJSON_GetArraySize(infDescListObj))
+			{
+				cJSON_AddItemToArray(confDescListObj, infDescListObj);
+
+			}
+			// 打印配置描述符
+			PUSB_CONFIGURATION_DESCRIPTOR configurationDesc = (PUSB_CONFIGURATION_DESCRIPTOR)ConfigDesc;
+			DescriptorConvertJson(configurationDesc, USB_CONFIGURATION_DESCRIPTOR_TYPE, confDescListObj);
+
 			commonDesc = (PUSB_COMMON_DESCRIPTOR)((PUCHAR)commonDesc + commonDesc->bLength);
 			continue;
 
@@ -1003,6 +1027,11 @@ GetDescriptors(
 				break;
 			}
 
+			if (gIsRecordEp == 1)	// 端点描述符数量可能是为0
+			{
+				cJSON_AddItemToArray(infDescListObj, epDescListObj);
+				epDescListObj = cJSON_CreateArray();
+			}
 			// 打印接口描述符
 			interfaceDesc = (PUSB_INTERFACE_DESCRIPTOR)commonDesc;
 			DescriptorConvertJson(interfaceDesc, USB_INTERFACE_DESCRIPTOR_TYPE, infDescListObj);
@@ -1031,7 +1060,11 @@ GetDescriptors(
 		break;
 	}
 
-	cJSON_AddItemToArray(infDescListObj, epDescListObj);
+	if (gIsRecordEp == 1)
+	{
+		cJSON_AddItemToArray(infDescListObj, epDescListObj);
+		gIsRecordEp = 0;
+	}
 	cJSON_AddItemToArray(confDescListObj, infDescListObj);
 	cJSON_AddItemToArray(gDeviceListObj, confDescListObj);
 	return;
@@ -2017,6 +2050,7 @@ EnumerateHubPorts(
 				if (stringDescs == NULL)
 				{
 					memset(gDeviceName, 0, DEV_NAME_MAX_LENGTH);
+					StringCchCopy(gDeviceName, sizeof(gDeviceName), "null");
 				}
 				GetDescriptors(&connectionInfoEx->DeviceDescriptor,
 					(PUSB_CONFIGURATION_DESCRIPTOR)(configDesc + 1));
@@ -3017,6 +3051,7 @@ int main(int argc, char *argv[])
 	gDeviceList.DeviceInfo = INVALID_HANDLE_VALUE;
 	InitializeListHead(&gDeviceList.ListHead);
 	gDeviceListObj = cJSON_CreateArray();
+	gIsRecordEp = 0;
 
 	// Enumerate all USB buses and populate the tree
 	//
