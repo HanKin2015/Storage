@@ -15,6 +15,20 @@
 #include <stdlib.h>
 #include "cJSON.h"
 
+// 读取json对象值
+//typedef struct cJSON {
+//	struct cJSON *next,*prev;	/* next/prev allow you to walk array/object chains. Alternatively, use GetArraySize/GetArrayItem/GetObjectItem */
+//	struct cJSON *child;		/* An array or object item will have a child pointer pointing to a chain of the items in the array/object. */
+//
+//	int type;					/* The type of the item, as above. */
+//
+//	char *valuestring;			/* The item's string, if type==cJSON_String */
+//	int valueint;				/* The item's number, if type==cJSON_Number */
+//	double valuedouble;			/* The item's number, if type==cJSON_Number */
+//
+//	char *string;				/* The item's name string, if this item is the child of, or is in the list of subitems of an object. */
+//} cJSON;
+
 int main(int argc, char *argv[])
 {
     cJSON *RootObj = cJSON_CreateObject();
@@ -25,6 +39,16 @@ int main(int argc, char *argv[])
     cJSON_AddStringToObject(RootObj, "age", "21");
     cJSON_AddStringToObject(RootObj, "name", "wangmazi");
     cJSON_AddStringToObject(RootObj, "age", "22");
+    
+    cJSON *test =  cJSON_GetObjectItem(json, "test");
+	if (test->type == cJSON_NULL) //判断类型
+	{
+		printf("type : cJSON_NULL\n");
+	} else {
+        printf("%d\n", test->valueint); //打印 0
+        printf("%s\n", test->valuestring); //段错误
+        printf("%ld\n", strlen(test->valuestring)); //段错误
+    }
 
     char *JsonStr1 = cJSON_PrintUnformatted(RootObj);
     char *JsonStr2 = cJSON_Print(RootObj);

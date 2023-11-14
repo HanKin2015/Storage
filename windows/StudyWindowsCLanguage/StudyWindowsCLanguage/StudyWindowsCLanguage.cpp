@@ -239,6 +239,28 @@ static void empty_example()
     return;
 }
 
+// 要将"WCHAR *"转换为"const char *"，您需要进行字符编码的转换。可以使用一些函数来完成这个转换，例如WideCharToMultiByte函数。
+static void WideCharToMultiByteExample()
+{
+    // 假设有一个"WCHAR *"字符串
+    WCHAR* wideStr = L"宽字符字符串";
+
+    // 计算所需的缓冲区大小
+    int bufferSize = WideCharToMultiByte(CP_UTF8, 0, wideStr, -1, NULL, 0, NULL, NULL);
+
+    // 分配缓冲区
+    char* buffer = new char[bufferSize];
+
+    // 进行字符编码转换
+    WideCharToMultiByte(CP_UTF8, 0, wideStr, -1, buffer, bufferSize, NULL, NULL);
+
+    // 将转换后的字符串打印出来
+    std::cout << buffer << std::endl;
+
+    // 释放缓冲区内存
+    delete[] buffer;
+}
+
 int _tmain(int argc, _TCHAR* argv[])
 {
 

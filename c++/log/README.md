@@ -43,7 +43,10 @@ not init log file path, use default log file path, ./log/project.log.
 2023-06-19 15:25:06 [ERROR] [17927:17927] [test_log.cpp:9:main] I am hero, 34
 ```
 
-
+# 新发现
+```
+#define DEBUG(fmt, ...) printf("[DEBUG][device_helper](%s|%d)" fmt "\n", __func__, __LINE__, ##__VA_ARGS__)
+```
 
 
 
