@@ -1,8 +1,8 @@
 /**
-* 文 件 名: study_readdir.c
-* 文件描述: 学习readdir函数
+* 文 件 名: study_readdir.cpp
+* 文件描述: 学习readdir函数和readlink函数
 * 作    者: HanKin
-* 备    注: 编译需要安装libusb库,并且需要增加-lusb-1.0 -lpthread -lm参数
+* 备    注: 
 * 创建日期: 2022.06.29
 * 修改日期：2022.06.29
 *

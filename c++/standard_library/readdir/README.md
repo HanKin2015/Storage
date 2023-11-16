@@ -1,4 +1,0 @@
-opendir
-readdir
-closedir
-readlink
