@@ -9,10 +9,8 @@
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <netinet/in.h>
-
 #include <sys/ioctl.h>
 #include <net/if.h>
-
 #include <unistd.h>
 #include <arpa/inet.h>
 #include <sys/param.h>

@@ -1,39 +1,49 @@
-# 1、简介
-zip文件存储大量usb设备信息数据。
+# usb设备编程
 
-数据存储在json文件中，需要对usb设备信息数据进行收集在一起。
+## 1、获取usb设备驱动名称
+D:\Github\Storage\c++\udev\get_usb_driver_name.c
 
-# 2、要求
-1. 去重
-2. 快速查找
+## 2、获取字符串描述符名称
+D:\Github\Storage\c++\udev\get_string_descriptor_name.c
 
-# 3、数据结构算法
-## 数据存储
-存储设备的唯一标识pvid
+第二种方法根本没有办法获取usb设备加载的驱动名称，因为：
+```
+真正的驱动在这里：
+[root@ubuntu0006:/sys/dev/char/189:257] #cat 3-1\:1.0/uevent
+DEVTYPE=usb_interface
+DRIVER=hub
+PRODUCT=409/55aa/101
+TYPE=9/0/0
+INTERFACE=9/0/0
+MODALIAS=usb:v0409p55AAd0101dc09dsc00dp00ic09isc00ip00in00
 
-map<string, struct>
+而这里只是一个usb驱动：
+[root@ubuntu0006:/sys/dev/char/189:257] #cat uevent
+MAJOR=189
+MINOR=257
+DEVNAME=bus/usb/003/002
+DEVTYPE=usb_device
+DRIVER=usb
+PRODUCT=409/55aa/101
+TYPE=9/0/0
+BUSNUM=003
+DEVNUM=002
 
-使用字典树算法可以快速进行查找
+而遇到复杂的设备如摄像头，还需要麻烦匹配路径：
+root@hankin:/sys/devices/pci0000:00/0000:00:10.0/usb3/3-1# cat 3-1.2/3-1.2\:1.0/uevent
+DEVTYPE=usb_interface
+DRIVER=snd-usb-audio
+PRODUCT=d8c/103/10
+TYPE=0/0/0
+INTERFACE=1/1/0
+MODALIAS=usb:v0D8Cp0103d0010dc00dsc00dp00ic01isc01ip00in00
+root@hankin:/sys/devices/pci0000:00/0000:00:10.0/usb3/3-1# cat 3-1.2/3-1.2\:1.1/uevent
+DEVTYPE=usb_interface
+DRIVER=snd-usb-audio
+PRODUCT=d8c/103/10
+TYPE=0/0/0
+INTERFACE=1/2/0
+MODALIAS=usb:v0D8Cp0103d0010dc00dsc00dp00ic01isc02ip00in01
+```
 
-## 需要文件锁
 
-## 需要Makefile文件
-如果使用VS软件就不需要Makefile文件了，但是移植性就差了。
-
-## 需要单元测试
-
-## 需要多线程进行解压缩
-
-# 去除7z程序解压
-
-# 4、计划
-1. 增加日志模块
-2. 增加Makefile文件或者增加cmake编译文件
-
-gcc安装包：https://ftp.gnu.org/gnu/gcc/
-g++安装包：https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/
-
-# 5、部分问题及解决
-## error: template with C linkage
-不要在extern "C"的中引用C++ STL库的头文件，如<map>, <vector>等具有template的头文件。
-需要检查extern "C"后面为函数；extern "C" { }的定义是否完整。
