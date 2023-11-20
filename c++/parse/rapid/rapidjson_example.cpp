@@ -27,27 +27,27 @@ std::string build_json_msg()
     rapidjson::Document::AllocatorType& allocator = doc.GetAllocator();//生成一个分配器
 
     //构建键值对
-    doc.AddMember("name","jack",allocator);
-    doc.AddMember("age",18,allocator);
-    //====构建数组元素====["1","2"]
+    doc.AddMember("name", "jack", allocator);
+    doc.AddMember("age", 18, allocator);
+    //====构建数组元素====["a","b"]
     rapidjson::Value array_sub(rapidjson::kArrayType);//创建一个数组类型对象
-    array_sub.PushBack("a",allocator);
-    array_sub.PushBack("b",allocator);
+    array_sub.PushBack("a", allocator);
+    array_sub.PushBack("b", allocator);
     //================
-    doc.AddMember("sub",array_sub,allocator);
-    //====构建数组object===[{"1":2,},{}]
+    doc.AddMember("sub", array_sub, allocator);
+    //====构建数组object===[{"a":A,},{}]
     rapidjson::Value array_json(rapidjson::kArrayType);
     rapidjson::Value obj(rapidjson::kObjectType);//每一个数组里面是一个json格式
-    obj.AddMember("a","A",allocator);
-    obj.AddMember("b","B",allocator);
-    array_json.PushBack(obj,allocator);
+    obj.AddMember("a", "A", allocator);
+    obj.AddMember("b", "B", allocator);
+    array_json.PushBack(obj, allocator);
 
     rapidjson::Value obj1(rapidjson::kObjectType);//每一个数组里面是一个json格式
-    obj1.AddMember("c","C",allocator);
-    obj1.AddMember("d","D",allocator);
-    array_json.PushBack(obj1,allocator);
+    obj1.AddMember("c", "C", allocator);
+    obj1.AddMember("d", "D", allocator);
+    array_json.PushBack(obj1, allocator);
     //array_json.PushBack(obj1,allocator);
-    doc.AddMember("elp",array_json,allocator);
+    doc.AddMember("elp", array_json, allocator);
 
     rapidjson::StringBuffer s;
     rapidjson::Writer<rapidjson::StringBuffer> writer(s);
@@ -59,8 +59,8 @@ std::string build_json_msg()
 int main()
 {
     std::string str_json = build_json_msg();
-    std::cout<<str_json<<std::endl;
+    std::cout << str_json << std::endl;
  
-    std::cout<<"hello world"<<std::endl;
+    std::cout << "hello world"  <<std::endl;
     return 0;
 }
