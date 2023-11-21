@@ -1,4 +1,5 @@
 # 使用开源的rapidxml和rapidjson库开发
+需要引入整个库才能使用。
 
 ## 1、rapidxml库存在问题
 开源的rapidxml_print.hpp文件需要修改，直接编译会报错函数未声明使用。
