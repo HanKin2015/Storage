@@ -1,3 +1,13 @@
+可能需要内核头文件：
+（01）找两台电脑，一台电脑安装windows系统，另外一台电脑安装linux系统，至于类型没有限制；
+（02）查看linux系统的版本类型，输入uname -r即可；
+（03）根据获取的linux kernel版本，在www.kernel.org上面寻找合适的kernel版本，直接用wget下载即可；
+（04）用tar解压内核版本，将boot下config文件拷贝到本地，输入make menuconfig，直接保存即可；
+（05）输入make -j2 & make modules_install & make install即可，系统重启；
+（06）在linux系统起来后，注意在grub启动的时候选择刚刚编译的内核版本，这样就可以在linux上开发kernel驱动了；
+（07）在windows 平台安装secureCRT工具，和linux取得连接；
+
+涵盖编译安装卸载，查看安装日志，查看驱动状态。
 ```
 [root@ubuntu0006:~/kernel/hj] #make
 make -C /lib/modules/4.4.0-210-generic/build M=/root/kernel/hj modules
@@ -26,17 +36,17 @@ drwxr-xr-x 4 root root  4096 7月   6 14:44 ../
 drwxr-xr-x 2 root root  4096 7月   6 14:45 .tmp_versions/
 [root@ubuntu0006:~/kernel/hj] #lsmod | grep hello
 [root@ubuntu0006:~/kernel/hj] #insmod hello.ko
-[root@ubuntu0006:~/kernel/hj] #dmesg | tail
-[23646740.929743] traps: a.out[15483] general protection ip:4007bb sp:7ffd1f5e1950 error:0 in a.out[400000+1000]
-[23647957.982990] a.out[13858]: segfault at 0 ip 0000000000400fc6 sp 00007ffd1008d4e0 error 4 in a.out[400000+2000]
-[23654824.240715] a.out[8308]: segfault at 0 ip 0000000000400fc2 sp 00007ffccc7b3240 error 4 in a.out[400000+2000]
-[23655020.036725] a.out[1253]: segfault at 0 ip 000000000040113c sp 00007fff81864430 error 4 in a.out[400000+2000]
-[23655106.012526] a.out[12564]: segfault at 0 ip 000000000040113c sp 00007fff5ddb5420 error 4 in a.out[400000+2000]
-[23655319.293654] a.out[7798]: segfault at 0 ip 000000000040115a sp 00007ffffd315060 error 4 in a.out[400000+2000]
-[23803277.169505] a.out[13077]: segfault at 40 ip 00007f191209834a sp 00007fff1962a830 error 4 in libusb-1.0.so.0.3.0[7f191208c000+1a000]
-[23896430.538923] hello: loading out-of-tree module taints kernel.
-[23896430.538963] hello: module verification failed: signature and/or required key missing - tainting kernel
-[23896430.540080] hello, init
+[root@ubuntu0006:~/kernel/hj] #dmesg -T | tail
+[四 11月 16 17:01:16 2023] a.out[8173]: segfault at 7ffdc3d5f000 ip 0000000000400f03 sp 00007ffdc3d58a10 error 6 in a.out[400000+2000]
+[四 11月 16 17:02:23 2023] a.out[9990]: segfault at 7ffcf52e2000 ip 0000000000400f25 sp 00007ffcf52dae50 error 6 in a.out[400000+2000]
+[四 11月 16 19:42:06 2023] a.out[31052]: segfault at 0 ip 00007f177e37885d sp 00007fff7b4a5d90 error 4 in libc-2.23.so[7f177e30d000+1c0000]
+[四 11月 16 22:15:54 2023] a.out[23618]: segfault at 38 ip 00007f5c93786d44 sp 00007ffdde414110 error 4 in libpthread-2.23.so[7f5c9377d000+18000]
+[四 11月 16 22:17:14 2023] a.out[25993]: segfault at 38 ip 00007f89501d8d44 sp 00007ffd9f418830 error 4 in libpthread-2.23.so[7f89501cf000+18000]
+[四 11月 16 22:18:00 2023] a.out[27203]: segfault at 38 ip 00007f7e64dd9d44 sp 00007ffd854ffa90 error 4 in libpthread-2.23.so[7f7e64dd0000+18000]
+[一 11月 20 14:59:49 2023] ip_tables: (C) 2000-2006 Netfilter Core Team
+[三 11月 22 15:31:19 2023] hello: loading out-of-tree module taints kernel.
+[三 11月 22 15:31:19 2023] hello: module verification failed: signature and/or required key missing - tainting kernel
+[三 11月 22 15:31:19 2023] hello, init
 [root@ubuntu0006:~/kernel/hj] #lsmod | grep hello
 hello                  16384  0
 [root@ubuntu0006:~/kernel/hj] #rmmod hello
