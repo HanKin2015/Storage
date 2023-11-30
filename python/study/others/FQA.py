@@ -39,3 +39,12 @@ import pandas as pd
 date1 = '2023/03/20'
 res = pd.to_datetime(date1).strftime('%Y-%m-%d')
 print(res)
+
+# 4、列表下标起始位置
+lst = [1, 2, 3, 4]
+print(lst[2])   # 3 列表起始序号为0
+    
+# 5、输出十六进制格式
+num = 1234
+print("0x{:04x}".format(num))   # 0x04d2
+print("0x{:04X}".format(num))   # 0x04D2
