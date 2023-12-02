@@ -12,12 +12,10 @@ Copyright (c) 2023 HanKin. All rights reserved.
 # sqlite3数据库
 import sqlite3
  
- 
 class MySqlite(object):
     """
     初始化数据库连接
     """
- 
     def __init__(self):
         # 连接数据库
         db_file = 'app.sqlite'
@@ -26,6 +24,13 @@ class MySqlite(object):
     """
     关闭数据库连接
     """
- 
     def close(self):
         self.conn.close()
+
+connection = sqlite3.connect("database.db")
+cursor = connection.cursor()
+cursor.execute("SELECT * FROM students")
+data = cursor.fetchall()
+for row in data:
+    print(row)
+connection.close()
