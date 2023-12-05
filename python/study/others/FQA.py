@@ -48,3 +48,24 @@ print(lst[2])   # 3 列表起始序号为0
 num = 1234
 print("0x{:04x}".format(num))   # 0x04d2
 print("0x{:04X}".format(num))   # 0x04D2
+
+# 6、匹配vendor
+device_id = '05e4:0690'
+if int(device_id[:4], 16) == 0x05e3:
+    print("{} device's vendor is 0x05e3".format(device_id))
+else:
+    print("{} device's vendor is not 0x05e3".format(device_id))
+    
+# 7、匹配vid和pid
+device_id = '05e4:0690'
+BOX_BUILT_IN_DEVICES = [{0x09da, 0x0999}, {0x9d69, 0x0003}, {0x09da, 0x5999}, {0x9d69, 0x0002}, {0x9d69, 0x0009},
+                        {0x0929, 0x2599}, {0x05e3, 0x0690}, {0x0938, 0x7900}, {0x09da, 0x8952}, {0x9a90, 0x0209},
+                        {0x09da, 0x895b}, {0x9987, 0x07e6}, {0x9a90, 0x0909}, {0x9a90, 0x0909}]
+vid = int(device_id[:4], 16)
+pid = int(device_id[6:], 16)
+vid_pid = {vid, pid}
+print(type(vid_pid), vid_pid)
+if vid_pid in BOX_BUILT_IN_DEVICES:
+    print("{} in BOX_BUILT_IN_DEVICES".format(device_id))
+else:
+    print("{} in not BOX_BUILT_IN_DEVICES".format(device_id))
