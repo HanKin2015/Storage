@@ -127,6 +127,9 @@ static void filter_time_slot_data(const char *data, const uint32_t count,
     
     //获取开始到结束时间段记录
     for (int i = 0; i < FIVE_SECONDS && i < count; i++) {
+        if (htonl(pstart->event_time) > filter.end_time) {
+            break;
+        }
         //printf("%8s = %d\n", "id", i+1);
         //printf("%8s = %d\n", "latency", ntohs(pstart->delay));
         //printf("%8s = %d\n\n", "jitter", ntohs(pstart->jitter));
@@ -135,6 +138,7 @@ static void filter_time_slot_data(const char *data, const uint32_t count,
         g_link_proto = pstart->link_proto;
         g_link_type = pstart->link_type;
         pstart++;
+        actual_count++;
     }
     return;
 }

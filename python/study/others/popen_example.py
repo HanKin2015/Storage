@@ -30,6 +30,26 @@ def get_port_status():
                 text.remove(task)
     return text
 
+def directory_has_space():
+    """
+    Windows执行命令时需要注意文件夹为空的情况
+    """
+    
+    exe_file_path = r"D:\Users\User\Desktop\ttt 1\device_helper.exe"
+    result_file_path = r"D:\Users\User\Desktop\ttt 1\aa"
+    extra_info_file_path = r"D:\Users\User\Desktop\ttt 1\bb"
+    #exe_file_path = exe_file_path.replace(" ", "\ ")           # 不行
+    #result_file_path = result_file_path.replace(" ", "\\ ")    # 不行
+    #extra_info_file_path = extra_info_file_path.replace(" ", "\\ ")
+    #cmd = r"'{}' -p '{}' '{}'".format(exe_file_path, result_file_path, extra_info_file_path)   # 不行
+    cmd = r'"{}" -p "{}" "{}"'.format(exe_file_path, result_file_path, extra_info_file_path)    # 正解
+    os.popen(cmd)
+    #if os.path.exists('"{}"'.format(result_file_path)):
+    if os.path.exists(result_file_path):    # python自己的库会自己处理文件夹空格
+        print("ok")
+    else:
+        print("no")
+
 def main():
     """主函数
     """
