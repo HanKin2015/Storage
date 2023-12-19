@@ -1,0 +1,35 @@
+<!--
+* 文 件 名: get_keyboard_mouse_event.html
+* 文件描述: 学习html语言
+* 备    注: 浏览器按F12键打开console窗口即可看见打印日志
+* 作    者: HanKin
+* 创建日期: 2023.12.19
+* 修改日期：2023.12.19
+*
+* Copyright (c) 2023 HanKin. All rights reserved.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>
+    function myFunction()
+    {
+        document.getElementById("demo").innerHTML="我的第一个 JavaScript 函数";
+    }
+
+    document.addEventListener('keydown', function(event) {
+      console.log('按下的键值：', event.key);
+    });
+
+    document.addEventListener('keyup', function(event) {
+      console.log('松开的键值：', event.key);
+    });
+</script>
+</head>
+<body>
+    <h1>我的 Web 页面</h1>
+    <p id="demo">一个段落</p>
+    <button type="button" onclick="myFunction()">尝试一下</button>
+</body>
+</html>
