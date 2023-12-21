@@ -2,6 +2,7 @@
 """
 文 件 名: USBInterface.py
 文件描述: USB设备接口
+备    注: pip install pyusb
 作    者: HanKin
 创建日期: 2023.03.20
 修改日期：2023.05.26

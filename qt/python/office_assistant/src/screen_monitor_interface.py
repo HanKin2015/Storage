@@ -53,8 +53,8 @@ class Thread_MonitorScreen(QThread):
         self.is_on = False
         
         logger.info('screen size: {} x {}'.format(pyautogui.size()[0], pyautogui.size()[1]))
-        self.screenshot_x = pyautogui.size()[0] / 2 - 32
-        self.screenshot_y = pyautogui.size()[1] / 2 -32
+        self.screenshot_x = int(pyautogui.size()[0] / 2 - 32)
+        self.screenshot_y = int(pyautogui.size()[1] / 2 - 32)
         logger.info('screenshot_x = {}, screenshot_y = {}'.format(self.screenshot_x, self.screenshot_y))
         
         # 收发消息

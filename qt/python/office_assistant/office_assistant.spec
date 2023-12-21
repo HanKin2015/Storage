@@ -5,7 +5,7 @@ block_cipher = None
 
 a = Analysis(['src\\office_assistant.py'],
              pathex=['D:\\Github\\Storage\\qt\\python\\office_assistant'],
-             binaries=[],
+             binaries=[('D:\\Github\\Storage\\qt\\python\\office_assistant\\src\\libzbar-64.dll', '.'), ('D:\\Github\\Storage\\qt\\python\\office_assistant\\src\\libiconv.dll', '.')],
              datas=[],
              hiddenimports=[],
              hookspath=[],

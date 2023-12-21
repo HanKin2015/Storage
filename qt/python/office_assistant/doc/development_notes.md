@@ -5,7 +5,7 @@
 
 ## 2、开发更新步骤
 - 修改src中源码文件
-- 修改doc中file_version_info.txt内容
+- 修改doc中file_version_info.txt内容（一定要提前运行一下resource_convert_to_pyfile.py文件）
 - pyinstaller.exe --version-file=doc/file_version_info.txt -i doc/dog.ico -F src/upan_auto_copy.py
 - 取出exe文件，删除多余的文件夹
 - 如果使用office_assistant.spec文件生成，可以省略文件信息和图标，以及可以修改生成exe文件的文件名
@@ -15,12 +15,19 @@
 ### 2-1、导出requirements.txt文件
 pip freeze > requirements.txt
 
-### 2-2、编译打包
+### 2-2、安装依赖
+pip install pyusb
+pip install pyzbar
+pip install pyqtchart
+pip install pyautogui
+
+### 2-3、编译打包
 - 搭建python3开发环境 (https://m.runoob.com/python3/python3-install.html)
 - 运行 `python upan_auto_copy.py`
 - 运行 `python upan_auto_copy.py -u D`
 - 打包 `pyinstaller.exe --version-file=doc/file_version_info.txt -i img/office_assistant.ico -w -F src/office_assistant.py`
 - 打包 `pyinstaller.exe office_assistant.spec`
+- 打包 `pyinstaller.exe --version-file=doc/file_version_info.txt -i img/office_assistant.ico --add-binary "D:\\Github\\Storage\\qt\\python\\office_assistant\\src\\libzbar-64.dll;." --add-binary "D:\\Github\\Storage\\qt\\python\\office_assistant\\src\\libiconv.dll;." -F src/office_assistant.py`
 
 ## 3、下一步改进点
 - 停止监控偶尔会停不下来，多次之后才会生效
@@ -76,6 +83,10 @@ pip freeze > requirements.txt
 - 推出Lite版本，即简化版本，主要是为了去掉numpy带来的影响
 - 增加NET FrameWork版本读取
 
+### 20231220
+- 解决dll文件未打包进入exe问题
+- 解决监控屏幕程序异常问题
+
 ## 5、问题记录
 
 ### 5-1、pyinstaller打包后程序获取描述符崩溃
@@ -110,7 +121,7 @@ for obj in decoded:
 ### 5-3、Failed to execute script 
 其实是确认库文件，你会发现很难排查，可以通过去掉w参数，然后在dos窗口执行exe文件即可。
 
-pyzbar库需要libzbar-64.dll和libiconv.dll文件。需要将这个文件C:\Users\Administrator\Anaconda3\Lib\site-packages\pyzbar放在C:\Windows\System32目录下，以及src目录下。
+程序中使用了pyzbar库，这个库需要依赖libzbar-64.dll和libiconv.dll文件。因此需要将这个文件C:\Users\Administrator\Anaconda3\Lib\site-packages\pyzbar放在C:\Windows\System32目录下，以及src目录下。
 
 ### 5-4、QMessageBox弹框能够复制粘贴
 box.setTextInteractionFlags(Qt.TextSelectableByMouse)

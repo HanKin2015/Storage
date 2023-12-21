@@ -261,6 +261,19 @@ static void WideCharToMultiByteExample()
     delete[] buffer;
 }
 
+// CharLowerBuff 函数只能处理以 null 结尾的字符串，而不能处理 Unicode 字符串。如果您需要处理 Unicode 字符串，可以使用 CharLowerBuffW 函数(将字符串转换为小写的函数)
+#include <Winbase.h>
+static void CharLowerBuffExample()
+{
+    TCHAR str[] = TEXT("Hello, World!");
+
+    CharLowerBuff(str, lstrlen(str));
+
+    // 输出转换后的字符串
+    _tprintf(TEXT("%s\n"), str);
+    return;
+}
+
 int _tmain(int argc, _TCHAR* argv[])
 {
 
