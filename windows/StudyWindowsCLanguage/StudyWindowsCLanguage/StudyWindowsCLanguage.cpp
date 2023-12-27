@@ -274,6 +274,40 @@ static void CharLowerBuffExample()
     return;
 }
 
+// char*表示的是多字节字符串，比如ASCII、GB2312、GBK等，wchar_t*表示的是宽字符串，即Unicode字符串，由于编码不同，所以在char*和wchar_t*之间无法使用强制类型转换
+// https://blog.csdn.net/auccy/article/details/130596460
+string ws2s(const wstring& ws)
+{
+    string curLocale = setlocale(LC_ALL, NULL);     //curLocale="C"
+    setlocale(LC_ALL, "chs");
+    const wchar_t* wcs = ws.c_str();
+    size_t dByteNum = sizeof(wchar_t)*ws.size()+1;
+    cout << "ws.size():" << ws.size() << endl;      //5：宽字符串L"ABC我们"有5个自然字符
+ 
+    char* dest = new char[dByteNum];
+    wcstombs_s(NULL,dest,dByteNum,wcs,_TRUNCATE);
+    string result = dest;
+    delete[] dest;
+    setlocale(LC_ALL,curLocale.c_str());
+    return result;
+}
+ 
+wstring s2ws(const string& s)
+{
+    string curLocale = setlocale(LC_ALL,NULL);  //curLocale="C"
+    setlocale(LC_ALL,"chs");
+    const char* source = s.c_str();
+    size_t charNum=s.size()+1;
+    cout <<"s.size():"<<s.size()<<endl;         //7：多字节字符串"ABC我们"有7个字节
+ 
+    wchar_t* dest = new wchar_t[charNum];
+    mbstowcs_s(NULL,dest,charNum,source,_TRUNCATE);
+    wstring result = dest;
+    delete[] dest;
+    setlocale(LC_ALL,curLocale.c_str());
+    return result;
+}
+
 int _tmain(int argc, _TCHAR* argv[])
 {
 

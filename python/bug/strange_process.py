@@ -1,3 +1,13 @@
+# -*- coding: utf-8 -*-
+"""
+文 件 名: strange_process.py
+文件描述: 奇怪的流程
+作    者: HanKin
+创建日期: 2023.11.15
+修改日期：2023.11.15
+
+Copyright (c) 2023 HanKin. All rights reserved.
+"""
 import json
 import time
 import logging
