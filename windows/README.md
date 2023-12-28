@@ -24,6 +24,8 @@ Win32：D:\Github\Storage\windows\Win32Project
 
 ## 5、找了很多资料显示只能通过和hub进行io通信
 https://blog.csdn.net/code_xxl/article/details/39343085
+https://blog.csdn.net/qq_23867503/article/details/85463675
+https://www.coder.work/article/7955478#google_vignette
 
 ## 6、加载dll文件
 见项目：D:\Github\Storage\windows\testdll
@@ -82,3 +84,16 @@ D:\Users\Visual Studio 2015\Projects\MFCApplication\Debug>objdump -x MFCApplicat
         DLL Name: IMM32.dll
         DLL Name: WINMM.dll
 ```
+
+## 8、HeapAlloc分配内存后释放函数
+在C/C++中，如果使用HeapAlloc函数分配内存，则需要使用HeapFree函数来释放内存。HeapAlloc和HeapFree是配对使用的，用于在堆上分配和释放内存。
+
+例如，在使用HeapAlloc分配内存后，需要使用HeapFree来释放内存，示例代码如下：
+```
+LPVOID lpMem = HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, dwSize);
+// 使用分配的内存
+// ...
+HeapFree(GetProcessHeap(), 0, lpMem);
+```
+在这个示例中，HeapAlloc用于分配内存，然后在不再需要这块内存时，使用HeapFree来释放内存。
+
