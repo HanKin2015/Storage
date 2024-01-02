@@ -135,6 +135,7 @@ pip install pybind11==2.9
 vs项目：
 demo：D:\Github\Storage\python\call_dll\pybind11_example.py
 
-
+## 7、使用ctypes库调用dll文件
+python和c语言直接数据类型对应表：https://blog.csdn.net/qq_42359085/article/details/113614932
 
 

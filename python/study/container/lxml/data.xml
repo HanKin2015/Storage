@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataContent EnableVirPrint="1234" EnableUSBWrite="asdf">
+<!--usb list data-->
+<UsbDeviceRule MaxMap="12" ClassFilter="3,*,1;3,*,2;9,*,*;8,*,*;" />
+<!--使用base64编码解决中文乱码问题-->
+<UsbList><Dev ID="0acc:0105" Desc="usb record" Ep="84" Aligned="4" ></Dev><Dev ID="0b95:1d5d" Desc="usb card" Ep="80" Aligned="3" ></Dev></UsbList>
+<!--使用<![CDATA[]]>标签解决特殊字符问题-->
+<SpecialName><![CDATA[_HELLO_hejian]]></SpecialName>
+</DataContent>
+<!--checksum=048845EDFF9234EF42DEEFC7EBCEC5FF12C03B888986BAA6D98E7DB6D89974E0-->
