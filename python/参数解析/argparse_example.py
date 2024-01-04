@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: study_argparse.py
+文 件 名: argparse_example.py
 文件描述: 学习参数解析
 作    者: HanKin
 创建日期: 2022.02.15

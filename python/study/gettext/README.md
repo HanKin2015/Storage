@@ -61,17 +61,21 @@ msgfmt -o <output_file>.mo <input_file>.po
 - 编辑practice.po文件，手动翻译内容
 - msgfmt -o practice.mo practice.po
 - 创建gettext要求的目录结构locale/en_US/LC_MESSAGES和locale/zh_CN/LC_MESSAGES
-在实际开发中，使用到mo文件，中英文的mo文件是不一样的，是因为前面的字段算是一个键，键是一样的，但是对应的值分别对应中文和英文。
+在实际开发中，使用到mo文件，中英文的mo文件是不一样的，是因为前面的字段算是一个键，键是一样的，但是对应的值分别对应中文和英文。所以一般只需要写一个英文版的翻译mo文件即可，不需要再去写一个中文版的翻译mo文件。
 ```
 lang = gettext.translation('practice_en_US', localedir=localedir, languages=['en_CN'])
 lang.install('practice_zh_CN')
 ```
 install中参数随便写，没任何影响，有影响的有practice_en_US必须和mo文件名称一样，另外languages中可以是en_US、en、zh、zh_CN都可以，但是需要和前面的域名要相对应。
 
-最后，本来想实现通过运行py文件时写入参数动态调整翻译语言，然而并不能成功，因为加载翻译文件在入参之前。
+最后，本来想实现通过运行py文件时写入参数动态调整翻译语言，然而并不能成功，因为加载翻译文件是在入参之前。但是，我又想到一个方法，只要思想不滑坡，办法总比困难多。
+最终成功了，但是代码不优雅，不推荐：D:\Github\Storage\python\study\gettext\practice\ultimate
+通过修改配置文件传递参数较优雅些，但还是不完美。
+感觉当前架构有问题，不应该分成两个文件写，写在一个文件岂不是可以，在调用中文的时候_("嗨世界")不就可以了。（但是这种架构不适合提供给翻译团队翻译文案，还是应该写成两个文件方便些，另外一个好处就是多处使用同一个字符串时，这样只需要改一处，而写在一个文件则需要修改多处）
 
 ## 5、gettext还支持shell脚本翻译
 资料：https://blog.csdn.net/monarch91/article/details/132323704
+demo: D:\Github\Storage\python\study\gettext\shell
 
 ### 5-1、简介
 在编写shell脚本时，我们可能需要shell脚本在运行时，根据用户操作系统的语言环境，自动选择对应语言的字符串进行输出。这个时候，就需要用到gettext和消息数据库。
@@ -98,6 +102,25 @@ gettext的在线帮助文档为：https://www.gnu.org/software/gettext/manual/ht
 
 ### 5-2、准备shell脚本
 demo见：D:\Github\Storage\python\study\gettext\shell\test.sh
+
+linux支持c语言printf函数:
+```
+[root@ubuntu0006:~] #printf "I am %s, my age is %d\n" das 23
+I am das, my age is 23
+[root@ubuntu0006:~] #gettext --help
+用法：gettext [选项] [[文本域] MSGID]
+或：  gettext [选项] -s [MSGID]...
+
+显示某原文消息的本地语言翻译。
+
+  -d, --domain=文本域       由<文本域>读取翻译后的消息
+  -e                        允许展开某些转义字符
+  -E                        (为了兼容性存在的选项，不会造成任何影响)
+  -h, --help                显示此段说明消息并退出
+  -n                        禁用尾随的换行符
+  -V, --version             显示版本信息并退出
+  [文本域] MSGID            由<文本域>读取相应于 MSGID 的翻译消息
+```
 
 ### 5-3、准备翻译文件
 生成pot文件：

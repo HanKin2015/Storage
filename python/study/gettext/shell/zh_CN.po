@@ -1,0 +1,27 @@
+# Chinese translations for test package
+# test 软件包的简体中文翻译.
+# Copyright (C) 2023 laowang
+# This file is distributed under the same license as the test package.
+# root <root@ubuntu0006>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: test V1.0\n"
+"Report-Msgid-Bugs-To: test@csdn.com\n"
+"POT-Creation-Date: 2023-12-29 15:51+0800\n"
+"PO-Revision-Date: 2023-12-29 16:11+0800\n"
+"Last-Translator: root <root@ubuntu0006>\n"
+"Language-Team: Chinese (simplified) <translation-team-zh-cn@lists."
+"sourceforge.net>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: test.sh:24
+msgid "WELCOME_WORDS"
+msgstr "您好，欢迎来到Linux的世界。"
+
+#: test.sh:25
+msgid "INTRODUCE"
+msgstr "我的名字是%s，年龄是%d岁。"

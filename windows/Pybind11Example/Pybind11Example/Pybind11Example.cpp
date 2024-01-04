@@ -117,7 +117,7 @@ PYBIND11_MODULE(Pybind11Example, m)
 		.def_readwrite("name", &Test::name)	// 访问类中公有变量
 		.def("GetName", &Test::GetName)
 		.def_property("age", &Test::GetAge, &Test::SetAge)	// 访问类中私有变量，注意GetAge和SetAge函数顺序不能反
-		.def("GetHeight", &Test::GetHeight)
+		.def("GetHeight", &Test::GetHeight) // 上面方法可以直接通过变量赋值方式进行修改，这种方法则是函数调用方式
 		.def("SetHeight", &Test::SetHeight);
 
 	pybind11::class_<ST>(m, "ST")

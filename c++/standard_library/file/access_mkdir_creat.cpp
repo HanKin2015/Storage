@@ -1,3 +1,13 @@
+/*******************************************************************************
+* 文 件 名: access_mkdir_creat.cpp
+* 文件描述: access/mkdir/creat函数的使用
+* 备    注: 
+* 作    者: HanKin
+* 创建日期: 2022.06.24
+* 修改日期：2024.01.03
+*
+* Copyright (c) 2022 HanKin. All rights reserved.
+*******************************************************************************/
 #include <iostream>
 #include <cstdio>
 #include <cstdlib>

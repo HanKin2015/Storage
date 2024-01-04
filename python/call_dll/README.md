@@ -95,6 +95,8 @@ https://blog.51cto.com/u_16213320/7394050
 最终才找到问题原因：
 ctypes库是用于调用C代码的工具，而不是C++代码。它可以与C代码进行交互，但无法直接调用C++代码。这是因为C++代码中包含了更复杂的特性，例如类、模板和异常处理等，而ctypes库无法直接处理这些特性。
 
+类是体现封装性的，c语言中没有类，在c++\java\c#中使用，实现过程就像结构体一样，类能够实现对内部数据的隐藏，提供一些公有函数，实现某种功能。
+
 如果您想调用C++代码，有几个可选的库可以考虑使用：
 - Boost.Python：这是一个用于将C++代码封装为Python模块的库。它提供了一组工具和类，使您能够将C++类、函数和对象导出到Python中，并在Python中调用它们。
 - SWIG（Simplified Wrapper and Interface Generator）：这是一个用于生成C++代码与多种高级语言（包括Python）之间的接口的工具。它可以自动生成用于将C++代码封装为Python模块的包装器代码。
@@ -132,8 +134,12 @@ pip install pybind11==2.9
 然后使用demo就可以生成了，注意vs里面显示还是存在红色异常，但是不映射生成结果。生成Pybind11Example.pyd文件。
 
 ### 6-3、生成结果进行调用使用
-vs项目：
+vs项目：D:\Github\Storage\windows\Pybind11Example
 demo：D:\Github\Storage\python\call_dll\pybind11_example.py
+
+### 6-4、资料
+https://blog.csdn.net/zhuikefeng/article/details/107224507
+https://www.cnblogs.com/okmai77xue/p/17482483.html#top
 
 ## 7、使用ctypes库调用dll文件
 python和c语言直接数据类型对应表：https://blog.csdn.net/qq_42359085/article/details/113614932

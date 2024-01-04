@@ -1,3 +1,13 @@
+/*******************************************************************************
+* 文 件 名: real_random_number.cpp
+* 文件描述: 读取linux系统中的文件来获取随机数
+* 备    注: 
+* 作    者: HanKin
+* 创建日期: 2024.01.04
+* 修改日期：2024.01.04
+*
+* Copyright (c) 2024 HanKin. All rights reserved.
+*******************************************************************************/
 #include <iostream>
 #include <cstdio>
 #include <cassert>
@@ -48,20 +58,24 @@ static int platform_entropy_poll(size_t rand_len, char *output)
     return 0;
 }
 
-#define MAX_BUF_LEN 256
-
 int main()
 {
-    char random_number[MAX_BUF_LEN];
-	const int random_len = 4; 
-
-    memset(random_number, 0, sizeof(random_number));
+    char random_number[BUFSIZ] = { 0 };
+    const int random_len = 4; 
     platform_entropy_poll(random_len, random_number);
     printf("random_number: %s\n", random_number);
-	for (int i = 0; i < random_len; i++) {
-		int tmp = random_number[i];
-		printf("%d ", tmp);
-	}
-	printf("\n");
+    for (int i = 0; i < random_len; i++) {
+        int tmp = random_number[i];
+        printf("%d ", tmp);
+    }
+    printf("\n");
     return 0;
 }
+/*
+[root@ubuntu0006:~/cmake] #./a.out
+random_number: K▒9
+75 -18 -76 57
+[root@ubuntu0006:~/cmake] #./a.out
+random_number: 8喺
+56 -27 -106 -70
+*/

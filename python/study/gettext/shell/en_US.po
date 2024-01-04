@@ -1,0 +1,26 @@
+# English translations for test package.
+# Copyright (C) 2023 laowang
+# This file is distributed under the same license as the test package.
+# root <root@ubuntu0006>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: test V1.0\n"
+"Report-Msgid-Bugs-To: test@csdn.com\n"
+"POT-Creation-Date: 2023-12-29 15:51+0800\n"
+"PO-Revision-Date: 2023-12-29 16:23+0800\n"
+"Last-Translator: root <root@ubuntu0006>\n"
+"Language-Team: English <en@translate.freefriends.org>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: test.sh:24
+msgid "WELCOME_WORDS"
+msgstr "Hello,Welcome to the world of Linux."
+
+#: test.sh:25
+msgid "INTRODUCE"
+msgstr "My name is %s , aged %d."

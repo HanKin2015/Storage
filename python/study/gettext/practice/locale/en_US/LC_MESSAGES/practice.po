@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-29 17:15+0800\n"
+"POT-Creation-Date: 2024-01-02 17:19+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: translation.py:17
+#: translation.py:33
 msgid "嗨"
 msgstr "hello"
 
-#: translation.py:18
+#: translation.py:34
 msgid "世界"
 msgstr "world"
 
-#: translation.py:19
+#: translation.py:35
 msgid "我就是我，不一样的烟火"
-msgstr "I am I, is not flash"
+msgstr "I am I, is not firework"
+
+#: translation.py:36
+msgid "我的名字是{}，我今年{}岁。"
+msgstr "my name is {}, and my age is {}."
