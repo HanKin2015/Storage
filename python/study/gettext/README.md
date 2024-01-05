@@ -73,6 +73,9 @@ install中参数随便写，没任何影响，有影响的有practice_en_US必�
 通过修改配置文件传递参数较优雅些，但还是不完美。
 感觉当前架构有问题，不应该分成两个文件写，写在一个文件岂不是可以，在调用中文的时候_("嗨世界")不就可以了。（但是这种架构不适合提供给翻译团队翻译文案，还是应该写成两个文件方便些，另外一个好处就是多处使用同一个字符串时，这样只需要改一处，而写在一个文件则需要修改多处）
 
+又双叒叕一个想法：D:\Github\Storage\python\study\gettext\practice\perfect\main.py
+最终还是达到了我的预期，这才是完美！
+
 ## 5、gettext还支持shell脚本翻译
 资料：https://blog.csdn.net/monarch91/article/details/132323704
 demo: D:\Github\Storage\python\study\gettext\shell

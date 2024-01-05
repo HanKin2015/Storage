@@ -62,3 +62,13 @@ if __name__ == '__main__':
 - 蓝图调用python写的后端函数，相当于是中间连接的桥梁
 - 蓝图需要注册
 
+## 8、路由参数
+```
+@app.route("/download_report/<path:filename>")
+def download_report(filename):
+    dirpath = os.path.join(app.root_path, 'new_report_zip')
+```
+
+
+
+

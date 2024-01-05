@@ -20,7 +20,7 @@ def call_dll_base():
     """简单调用dll文件函数
     """
     # 加载 DLL 文件
-    example_dll = ctypes.WinDLL(r'D:\Users\User\Desktop\卡慢检测工具\卡慢检测工具\mathematics.dll')
+    example_dll = ctypes.WinDLL(r'D:\Users\User\Desktop\mathematics.dll')
 
     # 列出所有属性和方法（无法直接列出DLL文件中的所有函数和方法）
     print(dir(example_dll))
@@ -48,7 +48,7 @@ def call_dll_senior():
     """进阶版调用类函数
     """
     # 加载DLL
-    my_dll = ctypes.CDLL(r'D:\Users\User\Desktop\卡慢检测工具\卡慢检测工具\mathematics.dll')
+    my_dll = ctypes.CDLL(r'D:\Users\User\Desktop\mathematics.dll')
 
     # 定义类的结构体
     # 定义类
@@ -81,7 +81,7 @@ def call_dll_senior():
 def test1():
     """使用dll中的实例调用函数失败
     """
-    my_dll = ctypes.CDLL(r'D:\Users\User\Desktop\卡慢检测工具\卡慢检测工具\ArithmeticsDll.dll')
+    my_dll = ctypes.CDLL(r'D:\Users\User\Desktop\ArithmeticsDll.dll')
     print(my_dll.Export333())
     print(my_dll.ExportN(12345))
     arithmetics_instance = my_dll.ArithmeticsInstance1()
@@ -92,7 +92,7 @@ def test1():
 def test2():
     """使用dll中封装的c语言接口调用，但是结果存在异常
     """
-    my_dll = ctypes.CDLL(r'D:\Users\User\Desktop\卡慢检测工具\卡慢检测工具\ArithmeticsDll.dll')
+    my_dll = ctypes.CDLL(r'D:\Users\User\Desktop\ArithmeticsDll.dll')
     print(my_dll.Export333())
     print(my_dll.ExportN(12345))
     print(my_dll.Add(3, 5))
@@ -103,7 +103,7 @@ def test2():
 def test3():
     """使用dll中封装的c语言接口调用
     """
-    my_dll = ctypes.CDLL(r'D:\Users\User\Desktop\卡慢检测工具\卡慢检测工具\ArithmeticsDll.dll')
+    my_dll = ctypes.CDLL(r'D:\Users\User\Desktop\ArithmeticsDll.dll')
     print(my_dll.Export333())
     print(my_dll.ExportN(12345))
     
