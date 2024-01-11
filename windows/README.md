@@ -63,7 +63,7 @@ D:\Users\User\Desktop>objdump -x DetecTool.exe | findstr "\.dll"
         DLL Name: WINMM.dll
 ```
 
-然后灵机一动，同时打开这两个项目，然后点击属性查看发现：配置属性=》常规=》项目默认值=》MFC的使用，从在共享DLL中使用MFC改成在静态库中使用MFC即可。
+然后灵机一动，同时打开这两个项目，然后点击属性查看发现：配置属性=》常规=》项目默认值=》MFC的使用，从在共享DLL中使用MFC改成在静态库中使用MFC即可。（exe文件也可以这样操作，将使用标准Windows库改成在静态库中使用MFC）
 重新编译生成后从206KB大小文件到9.88MB，这时候是Debug版本，改成Release版本后变成3.38MB大小。
 ```
 D:\Users\Visual Studio 2015\Projects\MFCApplication\Debug>objdump -x MFCApplication.exe | findstr "\.dll"
@@ -97,3 +97,30 @@ HeapFree(GetProcessHeap(), 0, lpMem);
 ```
 在这个示例中，HeapAlloc用于分配内存，然后在不再需要这块内存时，使用HeapFree来释放内存。
 
+## 9、获取驱动程序信息
+http://cn.voidcc.com/question/p-bxbodamg-bcg.html#google_vignette
+https://blog.csdn.net/haart/article/details/120709158
+
+（1）驱动路径获取方法
+可见驱动路径是通过读取注册表
+
+HKEY_LOCAL_MACHINE\SYSTEM\ControlSet\services\usbccgp项的ImagePath子项来获取的。
+
+HKEY_LOCAL_MACHINE\SYSTEM\ControlSet\services是固定位置，usbccgp是设备的service属性值，可以通过调用SetupDiGetDeviceRegistryProperty传参SPDRP_SERVICE来获得。
+
+HKEY_LOCAL_MACHINE\SYSTEM\ControlSet\services下包含一些列的驱动服务子项，每项下面都有ImagePath这一子项，包含了驱动的路径。
+
+（2）inf文件位置
+inf文件位置是通过读取HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}\0009下的InfPath子项得到。
+
+HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Class\是固定位置
+
+{4d36e972-e325-11ce-bfc1-08002be10318}\0009是设备的DriverKey，可以通过调用SetupDiGetDeviceRegistryProperty传参SPDRP_DRIVER来获得。
+
+https://blog.csdn.net/dybb8999/article/details/73606096
+提供了打印中文的方法。
+
+另外发现usbtreeview软件有显示sys路径，但是也仅仅是通过注册表读取的信息，只显示了主驱动程序。另外usbtreeview并没有开源。
+它也无法阻止USB设备加载其他的驱动，因为有多个筛选器驱动程序（如前述的UpperFilters和LowerFilters），它们在主驱动程序的基础上提供额外的功能或处理。
+
+demo见：D:\Github\Storage\windows\GetUsbDeviceDriverInfo

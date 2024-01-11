@@ -33,6 +33,31 @@ static void access_example()
     return;
 }
 
+static void ExpandEnvironmentStringsAExample()
+{
+    // 32位程序会被重定向到SysWOW64文件夹
+    if (_access("C:\\Windows\\System32\\drivers\\ahcache.sys", 0) == 0)
+    //if (_access("D:\\Tools\\office_assistant.exe", 0) == 0)
+    //if (_access("C:\\Windows\\Sysnative\\drivers\\ahcache.sys", 0) == 0)
+    {
+        printf("file exist\n");
+    }
+    else
+    {
+        printf("file not exist\n");
+    }
+
+    // 使用 ExpandEnvironmentStrings 函数来展开环境变量到实际的路径
+    char systemPath[MAX_PATH] = { 0 };
+    if (ExpandEnvironmentStringsA("%windir%\\Sysnative\\drivers\\yourfile.ext", systemPath, MAX_PATH) == 0) {
+        // Handle error, could not expand environment string
+        printf("Could not expand environment string.\n");
+        return 1;
+    }
+    printf("systemPath: %s\n", systemPath);
+    return;
+}
+
 /*
 D:\Users\User\My Document\Visual Studio 2010\Projects\test\Release>test.exe -p jk -o hj
 命令行参数: test.exe  -p jk -o hj

@@ -43,7 +43,7 @@ def main():
     # 打印工作表大小
     print(df.shape)
     
-    # 遍历vid_pid列
+    # 遍历vid_pid列（检查vid_pid列合法性）
     for index, vid_pid in enumerate(df['vid_pid']):
         vid_pids = vid_pid.split(';')
         is_valid = True

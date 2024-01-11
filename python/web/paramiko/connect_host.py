@@ -192,7 +192,7 @@ def main():
     """主函数
     """
 
-    connect_host = ConnectHost("admin", ip="10.70.26.205", password="xxxx", port=22, flag=True)
+    connect_host = ConnectHost("admin", ip="10.123.123.123", password="xxxx", port=22, flag=True)
     test_return_value(connect_host)
     
     vdc_version = connect_host.exec_command("cat /html/appversion")
@@ -202,7 +202,7 @@ def main():
         version = int(m.group(1).replace(".", ""))
     except:
         print(traceback.format_exc())
-        version = 542
+        version = 123
     logger.info("vdc_version: {}".format(version))
 
 def debug():

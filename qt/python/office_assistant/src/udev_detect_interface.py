@@ -15,21 +15,21 @@ from log import logger
 from PyQt5.QtCore import QThread, pyqtSignal
 import platform
 
+wmi = win32com.client.GetObject("winmgmts:")
+logger.debug(wmi)  # <COMObject winmgmts:>
+
 def get_udev_info_list():
     """获取USB设备的信息列表（包含Hub和USB设备）
     不能在线程中执行，否则会有报错，行不通
     """
-    
-    wmi = win32com.client.GetObject("winmgmts:")
-    logger.debug(wmi)  # <COMObject winmgmts:>
-    
     udev_info_list = []
-    for pnp in wmi.InstancesOf("Win32_PnPEntity"):
-        if 'USB\\VID' in pnp.DeviceID and pnp.DeviceID.count('&') <= 4:
+    query = "SELECT * FROM Win32_PnPEntity WHERE DeviceID LIKE '%%USB\\\\VID%%'"
+    for pnp in wmi.ExecQuery(query):
+        if pnp.DeviceID.count('&') <= 4:
             for prop in pnp.Properties_:
                 logger.debug('{} : {}'.format(prop.Name, prop.Value))
             logger.debug('')
-
+    
             udev_info = dict({'Name': pnp.Name,
                                  'deviceID': pnp.deviceID,
                                  'Service': pnp.Service,
@@ -47,7 +47,7 @@ def get_udev_info_list():
                     udev_info['PNPClass'] = pnp.PNPClass
             else:
                 logger.error('当前系统不是Windows')
-
+    
             udev_info_list.append(udev_info)
     for udev_info in udev_info_list:
         for key, value in udev_info.items():
@@ -69,7 +69,7 @@ class Thread_UdevDetect(QThread):
 
     def run(self):
         self.getUdevInfoListSignal.emit()
-        self.sleep(1)   # 等待信号消息处理完成
+        self.sleep(2)   # 等待信号消息处理完成
         logger.info('there are {} hub and usb devices now'.format(len(self.udev_info_list)))
         last_udev_info_list = self.udev_info_list
         while self.is_on:
@@ -121,7 +121,7 @@ def main():
     # USB设备检测线程
     udevDetect = Thread_UdevDetect()
     udevDetect.hotplugSignal.connect(get_udev_info_list)
-    udevDetect.getUdevInfoListSignal.connect(get_udev_info_list)
+    udevDetect.getUdevInfoListSignal.connect()
     udevDetect.is_on = True
     udevDetect.start()
     time.sleep(60)  # 不行，单线程这样没法处理get_udev_info_list函数

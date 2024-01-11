@@ -1,5 +1,10 @@
 ## 1、由于加了application路径__init__.py文件直接运行失败
 ```
+(base) D:\Github\Storage\python\study\class\__init__>python main.py
+D:\Github\Storage\python\study\class\__init__\application\settings.py
+D:\Github\Storage\python\study\class\__init__\application\__init__.py
+5
+24
 (base) D:\Github\Storage\python\study\class\__init__\application>python __init__.py
 Traceback (most recent call last):
   File "__init__.py", line 1, in <module>

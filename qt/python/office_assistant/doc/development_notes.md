@@ -41,6 +41,7 @@ pip install pyautogui
 - 复合设备，如何来判断设备的连接数量（usbview也是这样判断数量，包含了hub，但是usbtree却去掉了hub）
 - 页面错误增量时刻在增加，不清楚是不是这个导致了程序启动了一段时间后使用有些卡顿
 - 清理工具改进，当前我的电脑遇到C盘满，需要清理磁盘，不清楚能删除哪些地方，目前有两个参考：C:\Windows\Temp和%temp%
+- 工具开启检测设备长时间运行后会出现卡死问题
 
 ## 4、更新修改记录
 
@@ -87,6 +88,10 @@ pip install pyautogui
 - 解决dll文件未打包进入exe问题
 - 解决监控屏幕程序异常问题
 
+### 20230110
+- 解决设备检测部分内存泄露问题
+- 增加内存使用情况打印
+
 ## 5、问题记录
 
 ### 5-1、pyinstaller打包后程序获取描述符崩溃
@@ -116,7 +121,8 @@ decoded = pyzbar.decode(img_array)
 # 打印解码结果
 for obj in decoded:
     print(obj.data)
-```使用numpy库可以更方便地进行数值计算和数组操作。如果您不想使用numpy库，可以使用Python内置的列表和基本数学运算符来进行数值计算和数组操作。但是需要注意的是，使用Python内置的列表进行数值计算和数组操作可能会比使用numpy库更慢，因为numpy库是专门为数值计算和数组操作而设计的，具有更高的效率和性能。
+```
+使用numpy库可以更方便地进行数值计算和数组操作。如果您不想使用numpy库，可以使用Python内置的列表和基本数学运算符来进行数值计算和数组操作。但是需要注意的是，使用Python内置的列表进行数值计算和数组操作可能会比使用numpy库更慢，因为numpy库是专门为数值计算和数组操作而设计的，具有更高的效率和性能。
 
 ### 5-3、Failed to execute script 
 其实是确认库文件，你会发现很难排查，可以通过去掉w参数，然后在dos窗口执行exe文件即可。
@@ -132,7 +138,15 @@ box.setTextInteractionFlags(Qt.TextSelectableByMouse)
 ### 5-6、发现不管怎么限制import都会打进exe文件中
 如在common.py中通过if语句限制了numpy库的导入，但是使用pyinstaller打包还是会导入，只有注释掉了才正常。
 
+### 5-7、Failed to start embedded python interpreter
+可能是打包过程中出现异常，导致打出来的包不完整，重新打包即可。
 
+### 5-8、长时间USB设备检测会导致软件卡死
+任务管理器看页面错误增量大约在21左右，导致页面错误不断地在增加，很大概率跟这个有关。
 
+测试demo见：D:\Github\Storage\python\bug\page_error_increment.py
+
+现在的方案还是不行，还得使用 subprocess 模块来调用命令行工具 wmic 来获取。目前方案开启监控后WMI Provider Host占用CPU还是排行第一，只不过从之前的非常高降到了低或者中。
+不过测试发现使用wmic工具命令也会有这个问题，这个应该已经是最优方案了，除非不调用wmi接口，而是其他接口。
 
 

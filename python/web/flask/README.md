@@ -68,7 +68,27 @@ if __name__ == '__main__':
 def download_report(filename):
     dirpath = os.path.join(app.root_path, 'new_report_zip')
 ```
+在 Flask 中，<path:filename> 是一种路由参数，它告诉 Flask 期望在 URL 中接收一个名为 filename 的变量。path 转换器是 Flask 路由系统中的一种特殊类型，它允许你匹配一个包含斜线（/）的路径。
 
+默认情况下，路由中的变量部分只会匹配到下一个斜线之前的部分。例如，如果你有一个路由 /download_report/<filename>，那么它只会匹配像 /download_report/file.zip 这样不包含额外斜线的 URL。但是，如果你想匹配包含斜线的路径，比如 /download_report/folder/subfolder/file.zip，你就需要使用 path 转换器。
 
+调用的时候为：
+```
+url = "http://1.2.3.4:8852/download_report/tmp/usbtrace-x64.zip"
+```
+
+## 9、蓝图路由另外一种写法
+```
+from flask_restful import Resource, Api
+from flask import Blueprint
+
+report_bp = Blueprint("reports", __name__)
+report_api = Api(report_bp)
+
+def GetTotal(Resource):
+    pass
+
+report_api.add_resource(GetTotal, "/totals")
+```
 
 

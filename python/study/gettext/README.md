@@ -199,3 +199,27 @@ My name is Laowang , aged 32.
 我的名字是Laowang，年龄是32岁。
 ```
 我的是xubuntu，虽然也有LANG字段，但是修改不生效，修改LANGUAGE生效。
+
+## 6、生成的po文件中有多行展示的书写格式
+```
+#: D:\Demo\application\translation\device_helper_translation.py:42
+#: D:\Demo\application\translation\device_helper_translation.py:125
+msgid ""
+"床前明月光，疑是地上霜。举头望明月，低头思故乡"
+msgstr ""
+```
+
+另外测试英文版脚本：
+```
+x = 100
+y = 23
+print("x = {}, y = {}"
+      "hahah".format(x, y))
+    
+with open('device_helper_translation.po', 'r', encoding='utf-8') as f:
+    content = f.read()
+
+content = content.replace('msgstr ""', 'msgstr "this is test"')
+with open('device_helper_translation.po', 'w', encoding='utf-8') as f:
+    f.write(content)
+```

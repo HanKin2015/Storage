@@ -5,4 +5,6 @@
 账号密码：xxxx/xxxx
 数据目录：/usr/local/xxxx
 
+## 2、下载zip包并解压缩
+demo见：D:\Github\GitBook\gitbook\Database\dowmload_server_zip_and_extract.py
 

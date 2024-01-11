@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 文 件 名: with_example.py
-文件描述: with语句的用法
+文件描述: with语句的用法（上下文管理器）
 备    注: https://blog.csdn.net/knighthood2001/article/details/120624571
 作    者: HanKin
 创建日期: 2024.01.04

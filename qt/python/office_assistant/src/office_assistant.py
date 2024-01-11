@@ -290,7 +290,18 @@ if __name__ == '__main__':
     logger.info('******** starting ********')
     start_time = time.time()
 
+    # 获取当前进程
+    process = psutil.Process()
+    
+    # 获取当前进程的内存信息
+    mem_info = process.memory_info()
+    logger.info("Memory usage: {:.2f} MB".format(mem_info.rss / 1024**2))  # rss是常驻内存集大小
+
     main()
+    
+    # 获取当前进程的内存信息
+    mem_info = process.memory_info()
+    logger.info("Memory usage: {:.2f} MB".format(mem_info.rss / 1024**2))  # rss是常驻内存集大小
 
     end_time = time.time()
     logger.info('process spend {} s.\n'.format(round(end_time - start_time, 3)))
