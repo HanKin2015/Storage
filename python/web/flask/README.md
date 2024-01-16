@@ -91,4 +91,19 @@ def GetTotal(Resource):
 report_api.add_resource(GetTotal, "/totals")
 ```
 
+## 10、使用Postman工具调试
+Postman官网上这样介绍它:"Manage all of your organization's APIs in Postman, with the industry's most complete API development environment."看的出来Postman是功能强大的API测试的工具
+Postman 提供功能强大的 Web API 和 HTTP 请求的调试，它能够发送任何类型的HTTP 请求 (GET, POST, PUT, DELETE...)，并且能附带任何数量的参数和 Headers。不仅如此，它还提供测试数据和环境配置数据的导入导出，付费的 Post Cloud 用户还能够创建自己的 Team Library 用来团队协作式的测试，并能够将自己的测试收藏夹和用例数据分享给团队。
+
+如果本机调试就不需要修改任何端口和host了，直接使用pycharm运行项目。
+打开Postman工具，新建请求，选择POST请求（根据自己的接口选择对应的请求类型），输入url，注意这里只能填写127.0.0.1而不是ip地址额。
+如果需要输入参数，选择Body=》raw=》数据类型选择JSON：
+```
+{
+    "ip": "12.12.12.70",
+    "password": "hello@147258",
+    "port": 22
+}
+```
+最后点击Send就会有结果返回啦！
 

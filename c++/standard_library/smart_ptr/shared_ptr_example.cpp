@@ -3,7 +3,7 @@
 * 文件描述: unique_ptr指针
 * 作    者: HanKin
 * 创建日期: 2023.08.21
-* 修改日期：2023.08.21
+* 修改日期：2024.01.12
 *
 * Copyright (c) 2023 HanKin. All rights reserved.
 */
@@ -13,9 +13,11 @@
 #include <memory>
 using namespace std;
 
+
+
 int main()
 {
-    shared_ptr<string> ps(new string ("I reigned lonely as a cloud."));
+    shared_ptr<string> ps(new string("I reigned lonely as a cloud."));
     shared_ptr<string> vocation;
     vocation = ps;
     
@@ -25,7 +27,7 @@ int main()
     cout << *ps << endl;
     
     shared_ptr<int> null_up2;
-    null_up2 = new int(3);
+    null_up2 = new int(3);  // error: no match for ‘operator=’ (operand types are ‘std::shared_ptr<int>’ and ‘int*’)
     printf("null_up2 = %d\n", *null_up2);
     return 0;
 }

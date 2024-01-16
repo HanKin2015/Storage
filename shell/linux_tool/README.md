@@ -7,3 +7,36 @@
 ## 2、需求
 快速进入指定文件夹
 拷贝操作
+
+## 3、制作安装包
+make_package文件，执行linux_make_package.sh脚本即可。
+```
+[root@ubuntu0006:~/hh/make_package] #bash linux_make_package.sh
+dos2unix: converting file install.sh to Unix format ...
+updating: bin/ (stored 0%)
+updating: bin/log.sh (deflated 36%)
+updating: install.sh (deflated 34%)
+dos2unix: converting file preinst.sh to Unix format ...
+[root@ubuntu0006:~/hh/make_package] #./xxxx.bin l
+
+EX: ./linux-xxx.bin install or uninstall
+
+[root@ubuntu0006:~/hh/make_package] #./xxxx.bin install
+Archive:  tmp.zip
+   creating: /tmp/bin/
+  inflating: /tmp/bin/log.sh
+  inflating: /tmp/install.sh
+[1]---------------package: unpack file success----------------
+dos2unix: converting file ./bin/log.sh to Unix format ...
+[2]------------package: install/uninstall file success----------------
+[3]---------------package: clear resource success----------------
+
+==================================================================
+==================================================================
+---------------- Please reboot your system ! ---------------------
+==================================================================
+==================================================================
+[root@ubuntu0006:~/hh/make_package] #cat /tmp/make_package.log
+2024-01-15 16:42:36.594 log.sh(20616): begin
+2024-01-15 16:42:36.595 ./bin/log.sh(20616): main:58 hehehj
+```

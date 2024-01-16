@@ -1,5 +1,5 @@
 /**
-* 文 件 名: study_strchar_strtok.cpp
+* 文 件 名: study_strchr_strtok.cpp
 * 文件描述: split函数使用及实战，判断字符串-符号后面部分是否有相同
 * 作    者: HanKin
 * 创建日期: 2021.10.18

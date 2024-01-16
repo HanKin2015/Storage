@@ -16,6 +16,7 @@ import zipfile
 import shutil
 import os
 import json
+import tarfile
 
 class ParamikoInterface:
     def __init__(self, user, ip, password, port):
@@ -119,6 +120,41 @@ def download_data(data_dir):
     # 删除建立对象
     del connect
     return True
+
+def download_data_by_tar(data_dir):
+    # 建立连接
+    connect = ParamikoInterface("root", ip="12.12.15.15", password="1", port=22)
+    # 创建本地存储目录
+    if not os.path.exists(data_dir):
+        os.makedirs(data_dir)
+    else:
+        if os.path.isdir(data_dir):
+            shutil.rmtree(data_dir, ignore_errors=True)
+        os.makedirs(data_dir)
+    # 压缩远程文件夹
+    stdout, stderr = connect.exec_command("tar czf /root/device_data.tar /root/device_data")
+
+    """这里必有警告信息
+    在使用 tar 命令创建归档文件时，tar 默认会去除掉文件路径中的开头斜杠（/）。这样做的目的是为了安全，因为当你在解压归档文件时，去除开头的斜杠可以防止文件被解压到绝对路径，这可能会覆盖重要的系统文件。
+    如果你想保留文件路径中的开头斜杠，可以使用 -P 或 --absolute-names 选项，这样 tar 就不会删除路径中的斜杠了。但请注意，这样做可能会带来安全风险，因为解压归档时会使用绝对路径。
+
+    如果你不介意 tar 去除开头斜杠的行为，可以忽略这个警告。如果你的归档操作没有其他错误，那么归档文件应该已经成功创建。
+    Removing leading `/' from member names
+    """
+    
+    # 下载（本地需要写明压缩包文件名）
+    if not connect.sftp_client:
+        connect.get_sftp_client()
+    data_path = os.path.join(data_dir, "device_data.tar")
+    connect.sftp_client.get("/root/device_data.tar", data_path, callback=None)
+    # 解压缩包
+    with tarfile.open(data_path, 'r') as tar:
+        tar.extractall(path=data_dir)
+    # 删除临时压缩包
+    connect.exec_command("rm -f /root/device_data.tar")
+    os.remove(data_path)
+    # 删除建立对象
+    del connect
 
 if __name__ == '__main__':
     data_dir = "./device_data"
