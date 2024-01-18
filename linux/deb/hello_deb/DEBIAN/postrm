@@ -1,0 +1,18 @@
+#!/bin/bash
+
+LOG_FILE_PATH="/tmp/tool.log"
+EXTRA_INFO_PATH="/tmp/extra_info.json"
+DEVICE_INFO_PATH="/tmp/device_info.json"
+
+# 其他安装后需要执行的命令...
+if [ -f ${LOG_FILE_PATH} ]; then
+    rm -f ${LOG_FILE_PATH}
+fi
+
+if [ -f ${EXTRA_INFO_PATH} ]; then
+    rm -f ${EXTRA_INFO_PATH}
+fi
+
+if [ -f ${DEVICE_INFO_PATH} ]; then
+    rm -f ${DEVICE_INFO_PATH}
+fi

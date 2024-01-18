@@ -1,0 +1,9 @@
+Package: get-usb-info-tool
+Version: 1.0
+Section: script
+Priority: optional
+Architecture: all
+Installed-Size: 4096
+Maintainer: hankin
+Provides: tool
+Description: get usb device info

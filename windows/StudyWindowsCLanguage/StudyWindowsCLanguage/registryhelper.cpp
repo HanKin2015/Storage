@@ -14,7 +14,7 @@
 #endif
 
 /*
-*	@brief 设置类型为整形的注册表
+*	@brief 设置类型为整型的注册表
 *	@param [in]hRootKey	root键值如HKEY_LOCAL_MACHINE、HKEY_CURRENT_USER
 *	@param [in] lpAppName	注册表路径
 *	@param [in] lpKeyName	键名

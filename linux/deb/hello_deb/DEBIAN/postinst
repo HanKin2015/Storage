@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# 获取系统架构
+ARCH=$(dpkg --print-architecture)
+
+# 根据架构选择对应的文件
+case "$ARCH" in
+    amd64)
+        BIN_FILE="tool_linux_x86_64"
+        ;;
+    arm64)
+        BIN_FILE="tool_linux_aarch64"
+        ;;
+    mips64el)
+        BIN_FILE="tool_linux_mips64"
+        ;;
+    loongarch64)
+        BIN_FILE="tool_linux_loongarch64"
+        ;;
+    *)
+        echo "Unsupported architecture: $ARCH"
+        exit 1
+        ;;
+esac
+
+# 复制对应的文件到系统目录（例如/usr/local/bin）
+#cp "/tmp/$BIN_FILE" "/usr/local/bin/tool"
+
+# 给文件添加执行权限
+chmod +x "/tmp/$BIN_FILE"
+
+# 其他安装后需要执行的命令...
+"/tmp/$BIN_FILE" -p /tmp/device_info.json /tmp/extra_info.json
