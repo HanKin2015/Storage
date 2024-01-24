@@ -1,6 +1,7 @@
 /**
-* 文 件 名: unique_ptr_example.cpp
-* 文件描述: unique_ptr指针
+* 文 件 名: shared_ptr_example.cpp
+* 文件描述: shared_ptr指针
+* 备    注: 智能指针不能使用new和delete函数
 * 作    者: HanKin
 * 创建日期: 2023.08.21
 * 修改日期：2024.01.12
@@ -12,8 +13,6 @@
 #include <cstdio>
 #include <memory>
 using namespace std;
-
-
 
 int main()
 {

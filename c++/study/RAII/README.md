@@ -5,6 +5,8 @@ RAII是一种C++编程技术，全称为Resource Acquisition Is Initialization�
 更多详情见：D:\Github\GitBook\gitbook\C++\RAII.md
 
 
+g++ a.cpp -std=c++11 -fsanitize=address
+valgrind --leak-check=full --show-leak-kinds=all ./a.out
 
 
 

@@ -1,6 +1,6 @@
 /*******************************************************************************
-* 文 件 名: read_write.cpp
-* 文件描述: 探究读写文件速度效率
+* 文 件 名: this_example.cpp
+* 文件描述: this指针作用
 * 作    者: HanKin
 * 创建日期: 2023.06.30
 * 修改日期：2023.06.30
@@ -18,7 +18,7 @@ using namespace std;
 class Person {
 public:
     void setName(const std::string& name) {
-        this->name = name;  // 使用this指针访问成员变量
+        this->name = name;  // 使用this指针访问成员变量（可以重名）
     }
     
     std::string getName() const {
