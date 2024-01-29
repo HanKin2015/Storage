@@ -10,8 +10,8 @@
 Copyright (c) 2023 HanKin. All rights reserved.
 """
 # 集合的创建
-set1 = set({1,2,3,4,5})
-set2 = {1,2,3,4,5}
+set1 = set({1, 2, 3, 4, 5})
+set2 = {1, 2, 3, 4, 5}
 set3 = set('abc')
 print(set1, set2, set3) # {1, 2, 3, 4, 5} {1, 2, 3, 4, 5} {'b', 'c', 'a'}
 

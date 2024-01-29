@@ -29,6 +29,7 @@ void test1()
 {
     int *arr = NULL;
     
+    // 利用类使用超出域后自动析构机制
     ScopeGuard guard([&]() { if (arr) { printf("free arr\n"); free(arr); arr = NULL; } });
     
     arr = (int *)malloc(100 * sizeof(int));
