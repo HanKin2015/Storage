@@ -139,7 +139,7 @@ class MainWindow(QMainWindow):
             event.ignore()
         
     def scan_check_hardware_change(self):
-        """
+        """扫描检测硬件改动
         """
         
         self.udev_info_list = USBInterface.get_udev_info_list()
@@ -152,7 +152,7 @@ class MainWindow(QMainWindow):
         
         udev_count = 0
         for udev_info in self.udev_info_list:
-            if udev_info['deviceID'].count('&') <= 4:
+            if udev_info['deviceID'].count('&') <= 4:   # 根据&数量来判断复合设备之间的父子关系
                 logger.debug(udev_info['deviceID'])
                 item = QStandardItem(udev_info['Name'])
                 vid, pid = USBInterface.get_vid_pid(udev_info['deviceID'])

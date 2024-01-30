@@ -4,14 +4,25 @@
 文件描述: wmi操作usb设备例子
 作    者: HanKin
 创建日期: 2023.02.16
-修改日期：2023.02.16
+修改日期：2024.01.30
 
-Copyright (c) 2023 HanKin. All rights reserved.
+Copyright (c) 2024 HanKin. All rights reserved.
 """
 
 import time
 import win32com.client
 from log import logger
+
+def wmi_example():
+    """这才是精髓
+    """
+    wmi = win32com.client.GetObject('winmgmts:')
+    wql = "Select * From Win32_PnPEntity WHERE ClassGuid='{36FC9E60-C465-11CF-8056-444553540000}'"
+    pnps = wmi.ExecQuery(wql)
+    for pnp in pnps:
+        for prop in pnp.Properties_:
+            print('{:27} : {}'.format(prop.Name, prop.Value))
+        print('')
 
 def main():
     """主函数
