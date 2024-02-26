@@ -1,7 +1,7 @@
 /*******************************************************************************
 * 文 件 名: template_example.cpp
 * 文件描述: 类模板
-* 备    注: 
+* 备    注: 可以在一个文件中多次重名T
 * 作    者: HanKin
 * 创建日期: 2024.01.29
 * 修改日期：2024.01.29
@@ -68,7 +68,7 @@ int main( )
     cout << (*result) << endl;  // 3
     
     int a = 3, b = 4;
-    int x = Operate<int>::add(a ,b);
+    int x = Operate<int>::add(a, b);
     int y = Operate<int>::Mul(a, b);
     int z = Operate<int>::Judge(a, b);
     cout << x << " " << y << " " << z << " " << endl; // 7 12 3

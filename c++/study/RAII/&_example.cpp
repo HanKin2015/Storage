@@ -1,7 +1,7 @@
 /*******************************************************************************
 * 文 件 名: &_example.cpp
 * 文件描述: 探索lambda函数中的&
-* 备    注：
+* 备    注：其实这个在D:\Github\GitBook\gitbook\C++\lambda.md有详细说明
 * 作    者: HanKin
 * 创建日期: 2024.01.26
 * 修改日期：2024.01.26
@@ -56,42 +56,6 @@ void test()
 
 int main()
 {
-    int a = 3, b = 5;
-    
-    // 正确，不推荐
-    auto func = [a, b]() {
-        printf("a + b = %d\n", a + b);
-        return a + b;
-    };
-    int ret = func();
-    printf("ret = %d\n", ret);
-    
-    // 'a' and 'b' is not captured
-    auto func1 = []() {
-        printf("a + b = %d\n", a + b);
-        return a + b;
-    };
-    ret = func1();
-    printf("ret = %d\n", ret);
-    
-    // 正确，推荐
-    auto func2 = [&]() {
-        printf("a + b = %d\n", a + b);
-        a = 100;
-        return a + b;
-    };
-    ret = func2();
-    printf("a = %d ret = %d\n", a, ret);
-    
-    // error: assignment of read-only variable ‘a’
-    auto func3 = [a, b]() {
-        printf("a + b = %d\n", a + b);
-        a = 100;
-        return a + b;
-    };
-    ret = func3();
-    printf("a = %d ret = %d\n", a, ret);
-    
     printf("call test\n");
     test();
     printf("enter main\n");

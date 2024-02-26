@@ -1,5 +1,5 @@
 /**
-* 文 件 名: tolowler_tranform_toupper.cpp
+* 文 件 名: tranform_example.cpp
 * 文件描述: 学习transform函数
 * 作    者: HanKin
 * 创建日期: 2021.03.30
@@ -29,19 +29,19 @@ template < class InputIterator1, class InputIterator2,
 
 参数说明：
 
-first1, last1 
-指出要进行元素变换的第一个迭代器区间 [first1,last1)。 
-first2 
-指出要进行元素变换的第二个迭代器区间的首个元素的迭代器位置，该区间的元素个数和第一个区间相等。 
-result 
-指出变换后的结果存放的迭代器区间的首个元素的迭代器位置 
-op 
-用一元函数对象op作为参数，执行其后返回一个结果值。它可以是一个函数或对象内的类重载operator()。 
-binary_op 
+first1, last1
+指出要进行元素变换的第一个迭代器区间 [first1,last1)。
+first2
+指出要进行元素变换的第二个迭代器区间的首个元素的迭代器位置，该区间的元素个数和第一个区间相等。
+result
+指出变换后的结果存放的迭代器区间的首个元素的迭代器位置
+op
+用一元函数对象op作为参数，执行其后返回一个结果值。它可以是一个函数或对象内的类重载operator()。
+binary_op
 用二元函数对象binary_op作为参数，执行其后返回一个结果值。它可以是一个函数或对象内的类重载operator()。
 */
-int op_increase (int i) { return ++i; }  
-int op_sum (int i, int j) { return i+j; }  
+int op_increase(int i) { return ++i; }  
+int op_sum(int i, int j) { return i+j; }  
   
 void test()
 {  
@@ -53,11 +53,9 @@ void test()
     for (int i=1; i<6; i++) first.push_back (i*10); //  first: 10 20 30 40 50  
 
     second.resize(first.size());     // allocate space  
-    transform (first.begin(), first.end(), second.begin(), op_increase);  
-                                                    // second: 11 21 31 41 51  
+    transform (first.begin(), first.end(), second.begin(), op_increase); // second: 11 21 31 41 51  
 
-    transform (first.begin(), first.end(), second.begin(), first.begin(), op_sum);  
-                                                    //  first: 21 41 61 81 101  
+    transform (first.begin(), first.end(), second.begin(), first.begin(), op_sum); //  first: 21 41 61 81 101  
 
     cout << "first contains:";  
     for (it=first.begin(); it!=first.end(); ++it)  
@@ -85,12 +83,10 @@ void TEST()
 // 大写改为小写字母
 char op(char ch)
 {
-
     if (ch >= 'A' && ch <= 'Z') {
         return ch + 32;
-    } else {
-        return ch;
     }
+    return ch;
 }
 
 int main()
