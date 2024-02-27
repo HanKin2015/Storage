@@ -63,6 +63,7 @@ class MainWindow(QWidget):
         time_convert_frame = QFrame(self)
         self.time_label    = QLabel('2023-04-10', time_convert_frame)
         self.time_edit     = QLineEdit(time_convert_frame)
+        self.time_edit.setPlaceholderText("输入时间戳，如1709018270")
         time_btn           = QPushButton('时间转换', time_convert_frame)
         time_btn.clicked.connect(self.time_btn_slot)
         hbox = QHBoxLayout(time_convert_frame)
@@ -152,9 +153,13 @@ class MainWindow(QWidget):
         clipboard.setText(self.base64_string_lineedit.text())
 
     def time_btn_slot(self):
-        """
+        """时间戳转换槽函数
         """
         
+        timestamp = self.time_edit.text()
+        if timestamp == '':
+            QMessageBox.information(self, '时间转换', '请输入时间戳')
+            return
         time_stamp = int(self.time_edit.text())
         logger.info('time stamp is {}'.format(time_stamp))
         self.time_label.setText(str(datetime.date.fromtimestamp(time_stamp)))
@@ -197,7 +202,7 @@ class MainWindow(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    window = MyWindow()
+    window = MainWindow()
     window.show()
     sys.exit(app.exec_())
 

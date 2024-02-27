@@ -4,9 +4,9 @@
 文件描述: 检测ip存活
 作    者: HanKin
 创建日期: 2023.04.06
-修改日期：2023.04.06
+修改日期：2024.02.27
 
-Copyright (c) 2023 HanKin. All rights reserved.
+Copyright (c) 2024 HanKin. All rights reserved.
 """
 
 import sys
@@ -53,11 +53,11 @@ class MainWindow(QWidget):
         self.ip_address_lineedit3 = QLineEdit(self)
         self.ip_address_lineedit3.setText('68')
         self.ip_address_lineedit4 = QLineEdit(self)
-        self.ip_address_lineedit4.setText('1')
+        self.ip_address_lineedit4.setText('0')
         self.ip_address_lineedit5 = QLineEdit(self)
-        self.ip_address_lineedit5.setText('25')
-        scan_button = QPushButton('扫描', self)
-        scan_button.clicked.connect(self.scan_button_slot)
+        self.ip_address_lineedit5.setText('255')
+        self.scan_button = QPushButton('扫描', self)
+        self.scan_button.clicked.connect(self.scan_button_slot)
 
         hbox = QHBoxLayout()
         hbox.addWidget(ip_address_range_label)
@@ -78,7 +78,7 @@ class MainWindow(QWidget):
         #frame.setStyleSheet("border: 1px solid black;")
         hbox.addWidget(frame)
         
-        hbox.addWidget(scan_button)
+        hbox.addWidget(self.scan_button)
         
         self.ip_up_list_widget = QListWidget()
         self.ip_up_list_widget.setStyleSheet("border: 1px solid black;")
@@ -113,16 +113,16 @@ class MainWindow(QWidget):
 
         if not ip_address_segment.isdigit():
             logger.error('IP address segment [{}] is not digit'.format(ip_address_segment))
-            return
+            return None
 
-        if int(ip_address_segment) < 1 or int(ip_address_segment) > 254:
-            logger.error('IP address segment [{}] is not in between 1 and 254'.format(ip_address_segment))
-            return
+        if int(ip_address_segment) < 0 or int(ip_address_segment) > 255:
+            logger.error('IP address segment [{}] is not in between 0 and 255'.format(ip_address_segment))
+            return None
             
         return int(ip_address_segment)
 
     def scan_button_slot(self):
-        """扫描检测IP存活地址
+        """扫描按钮槽函数
         """
         
         ip_address_segment1 = self.check_valid(self.ip_address_lineedit1)
@@ -132,13 +132,15 @@ class MainWindow(QWidget):
         ip_address_segment5 = self.check_valid(self.ip_address_lineedit5)
         logger.info('ip address: {}.{}.{}.{}->{}'.format(ip_address_segment1,
             ip_address_segment2, ip_address_segment3, ip_address_segment4, ip_address_segment5))
-        if not ip_address_segment1 or not ip_address_segment2 or not ip_address_segment3 \
-            or not ip_address_segment4 or not ip_address_segment5:
+        if any(ip_address_segment is None for ip_address_segment in (ip_address_segment1, ip_address_segment2, \
+                                            ip_address_segment3, ip_address_segment4, ip_address_segment5)):
             logger.error('IP address invalid')
+            QMessageBox.information(self, 'IP地址合法性', 'IP地址不合法')
             return
 
         if ip_address_segment4 > ip_address_segment5:
             logger.error('IP address range invalid, {}->{}'.format(ip_address_segment4, ip_address_segment5))
+            QMessageBox.information(self, 'IP地址合法性', 'IP地址范围错误')
             return
         
         # 清空QListWidget
@@ -151,15 +153,17 @@ class MainWindow(QWidget):
         self.check_ip_thread.ip_address_segment3 = ip_address_segment3
         self.check_ip_thread.ip_address_segment4 = ip_address_segment4
         self.check_ip_thread.ip_address_segment5 = ip_address_segment5
+        self.scan_button.setText("扫描中...")
         self.check_ip_thread.start()
 
     def check_done_signal_slot(self):
-        """
+        """扫描完成信号函数
         """
    
         for ip_up in self.check_ip_thread.ip_up_list:
             item = QListWidgetItem(ip_up)
             self.ip_up_list_widget.addItem(item)
+        self.scan_button.setText("扫描")
         QMessageBox.information(self, '检测IP存活', '检测完成')
 
 class Thread_CheckIP(QThread):
@@ -202,6 +206,6 @@ class Thread_CheckIP(QThread):
         
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    window = MyWindow()
+    window = MainWindow()
     sys.exit(app.exec_())
 

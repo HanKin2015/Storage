@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: Ui_HackTool.py
-文件描述: 黑客工具界面
+文 件 名: Ui_Database.py
+文件描述: 数据库界面
 作    者: HanKin
-创建日期: 2023.04.25
-修改日期：2023.04.25
+创建日期: 2024.02.27
+修改日期：2024.02.27
 
-Copyright (c) 2023 HanKin. All rights reserved.
+Copyright (c) 2024 HanKin. All rights reserved.
 """
 
 from common import *
-from hack_interface import *
+from sqlite3_interface import *
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -23,31 +23,52 @@ class MainWindow(QMainWindow):
         
         # 设置窗口
         _translate = QCoreApplication.translate
-        self.setWindowTitle(_translate("MainWindow", '黑客工具'))
+        self.setWindowTitle(_translate("MainWindow", '数据库工具'))
         self.setWindowIcon(self.usb_check_icon)
         self.setGeometry(0, 0, 640, 480)
         self.setFont(QFont("Arial", 12))
         self.center()
+        
+        # 创建工具栏
+        toolbar = QToolBar()
+        self.addToolBar(toolbar)
+        create_db = QAction(self.usb_check_icon, '新建数据库', self)
+        open_db = QAction(self.usb_check_icon, '打开数据库', self)
+        create_table = QAction(self.usb_check_icon, '新建数据表', self)
+        toolbar.addAction(create_db)
+        toolbar.addAction(open_db)
+        toolbar.addAction(create_table)
+        create_db.triggered.connect(self.create_db_slot)
 
         # 创建按钮
-        scan_btn = QPushButton('显示系统信息')
-        copy_btn = QPushButton('-')
-        save_btn = QPushButton('-')
-        scan_btn.clicked.connect(self.show_os_info)
+        delete_files_path_cb = QComboBox(self)
+        delete_files_path_cb.addItem(r'D:\Users\Administrator\My Document\WeChat Files\wxid_2gh9d5knc6th21\FileStorage\MsgAttach')
+        delete_files_path_cb.addItem(r'D:\Github\Storage\python\project\files_classify_delete-duplication\a')
+        delete_files_path_cb.addItem(r'C:\Users\Administrator\AppData\Local\口袋助理\files')
+        send_file_btn = QPushButton('更新数据表')
+        send_word_btn = QPushButton('删除数据表')
+        send_file_btn.clicked.connect(self.send_file_slot)
+        send_file_btn.clicked.connect(self.send_word_slot)
 
         # 创建文本框
         self.text_edit = QTextEdit()
-        self.text_edit.setReadOnly(True)  # 设置为只读状态
+        self.text_edit.setReadOnly(False)  # 设置为只读状态
+        self.text_edit.setContextMenuPolicy(Qt.NoContextMenu)   # 禁止右键菜单
+        
+        # 创建文字拷贝按钮
+        copy_word_btn = QPushButton('写入数据表中')
+        copy_word_btn.clicked.connect(self.copy_word_slot)
 
         # 创建布局
         hbox = QHBoxLayout()
-        hbox.addWidget(scan_btn)
-        hbox.addWidget(copy_btn)
-        hbox.addWidget(save_btn)
+        hbox.addWidget(delete_files_path_cb)
+        hbox.addWidget(send_file_btn)
+        hbox.addWidget(send_word_btn)
 
         vbox = QVBoxLayout()
         vbox.addLayout(hbox)
         vbox.addWidget(self.text_edit)
+        vbox.addWidget(copy_word_btn)
 
         # 创建一个中心窗口，并将布局设置为中心窗口的布局
         central_widget = QWidget()
@@ -84,17 +105,7 @@ class MainWindow(QMainWindow):
     def closeEvent(self, event):
         """重写 closeEvent 方法来实现窗口关闭按钮的槽函数重写
         """
-        
-        """
-        reply = QMessageBox.question(self, '退出确认', '是否确认退出?', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
-        if reply == QMessageBox.Yes:
-            logger.info('******** stop ********\n')
-            os.remove(USB_CHECK_ICO)
-            event.accept()
-        else:
-            event.ignore()
-        """
-        
+
         # 自定义询问对话框
         reply = QMessageBox(self)
         reply.setWindowTitle('退出确认')
@@ -110,31 +121,31 @@ class MainWindow(QMainWindow):
         else:
             event.ignore()
     
-    def show_os_info(self):
-        """显示系统信息
+    def send_file_slot(self):
+        """
         """
         
-        os_info  = '客户端版本 : {}\n'.format(get_client_version())
-        os_info += 'vdc版本 : {}\n'.format(get_vdc_version())
-        os_info += 'agent版本 : {}\n'.format(get_agent_version())
-        os_info += 'usb设备加载的驱动 : {}\n'.format(get_usb_lower_filters())
-        os_info += 'image设备加载的驱动 : {}\n'.format(get_image_lower_filters())
-        os_info += 'camera设备加载的驱动 : {}\n'.format(get_camera_lower_filters())
-        os_info += '登录的用户名 : {}\n'.format(get_login_user_name())
-        os_info += '硬件SN码 : {}\n'.format(get_hardware_sn())
-        os_info += '.NET Framwork版本 : {}\n'.format(get_dotnet_versions())
-        IP, MAC = get_ip_mac_address()
-        os_info += 'IP地址 : {}\n'.format(IP)
-        os_info += 'MAC地址 : {}\n'.format(MAC)
-        system_info = get_computer_system_info()
-        os_info += '电脑名称 : {}\n'.format(system_info['CSCaption'])
-        os_info += '使 用 者 : {}\n'.format(system_info['UserName'])
-        os_info += '操作系统 : {}\n'.format(system_info['OSCaption'])
-        os_info += '系统位数 : {}\n'.format(system_info['OSArchitecture'])
-        os_info += '系统版本 : {}\n'.format(system_info['Version'])
-        os_info += '开机时间 : {}'.format(system_info['LastBootUpTime'])
-        self.text_edit.setPlainText(os_info)
+    def send_word_slot(self):
+        """
+        """
     
+    def copy_word_slot(self):
+        """拷贝文字槽函数
+        """
+        
+        clipboard = QApplication.clipboard()
+        clipboard.setText(self.text_edit.toPlainText())
+    
+    def create_db_slot(self):
+        file_path, _ = QFileDialog.getSaveFileName(self, "选择保存路径", ".", "All Files (*);;Text Files (*.txt)")
+        if file_path:
+            print(file_path)
+    
+    def open_db_slot(self):
+        file_path, _ = QFileDialog.getOpenFileName(self, "选择文件", ".", "All Files (*);;Text Files (*.txt)")
+        if file_path:
+            print(file_path)
+
 def main():
     """主函数
     """

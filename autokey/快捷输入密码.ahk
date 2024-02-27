@@ -1,3 +1,11 @@
+;
+; 快捷输入密码.ahk
+;
+; author: hankin
+; time  : 2021.02.07   
+;
+; Copyright (c) 2021 HanKin. All rights reserved.
+;
 ; # win
 ; ! alt
 ; ^ ctrl
