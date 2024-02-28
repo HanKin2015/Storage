@@ -14,10 +14,10 @@ import unittest
 from log import *
 import sqlite3
 
-def open_sqlite3(db_name):
+def open_sqlite3(db_path):
     """打开数据库，创建数据库连接
     """
-    connection = sqlite3.connect(db_name)
+    connection = sqlite3.connect(db_path)
     return connection
 
 def close_sqlite3(connection):
@@ -26,32 +26,8 @@ def close_sqlite3(connection):
     connection.commit()
     connection.close()
 
-def create_table(number_str):
-    """打开数据库
-    """
-    pass
-
-def delete_table(number_str):
-    """打开数据库
-    """
-    pass
-
-def update_table(number_str):
-    """打开数据库
-    """
-    pass
-
-def query_table(connection, table_name):
-    """打开数据库
-    """
-    cursor = connection.cursor()
-    cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
-    data = cursor.fetchall()
-    for row in data:
-        print(row[0])
-
-def show_tables(connection):
-    """显示数据表
+def get_table_list(connection):
+    """获取数据表列表
     """
     # 创建游标对象
     cursor = connection.cursor()
