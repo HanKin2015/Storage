@@ -28,11 +28,12 @@ def close_sqlite3(connection):
 
 def get_table_list(connection):
     """获取数据表列表
+    sqlite_sequence 是 SQLite 数据库中的一个系统表，用于跟踪自增列的当前值。这个表是由 SQLite 自动创建和维护的，用于跟踪每个表中包含自增列的当前值。它是 SQLite 数据库的内部系统表之一。
     """
     # 创建游标对象
     cursor = connection.cursor()
     # 执行SQL语句查询表列表
-    cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name!='sqlite_sequence'")
     data = cursor.fetchall()
     table_list = []
     for row in data:
@@ -40,58 +41,10 @@ def get_table_list(connection):
         table_list.append(row[0])
     return table_list
 
-class TestMathInterfaceMethods(unittest.TestCase):
-    """math_interface文件的单元测试
-    """
-    
-    def test_dec_number_valid(self):
-        """测试十进制数的合法性
-        """
-        
-        self.assertEqual(dec_number_valid('1234567'), True)
-        self.assertTrue(dec_number_valid('5915'))
-        self.assertFalse(dec_number_valid('59ABC'))
-
-    def test_hex_number_valid(self):
-        """测试十六进制数的合法性
-        """
-        
-        self.assertTrue(hex_number_valid('59ABC'))
-        self.assertFalse(hex_number_valid('9EFG'))
-
-    def test_oct_number_valid(self):
-        """测试八进制数的合法性
-        """
-
-        self.assertTrue(oct_number_valid('01234567'))
-        self.assertFalse(oct_number_valid('87654'))
-
-    def test_bin_number_valid(self):
-        """测试二进制数的合法性
-        """
-
-        self.assertTrue(bin_number_valid('010101'))
-        self.assertFalse(bin_number_valid('01201'))
-
-    def test_decimal_conversion(self):
-        """测试进制转换
-        """
-
-        self.assertEqual(decimal_conversion('010101', 'BIN'), ('0b10101', '0o25', 21, '0x15'))
-        self.assertEqual(decimal_conversion('D89', 'HEX'), ('0b110110001001', '0o6611', 3465, '0xd89'))
-        self.assertEqual(decimal_conversion('D89', 16), (None, None, None, None))
-
-    def test_find_common_divisors(self):
-        """测试所有公约数
-        """
-        
-        self.assertEqual(find_common_divisors(12, 8), [1, 2, 4])
-
 def main():
     """主函数
     """
 
-    #unittest.main()
     db_name = r'D:\Github\Storage\sqlite3\runoob\testDB.db'
     connection = open_sqlite3(db_name)
     show_tables(connection)

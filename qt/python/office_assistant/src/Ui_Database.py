@@ -134,6 +134,7 @@ class MainWindow(QMainWindow):
         if reply.clickedButton() == yes_btn:
             logger.info('******** stop ********\n')
             os.remove(USB_CHECK_ICO)
+            close_sqlite3(self.connection)
             event.accept()
         else:
             event.ignore()
@@ -250,7 +251,8 @@ class MainWindow(QMainWindow):
         #table_info = cursor.fetchall()
         table_name = self.table_list_cb.currentText()
         if table_name:
-            SQL_INSERT_ONE_DATA = "INSERT INTO {} VALUES(NULL, {}, {}, {});".format(table_name, device_type, descriptor, remark)
+            SQL_INSERT_ONE_DATA = "INSERT INTO {} VALUES(NULL, '{}', '{}', '{}');".format(table_name,
+                                  device_type, descriptor, remark)
             print(SQL_INSERT_ONE_DATA)
             try:
                 cursor.execute(SQL_INSERT_ONE_DATA)
@@ -266,17 +268,20 @@ class MainWindow(QMainWindow):
                 print("SQL执行失败:", e)
 
 class ShowTableDialog(QDialog):
-    def __init__(self, data):
+    def __init__(self, table_data):
         super().__init__()
-        self.resize(360, 240)
+        self.resize(365, 240)
         self.setWindowTitle("数据表内容")
 
          # 创建数据模型
         model = QStandardItemModel(4, 3)
-        for row in range(14):
+        for row, data in enumerate(table_data):
             for column in range(3):
-                item = QStandardItem("row {}, column {}".format(row, column))
+                item = QStandardItem(data[column+1])
                 model.setItem(row, column, item)
+
+        # 设置列名
+        model.setHorizontalHeaderLabels(['device_type', 'descriptor', 'remark'])
 
         # 创建表格视图
         table_view = QTableView()
@@ -323,6 +328,9 @@ class TableOperationDialog(QDialog):
         if opt_type == "create":
             ok_btn.clicked.connect(self.create_table_slot)
         elif opt_type == "update":
+            if len(table_info) < 4:
+                print("table info size ({}) less than 4".format(len(table_info)))
+                return
             self.table_name_lineedit.setText(table_name)
             self.column1_lineedit.setText(table_info[1][1])
             self.column2_lineedit.setText(table_info[2][1])
