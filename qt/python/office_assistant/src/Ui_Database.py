@@ -11,6 +11,7 @@ Copyright (c) 2024 HanKin. All rights reserved.
 
 from common import *
 from sqlite3_interface import *
+from AES_encrypt_decrypt import *
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -251,11 +252,17 @@ class MainWindow(QMainWindow):
         #table_info = cursor.fetchall()
         table_name = self.table_list_cb.currentText()
         if table_name:
-            SQL_INSERT_ONE_DATA = "INSERT INTO {} VALUES(NULL, '{}', '{}', '{}');".format(table_name,
-                                  device_type, descriptor, remark)
-            print(SQL_INSERT_ONE_DATA)
+            #key, iv, encrypted_descriptor = encrypt_data(descriptor.encode('utf-8'))
+            #descriptor = "{}{}{}".format(key, iv, encrypted_descriptor)
+        
+            #SQL_INSERT_ONE_DATA = 'INSERT INTO {} VALUES(NULL, "{}", "{}", "{}");'.format(table_name,
+            #                      device_type, descriptor, remark)
+            #print(SQL_INSERT_ONE_DATA)
             try:
-                cursor.execute(SQL_INSERT_ONE_DATA)
+            #    cursor.execute(SQL_INSERT_ONE_DATA)
+                # 使用参数化查询和绑定变量来插入数据
+                cursor.execute("INSERT INTO {} (device_type, descriptor, remark) VALUES (?, ?, ?)".format(table_name),
+                                (device_type, descriptor, remark,))
                 self.connection.commit()    # 这一行很重要，否则无法添加进去
                 if cursor.rowcount > 0:
                     QMessageBox.information(self, '结果', '添加数据成功')

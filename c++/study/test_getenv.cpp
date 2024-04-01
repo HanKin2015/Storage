@@ -17,6 +17,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+不管是系统环境变量还是用户环境变量，都会找到输出
+如果同时拥有path结果会是很奇怪好像是系统，但是输出TEMP是用户
+*/
+static void TestFunction()
+{
+    if (getenv("GOPATH"))
+    {
+        printf("%s\n", getenv("GOPATH"));
+    }
+    if (getenv("OneDrive"))
+    {
+        printf("%s\n", getenv("OneDrive"));
+    }
+    if (getenv("TEMP"))
+    {
+        printf("%s\n", getenv("TEMP"));
+    }
+    return;
+}
+
 int main()
 {
     char *log_level_str;

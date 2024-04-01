@@ -26,7 +26,7 @@ static void test()
         printf("file is exist\n");
     } else {
         printf("file is not exist, errno[%d]: %s\n", errno, strerror(errno));     
-        ret = mkdir("/home/socket/", 0666);
+        ret = mkdir("/home/socket/", 0666); // 只能创建一级目录
         if (ret < 0) {
             printf("mkdir /home/socket failed , errno[%d]: %s\n", errno, strerror(errno));     
         }

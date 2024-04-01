@@ -1,12 +1,12 @@
 /**
 * 文 件 名: libusb_get_descriptor.cpp
-* 文件描述: libusb获取描述符及了解通过控制包获取
+* 文件描述: libusb获取描述符
 * 作    者: HanKin
 * 备    注: 编译需要安装libusb库,并且需要增加-lusb-1.0参数
 * 创建日期: 2023.07.05
-* 修改日期：2023.07.05
+* 修改日期：2024.03.20
 *
-* Copyright (c) 2023 HanKin. All rights reserved.
+* Copyright (c) 2024 HanKin. All rights reserved.
 */
 
 #include <libusb-1.0/libusb.h>
@@ -42,6 +42,20 @@ int main(int argc, char *argv[])
 
             libusb_close(dev_handle);
         }
+        
+        // 获取配置描述符
+        struct libusb_config_descriptor *conf_desc = NULL;
+        r = libusb_get_config_descriptor(devs[i], 0, &conf_desc);
+        if (r < 0) {
+            fprintf(stderr, "failed to get config descriptor");
+            continue;
+        }
+        printf("%02x %04x\n", desc.bNumConfigurations, conf_desc->wTotalLength);
+        int j = 0;
+        uint8_t *tmp = (uint8_t *)conf_desc;    // 注意一定需要unsigned类型，否则异常
+        for (j = 0; j < LIBUSB_DT_CONFIG_SIZE; j++) {
+            printf("%02x%c", tmp[j], j == LIBUSB_DT_CONFIG_SIZE - 1 ? '\n' : ' ');
+        }
     }
 
     libusb_free_device_list(devs, 1);
@@ -49,3 +63,46 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+/*
+[root@ubuntu0006:~/cmake] #./a.out
+09 02 19 00 01 01 00 ffffffe0 00
+09 02 19 00 01 01 00 ffffffe0 00
+09 02 1f 00 01 01 00 ffffffe0 00
+09 02 19 00 01 01 00 ffffffe0 00
+09 02 19 00 01 01 00 ffffffe0 00
+09 02 19 00 01 01 00 ffffffe0 00
+09 02 19 00 01 01 00 ffffffe0 00
+09 02 19 00 01 01 00 ffffffe0 00
+09 02 19 00 01 01 00 ffffffe0 00
+09 02 19 00 01 01 00 ffffffe0 00
+09 02 19 00 01 01 00 ffffffe0 00
+09 02 19 00 01 01 00 ffffffe0 00
+09 02 19 00 01 01 00 ffffffe0 00
+[root@ubuntu0006:~/cmake] #./a.out
+01 0019
+09 02 19 00 01 01 00 e0 00
+01 0019
+09 02 19 00 01 01 00 e0 00
+01 001f
+09 02 1f 00 01 01 00 e0 00
+01 0019
+09 02 19 00 01 01 00 e0 00
+01 0019
+09 02 19 00 01 01 00 e0 00
+01 0019
+09 02 19 00 01 01 00 e0 00
+01 0019
+09 02 19 00 01 01 00 e0 00
+01 0019
+09 02 19 00 01 01 00 e0 00
+01 0019
+09 02 19 00 01 01 00 e0 00
+01 0019
+09 02 19 00 01 01 00 e0 00
+01 0019
+09 02 19 00 01 01 00 e0 00
+01 0019
+09 02 19 00 01 01 00 e0 00
+01 0019
+09 02 19 00 01 01 00 e0 00
+*/
