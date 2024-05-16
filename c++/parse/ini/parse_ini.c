@@ -1,3 +1,13 @@
+/*******************************************************************************
+* 文 件 名: parse_ini.c
+* 文件描述: 解析ini文件
+* 备    注: 
+* 作    者: HanKin
+* 创建日期: 2021.09.07
+* 修改日期：2021.09.07
+*
+* Copyright (c) 2021 HanKin. All rights reserved.
+*******************************************************************************/
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -5,10 +15,10 @@
 
 #define MAX_BUFFER 256
 
-static char* trim(char* str, const char* delim)
+static char *trim(char *str, const char *delim)
 {
-    char* p1 = str;
-    char* p2 = NULL;
+    char *p1 = str;
+    char *p2 = NULL;
     int len;
 
     if (str == NULL || str[0] == 0)
@@ -17,7 +27,7 @@ static char* trim(char* str, const char* delim)
     p2 = p1 + len - 1;
     while (strchr(delim, *p1))
         p1++;
-    if(p1>p2)
+    if(p1 > p2)
         return NULL;
     if (*p1 == 0)
         return p1;
@@ -25,9 +35,9 @@ static char* trim(char* str, const char* delim)
 
     while (strchr(delim, *p2))
         p2--;
-    if(p2<str)
+    if(p2 < str)
         return NULL;
-    *(p2+1) = 0;
+    *(p2 + 1) = 0;
     return p1;
 }
 
@@ -50,16 +60,16 @@ static char* trim(char* str, const char* delim)
  *  0, fail
  *  other, value's length
  */
-__attribute ((visibility("default"))) int config_file_get(const char *filename, 
-						const char *section, const char *key, char *value, int value_size)
+__attribute ((visibility("default"))) int config_file_get(const char *filename,
+        const char *section, const char *key, char *value, int value_size)
 {
-    FILE* file = 0;
+    FILE *file = 0;
     char buff[MAX_BUFFER];
-    char* line = 0;
+    char *line = 0;
     int length = 0;
     int sec_len = strlen(section);
     int key_len = strlen(key);
-    char* pos = 0;
+    char *pos = 0;
     int findflag = 0; //0: none-find section, 1:find section, but none-find key, 2:find key
 
     if (value == NULL || value_size < 1) {
@@ -74,52 +84,41 @@ __attribute ((visibility("default"))) int config_file_get(const char *filename,
         return 0;
     }
 
-    while(!feof(file))
-    {
+    while(!feof(file)) {
         line = buff;
         if (0 == fgets(line, sizeof(buff), file)) {
             goto __end;
         }
         trim(line, " \r\n\t");
 
-		if (line[0]=='#') {
-			continue;
-		}
-        if (line[0]=='['
-                && line[strlen(line)-1]==']'
-           )
-        {
+        if (line[0] == '#') {
+            continue;
+        }
+        if (line[0] == '[' && line[strlen(line) - 1] == ']') {
             if (0 == findflag
-                    && strncmp(&line[1], section, sec_len)==0
-                    && line[sec_len+1]==']'
-               )
-            {
+                && strncmp(&line[1], section, sec_len) == 0
+                && line[sec_len + 1] == ']'
+               ) {
                 findflag = 1;
-            }
-            else
-            {
+            } else {
                 findflag = 0;
             }
             continue;
         }
 
-        if (1 == findflag)
-        {
+        if (1 == findflag) {
             pos = strchr(line, '=');
-            if (pos)
-            {
+            if (pos) {
                 *pos = 0;
-                if (strncmp(trim(line, " \r\n\t"), key, key_len)==0)
-                {
+                if (strncmp(trim(line, " \r\n\t"), key, key_len) == 0) {
                     pos++;
                     findflag = 2;
                 }
             }
         }
 
-        if (2 == findflag)
-        {
-            char* v = trim(pos, " \r\n\t");
+        if (2 == findflag) {
+            char *v = trim(pos, " \r\n\t");
             length = strlen(v);
             memset(value, 0, value_size);
             strncpy(value, v, value_size - 1);
@@ -129,8 +128,7 @@ __attribute ((visibility("default"))) int config_file_get(const char *filename,
 
 
 __end:
-    if (file)
-    {
+    if (file) {
         fclose(file);
     }
     return length;
@@ -146,7 +144,7 @@ int main()
 
     int ret = config_file_get(ini_file_path, section, key, value, value_size);
     printf("ret = %d\n", ret);
-    
+
     if (ret) {
         printf("file: %s, section: %s, key: %s, value: %s\n", ini_file_path, section, key, value);
     }

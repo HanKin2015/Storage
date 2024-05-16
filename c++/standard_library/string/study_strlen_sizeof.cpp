@@ -64,6 +64,16 @@ static void study_sizeof()
     return;
 }
 
+static void segment_fault()
+{
+    const char *path = "./test1/test2/test3";
+    printf("%d\n", strlen(path));   // 19
+    printf("%d\n", sizeof(path));   // 8
+    char *k = NULL;
+    printf("%d\n", strlen(k));  // strlen 函数会尝试访问指针 k 所指向的内存，但由于 k 是空指针，即指向地址为 0 的内存，因此在尝试访问该地址时会触发段错误
+    return;
+}
+
 int main()
 {
     array_size();
