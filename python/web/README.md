@@ -99,6 +99,16 @@ Git Bash 是伪终端，对于一些命令是不支持的，所以导致修改�
 ## 8、高级（嵌套）
 通过中间平台进入另外一个服务端执行命令并获取执行结果
 
+## 9、requests.post设置超时时间
+```
+import requests
 
+url = 'http://example.com/post_endpoint'
+data = {'key1': 'value1', 'key2': 'value2'}
 
-
+try:
+    response = requests.post(url, data=data, timeout=5)
+    print(response.text)
+except requests.exceptions.Timeout:
+    print('请求超时，请检查网络连接或增加超时时间。')
+```

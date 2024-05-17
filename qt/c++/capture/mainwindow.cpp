@@ -12,6 +12,8 @@
 #include <QListData>
 #include <QThread>
 #include <QTime>
+#include <fstream>
+#include <sstream>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -25,55 +27,103 @@ MainWindow::MainWindow(QWidget *parent)
     //InitLayout();
 }
 
-// 废弃的函数
-void MainWindow::InitLayout()
+// 获取摄像头指定格式分辨率
+#if 1
+void  MainWindow::getResolutions(QCamera *camera, QVideoFrame::PixelFormat pixelFormat)
 {
-    this->setWindowTitle("摄像头工具");  // 窗口名称
-    this->resize(640, 480);             // 窗口大小
-    this->setWindowIcon(QIcon(APP_LOGO_FILE_PATH)); // 图标
+    qDebug("%s:%d", __FUNCTION__, __LINE__);
 
-    // 创建帮助菜单
-    QMenu *help_menu = ui->menubar->addMenu(tr("help(&H)"));
-    QAction *document_action = help_menu->addAction(tr("&document"));
-    QAction *update_log_action = help_menu->addAction(tr("&update log"));
-    QAction *about_action = help_menu->addAction(tr("&about"));
-    connect(about_action, SIGNAL(triggered()), this, SLOT(AboutActionClicked()));
-    connect(document_action, SIGNAL(triggered()), this, SLOT(DocumentActionClicked()));
-    connect(update_log_action, SIGNAL(triggered()), this, SLOT(UpdateLogActionClicked()));
+    // 获取要打开的设备的名称
+    QCameraInfo CameraInfo = cameraList.at(cameraNameCB->currentIndex());
+    if (!camera) {
+        camera = new QCamera(CameraInfo);
+    }
 
-    QPushButton *captureBtn = new QPushButton("捕获", this);
-    QPushButton *saveBtn = new QPushButton("保存", this);
-    QPushButton *exitBtn = new QPushButton("退出", this);
+    camera->start();
+    // 获取摄像头支持的视图设置
+    QList<QCameraViewfinderSettings> viewfinderSettings = camera->supportedViewfinderSettings();
 
-    displayLabel = new QLabel();
-    displayLabel->setFixedSize(150, 150);
-    displayLabel->setScaledContents(true);
+    resolution_list.clear();
+    // 遍历视图设置列表，找到指定格式的分辨率
+    foreach (const QCameraViewfinderSettings& settings, viewfinderSettings)
+    {
+        // 指定需要的格式，例如：QVideoFrame::Format_RGB32
+        if (settings.pixelFormat() == pixelFormat)
+        {
+            // 获取分辨率
+            QSize resolution = settings.resolution();
+            //qDebug() << "Resolution: " << resolution.width() << "x" << resolution.height();
+            resolution_list.append(resolution);
+        }
+    }
+    camera->stop();
+    delete camera;
+    camera = NULL;
+    return;
+}
+#endif
 
-    QVBoxLayout *rightLayout = new QVBoxLayout();
-    rightLayout->addWidget(displayLabel);
-    rightLayout->addWidget(captureBtn);
-    rightLayout->addWidget(saveBtn);
-    rightLayout->addWidget(exitBtn);
+#if 0
+// 没有想通为何不行
+void MainWindow::getResolutions(QCamera *camera, QVideoFrame::PixelFormat pixelFormat)
+{
+    qDebug("%s:%d", __FUNCTION__, __LINE__);
 
-    //QWidget *widget = new QWidget();
-    //this->setCentralWidget(widget);
-    centralWidget()->setLayout(rightLayout);
+    // 获取要打开的设备的名称
+    QCameraInfo CameraInfo = cameraList.at(cameraNameCB->currentIndex());
+    if (!camera) {
+        camera = new QCamera(CameraInfo);
+    }
+
+    camera->start();
+    QCameraViewfinderSettings set;
+    qDebug("pixelFormat = %d", pixelFormat);
+    set.setPixelFormat(pixelFormat);
+    camera->setViewfinderSettings(set);
+
+    resolution_list = camera->supportedViewfinderResolutions();
+    qDebug("resolution_list size = %d", resolution_list.size());
+    camera->stop();
+    delete camera;
+    camera = NULL;
+    return;
+}
+#endif
+
+// 格式变化随之分辨率列表变化
+void MainWindow::comboBoxIndexChanged(int index)
+{
+    QComboBox *comboBox = qobject_cast<QComboBox*>(sender());
+    if (comboBox) {
+        QString selectedText = comboBox->currentText();
+        qDebug() << "下拉框改变，当前选中的文本为：" << selectedText;
+    }
+
+    qDebug() << "下拉框改变，当前选中的索引为：" << index;
+
+    getResolutions(camera, pixelFormats.at(index));
+    cameraResolutionCB->clear();
+    foreach (QSize resolution, resolution_list) {
+        QString res = QString("%1 x %2").arg(resolution.width()).arg(resolution.height());
+        cameraLog(QString("Resolution size = %1").arg(res));
+        cameraResolutionCB->addItem(res);
+    }
 }
 
 void MainWindow::Init()
 {
     //https://blog.csdn.net/weixin_44307528/article/details/104766533
-    this->setWindowTitle("摄像头工具");  // 窗口名称
-    this->resize(640, 480);             // 窗口大小
+    this->setWindowTitle("摄像头工具20240513");     // 窗口名称
+    this->resize(640, 480);                         // 窗口大小
     this->setWindowIcon(QIcon(APP_LOGO_FILE_PATH)); // 图标
     QWidget *widget = new QWidget();
-    this->setCentralWidget(widget);     // 居中显示
+    this->setCentralWidget(widget);                 // 居中显示
 
     // 创建帮助菜单
-    QMenu *help_menu = ui->menubar->addMenu(tr("help(&H)"));
-    QAction *document_action = help_menu->addAction(tr("&document"));
-    QAction *update_log_action = help_menu->addAction(tr("&update log"));
-    QAction *about_action = help_menu->addAction(tr("&about"));
+    QMenu *help_menu = ui->menubar->addMenu(tr("帮助(&H)"));
+    QAction *document_action = help_menu->addAction(tr("&文档"));
+    QAction *update_log_action = help_menu->addAction(tr("&更新日志"));
+    QAction *about_action = help_menu->addAction(tr("&关于"));
     connect(about_action, SIGNAL(triggered()), this, SLOT(AboutActionClicked()));
     connect(document_action, SIGNAL(triggered()), this, SLOT(DocumentActionClicked()));
     connect(update_log_action, SIGNAL(triggered()), this, SLOT(UpdateLogActionClicked()));
@@ -118,7 +168,6 @@ void MainWindow::Init()
     pixelFormats = camera->supportedViewfinderPixelFormats();
     cameraLog(QString("ViewfinderPixelFormats sizes.len = %1").arg(pixelFormats.length()));
     foreach (QVideoFrame::PixelFormat pixelFormat, pixelFormats) {
-        cameraLog(QString("pixelFormat = %1").arg(pixelFormat));
         QString pixelFormatStr = "";
         switch (pixelFormat) {
         case QVideoFrame::Format_Jpeg:
@@ -130,14 +179,16 @@ void MainWindow::Init()
         default:
             break;
         }
+        cameraLog(QString("pixelFormat = %1 %2").arg(pixelFormat).arg(pixelFormatStr));
         cameraFormatCB->addItem(pixelFormatStr);
     }
+    connect(cameraFormatCB, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &MainWindow::comboBoxIndexChanged);
 
     // 摄像头分辨率下拉框
     cameraResolutionCB = new QComboBox();
-    resolutions = camera->supportedViewfinderResolutions();
-    cameraLog(QString("ViewfinderResolutions sizes.len = %1").arg(resolutions.length()));
-    foreach (QSize resolution, resolutions) {
+    resolution_list = camera->supportedViewfinderResolutions();
+    cameraLog(QString("ViewfinderResolutions sizes.len = %1").arg(resolution_list.length()));
+    foreach (QSize resolution, resolution_list) {
         QString res = QString("%1 x %2").arg(resolution.width()).arg(resolution.height());
         cameraLog(QString("Resolution size = %1").arg(res));
         cameraResolutionCB->addItem(res);
@@ -153,7 +204,7 @@ void MainWindow::Init()
     QPushButton *closeBtn = new QPushButton("关闭", this);
     QPushButton *captureBtn = new QPushButton("捕获", this);
     QPushButton *saveBtn = new QPushButton("保存", this);
-    baichengBtn = new QPushButton("开启白城驾考中心自动测试", this);
+    autoSwitchBtn = new QPushButton("开启自动切换分辨率测试", this);
     QPushButton *exitBtn = new QPushButton("退出", this);
 
     // 摄像头捕获区域
@@ -168,7 +219,7 @@ void MainWindow::Init()
     statusbarFormat->setMinimumWidth(150);
     statusbarResolution = new QLabel("分辨率: null",this);
     statusbarResolution->setMinimumWidth(150);
-    statusbarBaiCheng = new QLabel("白城计数: 0", this);
+    statusbarBaiCheng = new QLabel("切换次数: 0", this);
     statusbarBaiCheng->setMinimumWidth(150);
     ui->statusbar->addWidget(statusbarName);
     ui->statusbar->addWidget(statusbarFormat);
@@ -184,7 +235,7 @@ void MainWindow::Init()
     rightLayout->addWidget(closeBtn);
     rightLayout->addWidget(captureBtn);
     rightLayout->addWidget(saveBtn);
-    rightLayout->addWidget(baichengBtn);
+    rightLayout->addWidget(autoSwitchBtn);
     rightLayout->addWidget(exitBtn);
 
     //
@@ -197,7 +248,7 @@ void MainWindow::Init()
     connect(closeBtn, SIGNAL(clicked()), this, SLOT(closeBtnResponded()));
     connect(captureBtn, SIGNAL(clicked()), this, SLOT(captureBtnResponded()));
     connect(saveBtn, SIGNAL(clicked()), this, SLOT(saveBtnResponded()));
-    connect(baichengBtn, SIGNAL(clicked()), this, SLOT(baichengBtnResponded()));
+    connect(autoSwitchBtn, SIGNAL(clicked()), this, SLOT(autoSwitchBtnResponded()));
     connect(exitBtn, SIGNAL(clicked()), this, SLOT(exitBtnResponded()));
     centralWidget()->setLayout(mainlayout);
 }
@@ -217,7 +268,7 @@ void MainWindow::openBtnResponded()
         camera = NULL;
     }
 
-    // 获取到要打开的设备的名称
+    // 获取要打开的设备的名称
     QCameraInfo CameraInfo = cameraList.at(cameraNameCB->currentIndex());
     camera = new QCamera(CameraInfo);
     camera->setViewfinder(cameravierfinder);
@@ -228,8 +279,8 @@ void MainWindow::openBtnResponded()
     qDebug() << "state: " << camera->state();
 
     QString cameraName = cameraNameCB->currentText();
-    int resolutionWidth = resolutions.at(cameraResolutionCB->currentIndex()).width();
-    int resolutionHeight = resolutions.at(cameraResolutionCB->currentIndex()).height();
+    int resolutionWidth = resolution_list.at(cameraResolutionCB->currentIndex()).width();
+    int resolutionHeight = resolution_list.at(cameraResolutionCB->currentIndex()).height();
     QVideoFrame::PixelFormat pixelFormat = pixelFormats.at(cameraFormatCB->currentIndex());
 
     QCameraViewfinderSettings set;
@@ -356,35 +407,133 @@ void MainWindow::cameraLog(QString msg)
     }
 }
 
-// 白城驾考中心按钮槽函数
-void MainWindow::baichengBtnResponded()
+std::string trim(const std::string& str) {
+    std::string temp(str);
+    // 去除开头的空格
+    temp.erase(temp.begin(), std::find_if(temp.begin(), temp.end(), [](unsigned char ch) { return !std::isspace(ch); }));
+    // 去除结尾的空格
+    temp.erase(std::find_if(temp.rbegin(), temp.rend(), [](unsigned char ch) {return !std::isspace(ch); }).base(), temp.end());
+    return temp;
+}
+
+class IniReader {
+public:
+    IniReader(const std::string& filename) {
+        std::ifstream file(filename);
+        std::string line;
+        std::string section;
+        if (file.is_open()) {
+            while (std::getline(file, line)) {
+                line = trim(line);
+                if (line.empty() || line[0] == ';' || line[0] == '#') {
+                    // 忽略空行和注释
+                    continue;
+                }
+                if (line[0] == '[') {
+                    // 处理段落
+                    auto endPos = line.find(']');
+                    if (endPos != std::string::npos) {
+                        section = trim(line.substr(1, endPos - 1));
+                    }
+                } else {
+                    // 处理键值对
+                    auto delimPos = line.find('=');
+                    if (delimPos != std::string::npos) {
+                        auto key = trim(line.substr(0, delimPos));
+                        auto value = trim(line.substr(delimPos + 1));
+                        data[section][key] = value;
+                    }
+                }
+            }
+            file.close();
+        }
+    }
+
+    std::string operator[](const std::string& sectionAndKey) const {
+        auto sectionEnd = sectionAndKey.find(':');
+        std::string section = sectionAndKey.substr(0, sectionEnd);
+        std::string key = sectionAndKey.substr(sectionEnd + 1);
+        auto it = data.find(section);
+        if (it != data.end()) {
+            auto it2 = it->second.find(key);
+            if (it2 != it->second.end()) {
+                return it2->second;
+            }
+        }
+        return "";
+    }
+
+private:
+    std::map<std::string, std::map<std::string, std::string>> data;
+};
+
+std::vector<std::string> split(const std::string& str, char delimiter)
 {
+    std::vector<std::string> tokens;
+    std::stringstream ss(str);
+    std::string token;
+    while (std::getline(ss, token, delimiter)) {
+        tokens.push_back(token);
+    }
+    return tokens;
+}
+
+// 自动切换指定格式的分辨率按钮槽函数
+void MainWindow::autoSwitchBtnResponded()
+{
+    qDebug("autoSwitchBtnResponded start");
+    IniReader iniReader(".\\cfg\\automated_configuration.ini");
+
+    std::string resolutions = iniReader["setting:resolutions"];
+    int log_interval = std::stoi(iniReader["setting:log_interval"]);
+    int interval = std::stoi(iniReader["setting:interval"]);
+    std::string format = iniReader["setting:format"];
+    qDebug("resolutions = %s\n", resolutions.c_str());
+    qDebug("%d %d %s\n", log_interval, interval, format.c_str());
+
     if (!isExit) {
-        baichengBtn->setText("开启白城驾考中心自动测试");
-        cameraLog("白城驾考中心自动测试结束");
+        autoSwitchBtn->setText("开启自动切换分辨率测试");
+        cameraLog("自动切换分辨率测试结束");
         cameravierfinder->setVisible(false);
         isExit = true;
     } else {
-        baichengBtn->setText("关闭白城驾考中心自动测试");
+        autoSwitchBtn->setText("关闭自动切换分辨率测试");
         isExit = false;
-        cameraLog("白城驾考中心自动测试开始");
+        cameraLog("自动切换分辨率测试开始");
         if (!cameravierfinder->isVisible()) {
             cameravierfinder->setVisible(true);
         }
-        camera->start();
-        statusbarBaiCheng->setText(QString("白城计数: 0"));
+        statusbarBaiCheng->setText(QString("切换次数: 0"));
+        if (camera) {
+            camera->start();
+        }
     }
 
-    // 获取到要打开的设备的名称
+    // 获取要打开的设备的名称
     QCameraInfo CameraInfo = cameraList.at(cameraNameCB->currentIndex());
-    QVideoFrame::PixelFormat pixelFormat = QVideoFrame::Format_YUYV;
-    QList<QSize> resolutions = {QSize(160, 120), QSize(320, 240), QSize(160,120)};
+    if (!camera) {
+        camera = new QCamera(CameraInfo);
+        camera->setViewfinder(cameravierfinder);
+        if (!cameravierfinder->isVisible()) {
+            cameravierfinder->setVisible(true);
+        }
+    }
+    QVideoFrame::PixelFormat pixelFormat = QVideoFrame::Format_Invalid;
+    if (format == "Format_Jpeg") pixelFormat = QVideoFrame::Format_Jpeg;
+    else if (format == "Format_YUYV") pixelFormat = QVideoFrame::Format_YUYV;
+    QList<QSize> resolution_list;
+    std::vector<std::string> result = split(resolutions, ',');
+    for (const auto& token : result) {
+        int height = 0, width = 0;
+        sscanf(token.data(), "%dx%d", &height, &width);
+        resolution_list.append(QSize(height, width));
+    }
     long long taskCount = 0;
     bool isAbnormal = false;
     // 如果写成true会在窗口关闭后一直在执行（任务管理器依然存在进程，并且exe文件删除不掉），正常退出会有exited with code 0字样
     while (!isExit) {
         qDebug() << camera->status() << ' ' << camera->state();
-        if (taskCount % 1000 == 0) {
+        if (taskCount % log_interval == 0) {
             // 一段时间后打印一次当前摄像头状态
             cameraLog(QString("taskCount: %1, status: %2, state: %3").arg(taskCount).arg(camera->status()).arg(camera->state()));
         }
@@ -411,27 +560,31 @@ void MainWindow::baichengBtnResponded()
         QCameraViewfinderSettings set;
         set.setPixelFormat(pixelFormat);    // 设置摄像头格式
 
-        for (int i = 0; i < resolutions.size(); i++) {
-            set.setResolution(resolutions.at(i).width(), resolutions.at(i).height());
+        for (int i = 0; i < resolution_list.size(); i++) {
+            set.setResolution(resolution_list.at(i).width(), resolution_list.at(i).height());
             camera->setViewfinderSettings(set); // 设置摄像头分辨率
 
             // 更新状态栏
             QString cameraName = cameraNameCB->currentText();
             statusbarName->setText(QString("名称: %1").arg(cameraName));
-            QString pixelFormatStr = "Format_YUYV";
-            statusbarFormat->setText(QString("格式: %1").arg(pixelFormatStr));
-            statusbarResolution->setText(QString("分辨率: %1 x %2").arg(resolutions.at(i).width()).arg(resolutions.at(i).height()));
+            statusbarFormat->setText(QString("格式: %1").arg(QString::fromStdString(format)));
+            statusbarResolution->setText(QString("分辨率: %1 x %2").arg(resolution_list.at(i).width()).arg(resolution_list.at(i).height()));
 
-            if (i == resolutions.size() - 1) {
-                sleep(3000);    // 睡眠3秒
-            } else {
-                sleep(1000);    // 睡眠1秒
-            }
+            sleep(interval);    // 睡眠等待
         }
         taskCount++;
-        statusbarBaiCheng->setText(QString("白城计数: %1").arg(taskCount));
+        statusbarBaiCheng->setText(QString("切换次数: %1").arg(taskCount));
     }
-    if (camera->state() == QCamera::ActiveState) {
+    qDebug("autoSwitchBtnResponded end");
+    /*
+    自动切换分辨率测试结束
+    autoSwitchBtnResponded end
+    摄像头工具关闭
+    autoSwitchBtnResponded end
+
+    有时候会出现这种情况，因此需要判断camera是否为空
+    */
+    if (camera && camera->state() == QCamera::ActiveState) {
         camera->stop();
     }
 }
@@ -463,14 +616,14 @@ MainWindow::~MainWindow()
 // 重写退出事件
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-    QMessageBox close_mb(QMessageBox::Warning, "",tr("Are you sure exit?"));
+    QMessageBox close_mb(QMessageBox::Warning, "", tr("你确定要退出吗?"));
     //close_mb.setWindowTitle("你舍得离开吗");
     close_mb.setWindowFlag(Qt::FramelessWindowHint);
     close_mb.setAttribute(Qt::WA_ShowModal, true);
 
-    close_mb.setStandardButtons(QMessageBox::Ok|QMessageBox::Cancel);
-    close_mb.setButtonText (QMessageBox::Ok,QString(tr("yes")));
-    close_mb.setButtonText (QMessageBox::Cancel,QString(tr("no")));
+    close_mb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+    close_mb.setButtonText (QMessageBox::Ok, QString(tr("确定")));
+    close_mb.setButtonText (QMessageBox::Cancel, QString(tr("取消")));
     if(close_mb.exec() == QMessageBox::Ok)
     {
         if (camera) {

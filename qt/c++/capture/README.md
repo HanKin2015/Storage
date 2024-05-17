@@ -12,7 +12,7 @@
 - 输入命令:cd /d d:\test\，然后使用windeployqt工具命令:windeployqt test.exe
 - 这里就得到了完全程序发布集合
 - 下载QT程序打包工具Enigma Virtual Box（单机版虚拟文件打包工具(Enigma Virtual Box)9.50汉化去广告版.exe），安装完成后点击运行
-- 主程序文件名称浏览选择exe文件，然后添加整个文件夹（添加文件夹递归）
+- 主程序文件名称浏览选择exe文件，然后添加整个文件夹（添加文件夹递归），添加文件夹确定
 - 在【Files Options】中选择勾选文件虚拟化，勾选压缩文件
 - 点击process（打包）运行开始打包，成功后生成一个独立的.exe可执行程序（大约40秒）。
 
@@ -35,6 +35,19 @@
 - 添加菜单栏
 - 解决软件窗口关闭后继续执行问题，重写退出事件
 - 增加简易日志文件打印
+
+## 20240516
+未能生成dump文件，但是这个不重要，重要的是生成pdb文件了，能正常进行调试程序了。
+https://blog.csdn.net/LiHong333/article/details/129798322
+可能只需要下载cv2pdb即可。
+
+MINGW能否和MSVC一样产生pdb文件。原因是编译器选择错误。
+- 使用gflags.exe软件挂载capture_hj.exe程序，设置调试器为windbg
+- 运行release版本程序
+- windbg输入g命令继续运行
+- 复现崩溃问题
+- 复制capture_hj.exe文件，cv2pdb capture_hj.exe生成pdb文件
+- 加载pdb文件进行调试，kb命令输入堆栈
 
 # 3、未来期望
 - 解决软件打开时的黑屏框

@@ -25,7 +25,7 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 LOG_FILE_PATH = './log/module.log'
 
-# 日志控制台输出
+# 日志控制台输出（filename）
 stream_handler = logging.StreamHandler()
 stream_format = logging.Formatter('%(asctime)s %(pathname)s[%(funcName)s:%(lineno)d] %(levelname)s: %(message)s', '%Y-%m-%d %H:%M:%S')
 stream_handler.setFormatter(stream_format)

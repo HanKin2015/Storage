@@ -154,4 +154,41 @@ box.setTextInteractionFlags(Qt.TextSelectableByMouse)
 现在的方案还是不行，还得使用 subprocess 模块来调用命令行工具 wmic 来获取。目前方案开启监控后WMI Provider Host占用CPU还是排行第一，只不过从之前的非常高降到了低或者中。
 不过测试发现使用wmic工具命令也会有这个问题，这个应该已经是最优方案了，除非不调用wmi接口，而是其他接口。
 
+### 5-9、解决sqlite数据库输入带有单引号和双引号数据问题
+尝试通过将字符串进行加解密，结果发现加密后的字符串也失败了。
+```
+key, iv, encrypted_descriptor = encrypt_data(descriptor.encode('utf-8'))
+descriptor = "{}{}{}".format(key, iv, encrypted_descriptor)
+
+SQL_INSERT_ONE_DATA = 'INSERT INTO {} VALUES(NULL, "{}", "{}", "{}");'.format(table_name,
+                      device_type, descriptor, remark)
+print(SQL_INSERT_ONE_DATA)
+cursor.execute(SQL_INSERT_ONE_DATA)
+```
+
+最终问AI得到解决方法：
+```
+import sqlite3
+
+# 连接到数据库（如果不存在则会创建）
+conn = sqlite3.connect('my_database.db')
+
+# 创建一个游标对象
+cursor = conn.cursor()
+
+# 创建一个表
+cursor.execute('''CREATE TABLE IF NOT EXISTS my_table (my_column TEXT)''')
+
+# 要插入的包含双引号和单引号的字符串
+my_string = '包含双引号"和单引号\'的字符串'
+
+# 使用参数化查询和绑定变量来插入数据
+cursor.execute("INSERT INTO my_table (my_column) VALUES (?)", (my_string,))
+
+# 提交更改
+conn.commit()
+
+# 关闭连接
+conn.close()
+```
 

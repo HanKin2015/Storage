@@ -11,8 +11,7 @@ Copyright (c) 2024 HanKin. All rights reserved.
 """
 # 导包
 import configparser
-
-
+import chardet
 
 # 类实例化
 config_parser = configparser.ConfigParser(allow_no_value=True, strict=False) # 允许重复值

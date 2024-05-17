@@ -5,6 +5,17 @@ QT       += multimediawidgets
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
+QMAKE_CFLAGS_RELEASE += -g
+QMAKE_CXXFLAGS_RELEASE += -g
+#禁止优化
+QMAKE_CFLAGS_RELEASE -= -O2
+QMAKE_CXXFLAGS_RELEASE -= -O2
+QMAKE_LFLAGS_RELEASE = -mthreads -W
+#生成dump文件需要
+LIBS += -lDbgHelp
+#加上下面两行，否则用vs调试时，提示“未找到xxx.exe"
+QMAKE_CXXFLAGS += -g
+QMAKE_CFLAGS += -g
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -26,7 +37,6 @@ HEADERS += \
 
 FORMS += \
     mainwindow.ui
-
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

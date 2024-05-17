@@ -4,7 +4,7 @@
 文件描述: 数据库界面
 作    者: HanKin
 创建日期: 2024.02.27
-修改日期：2024.02.27
+修改日期：2024.05.10
 
 Copyright (c) 2024 HanKin. All rights reserved.
 """
@@ -12,6 +12,7 @@ Copyright (c) 2024 HanKin. All rights reserved.
 from common import *
 from sqlite3_interface import *
 from AES_encrypt_decrypt import *
+import re
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -38,12 +39,18 @@ class MainWindow(QMainWindow):
         create_db_action = QAction(self.usb_check_icon, '新建数据库', self)
         open_db_action = QAction(self.usb_check_icon, '打开数据库', self)
         create_table_action = QAction(self.usb_check_icon, '新建数据表', self)
+        drop_table_action = QAction(self.usb_check_icon, '删除数据表', self)
+        update_table_action = QAction(self.usb_check_icon, '更新数据表', self)
         toolbar.addAction(create_db_action)
         toolbar.addAction(open_db_action)
         toolbar.addAction(create_table_action)
+        toolbar.addAction(drop_table_action)
+        toolbar.addAction(update_table_action)
         create_db_action.triggered.connect(self.create_db_slot)
         open_db_action.triggered.connect(self.open_db_slot)
         create_table_action.triggered.connect(self.create_table_slot)
+        drop_table_action.triggered.connect(self.drop_table_slot)
+        update_table_action.triggered.connect(self.update_table_slot)
 
         # 创建按钮
         self.db_name_btn = QPushButton('db_name')
@@ -53,8 +60,8 @@ class MainWindow(QMainWindow):
         update_table_btn = QPushButton('更新数据表')
         drop_table_btn = QPushButton('删除数据表')
         show_table_btn.clicked.connect(self.show_table_slot)
-        update_table_btn.clicked.connect(self.update_table_slot)
-        drop_table_btn.clicked.connect(self.drop_table_slot)
+        #update_table_btn.clicked.connect(self.)
+        #drop_table_btn.clicked.connect(self.)
 
         # 创建文本框
         self.device_type_lineedit = QLineEdit()
@@ -189,7 +196,7 @@ class MainWindow(QMainWindow):
                 self.update_table_list()
     
     def show_table_slot(self):
-        """
+        """显示数据表槽函数
         """
         table_name = self.table_list_cb.currentText()
         if table_name:
@@ -202,7 +209,7 @@ class MainWindow(QMainWindow):
             std.exec_()
     
     def update_table(self, sql):
-        """
+        """更新数据表
         """
         cursor = self.connection.cursor()
         cursor.execute(sql)
@@ -237,7 +244,7 @@ class MainWindow(QMainWindow):
         ctd.exec_()
 
     def insert_data_slot(self):
-        """
+        """插入数据槽函数
         """
         device_type = self.device_type_lineedit.text()
         descriptor = self.text_edit.toPlainText()
@@ -275,14 +282,18 @@ class MainWindow(QMainWindow):
                 print("SQL执行失败:", e)
 
 class ShowTableDialog(QDialog):
-    def __init__(self, table_data):
+    def __init__(self, db_path, table_name):
+        """数据库路径，表名
+        """
+        
+        # 弹框属性
         super().__init__()
-        self.resize(365, 240)
+        self.resize(640, 480)
         self.setWindowTitle("数据表内容")
 
          # 创建数据模型
         model = QStandardItemModel(4, 3)
-        for row, data in enumerate(table_data):
+        for row, data in enumerate(table_data): 
             for column in range(3):
                 item = QStandardItem(data[column+1])
                 model.setItem(row, column, item)
@@ -291,18 +302,53 @@ class ShowTableDialog(QDialog):
         model.setHorizontalHeaderLabels(['device_type', 'descriptor', 'remark'])
 
         # 创建表格视图
-        table_view = QTableView()
-        table_view.setModel(model)
+        self.table_view = QTableView()
+        self.table_view.setModel(model)
 
         # 设置表格视图为主窗口的中心部件
-        #self.setCentralWidget(table_view)
+        #self.setCentralWidget(self.table_view)
+        
+        # 创建删除按钮和更新按钮
+        delete_btn = QPushButton("删除")
+        delete_btn.clicked.connect(self.delete_btn_slot)
+        update_btn = QPushButton("更新")
+        delete_btn.clicked.connect(self.update_btn_slot)
         
         # 创建垂直布局
         layout = QVBoxLayout()
-        layout.addWidget(table_view)
+        layout.addWidget(self.table_view)
+        layout.addWidget(delete_btn)
+        layout.addWidget(update_btn)
 
         # 将布局设置为对话框的布局
         self.setLayout(layout)
+
+    def get_current_row(self):
+        # 获取选择模型
+        selection_model = self.table_view.selectionModel()
+        if selection_model:
+            # 获取当前选中的单个索引
+            current_index = selection_model.currentIndex()
+            if current_index:
+                # 获取行号
+                current_row = current_index.row()
+                print(f"当前选中的行: {current_row}")
+                return current_row
+            else:
+                print("没有选中的行")
+        else:
+            print("没有选择模型")
+        return -1
+
+    def delete_btn_slot(self):
+        """删除选中的项目槽函数
+        """
+        current_row = self.get_current_row()
+        
+    
+    def update_btn_slot(self):
+        """更新选中的项目槽函数
+        """
 
 class TableOperationDialog(QDialog):
     table_operation_signal = pyqtSignal(str)
@@ -424,6 +470,36 @@ def main():
 
     sys.exit(app.exec_())
 
+def debug():
+    """调试函数
+    """
+    
+    descriptor_file_path = r"D:\Github\Storage\qt\python\office_assistant\src\des.txt"
+    with open(descriptor_file_path, "r") as f:
+        descriptor = f.read()
+    #print(descriptor)
+    
+    # 原始字符串
+    raw_string = descriptor
+    
+    # 正则表达式模式
+    #pattern = r'idVendor\s+0x(\w+)\s+.*\n\s+idProduct\s+0x(\w+)'
+    #pattern = r"idVendor\s+0x([0-9a-fA-F]+)\s+.*\n\s+idProduct\s+0x([0-9a-fA-F]+)"
+    pattern = r"idVendor:\s+0x([0-9a-fA-F]+)\s+.*\nidProduct:\s+0x([0-9a-fA-F]+)"
+
+    # 使用正则表达式进行匹配
+    print(type(raw_string))
+    #print(raw_string)
+    matches = re.search(pattern, raw_string)
+
+    if matches:
+        vendor_id = matches.group(1)
+        product_id = matches.group(2)
+        result = f"{vendor_id}:{product_id}"
+        print(result)
+    else:
+        print("未找到匹配的值")
+
 if __name__ == '__main__':
     """程序入口
     """
@@ -433,6 +509,7 @@ if __name__ == '__main__':
     start_time = time.time()
 
     main()
+    #debug()
 
     end_time = time.time()
     logger.info('process spend {} s.\n'.format(round(end_time - start_time, 3)))
