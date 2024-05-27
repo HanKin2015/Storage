@@ -9,8 +9,13 @@
 Copyright (c) 2023 HanKin. All rights reserved.
 """
 
-from common import *
+from PyQt5.QtWidgets import QMessageBox, QAction, QDialog, QApplication
+from PyQt5.QtCore import QObject, QEvent, Qt, QRect
+from PyQt5.QtGui import QPainter, QGuiApplication, QColor, QPen
 import numpy as np
+import time
+import sys
+import pyzbar.pyzbar as pyzbar
 
 class MyMessageBox(QMessageBox):
     def __init__(self, *args, **kwargs):
@@ -31,7 +36,7 @@ class MyMessageBox(QMessageBox):
 class EventFilter(QObject):
     def eventFilter(self, obj, event):
         if event.type() != QEvent.UpdateRequest and event.type() != QEvent.Paint:
-            logger.debug('event.type = {}'.format(event.type()))
+            print('event.type = {}'.format(event.type()))
         if event.type() == QEvent.MouseButtonPress:
             menu = QMenu()
             copyAction = QAction('复制', menu)
@@ -272,10 +277,10 @@ if __name__ == '__main__':
     """
     
     #os.system('chcp 936 & cls')
-    logger.info('******** starting ********')
+    print('******** starting ********')
     start_time = time.time()
 
     main()
 
     end_time = time.time()
-    logger.info('process spend {} s.\n'.format(round(end_time - start_time, 3)))
+    print('process spend {} s.\n'.format(round(end_time - start_time, 3)))
