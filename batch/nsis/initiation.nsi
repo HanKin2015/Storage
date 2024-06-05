@@ -1,3 +1,13 @@
+;
+; 文 件 名: initiation.nsi
+; 文件描述: 启蒙
+; 作    者: HanKin
+; 创建日期: 2024.06.04
+; 修改日期：2024.06.04
+; 
+; Copyright (c) 2024 HanKin. All rights reserved.
+;
+
 !define PRODUCT_NAME "TestApp"
 !define PRODUCT_VERSION "1.0.0.0"
 !define PRODUCT_COMPANY "Test Company"
@@ -10,30 +20,27 @@ VIAddVersionKey ProductVersion "${PRODUCT_VERSION}"
 VIAddVersionKey CompanyName "${PRODUCT_COMPANY}"
 VIAddVersionKey LegalCopyright "Copyright (C) 2015-2020 ${PRODUCT_COMPANY}"
 
-
 ;General
 
-  ;Properly display all languages (Installer will not work on Windows 95, 98 or ME!)
+;Properly display all languages (Installer will not work on Windows 95, 98 or ME!)
 
-  ;Name and file
-  Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
-  OutFile "TestInstaller v${PRODUCT_VERSION}.exe"
+;Name and file
+Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
+OutFile "TestInstaller v${PRODUCT_VERSION}.exe"
 
-  ;Default installation folder
-  InstallDir "$PROGRAMFILES\TestCompany\TestApp"
-  
-  ;Get installation folder from registry if available
-  ;InstallDirRegKey HKCU "Software\Modern UI Test" ""
+;Default installation folder
+InstallDir "$PROGRAMFILES\TestCompany\TestApp"
 
-  ;Request Admin privileges for Windows Vista
-  RequestExecutionLevel admin
+;Get installation folder from registry if available
+;InstallDirRegKey HKCU "Software\Modern UI Test" ""
+
+;Request Admin privileges for Windows Vista
+RequestExecutionLevel admin
   
 ;--------------------------------
 
 
 Function .onInit
-
-
 FunctionEnd
 
 Var nRet

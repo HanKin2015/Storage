@@ -98,6 +98,43 @@ str3=123456
 ret=1, str4=abcdedf
 */
 
+// sscanf返回值验证
+void test5()
+{
+        //char hcid_path[BUFSIZ] = { 0 };
+    //char *hcid_path = "IUSB3\\DevClass_01&SubClass_02&Prot_03";
+    char *hcid_path = "USB\\Class_07&SubClass_01&Prot_02";
+    printf("%s\n", hcid_path);
+    const int param_nums = 3;
+    int cls = 0;
+    int sub_cls = 0;
+    int proto = 0;
+    int ret1 = sscanf(hcid_path, "IUSB3\\DevClass_%02hx&SubClass_%02hx&Prot_%02hx", &cls, &sub_cls, &proto);
+    printf("ret = %d, cls %d, sub_cls %d proto %d\n", ret1, cls, sub_cls, proto);
+    int ret2 = sscanf(hcid_path, "USB\\Class_%02hx&SubClass_%02hx&Prot_%02hx", &cls, &sub_cls, &proto);
+    printf("ret = %d, cls %d, sub_cls %d proto %d\n", ret2, cls, sub_cls, proto);
+
+    if ((sscanf(hcid_path, "USB\\Class_%02hx&SubClass_%02hx&Prot_%02hx",
+        &cls, &sub_cls, &proto) != param_nums) && (sscanf(hcid_path, "IUSB3\\DevClass_%02hx&SubClass_%02hx&Prot_%02hx",
+        &cls, &sub_cls, &proto) != param_nums)) {
+            printf("11Cannot parse compatible id %s, maybe it have interfaces or have no driver", hcid_path);
+            return -1;
+    }
+    return;
+}
+
+// char*类型转int类型
+void test6()
+{
+    const char* str = "123";
+    int n = 2;
+    
+    // 将str转换为%d格式存储到n
+    sscanf(str, "%d", &n);
+    cout << "n = " << n << endl;
+    return;
+}
+
 int main()
 {
     (void)test1();
