@@ -2,6 +2,7 @@
 """
 文 件 名: openpyxl_example.py
 文件描述: 使用openpyxl打开xlxs表格
+备    注：需要使用close关闭句柄
 作    者: HanKin
 创建日期: 2023.09.05
 修改日期：2023.09.14
@@ -50,6 +51,9 @@ def traverse():
         print('')
     print('遍历列完成')
     
+    # 关闭Excel文件
+    workbook.close()
+    
 def test():
     """更换方式遍历
     """
@@ -70,6 +74,9 @@ def test():
         vid_pid.append(i.value)
         #print(i.value)
     print(len(vid_pid))
+    
+    # 关闭Excel文件
+    workbook.close()
     
 def main():
     """主函数

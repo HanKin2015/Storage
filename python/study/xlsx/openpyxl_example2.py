@@ -69,6 +69,9 @@ def test():
                              i, sheet.cell(i, 1).value, sheet.cell(i, 2).value, sheet.cell(i, 4).value))
                     break
         print("")
+    
+    # 关闭Excel文件
+    workbook.close()
 
 def practice(device_id):
     """
@@ -113,6 +116,9 @@ def practice(device_id):
     
     print(len(device_id_idx))
     print(suggestion)
+    
+    # 关闭Excel文件
+    workbook.close()
 
 def main():
     """主函数

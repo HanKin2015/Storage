@@ -4,18 +4,19 @@
 文件描述: 使用pandas打开xlsx表格
 作    者: HanKin
 创建日期: 2023.09.05
-修改日期：2024.01.25
+修改日期：2024.07.01
 
-Copyright (c) 2023 HanKin. All rights reserved.
+Copyright (c) 2024 HanKin. All rights reserved.
 """
 
 import time
 import pandas as pd
 
-XLSX_FILE_PATH = r"D:\Demo\additional_data\device_helper\compatibility_list.xlsx"
+ORIGIN_XLSX_FILE_PATH = r"C:\Users\User\Downloads\兼容数据黑白名单导出表格_2024-07-01.xlsx"
+XLSX_FILE_PATH = r"D:\compatibility_list.xlsx"
 
 def match_vid_pid():
-    """匹配usb设备
+    """匹配usb设备（在xlsx文件中是否存在）
     """
     
     scanning_gun = '0525:A4A7'
@@ -36,7 +37,7 @@ def match_vid_pid():
         print('usb device [{}] is not found'.format(scanning_gun))
 
 def check_vid_pid_valid():
-    """检查vid_pid列合法性
+    """检查vid_pid列合法性（是否以分号隔开）
     """
     # 读取 Excel 文件
     df = pd.read_excel(XLSX_FILE_PATH, sheet_name='Sheet1')
@@ -61,7 +62,9 @@ def check_vid_pid_valid():
             invalid_count += 1
     print('invalid_count = {}'.format(invalid_count))
 
-def unrepeat():
+def duplicate_data():
+    """找出重复的数据
+    """
     df = pd.read_excel(XLSX_FILE_PATH, sheet_name='Sheet1')
     zip_list = list(zip(df['model'], df['vendor'], df['vid_pid']))
     duplicate = []
@@ -70,12 +73,77 @@ def unrepeat():
             duplicate.append(item)
     print('there are {} duplicates'.format(duplicate))
 
+def pretreatment():
+    """对xlsx文件进行预处理（筛选出需要的数据）
+    """
+    df = pd.read_excel(ORIGIN_XLSX_FILE_PATH, sheet_name='VDI_peripheral')
+    df = df['', '', '']
+    df.to_excel(XLSX_FILE_PATH)
+
+def encrypt_file(input_file, output_file):
+    """
+    使用AES算法加密文件
+    :param input_file: 输入文件
+    :param output_file: 输出文件
+    :return null: 无
+    """
+    with open(input_file, 'rb') as f:
+        data = f.read()
+
+    # 生成随机的128位密钥和初始向量
+    key = os.urandom(16)
+    iv = os.urandom(16)
+
+    # 初始化AES加密器和解密器
+    cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())
+    encryptor = cipher.encryptor()
+
+    # 使用PKCS7填充
+    padder = padding.PKCS7(128).padder()
+    padded_data = padder.update(data) + padder.finalize()
+
+    # 加密数据
+    encrypted_data = encryptor.update(padded_data) + encryptor.finalize()
+
+    # 将密钥、初始向量和加密后的数据写入输出文件
+    with open(output_file, 'wb') as f:
+        f.write(key)
+        f.write(iv)
+        f.write(encrypted_data)
+
+def decrypt_file(input_file, output_file):
+    """
+    使用AES算法解密文件
+    :param input_file: 输入文件
+    :param output_file: 输出文件
+    :return null: 无
+    """
+    with open(input_file, 'rb') as f:
+        key = f.read(16)
+        iv = f.read(16)
+        encrypted_data = f.read()
+
+    # 初始化解密器
+    cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())
+    decryptor = cipher.decryptor()
+
+    # 解密数据
+    decrypted_data = decryptor.update(encrypted_data) + decryptor.finalize()
+
+    # 使用PKCS7填充解密后的数据
+    unpadder = padding.PKCS7(128).unpadder()
+    unpadded_data = unpadder.update(decrypted_data) + unpadder.finalize()
+
+    # 将解密后的数据写入输出文件
+    with open(output_file, 'wb') as f:
+        f.write(unpadded_data)
+
 def main():
     """主函数
     """
     
     check_vid_pid_valid()
-    unrepeat()
+    duplicate_data()
     match_vid_pid()
     
     x = [1, 2, 3, 4]

@@ -4,26 +4,25 @@
 文件描述: 从内核文件中读取插入的usb设备信息
 备    注: 
 作    者: HanKin
-创建日期: 2024.05.21
-修改日期：2024.05.21
+创建日期: 2024.06.13
+修改日期：2024.06.13
 
 Copyright (c) 2024 HanKin. All rights reserved.
 """
 import os
-def remove_empty_folders(directory_path):
-    for root, dirs, files in os.walk(directory_path, topdown=False):
-        for folder in dirs:
-            folder_path = os.path.join(root, folder)
-            if not os.listdir(folder_path):
-                os.rmdir(folder_path)
 
-# 用Python脚本重命名目录中的多个文件
-def rename_files(directory_path, old_name, new_name):
-    for filename in os.listdir(directory_path):
-        if old_name in filename:
-            new_filename = filename.replace(old_name, new_name)
-            os.rename(os.path.join(directory_path, filename),
-                      os.path.join(directory_path, new_filename))
+
+def list_specified_suffix_files(dir_path, suffix):
+    for root, dirs, files in os.walk(dir_path, topdown=False):
+        for file in files:
+            # 处理文件
+            if file.split(".")[-1] == suffix:
+                print("current suffix[{}] file: {}".format(suffix, file))
+                file_path = os.path.join(root, file)
+                
 
 
 
+if __name__ == '__main__':
+    directory_path = r'D:\Users\Administrator\My Document\WXWork\1688854308416542\Cache\File\2024-05'
+    list_specified_suffix_files(directory_path, 'zip')

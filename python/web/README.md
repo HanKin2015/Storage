@@ -112,3 +112,23 @@ try:
 except requests.exceptions.Timeout:
     print('请求超时，请检查网络连接或增加超时时间。')
 ```
+
+## 10、GET和POST两种基本请求方法的区别
+D:\Github\GitBook\gitbook\Web\GET-POST.md
+
+## 11、flask框架应用程序运行后会监控客户端访问信息
+```
+(base) D:\Github\Storage\python\web\practice>python flask_server.py
+ * Serving Flask app "flask_server" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:8029/ (Press CTRL+C to quit)
+172.22.192.25 - - [01/Jul/2024 11:46:17] "[31m[1mPOST /hello_flask HTTP/1.1[0m" 405 -
+172.22.192.25 - - [01/Jul/2024 14:31:32] code 400, message Bad request syntax ('222333')
+172.22.192.25 - - [01/Jul/2024 14:31:32] "[35m[1m222333[0m" HTTPStatus.BAD_REQUEST -
+```
+
+## 12、telnet命令是进行长连接，并且能直接发送字符过去
+如上面日志
