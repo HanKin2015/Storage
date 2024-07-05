@@ -17,7 +17,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_flask():
-
     return 'Hello, World!'
 
 @app.route('/login', methods=['GET'])

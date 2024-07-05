@@ -132,3 +132,7 @@ D:\Github\GitBook\gitbook\Web\GET-POST.md
 
 ## 12、telnet命令是进行长连接，并且能直接发送字符过去
 如上面日志
+
+## 13、practice中有完整的flask框架示例
+
+

@@ -31,7 +31,7 @@ int main()
     func("");
 
     const char strr[]="1234xyz";
-    const char *str1=strstr(strr,"34");
+    const char *str1=strstr(strr, "34");
     cout << str1 << endl;
 
     const char *test = "abcd";

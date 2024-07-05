@@ -18,6 +18,18 @@ def test_flask_server():
         res = requests.post(url="http://172.22.192.25:8029/hello_flask", timeout=1)
         if res.text:
             print(res.text)
+        res = requests.get(url="http://172.22.192.25:8029/hello_world?name=hejian", timeout=1)
+        if res.text:
+            print(res.text)
+        
+        # 尝试爆破
+        res = requests.get(url="http://172.22.192.25:8029/login", timeout=1)
+        if res.text:
+            print(res.text)
+        res = requests.get(url="http://172.22.192.25:8029/admin/", timeout=1)
+        if res.text:
+            print(res.text)
+            
         print("success")
         return True
     except Exception as err:

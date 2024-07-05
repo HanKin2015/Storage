@@ -15,7 +15,7 @@ from flask import jsonify
 
 app = Flask(__name__)
 
-@app.route('/hello_flask', methods=['GET'])
+@app.route('/hello_flask', methods=['POST'])
 def hello_flask():
     return 'Hello, World!'
 
