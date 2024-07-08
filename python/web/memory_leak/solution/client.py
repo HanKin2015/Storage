@@ -38,7 +38,25 @@ def test_flask_server():
 
 # 定义线程要运行的函数
 def thread_function(name, delay):
-    telnetlib.Telnet('172.22.192.25', port=8029, timeout=10)
+    # 建立Telnet连接
+    tn = telnetlib.Telnet('172.22.192.25', port=8029, timeout=10)
+    
+    # 将命令字符串编码为字节串
+    command = 'your command here\n'.encode('utf-8')
+
+    # 发送内容到远程主机
+    tn.write(command)
+     
+    # 读取远程主机响应的内容
+    #response = tn.read_very_eager()
+    # 注意：read_very_eager() 可能不会返回所有数据，因为它不会等待数据到达
+    # 你可能需要使用 read_until() 或其他 read 方法来更可靠地读取数据
+    response = tn.read_some()  # 或者使用 tn.read_until(some_pattern.encode('utf-8'))
+    print(response.decode('utf-8'))  # 使用相同的编码来解码响应
+     
+    # 关闭Telnet连接（这个影响长连接，但是注释掉后也不是长连接）
+    #tn.close()
+    time.sleep(10)
  
 def telnet_example():
     # 创建线程列表
@@ -55,8 +73,9 @@ def telnet_example():
         t.join()
      
     print("所有线程都已结束。")
-    time.sleep(10)
+    #time.sleep(20)
 
 if __name__ == '__main__':
     test_flask_server()
     #telnet_example()
+    #thread_function(1, 1)
