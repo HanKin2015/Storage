@@ -20,7 +20,7 @@ header = {
 # 图片的张数
 number = 0
  
-html = requests.get(url,headers=header).text    #下载网页
+html = requests.get(url, headers=header).text   #下载网页
 etree_html = etree.HTML(html)                   #构造xpath的解析对象
 img_url = etree_html.xpath('//img/@src')        #获取图片地址
 

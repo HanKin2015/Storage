@@ -18,6 +18,35 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
+/* mkdir 一次只能创建一级目录,怎样创建多级目录.
+ * 用access 判断目录是否已经创建.
+ * 用mkdir逐级创建目录
+ */
+int mkdirs(char *path) 
+{
+    char str[512];    
+    strncpy(str, path, 512);
+    int len=strlen(str);
+    for (int i=0; i<len; i++) {
+        if( str[i]=='/' ) { //逐级检查各级目录
+            str[i] = '\0';
+            if( access(str,0)!=0 ) //如果访问该目录返回不成功
+            {
+                mkdir( str, 0755 ); //则创建该目录, 这里是逐级创建的.
+            }
+            str[i]='/';
+        }
+    }
+    if( len>0 && access(str,0)!=0 ) //检查最后一级目录
+    {
+        mkdir( str, 0755 ); //若不可访问,则创建该目录.
+    }
+	struct stat s;
+	stat(path,&s);
+	if(S_ISDIR(s.st_mode) )return 0;
+    return 1;
+}
+
 static void test()
 {
     int ret = 0;
