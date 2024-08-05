@@ -16,6 +16,9 @@
 - 在【Files Options】中选择勾选文件虚拟化，勾选压缩文件
 - 点击process（打包）运行开始打包，成功后生成一个独立的.exe可执行程序（大约40秒）。
 
+## 1-3、使用说明
+配置文件automated_configuration.ini：这是自动切换分辨率的配置，default配置是做参考，真正生效的是setting
+
 # 2、更新日志
 
 ## 20201016
