@@ -11,7 +11,7 @@ root@hankin:~# ./a.out
 [ERROR][device_helper](deal_datain|152)deal_datain failed
 [INFO][device_helper](read_capacity|181)read_capacity deal_datain finish, ret -1
 [ERROR][device_helper](read_capacity|183)deal_datain fail, ret -1
-[ERROR][device_helper](main|198)usbacc_read_capacity, ret=-1
+[ERROR][device_helper](main|198)read_capacity, ret=-1
 ```
 
 ## 替换成usbfs驱动还是存在问题
@@ -47,5 +47,5 @@ cbw指令长度是31，csw的长度是13。
 [INFO][device_helper](deal_datain|225)deal_datain done
 [INFO][device_helper](read_capacity|260)read_capacity deal_datain finish, ret 0
 [INFO][device_helper](read_capacity|270)last_block_lba=0x733f3f3, size_per_block=0x200
-[INFO][device_helper](main|283)usbacc_read_capacity ok, size_per_sector=512, all_sector_count=120845299
+[INFO][device_helper](main|283)read_capacity ok, size_per_sector=512, all_sector_count=120845299
 ```

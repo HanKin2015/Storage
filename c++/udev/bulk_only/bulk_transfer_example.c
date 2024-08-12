@@ -276,10 +276,10 @@ int main(int argc, char *argv[])
     struct scsi_data_read_capacity10 read_capacity10data = {0, 0};
     int ret = read_capacity(&read_capacity10data);
     if (ret != 0) {
-        ERROR("usbacc_read_capacity, ret=%d\n", ret);
+        ERROR("read_capacity, ret=%d\n", ret);
         return ret;
     }
-    INFO("usbacc_read_capacity ok, size_per_sector=%d, all_sector_count=%d\n",
+    INFO("read_capacity ok, size_per_sector=%d, all_sector_count=%d\n",
         read_capacity10data.size_per_block, read_capacity10data.ret_lba);
     return 0;
 }
