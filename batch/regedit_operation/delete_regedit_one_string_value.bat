@@ -1,6 +1,6 @@
 ::
 :: 文 件 名: delete_regedit_one_string_value.bat
-:: 文件描述: 删除注册表多字符串中的一个值（失败）
+:: 文件描述: 删除注册表多字符串中的一个值（失败，成功见D:\Github\Storage\batch\powershell\delete_regedit_one_string_value.ps1）
 :: 备    注: 其中的字符串是通过空字符（\0）分隔的，我们不能直接使用批处理的 for 循环来分隔这些字符串，因为 for 循环默认是按照空格、制表符、换行符等来分隔字符串的
 :: 作    者: HanKin
 :: 创建日期: 2024.08.12

@@ -11,3 +11,7 @@ Write-Error 是 PowerShell 的一个命令，用于向错误输出流写入一�
 
 注意：win7系统也存在PowerShell窗口。
 
+## 3、因为在此系统上禁止运行脚本
+允许运行本地脚本：Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+禁止运行本地脚本：Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Restricted
+执行脚本允许：PowerShell -ExecutionPolicy Bypass -File "C:\Users\test\Desktop\3.ps1"
