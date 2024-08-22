@@ -1,6 +1,6 @@
 ;
 ; 文 件 名: initiation.nsi
-; 文件描述: 启蒙
+; 文件描述: 启蒙(检查服务是否存在)
 ; 作    者: HanKin
 ; 创建日期: 2024.06.04
 ; 修改日期：2024.06.04
@@ -45,6 +45,7 @@ FunctionEnd
 
 Var nRet
 Section "!Test" SecTest
+    ;测试服务是否存在
 	SimpleSC::ExistsService "jk"
 	Pop $nRet ;Pop $nRet ; returns an errorcode if the service doesn′t exists (<>0)/service exists (0)
 	

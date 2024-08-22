@@ -1,22 +1,18 @@
 # 在windows系统上获取usb设备信息
 
-## 0、前言
+## 1、前言
 由于一开始打算使用libusb库，因此部分内容见：D:\Github\GitBook\gitbook\USBDevice\libusb.md
 LibusbExample：简单使用libusb库的例子
 device_helper：计划使用libusb库获取usb设备信息，结果获取字符串描述符失败
 UsbviewGetDescriptor：最终的成果，可行
 
-## 1、vs编译器警告（等级 1）C4026
-使用形参表声明的函数
-函数声明具有形参，而函数定义没有。 对此函数的后续调用将假定该函数不具有参数。
+## 2、无法解析的外部符号解决方法汇总
+https://blog.csdn.net/wu_nan_nan/article/details/49838409
 
-详细可点击链接：https://learn.microsoft.com/zh-cn/cpp/error-messages/compiler-warnings/compiler-warning-level-1-c4026?view=msvc-170&f1url=%3FappId%3DDev14IDEF1%26l%3DZH-CN%26k%3Dk(C4026)%26rd%3Dtrue
+添加#pragma comment(lib, "libusb-1.0.lib")后还是无法解析。
+出现这个问题，不用怀疑，一定是你没有包含lib库，或者没有正确包含lib库。何谓没有正确包含？32位的项目不能使用64位的lib，反之亦然；有时候Debug模式下生产的lib也不能共Release模式使用，反之亦然。
 
-## 2、vs编译器警告（等级 1）C4005
-“identifier”: 宏重新定义
-该宏标识符定义了两次。 编译器使用第二个宏定义。
-
-windows中内部有定义ERROR，因此写打印日志的时候需要注意。
+最终切换项目为x86后正常编译运行了。
 
 ## 3、调用 DeviceIoControl
 https://learn.microsoft.com/zh-cn/windows/win32/devio/calling-deviceiocontrol?redirectedfrom=MSDN
@@ -127,3 +123,14 @@ demo见：D:\Github\Storage\c++\parse\cjson\cJSON_example.c
 demo见：D:\Github\Storage\c++\udev\libusb\windows\GetHidAttribute.c
 exe见：D:\Github\Storage\c++\udev\libusb\windows\GetHidAttribute.exe
 
+## 11、vs编译器警告（等级 1）C4026
+使用形参表声明的函数
+函数声明具有形参，而函数定义没有。 对此函数的后续调用将假定该函数不具有参数。
+
+详细可点击链接：https://learn.microsoft.com/zh-cn/cpp/error-messages/compiler-warnings/compiler-warning-level-1-c4026?view=msvc-170&f1url=%3FappId%3DDev14IDEF1%26l%3DZH-CN%26k%3Dk(C4026)%26rd%3Dtrue
+
+## 12、vs编译器警告（等级 1）C4005
+“identifier”: 宏重新定义
+该宏标识符定义了两次。 编译器使用第二个宏定义。
+
+windows中内部有定义ERROR，因此写打印日志的时候需要注意。

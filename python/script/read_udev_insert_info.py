@@ -26,6 +26,16 @@ def list_specified_suffix_files(dir_path, suffix_list):
                 file_path = os.path.join(root, file)
     print("there are {} files with {} suffix".format(count, suffix_list))
 
+def read_udev_info_from_linux_box():
+    system_log_path = r"D:\Users\Administrator\My Document\WXWork\1688854308416542\Cache\File\2024-08\20230341_10.191.100.27_5.9.1.683_7BP3460135\var\log\system.log"
+    with open(system_log_path, "r", encoding="utf-8") as f:
+        for line in f:
+            if "New USB device found" in line:
+                print(line)
+
+def read_udev_info_from_android_box():
+    pass
+
 def main():
     """主函数
     """
@@ -35,7 +45,8 @@ def debug():
     """
     directory_path = r'D:\Users\Administrator\My Document\WXWork\1688854308416542\Cache\File\2024-05'
     #directory_path = r'D:\Users\Administrator\Desktop'
-    list_specified_suffix_files(directory_path, ['docx', 'doc'])
+    #list_specified_suffix_files(directory_path, ['docx', 'doc'])
+    read_udev_info_from_linux_box()
 
 if __name__ == '__main__':
     """程序入口
