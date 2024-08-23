@@ -87,6 +87,7 @@ int main(int argc, char *argv[])
     uint8_t device_desc_data[LIBUSB_DT_DEVICE_SIZE] = { 0 };
     int r = LIBUSB_ERROR_NOT_SUPPORTED;
     r = libusb_control_transfer(dev_handle, LIBUSB_ENDPOINT_IN, LIBUSB_REQUEST_GET_DESCRIPTOR, ((LIBUSB_DT_DEVICE << 8) | 0), 0, device_desc_data, LIBUSB_DT_DEVICE_SIZE, timeout);
+    r = libusb_control_transfer(dev_handle, LIBUSB_ENDPOINT_IN, LIBUSB_REQUEST_GET_DESCRIPTOR, ((LIBUSB_DT_DEVICE << 8) | 0), 0, device_desc_data, LIBUSB_DT_DEVICE_SIZE, timeout);
     if (r == 0) {
         printf("zero bytes returned in ctrl transfer?\n");
         return -1;
@@ -100,12 +101,13 @@ int main(int argc, char *argv[])
     // 传输控制包请求获取配置描述符信息(我的理解其实一次获取配置描述符也是能获取成功，只不过长度是不固定的，所以需要获取两次)
     // 出现过一次控制请求数据包为80 06 0201 0000 0009
     uint8_t config_desc_data[LIBUSB_DT_CONFIG_SIZE] = { 0 };
-    r = libusb_control_transfer(dev_handle, LIBUSB_ENDPOINT_IN, LIBUSB_REQUEST_GET_DESCRIPTOR, ((LIBUSB_DT_CONFIG << 8) | 0), 0, config_desc_data, LIBUSB_DT_CONFIG_SIZE, timeout);
+    uint16_t wValue = 0x0201;
+    r = libusb_control_transfer(dev_handle, LIBUSB_ENDPOINT_IN, LIBUSB_REQUEST_GET_DESCRIPTOR, wValue, 0, config_desc_data, LIBUSB_DT_CONFIG_SIZE, timeout);
     if (r == 0) {
         printf("zero bytes returned in ctrl transfer?\n");
         return -1;
     }
-    printf("r = %d, %s\n", r, libusb_error_name(r));  // 返回正数是获取的数据长度，返回负数则是错误码
+    printf("wValue %04x, r = %d, %s\n", wValue, r, libusb_error_name(r));  // 返回正数是获取的数据长度，返回负数则是错误码
     struct libusb_config_descriptor config_desc;
     parse_descriptor(config_desc_data, "bbwbbbbb", &config_desc);   // 9
     printf("wTotalLength: %04x bNumInterfaces %02x bConfigurationValue %02x\n", config_desc.wTotalLength,
@@ -144,4 +146,15 @@ bcdUSB : 0110 bDeviceClass : 9
 r = -9, LIBUSB_ERROR_PIPE
 wTotalLength: 0000 bNumInterfaces 00 bConfigurationValue 00
 zero bytes returned in ctrl transfer?
+
+root@hankin:~# ./a.out U盘使用0x0201请求码获取成功了，Windows上面也是成功
+r = 18, **UNKNOWN**
+Found device: 0951:1666
+bcdUSB : 0210 bDeviceClass : 0
+r = 9, **UNKNOWN**
+wTotalLength: 0020 bNumInterfaces 01 bConfigurationValue 01
+r = 32, **UNKNOWN**
+get config descriptor success!
+09 02 20 00 01 01 00 80 96 09 04 00 00 02 08 06 50 00 07 05 81 02 00 02 ff 07 05 02 02 00 02 ff
+
 */
