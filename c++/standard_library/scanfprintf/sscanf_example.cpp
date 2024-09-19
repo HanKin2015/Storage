@@ -9,10 +9,9 @@
 * Copyright (c) 2022 HanKin. All rights reserved.
 */
 
-#include <iostream>
-#include <cstdio>
-#include <stdint.h>
 
+#include <stdio.h>
+#include <stdint.h>
 /*
 sscanf的原型:
 #include <stdio.h>
@@ -98,40 +97,62 @@ str3=123456
 ret=1, str4=abcdedf
 */
 
-// sscanf返回值验证
 void test5()
 {
-        //char hcid_path[BUFSIZ] = { 0 };
+    //char hcid_path[BUFSIZ] = { 0 };
     //char *hcid_path = "IUSB3\\DevClass_01&SubClass_02&Prot_03";
-    char *hcid_path = "USB\\Class_07&SubClass_01&Prot_02";
+    const char *hcid_path = "USB\\Class_07&SubClass_01&Prot_02";
     printf("%s\n", hcid_path);
     const int param_nums = 3;
     int cls = 0;
     int sub_cls = 0;
     int proto = 0;
-    int ret1 = sscanf(hcid_path, "IUSB3\\DevClass_%02hx&SubClass_%02hx&Prot_%02hx", &cls, &sub_cls, &proto);
+    int ret1 = sscanf(hcid_path, "IUSB3\\DevClass_%02x&SubClass_%02x&Prot_%02x", &cls, &sub_cls, &proto);
     printf("ret = %d, cls %d, sub_cls %d proto %d\n", ret1, cls, sub_cls, proto);
-    int ret2 = sscanf(hcid_path, "USB\\Class_%02hx&SubClass_%02hx&Prot_%02hx", &cls, &sub_cls, &proto);
+    int ret2 = sscanf(hcid_path, "USB\\Class_%02x&SubClass_%02x&Prot_%02x", &cls, &sub_cls, &proto);
     printf("ret = %d, cls %d, sub_cls %d proto %d\n", ret2, cls, sub_cls, proto);
 
-    if ((sscanf(hcid_path, "USB\\Class_%02hx&SubClass_%02hx&Prot_%02hx",
-        &cls, &sub_cls, &proto) != param_nums) && (sscanf(hcid_path, "IUSB3\\DevClass_%02hx&SubClass_%02hx&Prot_%02hx",
+    if ((sscanf(hcid_path, "USB\\Class_%02x&SubClass_%02x&Prot_%02x",
+        &cls, &sub_cls, &proto) != param_nums) && (sscanf(hcid_path, "IUSB3\\DevClass_%02x&SubClass_%02x&Prot_%02x",
         &cls, &sub_cls, &proto) != param_nums)) {
-            printf("11Cannot parse compatible id %s, maybe it have interfaces or have no driver", hcid_path);
-            return -1;
+            printf("Cannot parse compatible id %s, maybe it have interfaces or have no driver", hcid_path);
+            return;
     }
     return;
 }
 
-// char*类型转int类型
+// sscanf返回值验证
 void test6()
+{
+    printf("--- %s ---\n", __FUNCTION__);
+    uint32_t mac_addr[6] = { 0 };
+    
+    // 缺失片段
+    const char *mac_address1 = "FE:FC:FE:C0:0D";
+    int ret1 = sscanf(mac_address1, "%2x:%2x:%2x:%2x:%2x:%2x", &mac_addr[0], &mac_addr[1], &mac_addr[2], &mac_addr[3], &mac_addr[4], &mac_addr[5]);
+    printf("ret1 = %d\n", ret1);    // 5
+    
+    // 非十六进制1
+    const char *mac_address2 = "FE:FC:FE:C0:0D:TB";
+    int ret2 = sscanf(mac_address2, "%2x:%2x:%2x:%2x:%2x:%2x", &mac_addr[0], &mac_addr[1], &mac_addr[2], &mac_addr[3], &mac_addr[4], &mac_addr[5]);
+    printf("ret2 = %d\n", ret2);    // 5
+    
+    // 非十六进制2，遇到异常就结束了
+    const char *mac_address3 = "FE:FC:TE:C0:0D:AB";
+    int ret3 = sscanf(mac_address3, "%2x:%2x:%2x:%2x:%2x:%2x", &mac_addr[0], &mac_addr[1], &mac_addr[2], &mac_addr[3], &mac_addr[4], &mac_addr[5]);
+    printf("ret3 = %d\n", ret3);    // 2
+    return;
+}
+
+// char*类型转int类型
+void test7()
 {
     const char* str = "123";
     int n = 2;
     
     // 将str转换为%d格式存储到n
     sscanf(str, "%d", &n);
-    cout << "n = " << n << endl;
+    printf("n = %d\n", n);
     return;
 }
 
@@ -141,5 +162,6 @@ int main()
     (void)test2();
     (void)test3();
     (void)test4();
+    (void)test6();
     return 0;
 }

@@ -17,5 +17,5 @@ pid_t gettid()
 
 详解见：https://blog.csdn.net/weixin_42250655/article/details/105234980
 
-## 3、
-
+## 3、20240828
+后续继续研究：https://zhuanlan.zhihu.com/p/598993031

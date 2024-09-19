@@ -1,0 +1,158 @@
+;
+; 文 件 名: inf_example.inf
+; 文件描述: inf脚本例子
+; 作    者: HanKin
+; 创建日期: 2024.09.12
+; 修改日期：2024.09.12
+; 
+; Copyright (c) 2024 HanKin. All rights reserved.
+;
+
+; （必需）“ 版本” 部分指定驱动程序版本信息
+[Version]
+Signature    = "$WINDOWS NT$"
+Class        = USB
+ClassGUID    = {36FC9E60-C465-11CF-8056-444553540000}
+Provider     = %Msft%
+DriverVer    = 09/12/2024,1.1.1.3
+CatalogFile  = ExampleCatalog.cat
+PnpLockdown = 1
+
+; （可选但建议）指定要在其中复制文件系统驱动程序文件的目录。值“12”是指 Drivers 目录（%windir%\system32\drivers）
+[DestinationDirs]
+DefaultDestDir = 12
+
+; 定义设备制造商，指定了适用于不同平台的安装节，分别对应32位（x86）和64位（amd64）系统
+[Manufacturer]
+%Msft% = _MyDevice, NTx86, NTamd64
+
+; 适用于32位系统的设备安装信息，设备的硬件ID或设备名称为HanKin，my_name也是设备的硬件ID或设备名称，通常用于匹配设备
+[_MyDevice.NTx86]
+"HanKin" = _MyDriver_Install_x86, my_name
+
+; 适用于64位系统的设备安装信息
+[_MyDevice.NTamd64]
+"HanKin" = _MyDriver_Install_x64, my_name
+
+; 定义了32位系统的安装步骤
+[_MyDriver_Install_x86]  
+CopyFiles=MyDriver.NTx86.Copy
+AddReg=MyDriver.NT.HW.AddReg
+
+; 定义了64位系统的安装步骤
+[_MyDriver_Install_x64]  
+CopyFiles=MyDriver.NTamd64.Copy
+AddReg=MyDriver.NT.HW.AddReg
+
+; 前面目标文件名，即复制到目标系统后的文件名; 后面源文件名，即在安装包或安装介质中的文件名
+[MyDriver.NTx86.Copy]
+MyDriver.sys,MyDriver_x86.sys
+
+[MyDriver.NTamd64.Copy]
+MyDriver.sys,MyDriver_x64.sys
+
+[MyDriver.NT.HW.AddReg]
+HKLM, System\CurrentControlSet\Control\Class\{36FC9E60-C465-11CF-8056-444553540000}, LowerFilters, 0x00010000, %ServiceName%
+
+; （必需）列出了文件系统驱动程序的单个分发媒体（定义了源磁盘的名称和标签）。 媒体的唯一标识符为 1。 媒体的名称由 %Disk1% 令牌指定，该令牌在 INF 文件的 Strings 节中定义
+; 1：磁盘编号;,,,"":其他参数（如磁盘标签、路径等），在这个例子中为空
+[SourceDisksNames]
+1 = %Disk1%,,,""
+
+; （必需）列出了要为文件系统驱动程序复制的文件，并指定要在唯一标识符为 1 的媒体上找到文件（此标识符是在 INF 文件的 SourceDisksNames 节中定义的）
+; 定义了源文件及其所在的磁盘编号,表示WdfCoInstaller01009.dll文件位于磁盘1上
+[SourceDisksFiles]
+WdfCoInstaller01009.dll=1 
+
+[SourceDisksFiles.x86]
+MyDriver_x86.sys  = 1,,
+
+[SourceDisksFiles.amd64]
+MyDriver_x64.sys  = 1,,
+
+; 定义了32位系统的服务安装信息
+; 0x00000002：服务安装标志，表示服务自动启动
+[_MyDriver_Install_x86.Services]
+AddService=%ServiceDesc%,0x00000002, Service_Inst
+
+[_MyDriver_Install_x64.Services]
+AddService=%ServiceDesc%,0x00000002, Service_Inst
+
+; 定义了服务的详细信息
+[Service_Inst]
+DisplayName     = %ServiceDesc%                            
+ServiceType     = 1                  ; SERVICE_KERNEL_DRIVER
+StartType       = 2                  ; SERVICE_AUTO_START 
+ErrorControl    = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary   = %12%\MyDriver.sys ;
+
+; 卸载流程
+[DefaultUninstall.NTx86]
+DelFiles   = MyDriver.NTx86.Copy
+DelReg     = MyDriver.NT.HW.AddReg
+
+[DefaultUninstall.NTamd64]
+DelFiles   = MyDriver.NTamd64.Copy
+DelReg     = MyDriver.NT.HW.AddReg    
+
+[DefaultUninstall.NTx86.Services]
+DelService = %ServiceDesc%,0x200   
+
+[DefaultUninstall.NTamd64.Services]
+DelService = %ServiceDesc%,0x200                  
+
+; 11：目标目录代码，表示%SystemRoot%\System32目录（难道还能改目录？由于下面的变量不同因此可以这样做）
+; 也可以把多个变量放在一个节中
+
+; 以下是一些常见的目录代码及其对应的目录：
+; 10：%SystemRoot%（Windows目录）
+; 11：%SystemRoot%\System32
+; 12：%SystemRoot%\System32\drivers
+; 13：%SystemRoot%\Inf
+; 17：%SystemRoot%\System32\ReinstallBackups
+; 18：%SystemRoot%\Help
+; 20：%SystemRoot%\System32\spool\drivers
+; 21：%SystemRoot%\System32\spool\drivers\w32x86
+; 23：%SystemRoot%\System32\spool\drivers\color
+; 24：%SystemRoot%\System32\spool\drivers\IA64
+; 25：%SystemRoot%\System32\spool\drivers\W32X86\3
+; 30：%SystemRoot%\System32\spool\drivers\x64
+[DestinationDirs]
+MyDriver_CoInstaller_CopyFiles = 11
+; 示例将共同安装程序文件复制到%SystemRoot%\System32\CoInstallers目录
+MyDriver_CoInstaller_CopyFiles = 11,"CoInstallers"
+
+; 定义了32位系统的共同安装程序设置
+[_MyDriver_Install_x86.CoInstallers]
+AddReg          = MyDriver_CoInstaller_AddReg
+CopyFiles       = MyDriver_CoInstaller_CopyFiles
+
+[_MyDriver_Install_x64.CoInstallers]
+AddReg          = MyDriver_CoInstaller_AddReg
+CopyFiles       = MyDriver_CoInstaller_CopyFiles
+
+; 0x00010000：标志，表示这是一个多字符串值（REG_MULTI_SZ）
+[MyDriver_CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller01009.dll, WdfCoInstaller"
+
+[MyDriver_CoInstaller_CopyFiles]
+WdfCoInstaller01009.dll
+
+; 定义了32位系统的WDF服务设置
+[_MyDriver_Install_x86.Wdf]
+KmdfService              = %ServiceName%, wdfsect
+
+[_MyDriver_Install_x64.Wdf]
+KmdfService              = %ServiceName%, wdfsect
+
+; 定义了WDF库的版本
+[wdfsect]
+KmdfLibraryVersion       = 1.9
+
+; （必需）定义 INF 文件中使用的每个 %strkey% 标记
+[Strings]
+Msft        = "Microsoft Corporation"
+ServiceDesc = "Example File System Driver"
+ServiceName = "ExampleFileSystem"
+ParameterPath = "SYSTEM\CurrentControlSet\Services\ExampleFileSystem\Parameters"
+Disk1       = "Example File System Driver CD"

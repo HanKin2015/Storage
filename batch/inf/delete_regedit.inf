@@ -1,0 +1,19 @@
+;
+; 文 件 名: delete_regedit.inf
+; 文件描述: 删除注册表项，必须要加完整路径，另外安装的时候几乎没有任何反应
+; 备    注: rundll32.exe setupapi,InstallHinfSection DefaultInstall 132 .\delete_regedit.inf
+; 作    者: HanKin
+; 创建日期: 2024.09.12
+; 修改日期：2024.09.12
+; 
+; Copyright (c) 2024 HanKin. All rights reserved.
+;
+[Version]
+Signature = "$WINDOWS NT$"
+
+[DefaultInstall]
+DelReg=DeleteMe
+
+[DeleteMe]
+HKCU,"SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}","Hj"
+HKLM,"SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}","Hj"

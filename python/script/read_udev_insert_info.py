@@ -11,6 +11,7 @@ Copyright (c) 2024 HanKin. All rights reserved.
 """
 import os
 import time
+import re
 
 def list_specified_suffix_files(dir_path, suffix_list):
     """
@@ -26,12 +27,32 @@ def list_specified_suffix_files(dir_path, suffix_list):
                 file_path = os.path.join(root, file)
     print("there are {} files with {} suffix".format(count, suffix_list))
 
+def parse_vpid(insert_line):
+    """从设备插入内容中解析vid和pid
+    """
+    
+    # 使用正则表达式匹配 idVendor 和 idProduct
+    matches = re.findall(r'idVendor=([0-9a-fA-F]+), idProduct=([0-9a-fA-F]+)', insert_line)
+
+    # 如果找到匹配项，提取 idVendor 和 idProduct 的值
+    if matches:
+        idVendor = matches[0][0]
+        idProduct = matches[0][1]
+        print("idVendor:idProduct <<===>> {}:{}\n".format(idVendor, idProduct))
+    else:
+        print("未找到匹配项")
+
 def read_udev_info_from_linux_box():
-    system_log_path = r"D:\Users\Administrator\My Document\WXWork\1688854308416542\Cache\File\2024-08\20230341_10.191.100.27_5.9.1.683_7BP3460135\var\log\system.log"
+    """从Linux内核中读取USB设备插入信息
+    """
+    
+    system_log_path = r"D:\Users\Administrator\My Document\WXWork\1688854308416542\Cache\File\2024-08\cgs27_68.65.88.81_5.5.6.113_70C0360818 (1)\var\log\system.log"
     with open(system_log_path, "r", encoding="utf-8") as f:
         for line in f:
             if "New USB device found" in line:
+                line = line.strip()
                 print(line)
+                parse_vpid(line)
 
 def read_udev_info_from_android_box():
     pass

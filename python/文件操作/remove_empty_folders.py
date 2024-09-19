@@ -10,6 +10,7 @@
 Copyright (c) 2023 HanKin. All rights reserved.
 """
 import os
+
 def remove_empty_folders(directory_path):
     for root, dirs, files in os.walk(directory_path, topdown=False):
         for folder in dirs:
@@ -25,5 +26,5 @@ def rename_files(directory_path, old_name, new_name):
             os.rename(os.path.join(directory_path, filename),
                       os.path.join(directory_path, new_filename))
 
-
+if __name__ == '__main__':
 

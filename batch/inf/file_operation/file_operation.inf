@@ -1,0 +1,35 @@
+;
+; 文 件 名: install_file.inf
+; 文件描述: INF文件在文件操作方面的能力
+; 作    者: HanKin
+; 创建日期: 2024.09.12
+; 修改日期：2024.09.12
+; 
+; Copyright (c) 2024 HanKin. All rights reserved.
+;
+
+[Version]
+Signature = $WINDOWS NT$
+Provider  = %Author%
+
+[Strings]
+Product   = "文件复制和安装演示"
+Version   = "1.0"
+Author    = "HanKin"
+Copyright = "Copyright 2024"
+
+[FileList1]
+File1.txt ; 此文件已在当前目录下，下同。
+
+[FileList2]
+File2.txt
+
+[DestinationDirs]
+FileList1 = 11  ; 安装到C:\Windows\System32目录
+FileList2 = 10  ; 安装到C:\Windows目录
+
+[DefaultInstall]
+Copyfiles = FileList1, FileList2
+
+[DefaultUninstall]
+DelFiles   = FileList1, FileList2
