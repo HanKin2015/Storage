@@ -1,5 +1,5 @@
 /**
-* 文 件 名: exec_shell.c
+* 文 件 名: exec_shell_by_popen.c
 * 文件描述: 执行shell命令
 * 作    者: HanKin
 * 创建日期: 2022.07.12

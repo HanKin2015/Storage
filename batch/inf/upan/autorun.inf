@@ -1,7 +1,7 @@
-;
+﻿;
 ; 文 件 名: autorun.inf
-; 文件描述: 给硬盘（U盘）DIY一个可爱的图标
-; 备    注: OPEN没有反应，ICON生效了
+; 文件描述: 给硬盘（U盘）DIY一个可爱的图标，使用attrib命令隐藏文件，attrib +s +h E:/qtdemo.ico
+; 备    注: 由于安全原因，Windows系统从Windows 7开始禁用了在可移动设备上的autorun.inf文件中使用OPEN命令自动运行程序的功能
 ; 作    者: HanKin
 ; 创建日期: 2024.09.12
 ; 修改日期：2024.09.12
@@ -10,5 +10,6 @@
 ;
 
 [autorun]
-ICON=qtdemo.ico
+ICON=qtdemo.ico,0
 OPEN="C:\Program Files\Microsoft VS Code\Code.exe"
+LABEL=HJ-USB

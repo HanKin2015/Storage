@@ -30,6 +30,8 @@ case VIDIOC_GET_BUSID_DEVICEID:
 */
 #define VIDIOC_GET_BUSID_DEVICEID _IOR('V',  98, struct v412_usb_device_info)
 #define VIDIOC_USB_CONTROL_MSG _IOWR('V',  99, struct v412_usb_control_msg)
+#define UVCIOC_GET_BUSID_DEVICEID _IOR('V',  0x22, struct v412_usb_device_info)
+#define UVCIOC_USB_CONTROL_MSG _IOWR('V',  0x23, struct v412_usb_control_msg)
 // struct needed usb information
 struct v412_usb_device_info {
     __u32 devnum;
@@ -37,6 +39,7 @@ struct v412_usb_device_info {
 };
 static int GetBusidDevid()
 {
+    printf("===== %s(%d) =====\n", __FUNCTION__, __LINE__);
     char cam_path[32] = {0};
     int fd = -1;
     struct v412_usb_device_info usb_device_info;
@@ -54,7 +57,9 @@ static int GetBusidDevid()
         
         printf("open file %s success.\n", cam_path);
         memset(&usb_device_info, 0, sizeof(struct v412_usb_device_info));
-        if (ioctl(fd, VIDIOC_GET_BUSID_DEVICEID, &usb_device_info) == -1) {
+        //if (ioctl(fd, VIDIOC_GET_BUSID_DEVICEID, &usb_device_info) == -1) {
+        printf("UVCIOC_GET_BUSID_DEVICEID\n");
+        if (ioctl(fd, UVCIOC_GET_BUSID_DEVICEID, &usb_device_info) == -1) { // 内核自定义宏
             printf("video device(%s): get camera busid and deviceid failed.\n", cam_path);
             close(fd);
             fd = -1;
@@ -63,7 +68,7 @@ static int GetBusidDevid()
             printf("open file %s bus:%d dev:%d.\n", cam_path, usb_device_info.busnum, usb_device_info.devnum);
             close(fd);
             fd = -1;
-            break;
+            //break;
         }
     }
     return 0;
@@ -84,6 +89,7 @@ struct v4l2_capability
 */
 static int GetNumberOfCameras()
 {
+    printf("===== %s(%d) =====\n", __FUNCTION__, __LINE__);
     char cam_path[20];
     int mNumberOfCameras = 0;
     struct v4l2_capability capability;
@@ -148,6 +154,7 @@ static void ConvertUnCharToChar(char* str, unsigned char* UnChar, int ucLen)
 */
 static int GetPVidOfCameras()
 {
+    printf("===== %s(%d) =====\n", __FUNCTION__, __LINE__);
     char cam_path[20];
     struct v4l2_capability capability;
 
@@ -204,6 +211,7 @@ loop_continue:
 */
 static int GetInfoOfCameras()
 {
+    printf("===== %s(%d) =====\n", __FUNCTION__, __LINE__);
     char cam_path[20];
     struct v4l2_capability capability;
     int fd = -1;
@@ -258,9 +266,9 @@ loop_continue:
 
 int main()
 {
-    //GetBusidDevid();
+    GetBusidDevid();
     GetNumberOfCameras();
-    //GetPVidOfCameras();
+    GetPVidOfCameras();
     GetInfoOfCameras();
     return 0;
 }

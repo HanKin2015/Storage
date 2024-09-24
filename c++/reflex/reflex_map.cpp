@@ -1,6 +1,6 @@
 /**
 * 文 件 名: reflex_map.cpp
-* 文件描述: C++通过map实现反射
+* 文件描述: C++通过map实现反射（表示demo看不懂）
 * 作    者: HanKin
 * 创建日期: 2022.07.07
 * 修改日期：2022.07.07
@@ -64,13 +64,13 @@ class Test
  
 class Test1 : public Test
 {
-    public:
+public:
     DEFINE_CLASS(Test1, test1)  // 第一个参数为类名，第二个参数为字符串名
 };
  
 class Test2 : public Test
 {
-    public:
+public:
     DEFINE_CLASS(Test2, test2)
 };
 
@@ -84,3 +84,6 @@ int main()
     GLOBAL_FUN_MAP.get("test2");   
     GLOBAL_FUN_MAP.get("11111111");
 }
+/*
+虽然看不懂，但是能运行，可是没有任何输出
+*/

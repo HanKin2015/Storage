@@ -14,6 +14,8 @@
 #include <assert.h>
 #include <errno.h>
 
+int get_cmd_result_by_tmpfile(const char *cmd);
+
 /*
 一般来说，在 Linux 系统中使用 C 程序调用 shell 命令有以下三种常见的方法：system()、popen()、exec 系列函数。
 
@@ -28,6 +30,7 @@ exec 需要用户 fork/vfork 进程，然后 exec 所需的 shell 命令。
 */
 static int get_cmd_result_by_system(char *ret_buf, int ret_buf_size, const char *cmd)
 {
+    printf("===== %s(%d) =====\n", __FUNCTION__, __LINE__);
     assert(ret_buf && cmd);
     
     memset(ret_buf, 0, ret_buf_size);
@@ -42,6 +45,7 @@ static int get_cmd_result_by_system(char *ret_buf, int ret_buf_size, const char 
 */
 static int get_cmd_result_by_popen(char *ret_buf, int ret_buf_size, const char *cmd)
 {
+    printf("===== %s(%d) =====\n", __FUNCTION__, __LINE__);
     assert(ret_buf && cmd);
 
     // FILE *popen(const char *command, const char *type)
@@ -89,8 +93,20 @@ static int get_cmd_result_by_popen(char *ret_buf, int ret_buf_size, const char *
     return 0;
 }
 
+/*
+3.exec函数
+
+*/
+static int get_cmd_result_by_exec(char *ret_buf, int ret_buf_size, const char *cmd)
+{
+    printf("===== %s(%d) =====\n", __FUNCTION__, __LINE__);
+    return 0;
+}
+
+// 获取内存使用率
 static int get_meminfo_utilization()
 {
+    printf("===== %s(%d) =====\n", __FUNCTION__, __LINE__);
     const int max_buf_size = 1024;
     char ret_buf[max_buf_size];
     int ret = 0;
@@ -113,9 +129,43 @@ static int get_meminfo_utilization()
         return -1;
     }
     printf("total = %lu, avaiable = %lu, utilization = %%%.3lf\n", total, available, (total - available) * 1.0 / total * 100);
+    
+    pid_t status = get_cmd_result_by_tmpfile(cmd);
+    printf("get_cmd_result_by_tmpfile system exit status: %d\n", status);
     return 0;
 }
 
+// 4、使用临时文件
+int get_cmd_result_by_tmpfile(const char *cmd)
+{
+    printf("===== %s(%d) =====\n", __FUNCTION__, __LINE__);
+    
+    char cmd_string[BUFSIZ] = { 0 };
+    char tmpname[L_tmpnam];  // L_tmpnam 是一个宏，定义了临时文件名缓冲区的大小
+
+    // 生成一个临时文件名
+    if (tmpnam(tmpname) == NULL) {
+        perror("tmpnam");
+        return 1;
+    }
+    sprintf(cmd_string, "%s > %s", cmd, tmpname);
+    printf("cmd_string: %s\n", cmd_string);
+    return system(cmd_string);
+}
+/*
+[root@ubuntu0006:~/cmake] #./a.out
+===== get_meminfo_utilization(109) =====
+===== get_cmd_result_by_system(33) =====
+8174988 6945088（这个非程序获取的，而是system函数执行后打印的）
+ret = 0
+===== get_cmd_result_by_popen(48) =====
+total = 8174988, avaiable = 6944972, utilization = %15.046
+===== get_cmd_result_by_tmpfile(141) =====
+cmd_string: free | awk 'NR==2{print $2,$7}' > /tmp/file8WlQc9
+get_cmd_result_by_tmpfile system exit status: 0
+[root@ubuntu0006:~/cmake] #cat /tmp/file8WlQc9
+8174988 6944752
+*/
 
 /*
 题目：计算系统内存使用率

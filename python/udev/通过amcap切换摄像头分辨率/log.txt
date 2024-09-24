@@ -1,0 +1,2 @@
+2024-09-19 21:05:52[debug]init_display finished
+2024-09-19 21:05:55[error]open_amcap failed

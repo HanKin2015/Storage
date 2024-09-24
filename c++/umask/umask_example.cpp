@@ -1,6 +1,6 @@
 /**
-* 文 件 名: read_write.cpp
-* 文件描述: 探究读写文件速度效率
+* 文 件 名: umask_example.cpp
+* 文件描述: 学习umask函数
 * 作    者: HanKin
 * 创建日期: 2023.06.30
 * 修改日期：2023.06.30
@@ -57,13 +57,13 @@ static int printf_mode_t()
 
 static int umask_example()
 {
-    mode_t old_mask = umask(0); // 获取之前的文件创建掩码
-    printf("a.out file create umask: %o\n", old_mask);
-    mode_t new_create_file_default_umask = 0666 & (~old_mask);
-    printf("new_create_file_default_umask: %o\n", new_create_file_default_umask);
-    int fd = open("test.txt", O_CREAT | O_WRONLY, 0666); // 创建一个文件
-    old_mask = umask(old_mask); // 恢复之前的文件创建掩码
-    printf("a.out file create umask: %o\n", old_mask);
+    mode_t old_mask = umask(0); // 获取之前的文件创建掩码，并设置新的掩码0000
+    printf("a.out file create old umask: 0%03o\n", old_mask);
+    mode_t new_create_file_right = 0666 & (~old_mask);  // 新创建的文件读写权限
+    printf("new_create_file_right: 0%03o\n", new_create_file_right);
+    int fd = open("test1.txt", O_CREAT | O_WRONLY, 0666); // 创建一个文件
+    mode_t new_mask = umask(old_mask); // 恢复之前的文件创建掩码
+    printf("a.out file create new umask: 0%03o\n", new_mask);
     if (fd == -1) {
         perror("open");
         return 1;
@@ -87,11 +87,15 @@ int main(int argc, char *argv[])
     return 0;
 }
 /*
-[root@ubuntu0006:/media/hankin/vdb] #./a.out
-a.out file create umask: 0x0012
-new_create_file_default_umask: 0x0664
-a.out file create umask: 0x0000
-[root@ubuntu0006:/media/hankin/vdb] #ll test*
--rw-r--r-- 1 root root 13 3月  14 20:10 test0.txt
--rw-rw-rw- 1 root root 13 3月  14 20:04 test.txt
+[root@ubuntu0006:~/cmake] #./a.out
+a.out file create old umask: 0022
+new_create_file_right: 0644
+a.out file create new umask: 0000
+[root@ubuntu0006:~/cmake] #ll test*.txt
+-rw-r--r-- 1 root root 13 9月  23 21:35 test0.txt
+-rw-rw-rw- 1 root root 13 9月  23 21:35 test1.txt
+
+理解：
+test0.txt: 0666 & (~0022) = 644
+test1.txt: 0666 & (~0000) = 666
 */
