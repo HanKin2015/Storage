@@ -13,6 +13,7 @@
 #include <unistd.h>
 #include <assert.h>
 #include <errno.h>
+#include <sys/wait.h>
 
 int get_cmd_result_by_tmpfile(const char *cmd);
 
@@ -94,14 +95,91 @@ static int get_cmd_result_by_popen(char *ret_buf, int ret_buf_size, const char *
 }
 
 /*
-3.exec函数
-
+===== get_cmd_result_by_popen2(100) =====
+sizeof(): 8, strlen(): 0
+buf: 8174988 6951888
 */
-static int get_cmd_result_by_exec(char *ret_buf, int ret_buf_size, const char *cmd)
+static int get_cmd_result_by_popen2(char *buf, int ret_buf_size, const char *cmd)
 {
     printf("===== %s(%d) =====\n", __FUNCTION__, __LINE__);
+    assert(buf && cmd);
+
+    memset(buf, 0, ret_buf_size);       // 初始化buf,以免后面写如乱码到文件中
+    printf("sizeof(): %ld, strlen(): %ld\n", sizeof(buf), strlen(buf));
+    FILE *stream = popen(cmd, "r" );    // 将命令的输出(通过管道读取（“r”参数）)到FILE* stream
+    FILE *wstream = fopen("test_popen.txt", "w+");  // 新建一个可写的文件
+    fread(buf, sizeof(char), ret_buf_size, stream); // 将刚刚FILE* stream的数据流读取到buf中
+    fwrite(buf, 1, ret_buf_size, wstream);          // 将buf中的数据写到FILE *wstream对应的流中，也是写到文件中
+    pclose(stream);
+    fclose(wstream);
+    printf("buf: %s", buf);
     return 0;
 }
+
+/*
+3.exec系列函数
+使用匿名管道
+*/
+static int get_cmd_result_by_exec(char *buf, int len, const char *cmd)
+{
+    printf("===== %s(%d) =====\n", __FUNCTION__, __LINE__);
+    int   fd[2];
+    pid_t pid;
+    int   n, count; 
+    memset(buf, 0, len);    // 初始化输出结果数组
+    int status = 0;
+    
+    if (pipe(fd) < 0) {   // 创建匿名管道
+        printf("pipe failed\n");
+        return -1;
+    }
+    
+    if ((pid = fork()) < 0) {
+        printf("fork failed\n");
+        return -1;
+    } else if (pid > 0) {   // 父进程
+        close(fd[1]);     
+        count = 0;
+        while ((n = read(fd[0], buf + count, len - count - 1)) > 0) {
+            count += n;
+        }
+        close(fd[0]);
+        if ((status = waitpid(pid, NULL, 0)) < 0) { // waitpid 返回子进程的 PID，如果返回值小于 0 则表示出错
+            printf("waitpid failed, status %d\n", status);
+            return -1;
+        }
+    } else {    // 子进程
+        close(fd[0]);     
+        if (fd[1] != STDOUT_FILENO) {
+            if (dup2(fd[1], STDOUT_FILENO) != STDOUT_FILENO) {
+                printf("dup2 failed\n");
+                _exit(1);
+            }
+            close(fd[1]);
+        }
+        if (execl("/bin/sh", "sh", "-c", cmd, (char*)0) == -1) {
+            printf("execl failed\n");
+            _exit(1);
+        }
+        _exit(0);
+    }
+    printf("buf: %s", buf);
+    return 0;
+}
+/*
+[root@ubuntu0006:~/cmake] #./a.out
+===== get_meminfo_utilization(151) =====
+===== get_cmd_result_by_system(34) =====
+8174988 6961612
+ret = 0
+===== get_cmd_result_by_popen(49) =====
+total = 8174988, avaiable = 6961756, utilization = %14.841
+===== get_cmd_result_by_tmpfile(185) =====
+cmd_string: free | awk 'NR==2{print $2,$7}' > /tmp/filedPL4PZ
+get_cmd_result_by_tmpfile system exit status: 0
+===== get_cmd_result_by_exec(103) =====
+buf: 8174988 6961860
+*/
 
 // 获取内存使用率
 static int get_meminfo_utilization()
@@ -130,8 +208,12 @@ static int get_meminfo_utilization()
     }
     printf("total = %lu, avaiable = %lu, utilization = %%%.3lf\n", total, available, (total - available) * 1.0 / total * 100);
     
+    get_cmd_result_by_popen2(ret_buf, max_buf_size, cmd);
+    
     pid_t status = get_cmd_result_by_tmpfile(cmd);
     printf("get_cmd_result_by_tmpfile system exit status: %d\n", status);
+    
+    get_cmd_result_by_exec(ret_buf, max_buf_size, cmd);
     return 0;
 }
 

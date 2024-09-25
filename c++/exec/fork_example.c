@@ -14,12 +14,17 @@
 int main(int argc,char *argv[])
 {
     pid_t pid = fork();
+    int cnt = 0;
     if ( pid < 0 ) {
         fprintf(stderr, "错误！");
     } else if ( pid == 0 ) {
+        cnt++;
+        printf("son cnt = %d\n", cnt);
         printf("子进程空间，进程pid为%d\n", getpid());
         exit(0);
     } else {
+        cnt++;
+        printf("father cnt = %d\n", cnt);
         printf("父进程空间，进程pid为%d，子进程pid为%d\n", getpid(), pid);
     }
     // 注意！存在着父进程在子进程结束前结束的可能性。必要的时候可以使用wait或 waitpid函数让父进程等待子进程的结束并获取子进程的返回状态
@@ -27,6 +32,8 @@ int main(int argc,char *argv[])
 }
 /*
 [root@ubuntu0006:~/cmake] #./a.out
-父进程空间，进程pid为13529，子进程pid为13530
-子进程空间，进程pid为13530
+father cnt = 1
+父进程空间，进程pid为29919，子进程pid为29920
+son cnt = 1
+子进程空间，进程pid为29920
 */
