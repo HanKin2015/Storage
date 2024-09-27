@@ -8,13 +8,13 @@
 *
 * Copyright (c) 2023 HanKin. All rights reserved.
 */
-
 #include <iostream>
 #include <bitset>
 
 using namespace std;
 
-int main() {
+int main()
+{
     // 创建一个二进制位集合，初始值为1010
     bitset<4> bits("1010");
 
