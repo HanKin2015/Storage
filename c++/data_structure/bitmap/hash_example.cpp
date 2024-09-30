@@ -16,7 +16,8 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
     string str = "hello, world";
     size_t hash_value = hash<string>{}(str);
     cout << "hash value: " << hash_value << endl;

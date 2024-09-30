@@ -11,21 +11,23 @@
 #include <iostream>
 #include <bitset>
 #include <string>
-
 using namespace std;
 
-class BloomFilter {
+class BloomFilter
+{
 public:
     BloomFilter(int size, int hash_count) : bitset_(size), hash_count_(hash_count) {}
 
-    void add(const string& str) {
+    void add(const string& str)
+    {
         for (int i = 0; i < hash_count_; i++) {
             int hash_value = hash(str, i);
             bitset_.set(hash_value);
         }
     }
 
-    bool contains(const string& str) const {
+    bool contains(const string& str) const
+    {
         for (int i = 0; i < hash_count_; i++) {
             int hash_value = hash(str, i);
             if (!bitset_.test(hash_value)) {
@@ -39,7 +41,8 @@ private:
     bitset<1000000> bitset_;
     int hash_count_;
 
-    int hash(const string& str, int index) const {
+    int hash(const string& str, int index) const
+    {
         int hash_value = 0;
         for (char c : str) {
             hash_value = hash_value * 31 + c;
@@ -61,6 +64,5 @@ int main() {
     cout << filter.contains("foo") << endl;    // 输出1
     cout << filter.contains("bar") << endl;    // 输出1
     cout << filter.contains("baz") << endl;    // 输出0
-
     return 0;
 }

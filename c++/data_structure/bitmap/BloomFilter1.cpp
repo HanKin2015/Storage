@@ -1,5 +1,5 @@
 /**
-* 文 件 名: BloomFilter.cpp
+* 文 件 名: BloomFilter1.cpp
 * 文件描述: 布隆过滤器
 * 作    者: HanKin
 * 创建日期: 2023.06.05
@@ -14,15 +14,18 @@
 
 using namespace std;
 
-class BloomFilter {
+class BloomFilter
+{
 public:
-    BloomFilter(int size, int hash_count) {
+    BloomFilter(int size, int hash_count)
+    {
         bitset_size = size;
         bitset = new std::bitset<1000000000>();
         hash_func_count = hash_count;
     }
 
-    void add(string key) {
+    void add(string key)
+    {
         for (int i = 0; i < hash_func_count; i++) {
             int hash_value = hash_func(key, i);
             //cout << hash_value << ' ' << bitset_size << endl;
@@ -30,7 +33,8 @@ public:
         }
     }
 
-    bool contains(string key) {
+    bool contains(string key)
+    {
         for (int i = 0; i < hash_func_count; i++) {
             int hash_value = hash_func(key, i);
             if (!bitset->test(hash_value)) {
@@ -45,7 +49,8 @@ private:
     std::bitset<1000000000> *bitset;
     int hash_func_count;
 
-    int hash_func(string key, int index) {
+    int hash_func(string key, int index)
+    {
         std::hash<std::string> str_hash;
         size_t hash_value = hash<string>{}(key);
         //cout << "hash value: " << hash_value << endl;
@@ -57,7 +62,8 @@ private:
     }
 };
 
-int main() {
+int main()
+{
     BloomFilter filter(1000000000, 5);
     filter.add("123456");
     filter.add("234567");
@@ -67,7 +73,6 @@ int main() {
     cout << filter.contains("234567") << endl; // true
     cout << filter.contains("345678") << endl; // true
     cout << filter.contains("456789") << endl; // false
-
     return 0;
 }
 /*

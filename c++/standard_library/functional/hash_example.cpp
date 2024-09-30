@@ -12,7 +12,8 @@
 #include <functional>
 #include <string>
 
-int main() {
+int main()
+{
     std::hash<std::string> hash_fn;
     std::string s = "Hello, World!";
     size_t hash = hash_fn(s);
@@ -20,3 +21,9 @@ int main() {
 
     return 0;
 }
+/*
+[root@ubuntu0006:~/cmake] #./a.out
+Hash of "Hello, World!": 18371290486108036847
+[root@ubuntu0006:~/cmake] #./a.out
+Hash of "Hello, World!": 18371290486108036847
+*/
