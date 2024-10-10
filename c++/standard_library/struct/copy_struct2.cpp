@@ -64,13 +64,47 @@ int main()
     }
     memset(p, 0, sizeof(struct uvc_streaming_control));
 
-    //*p = *probe_rsp;
-    //strncpy(p, prober_rsp, DATA_LEN);
-    memcpy(p, probe_rsp, DATA_LEN);
+    // 如果通过这种方式直接复制的话，会访问不存在的内存地址
+    *p = *probe_rsp;
     
-    printf("%d %d\n", p->bMinVersion, probe_rsp->bMinVersion);
+    // 对于字符串操作，通常使用 strncpy，而对于二进制数据或需要精确控制字节数的操作，使用 memcpy
+    //strncpy(p, prober_rsp, DATA_LEN);
+    //memcpy(p, probe_rsp, DATA_LEN);
+    
+    printf("%d %d\n", p->bMaxVersion, probe_rsp->bMaxVersion);  // 分别输出最后一个成员变量
     
     free(p);
     p = NULL;
     return 0;
 }
+/*
+[root@ubuntu0006:~/cmake] #./a.out
+0x00
+0x01
+0x02
+0x03
+0x04
+0x05
+0x06
+0x07
+0x08
+0x09
+0x0a
+0x0b
+0x0c
+0x0d
+0x0e
+0x0f
+0x10
+0x11
+0x12
+0x13
+0x14
+0x15
+0x16
+0x17
+0x18
+0x19
+sizeof(struct uvc_streaming_control): 34
+144 144
+*/

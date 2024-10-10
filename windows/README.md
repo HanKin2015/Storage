@@ -124,3 +124,24 @@ https://blog.csdn.net/dybb8999/article/details/73606096
 它也无法阻止USB设备加载其他的驱动，因为有多个筛选器驱动程序（如前述的UpperFilters和LowerFilters），它们在主驱动程序的基础上提供额外的功能或处理。
 
 demo见：D:\Github\Storage\windows\GetUsbDeviceDriverInfo
+
+## 10、向窗口发送虚拟按键
+https://learn.microsoft.com/zh-cn/windows/win32/inputdev/virtual-key-codes
+https://baike.baidu.com/item/ASCII/309296?fr=ge_ala
+demo见：D:\Github\Storage\windows\SendInputExample
+
+项目切换成在静态中使用MFC后出现无法解析的外部符号 __imp__SendInput，原因是在Windows编程中，SendInput 函数是Windows API的一部分，定义在user32.dll中。要解决这个问题，你需要确保在编译时链接到User32.lib库。
+
+### 10-1、VkKeyScan 函数
+VkKeyScan 函数用于将字符转换为虚拟键码（virtual-key code）和键盘状态的组合。它返回一个 SHORT 值，其中低字节包含虚拟键码，高字节包含键盘状态（如 Shift 键是否被按下）。
+
+VkKeyScan('Z')：
+- Z 是大写字母，因此需要按下 Shift 键。
+- 返回值的低字节将是 Z 的虚拟键码（通常是 0x5A），高字节将指示 Shift 键被按下（通常是 0x01）。
+- 因此，VkKeyScan('Z') 的返回值通常是 0x015A。
+
+VkKeyScan('z')：
+- z 是小写字母，不需要按下 Shift 键。
+- 返回值的低字节将是 z 的虚拟键码（通常也是 0x5A），高字节将为零，因为不需要额外的键盘状态。
+- 因此，VkKeyScan('z') 的返回值通常是 0x005A。
+
