@@ -1,3 +1,7 @@
+# BitLocker
+https://learn.microsoft.com/zh-cn/windows/security/operating-system-security/data-protection/bitlocker/#device-encryption
+Windows BitLocker驱动器加密通过加密Windows操作系统卷上存储的所有数据可以更好地保护计算机中的数据。BitLocker使用TPM（受信任的平台模块）帮助保护Windows 操作系统和用户数据，并帮助确保计算机即使在无人参与、丢失或被盗的情况下也不会被篡改。 BitLocker还可以在没有TPM的情况下使用。若要在计算机上使用BitLocker而不使用TPM，则必须通过使用组策略更改BitLocker安装向导的默认行为，或通过使用脚本配置BitLocker。使用BitLocker而不使用TPM时，所需加密密钥存储在USB闪存驱动器中，必须提供该驱动器才能解锁存储在卷上的数据。
+
 # 特摄片
 “特摄”（日文：特撮，Tokusatsu），“特撮”是和制汉语，原意为特殊摄影技术（Special Effects，缩写为SFX）的译名，与视觉特效（Visual effects，缩写为VFX）的摄制技术相对应，是一个日本名词和电影类型，也是日本最具有国际知名度的技术与产品，其代表《奥特曼》、《假面骑士》、《超级战队》、《哥斯拉》系列是日本知名的国际流行文化象征之一。 [14]
 狭义上的特摄片，现今专指用特摄技术拍摄出来的日本影视剧。特摄片的主要特色是真人演员穿着紧身戏服或者套着怪兽戏服表演，并以手工制作的微缩模型为场景。其特效场景如山洪暴发、喷火爆炸、高楼倒塌等场景也是手工制作。真人戏服和手工模型占据了影视片的绝大部分成本，真人表演则起到了关键作用，至多辅以激光之类极少数视觉特效。
