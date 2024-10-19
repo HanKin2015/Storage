@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 文 件 名: mysql_table_to_csv.py
-文件描述: MySQL数据库表导出到csv文件中
+文件描述: MySQL数据库表导出到csv文件中，pip install pandas mysql-connector-python
 备    注: Pandas 建议使用 SQLAlchemy 的连接对象或数据库 URI 字符串来进行数据库操作，因为这样可以更好地支持多种数据库类型，并提供更强大的功能和兼容性
 作    者: HanKin
 创建日期: 2024.10.11
