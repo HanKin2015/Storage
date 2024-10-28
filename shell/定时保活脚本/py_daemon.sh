@@ -13,6 +13,15 @@
 #
 #!/bin/bash
 
+# 日志打印接口
+log_message()
+{
+    LOG_FILE="/var/log/hj.log"
+    local message="$1"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - ${message}" >> "${LOG_FILE}"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - ${message}"
+}
+
 # python脚本路径
 PYTHON_SCRIPT_NAME='k.py'
 PYTHON_SCRIPT_PATH="/root/cmake/${PYTHON_SCRIPT_NAME}"
@@ -33,10 +42,10 @@ get_pid()
 check_and_restart()
 {
     local pid=$(get_pid)
-    echo "${PYTHON_SCRIPT_PATH} file start pid is ${pid}"
+    log_message "${PYTHON_SCRIPT_PATH} file start pid is ${pid}"
 
     if [ -z "$pid" ]; then
-        echo "Process not running. Starting process..."
+        log_message "Process not running. Starting process..."
         start_python_sctipt
         return
     fi
@@ -45,17 +54,17 @@ check_and_restart()
     local virt=$(ps -o vsize= -p $pid)
     local handles=$(ls /proc/$pid/fd | wc -l)
 
-    echo "VIRT: $virt KB, Handles: $handles"
+    log_message "VIRT: $virt KB, Handles: $handles"
 
     # 检查条件（如果VIRT超过了5g或者句柄数量超过了600就杀死重新拉起）
     if [ "$virt" -gt $((5 * 1024 * 1024)) ] || [ "$handles" -gt 600 ]; then
-        echo "Conditions met. Restarting process..."
+        log_message "Conditions met. Restarting process..."
         kill -9 $pid
         start_python_sctipt
         local pid=$(get_pid)
-        echo "${PYTHON_SCRIPT_PATH} file restart pid is ${pid}"
+        log_message "${PYTHON_SCRIPT_PATH} file restart pid is ${pid}"
     else
-        echo "Process is running within limits."
+        log_message "Process is running within limits."
     fi
 }
 
