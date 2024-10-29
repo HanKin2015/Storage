@@ -1,7 +1,7 @@
 /*******************************************************************************
 * 文 件 名: linked_list_example.cpp
-* 文件描述: 链表
-* 备    注: 
+* 文件描述: 单链表
+* 备    注: g++ linked_list_example.cpp --std=c++11
 * 作    者: HanKin
 * 创建日期: 2024.09.29
 * 修改日期：2024.09.29
@@ -22,15 +22,17 @@ class LinkedList {
 public:
     LinkedList() : head(nullptr) {}
 
-    // 插入元素
-    void insert(int val) {
+    // 前置插入元素
+    void insert(int val)
+    {
         Node* newNode = new Node(val);
         newNode->next = head;
         head = newNode;
     }
 
     // 删除元素
-    void remove(int val) {
+    void remove(int val)
+    {
         Node* current = head;
         Node* prev = nullptr;
         while (current != nullptr && current->data != val) {
@@ -44,11 +46,13 @@ public:
                 head = current->next;
             }
             delete current;
+            current = nullptr;
         }
     }
 
     // 打印链表
-    void print() {
+    void print()
+    {
         Node* current = head;
         while (current != nullptr) {
             std::cout << current->data << " ";
@@ -61,13 +65,19 @@ private:
     Node* head;
 };
 
-int main() {
+int main()
+{
     LinkedList list;
     list.insert(1);
     list.insert(2);
     list.insert(3);
+    list.insert(2);
     list.print();
     list.remove(2);
     list.print();
     return 0;
 }
+/*
+2 3 2 1
+3 2 1
+*/
