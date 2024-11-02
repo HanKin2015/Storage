@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: zip_example.py
+文 件 名: sleep_example.py
 文件描述: time库中的sleep函数是否支持500毫秒睡眠
 作    者: HanKin
 创建日期: 2023.10.17
