@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>报案信息成器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        textarea, input[type="text"] {
+            width: 100%;
+            margin-top: 5px;
+        }
+        textarea {
+            height: 50px;
+        }
+        button {
+            margin-top: 10px;
+        }
+        #reportOutput {
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>报案信息成器</h1>
+
+<form id="reportForm">
+    <label for="components">问题组件:</label>
+    <textarea id="components" name="components" placeholder ="客户端和虚拟机、服务器等相关信息（客户端是盒子请提供提供序列号前三位，PC、虚拟机、者服务器提供系统型号，如果是极域场景，请提供 极域软件本版本，极域广播是直接广播还是客户端代理广播等信息）" required></textarea>
+    <label for="phenomenon">问题现象:</label>
+    <textarea id="phenomenon" name="phenomenon" placeholder="描述一下：什么场景下，做了什么动作后，客户认为正常是怎样的？实际上是怎样的？" required></textarea>
+    
+    <label for="lastOccurrence">最后一次发生时间:</label>
+    <input type="text" id="lastOccurrence" name="lastOccurrence" placeholder="例如：2024-10-9 19:28:22" required>
+    <label for="question_size">问题规模:</label>
+    <input type="text" id="question_size" name="question_size" placeholder="例如：单个盒子出现、批量终端出现、单个虚拟机上出现等" required>
+    
+    <label for="frequency">问题发生频率:</label>
+    <input type="text" id="frequency" name="frequency" placeholder="例如：1天5次" required>
+
+    <label for="logPath">问题日志:</label>
+    <input type="text" id="logPath" name="logPath" placeholder ="提供日志路径或者日志包名" required>
+    
+    <label for="appversion">版本信息:</label>
+    <textarea id="appversion" name="appversion" placeholder="粘贴VDC上的appversion(可到VDC WEB 管理界面的“关于”信息中拷贝)" required></textarea>
+    
+</form>
+<br>
+<button type="button" onclick="generateReport()">生成报案信息</button>
+<button onclick="copyToClipboard()">复制报案信息</button>
+<textarea id="reportOutput" readonly></textarea>
+<script>
+    function generateReport() {
+        const components = document.getElementById('components').value;
+        const phenomenon = document.getElementById('phenomenon').value;
+        const lastOccurrence = document.getElementById('lastOccurrence').value;
+        const question_size = document.getElementById('question_size').value;
+        const frequency = document.getElementById('frequency').value;
+        const logPath = document.getElementById('logPath').value;
+        const appversion = document.getElementById('appversion').value;
+        const reportContent = `
+【问题组件】
+${components}
+【问题现象】
+${phenomenon}
+【最后一次发生时间】
+${lastOccurrence}
+【问题规模】
+${question_size}
+【问题发生频率】
+${frequency}
+【问题日志路径】
+${logPath}
+【appversion】
+${appversion}
+`;
+        document.getElementById('reportOutput').value = reportContent.trim();
+    }
+
+    function copyToClipboard() {
+        const reportOutput = document.getElementById('reportOutput');
+        reportOutput.select();
+        reportOutput.setSelectionRange(0, 99999); // For mobile devices
+        document.execCommand('copy');
+        alert('报告内容已复制到剪切板');
+    }
+</script>
+
+</body>
+</html>

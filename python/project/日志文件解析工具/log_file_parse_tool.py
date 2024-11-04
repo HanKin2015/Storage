@@ -18,6 +18,9 @@ import tkinter as tk
 from tkinter import messagebox
 import chardet
 import shutil
+from log import logger
+import datetime
+import subprocess
 
 def show_error(message):
     # 创建一个隐藏的主窗口
@@ -26,6 +29,7 @@ def show_error(message):
 
     # 弹出错误提示框
     messagebox.showerror("错误", message)
+    logger.info(message)
 
     # 销毁主窗口
     root.destroy()
@@ -39,10 +43,10 @@ def list_specified_suffix_files(dir_path, suffix_list):
         for file in files:
             suffix = file.split(".")[-1]
             if suffix in suffix_list:
-                print("current suffix[{}] file: {}".format(suffix, file))
+                logger.info("current suffix[{}] file: {}".format(suffix, file))
                 count += 1
                 file_path = os.path.join(root, file)
-    print("there are {} files with {} suffix".format(count, suffix_list))
+    logger.info("there are {} files with {} suffix".format(count, suffix_list))
 
 def parse_vpid(insert_line):
     """从设备插入内容中解析vid和pid
@@ -57,9 +61,10 @@ def parse_vpid(insert_line):
         idVendor = matches[0][0]
         idProduct = matches[0][1]
         vpid = "{}:{}".format(idVendor, idProduct)
-        print("idVendor:idProduct <<===>> {}\n".format(vpid)) 
+        logger.info("idVendor:idProduct <<===>> {}\n".format(vpid)) 
     else:
-        print("未找到匹配项") 
+        #logger.info("未找到匹配项") 
+        pass
     return vpid
 
 def get_client_type(file_path):
@@ -72,15 +77,15 @@ def get_client_type(file_path):
     suffix = file_name.split('.')[-1]
     
     if suffix == 'zip':
-        print('{} is a zip file({})'.format(file_name, suffix))
+        logger.info('{} is a zip file({})'.format(file_name, suffix))
     else:
-        print('{} is not a zip file({})'.format(file_name, suffix))
+        logger.info('{} is not a zip file({})'.format(file_name, suffix))
         return None
 
-    loc = file_name.rfind('.')
-    sn = file_name[loc-10:loc]
+    loc = file_name.rfind('_')
+    sn = file_name[loc+1:loc+11]
     sn_pre3 = sn[:3]
-    print('sn is {}, prefix is {}'.format(sn, sn_pre3))
+    logger.info('sn is {}, prefix is {}'.format(sn, sn_pre3))
     return sn
 
 def unzip_file(zip_file_path, extract_path):
@@ -95,12 +100,18 @@ def unzip_file(zip_file_path, extract_path):
         for member in zip_ref.infolist():
             # 检查文件名是否为空
             if not member.filename:
-                print("Warning: Found a member with an empty filename, skipping. {}".format(member.filename))
+                logger.info("Warning: Found a member with an empty filename, skipping. {}".format(member.filename))
                 continue
-            filename = member.filename.encode('cp437').decode('gbk')
-            #print(''.format(filename))
+            original_filename = member.filename
+            # 替换 Windows 不支持的字符
+            sanitized_filename = original_filename.replace(':', '_')
+            filename = sanitized_filename.encode('cp437').decode('gbk')
+            #logger.info(''.format(filename))
             zip_ref.extract(member, path=extract_path, pwd=None) 
-            os.rename(os.path.join(extract_path, member.filename), os.path.join(extract_path, filename)) 
+            src = os.path.join(extract_path, sanitized_filename)
+            dst = os.path.join(extract_path, filename)
+            #logger.info(f"Renaming {src} to {dst}")
+            os.rename(src, dst)
 
 def find_specified_files_path(dir_path):
     """
@@ -113,12 +124,17 @@ def find_specified_files_path(dir_path):
         for file in files:
             if file in ['system.log', 'dmesg.txt']:
                 file_path = os.path.join(root, file)
-                print('this is kernel log file: {}'.format(file_path))
+                logger.info('this is kernel log file: {}'.format(file_path))
                 files_path['kernel_log_file_path'] = file_path
             if file in ['spicec.log', 'logcat.txt']:
                 file_path = os.path.join(root, file)
-                print('this is client log file: {}'.format(file_path))
+                logger.info('this is client log file: {}'.format(file_path))
                 files_path['client_log_file_path'] = file_path
+    kernel_log_file_name = os.path.basename(files_path.get('kernel_log_file_path', ''))
+    if kernel_log_file_name == 'dmesg.txt':
+        files_path['client_type'] = 'android'
+    else:
+        files_path['client_type'] = 'linux'
     return files_path
 
 def parse_kernel_log(kernel_log_file_path):
@@ -127,56 +143,106 @@ def parse_kernel_log(kernel_log_file_path):
     :param kernel_log_file_path: 内核日志文件路径
     :return
     """
-    print("\n\n\t\t=======================<< kernel log >>=======================")
-    vpid_set = set()
+    logger.info("\n\n\t\t=======================<< kernel log >>=======================")
+    vpid_set    = set()
+    error_cnt   = 0
+    emi_cnt     = 0
+    reset_cnt   = 0
+    connect_cnt = 0
+    keywords    = ["USB device number", "USB disconnect", "New USB device found"]
     with open(kernel_log_file_path, 'r', errors='replace') as f:
         for line in f:
+            line = line.strip()
             # 电磁干扰
-            if "EMI" in line:
-                print(line)
-                show_error('kernel log file has <EMI> keyword')
-                return
-            
+            if "(EMI" in line:
+                emi_cnt += 1
             # 设备枚举失败
-            if "error -71" in line:
-                print(line)
-                show_error('kernel log file has <device descriptor read/64, error -71>')
-                return
-
-            if "USB device number" in line:
-                line = line.strip()
-                print(line)
-            if "USB disconnect" in line:
-                line = line.strip()
-                print(line)
-            if "New USB device found" in line:
-                line = line.strip()
-                print(line)
+            if "error -71" in line or "device descriptor" in line:
+                error_cnt += 1
+            if "reset" in line:
+                reset_cnt += 1
+            if any(keyword in line for keyword in keywords):
+                logger.info(line)
+                connect_cnt += 1
                 vpid = parse_vpid(line)
                 if vpid:
                     vpid_set.add(vpid)
-    print(vpid_set)
+    logger.info(vpid_set)
+    if emi_cnt > 0:
+        show_error('kernel log file has {} <EMI> keyword（电磁干扰）'.format(emi_cnt))
+    if error_cnt > 5:
+        show_error('kernel log file has {} <device descriptor read/64, error -71>（枚举失败）'.format(error_cnt))
+    if reset_cnt > 3:
+        show_error('kernel log file has {} <reset high-speed>（reset名单）'.format(reset_cnt))
+    if connect_cnt > 150:
+        show_error('kernel log file has {:.0f} <connect disconnect>（频繁断连）'.format(connect_cnt/3))
 
 def detect_encoding(file_path):
     with open(file_path, 'rb') as f:
         result = chardet.detect(f.read())
-    print(result['encoding'])
+    logger.info(result['encoding'])
     return result['encoding']
 
-def parse_client_log(client_log_file_path):
+def parse_android_list(line):
     """
-    解析客户端日志
+    解析安卓名单
+    """
+    matches = re.findall(r'vid:pid = ([0-9a-fA-F]+):([0-9a-fA-F]+)', line)
+    if matches:
+        return '{}:{}'.format(matches[0][0], matches[0][1])
+
+def parse_android_client_log(client_log_file_path):
+    """
+    解析安卓客户端日志
     :param client_log_file_path: 客户端日志文件路径
     :return
     """
-    print("\n\n\t\t=======================<< client log >>=======================")
+    logger.info("\n\n\t\t=======================<< client log >>=======================")
     #encoding = detect_encoding(client_log_file_path)
+    white_list = set()
+    black_list = set()
     with open(client_log_file_path, 'r', encoding='utf-8', errors='ignore') as f:  # 限制异常
         for line in f:
+            line = line.strip()
             if "映射成功" in line:
-                print(line)
+                logger.info(line)
+            if "WhiteList" in line:
+                vpid = parse_android_list(line)
+                white_list.add(vpid)
+            if "BlackList" in line:
+                vpid = parse_android_list(line)
+                black_list.add(vpid)
+    logger.info('白名单：{}'.format(white_list))
+    logger.info('黑名单：{}'.format(black_list))
+
+def parse_linux_list(line):
+    """
+    解析安卓名单
+    """
+    matches = re.findall(r'device ([0-9a-fA-F]+):([0-9a-fA-F]+)', line)
+    if matches:
+        return '{}:{}'.format(matches[0][0], matches[0][1])
+
+def parse_linux_client_log(client_log_file_path):
+    """
+    解析Linux客户端日志
+    :param client_log_file_path: 客户端日志文件路径
+    :return
+    """
+    logger.info("\n\n\t\t=======================<< client log >>=======================")
+    logger.info("clien log file path: {}".format(client_log_file_path))
+    #encoding = detect_encoding(client_log_file_path)
+    white_list = set()
+    black_list = set()
+    with open(client_log_file_path, 'r', encoding='utf-8', errors='ignore') as f:  # 限制异常
+        for line in f:
+            line = line.strip()
             if "redir device succeed" in line:
-                print(line)
+                logger.info(line)
+            if "in black list" in line:
+                vpid = parse_linux_list(line)
+                black_list.add(vpid)
+    logger.info('黑名单：{}'.format(black_list))
 
 def parse_log(extract_path):
     """
@@ -185,25 +251,41 @@ def parse_log(extract_path):
     :return
     """
     files_path = find_specified_files_path(extract_path)
-    print(files_path)
+    logger.info(files_path)
+    client_type = files_path.get('client_type', '')
 
     # 解析内核日志
     kernel_log_file_path = files_path.get('kernel_log_file_path', '')
     parse_kernel_log(kernel_log_file_path)
     
-
     # 解析客户端日志
     client_log_file_path = files_path.get('client_log_file_path', '')
-    parse_client_log(client_log_file_path)
+    if client_type == 'android':
+        parse_android_client_log(client_log_file_path)
+    else:
+        parse_linux_client_log(client_log_file_path)
+
+def notepad_plus_plus_open_file():
+    """
+    使用notepad++打开文件
+    """
+    notepad_plus_plus_path = r'C:\Program Files\Notepad++\notepad++.exe'
+    document_path = 'C:\\path\\to\\your\\document.txt'
+
+    if os.path.exists(notepad_plus_plus_path):
+        command = [notepad_plus_plus_path, './log_parse_result.txt']
+        subprocess.Popen(command)
+    else:
+        print(f"文档 {document_path} 不存在。")
 
 def main():
     """主函数
     """
     
-    #print(sys.argv)
+    #logger.info(sys.argv)
     argv_cnt = len(sys.argv)
     if argv_cnt != 2:
-        print('argument count is not two, need log file path')
+        logger.info('argument count is not two, need log file path')
         return
 
     zip_file_path = sys.argv[1]
@@ -214,27 +296,25 @@ def main():
     extract_path = 'tmp'
     unzip_file(zip_file_path, extract_path)
     parse_log(extract_path)
+    notepad_plus_plus_open_file()
 
 def debug():
     """调试
     """
-    directory_path = r'D:\Users\Administrator\My Document\WXWork\1688854308416542\Cache\File\2024-05'
-    #directory_path = r'D:\Users\Administrator\Desktop'
-    #list_specified_suffix_files(directory_path, ['docx', 'doc'])
-    read_udev_info_from_linux_box()
+    pass
 
 if __name__ == '__main__':
     """程序入口
     """
     
     #os.system('chcp 936 & cls')
-    print('******** starting ********')
+    logger.info('******** starting({}) ********'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
     start_time = time.time()
 
     main()
     #debug()
 
     end_time = time.time()
-    print('process spend {} s.\n'.format(round(end_time - start_time, 3)))
-    os.system("pause")
+    logger.info('process spend {} s.\n'.format(round(end_time - start_time, 3)))
+    #os.system("pause")
     
