@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: cpu_stress1.py
+文 件 名: eat_cpu_by_multiprocessing1.py
 文件描述: cpu占用小程序
 备    注: 这个根据cpu数量进行占用
 作    者: HanKin

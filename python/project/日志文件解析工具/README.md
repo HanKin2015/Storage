@@ -14,6 +14,7 @@ process spend 0.0 s.
 
 ## 2、usb设备vpid获取
 通过New USB device found关键字获取。
+并获取Product和Manufacturer值。
 
 ## 3、emi日志解析
 可能有误判，需要加强条件判断，如大写字母。测试发现不会误判，if "EMI" in line这语句已经是进行大小写判断了，小写emi不会匹配上。
@@ -32,4 +33,10 @@ process spend 0.0 s.
 ## 7、打包命令
 pyinstaller -F log_file_parse_tool.py -n log_file_parse_tool20241104
 
+## 8、右键菜单
+在计算机\HKEY_CLASSES_ROOT\*\shell\LogFileParseTool中创建项
+- 设置Icon为D:\USB设备信息收集站\log_file_parse_tool.exe,0
+- 设置右键菜单名称为日志文件解析工具
+- 设置command为"D:\USB设备信息收集站\log_file_parse_tool.exe" "%1"
 
+## 9、提取

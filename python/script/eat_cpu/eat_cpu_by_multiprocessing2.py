@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: cpu_stress2.py
+文 件 名: eat_cpu_by_multiprocessing2.py
 文件描述: cpu占用小程序
 备    注: 计算密集型任务和休眠之间交替，以控制 CPU 的使用率
 作    者: HanKin

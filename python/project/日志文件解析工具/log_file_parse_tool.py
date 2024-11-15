@@ -21,6 +21,7 @@ import shutil
 from log import logger
 import datetime
 import subprocess
+import panda as pd
 
 def show_error(message):
     # 创建一个隐藏的主窗口
@@ -315,6 +316,6 @@ if __name__ == '__main__':
     #debug()
 
     end_time = time.time()
-    logger.info('process spend {} s.\n'.format(round(end_time - start_time, 3)))
+    logger.info('******** process spend {} s(20241104) ********'.format(round(end_time - start_time, 3)))
     #os.system("pause")
     
