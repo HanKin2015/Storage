@@ -21,7 +21,6 @@ import shutil
 from log import logger
 import datetime
 import subprocess
-import panda as pd
 
 def show_error(message):
     # 创建一个隐藏的主窗口
@@ -94,8 +93,14 @@ def unzip_file(zip_file_path, extract_path):
     在解压缩每个成员之前，检查 member.filename 是否为空。如果为空，则跳过该条目
     """
     if os.path.exists(extract_path):
-        shutil.rmtree(extract_path)
-    os.makedirs(extract_path)
+        shutil.rmtree(extract_path, ignore_errors=True)
+    try:
+        os.makedirs(extract_path, exist_ok=True)
+        logger.info("目录 '{}' 已成功创建或已存在。".format(extract_path))
+    except PermissionError:
+        logger.info("权限错误：无法创建目录 '{}'。".format(extract_path))
+    except OSError as e:
+        logger.info("创建目录时发生错误：{}".format(e))
     
     with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
         for member in zip_ref.infolist():

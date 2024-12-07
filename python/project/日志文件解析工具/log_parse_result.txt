@@ -1,0 +1,43 @@
+******** starting(2024-12-03 17:47:10) ********
+KC27_192.10.101.27_5.9.1.6_7OH4310026.zip is a zip file(zip)
+sn is 7OH4310026, prefix is 7OH
+权限错误：无法创建目录 'tmp'。
+Warning: Found a member with an empty filename, skipping. 
+this is kernel log file: tmp\kernel\dmesg.txt
+this is client log file: tmp\logcat.txt
+{'kernel_log_file_path': 'tmp\\kernel\\dmesg.txt', 'client_log_file_path': 'tmp\\logcat.txt', 'client_type': 'android'}
+
+
+		=======================<< kernel log >>=======================
+<6>[1970:01:01 00:00:02] [    2.298255] [1.0 swapper]usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+idVendor:idProduct <<===>> 1d6b:0002
+
+<6>[1970:01:01 00:00:02] [    2.551358] [1.0 swapper]usb usb2: New USB device found, idVendor=1d6b, idProduct=0002
+idVendor:idProduct <<===>> 1d6b:0002
+
+<6>[2024:11:05 00:14:57] [    6.370353] [114.3 custom_boot.sh]usb usb3: New USB device found, idVendor=1d6b, idProduct=0002
+idVendor:idProduct <<===>> 1d6b:0002
+
+<6>[2024:11:05 00:14:57] [    6.748282] [23.3 khubd]usb 3-1: new high speed USB device number 2 using usb_dwc2_host
+<6>[2024:11:05 00:14:57] [    6.948614] [23.1 khubd]usb 3-1: New USB device found, idVendor=1a40, idProduct=0201
+idVendor:idProduct <<===>> 1a40:0201
+
+<6>[2024:11:05 00:14:57] [    7.258290] [23.1 khubd]usb 3-1.1: new low speed USB device number 3 using usb_dwc2_host
+<6>[2024:11:05 00:14:58] [    7.392708] [23.2 khubd]usb 3-1.1: New USB device found, idVendor=10c4, idProduct=0005
+idVendor:idProduct <<===>> 10c4:0005
+
+<6>[2024:11:05 00:14:58] [    7.488271] [23.3 khubd]usb 3-1.2: new low speed USB device number 4 using usb_dwc2_host
+<6>[2024:11:05 00:14:58] [    7.614705] [23.1 khubd]usb 3-1.2: New USB device found, idVendor=2a7a, idProduct=8a57
+idVendor:idProduct <<===>> 2a7a:8a57
+
+<6>[2024:11:05 00:14:58] [    7.728147] [23.2 khubd]usb 3-1.5: new high speed USB device number 5 using usb_dwc2_host
+<6>[2024:11:05 00:14:58] [    7.829789] [23.2 khubd]usb 3-1.5: New USB device found, idVendor=349c, idProduct=3307
+idVendor:idProduct <<===>> 349c:3307
+
+{'1d6b:0002', '10c4:0005', '1a40:0201', '2a7a:8a57', '349c:3307'}
+
+
+		=======================<< client log >>=======================
+白名单：set()
+黑名单：set()
+******** process spend 0.197 s(20241104) ********

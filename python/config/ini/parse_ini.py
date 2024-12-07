@@ -35,7 +35,7 @@ value = config_parser['select']['url']
 print('第一种方法读取到的值：', value)
 
 # 第二种读取ini文件方式，通过get方法
-value = config_parser.get('select','url')
+value = config_parser.get('select', 'url')
 print('第二种方法读取到的值：', value)
 
 # 第三种读取ini文件方式，读取到一个section中的所有数据，返回一个列表
@@ -43,9 +43,9 @@ value = config_parser.items('select')
 print('第三种方法读取到的值：', value)
 
 # 得到指定数据类型的数据
-value = config_parser.getint('connect_mysql','port')
-print('这是第三种方法读取到的值：',value)
-print('这是第三种方法读取到的值的数据类型：',type(value))
+value = config_parser.getint('connect_mysql', 'port')
+print('这是第三种方法读取到的值：', value)
+print('这是第三种方法读取到的值的数据类型：', type(value))
 
 # 将数据写入到ini文件中(可能需要删除login块)
 config_parser.add_section('login') # 首先添加一个新的section
