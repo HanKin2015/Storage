@@ -161,7 +161,7 @@ pgzero==1.2.1
 pickleshare==0.7.5
 Pillow==9.2.0
 pipenv==2022.11.30
-pipreqs==0.4.11
+pipreqs==0.4.12
 pkginfo==1.5.0.1
 platformdirs==3.0.0
 plotly==5.8.2
