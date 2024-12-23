@@ -37,7 +37,7 @@ int mkdirs(char *path)
             str[i]='/';
         }
     }
-    if( len>0 && access(str,0)!=0 ) //检查最后一级目录
+    if( len>0 && access(str, 0) != 0 ) //检查最后一级目录
     {
         mkdir( str, 0755 ); //若不可访问,则创建该目录.
     }

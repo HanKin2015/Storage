@@ -4,15 +4,18 @@
 ## 1、中文乱码问题
 https://blog.csdn.net/xiaowa2012/article/details/123731614
 
-问题1：在英文系统环境在安装界面中文显示乱码
+### 1-1、安装窗口界面显示英文
 解决方案：在NSI脚本增加
-```!include "MUI2.nsh"
+```
+!include "MUI2.nsh"
 !insertmacro MUI_LANGUAGE "English"
 !insertmacro MUI_LANGUAGE "SimpChinese"
 ```
-这样安装界面语言会适配当前操作系统语言
+这样安装界面语言会适配当前操作系统语言。
 
-问题2：QA测试把英文操作系统的语言改为中文，安装界面中文依旧显示乱码
+### 1-2、安装窗口界面输出的中文字符显示乱码
+原因可能是nsi文件的编码格式非ANSI编码。
+
 解决方案：在NSI脚本增加
 ```
 Unicode True
