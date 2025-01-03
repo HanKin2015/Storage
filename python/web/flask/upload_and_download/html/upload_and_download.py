@@ -1,4 +1,3 @@
-
 from flask import Flask, request, redirect, url_for, send_from_directory, render_template
 import os
 
