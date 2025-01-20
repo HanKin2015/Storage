@@ -4,11 +4,12 @@
 文件描述: 加密解密工具
 作    者: HanKin
 创建日期: 2024.01.02
-修改日期：2024.01.02
+修改日期：2025.01.20
 
 Copyright (c) 2024 HanKin. All rights reserved.
 """
 import base64
+import sys
 
 def encrypt_file(input_file, output_file, shift):
     """
@@ -32,6 +33,7 @@ def encrypt_file(input_file, output_file, shift):
             result += i
     with open(output_file, 'w', encoding='utf-8') as file:
         file.write(result)
+    print("encrypt file success, output file path: {}".format(output_file))
 
 def decrypt_file(input_file, output_file, shift):
     """
@@ -55,11 +57,22 @@ def decrypt_file(input_file, output_file, shift):
     result_str = result.decode('utf-8')
     with open(output_file, 'w', encoding='utf-8') as file:
         file.write(result_str)
+    print("decrypt file success, output file path: {}".format(output_file))
 
 if __name__ == '__main__':
-    input_file    = 'xxxx持续运营.md'
-    output_file   = '持续运营模板.enc'
-    readable_file = '持续运营模板.md'
-    shift = 33   # 致富密码最后一位数
-    encrypt_file(input_file, output_file, shift)
-    decrypt_file(output_file, readable_file, shift)
+    argv_cnt = len(sys.argv)
+    if argv_cnt < 3:   # 脚本名 加解密操作 输入文件 输出文件(非必须)
+        print('argument count is less than two, need opt(e or d) and input file path or ouput file path')
+        sys.exit()
+    opt = sys.argv[1]
+    input_file = sys.argv[2]
+    output_file = 'output_file.md'
+    if argv_cnt == 4:
+        output_file = sys.argv[3]
+    shift = 8   # 致富密码最后一位数
+    if opt == 'e':
+        encrypt_file(input_file, output_file, shift)
+    elif opt == 'd':
+        decrypt_file(input_file, output_file, shift)
+    else:
+        print("option is unknow!")

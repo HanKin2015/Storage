@@ -1,4 +1,8 @@
-# -*- coding: utf-8 -*-
+
+    :param registry: 注册表根路径
+    :param reg_path: 注册表路径
+    :param item: 注册表项
+    :return str: 注册表项的值# -*- coding: utf-8 -*-
 """
 文 件 名: winreg_example.py
 文件描述: 注册表操作
@@ -15,7 +19,13 @@ import os
 def regedit_interface(registry, reg_path, item):
     """
     注册表操作接口
+    :param registry: 注册表根路径
+    :param reg_path: 注册表路径
+    :param item: 注册表项
+    :return str: 注册表项的值
     """
+    print(reg_path)
+
     # 打开注册表
     reg = winreg.ConnectRegistry(None, registry)
     key = None

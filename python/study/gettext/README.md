@@ -223,3 +223,5 @@ content = content.replace('msgstr ""', 'msgstr "this is test"')
 with open('device_helper_translation.po', 'w', encoding='utf-8') as f:
     f.write(content)
 ```
+
+## 7、
