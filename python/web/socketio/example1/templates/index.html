@@ -14,8 +14,8 @@
     socket.on('connect', function () {
         socket.emit('my event', {data: 'I\'m connected!'});
     });
-    socket.emit("zhiliao",{"message":"i am index.html"},function (result){
-        console.log("时间发送成功");
+    socket.emit("send_success", {"message":"i am index.html"}, function (result) {
+        console.log("发送成功");
         console.log(result);
     })
 

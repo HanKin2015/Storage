@@ -5,6 +5,10 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 
+@app.route('/')
+def hello_world():  # put application's code here
+    return render_template("index.html")
+
 @socketio.on('connect', namespace='/test')
 def test_connect():
     emit('my response', {'data': 'Connected'})

@@ -10,3 +10,25 @@ json： (JavaScript Object Notation)的首字母缩写，字面的意思是(java
 3、 json值可以是新的键值对（多层嵌套结构），字典的值一般只能是数值、文本
 4、 json键名允许重复，字典不允许
 5、结构相似，都是键值对
+
+## 2、元组tuple
+在 Python 中，字典的定义是用花括号 {} 包围的键值对，而元组是用圆括号 () 包围的。你在定义 class_code_functions 时，使用了一个逗号 , 结尾，这使得 Python 解释器将其视为一个元组。
+```
+class_code_functions = {
+    "01": "audio",
+    "02": "communication",
+    "03": "hid",
+    "07": "printer",
+    "08": "storage",
+    "09": "hub",
+    "0B": "card",
+    "0E": "video",
+    "10": "video",
+    "FF": "vendor_specific"
+},  # 这里的逗号导致了元组的创建
+
+for i in range(10):
+    pass
+
+print(type(class_code_functions))  # 输出: <class 'tuple'>
+```

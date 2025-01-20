@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Socket.IO Test</title>
+    <script src="/static/js/socket.io.min.js"></script>
+</head>
+<body>
+    <h1>Socket.IO Test</h1>
+    <button id="sendMessage">Send Message</button>
+    <div id="response"></div>
+
+    <script>
+        const socket = io();
+
+        socket.on('response', function(data) {
+            document.getElementById('response').innerText = data.data;
+        });
+
+        socket.on('background_event', function(data) {
+            console.log(data.data);
+        });
+
+        document.getElementById('sendMessage').onclick = function() {
+            socket.emit('message', 'Hello, Server!');
+        };
+    </script>
+</body>
+</html>

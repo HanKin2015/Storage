@@ -61,3 +61,11 @@ static int detach_kernel_driver_and_claim(struct libusb_device_handle *handle,
 }
 
 ```
+
+## 6、libusb_get_port_numbers和libusb_get_port_number函数区别
+libusb_get_port_number返回指定 USB 设备的 当前端口号。
+libusb_get_port_numbers返回指定 USB 设备的 完整端口路径。
+demo: D:\Github\Storage\c++\udev\libusb\libusb入门\libusb_get_port_number_example.c
+
+
+

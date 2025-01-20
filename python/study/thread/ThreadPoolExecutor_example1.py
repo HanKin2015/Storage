@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: ThreadPoolExecutor_example.py
+文 件 名: ThreadPoolExecutor_example1.py
 文件描述: 线程池
 备    注：windows系统也是可以并发的
 作    者: HanKin

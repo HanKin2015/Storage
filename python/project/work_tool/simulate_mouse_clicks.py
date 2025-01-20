@@ -64,6 +64,9 @@ def listen_mouse_position():
     listener.join()
 
 def count_dmp_files_in_temp():
+    """要查找 %temp% 目录下存在的 .dmp 文件的数量
+    """
+
     # 获取系统的临时目录
     temp_dir = os.environ.get('TEMP')  # 或者使用 os.path.join(os.path.expanduser('~'), 'AppData', 'Local', 'Temp')
     
