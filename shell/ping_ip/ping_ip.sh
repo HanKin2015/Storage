@@ -53,3 +53,11 @@ do
 		echo "ping $ip_addr is success" >> result.txt
 	fi
 done
+
+ip="10.70.10."
+for i in `seq 60 80`
+do
+        date
+        ping -c 1 -i 5 $ip$i | grep -q 'ttl=' && echo "$ip$i OK" || echo "$ip$i NO"
+done
+
