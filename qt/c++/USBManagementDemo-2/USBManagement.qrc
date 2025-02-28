@@ -1,0 +1,13 @@
+﻿<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/">
+        <file>images/logo.png</file>
+        <file>images/bg.png</file>
+        <file>images/head.jpeg</file>
+        <file>images/arrowdown.png</file>
+        <file>images/nodevices.png</file>
+        <file>images/ellipsis.png</file>
+        <file>images/systemtrayicon.png</file>
+        <file>qss/style.qss</file>
+    </qresource>
+</RCC>

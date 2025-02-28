@@ -1,0 +1,143 @@
+﻿/* usb 映射管理主界面 */
+#managerMainWidget {
+background-image:url(://images/bg.png);
+}
+
+/* 标题栏 */
+#managerTitleBarWidget {
+min-height:40px;
+max-height:40px;
+}
+
+/* 标题栏文字 */
+#managerTitleBarWidget QLabel {
+font-family: PingFangSC-Medium;
+font-size: 14px;
+text-align: top;
+color: #FFFFFF;
+letter-spacing: 1px;
+font-weight: 500;
+}
+
+/* 提示条 */
+#tipsLable {
+padding:10px;
+text-align: left;
+font-family: PingFangSC-Medium;
+font-size: 14px;
+color: black;
+letter-spacing: 1px;
+}
+
+/* 可伸缩盘 */
+#scrollUSBDevicePanelArea QScrollBar:vertical {
+}
+
+/* 显示盘 */
+#usbDevicePanelContentWidget {
+background-color:#FFFFFF;
+}
+
+/* 单个程序组 */
+#sessionAppGroupWidget {
+width:344px;
+height:88px;
+min-width:344px;
+min-height:88px;
+max-width:344px;
+max-height:88px;
+background-color:#F9F9F9;
+border-radius:2px;
+}
+
+/* 程序组选择按钮 */
+#sessionAppGroupWidget QRadioButton {
+width:231px;
+height:28px;
+min-width:231px;
+min-height:28px;
+max-width:231px;
+max-height:28px;
+background-color:#F3F3F3;
+
+}
+
+/* 程序组程序列表 */
+#sessionAppGroupWidget QListWidget {
+border: none;
+background-color: #F9F9F9;
+padding-left: 12px;
+padding-top: 6px;
+}
+#sessionAppGroupWidget QListWidget::item {
+border: none;
+/* width:64px; 无效 */
+margin-right: 8px;
+background-color: red;
+}
+
+/* 设备条目头 */
+#usbDeviceItemWidget #usbDeviceItemHeader{
+min-height:32px;
+border-radius:1px;
+border: 1px solid silver;
+background-color:#ECECED;
+}
+
+
+
+/* 设备条目头名称 */
+#usbDeviceItemWidget #usbDeviceItemHeaderLeftNameButton {
+font-family: PingFangSC-Semibold;
+font-size: 12px;
+text-align: left;
+color: #000000;
+line-height: 20px;
+font-weight: 600;
+border: none;
+}
+
+/* 设备条目头指示箭头 */
+#usbDeviceItemWidget #usbDeviceItemHeaderRightActionButton {
+max-width:48px;
+background-image:url(://images/arrowdown.png);
+background-repeat: repeat-no-repeat;
+background-position: center;
+border: none;
+}
+
+/* 设备条主体 */
+#usbDeviceItemWidget #usbDeviceItemBody {
+background-color:#FFFFFF;
+}
+
+/* 无usb设备时的提示图片 */
+#noUsbTipImageLabel {
+background-image:url(://images/nodevices.png);
+background-repeat: repeat-no-repeat;
+background-position: center;
+border: none;
+}
+
+/* 确认按钮 */
+#bottomControlArea #okButton {
+color: black;
+border-radius:4px;
+background-color: #E1E1E1;
+}
+
+/* 关闭按钮 */
+#bottomControlArea #cancelButton {
+color: black;
+border-radius:4px;
+background-color: #E1E1E1;
+}
+
+#customTooltip QListWidget {
+border: none;
+background-color: #F9F9F9;
+}
+#customTooltip QListWidget::item {
+border: none;
+background-color: red;
+}

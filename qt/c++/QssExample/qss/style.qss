@@ -1,0 +1,11 @@
+﻿QPushButton {
+    background-color: #4CAF50; /* 背景颜色 */
+    color: red;               /* 字体颜色 */
+    border: none;               /* 边框 */
+    border-radius: 5px;         /* 圆角 */
+    padding: 10px;
+}
+
+QPushButton:hover {
+    background-color: #45a049;  /* 悬停时背景颜色 */
+}
