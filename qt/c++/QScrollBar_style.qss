@@ -1,0 +1,34 @@
+/* 更多程序窗口样式 */
+#moreAppsWidget QListWidget {
+width:231px;
+min-height:28px;
+max-height: 174px;
+border: 1px solid silver;
+border-color: blue;
+}
+#moreAppsWidget QListWidget::item {
+border: none;
+margin-top: 4px;
+width: 96px;
+height: 24px;
+background-color: red;
+}
+#moreAppsWidget QListWidget QScrollBar:vertical {   /* 垂直滚动条背景 */
+width: 5px;
+background: #f0f0f0;
+}
+#moreAppsWidget QListWidget QScrollBar::handle:vertical {   /* 垂直滚动条样式 */
+background: #a0a0a0;
+min-height: 10px;
+}
+#moreAppsWidget QListWidget QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { /* 隐藏上下箭头 */
+background: none;
+height: 0px;
+}
+#moreAppsWidget QListWidget QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical { /* 隐藏箭头 */
+background: none;
+height: 0px;
+}
+#moreAppsWidget QListWidget QScrollBar::handle:vertical:hover { /* 鼠标悬停时的滑块颜色 */
+background: #808080;
+}

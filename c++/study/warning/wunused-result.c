@@ -1,5 +1,5 @@
 /**
-* 文 件 名: wunused_result.c
+* 文 件 名: wunused-result.c
 * 文件描述: 函数返回值未使用警告
 * 作    者: HanKin
 * 创建日期: 2024.07.18
