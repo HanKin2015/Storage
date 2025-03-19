@@ -2,7 +2,33 @@
 
 第一次操作失败了，一直没有想通，后面参考了D:\Github\Storage\c++\udev\bulk_only\libusb_operate_upan.c代码才恍然大悟。
 
-## 自己编写的代码
+## 1、常见 SCSI 指令操作码
+SCSI（Small Computer System Interface）指令操作码是用于与 SCSI 设备（如硬盘、光驱、打印机等）进行通信的命令。每个 SCSI 命令都有一个特定的操作码，指示设备执行特定的操作。
+
+| 操作码 | 名称                          | 描述                                     |
+| ------ | ----------------------------- | ---------------------------------------- |
+| 0x00   | TEST UNIT READY               | 检查设备是否准备好。                     |
+| 0x01   | REWIND                        | 磁带设备的倒带命令。                     |
+| 0x03   | REQUEST SENSE                 | 请求设备返回错误信息。                   |
+| 0x08   | READ                          | 从设备读取数据。                         |
+| 0x0A   | WRITE                         | 向设备写入数据。                         |
+| 0x0B   | SEEK                          | 移动到指定位置（适用于磁带设备）。       |
+| 0x12   | INQUIRY                       | 获取设备的基本信息（如制造商、型号等）。 |
+| 0x1A   | MODE SENSE                    | 获取设备的模式参数。                     |
+| 0x1B   | MODE SELECT                   | 设置设备的模式参数。                     |
+| 0x28   | READ (10)                     | 从设备读取数据（10字节地址）。           |
+| 0x2A   | WRITE (10)                    | 向设备写入数据（10字节地址）。           |
+| 0x2B   | WRITE AND VERIFY (10)         | 写入数据并验证（10字节地址）。           |
+| 0x35   | READ CAPACITY                 | 获取设备的容量信息。                     |
+| 0x3C   | READ DISC INFORMATION         | 读取光盘信息（适用于光盘设备）。         |
+| 0x3E   | READ TRACK INFORMATION        | 读取轨道信息（适用于光盘设备）。         |
+| 0x5A   | READ LONG                     | 从设备读取长数据（适用于某些设备）。     |
+| 0x5B   | WRITE LONG                    | 向设备写入长数据（适用于某些设备）。     |
+| 0xA0   | START STOP UNIT               | 启动或停止设备。                         |
+| 0xB0   | PREVENT ALLOW MEDIUM REMOVAL  | 防止或允许介质移除。                     |
+| 0xB1   | GET EVENT STATUS NOTIFICATION | 获取事件状态通知。                       |
+
+## 2、自己编写的代码
 怎么也没有想通，为何cbw发送一直返回IO错误，现在明白应该是libusb操作失败的问题，因为需要调用libusb_bulk_transfer函数。
 之前还有就是提前关闭了ctx导致了问题。
 ```
@@ -14,7 +40,7 @@ root@hankin:~# ./a.out
 [ERROR][device_helper](main|198)read_capacity, ret=-1
 ```
 
-## 替换成usbfs驱动还是存在问题
+## 3、替换成usbfs驱动还是存在问题
 原来是跟结构体对齐有关，但是其他人代码没有这个问题，是因为传递了正确的长度罢了。
 cbw指令长度是31，csw的长度是13。
 

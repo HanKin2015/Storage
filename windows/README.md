@@ -263,3 +263,21 @@ PostMessage
 
 ## 17、_T 
 _T是一个宏，作用是让程序支持Unicode编码。因为Windows使用两种字符集ANSI和UNICODE，前者就是通常使用的单字节方式，但这种方式处理像中文这样的双字节字符不方便，容易出现半个汉字的情况。而后者是双字节方式，方便处理双字节字符。
+
+## 18、细节决定成败
+输出格式化注意数据类型匹配，否则会有意想不到的结果。
+```
+inline void test()
+{
+    FILE* fp = nullptr;
+    fopen_s(&fp, "hj.txt", "w");
+
+    unsigned long long id = 1234;
+    unsigned int x = 3;
+    fprintf(fp, "%u %u %u", id, x, x);  // 1234 0 3
+
+    fclose(fp);
+    fp = nullptr;
+    return;
+}
+```

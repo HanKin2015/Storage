@@ -1,0 +1,7 @@
+﻿<RCC>
+    <qresource prefix="/">
+        <file>Resources/images/logo.jpeg</file>
+        <file>Resources/images/normal.png</file>
+        <file>Resources/images/abnormal.png</file>
+    </qresource>
+</RCC>
