@@ -1,6 +1,9 @@
 # SCSI实操
 
 第一次操作失败了，一直没有想通，后面参考了D:\Github\Storage\c++\udev\bulk_only\libusb_operate_upan.c代码才恍然大悟。
+友情链接：
+D:\Github\GitBook\gitbook\USBDevice\bulk.md
+D:\Github\GitBook\gitbook\USBDevice\FAT32.md
 
 ## 1、常见 SCSI 指令操作码
 SCSI（Small Computer System Interface）指令操作码是用于与 SCSI 设备（如硬盘、光驱、打印机等）进行通信的命令。每个 SCSI 命令都有一个特定的操作码，指示设备执行特定的操作。
@@ -75,3 +78,17 @@ cbw指令长度是31，csw的长度是13。
 [INFO][device_helper](read_capacity|270)last_block_lba=0x733f3f3, size_per_block=0x200
 [INFO][device_helper](main|283)read_capacity ok, size_per_sector=512, all_sector_count=120845299
 ```
+
+## 4、sg3-utils 工具
+sg3-utils 是一个常用的工具集，可以用来发送 SCSI 命令。可以使用以下命令来设置 USB 设备为只读模式。
+```
+sudo sg_mode --set-read-only /dev/sdX
+
+sg_modes命令等
+```
+
+## 5、dd命令可以操作U盘扇区数据
+详情见：D:\Github\GitBook\gitbook\USBDevice\FAT32.md
+
+
+
