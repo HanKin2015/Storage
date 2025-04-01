@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-文 件 名: study_argparse.py
+文 件 名: argparse_example2.py
 文件描述: 学习参数解析
 作    者: HanKin
-创建日期: 2022.02.15
-修改日期：2022.03.14
+创建日期: 2025.03.31
+修改日期：2025.03.31
 
-Copyright (c) 2022 HanKin. All rights reserved.
+Copyright (c) 2025 HanKin. All rights reserved.
 """
 
 import argparse

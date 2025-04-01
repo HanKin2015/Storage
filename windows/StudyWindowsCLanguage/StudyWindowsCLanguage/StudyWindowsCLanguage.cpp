@@ -1,37 +1,4 @@
-// test.cpp : 定义控制台应用程序的入口点。
-//
 
-#include "stdafx.h"
-#include <Windows.h>
-#include <io.h>
-
-/*
-D:\Users\User\Desktop\config.json
-D:\Users\User\Desktop\config.json file not exist.
-j = 10
-*/
-static void access_example()
-{
-#define R_OK 4 /* Test for read permission. */
-#define W_OK 2 /* Test for write permission. */
-#define X_OK 1 /* Test for execute permission. */
-#define F_OK 0 /* Test for existence. */
-
-    const char *file_path = "D:\\Users\\User\\Desktop\\config.json";
-    printf("%s\n", file_path);
-    if (!access(file_path, F_OK)) {
-        printf("%s file exist.\n", file_path);
-    } else {
-        printf("%s file not exist.\n", file_path);
-    }
-
-    int j = 0;
-    for (j = 0; j < 10; j++);
-    {
-        printf("j = %d\n", j);
-    }
-    return;
-}
 
 static void ExpandEnvironmentStringsAExample()
 {
@@ -319,24 +286,22 @@ string ws2s(const wstring& ws)
  
 wstring s2ws(const string& s)
 {
-    string curLocale = setlocale(LC_ALL,NULL);  //curLocale="C"
+    string curLocale = setlocale(LC_ALL, NULL);  //curLocale="C"
     setlocale(LC_ALL,"chs");
     const char* source = s.c_str();
     size_t charNum=s.size()+1;
     cout <<"s.size():"<<s.size()<<endl;         //7：多字节字符串"ABC我们"有7个字节
  
     wchar_t* dest = new wchar_t[charNum];
-    mbstowcs_s(NULL,dest,charNum,source,_TRUNCATE);
+    mbstowcs_s(NULL, dest, charNum, source, _TRUNCATE);
     wstring result = dest;
     delete[] dest;
-    setlocale(LC_ALL,curLocale.c_str());
+    setlocale(LC_ALL, curLocale.c_str());
     return result;
 }
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-
-
     system("pause");
     return 0;
 }

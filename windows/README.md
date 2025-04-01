@@ -6,6 +6,9 @@ MonitorRegistry-----监控注册表被哪个安全软件删除修改
 
 ## 2、重点在于StudyWindowsCLanguage项目
 学习windows版本的C/C++语言。
+- 
+- 
+- 
 
 ## 3、MFC和Win32窗口程序有什么不同
 MFC（Microsoft Foundation Class）和Win32窗口程序是Windows平台上的两种不同的应用程序开发框架。
@@ -241,6 +244,25 @@ lParam 是一个 32 位的值，其中包含以下信息：
 
 判断按键信息
 如果你发现某些软件发送的按键消息信息主要在 lParam 中，而不是 wParam，可能是因为这些软件使用了低级别的键盘钩子或其他方式来直接操作键盘消息。通常情况下，wParam 应该始终包含虚拟键码。
+
+在 Windows 程序设计中，wParam 和 lParam 是两个重要的参数，通常用于处理消息（message）时传递附加信息。这两个参数在 Windows API 中的许多消息处理函数中都可以找到，尤其是在窗口过程（Window Procedure）中。
+1. wParam
+- 类型：wParam 是一个 WPARAM 类型，通常是一个无符号整数（unsigned int）。
+- 用途：
+    - wParam 通常用于传递与消息相关的附加信息，例如：
+        - 鼠标事件中的鼠标按钮状态（例如，左键、右键等）。
+        - 键盘事件中的虚拟键码（例如，按下的键）。
+        - 控件的标识符（例如，按钮、菜单项等）。
+    - 具体的含义取决于消息的类型。例如，在 WM_KEYDOWN 消息中，wParam 包含按下的虚拟键码。
+
+2. lParam
+- 类型：lParam 是一个 LPARAM 类型，通常是一个长整型（long）。
+- 用途：
+    - lParam 用于传递更复杂的信息，通常是指针或结构体的地址。它可以包含：
+        - 鼠标事件中的鼠标坐标（例如，lParam 的低位字和高位字分别表示 X 和 Y 坐标）。
+        - 键盘事件中的附加信息（例如，按下的键的状态）。
+        - 控件的附加信息或数据。
+    - 具体的含义同样取决于消息的类型。例如，在 WM_LBUTTONDOWN 消息中，lParam 包含鼠标点击位置的坐标。
 
 ## 16、PostMessage和sendMessage函数区别
 PostMessage 和 SendMessage 是 Windows API 中用于发送消息的两个函数，它们在消息的发送和处理方式上有一些重要的区别：

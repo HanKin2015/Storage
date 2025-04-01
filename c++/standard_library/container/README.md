@@ -14,3 +14,37 @@ emplace_back方法接受与容器中存储的元素类型相对应的构造函�
 ## 2、c++中map、multimap、unordered_map、unordered_multimap的区别
 https://blog.csdn.net/lyn631579741/article/details/122052598
 
+## 3、rbegin\cbegin\begin 的区别
+begin()返回一个指向容器第一个元素的迭代器（iterator）
+cbegin()返回一个指向容器第一个元素的常量迭代器（const_iterator）不允许修改容器中的元素，只能用于读取
+rbegin()返回一个反向指向容器第一个元素的迭代器（iterator）
+
+## 4、vec.at(1) 和 vec[1] 的区别
+vec.at(1):
+- 是一个成员函数，提供边界检查。
+- 如果索引超出范围，会抛出 std::out_of_range 异常。
+- 适合在需要安全访问元素的情况下使用。
+
+vec[1]:
+- 是一个运算符重载，直接访问元素。
+- 不进行边界检查，如果索引超出范围，行为是未定义的（可能导致程序崩溃或访问非法内存）。
+- 适合在你确定索引有效的情况下使用。
+
+## 5、vector容器没法进行查找成员变量是否存在吗
+它并不直接支持查找成员变量是否存在的功能。要在 std::vector 中查找特定的成员变量，通常需要使用标准库算法或手动遍历。
+```
+auto it = std::find_if(people.begin(), people.end(), [](const Person& p) {
+    return p.name == "Bob";
+});
+
+if (it != people.end()) {
+    std::cout << "Found: " << it->name << ", Age: " << it->age << std::endl;
+}
+```
+考虑使用 std::unordered_set 或 std::set 来存储该成员变量的值。这些容器提供了更快的查找性能。
+
+## 6、erase删除不存在的元素会有异常吗
+
+
+
+
