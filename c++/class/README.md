@@ -24,3 +24,19 @@ operator 是C++的一个关键字，它和运算符（如=）一起使用，表�
 
 模板就是泛型的具体实现。java里没有模板，模板是c++的概念。应该是一回事吧  c++里叫模板，java叫泛型。
 更多见：D:\Github\HanKin2015.github.io\source\_posts\20171127C++Study.md
+
+## 5、类中静态函数中调用成员变量
+```
+error: invalid use of non-static member function
+```
+demo见：D:\Github\Storage\c++\class\类中函数传递给其他类使用\class_static_function1.cpp
+解决方式则是使用std::bind 来绑定成员函数，或者使用 lambda 表达式来捕获 this 指针。
+
+## 6、非静态成员函数需要一个对象实例来调用，而静态成员函数则不需要
+```
+/root/code/src/usbmagic/libusbmagic_redir/usbredir/usbspice_channel.cpp:393:130: error: invalid use of non-static member function ‘void usbmagic::redir::UsbspiceChannel::send_message_to_server(usbmagic_redir_iov*, int)’
+     m_redir_channel = UsbDeviceRedirChannelFactory::construct(m_redir_proto_type, m_id, m_backend, m_loop, send_message_to_server);
+```
+
+
+

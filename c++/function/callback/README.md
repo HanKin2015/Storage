@@ -1,6 +1,4 @@
 # 回调函数进一步理解
-
-
 class QueryStudentDatabase;
 void 回调函数func()
 
@@ -33,4 +31,13 @@ me：我想写代码（但不知道内容需要tl给我，因此我无法偷摸�
 还有个前提是tl先执行，然后执行me，串行执行则行不通，因此需要异步操作，tl需要把代码内容在他退出之前交给我，但是我不能打开。我完成设计后再打开
 因此：先输出完成设计，再输出代码内容
 
+## 等价替换
+三种方式：
+```
+std::function<void(void *priv, uint8_t *data, int32_t length)> m_write_cb;
 
+void (*m_write_cb)(void *priv, uint8_t *data, int32_t length);
+
+typedef void (*WriteCb)(void *priv, uint8_t *data, int32_t length);
+WriteCb m_write_cb;
+```
