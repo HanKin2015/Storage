@@ -38,5 +38,22 @@ demo见：D:\Github\Storage\c++\class\类中函数传递给其他类使用\class
      m_redir_channel = UsbDeviceRedirChannelFactory::construct(m_redir_proto_type, m_id, m_backend, m_loop, send_message_to_server);
 ```
 
+## 7、关于接口类接口函数存在返回值的默认实现
+接口函数声明定义为（返回值无意义）：
+```
+virtual uint16_t GetPid() { return -1; };
+```
+
+接口函数声明定义为（只有某个子类会重写使用这个函数，否则其他子类都要去实现这个函数）：
+```
+virtual uint16_t GetPid() = 0;
+```
+
+正确的方式（子类中实现这个函数即可，做一次父类转子类即可）：
+```
+T* tptr = dynamic_cast<T*>(ptr);
+
+uint16_t GetPid() { return m_pid; };
+```
 
 
