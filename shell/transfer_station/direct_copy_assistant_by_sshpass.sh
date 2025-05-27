@@ -1,11 +1,11 @@
 #!/bin/bash
 #
 # 文 件 名: direct_copy_assistant_by_sshpass.sh
-# 文件描述: 直接拷贝助手，使用sshpass命令进行免密scp拷贝
+# 文件描述: 支持单个文件拷贝，直接拷贝助手，使用sshpass命令进行免密scp拷贝
 # 注    意: 需要安装sshpass库
 # 作    者: HanKin
-# 创建日期: 2025.03.04
-# 修改日期：2025.03.04
+# 创建日期: 2025.03.21
+# 修改日期：2025.05.26
 # 
 # Copyright (c) 2025 HanKin. All rights reserved.
 #
@@ -14,6 +14,12 @@
 TARGET_IP='172.22.16.56'
 TARGET_USER='root'
 TARGET_PWD='1'
+
+SINGLE_FILENAME=""
+if [ $# -eq 1 ]
+then
+    SINGLE_FILENAME=$1
+fi
 
 FILES_ABSPATH=(
     "/root/code/src/hc_usbmagic2/build/outlib/libusbmagic_common.so"
@@ -27,6 +33,9 @@ FILES_ABSPATH=(
     "/root/code/src/hc_client/hc_client"
     "/root/code/src/hc_bar/hc_bar"
 )
+
+# 停止守护进程服务
+sshpass -p ${TARGET_PWD} ssh ${TARGET_USER}@${TARGET_IP} systemctl stop usbmagicd
 
 copy_filed_count=0
 for FILE_ABSPATH in ${FILES_ABSPATH[*]}
@@ -60,6 +69,14 @@ do
             ;;
     esac
     
+    if [ -n "${SINGLE_FILENAME}" ]
+    then
+        if [ "${SINGLE_FILENAME}" != $(basename "${FILE_ABSPATH}") ]
+        then
+            continue
+        fi
+    fi
+
     # 拷贝到测试机
     sshpass -p ${TARGET_PWD} scp ${FILE_ABSPATH} ${TARGET_USER}@${TARGET_IP}:${target_abspath}
     if [ $? -ne 0 ]; then
@@ -68,4 +85,8 @@ do
     fi
     echo ''
 done
+
+# 启动守护进程服务
+sshpass -p ${TARGET_PWD} ssh ${TARGET_USER}@${TARGET_IP} systemctl start usbmagicd
+
 echo "全部拷贝完成! 其中${copy_filed_count}个文件拷贝失败!"
