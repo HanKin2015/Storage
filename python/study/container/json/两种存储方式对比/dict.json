@@ -1,0 +1,58 @@
+{
+    "10.57.12.13": {
+                "hj": {
+                    "starting_automap": 1,
+                    "running_automap": 0
+                },
+                "jh": {
+                    "starting_automap": 1,
+                    "running_automap": 1
+                },
+                "hh": {
+                    "starting_automap": 0,
+                    "running_automap": 0
+                }
+    },
+    "1.2.3.4": {
+                "hj": {
+                    "starting_automap": 1,
+                    "running_automap": 0
+                },
+                "jh": {
+                    "starting_automap": 1,
+                    "running_automap": 1
+                },
+                "hh": {
+                    "starting_automap": 0,
+                    "running_automap": 0
+                }
+    },
+    "4.3.2.1": {
+                "hj": {
+                    "starting_automap": 1,
+                    "running_automap": 0
+                },
+                "jh": {
+                    "starting_automap": 1,
+                    "running_automap": 1
+                },
+                "hh": {
+                    "starting_automap": 0,
+                    "running_automap": 0
+                }
+    },
+    "4.3.2.1": {
+                "hj": {
+                    "starting_automap": 1,
+                    "running_automap": 0
+                },
+                "jh": {
+                    "starting_automap": 1,
+                    "running_automap": 1
+                },
+                "hh": {
+                    "starting_automap": 0,
+                    "running_automap": 0
+                }
+    }
+}

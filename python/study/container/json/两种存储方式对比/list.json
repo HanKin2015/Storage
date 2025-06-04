@@ -1,0 +1,65 @@
+[
+    {
+        "vdc": "10.57.12.13",
+        "automap":
+            [
+                {
+                    "user": "hj",
+                    "starting_automap": 1,
+                    "running_automap": 0
+                },
+                {
+                    "user": "jh",
+                    "starting_automap": 1,
+                    "running_automap": 0
+                },
+                {
+                    "user": "hh",
+                    "starting_automap": 1,
+                    "running_automap": 0
+                }
+            ]
+    },
+    {
+        "vdc": "1.2.3.4",
+        "automap":
+            [
+                {
+                    "user": "hj",
+                    "starting_automap": 1,
+                    "running_automap": 0
+                },
+                {
+                    "user": "jh",
+                    "starting_automap": 1,
+                    "running_automap": 0
+                },
+                {
+                    "user": "hh",
+                    "starting_automap": 1,
+                    "running_automap": 0
+                }
+            ]
+    },
+    {
+        "vdc": "4.3.2.1",
+        "automap":
+            [
+                {
+                    "user": "hj",
+                    "starting_automap": 1,
+                    "running_automap": 0
+                },
+                {
+                    "user": "jh",
+                    "starting_automap": 1,
+                    "running_automap": 0
+                },
+                {
+                    "user": "hh",
+                    "starting_automap": 1,
+                    "running_automap": 0
+                }
+            ]
+    }
+]

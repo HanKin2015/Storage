@@ -81,7 +81,6 @@ private:
     std::string m_name;
 };
 
-
 int main()
 {
     std::shared_ptr<Person> obj = std::make_shared<Person>();

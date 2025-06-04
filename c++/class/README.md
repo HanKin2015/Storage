@@ -56,4 +56,39 @@ T* tptr = dynamic_cast<T*>(ptr);
 uint16_t GetPid() { return m_pid; };
 ```
 
+但是发现还是存在问题，不够面向对象封装：
+```
+class IUsbChannel {
+public:
+    virtual ~IUsbChannel(){};
+    virtual int get_type() = 0;
+};
+
+class UsbChannel: public IUsbChannel {
+public:
+    UsbsdxChannel(int type)
+    : m_type(type)
+    {
+    }
+
+    int get_type() override
+    {
+        return m_type;
+    }
+
+private:
+    int m_type;
+};
+
+class UsbsdxChannel: public UsbChannel {
+public:
+    UsbsdxChannel(int type)
+    : UsbChannel(type)
+    {
+    }
+
+private:
+
+};
+```
 
