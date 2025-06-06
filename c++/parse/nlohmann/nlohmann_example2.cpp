@@ -1,3 +1,13 @@
+/*******************************************************************************
+* 文 件 名: nlohmann_example2.cpp
+* 文件描述: nlohmann::json的简单应用
+* 备    注: 
+* 作    者: HanKin
+* 创建日期: 2025.06.04
+* 修改日期：2025.06.04
+*
+* Copyright (c) 2025 HanKin. All rights reserved.
+*******************************************************************************/
 #include <iostream>
 #include <fstream>
 #include <nlohmann/json.hpp>

@@ -8,7 +8,6 @@
 *
 * Copyright (c) 2024 HanKin. All rights reserved.
 */
-
 #include <libusb-1.0/libusb.h>
 #include <stdio.h>
 
