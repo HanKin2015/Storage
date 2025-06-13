@@ -1,0 +1,26 @@
+/*******************************************************************************
+* 文 件 名: config.h
+* 文件描述: 全局配置头文件(由cmake生成)
+* 备    注: 
+* 作    者: HanKin
+* 创建日期: 2025.06.11
+* 修改日期：2025.06.11
+*
+* Copyright (c) 2025 HanKin. All rights reserved.
+*******************************************************************************/
+#ifndef __CONFIG_H__
+#define __CONFIG_H__
+
+/* 客户端类型 */
+#cmakedefine CLIENT_TYPE_LINUX
+#cmakedefine CLIENT_TYPE_WIN
+#cmakedefine CLIENT_TYPE_MAC
+
+/* The following is used to silence warnings for unused variables */
+#if defined(UNREFERENCED_PARAMETER)
+#define UNUSED(var)	UNREFERENCED_PARAMETER(var)
+#else
+#define UNUSED(var)	do { (void)(var); } while(0)
+#endif
+
+#endif /* __CONFIG_H__ */
