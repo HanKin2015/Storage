@@ -1,0 +1,15 @@
+# 生成静态文件turbo.a
+gcc -c turbo.c -o turbo.o
+ar rcs libturbo.a turbo.o
+
+# 生成共享文件clnt.so
+gcc -fPIC -shared clnt.c -o libclnt.so
+
+# 生成共享文件redir.so
+gcc -fPIC -shared redir.c -o libredir.so
+
+# 生成共享文件common.so
+gcc -fPIC -shared common.c -o libcommon.so
+
+# 生成二进制文件session
+gcc t-session.c libturbo.a -lcommon -lredir -lclnt -o t-session
