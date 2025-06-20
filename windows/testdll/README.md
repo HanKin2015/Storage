@@ -29,3 +29,15 @@ s "C:\Users\Administrator\Desktop\Core.dll" | findstr Read
          23   AE 0003C490 ReadNodeConfig
         174   AF 0003C4E0 ReadNodeConfigUtf8
 ```
+
+## 4、深坑
+右键文件属性，然后拷贝安全选项卡中的对象名称会导致路径异常，路径最前面会有LRE、RLE、PDF 等 Unicode 控制字符。
+
+当dll文件存在自定义的其他dll文件依赖的时候，在加载dll文件时会出现其他dll文件找不到的情况，这时候加载dll文件会报126错误，解决方式如下：
+方法 1：使用 SetDllDirectory
+方法 2：使用 PATH 环境变量
+方法 3：将 DLL 放在 EXE 目录下
+
+exe文件缺失dll文件依赖直接运行就能看出来，但是dll文件缺失依赖则是需要通过DEPENDS.EXE文件来查看。
+
+
