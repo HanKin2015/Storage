@@ -1,0 +1,46 @@
+ ---> Running in 3ddcfce46197
+E: The method driver /usr/lib/apt/methods/https could not be found.
+E: The method driver /usr/lib/apt/methods/https could not be found.
+
+TARGET := hello world
+	ifeq ($(ARCH), arm64)
+		TARGET := arm64
+	else
+		TARGET := not arm64
+	endif
+
+wrong1:
+ifeq ($(ARCH), arm64)
+	TARGET := arm64
+else
+	TARGET := not arm64
+endif
+
+wrong2:
+ifeq ($(ARCH), arm64)
+TARGET := arm64
+else
+TARGET := not arm64
+endif
+ifeq ($(ARCH), arm64)
+	touch c
+else
+	touch d
+endif
+
+wrong3:
+	ifeq ($(ARCH), arm64)
+		touch a
+	else
+		touch b
+	endif
+
+right:
+ifeq ($(ARCH), arm64)
+	touch a
+else
+	touch b
+endif
+
+all:
+	@echo $(TARGET)
