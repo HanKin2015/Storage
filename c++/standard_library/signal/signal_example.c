@@ -22,6 +22,12 @@ void signal_handler(int signum)
     stop = 1; // 设置标志位
 }
 
+void quit_handler(int signum)
+{
+    printf("Received signal %d\n", signum);
+    stop = 1; // 设置标志位
+}
+
 static void signal_register()
 {
     struct sigaction action;
@@ -30,6 +36,13 @@ static void signal_register()
     // 注册信号处理
     sigaction(SIGINT, &action, NULL);
     sigaction(SIGTERM, &action, NULL);
+
+    // 可连续注册
+    action.sa_handler = SIG_IGN;
+    sigaction(SIGPIPE, &action, NULL);
+    action.sa_handler = quit_handler;
+    sigaction(SIGINT, &action, NULL);
+    sigaction(SIGHUP, &action, NULL);
 }
 
 int main()
