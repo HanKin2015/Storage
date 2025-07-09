@@ -21,7 +21,7 @@ public:
         this->age = nAge;
     }
  
-    bool operator==(const person& ps) {
+    bool operator==(const person& ps) const {
         if (this->age == ps.age) {
             return true;
         }
@@ -38,8 +38,11 @@ public:
  
 // 左操作数的类型必须被显式指定
 // 此处指定的类型为person类
-// 写成这样也正确bool operator==(Person const& p1, Person const& p2)
-bool operator == (Person const& p1, Person const& p2)
+// 写成这样也正确 operator == (const Person& p1, const Person& p2)
+
+// 成员函数可以用 const 修饰，表示该函数不会修改对象的状态。
+// 非成员函数（如全局函数或友元函数）不能使用 const 限定符，因为它们没有隐含的 this 指针。
+bool operator == (const Person& p1, const Person& p2)
 {
     if (p1.age == p2.age) {
         return true;
