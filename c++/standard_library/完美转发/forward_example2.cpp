@@ -1,7 +1,7 @@
 /*******************************************************************************
 * 文 件 名: forward_example2.cpp
 * 文件描述: 进一步理解
-* 备    注: 它能够保持参数的左值 / 右值属性，避免不必要的拷贝或移动操作
+* 备    注: 
 * 作    者: HanKin
 * 创建日期: 2025.07.10
 * 修改日期：2025.07.10
@@ -11,24 +11,24 @@
 #include <utility>
 #include <iostream>
 
-// 完美转发函数包装器
-template<typename F, typename... Args>
-decltype(auto) forward_wrapper(F&& f, Args&&... args) {
-    return std::forward<F>(f)(std::forward<Args>(args)...);
+int wrapper1(int x)
+{
+	return x;
 }
 
-// 使用示例
-void print(int& x) { std::cout << "lvalue: " << x << '\n'; }
-void print(int&& x) { std::cout << "rvalue: " << x << '\n'; }
+int wrapper2(int y)
+{
+	return std::forward<int>(y);
+}
 
 int main()
 {
-    int a = 42;
-    // 使用函数指针明确指定要使用的重载版本
-    void (*print_lvalue)(int&) = print;
-    void (*print_rvalue)(int&&) = print;
-    
-    forward_wrapper(print_lvalue, a);      // 转发左值
-    forward_wrapper(print_rvalue, 123);    // 转发右值
+    int a = 42, b = 111;
+
+    std::cout << wrapper1(a) << std::endl;
+    std::cout << wrapper2(b) << std::endl;
 	return 0;
 }
+/*
+在不需要完美转发的场景下使用 std::forward，容易引发错误或者让代码变得复杂。所以，只有在模板函数里处理转发引用时，才有必要使用 std::forward。
+*/

@@ -1,5 +1,5 @@
 /*******************************************************************************
-* 文 件 名: constexpr_example2.cpp
+* 文 件 名: constexpr_example.cpp
 * 文件描述: C++ 11 新增关键字 constexpr，用来表示 “常量” 或 常量表达式，而 const 则仅仅表示 “只读”。允许普通函数在编译期执行。
 * 备    注: https://www.cnblogs.com/yuwanxian/p/16314066.html
 * 作    者: HanKin
