@@ -36,4 +36,10 @@ int main(int argc, char *argv[])
 [root@ubuntu0006:~/cmake] #g++ k.cpp --std=c++11
 [root@ubuntu0006:~/cmake] #./a.out
 1 2 3 4 5
+
+std::ranges::for_each（C++20+）
+// 直接使用容器，无需显式获取迭代器
+std::ranges::for_each(nums, [](int num) {
+	std::cout << num << " ";
+});
 */

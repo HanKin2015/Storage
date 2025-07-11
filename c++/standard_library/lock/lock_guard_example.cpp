@@ -42,7 +42,8 @@ void worker(Counter& counter) {
     }
 }
 
-int main() {
+int main()
+{
     Counter counter;
 
     std::thread t1(worker, std::ref(counter));
