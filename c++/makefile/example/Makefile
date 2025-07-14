@@ -1,4 +1,4 @@
-ifeq (Linux,$(shell uname -s))
+ifeq (Linux, $(shell uname -s))
 UT_EXE=oj_unittest
 else
 UT_EXE=oj_unittest.exe

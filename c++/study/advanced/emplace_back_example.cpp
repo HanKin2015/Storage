@@ -14,7 +14,8 @@
 class Person {
 public:
     Person(const std::string& name, int age) : name(name), age(age) { std::cout << __func__ << std::endl; }
-private:
+
+public:
     std::string name;
     int age;
 };
@@ -29,5 +30,18 @@ int main()
 	// emplace_back：直接传递构造参数
 	people.emplace_back("Bob", 25);  // 直接构造，无需显式创建 Person
 
+	// 注意emplace函数并不是表示在头部插入
+	people.emplace_back("hj", 31);
+	
+	for (const auto& elem : people) {
+		std::cout << elem.age << std::endl;
+	}
 	return 0;
 }
+/*
+场景						推荐方法					原因
+向 vector 尾部添加元素	emplace_back			避免临时对象，直接构造。
+向 map 插入键值对		emplace					直接构造键值对，无需创建 std::pair。
+插入不可拷贝 / 移动的对象	emplace/emplace_back	只能通过直接构造插入。
+需要检查插入是否成功		emplace					返回包含成功标志的 std::pair。
+*/

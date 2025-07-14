@@ -18,10 +18,12 @@
 #include <future>
 #include <atomic>
 
-class ThreadPool {
+class ThreadPool
+{
 public:
     // 构造函数：初始化线程池
-    explicit ThreadPool(size_t threadCount) : stop(false) {
+    explicit ThreadPool(size_t threadCount) : stop(false)
+	{
         for (size_t i = 0; i < threadCount; ++i) {
             workers.emplace_back([this] {
                 while (true) {
@@ -50,7 +52,8 @@ public:
     }
     
     // 析构函数：停止并等待所有线程完成
-    ~ThreadPool() {
+    ~ThreadPool()
+	{
         {
             std::unique_lock<std::mutex> lock(queueMutex);
             stop = true;
@@ -70,7 +73,7 @@ public:
         using return_type = typename std::result_of<F(Args...)>::type;
         
         // 包装任务为可调用对象
-        auto task = std::make_shared< std::packaged_task<return_type()> >(
+        auto task = std::make_shared<std::packaged_task<return_type()>>(
             std::bind(std::forward<F>(f), std::forward<Args>(args)...)
         );
         
@@ -80,9 +83,9 @@ public:
         {
             std::unique_lock<std::mutex> lock(queueMutex);
             // 禁止在线程池停止后添加新任务
-            if (stop)
+            if (stop) {
                 throw std::runtime_error("enqueue on stopped ThreadPool");
-            
+            }
             // 将任务添加到队列
             tasks.emplace([task]() { (*task)(); });
         }
@@ -101,3 +104,29 @@ private:
     std::condition_variable condition;       // 条件变量用于线程通信
     std::atomic<bool> stop;                  // 线程池停止标志
 };
+
+int main()
+{
+    // 创建包含4个线程的线程池
+    ThreadPool pool(4);
+    
+    // 存储任务结果的future集合
+    std::vector<std::future<int>> results;
+    
+    // 添加10个任务到线程池
+    for (int i = 0; i < 10; ++i) {
+        results.emplace_back(
+            pool.enqueue([i] {
+                std::cout << "Task " << i << " executed by thread " 
+                          << std::this_thread::get_id() << std::endl;
+                return i * i;
+            })
+        );
+    }
+    
+    // 获取并打印任务结果
+    for (auto&& result : results) {
+        std::cout << "Result: " << result.get() << std::endl;
+    }
+    return 0;
+}
