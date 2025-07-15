@@ -1,0 +1,23 @@
+# 这个文件怎么写都有问题，后面有时间再来研究
+
+# 定义编译器和编译选项
+CC = gcc
+#CFLAGS = -Wall -Werror
+ccflags-y += -Wall -Werror
+
+# 定义源文件和目标文件
+SRC = my_driver.c
+OBJ = $(SRC:.c=.o)
+TARGET = my_driver
+
+# 定义目标文件和依赖关系
+$(TARGET): $(OBJ)
+	$(CC) $(CFLAGS) $(ccflags-y) -o $@ $^
+
+# 定义编译规则
+%.o: %.c
+	$(CC) $(CFLAGS) $(ccflags-y) -c $< -o $@
+
+# 定义清理规则
+clean:
+	rm -f $(OBJ) $(TARGET)

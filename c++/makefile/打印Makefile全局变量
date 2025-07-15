@@ -1,0 +1,17 @@
+test:
+	@echo $$(MAKE)  # 正确！显示 $(MAKE) 字面量
+	@echo $(MAKE)   # 如果确实想显示 Make 程序名（如 make/gmake）
+	@echo "Hello, World!"  # 执行时不会显示 "echo Hello, World!"，只显示 Hello, World!
+	echo "Hello, World!"   # 执行时会显示完整命令和输出
+	@echo $(KERNELRELEASE)
+
+```
+root@hankin:~/hejian/tmp# make
+/bin/sh: 1: MAKE: not found
+
+make
+Hello, World!
+echo "Hello, World!"  # 执行时会显示完整命令和输出
+Hello, World!
+
+```

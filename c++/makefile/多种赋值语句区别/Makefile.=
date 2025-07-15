@@ -1,0 +1,13 @@
+# 使用 := 的情况
+x := foo
+y := $(x) bar  # y 的值为 "foo bar"
+x := later
+
+# 使用 = 的情况
+xx = foo
+yy = $(xx) bar  # y 的值为 "$(x) bar"
+xx = later
+
+all:
+	@echo $(y)   # 输出 "foo bar"（定义时展开）
+	@echo $(yy)  # 输出 "later bar"（使用时展开）
