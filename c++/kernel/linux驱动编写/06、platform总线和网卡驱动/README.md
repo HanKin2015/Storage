@@ -1,0 +1,2 @@
+对于linux驱动来说，一般的架构还是按照bus－host－device的形式来进行的。比如就拿usb来说，通常如果是新的soc，只需要适配一下host就可以了。但是如果要适配其他的usb外接设备，那么需要自己编写device driver。同样，目前pc用到最多的还是pcie，所以你会发现pc上编写的driver大多数都是适配不同功能类型的device driver。然而，对于soc来说，它应该怎么处理？其实，linux已经为我们想出了办法，那就是platform bus。platform是一个虚拟总线，要使用它，只需要两步就可以。
+
