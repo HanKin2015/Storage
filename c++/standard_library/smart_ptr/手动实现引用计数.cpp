@@ -86,4 +86,5 @@ int main()
     std::cout << *ptr1 << std::endl; // 输出: 99
 
     // ptr1和ptr2离开作用域时，引用计数归零，内存自动释放
+    return 0;
 }
