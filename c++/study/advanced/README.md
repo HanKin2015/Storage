@@ -91,3 +91,18 @@ demo: D:\Github\Storage\c++\study\advanced\factor_example.cpp
 - 
 
 demo：
+
+## 8、template<typename T> 和 template<class T>
+在 C++ 中，template<typename T> 和 template<class T> 的功能完全相同，两者可以互换使用。它们都用于声明一个模板类型参数 T，但存在一些细微的历史和语义差异：
+- template<class T>：
+这是 C++ 早期（甚至在标准之前）就存在的语法，源自模板的最初设计。由于当时模板主要用于泛型类，使用 class 强调参数可以是任何类类型。
+
+- template<typename T>：
+C++98 标准引入了 typename 关键字，用于解决模板中嵌套依赖类型的歧义问题（见下文示例）。同时，为了保持一致性，允许用 typename 替代 class 声明模板参数。
+
+## 9、default 和 delete 
+default 只能用于特殊成员函数：
+即默认构造函数、拷贝构造函数、移动构造函数、拷贝赋值运算符、移动赋值运算符和析构函数。
+delete 可用于任何函数：
+包括普通成员函数和非成员函数（如全局函数）。
+

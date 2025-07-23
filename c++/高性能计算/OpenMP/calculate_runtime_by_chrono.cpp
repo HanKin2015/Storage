@@ -1,4 +1,13 @@
-// sum.cpp
+/*******************************************************************************
+* 文 件 名: calculate_runtime_by_chrono.cpp
+* 文件描述: 如果不添加-fopenmp参数编译则程序无法使用并行计算，即使程序中含有#pragma，编译是正常
+* 备    注: 可以不添加-fopenmp参数进行编译
+* 作    者: HanKin
+* 创建日期: 2025.07.22
+* 修改日期：2025.07.22
+*
+* Copyright (c) 2025 HanKin. All rights reserved.
+*******************************************************************************/
 #include <iostream>
 #include <vector>
 #include <numeric>
