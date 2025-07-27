@@ -1,64 +1,43 @@
 /*******************************************************************************
 * 文 件 名: enable_shared_from_this_example.cpp
-* 文件描述: 子类函数被外部调用是否需要在父类声明后才能调用
+* 文件描述: 用于让类的成员函数安全地获取指向当前对象的 std::shared_ptr，避免因手动管理引用计数导致的内存问题
 * 备    注: 
 * 作    者: HanKin
-* 创建日期: 2025.04.14
-* 修改日期：2025.04.14
+* 创建日期: 2025.07.27
+* 修改日期：2025.07.27
 *
 * Copyright (c) 2025 HanKin. All rights reserved.
 *******************************************************************************/
 #include <iostream>
-#include <cstdio>
+#include <memory>
 
-class Father {
+class Bad {
 public:
-    Father() { printf("%d: %s\n", __LINE__, __FUNCTION__); }
-    ~Father() { printf("%d: %s\n", __LINE__, __FUNCTION__); }
-
-    virtual void PrintId() = 0;
-
+    std::shared_ptr<Bad> getShared() {
+        return std::shared_ptr<Bad>(this);  // 错误：未通过shared_ptr创建this
+    }
+    ~Bad() { printf("Bad destroyed\n"); }
 };
+/*
+root@hankin:~/opencv# ./a.out 
+Bad destroyed
+double free or corruption (out)
+已中止 (核心已转储)
+*/
 
-class Son: public Father {
+class Good: public std::enable_shared_from_this<Good> {
 public:
-    Son() { printf("%d: %s\n", __LINE__, __FUNCTION__); }
-    ~Son() { printf("%d: %s\n", __LINE__, __FUNCTION__); }
-
-    static Son* Instance() {
-        static Son instance_;
-        return &instance_;
+    std::shared_ptr<Good> getShared() {
+        return shared_from_this();  // 安全获取指向当前对象的shared_ptr
     }
-
-    void PrintId() override
-    {
-        printf("%d: %s id %d\n", __LINE__, __FUNCTION__, id);
-        return;
-    }
-
-    void PrintNumber()
-    {
-        printf("%d: %s number %d\n", __LINE__, __FUNCTION__, number);
-        return;
-    }
-
-private:
-    int id;
-    int number;
+    ~Good() { printf("Good destroyed\n"); }
 };
-
 
 int main()
 {
-    Father *obj = new Son();
-    obj->PrintId();
-    obj->PrintNumber(); // error: ‘class Father’ has no member named ‘PrintNumber’
+    auto obj = std::make_shared<Good>();
+    auto another = obj->getShared();  // 两个独立的shared_ptr管理同一对象
+    
+    // obj和another离开作用域时，双重释放同一内存
     return 0;
 }
-/*
-[root@ubuntu0006:/media/vdb] #g++ class_override.cpp -std=c++11
-[root@ubuntu0006:/media/vdb] #./a.out
-16: Father
-25: Son
-35: PrintId id 0
-*/
