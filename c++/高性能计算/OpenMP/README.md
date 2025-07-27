@@ -16,6 +16,8 @@ OpenMP是一种共享内存并行计算算法，它允许我们在多线程环�
 任务分配：在OpenMP算法中，我们需要将任务分配给多个线程执行。任务分配可以是数据划分、任务划分等多种方式。
 同步：在OpenMP算法中，我们需要处理多线程之间的同步问题。同步可以是数据同步、任务同步等多种方式。
 
+OpenMP是一个编译器指令和库函数的集合，主要是为共享式存储计算机上的并行程序设计使用的。目前支持OpenMP的语言主要有Fortran，C/C++。
+
 ## 2、安装使用
 Linux 系统完全支持 OpenMP（Open Multi-Processing），这是一种用于共享内存并行编程的标准 API，可显著提升多核处理器上的程序性能。
 
@@ -30,6 +32,9 @@ OpenMP 在 Linux 上的支持情况：
 
 通过环境变量 OMP_NUM_THREADS 调整线程数，export OMP_NUM_THREADS=4
 OMP_NUM_THREADS=4 ./test
+
+注意：
+不添加-fopenmp参数会编译报错main.cpp:26: warning: ignoring ‘#pragma omp parallel’ [-Wunknown-pragmas]
 
 ## 3、clock()统计程序运行时不准确
 测试发现使用clock()统计程序运行时间是不准确的，不推荐使用：
@@ -66,3 +71,29 @@ Code took 21615.2 milliseconds.
 
 ## 6、#pragma
 在 C、C++ 等编程语言中，#pragma 是一个预处理指令，用于向编译器提供特殊的编译选项或行为控制。它的名称来源于 "pragmatic"（务实的），表示这是一种针对特定编译器实现的实用机制。
+
+## 7、Fortran
+Fortran（Formula Translation）是世界上最早出现的高级编程语言之一，由 IBM 于 1950 年代开发，专为科学和工程计算设计。尽管历史悠久，但它至今仍是高性能计算（HPC）领域的主流语言，尤其在气象模拟、流体力学、量子物理等计算密集型领域占据重要地位。
+
+## 8、后续学习
+https://blog.csdn.net/yongbaofeng1234/article/details/88651113
+https://zhuanlan.zhihu.com/p/397670985
+
+```
+#pragma omp parallel
+{
+    #pragma omp for
+    for (int i = 0; i < 10; ++i) {
+        task();
+    }
+}
+
+等价于
+
+#pragma omp parallel for
+{
+    for (int i = 0; i < 10; ++i) {
+        task();
+    }
+}
+```

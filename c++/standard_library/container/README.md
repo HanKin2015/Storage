@@ -68,4 +68,8 @@ public:
 ```
 如果你需要使用 std::set 的特定构造函数（例如，指定比较器或初始元素），则需要显式初始化。
 
-
+## 8、不同容器的迭代器类型
+随机访问迭代器：vector、deque 容器的迭代器属于此类，支持随机访问，能直接通过下标快速访问任意元素位置。
+无迭代器：stack、queue、priority_queue 这几种容器没有迭代器，它们主要通过特定的接口（如 push、pop 等）来操作元素，不支持迭代器遍历。
+双向迭代器：list、(multi)set、(multi)map 的迭代器为双向迭代器，只能进行双向移动（++、--），无法直接随机访问元素。
+前向迭代器：unordered_(multi)set、unordered_(multi)map 以及 forward_list 的迭代器属于前向迭代器，只能单向向前移动来遍历元素。
