@@ -24,7 +24,7 @@ int main()
     std::cout << std::endl;
 
     // 2. 用于std::priority_queue构建最大堆
-    std::priority_queue<int, std::vector<int>, std::greater<int>> minHeap;
+    std::priority_queue<int, std::vector<int>, std::greater<int>> minHeap;  // 注意这个greater特殊性
     minHeap.push(5);
     minHeap.push(2);
     minHeap.push(8);
