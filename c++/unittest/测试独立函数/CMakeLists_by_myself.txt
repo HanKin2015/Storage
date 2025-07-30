@@ -1,0 +1,30 @@
+# CMake最低版本要求
+cmake_minimum_required(VERSION 3.28)
+
+# 项目名称
+project(SingleFunction VERSION 0.1 LANGUAGES CXX)
+
+# 设置C++标准
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+
+# 将头文件目录包含进来，以便源文件可以找到头文件
+include_directories(include)
+
+# 添加源文件到库中
+add_library(my_library STATIC src/math_functions.cpp)
+
+# 添加可执行文件并链接库
+add_executable(single_function src/main.cpp)
+target_link_libraries(single_function my_library)
+
+# 安装到某个文件夹
+install(TARGETS single_function DESTINATION CMakeFiles)
+
+# 输出编译信息
+message(STATUS "CMAKE_CXX_STANDARD=" ${CMAKE_CXX_STANDARD})
+message(STATUS "CMAKE_VERSION=" ${CMAKE_VERSION})
+message(STATUS "PROJECT_VERSION=" ${PROJECT_VERSION})
+message(STATUS "PROJECT_NAME=" ${PROJECT_NAME})
+message(STATUS "CMAKE_BUILD_TYPE=" ${CMAKE_BUILD_TYPE})

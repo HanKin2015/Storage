@@ -44,7 +44,13 @@ public:
 
 int main(int argc, char **argv)
 {
-    Singleton *obj = Singleton::instance->getInstance();
-    obj->print_info();
+    Factory *factory = new ConcreteFactoryA();
+    Product *product = factory->createProduct();
+    product->operation();
     return 0;
 }
+/*
+root@hankin:~/opencv# g++ main.cpp 
+root@hankin:~/opencv# ./a.out 
+Product A
+*

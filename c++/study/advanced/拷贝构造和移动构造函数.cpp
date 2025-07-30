@@ -29,6 +29,6 @@ int main()
 {
     std::vector<NonCopyable> vec;
     vec.emplace_back(42);  // 直接构造
-	vec.push_back(42);  // 非法，无法拷贝
+    vec.push_back(42);  // 非法，无法拷贝
     return 0;
 }

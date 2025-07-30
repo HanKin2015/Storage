@@ -39,7 +39,14 @@ Singleton* Singleton::instance = nullptr;
 
 int main(int argc, char **argv)
 {
-    Singleton *obj = Singleton::instance->getInstance();
+    Singleton *obj = Singleton::getInstance();
     obj->print_info();
+    Singleton::getInstance()->print_info();
     return 0;
 }
+/*
+root@hankin:~/opencv# g++ main.cpp 
+root@hankin:~/opencv# ./a.out 
+hello world
+hello world
+*/
