@@ -32,6 +32,8 @@ int main()
         if (error_condition) {
             throw MyException();
         }
+    } catch (const MyException& e) {  // 自定义的异常必须要在标准异常的前面，否则会有警告
+        std::cout << "Caught an MyException: " << e.what() << std::endl;
     } catch (const std::exception& e) {
         std::cout << "Caught an exception: " << e.what() << std::endl;  // Caught an exception: My custom exception
     }
