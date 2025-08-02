@@ -11,9 +11,12 @@
 #include <iostream>
 #include <tuple>
 
-int main() {
+int main()
+{
     // 创建一个包含 int、double 和字符串的 tuple
     std::tuple<int, double, std::string> myTuple(42, 3.14, "Hello");
+    
+    std::tuple<int, double, std::string> t = std::make_tuple(42, 3.14, "Hello");
 
     // 使用 std::get 访问 tuple 中的元素（通过索引）
     int intValue = std::get<0>(myTuple);
