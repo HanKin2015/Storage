@@ -8,7 +8,6 @@
 *
 * Copyright (c) 2023 HanKin. All rights reserved.
 *******************************************************************************/
-
 #include <cstdio>
 #include <iostream>
 #include <cstring>

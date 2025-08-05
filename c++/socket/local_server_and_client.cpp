@@ -7,7 +7,6 @@
  *
  * Copyright (c) 2021 HanKin. All rights reserved.
  */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
