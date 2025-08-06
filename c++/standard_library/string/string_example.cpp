@@ -1,13 +1,13 @@
-/**
+/*******************************************************************************
 * 文 件 名: string_example.cpp
 * 文件描述: 字符串那些事儿
+* 备    注: 
 * 作    者: HanKin
 * 创建日期: 2021.08.24
-* 修改日期：2021.10.18
+* 修改日期：2025.08.06
 *
-* Copyright (c) 2021 HanKin. All rights reserved.
-*/
-
+* Copyright (c) 2025 HanKin. All rights reserved.
+*******************************************************************************/
 #include <iostream>
 #include <cstring>
 using namespace std;
@@ -24,8 +24,17 @@ void fun(const char *str)
     return;
 }
 
+void init()
+{
+    std::string str(5, '3');
+    std::cout << str << std::endl;  // 33333
+    return;
+}
+
 int main()
 {
+    init();
+    
     // 字符串可以自动拼接
     cout << a << endl;
     cout << "dsad" "12345" << endl;
@@ -51,7 +60,7 @@ int main()
     cout << "h = " << h << endl;
     
     const char *c = "hello";
-    string j = "1" + c;
+    string j = "1" + std::string(c);
     cout << "j = " << j << endl;
 
     fun("abc");
