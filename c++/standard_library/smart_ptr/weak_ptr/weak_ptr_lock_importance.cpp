@@ -30,7 +30,8 @@ private:
 };
 
 // 正确使用weak_ptr的示例
-void correctUsage() {
+void correctUsage()
+{
     std::cout << "\n=== 正确使用weak_ptr ===" << std::endl;
     std::shared_ptr<MyClass> sharedPtr = std::make_shared<MyClass>(1);
     std::weak_ptr<MyClass> weakPtr = sharedPtr;
@@ -54,7 +55,8 @@ void correctUsage() {
 }
 
 // 错误使用weak_ptr的示例
-void incorrectUsage() {
+void incorrectUsage()
+{
     std::cout << "\n=== 错误使用weak_ptr ===" << std::endl;
     std::shared_ptr<MyClass> sharedPtr = std::make_shared<MyClass>(2);
     std::weak_ptr<MyClass> weakPtr = sharedPtr;
@@ -80,9 +82,21 @@ void incorrectUsage() {
     }
 }
 
-int main() {
+int main()
+{
     correctUsage();
-    incorrectUsage();
+    //incorrectUsage();
     
+    std::shared_ptr<MyClass> sharedPtr = std::make_shared<MyClass>(1);
+    std::weak_ptr<MyClass> weakPtr = sharedPtr;
+    sharedPtr->doSomething();
+    //weakPtr->doSomething();       // 不能直接使用error: base operand of ‘->’ has non-pointer type ‘std::weak_ptr<MyClass>’
+    auto tmp1 = sharedPtr.get();    // 指针传递不增加引用计数
+    tmp1->doSomething();
+    auto tmp2 = sharedPtr;          // 增加引用计数
+    tmp2->doSomething();
+    auto tmp3 = weakPtr.lock();     // 增加引用计数
+    tmp3->doSomething();
+    std::cout << sharedPtr.use_count() << std::endl;
     return 0;
 }

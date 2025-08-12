@@ -62,11 +62,18 @@ void custom_deleter()
 // weak_ptr使用不当
 void weak_ptr_example()
 {
-    auto parent = std::make_shared<int>();
+    auto parent = std::make_shared<int>(10);
     std::cout << parent.use_count() << std::endl;   // 1
 
     std::weak_ptr<int> child = parent;
     std::cout << parent.use_count() << std::endl;   // 1
+
+    parent.reset();
+    std::cout << parent.use_count() << std::endl;   // 0
+
+    auto tmp = child.lock();        // 空指针
+    std::cout << tmp << std::endl;
+    std::cout << *tmp << std::endl; // 段错误
 }
 
 int main()
@@ -74,5 +81,6 @@ int main()
     circular_reference();
     //double_delete();
     custom_deleter();
+    weak_ptr_example();
     return 0;
 }
