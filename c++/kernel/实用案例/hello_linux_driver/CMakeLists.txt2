@@ -1,0 +1,49 @@
+#######################################################
+# 文 件 名: CMakeLists.txt
+# 文件描述: 通过CMAKE_HOST_SYSTEM_VERSION获取内核版本
+# 备    注: 前提是需要添加一个Kbuild文件
+# 作    者: HanKin
+# 创建日期: 2025.08.13
+# 修改日期：2025.08.13
+# 
+# Copyright (c) 2025 HanKin. All rights reserved.
+#######################################################
+cmake_minimum_required(VERSION 3.10)
+project(my_driver LANGUAGES C)
+
+# 检查内核源码路径（优先从环境变量 KERNELDIR 获取，否则默认系统内核路径）
+if(NOT DEFINED KERNELDIR)
+    if(EXISTS "/lib/modules/${CMAKE_HOST_SYSTEM_VERSION}/build")
+        set(KERNELDIR "/lib/modules/${CMAKE_HOST_SYSTEM_VERSION}/build" CACHE PATH "Linux kernel source directory")
+    else()
+        message(FATAL_ERROR "Kernel source directory not found. Set KERNELDIR to your kernel build directory.")
+    endif()
+endif()
+
+# 验证内核源码目录是否存在
+if(NOT EXISTS "${KERNELDIR}/Makefile")
+    message(FATAL_ERROR "Invalid KERNELDIR: ${KERNELDIR} (missing Makefile)")
+endif()
+
+# 定义驱动模块目标（调用 Kbuild 编译）
+add_custom_target(
+    my_driver_module ALL
+    COMMAND make -C ${KERNELDIR} M=${CMAKE_CURRENT_SOURCE_DIR} modules
+    COMMENT "Building Linux driver module..."
+    VERBATIM
+)
+
+# 定义清理目标（清理编译产物）
+add_custom_target(
+    clean_modules
+    COMMAND make -C ${KERNELDIR} M=${CMAKE_CURRENT_SOURCE_DIR} clean
+    COMMENT "Cleaning Linux driver module..."
+    VERBATIM
+)
+
+# 可选：安装驱动模块到系统默认路径
+install(
+    FILES ${CMAKE_CURRENT_BINARY_DIR}/my_driver.ko
+    DESTINATION /lib/modules/${CMAKE_HOST_SYSTEM_VERSION}/kernel/drivers/misc/
+    COMPONENT modules
+)

@@ -1,0 +1,43 @@
+#######################################################
+# 文 件 名: CMakeLists.txt
+# 文件描述: 通过uname -r命令获取内核版本
+# 备    注: 前提是需要添加一个Kbuild文件
+# 作    者: HanKin
+# 创建日期: 2025.08.13
+# 修改日期：2025.08.13
+# 
+# Copyright (c) 2025 HanKin. All rights reserved.
+#######################################################
+cmake_minimum_required(VERSION 3.16)
+project(hello_linux_driver)
+
+# 获取内核版本（通过 shell 命令 uname -r）
+execute_process(
+    COMMAND uname -r
+    OUTPUT_VARIABLE KERNEL_VERSION
+    OUTPUT_STRIP_TRAILING_WHITESPACE  # 去除换行符
+)
+
+# 设置内核源码路径
+set(KERNEL_DIR /lib/modules/${KERNEL_VERSION}/build)
+
+# 验证内核路径是否存在
+if(NOT EXISTS ${KERNEL_DIR}/Makefile)
+    message(FATAL_ERROR "Kernel source directory not found: ${KERNEL_DIR}\nPlease install kernel headers (e.g., linux-headers-${KERNEL_VERSION}).")
+endif()
+
+# 添加目标模块（编译驱动）
+add_custom_target(hello_linux_driver ALL
+    COMMAND make -C ${KERNEL_DIR} M=${CMAKE_CURRENT_SOURCE_DIR} modules
+    COMMENT "Building hello_linux_driver module..."
+    VERBATIM
+)
+
+# 清理目标（避免与 CMake 自带 clean 冲突）
+add_custom_target(clean_modules
+    COMMAND make -C ${KERNEL_DIR} M=${CMAKE_CURRENT_SOURCE_DIR} clean
+    COMMENT "Cleaning hello_linux_driver module..."
+    VERBATIM
+)
+
+message(STATUS "KERNEL_DIR=${KERNEL_DIR}")

@@ -1,0 +1,26 @@
+#######################################################
+# 文 件 名: CMakeLists.txt
+# 文件描述: 执行shell命令
+# 备    注: 
+# 作    者: HanKin
+# 创建日期: 2025.08.13
+# 修改日期：2025.08.13
+# 
+# Copyright (c) 2025 HanKin. All rights reserved.
+#######################################################
+cmake_minimum_required(VERSION 3.16)
+project(execute_shell)
+
+# $(uname -r) 是 shell 语法，CMake 无法直接识别和执行，会被当作普通字符串处理
+set(RESULT $(uname -r))
+message(STATUS "RESULT=${RESULT}")  # RESULT=$;(;uname;-r;)
+message(STATUS "RESULT=" ${RESULT}) # RESULT=$(uname-r)
+
+# 使用 CMake 的 execute_process 调用 shell 命令获取内核版本
+execute_process(
+    COMMAND uname -r
+    OUTPUT_VARIABLE KERNEL_VERSION
+    OUTPUT_STRIP_TRAILING_WHITESPACE  # 去除输出中的换行符
+)
+message(STATUS "KERNEL_VERSION=${KERNEL_VERSION}")  # KERNEL_VERSION=6.14.0-24-generic
+message(STATUS "KERNEL_VERSION=" ${KERNEL_VERSION}) # KERNEL_VERSION=6.14.0-24-generic
