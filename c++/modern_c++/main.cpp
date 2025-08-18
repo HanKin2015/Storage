@@ -4,7 +4,8 @@ import std;  // 以前需要include下面这一大堆东西，现在只要这一
 //#include <string>
 //#include <string_view>
 
-int main() {
+int main()
+{
     std::cout << "Hello Modular World!\n";
 
     const std::vector<std::string_view> words {"Welcome ", "Modular ", "Vector ", "With ", "auto&& "};

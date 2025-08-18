@@ -12,12 +12,14 @@
 #include <iostream>
 #include <string_view>
 
-std::string_view getBar() {
+std::string_view getBar()
+{
   std::string b{"it is bar."};
   return b;
 }
 
-std::string_view getFoo() {
+std::string_view getFoo()
+{
   return "It is foo.";
 }
 
