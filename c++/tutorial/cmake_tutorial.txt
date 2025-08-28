@@ -9,7 +9,10 @@
 # Copyright (c) 2025 HanKin. All rights reserved.
 #######################################################
 cmake_minimum_required(VERSION 3.16)
-project(execute_shell)
+project(execute_shell VERSION 0.1 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # $(uname -r) 是 shell 语法，CMake 无法直接识别和执行，会被当作普通字符串处理
 set(RESULT $(uname -r))
