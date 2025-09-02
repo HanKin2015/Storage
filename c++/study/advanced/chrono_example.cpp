@@ -16,6 +16,10 @@
 
 int main()
 {
+    // 时间戳
+    std::chrono::system_clock::time_point timestamp = std::chrono::system_clock::now();
+    std::cout << timestamp.time_since_epoch().count() << " 纳秒" << std::endl;
+    
     // 1、获取当前时间点
     auto now = std::chrono::system_clock::now();    // 表示系统时间，通常与现实世界的时间相对应
     std::cout << "当前时间点: " << now.time_since_epoch().count() << " 纳秒" << std::endl;
