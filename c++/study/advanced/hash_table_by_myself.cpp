@@ -192,3 +192,67 @@ int main() {
 
     return 0;
 }
+/*
+root@hankin:~/opencv# ./a.out 
+哈希表初始状态:
+Bucket 0: [apple => 5] 
+Bucket 1: [cherry => 7] 
+Bucket 2: 
+Bucket 3: [banana => 3] [date => 2] 
+Bucket 4: 
+Bucket 5: 
+Bucket 6: 
+Bucket 7: [elderberry => 9] 
+Bucket 8: 
+Bucket 9: 
+Bucket 10: 
+Bucket 11: 
+Bucket 12: 
+Bucket 13: 
+Bucket 14: 
+Bucket 15: 
+当前大小: 5, 容量: 16
+负载因子: 0.3125
+
+找到 banana: 3
+更新后 banana 的值: 10
+
+删除 date 后:
+Bucket 0: [apple => 5] 
+Bucket 1: [cherry => 7] 
+Bucket 2: 
+Bucket 3: [banana => 10] 
+Bucket 4: 
+Bucket 5: 
+Bucket 6: 
+Bucket 7: [elderberry => 9] 
+Bucket 8: 
+Bucket 9: 
+Bucket 10: 
+Bucket 11: 
+Bucket 12: 
+Bucket 13: 
+Bucket 14: 
+Bucket 15: 
+当前大小: 4
+
+插入更多数据后（可能已扩容）:
+Bucket 0: [apple => 5] [fig => 4] [lemon => 1] 
+Bucket 1: [cherry => 7] 
+Bucket 2: 
+Bucket 3: [banana => 10] [grape => 6] 
+Bucket 4: 
+Bucket 5: 
+Bucket 6: 
+Bucket 7: [elderberry => 9] 
+Bucket 8: 
+Bucket 9: 
+Bucket 10: 
+Bucket 11: 
+Bucket 12: [kiwi => 8] 
+Bucket 13: 
+Bucket 14: 
+Bucket 15: 
+当前大小: 8, 容量: 16
+负载因子: 0.5
+*/
