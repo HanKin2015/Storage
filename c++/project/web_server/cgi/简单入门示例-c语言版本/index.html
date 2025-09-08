@@ -1,0 +1,31 @@
+<html>
+    <head>
+    <link rel="icon" href="data:;base64,=">
+        <title>学习CGI脚本-C语言版本</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <!-- 方式 1：使用超链接（GET 方法） -->
+        <a href="hello.cgi?method=GET">调用CGI脚本</a>
+        
+        <!-- 方式 2：使用表单（GET 或 POST 方法） -->
+        <form action="hello.cgi" method="get">
+            姓名: <input type="text" name="name">
+            <input type="submit" value="提交">
+        </form>
+        
+        <!-- 方式 3：使用 JavaScript（AJAX） -->
+        <script>
+        function callCGI() {
+            fetch('hello.cgi?method=JavaScript')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('result').innerHTML = data;
+                });
+        }
+        </script>
+
+        <button onclick="callCGI()">调用CGI</button>
+        <div id="result"></div>
+    </body>
+</html>
