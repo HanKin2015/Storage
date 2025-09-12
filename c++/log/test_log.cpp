@@ -8,6 +8,10 @@
 * Copyright (c) 2023 HanKin. All rights reserved.
 */
 #include "log.h"
+#include <stdio.h>
+
+#define pri(fmt, ...)	printf("[" __FILE__ "] [%s] %d ",__FUNCTION__,__LINE__ );\
+    printf(fmt, ##__VA_ARGS__);
 
 int main()
 {
@@ -16,5 +20,8 @@ int main()
     
     init_log("./test_log.log");
     LOGE("I am hero, %d", age);
+    
+    printf("["__FILE__"] [%s] %d\n", __FUNCTION__, __LINE__);
+    pri("hello world\n");
     return 0;
 }

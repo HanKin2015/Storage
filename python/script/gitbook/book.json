@@ -1,0 +1,93 @@
+{
+    "title": "HanKin's Gitbook",
+    "author": "HanKin",
+    "description": "select * from learn",
+    "language": "zh-hans",
+    "gitbook": "3.2.3",
+    "styles": {
+        "website": "./Styles/Website.css"
+    },
+    "structure": {
+        "readme": "README.md"
+    },
+    "links": {
+        "sidebar": {
+            "HanKin": "http://hankin2015.github.io"
+        }
+    },
+    "plugins": [
+        "-sharing",
+        "splitter",
+        "expandable-chapters-small",
+        "anchors",
+        "edit-link",
+        "github",
+        "github-buttons",
+        "donate",
+        "sharing-plus",
+        "anchor-navigation-ex",
+        "favicon",
+        "toggle-chapters",
+        "theme-comscore"
+    ],
+    "pluginsConfig": {
+        "edit-link": {
+            "base": "https://github.com/HanKin2015/GitBook/edit/master/",
+            "label": "Edit This Page"
+        },
+        "github": {
+            "url": "https://github.com/hankin2015"
+        },
+        "github-buttons": {
+            "buttons": [{
+                "user": "HanKin2015",
+                "repo": "GitBook",
+                "type": "star",
+                "size": "small",
+                "count": true
+                }
+            ]
+        },
+        "donate": {
+            "alipay": "./Source/Images/alipay.jpg",
+            "title": "",
+            "button": "打赏",
+            "alipayText": " "
+        },
+        "sharing": {
+            "douban": false,
+            "facebook": false,
+            "google": false,
+            "hatenaBookmark": false,
+            "instapaper": false,
+            "line": false,
+            "linkedin": false,
+            "messenger": false,
+            "pocket": false,
+            "qq": false,
+            "qzone": false,
+            "stumbleupon": false,
+            "twitter": false,
+            "viber": false,
+            "vk": false,
+            "weibo": false,
+            "whatsapp": false,
+            "all": [
+                "google", "facebook", "weibo", "twitter",
+                "qq", "qzone", "linkedin", "pocket"
+            ]
+        },
+        "anchor-navigation-ex": {
+            "showLevel": false
+        },
+        "favicon":{
+            "shortcut": "./Source/Images/favicon-32x32.ico",
+            "bookmark": "./Source/Images/avatar.jpg",
+            "appleTouch": "./Source/Images/avatar.jpg",
+            "appleTouchMore": {
+                "120x120": "./Source/Images/avatar.jpg",
+                "180x180": "./Source/Images/avatar.jpg"
+            }
+        }
+    }
+}
