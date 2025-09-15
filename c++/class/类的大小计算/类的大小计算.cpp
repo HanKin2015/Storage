@@ -1,5 +1,5 @@
 /*******************************************************************************
-* 文 件 名: 类的大小.cpp
+* 文 件 名: 类的大小计算.cpp
 * 文件描述: 遵循 “只计算实际存储的数据，忽略成员函数” 的基本原则
 * 备    注: 内存对齐
 * 作    者: HanKin
@@ -22,22 +22,17 @@ class A
     static int d;  // 静态成员，不计算在对象大小中
 
     virtual void f(); // 引入虚函数表指针
-    virtual void ff();
+    virtual void ff();// 无论类中有多少个虚函数，都只需要一个虚函数表指针
 };
 
 // 派生类的大小 = 基类成员变量的大小 + 派生类新增成员变量的大小（同样受对齐和虚函数影响）
 class Base { char a; virtual void f(); };          // 1字节
 class Base2 { char aa; virtual void ff(); };
 class Derived : public Base, public Base2 { int b; };  // 4（基类a） + 4 + 8（派生类b） = 16字节
-/*
-8字节变量
-8字节虚函数表指针
 
-8字节变量
-8字节虚函数表指针
+// 空类的特殊情况
+class Empty {};
 
-
-*/
 
 int main()
 {
@@ -47,5 +42,8 @@ int main()
     std::cout << sizeof(p) << std::endl;
 
     std::cout << sizeof(Derived) << std::endl;  // 16
+    
+    std::cout << sizeof(Empty) << std::endl;    // 1
+
     return 0;
 }
