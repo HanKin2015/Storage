@@ -26,16 +26,17 @@ Tinyhttpd 是J. David Blackstone在1999年写的一个不到 500 行的超轻量
 # 相关知识
 
 ## CGI脚本
+见cgi文件夹
+
+##
 
 # 快速入门
+index.html是首页，然后提交后结果显示在result.cgi中。
+注意文件默认权限是644，需要修改为600index.html和755result.cgi。
 
-我们的文档托管在GitHub Pages上，[点击进入快速开始](https://alibaba.github.io/async_simple/docs.cn/GetStarted.html).
+运行http服务器：
 
-内容生成：使用 静态站点生成器（SSG） 构建（如 Docusaurus、VuePress、MkDocs 等）。
-
-接下来可以阅读更多API文档，例如C++20协程（[Lazy](./docs/docs.cn/Lazy.md)）。熟悉async\_simple组件，可以先跟着[Demo](./docs/docs.cn/GetStarted.md)用C++20协程来实现异步统计文件字符数功能。
-
-更多文档介绍见目录[docs](./docs/docs.cn)。
+The server could not fulfill your request because the resource specified is unavailable or nonexistent. 
 
 # 安装async_simple
 

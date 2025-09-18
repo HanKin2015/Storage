@@ -85,8 +85,12 @@ username = form_data.get('username', [''])[0]  # 取第一个值
 注意html文件必需要是600权限，否则打开不显示内容，如错误添加了执行x权限。
 cgi脚本需要添加执行x权限，否则无法正常被调用执行。
 
+cgi脚本直接通过本地的html调用是无法正常运行的，只能显示出源代码。
+因此必须要有http服务器才能正常运行cgi脚本。
+
 ### 5-1、c语言版本
 demo见：D:\interview\Storage\c++\project\web_server\cgi\简单入门示例-c语言版本
+
 编译 C 程序为 CGI 可执行文件
 编译时需要确保生成的是可执行文件，并且具有执行权限：
 ```
@@ -95,6 +99,8 @@ chmod +x hello.cgi
 ```
 
 ### 5-2、python版本
-cgi脚本直接通过本地的html调用是无法正常运行的，只能显示出源代码。
-因此必须要有http服务器才能正常运行cgi脚本。
+demo见：D:\interview\Storage\c++\project\web_server\cgi\简单入门示例-python语言版本
+
+不需要编译，只要本地能正常运行python脚本即可。
+
 
