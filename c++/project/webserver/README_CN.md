@@ -36,7 +36,6 @@ index.html是首页，然后提交后结果显示在result.cgi中。
 
 运行http服务器：
 
-The server could not fulfill your request because the resource specified is unavailable or nonexistent. 
 
 # 安装async_simple
 

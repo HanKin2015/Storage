@@ -28,7 +28,7 @@ int main(int argc, char** argv)
     struct sockaddr_in server_addr;
     memset(&server_addr, 0, sizeof(server_addr));
     server_addr.sin_family = AF_INET;
-    server_addr.sin_port = htons(6666);
+    server_addr.sin_port = htons(1357);
     if (inet_pton(AF_INET, argv[1], &server_addr.sin_addr) <= 0) {
         printf("inet_pton error for %s\n", argv[1]); 
         goto EXIT;

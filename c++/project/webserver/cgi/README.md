@@ -82,13 +82,26 @@ username = form_data.get('username', [''])[0]  # 取第一个值
 这种方式完全避免使用 cgi 模块，没有 deprecation 警告，且兼容未来的 Python 版本。
 
 ## 5、实战
-注意html文件必需要是600权限，否则打开不显示内容，如错误添加了执行x权限。
+
+### 5-1、注意事项
+html文件必需要是600权限，否则打开不显示内容，如错误添加了执行x权限。
 cgi脚本需要添加执行x权限，否则无法正常被调用执行。
 
+### 5-2、http服务器
 cgi脚本直接通过本地的html调用是无法正常运行的，只能显示出源代码。
 因此必须要有http服务器才能正常运行cgi脚本。
 
-### 5-1、c语言版本
+首先是借助已有项目运行http服务器：
+https://github.com/EZLippi/Tinyhttpd/tree/master
+https://github.com/forthespada/MyPoorWebServer/tree/master
+
+注意运行http服务器程序后浏览器打开http://127.0.0.1:6379后出现：
+The server could not fulfill your request because the resource specified is unavailable or nonexistent. 
+问题原因是已有项目中已经写明了首页html的名字以及访问的路径，需要按照项目中规定的来，否则就会报这个错误，这个错误也是http服务器程序中输出的。
+
+走过很多弯路，曾经一度以为是root权限导致浏览器无法访问其html文件，然后各种修改后仍然无效，最终发现与文件权限无关。
+
+### 5-3、c语言版本
 demo见：D:\interview\Storage\c++\project\web_server\cgi\简单入门示例-c语言版本
 
 编译 C 程序为 CGI 可执行文件
@@ -98,7 +111,7 @@ gcc hello.c -o hello.cgi
 chmod +x hello.cgi
 ```
 
-### 5-2、python版本
+### 5-4、python版本
 demo见：D:\interview\Storage\c++\project\web_server\cgi\简单入门示例-python语言版本
 
 不需要编译，只要本地能正常运行python脚本即可。
