@@ -1,0 +1,9 @@
+
+on property:sys.boot_completed=1
+    write /dev/kmsg "hejian boot complete"
+    #需要remount所以这句会执行失败导致后面无法执行
+    #chmod 0755 /system/bin/capture_cp2_log.sh
+    exec -- /system/bin/sh -c "/system/bin/capture_cp2_log.sh"
+
+
+
