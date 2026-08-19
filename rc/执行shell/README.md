@@ -24,3 +24,10 @@ exec -- /system/bin/sh -c "/data/hj/print_log.sh start_log"
 ```
 mount -t debugfs none /sys/kernel/debug
 ```
+
+## 稀疏检出
+```
+通用的统计工具函数:  - 使用宏（更灵活，无需关心参数）  - 函数指针需要关注参数，另外就是如果原函数分成多步执行，无法同时计时  - 直接在代码里插桩（最简单，不用改架构）
+
+if [ ! -f .git/info/sparse-checkout ];then          touch .git/info/sparse-checkout      fi      git config --global http.postBuffer  524288000      git config core.sparsecheckout true      echo "${TAG_LOCAL_MARKET}" >> .git/info/sparse-checkout      git remote add -f origin $TAG_GIT_LIBARY      sleep 3      git pull origin master
+```
