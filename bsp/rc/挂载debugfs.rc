@@ -1,0 +1,2 @@
+on early-init
+    mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755

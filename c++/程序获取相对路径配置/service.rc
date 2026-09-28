@@ -1,0 +1,18 @@
+另外使用 symlink 是可以的，测试在 rc 脚本中执行 chdir 是不可以的
+on property:sys.boot_completed=1
+    symlink /data/hj/hello/data/hj/sdk_config
+    start lunch_iot
+    service lunch_iot /data/hj/hello/data/hj
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:object_r:system_file:s0
+    chdir /data/hj
+
+service hejian /system/bin/sh -c "cd /data/hj && ./hello"
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:object_r:system_file:s0
